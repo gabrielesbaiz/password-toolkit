@@ -1,0 +1,23 @@
+{
+    "name": "italian_nobel_prize_winners",
+    "type": "people",
+    "values": [
+        { "name": "Guglielmo Marconi", "gender": "male" },
+        { "name": "Enrico Fermi", "gender": "male" },
+        { "name": "Renato Dulbecco", "gender": "male" },
+        { "name": "Salvador Luria", "gender": "male" },
+        { "name": "Rita Levi-Montalcini", "gender": "female" },
+        { "name": "Dario Fo", "gender": "male" },
+        { "name": "Giorgio Parisi", "gender": "male" },
+        { "name": "Mario J. Molina", "gender": "male" },
+        { "name": "Carlo Rubbia", "gender": "male" },
+        { "name": "Franco Modigliani", "gender": "male" },
+        { "name": "Luigi Pirandello", "gender": "male" },
+        { "name": "Giuseppe Ungaretti", "gender": "male" },
+        { "name": "Eugenio Montale", "gender": "male" },
+        { "name": "Cesare Beccaria", "gender": "male" },
+        { "name": "Giovanni Giorgi", "gender": "male" },
+        { "name": "Daniel Bovet", "gender": "male" },
+        { "name": "Camillo Golgi", "gender": "male" }
+    ]
+}
