@@ -1,0 +1,17 @@
+{
+    "name": "italian_presidents_of_the_republic",
+    "type": "people",
+    "values": [
+        { "name": "Enrico De Nicola", "gender": "male" },
+        { "name": "Giovanni Gronchi", "gender": "male" },
+        { "name": "Antonio Segni", "gender": "male" },
+        { "name": "Giuseppe Saragat", "gender": "male" },
+        { "name": "Giovanni Leone", "gender": "male" },
+        { "name": "Sandro Pertini", "gender": "male" },
+        { "name": "Francesco Cossiga", "gender": "male" },
+        { "name": "Oscar Luigi Scalfaro", "gender": "male" },
+        { "name": "Carlo Azeglio Ciampi", "gender": "male" },
+        { "name": "Giorgio Napolitano", "gender": "male" },
+        { "name": "Sergio Mattarella", "gender": "male" }
+    ]
+}

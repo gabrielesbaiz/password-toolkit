@@ -1,0 +1,32 @@
+{
+    "name": "italian_cheeses",
+    "type": "things",
+    "values": [
+        { "name": "Parmigiano Reggiano", "gender": "male" },
+        { "name": "Mozzarella", "gender": "female" },
+        { "name": "Gorgonzola", "gender": "male" },
+        { "name": "Pecorino", "gender": "male" },
+        { "name": "Ricotta", "gender": "female" },
+        { "name": "Provolone", "gender": "male" },
+        { "name": "Grana Padano", "gender": "male" },
+        { "name": "Caciocavallo", "gender": "male" },
+        { "name": "Fontina", "gender": "female" },
+        { "name": "Taleggio", "gender": "male" },
+        { "name": "Montasio", "gender": "male" },
+        { "name": "Asiago", "gender": "male" },
+        { "name": "Burrata", "gender": "female" },
+        { "name": "Stracchino", "gender": "male" },
+        { "name": "Ricotta Salata", "gender": "female" },
+        { "name": "Ragusano", "gender": "male" },
+        { "name": "Castelmagno", "gender": "male" },
+        { "name": "Pecorino Sardo", "gender": "male" },
+        { "name": "Pecorino Romano", "gender": "male" },
+        { "name": "Fiore Sardo", "gender": "male" },
+        { "name": "Bresaola", "gender": "female" },
+        { "name": "Scamorza", "gender": "female" },
+        { "name": "Caciotta", "gender": "female" },
+        { "name": "Vacherin", "gender": "male" },
+        { "name": "Tuma", "gender": "female" },
+        { "name": "Canestrato", "gender": "male" }
+    ]
+}
