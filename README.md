@@ -1,6 +1,7 @@
 # PasswordToolkit
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
+[![Total Downloads](https://img.shields.io/packagist/dt/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
 
 A lightweight helper package to generate nice passwords.
 
