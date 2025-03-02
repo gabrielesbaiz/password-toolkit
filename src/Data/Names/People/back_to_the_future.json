@@ -1,0 +1,18 @@
+{
+    "name": "back_to_the_future",
+    "type": "people",
+    "values": [
+        { "name": "Marty McFly", "gender": "male" },
+        { "name": "Doc Brown", "gender": "male" },
+        { "name": "Jennifer Parker", "gender": "female" },
+        { "name": "Biff Tannen", "gender": "male" },
+        { "name": "George McFly", "gender": "male" },
+        { "name": "Lorraine Baines", "gender": "female" },
+        { "name": "Einstein", "gender": "male" },
+        { "name": "Sindaco Goldie Wilson", "gender": "male" },
+        { "name": "Clara Clayton", "gender": "female" },
+        { "name": "Cane Pazzo Tannen", "gender": "male" },
+        { "name": "Seamus McFly", "gender": "male" },
+        { "name": "Maggie McFly", "gender": "female" }
+    ]
+}
