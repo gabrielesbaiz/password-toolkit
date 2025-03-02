@@ -1,31 +1,5 @@
-# PasswordToolkit
+<?php
 
-A lightweight helper package to generate nice passwords.
-
-## Features
-
-- ✅ Password generator
-- ✅ Name + adjective password style
-- ✅ Higly customizable
-- ✅ Works seamlessly with Laravel facades
-
-## Installation
-
-You can install the package via composer:
-
-```bash
-composer require gabrielesbaiz/password-toolkit
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="password-toolkit-config"
-```
-
-This is the contents of the published config file:
-
-```php
 return [
     /*
      * Configuration for name types for people and things to be used
@@ -99,47 +73,3 @@ return [
      */
     'leetspeak_conversion' => 'no',
 ];
-```
-
-## Usage
-
-```php
-$passwordToolkit = new Gabrielesbaiz\PasswordToolkit();
-
-echo $passwordToolkit->generate();
-```
-
-Using facade:
-
-```php
-use PasswordToolkit;
-
-PasswordToolkit::generate();
-```
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
-
-## Credits
-
-- [Gabriele Sbaiz](https://github.com/gabrielesbaiz)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

@@ -1,0 +1,22 @@
+[
+    { "name": "intenso", "gender": "neutral" },
+    { "name": "aromatico", "gender": "neutral" },
+    { "name": "forte", "gender": "neutral" },
+    { "name": "delicato", "gender": "neutral" },
+    { "name": "cremoso", "gender": "neutral" },
+    { "name": "morbido", "gender": "neutral" },
+    { "name": "corposo", "gender": "neutral" },
+    { "name": "equilibrato", "gender": "neutral" },
+    { "name": "rotondo", "gender": "neutral" },
+    { "name": "profumato", "gender": "neutral" },
+    { "name": "suave", "gender": "neutral" },
+    { "name": "ricco", "gender": "neutral" },
+    { "name": "vellutato", "gender": "neutral" },
+    { "name": "fresco", "gender": "neutral" },
+    { "name": "dolce", "gender": "neutral" },
+    { "name": "piccante", "gender": "neutral" },
+    { "name": "piccante", "gender": "neutral" },
+    { "name": "intensivo", "gender": "neutral" },
+    { "name": "deciso", "gender": "neutral" },
+    { "name": "pieno", "gender": "neutral" }
+]

@@ -1,0 +1,30 @@
+{
+    "name": "coffee_brands",
+    "type": "things",
+    "values": [
+        { "name": "Lavazza", "gender": "neutral" },
+        { "name": "Illy", "gender": "neutral" },
+        { "name": "Segafredo", "gender": "neutral" },
+        { "name": "Kimbo", "gender": "neutral" },
+        { "name": "Nespresso", "gender": "neutral" },
+        { "name": "Starbucks", "gender": "neutral" },
+        { "name": "Bialetti", "gender": "neutral" },
+        { "name": "Caffe Vergnano", "gender": "neutral" },
+        { "name": "Torrisi", "gender": "neutral" },
+        { "name": "Caffe Molinari", "gender": "neutral" },
+        { "name": "Caffe Pascucci", "gender": "neutral" },
+        { "name": "Caffe Diemme", "gender": "neutral" },
+        { "name": "Caffe Azzurro", "gender": "neutral" },
+        { "name": "Nescafe", "gender": "neutral" },
+        { "name": "Goppion", "gender": "neutral" },
+        { "name": "Caffe Giamaica", "gender": "neutral" },
+        { "name": "Caffe Bonini", "gender": "neutral" },
+        { "name": "Caffe Mokarabia", "gender": "neutral" },
+        { "name": "Caffe San Marco", "gender": "neutral" },
+        { "name": "Caffe Kimbo", "gender": "neutral" },
+        { "name": "Caffe Pellini", "gender": "neutral" },
+        { "name": "Caffe Mauro", "gender": "neutral" },
+        { "name": "Caffe Borbone", "gender": "neutral" },
+        { "name": "Caffe Guglielmo", "gender": "neutral" }
+    ]
+}
