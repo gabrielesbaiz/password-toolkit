@@ -11,6 +11,7 @@ return [
             'game_of_thrones' => true,
             'harry_potter' => true,
             'italian_actors' => true,
+            'italian_basketball_legends' => true,
             'italian_comedians' => true,
             'italian_nobel_prize_winners' => true,
             'italian_presidents_of_the_republic' => true,
