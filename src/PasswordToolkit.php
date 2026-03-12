@@ -17,62 +17,49 @@ class PasswordToolkit
     {
         $nameData = self::getRandomNameData();
 
-        if ($nameData->isNotEmpty()) {
-            $separatorSymbol = config('password-toolkit.separator_symbol', '-');
-
-            $nameSeparator = config('password-toolkit.name_separator', true);
-
-            $name = $nameSeparator
-                ? Str::replace(' ', $separatorSymbol, $nameData->get('name'))
-                : self::zapSpaces($nameData->get('name'));
-
-            $adjective = Str::title(self::zapSpaces(self::getRandomAdjective($nameData)));
-
-            $addNumbers = config('password-toolkit.add_numbers', false);
-
-            $numbersDigits = config('password-toolkit.numbers_digits', 4);
-
-            $password = $name . $separatorSymbol . $adjective;
-
-            if ($addNumbers) {
-                $numbersPosition = config('password-toolkit.numbers_position', 'end');
-
-                switch ($numbersPosition) {
-                    case 'start':
-                        $password = self::getRandomNumber($numbersDigits) . $separatorSymbol . $name . $separatorSymbol . $adjective;
-
-                        break;
-
-                    case 'middle':
-                        $password = $name . $separatorSymbol . self::getRandomNumber($numbersDigits) . $separatorSymbol . $adjective;
-
-                        break;
-
-                    case 'end':
-                        $password = $name . $separatorSymbol . $adjective . $separatorSymbol . self::getRandomNumber($numbersDigits);
-
-                        break;
-                }
-            }
-
-            $leetspeakConversion = config('password-toolkit.leetspeak_conversion', 'no');
-
-            switch ($leetspeakConversion) {
-                case 'basic':
-                    $password = self::leetspeakBasic($password);
-
-                    break;
-
-                case 'advanced':
-                    $password = self::leetspeakAdvanced($password);
-
-                    break;
-            }
-
-            return $password;
+        if ($nameData->isEmpty()) {
+            return null;
         }
 
-        return null;
+        $separator = config('password-toolkit.separator_symbol', '-');
+
+        $nameSeparator = config('password-toolkit.name_separator', true);
+
+        $addNumbers = config('password-toolkit.add_numbers', false);
+
+        $numbersDigits = config('password-toolkit.numbers_digits', 4);
+
+        $numbersPosition = config('password-toolkit.numbers_position', 'end');
+
+        $leetspeakConversion = config('password-toolkit.leetspeak_conversion', 'no');
+
+        $name = $nameSeparator
+            ? Str::replace(' ', $separator, $nameData->get('name'))
+            : self::zapSpaces($nameData->get('name'));
+
+        $adjective = Str::title(self::zapSpaces(self::getRandomAdjective($nameData)));
+
+        if ($addNumbers) {
+            $number = (string) self::getRandomNumber($numbersDigits);
+
+            $password = match ($numbersPosition) {
+                'start' => implode($separator, [$number, $name, $adjective]),
+
+                'middle' => implode($separator, [$name, $number, $adjective]),
+
+                default => implode($separator, [$name, $adjective, $number]),
+            };
+        } else {
+            $password = $name . $separator . $adjective;
+        }
+
+        return match ($leetspeakConversion) {
+            'basic' => self::leetspeakBasic($password),
+
+            'advanced' => self::leetspeakAdvanced($password),
+
+            default => $password,
+        };
     }
 
     /**
@@ -82,34 +69,27 @@ class PasswordToolkit
      */
     public static function getRandomNameData(): Collection
     {
-        $peopleFolderPath = __DIR__ . '/Data/Names/People';
+        $peopleConfig = config('password-toolkit.name_types.people', []);
 
-        $thingsFolderPath = __DIR__ . '/Data/Names/Things';
+        $thingsConfig = config('password-toolkit.name_types.things', []);
 
-        $peopleFiles = collect(File::allFiles($peopleFolderPath))
-            ->filter(fn ($file) => config('password-toolkit.name_types.people')[pathinfo($file->getFilename(), PATHINFO_FILENAME)]);
+        $allFiles = collect(File::allFiles(__DIR__ . '/Data/Names/People'))
+            ->filter(fn ($file) => $peopleConfig[pathinfo($file->getFilename(), PATHINFO_FILENAME)] ?? false)
+            ->merge(
+                collect(File::allFiles(__DIR__ . '/Data/Names/Things'))
+                    ->filter(fn ($file) => $thingsConfig[pathinfo($file->getFilename(), PATHINFO_FILENAME)] ?? false)
+            );
 
-        $thingsFiles = collect(File::allFiles($thingsFolderPath))
-            ->filter(fn ($file) => config('password-toolkit.name_types.things')[pathinfo($file->getFilename(), PATHINFO_FILENAME)]);
+        if ($allFiles->isEmpty()) {
+            return collect();
+        }
 
-        $allFiles = $peopleFiles->merge($thingsFiles);
+        $content = collect(json_decode(File::get($allFiles->random()), true));
 
-        $data = collect();
+        $values = collect($content->get('values'))
+            ->map(fn ($object) => collect($object)->put('file', $content->get('name')));
 
-        $allFiles->each(function ($file) use ($data) {
-            $content = collect(json_decode(File::get($file), true));
-
-            collect($content->get('values'))
-                ->each(function ($object) use ($data, $content) {
-                    $object = collect($object)->put('file', $content->get('name'));
-
-                    $data->push($object);
-                });
-        });
-
-        return $allFiles->isNotEmpty()
-            ? collect($data->random())
-            : collect();
+        return $values->isNotEmpty() ? collect($values->random()) : collect();
     }
 
     /**
@@ -124,13 +104,13 @@ class PasswordToolkit
 
         $data = collect(json_decode(File::get($filePath), true));
 
-        $adjectiveData = $data->where(fn ($object) => $object['gender'] == $nameData->get('gender') || $object['gender'] == 'neutral');
+        $adjectiveData = $data->filter(fn ($object) => $object['gender'] === $nameData->get('gender') || $object['gender'] === 'neutral');
 
         return collect($adjectiveData->random())->get('name');
     }
 
     /**
-     * Remove all spaces from a string.
+     * Remove all non-alphanumeric characters from a string.
      *
      * @param  string|null $string
      * @return string|null
@@ -143,18 +123,17 @@ class PasswordToolkit
     }
 
     /**
-     * Get random number of a given lenght.
+     * Get random number of a given length.
      *
-     * @param  int  $length
-     * @return void
+     * @param  int $length
+     * @return int
      */
-    protected static function getRandomNumber(int $length)
+    protected static function getRandomNumber(int $length): int
     {
-        $min = pow(10, $length - 1);
+        $min = (int) pow(10, $length - 1);
+        $max = (int) pow(10, $length) - 1;
 
-        $max = pow(10, $length) - 1;
-
-        return rand($min, $max);
+        return random_int($min, $max);
     }
 
     /**
