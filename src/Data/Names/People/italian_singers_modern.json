@@ -1,0 +1,26 @@
+{
+    "name": "italian_singers_modern",
+    "type": "people",
+    "values": [
+        { "name": "Marco Mengoni", "gender": "male" },
+        { "name": "Tiziano Ferro", "gender": "male" },
+        { "name": "Laura Pausini", "gender": "female" },
+        { "name": "Mahmood", "gender": "male" },
+        { "name": "Elodie", "gender": "female" },
+        { "name": "Blanco", "gender": "male" },
+        { "name": "Annalisa", "gender": "female" },
+        { "name": "Achille Lauro", "gender": "male" },
+        { "name": "Emma Marrone", "gender": "female" },
+        { "name": "Giorgia", "gender": "female" },
+        { "name": "Alessandra Amoroso", "gender": "female" },
+        { "name": "Cesare Cremonini", "gender": "male" },
+        { "name": "Madame", "gender": "female" },
+        { "name": "Gazzelle", "gender": "male" },
+        { "name": "Calcutta", "gender": "male" },
+        { "name": "Levante", "gender": "female" },
+        { "name": "Tananai", "gender": "male" },
+        { "name": "Sangiovanni", "gender": "male" },
+        { "name": "Ultimo", "gender": "male" },
+        { "name": "Irama", "gender": "male" }
+    ]
+}

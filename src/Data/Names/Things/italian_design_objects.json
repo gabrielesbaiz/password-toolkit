@@ -1,0 +1,27 @@
+{
+    "name": "italian_design_objects",
+    "type": "things",
+    "values": [
+        { "name": "Arco", "gender": "male" },
+        { "name": "Tolomeo", "gender": "male" },
+        { "name": "Sacco", "gender": "male" },
+        { "name": "Selene", "gender": "female" },
+        { "name": "Lettera 22", "gender": "female" },
+        { "name": "Eclisse", "gender": "female" },
+        { "name": "Taccia", "gender": "female" },
+        { "name": "Componibili", "gender": "male" },
+        { "name": "Ghost", "gender": "neutral" },
+        { "name": "Bocca", "gender": "female" },
+        { "name": "Carlton", "gender": "male" },
+        { "name": "Casablanca", "gender": "female" },
+        { "name": "Tahiti", "gender": "female" },
+        { "name": "Plia", "gender": "female" },
+        { "name": "Quaderna", "gender": "female" },
+        { "name": "Tolomeo Mini", "gender": "male" },
+        { "name": "Pipistrello", "gender": "male" },
+        { "name": "Snoopy", "gender": "male" },
+        { "name": "Toio", "gender": "male" },
+        { "name": "Boalum", "gender": "male" },
+        { "name": "Brera", "gender": "female" }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "italian_children_games_70s",
+    "type": "things",
+    "values": [
+        { "name": "Subbuteo", "gender": "male" },
+        { "name": "Allegro Chirurgo", "gender": "male" },
+        { "name": "Risiko", "gender": "male" },
+        { "name": "Forza 4", "gender": "female" },
+        { "name": "Monopoli", "gender": "male" },
+        { "name": "Scarabeo", "gender": "male" },
+        { "name": "Indovina Chi", "gender": "male" },
+        { "name": "Battaglia Navale", "gender": "female" },
+        { "name": "Shanghai", "gender": "male" },
+        { "name": "Domino", "gender": "male" },
+        { "name": "Cluedo", "gender": "male" },
+        { "name": "Big Jim", "gender": "male" },
+        { "name": "Barbie", "gender": "female" },
+        { "name": "Pongo", "gender": "male" },
+        { "name": "Das", "gender": "male" },
+        { "name": "Lego", "gender": "male" },
+        { "name": "Yoyo", "gender": "male" },
+        { "name": "Trottola", "gender": "female" },
+        { "name": "Biglie", "gender": "female" },
+        { "name": "Figurine Panini", "gender": "female" },
+        { "name": "Pista Polistil", "gender": "female" },
+        { "name": "Nascondino", "gender": "male" },
+        { "name": "Campana", "gender": "female" },
+        { "name": "Mosca Cieca", "gender": "female" },
+        { "name": "Rubabandiera", "gender": "female" },
+        { "name": "Acchiapparello", "gender": "male" },
+        { "name": "Strega Comanda Color", "gender": "female" }
+    ]
+}

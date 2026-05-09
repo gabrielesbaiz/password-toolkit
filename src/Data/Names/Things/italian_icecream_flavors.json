@@ -1,0 +1,24 @@
+{
+    "name": "italian_icecream_flavors",
+    "type": "things",
+    "values": [
+        { "name": "Stracciatella", "gender": "female" },
+        { "name": "Pistacchio", "gender": "male" },
+        { "name": "Fiordilatte", "gender": "male" },
+        { "name": "Zabaione", "gender": "male" },
+        { "name": "Nocciola", "gender": "female" },
+        { "name": "Cioccolato", "gender": "male" },
+        { "name": "Fragola", "gender": "female" },
+        { "name": "Limone", "gender": "male" },
+        { "name": "Vaniglia", "gender": "female" },
+        { "name": "Amarena", "gender": "female" },
+        { "name": "Bacio", "gender": "male" },
+        { "name": "Menta", "gender": "female" },
+        { "name": "Cocco", "gender": "male" },
+        { "name": "Mandorla", "gender": "female" },
+        { "name": "Mela Verde", "gender": "female" },
+        { "name": "Crema", "gender": "female" },
+        { "name": "Gianduia", "gender": "female" },
+        { "name": "Puffo", "gender": "male" }
+    ]
+}

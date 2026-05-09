@@ -1,0 +1,26 @@
+{
+    "name": "italian_mountains",
+    "type": "things",
+    "values": [
+        { "name": "Cervino", "gender": "male" },
+        { "name": "Gran Sasso", "gender": "male" },
+        { "name": "Marmolada", "gender": "female" },
+        { "name": "Monte Bianco", "gender": "male" },
+        { "name": "Monte Rosa", "gender": "male" },
+        { "name": "Etna", "gender": "male" },
+        { "name": "Vesuvio", "gender": "male" },
+        { "name": "Stromboli", "gender": "male" },
+        { "name": "Adamello", "gender": "male" },
+        { "name": "Ortles", "gender": "male" },
+        { "name": "Bernina", "gender": "male" },
+        { "name": "Disgrazia", "gender": "female" },
+        { "name": "Cimone", "gender": "male" },
+        { "name": "Pollino", "gender": "male" },
+        { "name": "Sirente", "gender": "male" },
+        { "name": "Velino", "gender": "male" },
+        { "name": "Maiella", "gender": "female" },
+        { "name": "Pizzo Carbonara", "gender": "male" },
+        { "name": "Tre Cime", "gender": "female" },
+        { "name": "Pale Martino", "gender": "female" }
+    ]
+}

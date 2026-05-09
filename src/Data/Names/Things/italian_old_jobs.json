@@ -1,0 +1,31 @@
+{
+    "name": "italian_old_jobs",
+    "type": "things",
+    "values": [
+        { "name": "Arrotino", "gender": "male" },
+        { "name": "Lustrascarpe", "gender": "male" },
+        { "name": "Lattaio", "gender": "male" },
+        { "name": "Carbonaio", "gender": "male" },
+        { "name": "Ombrellaio", "gender": "male" },
+        { "name": "Ciabattino", "gender": "male" },
+        { "name": "Spazzacamino", "gender": "male" },
+        { "name": "Stagnino", "gender": "male" },
+        { "name": "Norcino", "gender": "male" },
+        { "name": "Mugnaio", "gender": "male" },
+        { "name": "Calzolaio", "gender": "male" },
+        { "name": "Sarta", "gender": "female" },
+        { "name": "Sarto", "gender": "male" },
+        { "name": "Maniscalco", "gender": "male" },
+        { "name": "Bottaio", "gender": "male" },
+        { "name": "Casaro", "gender": "male" },
+        { "name": "Pizzicagnolo", "gender": "male" },
+        { "name": "Acquaiolo", "gender": "male" },
+        { "name": "Cestaio", "gender": "male" },
+        { "name": "Falegname", "gender": "male" },
+        { "name": "Vasaio", "gender": "male" },
+        { "name": "Banditore", "gender": "male" },
+        { "name": "Sellaio", "gender": "male" },
+        { "name": "Funaio", "gender": "male" },
+        { "name": "Conciatore", "gender": "male" }
+    ]
+}

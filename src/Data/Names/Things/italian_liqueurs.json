@@ -1,0 +1,28 @@
+{
+    "name": "italian_liqueurs",
+    "type": "things",
+    "values": [
+        { "name": "Limoncello", "gender": "male" },
+        { "name": "Amaro", "gender": "male" },
+        { "name": "Sambuca", "gender": "female" },
+        { "name": "Grappa", "gender": "female" },
+        { "name": "Strega", "gender": "female" },
+        { "name": "Mirto", "gender": "male" },
+        { "name": "Nocino", "gender": "male" },
+        { "name": "Centerbe", "gender": "male" },
+        { "name": "Genepi", "gender": "male" },
+        { "name": "Amaretto", "gender": "male" },
+        { "name": "Maraschino", "gender": "male" },
+        { "name": "Fernet", "gender": "male" },
+        { "name": "Ramazzotti", "gender": "male" },
+        { "name": "Cynar", "gender": "male" },
+        { "name": "Aperol", "gender": "male" },
+        { "name": "Campari", "gender": "male" },
+        { "name": "Vermouth", "gender": "male" },
+        { "name": "Galliano", "gender": "male" },
+        { "name": "Frangelico", "gender": "male" },
+        { "name": "Averna", "gender": "male" },
+        { "name": "Montenegro", "gender": "male" },
+        { "name": "Fernet Branca", "gender": "male" }
+    ]
+}

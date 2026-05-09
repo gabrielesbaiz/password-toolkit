@@ -1,0 +1,26 @@
+{
+    "name": "italian_street_foods",
+    "type": "things",
+    "values": [
+        { "name": "Arancino", "gender": "male" },
+        { "name": "Suppli", "gender": "male" },
+        { "name": "Panzerotto", "gender": "male" },
+        { "name": "Piadina", "gender": "female" },
+        { "name": "Lampredotto", "gender": "male" },
+        { "name": "Focaccia", "gender": "female" },
+        { "name": "Trapizzino", "gender": "male" },
+        { "name": "Gnocco Fritto", "gender": "male" },
+        { "name": "Crescentina", "gender": "female" },
+        { "name": "Sfincione", "gender": "male" },
+        { "name": "Calzone", "gender": "male" },
+        { "name": "Schiacciata", "gender": "female" },
+        { "name": "Olive Ascolane", "gender": "female" },
+        { "name": "Panelle", "gender": "female" },
+        { "name": "Pane e Panelle", "gender": "male" },
+        { "name": "Pani ca Meusa", "gender": "male" },
+        { "name": "Bombolone", "gender": "male" },
+        { "name": "Cuoppo", "gender": "male" },
+        { "name": "Frittatina", "gender": "female" },
+        { "name": "Cazzilli", "gender": "male" }
+    ]
+}

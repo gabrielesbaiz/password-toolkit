@@ -1,0 +1,26 @@
+{
+    "name": "italian_rappers",
+    "type": "people",
+    "values": [
+        { "name": "Fabri Fibra", "gender": "male" },
+        { "name": "Marracash", "gender": "male" },
+        { "name": "Salmo", "gender": "male" },
+        { "name": "Gue", "gender": "male" },
+        { "name": "Caparezza", "gender": "male" },
+        { "name": "Jovanotti", "gender": "male" },
+        { "name": "Mondo Marcio", "gender": "male" },
+        { "name": "Club Dogo", "gender": "male" },
+        { "name": "J-Ax", "gender": "male" },
+        { "name": "Fedez", "gender": "male" },
+        { "name": "Emis Killa", "gender": "male" },
+        { "name": "Tedua", "gender": "male" },
+        { "name": "Sfera Ebbasta", "gender": "male" },
+        { "name": "Lazza", "gender": "male" },
+        { "name": "Geolier", "gender": "male" },
+        { "name": "Rkomi", "gender": "male" },
+        { "name": "Madame", "gender": "female" },
+        { "name": "Ghali", "gender": "male" },
+        { "name": "Capo Plaza", "gender": "male" },
+        { "name": "Massimo Pericolo", "gender": "male" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "italian_dj_producers",
+    "type": "people",
+    "values": [
+        { "name": "Benny Benassi", "gender": "male" },
+        { "name": "Gabry Ponte", "gender": "male" },
+        { "name": "Joe T Vannelli", "gender": "male" },
+        { "name": "Claudio Coccoluto", "gender": "male" },
+        { "name": "Ralf", "gender": "male" },
+        { "name": "Don Joe", "gender": "male" },
+        { "name": "Shablo", "gender": "male" },
+        { "name": "Provenzano", "gender": "male" },
+        { "name": "Mauro Picotto", "gender": "male" },
+        { "name": "Molella", "gender": "male" },
+        { "name": "Fargetta", "gender": "male" },
+        { "name": "Jad", "gender": "male" },
+        { "name": "Tommy Vee", "gender": "male" },
+        { "name": "Mace", "gender": "male" },
+        { "name": "Charlie Charles", "gender": "male" },
+        { "name": "Meduza", "gender": "neutral" },
+        { "name": "Merk Kremont", "gender": "neutral" },
+        { "name": "Takagi e Ketra", "gender": "neutral" },
+        { "name": "Prezioso", "gender": "male" },
+        { "name": "Albertino", "gender": "male" }
+    ]
+}

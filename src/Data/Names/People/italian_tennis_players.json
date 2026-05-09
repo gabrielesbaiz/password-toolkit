@@ -1,0 +1,24 @@
+{
+    "name": "italian_tennis_players",
+    "type": "people",
+    "values": [
+        { "name": "Jannik Sinner", "gender": "male" },
+        { "name": "Matteo Berrettini", "gender": "male" },
+        { "name": "Flavia Pennetta", "gender": "female" },
+        { "name": "Francesca Schiavone", "gender": "female" },
+        { "name": "Adriano Panatta", "gender": "male" },
+        { "name": "Sara Errani", "gender": "female" },
+        { "name": "Roberta Vinci", "gender": "female" },
+        { "name": "Fabio Fognini", "gender": "male" },
+        { "name": "Lorenzo Sonego", "gender": "male" },
+        { "name": "Lorenzo Musetti", "gender": "male" },
+        { "name": "Flavio Cobolli", "gender": "male" },
+        { "name": "Jasmine Paolini", "gender": "female" },
+        { "name": "Lucia Bronzetti", "gender": "female" },
+        { "name": "Elisabetta Cocciaretto", "gender": "female" },
+        { "name": "Filippo Volandri", "gender": "male" },
+        { "name": "Paolo Bertolucci", "gender": "male" },
+        { "name": "Nicola Pietrangeli", "gender": "male" },
+        { "name": "Corrado Barazzutti", "gender": "male" }
+    ]
+}

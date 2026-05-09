@@ -1,0 +1,26 @@
+{
+    "name": "italian_pizza_types",
+    "type": "things",
+    "values": [
+        { "name": "Margherita", "gender": "female" },
+        { "name": "Marinara", "gender": "female" },
+        { "name": "Capricciosa", "gender": "female" },
+        { "name": "Diavola", "gender": "female" },
+        { "name": "Quattro Stagioni", "gender": "female" },
+        { "name": "Quattro Formaggi", "gender": "female" },
+        { "name": "Napoletana", "gender": "female" },
+        { "name": "Romana", "gender": "female" },
+        { "name": "Bufalina", "gender": "female" },
+        { "name": "Boscaiola", "gender": "female" },
+        { "name": "Ortolana", "gender": "female" },
+        { "name": "Tonno e Cipolla", "gender": "female" },
+        { "name": "Crudo e Rucola", "gender": "female" },
+        { "name": "Salsiccia e Friarielli", "gender": "female" },
+        { "name": "Calzone", "gender": "male" },
+        { "name": "Focaccia Pugliese", "gender": "female" },
+        { "name": "Sfincione", "gender": "male" },
+        { "name": "Pizza Fritta", "gender": "female" },
+        { "name": "Parmigiana", "gender": "female" },
+        { "name": "Mortadella e Pistacchio", "gender": "female" }
+    ]
+}

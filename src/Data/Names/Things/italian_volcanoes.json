@@ -1,0 +1,24 @@
+{
+    "name": "italian_volcanoes",
+    "type": "things",
+    "values": [
+        { "name": "Etna", "gender": "male" },
+        { "name": "Vesuvio", "gender": "male" },
+        { "name": "Stromboli", "gender": "male" },
+        { "name": "Vulcano", "gender": "male" },
+        { "name": "Solfatara", "gender": "female" },
+        { "name": "Campi Flegrei", "gender": "male" },
+        { "name": "Marsili", "gender": "male" },
+        { "name": "Vulture", "gender": "male" },
+        { "name": "Roccamonfina", "gender": "female" },
+        { "name": "Colli Albani", "gender": "male" },
+        { "name": "Pantelleria", "gender": "female" },
+        { "name": "Linosa", "gender": "female" },
+        { "name": "Ferdinandea", "gender": "female" },
+        { "name": "Empedocle", "gender": "male" },
+        { "name": "Ischia", "gender": "female" },
+        { "name": "Amiata", "gender": "male" },
+        { "name": "Vulsini", "gender": "male" },
+        { "name": "Cimini", "gender": "male" }
+    ]
+}

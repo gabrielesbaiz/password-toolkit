@@ -13,6 +13,11 @@
         { "name": "Clara Clayton", "gender": "female" },
         { "name": "Cane Pazzo Tannen", "gender": "male" },
         { "name": "Seamus McFly", "gender": "male" },
-        { "name": "Maggie McFly", "gender": "female" }
+        { "name": "Maggie McFly", "gender": "female" },
+        { "name": "Marlene McFly", "gender": "female" },
+        { "name": "Marty McFly Junior", "gender": "male" },
+        { "name": "Linda McFly", "gender": "female" },
+        { "name": "Giulio Eratostene Brown", "gender": "male" },
+        { "name": "Copernico", "gender": "male" }
     ]
 }

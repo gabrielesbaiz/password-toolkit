@@ -1,0 +1,26 @@
+{
+    "name": "italian_circus_terms",
+    "type": "things",
+    "values": [
+        { "name": "Saltimbanco", "gender": "male" },
+        { "name": "Giocoliere", "gender": "male" },
+        { "name": "Trapezista", "gender": "neutral" },
+        { "name": "Mangiafuoco", "gender": "male" },
+        { "name": "Illusionista", "gender": "neutral" },
+        { "name": "Acrobata", "gender": "neutral" },
+        { "name": "Funambolo", "gender": "male" },
+        { "name": "Domatore", "gender": "male" },
+        { "name": "Pagliaccio", "gender": "male" },
+        { "name": "Equilibrista", "gender": "neutral" },
+        { "name": "Contorsionista", "gender": "neutral" },
+        { "name": "Prestigiatore", "gender": "male" },
+        { "name": "Tendone", "gender": "male" },
+        { "name": "Pista", "gender": "female" },
+        { "name": "Cavallerizzo", "gender": "male" },
+        { "name": "Lanciacoltelli", "gender": "male" },
+        { "name": "Imbonitore", "gender": "male" },
+        { "name": "Fenomeno", "gender": "male" },
+        { "name": "Saltatore", "gender": "male" },
+        { "name": "Ventriloquo", "gender": "male" }
+    ]
+}

@@ -28,7 +28,6 @@
         { "name": "Terry Giacomello", "gender": "male" },
         { "name": "Roberto Petza", "gender": "male" },
         { "name": "Mauro Uliassi", "gender": "male" },
-        { "name": "Gino DAcampo", "gender": "male" },
         { "name": "Filippo La Mantia", "gender": "male" },
         { "name": "Pino Cuttaia", "gender": "male" },
         { "name": "Marco Sacco", "gender": "male" },
@@ -46,10 +45,6 @@
         { "name": "Cristina Bowerman", "gender": "female" },
         { "name": "Viviana Varese", "gender": "female" },
         { "name": "Caterina Ceraudo", "gender": "female" },
-        { "name": "Antonia Klugmann", "gender": "female" },
-        { "name": "Sara Scapin", "gender": "female" },
-        { "name": "Rossella Speranza", "gender": "female" },
-        { "name": "Isabella Potì", "gender": "female" },
-        { "name": "Norma Picone", "gender": "female" }
+        { "name": "Antonia Klugmann", "gender": "female" }
     ]
 }

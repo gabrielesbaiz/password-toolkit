@@ -1,0 +1,24 @@
+{
+    "name": "italian_card_games",
+    "type": "things",
+    "values": [
+        { "name": "Scopa", "gender": "female" },
+        { "name": "Briscola", "gender": "female" },
+        { "name": "Tressette", "gender": "male" },
+        { "name": "Scopone", "gender": "male" },
+        { "name": "Peppa", "gender": "female" },
+        { "name": "Asso Pigliatutto", "gender": "male" },
+        { "name": "Sette e Mezzo", "gender": "male" },
+        { "name": "Machiavelli", "gender": "male" },
+        { "name": "Bestia", "gender": "female" },
+        { "name": "Ramino", "gender": "male" },
+        { "name": "Cucu", "gender": "male" },
+        { "name": "Calabresella", "gender": "female" },
+        { "name": "Maraffa", "gender": "female" },
+        { "name": "Mercante in Fiera", "gender": "male" },
+        { "name": "Solitario", "gender": "male" },
+        { "name": "Briscolone", "gender": "male" },
+        { "name": "Madrasso", "gender": "male" },
+        { "name": "Mariposa", "gender": "female" }
+    ]
+}

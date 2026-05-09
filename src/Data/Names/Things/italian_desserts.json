@@ -1,0 +1,26 @@
+{
+    "name": "italian_desserts",
+    "type": "things",
+    "values": [
+        { "name": "Tiramisu", "gender": "male" },
+        { "name": "Cannolo", "gender": "male" },
+        { "name": "Panettone", "gender": "male" },
+        { "name": "Sfogliatella", "gender": "female" },
+        { "name": "Baba", "gender": "male" },
+        { "name": "Pandoro", "gender": "male" },
+        { "name": "Colomba", "gender": "female" },
+        { "name": "Cassata", "gender": "female" },
+        { "name": "Zuppa Inglese", "gender": "female" },
+        { "name": "Panna Cotta", "gender": "female" },
+        { "name": "Semifreddo", "gender": "male" },
+        { "name": "Profiterole", "gender": "male" },
+        { "name": "Crostata", "gender": "female" },
+        { "name": "Bigne", "gender": "male" },
+        { "name": "Struffoli", "gender": "male" },
+        { "name": "Pastiera", "gender": "female" },
+        { "name": "Torrone", "gender": "male" },
+        { "name": "Zeppola", "gender": "female" },
+        { "name": "Millefoglie", "gender": "female" },
+        { "name": "Granita", "gender": "female" }
+    ]
+}
