@@ -1,0 +1,26 @@
+{
+    "name": "italian_cars",
+    "type": "things",
+    "values": [
+        { "name": "Cinquecento", "gender": "neutral" },
+        { "name": "Panda", "gender": "neutral" },
+        { "name": "Stelvio", "gender": "neutral" },
+        { "name": "Giulia", "gender": "neutral" },
+        { "name": "Delta", "gender": "neutral" },
+        { "name": "Punto", "gender": "neutral" },
+        { "name": "Uno", "gender": "neutral" },
+        { "name": "Tipo", "gender": "neutral" },
+        { "name": "Bravo", "gender": "neutral" },
+        { "name": "Stilo", "gender": "neutral" },
+        { "name": "Ypsilon", "gender": "neutral" },
+        { "name": "Mito", "gender": "neutral" },
+        { "name": "Giulietta", "gender": "neutral" },
+        { "name": "Stratos", "gender": "neutral" },
+        { "name": "Testarossa", "gender": "neutral" },
+        { "name": "Quattroporte", "gender": "neutral" },
+        { "name": "Ghibli", "gender": "neutral" },
+        { "name": "Huracan", "gender": "neutral" },
+        { "name": "Countach", "gender": "neutral" },
+        { "name": "Multipla", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "italian_volleyball_legends",
+    "type": "people",
+    "values": [
+        { "name": "Ivan Zaytsev", "gender": "male" },
+        { "name": "Paola Egonu", "gender": "female" },
+        { "name": "Lorenzo Bernardi", "gender": "male" },
+        { "name": "Andrea Lucchetta", "gender": "male" },
+        { "name": "Luca Cantagalli", "gender": "male" },
+        { "name": "Andrea Gardini", "gender": "male" },
+        { "name": "Andrea Giani", "gender": "male" },
+        { "name": "Samuele Papi", "gender": "male" },
+        { "name": "Paolo Tofoli", "gender": "male" },
+        { "name": "Davide Mazzanti", "gender": "male" },
+        { "name": "Miryam Sylla", "gender": "female" },
+        { "name": "Elena Pietrini", "gender": "female" },
+        { "name": "Caterina Bosetti", "gender": "female" },
+        { "name": "Alessia Orro", "gender": "female" },
+        { "name": "Monica De Gennaro", "gender": "female" },
+        { "name": "Anna Danesi", "gender": "female" },
+        { "name": "Luca Vettori", "gender": "male" },
+        { "name": "Simone Giannelli", "gender": "male" },
+        { "name": "Osmany Juantorena", "gender": "male" },
+        { "name": "Maurizia Cacciatori", "gender": "female" }
+    ]
+}

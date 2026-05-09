@@ -1,0 +1,24 @@
+{
+    "name": "italian_aperitivi",
+    "type": "things",
+    "values": [
+        { "name": "Spritz", "gender": "male" },
+        { "name": "Negroni", "gender": "male" },
+        { "name": "Americano", "gender": "male" },
+        { "name": "Bellini", "gender": "male" },
+        { "name": "Hugo", "gender": "male" },
+        { "name": "Garibaldi", "gender": "male" },
+        { "name": "Aperol Spritz", "gender": "male" },
+        { "name": "Negroni Sbagliato", "gender": "male" },
+        { "name": "Crodino", "gender": "male" },
+        { "name": "Sanbitter", "gender": "male" },
+        { "name": "Rossini", "gender": "male" },
+        { "name": "Puccini", "gender": "male" },
+        { "name": "Tiziano", "gender": "male" },
+        { "name": "Bicicletta", "gender": "female" },
+        { "name": "Milano Torino", "gender": "male" },
+        { "name": "Mi To", "gender": "male" },
+        { "name": "Cardinale", "gender": "male" },
+        { "name": "Spritz Veneziano", "gender": "male" }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "name": "italian_sea_creatures",
+    "type": "things",
+    "values": [
+        { "name": "Polpo", "gender": "male" },
+        { "name": "Seppia", "gender": "female" },
+        { "name": "Triglia", "gender": "female" },
+        { "name": "Branzino", "gender": "male" },
+        { "name": "Calamaro", "gender": "male" },
+        { "name": "Murena", "gender": "female" },
+        { "name": "Aragosta", "gender": "female" },
+        { "name": "Astice", "gender": "male" },
+        { "name": "Scampo", "gender": "male" },
+        { "name": "Gambero", "gender": "male" },
+        { "name": "Mazzancolla", "gender": "female" },
+        { "name": "Spigola", "gender": "female" },
+        { "name": "Orata", "gender": "female" },
+        { "name": "Sarago", "gender": "male" },
+        { "name": "Dentice", "gender": "male" },
+        { "name": "Rombo", "gender": "male" },
+        { "name": "Sogliola", "gender": "female" },
+        { "name": "Tonno", "gender": "male" },
+        { "name": "Pesce Spada", "gender": "male" },
+        { "name": "Sardina", "gender": "female" },
+        { "name": "Acciuga", "gender": "female" },
+        { "name": "Cernia", "gender": "female" },
+        { "name": "Scorfano", "gender": "male" },
+        { "name": "Vongola", "gender": "female" },
+        { "name": "Cozza", "gender": "female" },
+        { "name": "Cavalluccio", "gender": "male" }
+    ]
+}

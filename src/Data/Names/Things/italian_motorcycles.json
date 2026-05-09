@@ -1,0 +1,26 @@
+{
+    "name": "italian_motorcycles",
+    "type": "things",
+    "values": [
+        { "name": "Vespa", "gender": "female" },
+        { "name": "Monster", "gender": "neutral" },
+        { "name": "Panigale", "gender": "neutral" },
+        { "name": "Multistrada", "gender": "neutral" },
+        { "name": "Scrambler", "gender": "neutral" },
+        { "name": "Diavel", "gender": "neutral" },
+        { "name": "Streetfighter", "gender": "neutral" },
+        { "name": "Hypermotard", "gender": "neutral" },
+        { "name": "Brutale", "gender": "neutral" },
+        { "name": "Dragster", "gender": "neutral" },
+        { "name": "Rivale", "gender": "neutral" },
+        { "name": "Stelvio", "gender": "neutral" },
+        { "name": "Griso", "gender": "neutral" },
+        { "name": "California", "gender": "neutral" },
+        { "name": "Lambretta", "gender": "female" },
+        { "name": "Cagiva", "gender": "neutral" },
+        { "name": "Gilera", "gender": "neutral" },
+        { "name": "Bimota", "gender": "neutral" },
+        { "name": "Aprilia Tuono", "gender": "neutral" },
+        { "name": "Aprilia RSV", "gender": "neutral" }
+    ]
+}

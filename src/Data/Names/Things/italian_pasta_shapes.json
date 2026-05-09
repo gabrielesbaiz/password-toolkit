@@ -1,0 +1,26 @@
+{
+    "name": "italian_pasta_shapes",
+    "type": "things",
+    "values": [
+        { "name": "Fusilli", "gender": "male" },
+        { "name": "Orecchiette", "gender": "female" },
+        { "name": "Rigatoni", "gender": "male" },
+        { "name": "Farfalle", "gender": "female" },
+        { "name": "Penne", "gender": "female" },
+        { "name": "Spaghetti", "gender": "male" },
+        { "name": "Linguine", "gender": "female" },
+        { "name": "Tagliatelle", "gender": "female" },
+        { "name": "Lasagne", "gender": "female" },
+        { "name": "Gnocchi", "gender": "male" },
+        { "name": "Ravioli", "gender": "male" },
+        { "name": "Tortellini", "gender": "male" },
+        { "name": "Cannelloni", "gender": "male" },
+        { "name": "Conchiglie", "gender": "female" },
+        { "name": "Bucatini", "gender": "male" },
+        { "name": "Pappardelle", "gender": "female" },
+        { "name": "Trofie", "gender": "female" },
+        { "name": "Pici", "gender": "male" },
+        { "name": "Maccheroni", "gender": "male" },
+        { "name": "Ziti", "gender": "male" }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "italian_wine_regions",
+    "type": "things",
+    "values": [
+        { "name": "Chianti", "gender": "male" },
+        { "name": "Barolo", "gender": "male" },
+        { "name": "Franciacorta", "gender": "female" },
+        { "name": "Soave", "gender": "male" },
+        { "name": "Montepulciano", "gender": "male" },
+        { "name": "Brunello", "gender": "male" },
+        { "name": "Amarone", "gender": "male" },
+        { "name": "Prosecco", "gender": "male" },
+        { "name": "Lambrusco", "gender": "male" },
+        { "name": "Valpolicella", "gender": "female" },
+        { "name": "Bardolino", "gender": "male" },
+        { "name": "Verdicchio", "gender": "male" },
+        { "name": "Sagrantino", "gender": "male" },
+        { "name": "Vermentino", "gender": "male" },
+        { "name": "Nebbiolo", "gender": "male" },
+        { "name": "Sangiovese", "gender": "male" },
+        { "name": "Greco di Tufo", "gender": "male" },
+        { "name": "Falerno", "gender": "male" },
+        { "name": "Marsala", "gender": "male" },
+        { "name": "Asti", "gender": "male" },
+        { "name": "Gavi", "gender": "male" },
+        { "name": "Cesanese", "gender": "male" }
+    ]
+}

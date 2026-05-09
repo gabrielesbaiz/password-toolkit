@@ -1,0 +1,31 @@
+{
+    "name": "roman_emperors",
+    "type": "people",
+    "values": [
+        { "name": "Augusto", "gender": "male" },
+        { "name": "Tiberio", "gender": "male" },
+        { "name": "Caligola", "gender": "male" },
+        { "name": "Claudio", "gender": "male" },
+        { "name": "Nerone", "gender": "male" },
+        { "name": "Galba", "gender": "male" },
+        { "name": "Otone", "gender": "male" },
+        { "name": "Vitellio", "gender": "male" },
+        { "name": "Vespasiano", "gender": "male" },
+        { "name": "Tito", "gender": "male" },
+        { "name": "Domiziano", "gender": "male" },
+        { "name": "Nerva", "gender": "male" },
+        { "name": "Traiano", "gender": "male" },
+        { "name": "Adriano", "gender": "male" },
+        { "name": "Antonino Pio", "gender": "male" },
+        { "name": "Marco Aurelio", "gender": "male" },
+        { "name": "Commodo", "gender": "male" },
+        { "name": "Settimio Severo", "gender": "male" },
+        { "name": "Caracalla", "gender": "male" },
+        { "name": "Eliogabalo", "gender": "male" },
+        { "name": "Alessandro Severo", "gender": "male" },
+        { "name": "Diocleziano", "gender": "male" },
+        { "name": "Costantino", "gender": "male" },
+        { "name": "Giuliano", "gender": "male" },
+        { "name": "Teodosio", "gender": "male" }
+    ]
+}

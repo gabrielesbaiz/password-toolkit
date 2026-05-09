@@ -1,0 +1,29 @@
+{
+    "name": "italian_islands",
+    "type": "things",
+    "values": [
+        { "name": "Capri", "gender": "female" },
+        { "name": "Ischia", "gender": "female" },
+        { "name": "Elba", "gender": "female" },
+        { "name": "Pantelleria", "gender": "female" },
+        { "name": "Stromboli", "gender": "male" },
+        { "name": "Linosa", "gender": "female" },
+        { "name": "Lampedusa", "gender": "female" },
+        { "name": "Procida", "gender": "female" },
+        { "name": "Salina", "gender": "female" },
+        { "name": "Vulcano", "gender": "male" },
+        { "name": "Lipari", "gender": "female" },
+        { "name": "Filicudi", "gender": "female" },
+        { "name": "Alicudi", "gender": "female" },
+        { "name": "Ustica", "gender": "female" },
+        { "name": "Favignana", "gender": "female" },
+        { "name": "Marettimo", "gender": "female" },
+        { "name": "Levanzo", "gender": "male" },
+        { "name": "Asinara", "gender": "female" },
+        { "name": "Tavolara", "gender": "female" },
+        { "name": "Caprera", "gender": "female" },
+        { "name": "Ponza", "gender": "female" },
+        { "name": "Ventotene", "gender": "female" },
+        { "name": "Maddalena", "gender": "female" }
+    ]
+}

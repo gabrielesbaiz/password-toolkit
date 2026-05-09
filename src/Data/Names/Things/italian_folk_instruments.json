@@ -1,0 +1,26 @@
+{
+    "name": "italian_folk_instruments",
+    "type": "things",
+    "values": [
+        { "name": "Mandolino", "gender": "male" },
+        { "name": "Zampogna", "gender": "female" },
+        { "name": "Organetto", "gender": "male" },
+        { "name": "Ocarina", "gender": "female" },
+        { "name": "Tamburello", "gender": "male" },
+        { "name": "Ciaramella", "gender": "female" },
+        { "name": "Launeddas", "gender": "female" },
+        { "name": "Putipu", "gender": "male" },
+        { "name": "Triccaballacca", "gender": "male" },
+        { "name": "Friscaletto", "gender": "male" },
+        { "name": "Castagnette", "gender": "female" },
+        { "name": "Liuto", "gender": "male" },
+        { "name": "Chitarra Battente", "gender": "female" },
+        { "name": "Surdulina", "gender": "female" },
+        { "name": "Mandola", "gender": "female" },
+        { "name": "Bombarda", "gender": "female" },
+        { "name": "Cornamusa", "gender": "female" },
+        { "name": "Piva", "gender": "female" },
+        { "name": "Ghironda", "gender": "female" },
+        { "name": "Marranzano", "gender": "male" }
+    ]
+}

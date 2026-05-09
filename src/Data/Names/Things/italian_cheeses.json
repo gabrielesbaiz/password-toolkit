@@ -22,10 +22,8 @@
         { "name": "Pecorino Sardo", "gender": "male" },
         { "name": "Pecorino Romano", "gender": "male" },
         { "name": "Fiore Sardo", "gender": "male" },
-        { "name": "Bresaola", "gender": "female" },
         { "name": "Scamorza", "gender": "female" },
         { "name": "Caciotta", "gender": "female" },
-        { "name": "Vacherin", "gender": "male" },
         { "name": "Tuma", "gender": "female" },
         { "name": "Canestrato", "gender": "male" }
     ]

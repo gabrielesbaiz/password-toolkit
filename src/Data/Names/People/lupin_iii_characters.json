@@ -1,0 +1,24 @@
+{
+    "name": "lupin_iii_characters",
+    "type": "people",
+    "values": [
+        { "name": "Lupin", "gender": "male" },
+        { "name": "Jigen", "gender": "male" },
+        { "name": "Goemon", "gender": "male" },
+        { "name": "Fujiko", "gender": "female" },
+        { "name": "Zenigata", "gender": "male" },
+        { "name": "Margot", "gender": "female" },
+        { "name": "Rebecca", "gender": "female" },
+        { "name": "Pycal", "gender": "male" },
+        { "name": "Mamo", "gender": "male" },
+        { "name": "Albert", "gender": "male" },
+        { "name": "Maurice", "gender": "male" },
+        { "name": "Lupin Primo", "gender": "male" },
+        { "name": "Conte Cagliostro", "gender": "male" },
+        { "name": "Clarisse", "gender": "female" },
+        { "name": "Daisuke Jigen", "gender": "male" },
+        { "name": "Goemon Ishikawa", "gender": "male" },
+        { "name": "Fujiko Mine", "gender": "female" },
+        { "name": "Koichi Zenigata", "gender": "male" }
+    ]
+}

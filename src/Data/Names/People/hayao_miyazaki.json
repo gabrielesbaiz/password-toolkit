@@ -1,0 +1,26 @@
+{
+    "name": "hayao_miyazaki",
+    "type": "people",
+    "values": [
+        { "name": "Totoro", "gender": "male" },
+        { "name": "Satsuki", "gender": "female" },
+        { "name": "Mei", "gender": "female" },
+        { "name": "Chihiro", "gender": "female" },
+        { "name": "Haku", "gender": "male" },
+        { "name": "Yubaba", "gender": "female" },
+        { "name": "Zeniba", "gender": "female" },
+        { "name": "Kamajii", "gender": "male" },
+        { "name": "Eboshi", "gender": "female" },
+        { "name": "Ashitaka", "gender": "male" },
+        { "name": "San", "gender": "female" },
+        { "name": "Moro", "gender": "female" },
+        { "name": "Sophie", "gender": "female" },
+        { "name": "Howl", "gender": "male" },
+        { "name": "Kiki", "gender": "female" },
+        { "name": "Nausicaa", "gender": "female" },
+        { "name": "Marco Pagot", "gender": "male" },
+        { "name": "Pazu", "gender": "male" },
+        { "name": "Sheeta", "gender": "female" },
+        { "name": "Muska", "gender": "male" }
+    ]
+}

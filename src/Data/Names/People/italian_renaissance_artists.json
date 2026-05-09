@@ -53,7 +53,6 @@
         { "name": "Beccafumi", "gender": "male" },
         { "name": "Leon Battista Alberti", "gender": "male" },
         { "name": "Pinturicchio", "gender": "male" },
-        { "name": "Melozzo da Forli", "gender": "male" },
         { "name": "Luca Cambiaso", "gender": "male" },
         { "name": "Gentile Bellini", "gender": "male" },
         { "name": "Palma il Vecchio", "gender": "male" },
@@ -66,7 +65,6 @@
         { "name": "Marietta Robusti", "gender": "female" },
         { "name": "Fede Galizia", "gender": "female" },
         { "name": "Diana Scultori", "gender": "female" },
-        { "name": "Plautilla Nelli", "gender": "female" },
-        { "name": "Properzia de Rossi", "gender": "female" }
+        { "name": "Plautilla Nelli", "gender": "female" }
     ]
 }

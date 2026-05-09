@@ -5,15 +5,176 @@ namespace Gabrielesbaiz\PasswordToolkit;
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Gabrielesbaiz\PasswordToolkit\Support\Entropy;
+use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
 
 class PasswordToolkit
 {
+    protected static ?array $poolCache = null;
+
     /**
-     * Generate password.
-     *
-     * @return string|null
+     * Generate password and return both string and strength report.
      */
-    public static function generate(): ?string
+    public static function generateWithReport(): array
+    {
+        $password = self::generate();
+        if ($password === null) {
+            return ['password' => null, 'report' => null];
+        }
+        return ['password' => $password, 'report' => self::structuralReport($password)];
+    }
+
+    /**
+     * Strength report for an arbitrary password (charset model).
+     */
+    public static function strength(string $password): StrengthReport
+    {
+        $cs = Entropy::charsetBits($password);
+        $bits = $cs['bits'];
+        $score = Entropy::score($bits);
+        $gps = (float) config('password-toolkit.strength.guesses_per_second', 1e10);
+        $crack = Entropy::crackTime($bits, $gps);
+
+        return new StrengthReport(
+            entropyBits: $bits,
+            length: $cs['length'],
+            label: Entropy::label($score),
+            score: $score,
+            components: ['charset_bits' => $bits],
+            charsetFlags: $cs['flags'],
+            crackTimeSeconds: $crack['seconds'],
+            crackTimeHuman: $crack['human'],
+        );
+    }
+
+    /**
+     * Strength report using structural model (knowledge of dictionaries).
+     */
+    public static function structuralReport(string $password): StrengthReport
+    {
+        [$names, $adjectives] = self::poolSizes();
+        $digits = config('password-toolkit.add_numbers', false) ? (int) config('password-toolkit.numbers_digits', 4) : 0;
+        $leet = config('password-toolkit.leetspeak_conversion', 'no');
+
+        $components = Entropy::structuralBits($names, $adjectives, $digits, $leet);
+        $bits = $components['total'];
+        $score = Entropy::score($bits);
+        $cs = Entropy::charsetBits($password);
+        $gps = (float) config('password-toolkit.strength.guesses_per_second', 1e10);
+        $crack = Entropy::crackTime($bits, $gps);
+
+        return new StrengthReport(
+            entropyBits: $bits,
+            length: mb_strlen($password),
+            label: Entropy::label($score),
+            score: $score,
+            components: $components,
+            charsetFlags: $cs['flags'],
+            crackTimeSeconds: $crack['seconds'],
+            crackTimeHuman: $crack['human'],
+        );
+    }
+
+    /**
+     * Count entries across enabled dictionaries (cached).
+     *
+     * @return array{0:int,1:int} [namesPool, adjectivesPool]
+     */
+    public static function poolSizes(): array
+    {
+        if (self::$poolCache !== null) {
+            return self::$poolCache;
+        }
+
+        $peopleConfig = config('password-toolkit.name_types.people', []);
+        $thingsConfig = config('password-toolkit.name_types.things', []);
+
+        $names = 0;
+        $adjectiveTotals = [];
+
+        $scan = function (string $dir, array $cfg) use (&$names, &$adjectiveTotals) {
+            if (! is_dir($dir)) return;
+            foreach (File::allFiles($dir) as $file) {
+                $key = pathinfo($file->getFilename(), PATHINFO_FILENAME);
+                if (! ($cfg[$key] ?? false)) continue;
+                $data = json_decode(File::get($file), true);
+                $names += count($data['values'] ?? []);
+                $adjFile = __DIR__ . '/Data/Adjectives/' . $key . '_adjectives.json';
+                if (is_file($adjFile)) {
+                    $adj = json_decode(File::get($adjFile), true);
+                    $adjectiveTotals[] = count($adj ?? []);
+                }
+            }
+        };
+
+        $scan(__DIR__ . '/Data/Names/People', $peopleConfig);
+        $scan(__DIR__ . '/Data/Names/Things', $thingsConfig);
+
+        $avgAdj = empty($adjectiveTotals) ? 0 : (int) (array_sum($adjectiveTotals) / count($adjectiveTotals));
+
+        return self::$poolCache = [$names, $avgAdj];
+    }
+
+    public static function clearPoolCache(): void
+    {
+        self::$poolCache = null;
+    }
+
+    /**
+     * Generate password(s).
+     *
+     * When $count === 1 (default) returns a single password string (or null
+     * if no dictionaries are available). When $count > 1 returns an array of
+     * passwords; entries that fail to generate are skipped.
+     *
+     * @param  int $count
+     * @return string|array|null
+     */
+    public static function generate(int $count = 1): string|array|null
+    {
+        if ($count < 1) {
+            throw new \InvalidArgumentException('Count must be >= 1.');
+        }
+
+        if ($count > 1) {
+            $out = [];
+            for ($i = 0; $i < $count; $i++) {
+                $p = self::generateOne();
+                if ($p !== null) {
+                    $out[] = $p;
+                }
+            }
+            return $out;
+        }
+
+        return self::generateOne();
+    }
+
+    /**
+     * Generate a batch of passwords each with its strength report.
+     *
+     * @param  int $count
+     * @return array<int, array{password: string, report: \Gabrielesbaiz\PasswordToolkit\Support\StrengthReport}>
+     */
+    public static function generateManyWithReport(int $count): array
+    {
+        if ($count < 1) {
+            throw new \InvalidArgumentException('Count must be >= 1.');
+        }
+
+        $out = [];
+        for ($i = 0; $i < $count; $i++) {
+            $p = self::generateOne();
+            if ($p === null) continue;
+            $out[] = ['password' => $p, 'report' => self::structuralReport($p)];
+        }
+        return $out;
+    }
+
+    /**
+     * Internal single-password generator (extracted body of legacy generate()).
+     */
+    protected static function generateOne(): ?string
     {
         $nameData = self::getRandomNameData();
 

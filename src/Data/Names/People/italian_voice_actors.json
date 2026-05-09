@@ -1,0 +1,26 @@
+{
+    "name": "italian_voice_actors",
+    "type": "people",
+    "values": [
+        { "name": "Ferruccio Amendola", "gender": "male" },
+        { "name": "Luca Ward", "gender": "male" },
+        { "name": "Pino Insegno", "gender": "male" },
+        { "name": "Francesco Pannofino", "gender": "male" },
+        { "name": "Massimo Lopez", "gender": "male" },
+        { "name": "Massimo Lodolo", "gender": "male" },
+        { "name": "Christian Iansante", "gender": "male" },
+        { "name": "Tonino Accolla", "gender": "male" },
+        { "name": "Roberto Pedicini", "gender": "male" },
+        { "name": "Massimo Corvo", "gender": "male" },
+        { "name": "Pino Locchi", "gender": "male" },
+        { "name": "Cesare Barbetti", "gender": "male" },
+        { "name": "Oreste Lionello", "gender": "male" },
+        { "name": "Claudia Catani", "gender": "female" },
+        { "name": "Cristiana Lionello", "gender": "female" },
+        { "name": "Domitilla DAmico", "gender": "female" },
+        { "name": "Ilaria Stagni", "gender": "female" },
+        { "name": "Rossella Acerbo", "gender": "female" },
+        { "name": "Stella Musy", "gender": "female" },
+        { "name": "Sandro Acerbo", "gender": "male" }
+    ]
+}

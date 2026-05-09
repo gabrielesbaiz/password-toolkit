@@ -1,0 +1,27 @@
+{
+    "name": "italian_train_stations_classic",
+    "type": "things",
+    "values": [
+        { "name": "Roma Termini", "gender": "neutral" },
+        { "name": "Milano Centrale", "gender": "neutral" },
+        { "name": "Santa Maria Novella", "gender": "neutral" },
+        { "name": "Torino Porta Nuova", "gender": "neutral" },
+        { "name": "Napoli Centrale", "gender": "neutral" },
+        { "name": "Venezia Santa Lucia", "gender": "neutral" },
+        { "name": "Bologna Centrale", "gender": "neutral" },
+        { "name": "Genova Brignole", "gender": "neutral" },
+        { "name": "Genova Piazza Principe", "gender": "neutral" },
+        { "name": "Bari Centrale", "gender": "neutral" },
+        { "name": "Palermo Centrale", "gender": "neutral" },
+        { "name": "Cagliari", "gender": "neutral" },
+        { "name": "Verona Porta Nuova", "gender": "neutral" },
+        { "name": "Padova", "gender": "neutral" },
+        { "name": "Trieste Centrale", "gender": "neutral" },
+        { "name": "Firenze Rifredi", "gender": "neutral" },
+        { "name": "Roma Tiburtina", "gender": "neutral" },
+        { "name": "Roma Ostiense", "gender": "neutral" },
+        { "name": "Milano Lambrate", "gender": "neutral" },
+        { "name": "Milano Garibaldi", "gender": "neutral" },
+        { "name": "Milano Rogoredo", "gender": "neutral" }
+    ]
+}
