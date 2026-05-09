@@ -3,7 +3,6 @@
     "type": "people",
     "values": [
         { "name": "Lucio Battisti", "gender": "male" },
-        { "name": "Fabrizio De Andre", "gender": "male" },
         { "name": "Pino Daniele", "gender": "male" },
         { "name": "Vasco Rossi", "gender": "male" },
         { "name": "Francesco De Gregori", "gender": "male" },
@@ -54,7 +53,6 @@
         { "name": "Giorgia", "gender": "female" },
         { "name": "Fiorella Mannoia", "gender": "female" },
         { "name": "Milva", "gender": "female" },
-        { "name": "Loredana Berte", "gender": "female" },
         { "name": "Irene Grandi", "gender": "female" },
         { "name": "Anna Oxa", "gender": "female" },
         { "name": "Mia Martini", "gender": "female" },

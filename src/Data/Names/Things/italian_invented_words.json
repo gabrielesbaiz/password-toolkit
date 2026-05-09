@@ -1,0 +1,25 @@
+{
+    "name": "italian_invented_words",
+    "type": "things",
+    "values": [
+        { "name": "Petaloso", "gender": "male" },
+        { "name": "Apericena", "gender": "female" },
+        { "name": "Spritzino", "gender": "male" },
+        { "name": "Spaghettata", "gender": "female" },
+        { "name": "Pennichella", "gender": "female" },
+        { "name": "Abbiocco", "gender": "male" },
+        { "name": "Attimino", "gender": "male" },
+        { "name": "Pizzata", "gender": "female" },
+        { "name": "Cazzeggio", "gender": "male" },
+        { "name": "Furbetto", "gender": "male" },
+        { "name": "Gattara", "gender": "female" },
+        { "name": "Mammone", "gender": "male" },
+        { "name": "Raccomandato", "gender": "male" },
+        { "name": "Bamboccione", "gender": "male" },
+        { "name": "Esodato", "gender": "male" },
+        { "name": "Precario", "gender": "male" },
+        { "name": "Supercazzola", "gender": "female" },
+        { "name": "Inciucio", "gender": "male" },
+        { "name": "Trinariciuto", "gender": "male" }
+    ]
+}

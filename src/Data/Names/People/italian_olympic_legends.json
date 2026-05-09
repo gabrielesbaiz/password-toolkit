@@ -1,0 +1,26 @@
+{
+    "name": "italian_olympic_legends",
+    "type": "people",
+    "values": [
+        { "name": "Alberto Tomba", "gender": "male" },
+        { "name": "Federica Pellegrini", "gender": "female" },
+        { "name": "Gianmarco Tamberi", "gender": "male" },
+        { "name": "Marcell Jacobs", "gender": "male" },
+        { "name": "Pietro Mennea", "gender": "male" },
+        { "name": "Deborah Compagnoni", "gender": "female" },
+        { "name": "Manuela Di Centa", "gender": "female" },
+        { "name": "Carolina Kostner", "gender": "female" },
+        { "name": "Sara Simeoni", "gender": "female" },
+        { "name": "Antonio Rossi", "gender": "male" },
+        { "name": "Massimiliano Rosolino", "gender": "male" },
+        { "name": "Gregorio Paltrinieri", "gender": "male" },
+        { "name": "Niccolo Campriani", "gender": "male" },
+        { "name": "Vincenzo Nibali", "gender": "male" },
+        { "name": "Igor Cassina", "gender": "male" },
+        { "name": "Yuri Chechi", "gender": "male" },
+        { "name": "Fiona May", "gender": "female" },
+        { "name": "Stefano Baldini", "gender": "male" },
+        { "name": "Valentina Vezzali", "gender": "female" },
+        { "name": "Aldo Montano", "gender": "male" }
+    ]
+}

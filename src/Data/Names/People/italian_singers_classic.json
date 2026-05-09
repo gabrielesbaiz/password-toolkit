@@ -1,0 +1,26 @@
+{
+    "name": "italian_singers_classic",
+    "type": "people",
+    "values": [
+        { "name": "Mina", "gender": "female" },
+        { "name": "Lucio Battisti", "gender": "male" },
+        { "name": "Adriano Celentano", "gender": "male" },
+        { "name": "Domenico Modugno", "gender": "male" },
+        { "name": "Lucio Dalla", "gender": "male" },
+        { "name": "Mia Martini", "gender": "female" },
+        { "name": "Patty Pravo", "gender": "female" },
+        { "name": "Ornella Vanoni", "gender": "female" },
+        { "name": "Iva Zanicchi", "gender": "female" },
+        { "name": "Gino Paoli", "gender": "male" },
+        { "name": "Rino Gaetano", "gender": "male" },
+        { "name": "Pino Daniele", "gender": "male" },
+        { "name": "Franco Battiato", "gender": "male" },
+        { "name": "Giorgio Gaber", "gender": "male" },
+        { "name": "Fabrizio De Andre", "gender": "male" },
+        { "name": "Fred Buscaglione", "gender": "male" },
+        { "name": "Sergio Endrigo", "gender": "male" },
+        { "name": "Loredana Berte", "gender": "female" },
+        { "name": "Gianna Nannini", "gender": "female" },
+        { "name": "Vasco Rossi", "gender": "male" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "italian_cryptids_legends",
+    "type": "things",
+    "values": [
+        { "name": "Befana", "gender": "female" },
+        { "name": "Mazzamurello", "gender": "male" },
+        { "name": "Badalisc", "gender": "male" },
+        { "name": "Krampus", "gender": "male" },
+        { "name": "Salbanelli", "gender": "male" },
+        { "name": "Anguana", "gender": "female" },
+        { "name": "Sbilf", "gender": "male" },
+        { "name": "Linchetto", "gender": "male" },
+        { "name": "Mazapegul", "gender": "male" },
+        { "name": "Buffardello", "gender": "male" },
+        { "name": "Massariol", "gender": "male" },
+        { "name": "Folletto", "gender": "male" },
+        { "name": "Lupo Mannaro", "gender": "male" },
+        { "name": "Janara", "gender": "female" },
+        { "name": "Munaciello", "gender": "male" },
+        { "name": "Borda", "gender": "female" },
+        { "name": "Marabbecca", "gender": "female" },
+        { "name": "Fauno", "gender": "male" },
+        { "name": "Strega", "gender": "female" },
+        { "name": "Orco", "gender": "male" }
+    ]
+}

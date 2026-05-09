@@ -1,0 +1,26 @@
+{
+    "name": "italian_motogp_legends",
+    "type": "people",
+    "values": [
+        { "name": "Valentino Rossi", "gender": "male" },
+        { "name": "Giacomo Agostini", "gender": "male" },
+        { "name": "Loris Capirossi", "gender": "male" },
+        { "name": "Max Biaggi", "gender": "male" },
+        { "name": "Pecco Bagnaia", "gender": "male" },
+        { "name": "Marco Simoncelli", "gender": "male" },
+        { "name": "Andrea Dovizioso", "gender": "male" },
+        { "name": "Marco Lucchinelli", "gender": "male" },
+        { "name": "Franco Uncini", "gender": "male" },
+        { "name": "Carlo Ubbiali", "gender": "male" },
+        { "name": "Walter Villa", "gender": "male" },
+        { "name": "Andrea Iannone", "gender": "male" },
+        { "name": "Danilo Petrucci", "gender": "male" },
+        { "name": "Enea Bastianini", "gender": "male" },
+        { "name": "Luca Marini", "gender": "male" },
+        { "name": "Renzo Pasolini", "gender": "male" },
+        { "name": "Tarquinio Provini", "gender": "male" },
+        { "name": "Mario Lega", "gender": "male" },
+        { "name": "Marco Bezzecchi", "gender": "male" },
+        { "name": "Franco Morbidelli", "gender": "male" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "italian_inventors",
+    "type": "people",
+    "values": [
+        { "name": "Antonio Meucci", "gender": "male" },
+        { "name": "Guglielmo Marconi", "gender": "male" },
+        { "name": "Alessandro Volta", "gender": "male" },
+        { "name": "Enzo Ferrari", "gender": "male" },
+        { "name": "Ferruccio Lamborghini", "gender": "male" },
+        { "name": "Camillo Olivetti", "gender": "male" },
+        { "name": "Pier Giorgio Perotto", "gender": "male" },
+        { "name": "Federico Faggin", "gender": "male" },
+        { "name": "Galileo Ferraris", "gender": "male" },
+        { "name": "Salvino Armati", "gender": "male" },
+        { "name": "Innocenzo Manzetti", "gender": "male" },
+        { "name": "Eugenio Barsanti", "gender": "male" },
+        { "name": "Felice Matteucci", "gender": "male" },
+        { "name": "Alessandro Cruto", "gender": "male" },
+        { "name": "Antonio Pacinotti", "gender": "male" },
+        { "name": "Giovanni Caselli", "gender": "male" },
+        { "name": "Luigi Galvani", "gender": "male" },
+        { "name": "Tito Burattini", "gender": "male" },
+        { "name": "Adriano Olivetti", "gender": "male" },
+        { "name": "Bartolomeo Cristofori", "gender": "male" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "italian_castles",
+    "type": "things",
+    "values": [
+        { "name": "Castel del Monte", "gender": "male" },
+        { "name": "Castello Sforzesco", "gender": "male" },
+        { "name": "Castello Estense", "gender": "male" },
+        { "name": "Castello Aragonese", "gender": "male" },
+        { "name": "Castello Fenis", "gender": "male" },
+        { "name": "Miramare", "gender": "male" },
+        { "name": "Castel Sant Angelo", "gender": "male" },
+        { "name": "Castello Scaligero", "gender": "male" },
+        { "name": "Forte Bard", "gender": "male" },
+        { "name": "Rocca Calascio", "gender": "female" },
+        { "name": "Maschio Angioino", "gender": "male" },
+        { "name": "Castel Nuovo", "gender": "male" },
+        { "name": "Castello Eurialo", "gender": "male" },
+        { "name": "Castello Maniace", "gender": "male" },
+        { "name": "Castello Buonconsiglio", "gender": "male" },
+        { "name": "Castel Roncolo", "gender": "male" },
+        { "name": "Castel Tirolo", "gender": "male" },
+        { "name": "Castello Caetani", "gender": "male" },
+        { "name": "Castello Issogne", "gender": "male" },
+        { "name": "Castello Verres", "gender": "male" }
+    ]
+}

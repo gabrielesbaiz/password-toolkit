@@ -1,0 +1,26 @@
+{
+    "name": "italian_dialect_words",
+    "type": "things",
+    "values": [
+        { "name": "Guaglione", "gender": "male" },
+        { "name": "Belin", "gender": "male" },
+        { "name": "Bischero", "gender": "male" },
+        { "name": "Pirla", "gender": "male" },
+        { "name": "Tarocco", "gender": "male" },
+        { "name": "Scialla", "gender": "neutral" },
+        { "name": "Bauscia", "gender": "male" },
+        { "name": "Ganzo", "gender": "male" },
+        { "name": "Ciospo", "gender": "male" },
+        { "name": "Patacca", "gender": "female" },
+        { "name": "Mamozio", "gender": "male" },
+        { "name": "Baluba", "gender": "male" },
+        { "name": "Citrullo", "gender": "male" },
+        { "name": "Giargiana", "gender": "male" },
+        { "name": "Baccala", "gender": "male" },
+        { "name": "Tappo", "gender": "male" },
+        { "name": "Zarro", "gender": "male" },
+        { "name": "Ciuccio", "gender": "male" },
+        { "name": "Munnezza", "gender": "female" },
+        { "name": "Pataccaro", "gender": "male" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "italian_mathematicians",
+    "type": "people",
+    "values": [
+        { "name": "Leonardo Fibonacci", "gender": "male" },
+        { "name": "Gerolamo Cardano", "gender": "male" },
+        { "name": "Giuseppe Lagrange", "gender": "male" },
+        { "name": "Giuseppe Peano", "gender": "male" },
+        { "name": "Giovanni Cassini", "gender": "male" },
+        { "name": "Maria Agnesi", "gender": "female" },
+        { "name": "Niccolo Tartaglia", "gender": "male" },
+        { "name": "Bonaventura Cavalieri", "gender": "male" },
+        { "name": "Ennio De Giorgi", "gender": "male" },
+        { "name": "Vito Volterra", "gender": "male" },
+        { "name": "Eugenio Beltrami", "gender": "male" },
+        { "name": "Luigi Cremona", "gender": "male" },
+        { "name": "Federigo Enriques", "gender": "male" },
+        { "name": "Guido Castelnuovo", "gender": "male" },
+        { "name": "Beniamino Segre", "gender": "male" },
+        { "name": "Renato Caccioppoli", "gender": "male" },
+        { "name": "Bruno de Finetti", "gender": "male" },
+        { "name": "Galileo Galilei", "gender": "male" },
+        { "name": "Lodovico Ferrari", "gender": "male" },
+        { "name": "Scipione del Ferro", "gender": "male" }
+    ]
+}

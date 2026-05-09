@@ -1,0 +1,28 @@
+{
+    "name": "italian_rivers",
+    "type": "things",
+    "values": [
+        { "name": "Po", "gender": "male" },
+        { "name": "Tevere", "gender": "male" },
+        { "name": "Arno", "gender": "male" },
+        { "name": "Adige", "gender": "male" },
+        { "name": "Piave", "gender": "male" },
+        { "name": "Brenta", "gender": "male" },
+        { "name": "Ticino", "gender": "male" },
+        { "name": "Adda", "gender": "male" },
+        { "name": "Reno", "gender": "male" },
+        { "name": "Tagliamento", "gender": "male" },
+        { "name": "Volturno", "gender": "male" },
+        { "name": "Garigliano", "gender": "male" },
+        { "name": "Aniene", "gender": "male" },
+        { "name": "Sangro", "gender": "male" },
+        { "name": "Pescara", "gender": "male" },
+        { "name": "Ofanto", "gender": "male" },
+        { "name": "Sile", "gender": "male" },
+        { "name": "Tronto", "gender": "male" },
+        { "name": "Esino", "gender": "male" },
+        { "name": "Bormida", "gender": "female" },
+        { "name": "Stura", "gender": "female" },
+        { "name": "Crati", "gender": "male" }
+    ]
+}

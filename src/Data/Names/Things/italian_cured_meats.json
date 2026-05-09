@@ -1,0 +1,26 @@
+{
+    "name": "italian_cured_meats",
+    "type": "things",
+    "values": [
+        { "name": "Prosciutto", "gender": "male" },
+        { "name": "Bresaola", "gender": "female" },
+        { "name": "Speck", "gender": "male" },
+        { "name": "Mortadella", "gender": "female" },
+        { "name": "Coppa", "gender": "female" },
+        { "name": "Salame", "gender": "male" },
+        { "name": "Pancetta", "gender": "female" },
+        { "name": "Guanciale", "gender": "male" },
+        { "name": "Capocollo", "gender": "male" },
+        { "name": "Lardo", "gender": "male" },
+        { "name": "Soppressata", "gender": "female" },
+        { "name": "Salsiccia", "gender": "female" },
+        { "name": "Cotechino", "gender": "male" },
+        { "name": "Zampone", "gender": "male" },
+        { "name": "Culatello", "gender": "male" },
+        { "name": "Nduja", "gender": "female" },
+        { "name": "Finocchiona", "gender": "female" },
+        { "name": "Salame Felino", "gender": "male" },
+        { "name": "Salame Milano", "gender": "male" },
+        { "name": "Ventricina", "gender": "female" }
+    ]
+}

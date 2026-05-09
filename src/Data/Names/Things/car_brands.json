@@ -5,7 +5,6 @@
         { "name": "Ferrari", "gender": "female" },
         { "name": "Lamborghini", "gender": "female" },
         { "name": "Porsche", "gender": "female" },
-        { "name": "Mercedes-Benz", "gender": "female" },
         { "name": "BMW", "gender": "female" },
         { "name": "Audi", "gender": "female" },
         { "name": "Tesla", "gender": "female" },
@@ -18,7 +17,6 @@
         { "name": "Aston Martin", "gender": "female" },
         { "name": "Maserati", "gender": "female" },
         { "name": "Bentley", "gender": "female" },
-        { "name": "Rolls-Royce", "gender": "female" },
         { "name": "Bugatti", "gender": "female" },
         { "name": "McLaren", "gender": "female" },
         { "name": "Alfa Romeo", "gender": "female" },
@@ -28,7 +26,6 @@
         { "name": "Mazda", "gender": "female" },
         { "name": "Fiat", "gender": "female" },
         { "name": "Peugeot", "gender": "female" },
-        { "name": "Citroen", "gender": "female" },
         { "name": "Renault", "gender": "female" },
         { "name": "Kia", "gender": "female" },
         { "name": "Hyundai", "gender": "female" },
@@ -49,17 +46,10 @@
         { "name": "Hummer", "gender": "female" },
         { "name": "Opel", "gender": "female" },
         { "name": "Seat", "gender": "female" },
-        { "name": "Skoda", "gender": "female" },
         { "name": "Smart", "gender": "female" },
         { "name": "Pagani", "gender": "female" },
         { "name": "Koenigsegg", "gender": "female" },
         { "name": "Rimac", "gender": "female" },
-        { "name": "Peugeot", "gender": "female" },
-        { "name": "Nissan", "gender": "female" },
-        { "name": "Honda", "gender": "female" },
-        { "name": "BMW", "gender": "female" },
-        { "name": "Chevrolet", "gender": "female" },
-        { "name": "Volkswagen", "gender": "female" },
-        { "name": "Audi", "gender": "female" }
+        { "name": "Volkswagen", "gender": "female" }
     ]
 }

@@ -1,0 +1,24 @@
+{
+    "name": "italian_dance_styles",
+    "type": "things",
+    "values": [
+        { "name": "Tarantella", "gender": "female" },
+        { "name": "Pizzica", "gender": "female" },
+        { "name": "Saltarello", "gender": "male" },
+        { "name": "Monferrina", "gender": "female" },
+        { "name": "Furlana", "gender": "female" },
+        { "name": "Tammurriata", "gender": "female" },
+        { "name": "Ballo Sardo", "gender": "male" },
+        { "name": "Quadriglia", "gender": "female" },
+        { "name": "Trescone", "gender": "male" },
+        { "name": "Bergamasca", "gender": "female" },
+        { "name": "Cantamaggio", "gender": "male" },
+        { "name": "Pizzica Pizzica", "gender": "female" },
+        { "name": "Calabrese", "gender": "female" },
+        { "name": "Ballu Tundu", "gender": "male" },
+        { "name": "Mazurka", "gender": "female" },
+        { "name": "Polka", "gender": "female" },
+        { "name": "Sardana", "gender": "female" },
+        { "name": "Forlana", "gender": "female" }
+    ]
+}

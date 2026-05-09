@@ -1,0 +1,26 @@
+{
+    "name": "italian_carnival_masks",
+    "type": "things",
+    "values": [
+        { "name": "Arlecchino", "gender": "male" },
+        { "name": "Pulcinella", "gender": "male" },
+        { "name": "Balanzone", "gender": "male" },
+        { "name": "Brighella", "gender": "male" },
+        { "name": "Colombina", "gender": "female" },
+        { "name": "Pantalone", "gender": "male" },
+        { "name": "Gianduja", "gender": "male" },
+        { "name": "Capitan Spaventa", "gender": "male" },
+        { "name": "Dottor Balanzone", "gender": "male" },
+        { "name": "Meneghino", "gender": "male" },
+        { "name": "Rugantino", "gender": "male" },
+        { "name": "Stenterello", "gender": "male" },
+        { "name": "Sandrone", "gender": "male" },
+        { "name": "Beppe Nappa", "gender": "male" },
+        { "name": "Tartaglia", "gender": "male" },
+        { "name": "Scaramuccia", "gender": "male" },
+        { "name": "Coviello", "gender": "male" },
+        { "name": "Smeraldina", "gender": "female" },
+        { "name": "Rosaura", "gender": "female" },
+        { "name": "Mirandolina", "gender": "female" }
+    ]
+}

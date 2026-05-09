@@ -1,0 +1,26 @@
+{
+    "name": "italian_lakes",
+    "type": "things",
+    "values": [
+        { "name": "Garda", "gender": "male" },
+        { "name": "Como", "gender": "male" },
+        { "name": "Maggiore", "gender": "male" },
+        { "name": "Trasimeno", "gender": "male" },
+        { "name": "Iseo", "gender": "male" },
+        { "name": "Bolsena", "gender": "male" },
+        { "name": "Bracciano", "gender": "male" },
+        { "name": "Vico", "gender": "male" },
+        { "name": "Albano", "gender": "male" },
+        { "name": "Nemi", "gender": "male" },
+        { "name": "Orta", "gender": "male" },
+        { "name": "Lugano", "gender": "male" },
+        { "name": "Idro", "gender": "male" },
+        { "name": "Levico", "gender": "male" },
+        { "name": "Caldaro", "gender": "male" },
+        { "name": "Resia", "gender": "male" },
+        { "name": "Ledro", "gender": "male" },
+        { "name": "Misurina", "gender": "female" },
+        { "name": "Carezza", "gender": "female" },
+        { "name": "Braies", "gender": "male" }
+    ]
+}

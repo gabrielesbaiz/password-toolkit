@@ -1,0 +1,26 @@
+{
+    "name": "italian_journalists",
+    "type": "people",
+    "values": [
+        { "name": "Indro Montanelli", "gender": "male" },
+        { "name": "Enzo Biagi", "gender": "male" },
+        { "name": "Oriana Fallaci", "gender": "female" },
+        { "name": "Enrico Mentana", "gender": "male" },
+        { "name": "Lilli Gruber", "gender": "female" },
+        { "name": "Eugenio Scalfari", "gender": "male" },
+        { "name": "Bruno Vespa", "gender": "male" },
+        { "name": "Maurizio Costanzo", "gender": "male" },
+        { "name": "Paolo Mieli", "gender": "male" },
+        { "name": "Ezio Mauro", "gender": "male" },
+        { "name": "Concita De Gregorio", "gender": "female" },
+        { "name": "Federica Sciarelli", "gender": "female" },
+        { "name": "Giovanni Floris", "gender": "male" },
+        { "name": "Massimo Gramellini", "gender": "male" },
+        { "name": "Aldo Cazzullo", "gender": "male" },
+        { "name": "Beppe Severgnini", "gender": "male" },
+        { "name": "Marco Travaglio", "gender": "male" },
+        { "name": "Milena Gabanelli", "gender": "female" },
+        { "name": "Gad Lerner", "gender": "male" },
+        { "name": "Corrado Augias", "gender": "male" }
+    ]
+}

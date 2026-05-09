@@ -1,0 +1,26 @@
+{
+    "name": "italian_progressive_rock_bands",
+    "type": "things",
+    "values": [
+        { "name": "PFM", "gender": "neutral" },
+        { "name": "Banco Mutuo Soccorso", "gender": "neutral" },
+        { "name": "Area", "gender": "neutral" },
+        { "name": "Le Orme", "gender": "neutral" },
+        { "name": "Goblin", "gender": "neutral" },
+        { "name": "Osanna", "gender": "neutral" },
+        { "name": "Balletto di Bronzo", "gender": "neutral" },
+        { "name": "New Trolls", "gender": "neutral" },
+        { "name": "Acqua Fragile", "gender": "neutral" },
+        { "name": "Museo Rosenbach", "gender": "neutral" },
+        { "name": "Latte e Miele", "gender": "neutral" },
+        { "name": "Maxophone", "gender": "neutral" },
+        { "name": "Delirium", "gender": "neutral" },
+        { "name": "Semiramis", "gender": "neutral" },
+        { "name": "Garybaldi", "gender": "neutral" },
+        { "name": "Locanda delle Fate", "gender": "neutral" },
+        { "name": "Quella Vecchia Locanda", "gender": "neutral" },
+        { "name": "Alphataurus", "gender": "neutral" },
+        { "name": "Celeste", "gender": "neutral" },
+        { "name": "Trip", "gender": "neutral" }
+    ]
+}

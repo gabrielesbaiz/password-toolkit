@@ -1,0 +1,27 @@
+{
+    "name": "italian_old_currencies",
+    "type": "things",
+    "values": [
+        { "name": "Lira", "gender": "female" },
+        { "name": "Soldo", "gender": "male" },
+        { "name": "Ducato", "gender": "male" },
+        { "name": "Fiorino", "gender": "male" },
+        { "name": "Scudo", "gender": "male" },
+        { "name": "Sesterzio", "gender": "male" },
+        { "name": "Denaro", "gender": "male" },
+        { "name": "Asse", "gender": "male" },
+        { "name": "Aureo", "gender": "male" },
+        { "name": "Solido", "gender": "male" },
+        { "name": "Tari", "gender": "male" },
+        { "name": "Tornese", "gender": "male" },
+        { "name": "Carlino", "gender": "male" },
+        { "name": "Grosso", "gender": "male" },
+        { "name": "Quattrino", "gender": "male" },
+        { "name": "Baiocco", "gender": "male" },
+        { "name": "Paolo", "gender": "male" },
+        { "name": "Genovino", "gender": "male" },
+        { "name": "Doppia", "gender": "female" },
+        { "name": "Marengo", "gender": "male" },
+        { "name": "Zecchino", "gender": "male" }
+    ]
+}
