@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="art/password-toolkit-logo.png" alt="PasswordToolkit" width="400">
+</p>
+
 # 🔐 PasswordToolkit
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
