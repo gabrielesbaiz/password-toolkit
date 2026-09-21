@@ -1,0 +1,26 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 6
+
+    paths:
+        - src
+        - config
+
+    # Keeps the analysis cache out of the package root.
+    tmpDir: build/phpstan
+
+    # PHPDoc in this package is documentation, not a proof. Trusting it as
+    # certain makes larastan report perfectly reachable branches as dead.
+    treatPhpDocTypesAsCertain: false
+
+    ignoreErrors:
+        # Collections returned by the dictionary layer are homogeneous but
+        # annotating every one of them buys nothing at level 6.
+        - identifier: missingType.generics
+
+        # The config file is the one place env() is legitimate.
+        -
+            identifier: larastan.noEnvCallsOutsideOfConfig
+            path: config/*

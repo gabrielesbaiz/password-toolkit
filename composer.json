@@ -1,10 +1,13 @@
 {
     "name": "gabrielesbaiz/password-toolkit",
-    "description": "A lightweight helper package to generate nice passwords.",
+    "description": "Generate memorable, human-friendly passwords from curated dictionaries, in any language.",
     "keywords": [
         "Gabriele Sbaiz",
         "laravel",
-        "password-toolkit"
+        "password",
+        "password-generator",
+        "password-toolkit",
+        "memorable-password"
     ],
     "homepage": "https://github.com/gabrielesbaiz/password-toolkit",
     "license": "MIT",
@@ -16,38 +19,44 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0||^12.0||^13.0"
+        "php": "^8.2",
+        "ext-json": "*",
+        "illuminate/contracts": "^10.0||^11.0||^12.0||^13.0",
+        "illuminate/support": "^10.0||^11.0||^12.0||^13.0",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
+        "larastan/larastan": "^2.9||^3.1",
         "laravel/pint": "^1.14",
-        "nunomaduro/collision": "^8.1.1||^7.10.0",
-        "orchestra/testbench": "^10.0.0||^9.0.0||^8.22.0",
+        "nunomaduro/collision": "^7.10.0||^8.1.1",
+        "orchestra/testbench": "^8.22.0||^9.0.0||^10.0.0",
         "pestphp/pest": "^3.0",
         "pestphp/pest-plugin-arch": "^3.0",
         "pestphp/pest-plugin-laravel": "^3.0",
-        "pestphp/pest-plugin-watch": "^3.0"
+        "pestphp/pest-plugin-watch": "^3.0",
+        "phpstan/extension-installer": "^1.4"
     },
     "autoload": {
         "psr-4": {
-            "Gabrielesbaiz\\PasswordToolkit\\": "src/",
-            "Gabrielesbaiz\\PasswordToolkit\\Database\\Factories\\": "database/factories/"
+            "Gabrielesbaiz\\PasswordToolkit\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gabrielesbaiz\\PasswordToolkit\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Gabrielesbaiz\\PasswordToolkit\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint",
+        "lint": [
+            "@format",
+            "@analyse"
+        ],
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
+        "test-coverage": "vendor/bin/pest --coverage"
     },
     "config": {
         "sort-packages": true,
