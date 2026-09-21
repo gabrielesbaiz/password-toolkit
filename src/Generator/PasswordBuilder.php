@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Gabrielesbaiz\PasswordToolkit\Generator;
 
 use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
+use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
 use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
@@ -105,6 +106,17 @@ final readonly class PasswordBuilder
     public function withoutNumbers(): self
     {
         return $this->derive(addNumbers: false);
+    }
+
+    /**
+     * Force the adjective before or after the name, overriding what the locale
+     * declares. Pass null to go back to following the locale.
+     */
+    public function adjectiveAt(AdjectivePosition|string|null $position): self
+    {
+        return $this->derive(adjectivePosition: is_string($position)
+            ? AdjectivePosition::parse($position)
+            : $position);
     }
 
     public function numbersAt(NumbersPosition|string $position): self

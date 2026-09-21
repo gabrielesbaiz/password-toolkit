@@ -79,7 +79,9 @@ it('accepts a string position and leet mode', function () {
 
 it('switches locale for one call only', function () {
     $english = PasswordToolkit::make()->only('star_wars')->locale('en')->withoutNumbers()->generate();
-    $adjective = last(explode('-', $english));
+
+    // English leads with the adjective.
+    $adjective = explode('-', $english)[0];
 
     $pool = array_column(json_decode(
         (string) file_get_contents(packagePath('src/Data/Adjectives/en/_default.json')),

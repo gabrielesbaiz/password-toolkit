@@ -256,13 +256,19 @@ class PasswordToolkit implements PasswordGenerator
 
         $adjective = mb_convert_case($adjective, MB_CASE_TITLE);
 
+        // Word order is a property of the language, not a preference: Italian
+        // says "Goldrake Mitico", English says "Legendary Goldrake". The locale
+        // declares it; config may override.
+        [$first, $second] = ($options->adjectivePosition ?? $this->adjectives->positionFor($options))
+            ->order($name, $adjective);
+
         $password = $options->addNumbers
             ? implode($separator, $options->numbersPosition->arrange(
-                $name,
-                $adjective,
+                $first,
+                $second,
                 (string) $this->randomNumber($options->numbersDigits),
             ))
-            : $name.$separator.$adjective;
+            : $first.$separator.$second;
 
         return $this->leetspeak->apply($password, $options->leetspeak);
     }

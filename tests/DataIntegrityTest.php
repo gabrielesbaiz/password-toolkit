@@ -118,3 +118,12 @@ it('has no config key that does not resolve to a dictionary', function () {
     expect($enabled)->toBe('*')
         ->and(config('password-toolkit.dictionaries.except'))->toBe([]);
 });
+
+it('declares a word order in every locale default pool', function (string $locale) {
+    $path = packagePath("src/Data/Adjectives/{$locale}/".AdjectiveResolver::DEFAULT_KEY.'.json');
+    $declared = json_decode((string) file_get_contents($path), true)['adjective_position'] ?? null;
+
+    // Without this a new locale silently inherits Italian word order, which
+    // reads as broken to anyone who speaks the new one.
+    expect($declared)->toBeIn(['before', 'after'], "locale [{$locale}] declares no adjective_position");
+})->with('locales');

@@ -4,7 +4,7 @@
 
 # PasswordToolkit
 
-Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-4271`, `Ferrari-Veloce-9912`, `Luke-Skywalker-Fearless-3301` — built from 91 curated dictionaries, in the language you choose, with dictionaries of your own alongside them.
+Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-4271` in Italian, `Fearless-Luke-Skywalker-3301` in English — built from 91 curated dictionaries, in the language you choose, with dictionaries of your own alongside them.
 
 [![Latest version](https://img.shields.io/packagist/v/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
 [![PHP](https://img.shields.io/packagist/dependency-v/gabrielesbaiz/password-toolkit/php?style=flat-square)](composer.json)
@@ -36,6 +36,7 @@ Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-4271`, `Fer
   - [Dictionaries](#dictionaries-1)
   - [Locale](#locale)
   - [Separator and word breaks](#separator-and-word-breaks)
+  - [Word order](#word-order)
   - [Numbers](#numbers)
   - [Leetspeak](#leetspeak)
   - [Strength](#strength)
@@ -121,7 +122,7 @@ PasswordToolkit::make()
     ->only(['star_wars', 'italian_wines'])
     ->digits(6)
     ->generate();
-// "Luke-Skywalker-Fearless-481902"
+// "Fearless-Luke-Skywalker-481902" — English leads with the adjective
 ```
 
 Inject it instead of using the facade, if you prefer:
@@ -163,6 +164,15 @@ Everything lives in `config/password-toolkit.php`.
 'separator_symbol' => '-',    // any string, or null for none
 'name_separator'   => true,   // "Luke-Skywalker" (true) or "LukeSkywalker" (false)
 ```
+
+### Word order
+
+```php
+'adjective_position' => null,   // null follows the locale; 'before' | 'after' overrides
+```
+
+Leave it `null`. Word order is a property of the language, not a preference, and
+each locale declares its own — see [Locales and adjectives](#locales-and-adjectives).
 
 ### Numbers
 
@@ -392,15 +402,39 @@ default pool, with correct gender agreement. English ships a 224-word default
 pool, all neutral — English adjectives do not agree, so every one of them is
 eligible for every name.
 
+**Word order follows the language.** Italian puts the adjective after the noun,
+English puts it before, and a password that gets this backwards reads as broken
+to a native speaker — which defeats the point of a memorable password.
+
 ```php
+PasswordToolkit::make()->locale('it')->generate();
+// "Goldrake-Mitico-4271"
+
 PasswordToolkit::make()->locale('en')->generate();
-// "Goldrake-Legendary-4271"
+// "Legendary-Goldrake-4271"
 ```
+
+Each locale declares its own order in its `_default.json`:
+
+```json
+{
+    "key": "_default",
+    "locale": "en",
+    "adjective_position": "before",
+    "values": [{ "name": "Legendary", "gender": "neutral" }]
+}
+```
+
+`before` or `after`. The setting is read from `_default.json` only — it is one
+fact about the language, not something a themed pack restates. Override it for
+every locale with the `adjective_position` config key, or for one call with
+`->adjectiveAt('after')`.
 
 To add a language, drop one file at
 `src/Data/Adjectives/{locale}/_default.json` — or in `{yourpath}/{locale}/` if
-you keep it in your application — and it works everywhere immediately. Themed
-files per dictionary are optional and can follow later.
+you keep it in your application — with its `adjective_position`, and it works
+everywhere immediately. Themed files per dictionary are optional and can follow
+later.
 
 ## The builder
 
@@ -419,6 +453,7 @@ PasswordToolkit::make()
     ->keepWordBreaks(false)                 // "LukeSkywalker" instead of "Luke_Skywalker"
     ->digits(6)                             // or ->withoutNumbers()
     ->numbersAt(NumbersPosition::Middle)    // start | middle | end
+    ->adjectiveAt('before')                 // override the locale's word order
     ->leet(Leetspeak::Basic)                // none | basic | advanced
     ->guessesPerSecond(1e12)                // attacker assumption for the report
     ->generate();                           // ->many(10), ->withReport(), ->manyWithReport(10)
@@ -542,7 +577,7 @@ PasswordToolkit::registerDictionary('products', ['Orbit', 'Beacon', 'Lantern']);
 
 // wherever you generate
 PasswordToolkit::make()->only('products')->locale('en')->generate();
-// "Beacon-Luminous-8814"
+// "Luminous-Beacon-8814"
 ```
 </details>
 
@@ -610,6 +645,18 @@ runtime — in a test, mostly — call `PasswordToolkit::flushCache()` afterward
 Your published config is still the 1.x shape. It works, but re-publish it:
 `php artisan vendor:publish --tag="password-toolkit-config" --force`. See
 [UPGRADE.md](UPGRADE.md).
+</details>
+
+<details>
+<summary><b>My adjective is on the wrong side of the name</b></summary>
+
+Word order comes from the locale's `_default.json`, not from your config. Check
+that the pack for your locale declares `"adjective_position"`, and that it says
+what you expect. A locale that declares nothing inherits the fallback locale's
+order, which for the shipped default is Italian's `after`.
+
+To force it regardless of locale, set `adjective_position` in config or call
+`->adjectiveAt('before')` on the builder.
 </details>
 
 <details>

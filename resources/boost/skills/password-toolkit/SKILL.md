@@ -65,6 +65,7 @@ PasswordToolkit::make()
     ->keepWordBreaks(false)                 // "LukeSkywalker" not "Luke_Skywalker"
     ->digits(6)                             // ->withoutNumbers()
     ->numbersAt(NumbersPosition::Middle)    // or 'middle'
+    ->adjectiveAt('before')                 // override the locale's word order
     ->leet(Leetspeak::Basic)                // or 'basic'
     ->guessesPerSecond(1e12)
     ->generate();                           // ->many(10) ->withReport() ->manyWithReport(10)
@@ -91,6 +92,7 @@ PasswordToolkit::make()
 'add_numbers'          => true,
 'numbers_digits'       => 4,
 'numbers_position'     => 'end',         // start | middle | end
+'adjective_position'   => null,          // null follows the locale; 'before' | 'after'
 'leetspeak_conversion' => 'none',        // none | basic | advanced
 'strength' => ['guesses_per_second' => 1e10],
 ```
@@ -138,8 +140,16 @@ Adjectives resolve in this order, first hit wins:
 4. `{fallback_locale}/_default.json`
 
 Italian ships themed adjectives for all 91 dictionaries (gender-agreeing) plus a
-1,237-word default pool. English ships a 224-word neutral default pool. Adding a
-language means adding one `_default.json`.
+1,237-word default pool. English ships a 224-word neutral default pool.
+
+**Word order follows the language.** Each locale's `_default.json` declares
+`"adjective_position": "before" | "after"` — Italian says `Goldrake-Mitico`,
+English says `Legendary-Goldrake`. It is read from `_default.json` only, never
+from a themed pack. Override with the `adjective_position` config key or
+`->adjectiveAt(...)` on the builder.
+
+Adding a language means adding one `_default.json` with its
+`adjective_position`.
 
 ## Strength reporting
 

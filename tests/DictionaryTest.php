@@ -118,8 +118,9 @@ describe('custom dictionaries', function () {
         app()->forgetInstance(Gabrielesbaiz\PasswordToolkit\Dictionaries\AdjectiveResolver::class);
         app()->forgetInstance(Gabrielesbaiz\PasswordToolkit\PasswordToolkit::class);
 
-        // Name from the path's crew.json, adjective from the path's en/crew.json.
-        expect(PasswordToolkit::generate())->toStartWith('Ada-Brilliant');
+        // Adjective from the path's en/crew.json, name from its crew.json —
+        // in English order, adjective first.
+        expect(PasswordToolkit::generate())->toStartWith('Brilliant-Ada');
 
         array_map('unlink', glob($directory.'/en/*.json') ?: []);
         array_map('unlink', glob($directory.'/*.json') ?: []);

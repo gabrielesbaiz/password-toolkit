@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Gabrielesbaiz\PasswordToolkit\Dictionaries;
 
+use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Gender;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\DictionaryNotFoundException;
 use Gabrielesbaiz\PasswordToolkit\Generator\Options;
@@ -36,6 +37,14 @@ final class AdjectiveResolver
     private array $cache = [];
 
     /**
+     * Word order declared by each locale's _default pack, keyed by locale.
+     * False marks a locale whose pack does not declare one.
+     *
+     * @var array<string, AdjectivePosition|false>
+     */
+    private array $positions = [];
+
+    /**
      * Extra lookup roots, searched before the built-in one.
      *
      * @var array<int, string>
@@ -57,6 +66,28 @@ final class AdjectiveResolver
     public function flush(): void
     {
         $this->cache = [];
+        $this->positions = [];
+    }
+
+    /**
+     * Where this locale puts its adjective.
+     *
+     * Read from the locale's _default pack rather than from configuration,
+     * because it is a fact about the language: Italian says "Goldrake Mitico",
+     * English says "Legendary Goldrake". A locale that does not declare one
+     * falls back to the fallback locale, then to After.
+     */
+    public function positionFor(Options $options): AdjectivePosition
+    {
+        foreach ([$options->resolvedLocale(), $options->fallbackLocale] as $locale) {
+            $position = $this->declaredPosition($locale);
+
+            if ($position instanceof AdjectivePosition) {
+                return $position;
+            }
+        }
+
+        return AdjectivePosition::After;
     }
 
     /**
@@ -105,6 +136,30 @@ final class AdjectiveResolver
         }
 
         return 0;
+    }
+
+    private function declaredPosition(string $locale): AdjectivePosition|false
+    {
+        if (array_key_exists($locale, $this->positions)) {
+            return $this->positions[$locale];
+        }
+
+        foreach ([...$this->paths, $this->basePath] as $root) {
+            $path = rtrim($root, '/').'/'.$locale.'/'.self::DEFAULT_KEY.'.json';
+
+            if (! is_file($path)) {
+                continue;
+            }
+
+            $decoded = json_decode((string) file_get_contents($path), true);
+            $declared = is_array($decoded) ? ($decoded['adjective_position'] ?? null) : null;
+
+            if (is_string($declared)) {
+                return $this->positions[$locale] = AdjectivePosition::parse($declared);
+            }
+        }
+
+        return $this->positions[$locale] = false;
     }
 
     /**

@@ -61,7 +61,21 @@ composer test      # pest
 ## Adding a locale
 
 1. Create `src/Data/Adjectives/{locale}/_default.json`. That single file is
-   enough for the locale to work everywhere.
+   enough for the locale to work everywhere. It must declare the language's word
+   order:
+
+   ```json
+   {
+       "key": "_default",
+       "locale": "en",
+       "adjective_position": "before",
+       "values": [{ "name": "Legendary", "gender": "neutral" }]
+   }
+   ```
+
+   `before` or `after` — whichever the language actually uses. A test enforces
+   that every locale declares one, because a locale that does not silently
+   inherits Italian word order.
 2. Add `resources/lang/{locale}/strength.php`, copying the English file.
 3. Themed files per dictionary are optional and can land later.
 

@@ -1,6 +1,7 @@
 {
     "key": "_default",
     "locale": "it",
+    "adjective_position": "after",
     "values": [
         {
             "name": "Abile",

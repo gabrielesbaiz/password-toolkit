@@ -1,6 +1,7 @@
 {
     "key": "_default",
     "locale": "en",
+    "adjective_position": "before",
     "values": [
         {
             "name": "Adventurous",

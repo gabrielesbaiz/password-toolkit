@@ -119,12 +119,18 @@ Then reapply your choices:
 + 'leetspeak_conversion' => 'none',
 ```
 
-Two keys are new and have no 1.x equivalent:
+Three keys are new and have no 1.x equivalent:
 
 ```php
-'locale' => null,            // null follows the application locale
-'fallback_locale' => 'it',   // where adjectives come from when the locale has none
+'locale' => null,               // null follows the application locale
+'fallback_locale' => 'it',      // where adjectives come from when the locale has none
+'adjective_position' => null,   // null follows the locale's own word order
 ```
+
+Leave `adjective_position` at `null`. Word order is a property of the language —
+Italian says `Goldrake-Mitico`, English says `Legendary-Goldrake` — and each
+locale declares its own. 1.x was Italian-only and always put the adjective last,
+so an Italian-locale install produces the same order it always did.
 
 Leave `fallback_locale` at `it` unless you have your own adjective packs. The
 built-in themed adjectives are Italian, and an English request falls through to

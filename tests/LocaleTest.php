@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\AdjectiveResolver;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\Entry;
+use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Gender;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\DictionaryNotFoundException;
 use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
@@ -37,9 +38,9 @@ it('falls back to the locale default pool when there is no themed file', functio
     config()->set('password-toolkit.locale', 'en');
     onlyDictionaries('star_wars');
 
-    // There is no en/star_wars.json, so this must come from en/_default.json.
-    $adjective = explode('-', PasswordToolkit::generate());
-    $adjective = end($adjective);
+    // There is no en/star_wars.json, so this must come from en/_default.json —
+    // and English puts the adjective first.
+    $adjective = explode('-', PasswordToolkit::generate())[0];
 
     expect(adjectiveNames('en', '_default'))->toContain($adjective);
 });
@@ -69,8 +70,7 @@ it('follows the application locale when none is configured', function () {
     app()->setLocale('en');
     onlyDictionaries('star_wars');
 
-    $adjective = explode('-', PasswordToolkit::generate());
-    $adjective = end($adjective);
+    $adjective = explode('-', PasswordToolkit::generate())[0];
 
     expect(adjectiveNames('en', '_default'))->toContain($adjective);
 });
@@ -110,4 +110,84 @@ it('reports a pool size per locale', function () {
         ->toBe(count(adjectiveNames('it', 'star_wars')))
         ->and($resolver->poolSize('star_wars', (new Options)->with(locale: 'en')))
         ->toBe(count(adjectiveNames('en', '_default')));
+});
+
+describe('word order', function () {
+    it('puts the adjective after the name in Italian', function () {
+        config()->set('password-toolkit.locale', 'it');
+        onlyDictionaries('star_wars');
+
+        [$first, $second] = explode('-', PasswordToolkit::make()->keepWordBreaks(false)->generate());
+
+        expect(adjectiveNames('it', 'star_wars'))->toContain($second)->not->toContain($first);
+    });
+
+    it('puts the adjective before the name in English', function () {
+        config()->set('password-toolkit.locale', 'en');
+        onlyDictionaries('star_wars');
+
+        [$first, $second] = explode('-', PasswordToolkit::make()->keepWordBreaks(false)->generate());
+
+        expect(adjectiveNames('en', '_default'))->toContain($first)->not->toContain($second);
+    });
+
+    it('reads the order from the locale pack', function () {
+        $resolver = app(AdjectiveResolver::class);
+
+        expect($resolver->positionFor((new Options)->with(locale: 'it')))->toBe(AdjectivePosition::After)
+            ->and($resolver->positionFor((new Options)->with(locale: 'en')))->toBe(AdjectivePosition::Before);
+    });
+
+    it('falls back to the fallback locale order for an unknown locale', function () {
+        $resolver = app(AdjectiveResolver::class);
+
+        expect($resolver->positionFor((new Options)->with(locale: 'de', fallbackLocale: 'en')))
+            ->toBe(AdjectivePosition::Before)
+            ->and($resolver->positionFor((new Options)->with(locale: 'de', fallbackLocale: 'it')))
+            ->toBe(AdjectivePosition::After);
+    });
+
+    it('defaults to After when no pack declares an order', function () {
+        $resolver = new AdjectiveResolver(packagePath('tests/fixtures/empty-adjectives'));
+
+        expect($resolver->positionFor((new Options)->with(locale: 'xx', fallbackLocale: 'zz')))
+            ->toBe(AdjectivePosition::After);
+    });
+
+    it('can be overridden in config', function () {
+        config()->set('password-toolkit.locale', 'it');
+        config()->set('password-toolkit.adjective_position', 'before');
+        onlyDictionaries('star_wars');
+
+        [$first] = explode('-', PasswordToolkit::make()->keepWordBreaks(false)->generate());
+
+        expect(adjectiveNames('it', 'star_wars'))->toContain($first);
+    });
+
+    it('can be overridden on the builder', function () {
+        config()->set('password-toolkit.locale', 'en');
+        onlyDictionaries('star_wars');
+
+        $password = PasswordToolkit::make()
+            ->keepWordBreaks(false)
+            ->adjectiveAt(AdjectivePosition::After)
+            ->generate();
+
+        expect(adjectiveNames('en', '_default'))->toContain(explode('-', $password)[1]);
+    });
+
+    it('goes back to following the locale when the override is cleared', function () {
+        $builder = PasswordToolkit::make()->adjectiveAt('before')->adjectiveAt(null);
+
+        expect($builder->options()->adjectivePosition)->toBeNull();
+    });
+
+    it('rejects an unknown position', function () {
+        AdjectivePosition::parse('sideways');
+    })->throws(Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException::class);
+
+    it('orders the two words', function () {
+        expect(AdjectivePosition::Before->order('Name', 'Adj'))->toBe(['Adj', 'Name'])
+            ->and(AdjectivePosition::After->order('Name', 'Adj'))->toBe(['Name', 'Adj']);
+    });
 });

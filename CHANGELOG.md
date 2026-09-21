@@ -12,6 +12,13 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
   through a fallback chain — themed file, locale default, fallback locale — so a
   new language needs one `_default.json`, not 91 themed files. An English pack
   of 224 adjectives ships with the package.
+- **Word order follows the language.** Each locale declares
+  `adjective_position` in its `_default.json`: Italian puts the adjective after
+  the noun (`Goldrake-Mitico`), English puts it before
+  (`Legendary-Goldrake`). Getting this backwards produces passwords that read as
+  broken to a native speaker, which defeats the point of a memorable password.
+  Override with the `adjective_position` config key or `->adjectiveAt(…)` on the
+  builder.
 - **Your own dictionaries**, from three routes: a directory listed in
   `dictionaries.paths`, an inline block in `dictionaries.custom`, or
   `PasswordToolkit::registerDictionary()` at runtime. A dictionary without its

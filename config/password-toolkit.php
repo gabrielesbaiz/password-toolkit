@@ -83,6 +83,23 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Adjective position
+    |--------------------------------------------------------------------------
+    |
+    | Null follows the locale, which is almost always what you want: word order
+    | is a property of the language, not a preference. Italian puts the
+    | adjective after the noun ("Goldrake-Mitico"), English puts it before
+    | ("Legendary-Goldrake"), and each locale declares its own order in its
+    | _default adjective pack.
+    |
+    | Set 'before' or 'after' to override that for every locale.
+    |
+    */
+
+    'adjective_position' => null,
+
+    /*
+    |--------------------------------------------------------------------------
     | Numbers
     |--------------------------------------------------------------------------
     |

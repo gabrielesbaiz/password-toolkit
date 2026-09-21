@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Gabrielesbaiz\PasswordToolkit\Generator;
 
+use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
@@ -38,6 +39,7 @@ final readonly class Options
         public bool $addNumbers = true,
         public int $numbersDigits = 4,
         public NumbersPosition $numbersPosition = NumbersPosition::End,
+        public ?AdjectivePosition $adjectivePosition = null,
         public Leetspeak $leetspeak = Leetspeak::None,
         public float $guessesPerSecond = 1e10,
     ) {
@@ -83,6 +85,9 @@ final readonly class Options
             addNumbers: (bool) ($config['add_numbers'] ?? true),
             numbersDigits: (int) ($config['numbers_digits'] ?? 4),
             numbersPosition: NumbersPosition::parse((string) ($config['numbers_position'] ?? 'end')),
+            adjectivePosition: is_string($config['adjective_position'] ?? null)
+                ? AdjectivePosition::parse($config['adjective_position'])
+                : null,
             leetspeak: Leetspeak::parse((string) ($config['leetspeak_conversion'] ?? 'none')),
             guessesPerSecond: (float) (config('password-toolkit.strength.guesses_per_second') ?? 1e10),
         );
@@ -154,6 +159,9 @@ final readonly class Options
             addNumbers: $changes['addNumbers'] ?? $this->addNumbers,
             numbersDigits: $changes['numbersDigits'] ?? $this->numbersDigits,
             numbersPosition: $changes['numbersPosition'] ?? $this->numbersPosition,
+            adjectivePosition: array_key_exists('adjectivePosition', $changes)
+                ? $changes['adjectivePosition']
+                : $this->adjectivePosition,
             leetspeak: $changes['leetspeak'] ?? $this->leetspeak,
             guessesPerSecond: $changes['guessesPerSecond'] ?? $this->guessesPerSecond,
         );
