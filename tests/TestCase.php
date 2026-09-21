@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Gabrielesbaiz\PasswordToolkit\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
+use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
 use Gabrielesbaiz\PasswordToolkit\PasswordToolkitServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
@@ -12,26 +14,31 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Gabrielesbaiz\\PasswordToolkit\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        // Dictionaries and adjective pools are process-cached, so a test that
+        // changes configuration has to start from a clean slate.
+        PasswordToolkit::flushCache();
     }
 
-    protected function getPackageProviders($app)
+    public function getEnvironmentSetUp($app): void
+    {
+        config()->set('database.default', 'testing');
+        config()->set('app.locale', 'it');
+    }
+
+    protected function getPackageProviders($app): array
     {
         return [
             PasswordToolkitServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    /**
+     * Restrict generation to a single dictionary.
+     */
+    protected function onlyDictionary(string ...$keys): void
     {
-        config()->set('database.default', 'testing');
+        config()->set('password-toolkit.dictionaries.enabled', array_values($keys));
 
-        /*
-         foreach (\Illuminate\Support\Facades\File::allFiles(__DIR__ . '/database/migrations') as $migration) {
-            (include $migration->getRealPath())->up();
-         }
-         */
+        PasswordToolkit::flushCache();
     }
 }

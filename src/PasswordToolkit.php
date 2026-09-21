@@ -1,364 +1,295 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Gabrielesbaiz\PasswordToolkit;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\File;
+use Gabrielesbaiz\PasswordToolkit\Contracts\DictionaryRepository;
+use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
+use Gabrielesbaiz\PasswordToolkit\Dictionaries\AdjectiveResolver;
+use Gabrielesbaiz\PasswordToolkit\Dictionaries\Entry;
+use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
+use Gabrielesbaiz\PasswordToolkit\Exceptions\NoDictionariesEnabledException;
+use Gabrielesbaiz\PasswordToolkit\Generator\LeetspeakTransformer;
+use Gabrielesbaiz\PasswordToolkit\Generator\Options;
+use Gabrielesbaiz\PasswordToolkit\Generator\PasswordBuilder;
 use Gabrielesbaiz\PasswordToolkit\Support\Entropy;
 use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
+use Illuminate\Support\Collection;
 
-class PasswordToolkit
+/**
+ * Assembles memorable passwords from a name, an agreeing adjective and an
+ * optional numeric segment.
+ *
+ * This is an ordinary object bound as a singleton, not a static class. That is
+ * what makes the facade genuinely swappable in tests, and what lets an
+ * application replace the dictionary source without subclassing.
+ */
+class PasswordToolkit implements PasswordGenerator
 {
-    protected static ?array $poolCache = null;
+    public function __construct(
+        protected readonly DictionaryRepository $dictionaries,
+        protected readonly AdjectiveResolver $adjectives,
+        protected readonly LeetspeakTransformer $leetspeak = new LeetspeakTransformer,
+    ) {}
 
     /**
-     * Generate password and return both string and strength report.
+     * Start a fluent, per-call override chain.
      */
-    public static function generateWithReport(): array
+    public function make(?Options $options = null): PasswordBuilder
     {
-        $password = self::generate();
-        if ($password === null) {
-            return ['password' => null, 'report' => null];
-        }
-        return ['password' => $password, 'report' => self::structuralReport($password)];
+        return new PasswordBuilder($this, $options ?? Options::fromConfig());
+    }
+
+    public function generate(?Options $options = null): string
+    {
+        $options ??= Options::fromConfig();
+
+        return $this->assemble($this->pickName($options), $options);
     }
 
     /**
-     * Strength report for an arbitrary password (charset model).
+     * @return array<int, string>
      */
-    public static function strength(string $password): StrengthReport
+    public function generateMany(int $count, ?Options $options = null): array
     {
-        $cs = Entropy::charsetBits($password);
-        $bits = $cs['bits'];
-        $score = Entropy::score($bits);
-        $gps = (float) config('password-toolkit.strength.guesses_per_second', 1e10);
-        $crack = Entropy::crackTime($bits, $gps);
+        $this->guardCount($count);
+
+        $options ??= Options::fromConfig();
+        $entries = $this->entries($options);
+        $passwords = [];
+
+        // Resolve the pool once, then assemble in a tight loop. 1.x re-scanned
+        // the data directory for every single password.
+        for ($i = 0; $i < $count; $i++) {
+            $passwords[] = $this->assemble($entries[random_int(0, count($entries) - 1)], $options);
+        }
+
+        return $passwords;
+    }
+
+    /**
+     * @return array{password: string, report: StrengthReport}
+     */
+    public function generateWithReport(?Options $options = null): array
+    {
+        $options ??= Options::fromConfig();
+        $password = $this->generate($options);
+
+        return ['password' => $password, 'report' => $this->structuralReport($password, $options)];
+    }
+
+    /**
+     * @return array<int, array{password: string, report: StrengthReport}>
+     */
+    public function generateManyWithReport(int $count, ?Options $options = null): array
+    {
+        $options ??= Options::fromConfig();
+
+        return array_map(
+            fn (string $password): array => [
+                'password' => $password,
+                'report' => $this->structuralReport($password, $options),
+            ],
+            $this->generateMany($count, $options),
+        );
+    }
+
+    /**
+     * Score an arbitrary password under the charset model.
+     *
+     * Use this for passwords you did not generate — a user's chosen one, say.
+     */
+    public function strength(string $password, ?Options $options = null): StrengthReport
+    {
+        $options ??= Options::fromConfig();
+        $charset = Entropy::charsetBits($password);
+        $bits = $charset['bits'];
+        $crack = Entropy::crackTime($bits, $options->guessesPerSecond);
 
         return new StrengthReport(
             entropyBits: $bits,
-            length: $cs['length'],
-            label: Entropy::label($score),
-            score: $score,
+            length: $charset['length'],
+            strength: Entropy::strength($bits),
             components: ['charset_bits' => $bits],
-            charsetFlags: $cs['flags'],
+            charsetFlags: $charset['flags'],
             crackTimeSeconds: $crack['seconds'],
             crackTimeHuman: $crack['human'],
         );
     }
 
     /**
-     * Strength report using structural model (knowledge of dictionaries).
+     * Score a password under the structural model.
+     *
+     * This is the honest number for a password this package produced: an
+     * attacker who knows the package searches the pool, not the alphabet.
      */
-    public static function structuralReport(string $password): StrengthReport
+    public function structuralReport(string $password, ?Options $options = null): StrengthReport
     {
-        [$names, $adjectives] = self::poolSizes();
-        $digits = config('password-toolkit.add_numbers', false) ? (int) config('password-toolkit.numbers_digits', 4) : 0;
-        $leet = config('password-toolkit.leetspeak_conversion', 'no');
+        $options ??= Options::fromConfig();
 
-        $components = Entropy::structuralBits($names, $adjectives, $digits, $leet);
+        $pools = $this->poolSizes($options);
+        $components = Entropy::structuralBits(
+            $pools['names'],
+            $pools['adjectives'],
+            $options->addNumbers ? $options->numbersDigits : 0,
+            $options->leetspeak,
+        );
+
         $bits = $components['total'];
-        $score = Entropy::score($bits);
-        $cs = Entropy::charsetBits($password);
-        $gps = (float) config('password-toolkit.strength.guesses_per_second', 1e10);
-        $crack = Entropy::crackTime($bits, $gps);
+        $crack = Entropy::crackTime($bits, $options->guessesPerSecond);
 
         return new StrengthReport(
             entropyBits: $bits,
             length: mb_strlen($password),
-            label: Entropy::label($score),
-            score: $score,
+            strength: Entropy::strength($bits),
             components: $components,
-            charsetFlags: $cs['flags'],
+            charsetFlags: Entropy::charsetBits($password)['flags'],
             crackTimeSeconds: $crack['seconds'],
             crackTimeHuman: $crack['human'],
         );
     }
 
     /**
-     * Count entries across enabled dictionaries (cached).
+     * How large the name and adjective pools currently are.
      *
-     * @return array{0:int,1:int} [namesPool, adjectivesPool]
+     * The adjective figure is the mean across the selected dictionaries, since
+     * which one applies depends on the name that gets picked.
+     *
+     * @return array{names: int, adjectives: int}
      */
-    public static function poolSizes(): array
+    public function poolSizes(?Options $options = null): array
     {
-        if (self::$poolCache !== null) {
-            return self::$poolCache;
-        }
-
-        $peopleConfig = config('password-toolkit.name_types.people', []);
-        $thingsConfig = config('password-toolkit.name_types.things', []);
+        $options ??= Options::fromConfig();
 
         $names = 0;
-        $adjectiveTotals = [];
+        $adjectiveCounts = [];
 
-        $scan = function (string $dir, array $cfg) use (&$names, &$adjectiveTotals) {
-            if (! is_dir($dir)) return;
-            foreach (File::allFiles($dir) as $file) {
-                $key = pathinfo($file->getFilename(), PATHINFO_FILENAME);
-                if (! ($cfg[$key] ?? false)) continue;
-                $data = json_decode(File::get($file), true);
-                $names += count($data['values'] ?? []);
-                $adjFile = __DIR__ . '/Data/Adjectives/' . $key . '_adjectives.json';
-                if (is_file($adjFile)) {
-                    $adj = json_decode(File::get($adjFile), true);
-                    $adjectiveTotals[] = count($adj ?? []);
-                }
-            }
-        };
+        foreach ($this->dictionaries->enabled($options) as $dictionary) {
+            $names += $dictionary->count();
+            $adjectiveCounts[] = $this->adjectives->poolSize($dictionary->key, $options);
+        }
 
-        $scan(__DIR__ . '/Data/Names/People', $peopleConfig);
-        $scan(__DIR__ . '/Data/Names/Things', $thingsConfig);
+        $adjectives = $adjectiveCounts === []
+            ? 0
+            : (int) round(array_sum($adjectiveCounts) / count($adjectiveCounts));
 
-        $avgAdj = empty($adjectiveTotals) ? 0 : (int) (array_sum($adjectiveTotals) / count($adjectiveTotals));
-
-        return self::$poolCache = [$names, $avgAdj];
-    }
-
-    public static function clearPoolCache(): void
-    {
-        self::$poolCache = null;
+        return ['names' => $names, 'adjectives' => $adjectives];
     }
 
     /**
-     * Generate password(s).
+     * Every dictionary currently visible, as plain arrays.
      *
-     * When $count === 1 (default) returns a single password string (or null
-     * if no dictionaries are available). When $count > 1 returns an array of
-     * passwords; entries that fail to generate are skipped.
-     *
-     * @param  int $count
-     * @return string|array|null
+     * @return Collection<string, array{key: string, type: string, locale: string|null, count: int, built_in: bool}>
      */
-    public static function generate(int $count = 1): string|array|null
+    public function dictionaries(?Options $options = null): Collection
     {
-        if ($count < 1) {
-            throw new \InvalidArgumentException('Count must be >= 1.');
-        }
+        $pool = $options === null
+            ? $this->dictionaries->all()
+            : $this->dictionaries->enabled($options);
 
-        if ($count > 1) {
-            $out = [];
-            for ($i = 0; $i < $count; $i++) {
-                $p = self::generateOne();
-                if ($p !== null) {
-                    $out[] = $p;
-                }
-            }
-            return $out;
-        }
-
-        return self::generateOne();
+        return collect($pool)->map(fn ($dictionary) => $dictionary->toArray());
     }
 
     /**
-     * Generate a batch of passwords each with its strength report.
+     * Add a dictionary at runtime, e.g. from a service provider.
      *
-     * @param  int $count
-     * @return array<int, array{password: string, report: \Gabrielesbaiz\PasswordToolkit\Support\StrengthReport}>
+     * @param  array<int, array{name: string, gender?: string}|string>  $values
      */
-    public static function generateManyWithReport(int $count): array
+    public function registerDictionary(string $key, array $values, string $type = 'things', ?string $locale = null): void
     {
-        if ($count < 1) {
-            throw new \InvalidArgumentException('Count must be >= 1.');
-        }
-
-        $out = [];
-        for ($i = 0; $i < $count; $i++) {
-            $p = self::generateOne();
-            if ($p === null) continue;
-            $out[] = ['password' => $p, 'report' => self::structuralReport($p)];
-        }
-        return $out;
+        $this->dictionaries->register($key, $values, $type, $locale);
     }
 
     /**
-     * Internal single-password generator (extracted body of legacy generate()).
+     * Drop every cached dictionary and adjective pool.
+     *
+     * Call this after changing configuration at runtime — tests mostly.
      */
-    protected static function generateOne(): ?string
+    public function flushCache(): void
     {
-        $nameData = self::getRandomNameData();
+        $this->dictionaries->flush();
+        $this->adjectives->flush();
+    }
 
-        if ($nameData->isEmpty()) {
-            return null;
+    /**
+     * @deprecated 2.0 Use flushCache(). Removed in 3.0.
+     */
+    public function clearPoolCache(): void
+    {
+        $this->flushCache();
+    }
+
+    /**
+     * @return array<int, Entry>
+     */
+    protected function entries(Options $options): array
+    {
+        $entries = $this->dictionaries->entries($options);
+
+        if ($entries === []) {
+            throw NoDictionariesEnabledException::make();
         }
 
-        $separator = config('password-toolkit.separator_symbol', '-');
+        return $entries;
+    }
 
-        $nameSeparator = config('password-toolkit.name_separator', true);
+    protected function pickName(Options $options): Entry
+    {
+        $entries = $this->entries($options);
 
-        $addNumbers = config('password-toolkit.add_numbers', false);
+        // Uniform across every enabled *name*, not across files. 1.x picked a
+        // file first, which made a 20-entry dictionary as likely as a
+        // 200-entry one and inflated the reported entropy.
+        return $entries[random_int(0, count($entries) - 1)];
+    }
 
-        $numbersDigits = config('password-toolkit.numbers_digits', 4);
+    protected function assemble(Entry $entry, Options $options): string
+    {
+        $separator = $options->separator ?? '';
 
-        $numbersPosition = config('password-toolkit.numbers_position', 'end');
+        $name = $options->nameSeparator
+            ? str_replace(' ', $separator, $entry->name)
+            : $this->alphanumeric($entry->name);
 
-        $leetspeakConversion = config('password-toolkit.leetspeak_conversion', 'no');
+        $adjective = $this->alphanumeric($this->adjectives->for($entry, $options)->name);
 
-        $name = $nameSeparator
-            ? Str::replace(' ', $separator, $nameData->get('name'))
-            : self::zapSpaces($nameData->get('name'));
+        $adjective = mb_convert_case($adjective, MB_CASE_TITLE);
 
-        $adjective = Str::title(self::zapSpaces(self::getRandomAdjective($nameData)));
+        $password = $options->addNumbers
+            ? implode($separator, $options->numbersPosition->arrange(
+                $name,
+                $adjective,
+                (string) $this->randomNumber($options->numbersDigits),
+            ))
+            : $name.$separator.$adjective;
 
-        if ($addNumbers) {
-            $number = (string) self::getRandomNumber($numbersDigits);
-
-            $password = match ($numbersPosition) {
-                'start' => implode($separator, [$number, $name, $adjective]),
-
-                'middle' => implode($separator, [$name, $number, $adjective]),
-
-                default => implode($separator, [$name, $adjective, $number]),
-            };
-        } else {
-            $password = $name . $separator . $adjective;
-        }
-
-        return match ($leetspeakConversion) {
-            'basic' => self::leetspeakBasic($password),
-
-            'advanced' => self::leetspeakAdvanced($password),
-
-            default => $password,
-        };
+        return $this->leetspeak->apply($password, $options->leetspeak);
     }
 
     /**
-     * Get random name data.
+     * Strip everything that is not a letter or a digit.
      *
-     * @return Collection
+     * Adjectives and un-separated names must not smuggle a space or an
+     * apostrophe into the password, where it would break shells and copy-paste.
      */
-    public static function getRandomNameData(): Collection
+    protected function alphanumeric(string $value): string
     {
-        $peopleConfig = config('password-toolkit.name_types.people', []);
-
-        $thingsConfig = config('password-toolkit.name_types.things', []);
-
-        $allFiles = collect(File::allFiles(__DIR__ . '/Data/Names/People'))
-            ->filter(fn ($file) => $peopleConfig[pathinfo($file->getFilename(), PATHINFO_FILENAME)] ?? false)
-            ->merge(
-                collect(File::allFiles(__DIR__ . '/Data/Names/Things'))
-                    ->filter(fn ($file) => $thingsConfig[pathinfo($file->getFilename(), PATHINFO_FILENAME)] ?? false)
-            );
-
-        if ($allFiles->isEmpty()) {
-            return collect();
-        }
-
-        $content = collect(json_decode(File::get($allFiles->random()), true));
-
-        $values = collect($content->get('values'))
-            ->map(fn ($object) => collect($object)->put('file', $content->get('name')));
-
-        return $values->isNotEmpty() ? collect($values->random()) : collect();
+        return (string) preg_replace('/[^\p{L}\p{N}]/u', '', $value);
     }
 
-    /**
-     * Get random adjective.
-     *
-     * @param  Collection $nameData
-     * @return string
-     */
-    public static function getRandomAdjective(Collection $nameData): string
+    protected function randomNumber(int $digits): int
     {
-        $filePath = __DIR__ . '/Data/Adjectives/' . $nameData->get('file') . '_adjectives.json';
-
-        $data = collect(json_decode(File::get($filePath), true));
-
-        $adjectiveData = $data->filter(fn ($object) => $object['gender'] === $nameData->get('gender') || $object['gender'] === 'neutral');
-
-        return collect($adjectiveData->random())->get('name');
-    }
-
-    /**
-     * Remove all non-alphanumeric characters from a string.
-     *
-     * @param  string|null $string
-     * @return string|null
-     */
-    protected static function zapSpaces(?string $string): ?string
-    {
-        return $string !== null
-            ? preg_replace('/[^a-zA-Z0-9]/', '', $string)
-            : null;
-    }
-
-    /**
-     * Get random number of a given length.
-     *
-     * @param  int $length
-     * @return int
-     */
-    protected static function getRandomNumber(int $length): int
-    {
-        $min = (int) pow(10, $length - 1);
-        $max = (int) pow(10, $length) - 1;
+        $min = 10 ** ($digits - 1);
+        $max = (10 ** $digits) - 1;
 
         return random_int($min, $max);
     }
 
-    /**
-     * Format text with leetspeak basic.
-     *
-     * @param  string $text
-     * @return string
-     */
-    protected static function leetspeakBasic(string $text): string
+    protected function guardCount(int $count): void
     {
-        $leetMap = [
-            'a' => '4',
-            'b' => '8',
-            'e' => '3',
-            'g' => '9',
-            'i' => '1',
-            'l' => '1',
-            'o' => '0',
-            'q' => '9',
-            'r' => '2',
-            's' => '$',
-            't' => '7',
-            'z' => '2',
-        ];
-
-        return implode('', array_map(fn ($char) => $leetMap[strtolower($char)] ?? $char, str_split($text)));
-    }
-
-    /**
-     * Format text with leetspeak advanced.
-     *
-     * @param  string $text
-     * @return string
-     */
-    protected static function leetspeakAdvanced(string $text): string
-    {
-        $leetMap = [
-            'a' => '4',
-            'b' => '8',
-            'c' => '<',
-            'e' => '3',
-            'f' => '|=',
-            'g' => '9',
-            'h' => '#',
-            'i' => '1',
-            'j' => '_|',
-            'k' => '|<',
-            'l' => '1',
-            'm' => '|V|',
-            'n' => '|\\|',
-            'o' => '0',
-            'p' => '|D',
-            'q' => '9',
-            'r' => '2',
-            's' => '$',
-            't' => '7',
-            'u' => '|_|',
-            'v' => '\\/',
-            'w' => '\\/\\/',
-            'x' => '%',
-            'y' => '`/',
-            'z' => '2',
-        ];
-
-        return implode('', array_map(fn ($char) => $leetMap[strtolower($char)] ?? $char, str_split($text)));
+        if ($count < 1) {
+            throw InvalidOptionException::because("Count must be 1 or more, got {$count}.");
+        }
     }
 }

@@ -1,0 +1,98 @@
+{
+    "key": "italian_inventors",
+    "locale": "it",
+    "values": [
+        {
+            "name": "geniale",
+            "gender": "neutral"
+        },
+        {
+            "name": "ingegnoso",
+            "gender": "male"
+        },
+        {
+            "name": "ingegnosa",
+            "gender": "female"
+        },
+        {
+            "name": "visionario",
+            "gender": "male"
+        },
+        {
+            "name": "visionaria",
+            "gender": "female"
+        },
+        {
+            "name": "innovativo",
+            "gender": "male"
+        },
+        {
+            "name": "innovativa",
+            "gender": "female"
+        },
+        {
+            "name": "creativo",
+            "gender": "male"
+        },
+        {
+            "name": "creativa",
+            "gender": "female"
+        },
+        {
+            "name": "pionieristico",
+            "gender": "male"
+        },
+        {
+            "name": "pionieristica",
+            "gender": "female"
+        },
+        {
+            "name": "brillante",
+            "gender": "neutral"
+        },
+        {
+            "name": "rivoluzionario",
+            "gender": "male"
+        },
+        {
+            "name": "rivoluzionaria",
+            "gender": "female"
+        },
+        {
+            "name": "intuitivo",
+            "gender": "male"
+        },
+        {
+            "name": "intuitiva",
+            "gender": "female"
+        },
+        {
+            "name": "audace",
+            "gender": "neutral"
+        },
+        {
+            "name": "metodico",
+            "gender": "male"
+        },
+        {
+            "name": "metodica",
+            "gender": "female"
+        },
+        {
+            "name": "instancabile",
+            "gender": "neutral"
+        },
+        {
+            "name": "lungimirante",
+            "gender": "neutral"
+        },
+        {
+            "name": "tecnico",
+            "gender": "male"
+        },
+        {
+            "name": "tecnica",
+            "gender": "female"
+        }
+    ]
+}

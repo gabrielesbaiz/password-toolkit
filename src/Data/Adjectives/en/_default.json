@@ -1,0 +1,902 @@
+{
+    "key": "_default",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Adventurous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Alert",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Artful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Atomic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Autumnal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Balanced",
+            "gender": "neutral"
+        },
+        {
+            "name": "Beaming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Blazing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Boundless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Breezy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bright",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bubbly",
+            "gender": "neutral"
+        },
+        {
+            "name": "Calm",
+            "gender": "neutral"
+        },
+        {
+            "name": "Candid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Capable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Careful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cheerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Chill",
+            "gender": "neutral"
+        },
+        {
+            "name": "Classic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Clever",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cosmic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cozy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Crafty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Crimson",
+            "gender": "neutral"
+        },
+        {
+            "name": "Crisp",
+            "gender": "neutral"
+        },
+        {
+            "name": "Curious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Daring",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dashing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dazzling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Deep",
+            "gender": "neutral"
+        },
+        {
+            "name": "Deft",
+            "gender": "neutral"
+        },
+        {
+            "name": "Delightful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Devoted",
+            "gender": "neutral"
+        },
+        {
+            "name": "Diligent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dreamy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dynamic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Eager",
+            "gender": "neutral"
+        },
+        {
+            "name": "Earnest",
+            "gender": "neutral"
+        },
+        {
+            "name": "Easy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Electric",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Eloquent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Endless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Epic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Eternal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fabled",
+            "gender": "neutral"
+        },
+        {
+            "name": "Faithful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Famous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fancy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fearless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Feisty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fierce",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fiery",
+            "gender": "neutral"
+        },
+        {
+            "name": "Flawless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fleet",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fluent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fond",
+            "gender": "neutral"
+        },
+        {
+            "name": "Frank",
+            "gender": "neutral"
+        },
+        {
+            "name": "Free",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fresh",
+            "gender": "neutral"
+        },
+        {
+            "name": "Friendly",
+            "gender": "neutral"
+        },
+        {
+            "name": "Funky",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gallant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Generous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gentle",
+            "gender": "neutral"
+        },
+        {
+            "name": "Genuine",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gifted",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glad",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gleaming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glorious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Golden",
+            "gender": "neutral"
+        },
+        {
+            "name": "Graceful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Grand",
+            "gender": "neutral"
+        },
+        {
+            "name": "Great",
+            "gender": "neutral"
+        },
+        {
+            "name": "Groovy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gutsy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Handy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Happy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hardy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Harmonic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hearty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Heroic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Honest",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hopeful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Humble",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ideal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immense",
+            "gender": "neutral"
+        },
+        {
+            "name": "Infinite",
+            "gender": "neutral"
+        },
+        {
+            "name": "Inspired",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intrepid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Jaunty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Jolly",
+            "gender": "neutral"
+        },
+        {
+            "name": "Jovial",
+            "gender": "neutral"
+        },
+        {
+            "name": "Joyful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Keen",
+            "gender": "neutral"
+        },
+        {
+            "name": "Kind",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lively",
+            "gender": "neutral"
+        },
+        {
+            "name": "Loyal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lucid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lucky",
+            "gender": "neutral"
+        },
+        {
+            "name": "Luminous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lunar",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Majestic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Marvelous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Merry",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mighty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mindful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Modern",
+            "gender": "neutral"
+        },
+        {
+            "name": "Modest",
+            "gender": "neutral"
+        },
+        {
+            "name": "Neat",
+            "gender": "neutral"
+        },
+        {
+            "name": "Nimble",
+            "gender": "neutral"
+        },
+        {
+            "name": "Noble",
+            "gender": "neutral"
+        },
+        {
+            "name": "Northern",
+            "gender": "neutral"
+        },
+        {
+            "name": "Notable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Optimal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Orbital",
+            "gender": "neutral"
+        },
+        {
+            "name": "Original",
+            "gender": "neutral"
+        },
+        {
+            "name": "Patient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Peaceful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Peerless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Perfect",
+            "gender": "neutral"
+        },
+        {
+            "name": "Playful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Pleasant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Plucky",
+            "gender": "neutral"
+        },
+        {
+            "name": "Poetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Polished",
+            "gender": "neutral"
+        },
+        {
+            "name": "Prime",
+            "gender": "neutral"
+        },
+        {
+            "name": "Pristine",
+            "gender": "neutral"
+        },
+        {
+            "name": "Prompt",
+            "gender": "neutral"
+        },
+        {
+            "name": "Proud",
+            "gender": "neutral"
+        },
+        {
+            "name": "Prudent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Quick",
+            "gender": "neutral"
+        },
+        {
+            "name": "Quiet",
+            "gender": "neutral"
+        },
+        {
+            "name": "Radiant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rapid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rare",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ready",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Regal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Reliable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Resolute",
+            "gender": "neutral"
+        },
+        {
+            "name": "Restless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Robust",
+            "gender": "neutral"
+        },
+        {
+            "name": "Royal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rugged",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sage",
+            "gender": "neutral"
+        },
+        {
+            "name": "Savvy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Serene",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sharp",
+            "gender": "neutral"
+        },
+        {
+            "name": "Shining",
+            "gender": "neutral"
+        },
+        {
+            "name": "Silent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Silver",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sincere",
+            "gender": "neutral"
+        },
+        {
+            "name": "Skillful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sleek",
+            "gender": "neutral"
+        },
+        {
+            "name": "Smart",
+            "gender": "neutral"
+        },
+        {
+            "name": "Smooth",
+            "gender": "neutral"
+        },
+        {
+            "name": "Snappy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Solar",
+            "gender": "neutral"
+        },
+        {
+            "name": "Solid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sonic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Southern",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sparkling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spirited",
+            "gender": "neutral"
+        },
+        {
+            "name": "Splendid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spry",
+            "gender": "neutral"
+        },
+        {
+            "name": "Stalwart",
+            "gender": "neutral"
+        },
+        {
+            "name": "Steady",
+            "gender": "neutral"
+        },
+        {
+            "name": "Stellar",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sterling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Stoic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Stormy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Stout",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strong",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sturdy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sublime",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sunny",
+            "gender": "neutral"
+        },
+        {
+            "name": "Superb",
+            "gender": "neutral"
+        },
+        {
+            "name": "Supreme",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tenacious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Thoughtful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Thriving",
+            "gender": "neutral"
+        },
+        {
+            "name": "Timeless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tranquil",
+            "gender": "neutral"
+        },
+        {
+            "name": "True",
+            "gender": "neutral"
+        },
+        {
+            "name": "Trusty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ultimate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unbroken",
+            "gender": "neutral"
+        },
+        {
+            "name": "Upbeat",
+            "gender": "neutral"
+        },
+        {
+            "name": "Valiant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vast",
+            "gender": "neutral"
+        },
+        {
+            "name": "Velvet",
+            "gender": "neutral"
+        },
+        {
+            "name": "Venerable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Verdant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vibrant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Victorious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vigilant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vintage",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vivid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Warm",
+            "gender": "neutral"
+        },
+        {
+            "name": "Watchful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wayward",
+            "gender": "neutral"
+        },
+        {
+            "name": "Whimsical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wholesome",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wild",
+            "gender": "neutral"
+        },
+        {
+            "name": "Willing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Winsome",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Witty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wondrous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Worthy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Zealous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Zesty",
+            "gender": "neutral"
+        }
+    ]
+}

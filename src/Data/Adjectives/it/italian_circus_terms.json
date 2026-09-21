@@ -1,0 +1,106 @@
+{
+    "key": "italian_circus_terms",
+    "locale": "it",
+    "values": [
+        {
+            "name": "spettacolare",
+            "gender": "neutral"
+        },
+        {
+            "name": "acrobatico",
+            "gender": "male"
+        },
+        {
+            "name": "acrobatica",
+            "gender": "female"
+        },
+        {
+            "name": "agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "audace",
+            "gender": "neutral"
+        },
+        {
+            "name": "spericolato",
+            "gender": "male"
+        },
+        {
+            "name": "spericolata",
+            "gender": "female"
+        },
+        {
+            "name": "buffo",
+            "gender": "male"
+        },
+        {
+            "name": "buffa",
+            "gender": "female"
+        },
+        {
+            "name": "stravagante",
+            "gender": "neutral"
+        },
+        {
+            "name": "magico",
+            "gender": "male"
+        },
+        {
+            "name": "magica",
+            "gender": "female"
+        },
+        {
+            "name": "ipnotico",
+            "gender": "male"
+        },
+        {
+            "name": "ipnotica",
+            "gender": "female"
+        },
+        {
+            "name": "scattante",
+            "gender": "neutral"
+        },
+        {
+            "name": "elastico",
+            "gender": "male"
+        },
+        {
+            "name": "elastica",
+            "gender": "female"
+        },
+        {
+            "name": "fenomenale",
+            "gender": "neutral"
+        },
+        {
+            "name": "rumoroso",
+            "gender": "male"
+        },
+        {
+            "name": "rumorosa",
+            "gender": "female"
+        },
+        {
+            "name": "colorato",
+            "gender": "male"
+        },
+        {
+            "name": "colorata",
+            "gender": "female"
+        },
+        {
+            "name": "vivace",
+            "gender": "neutral"
+        },
+        {
+            "name": "scherzoso",
+            "gender": "male"
+        },
+        {
+            "name": "scherzosa",
+            "gender": "female"
+        }
+    ]
+}

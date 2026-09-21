@@ -1,0 +1,102 @@
+{
+    "key": "italian_cryptids_legends",
+    "locale": "it",
+    "values": [
+        {
+            "name": "misterioso",
+            "gender": "male"
+        },
+        {
+            "name": "misteriosa",
+            "gender": "female"
+        },
+        {
+            "name": "spettrale",
+            "gender": "neutral"
+        },
+        {
+            "name": "magico",
+            "gender": "male"
+        },
+        {
+            "name": "magica",
+            "gender": "female"
+        },
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        },
+        {
+            "name": "leggendario",
+            "gender": "male"
+        },
+        {
+            "name": "leggendaria",
+            "gender": "female"
+        },
+        {
+            "name": "selvatico",
+            "gender": "male"
+        },
+        {
+            "name": "selvatica",
+            "gender": "female"
+        },
+        {
+            "name": "oscuro",
+            "gender": "male"
+        },
+        {
+            "name": "oscura",
+            "gender": "female"
+        },
+        {
+            "name": "sfuggente",
+            "gender": "neutral"
+        },
+        {
+            "name": "ombroso",
+            "gender": "male"
+        },
+        {
+            "name": "ombrosa",
+            "gender": "female"
+        },
+        {
+            "name": "notturno",
+            "gender": "male"
+        },
+        {
+            "name": "notturna",
+            "gender": "female"
+        },
+        {
+            "name": "stregato",
+            "gender": "male"
+        },
+        {
+            "name": "stregata",
+            "gender": "female"
+        },
+        {
+            "name": "inquietante",
+            "gender": "neutral"
+        },
+        {
+            "name": "occulto",
+            "gender": "male"
+        },
+        {
+            "name": "occulta",
+            "gender": "female"
+        },
+        {
+            "name": "feroce",
+            "gender": "neutral"
+        }
+    ]
+}

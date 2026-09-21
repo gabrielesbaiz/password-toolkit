@@ -1,0 +1,102 @@
+{
+    "key": "italian_progressive_rock_bands",
+    "locale": "it",
+    "values": [
+        {
+            "name": "visionario",
+            "gender": "male"
+        },
+        {
+            "name": "visionaria",
+            "gender": "female"
+        },
+        {
+            "name": "psichedelico",
+            "gender": "male"
+        },
+        {
+            "name": "psichedelica",
+            "gender": "female"
+        },
+        {
+            "name": "sperimentale",
+            "gender": "neutral"
+        },
+        {
+            "name": "sinfonico",
+            "gender": "male"
+        },
+        {
+            "name": "sinfonica",
+            "gender": "female"
+        },
+        {
+            "name": "epico",
+            "gender": "male"
+        },
+        {
+            "name": "epica",
+            "gender": "female"
+        },
+        {
+            "name": "leggendario",
+            "gender": "male"
+        },
+        {
+            "name": "leggendaria",
+            "gender": "female"
+        },
+        {
+            "name": "iconico",
+            "gender": "male"
+        },
+        {
+            "name": "iconica",
+            "gender": "female"
+        },
+        {
+            "name": "sognante",
+            "gender": "neutral"
+        },
+        {
+            "name": "ipnotico",
+            "gender": "male"
+        },
+        {
+            "name": "ipnotica",
+            "gender": "female"
+        },
+        {
+            "name": "potente",
+            "gender": "neutral"
+        },
+        {
+            "name": "virtuoso",
+            "gender": "male"
+        },
+        {
+            "name": "virtuosa",
+            "gender": "female"
+        },
+        {
+            "name": "ribelle",
+            "gender": "neutral"
+        },
+        {
+            "name": "audace",
+            "gender": "neutral"
+        },
+        {
+            "name": "innovativo",
+            "gender": "male"
+        },
+        {
+            "name": "innovativa",
+            "gender": "female"
+        },
+        {
+            "name": "intramontabile",
+            "gender": "neutral"
+        }
+    ]
+}

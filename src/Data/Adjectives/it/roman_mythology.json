@@ -1,0 +1,130 @@
+{
+    "key": "roman_mythology",
+    "locale": "it",
+    "values": [
+        {
+            "name": "divino",
+            "gender": "male"
+        },
+        {
+            "name": "divina",
+            "gender": "female"
+        },
+        {
+            "name": "immortale",
+            "gender": "neutral"
+        },
+        {
+            "name": "potente",
+            "gender": "neutral"
+        },
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        },
+        {
+            "name": "guerriero",
+            "gender": "male"
+        },
+        {
+            "name": "guerriera",
+            "gender": "female"
+        },
+        {
+            "name": "saggio",
+            "gender": "male"
+        },
+        {
+            "name": "saggia",
+            "gender": "female"
+        },
+        {
+            "name": "valoroso",
+            "gender": "male"
+        },
+        {
+            "name": "valorosa",
+            "gender": "female"
+        },
+        {
+            "name": "imperiale",
+            "gender": "neutral"
+        },
+        {
+            "name": "olimpico",
+            "gender": "male"
+        },
+        {
+            "name": "olimpica",
+            "gender": "female"
+        },
+        {
+            "name": "vittorioso",
+            "gender": "male"
+        },
+        {
+            "name": "vittoriosa",
+            "gender": "female"
+        },
+        {
+            "name": "glorioso",
+            "gender": "male"
+        },
+        {
+            "name": "gloriosa",
+            "gender": "female"
+        },
+        {
+            "name": "leggendario",
+            "gender": "male"
+        },
+        {
+            "name": "leggendaria",
+            "gender": "female"
+        },
+        {
+            "name": "sacro",
+            "gender": "male"
+        },
+        {
+            "name": "sacra",
+            "gender": "female"
+        },
+        {
+            "name": "fiero",
+            "gender": "male"
+        },
+        {
+            "name": "fiera",
+            "gender": "female"
+        },
+        {
+            "name": "magnanimo",
+            "gender": "male"
+        },
+        {
+            "name": "magnanima",
+            "gender": "female"
+        },
+        {
+            "name": "implacabile",
+            "gender": "neutral"
+        },
+        {
+            "name": "regale",
+            "gender": "neutral"
+        },
+        {
+            "name": "eterno",
+            "gender": "male"
+        },
+        {
+            "name": "eterna",
+            "gender": "female"
+        }
+    ]
+}

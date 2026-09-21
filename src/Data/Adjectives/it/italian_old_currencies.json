@@ -1,0 +1,102 @@
+{
+    "key": "italian_old_currencies",
+    "locale": "it",
+    "values": [
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        },
+        {
+            "name": "prezioso",
+            "gender": "male"
+        },
+        {
+            "name": "preziosa",
+            "gender": "female"
+        },
+        {
+            "name": "lucente",
+            "gender": "neutral"
+        },
+        {
+            "name": "dorato",
+            "gender": "male"
+        },
+        {
+            "name": "dorata",
+            "gender": "female"
+        },
+        {
+            "name": "argenteo",
+            "gender": "male"
+        },
+        {
+            "name": "argentea",
+            "gender": "female"
+        },
+        {
+            "name": "raro",
+            "gender": "male"
+        },
+        {
+            "name": "rara",
+            "gender": "female"
+        },
+        {
+            "name": "storico",
+            "gender": "male"
+        },
+        {
+            "name": "storica",
+            "gender": "female"
+        },
+        {
+            "name": "pesante",
+            "gender": "neutral"
+        },
+        {
+            "name": "coniato",
+            "gender": "male"
+        },
+        {
+            "name": "coniata",
+            "gender": "female"
+        },
+        {
+            "name": "regale",
+            "gender": "neutral"
+        },
+        {
+            "name": "imperiale",
+            "gender": "neutral"
+        },
+        {
+            "name": "ricercato",
+            "gender": "male"
+        },
+        {
+            "name": "ricercata",
+            "gender": "female"
+        },
+        {
+            "name": "scintillante",
+            "gender": "neutral"
+        },
+        {
+            "name": "leggendario",
+            "gender": "male"
+        },
+        {
+            "name": "leggendaria",
+            "gender": "female"
+        },
+        {
+            "name": "tintinnante",
+            "gender": "neutral"
+        }
+    ]
+}

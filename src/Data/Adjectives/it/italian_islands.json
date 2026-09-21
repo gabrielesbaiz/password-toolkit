@@ -1,0 +1,106 @@
+{
+    "key": "italian_islands",
+    "locale": "it",
+    "values": [
+        {
+            "name": "selvaggio",
+            "gender": "male"
+        },
+        {
+            "name": "selvaggia",
+            "gender": "female"
+        },
+        {
+            "name": "cristallino",
+            "gender": "male"
+        },
+        {
+            "name": "cristallina",
+            "gender": "female"
+        },
+        {
+            "name": "incantevole",
+            "gender": "neutral"
+        },
+        {
+            "name": "suggestivo",
+            "gender": "male"
+        },
+        {
+            "name": "suggestiva",
+            "gender": "female"
+        },
+        {
+            "name": "panoramico",
+            "gender": "male"
+        },
+        {
+            "name": "panoramica",
+            "gender": "female"
+        },
+        {
+            "name": "soleggiato",
+            "gender": "male"
+        },
+        {
+            "name": "soleggiata",
+            "gender": "female"
+        },
+        {
+            "name": "remoto",
+            "gender": "male"
+        },
+        {
+            "name": "remota",
+            "gender": "female"
+        },
+        {
+            "name": "magico",
+            "gender": "male"
+        },
+        {
+            "name": "magica",
+            "gender": "female"
+        },
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        },
+        {
+            "name": "azzurro",
+            "gender": "male"
+        },
+        {
+            "name": "azzurra",
+            "gender": "female"
+        },
+        {
+            "name": "rocciosa",
+            "gender": "female"
+        },
+        {
+            "name": "roccioso",
+            "gender": "male"
+        },
+        {
+            "name": "vulcanico",
+            "gender": "male"
+        },
+        {
+            "name": "vulcanica",
+            "gender": "female"
+        },
+        {
+            "name": "paradisiaco",
+            "gender": "male"
+        },
+        {
+            "name": "paradisiaca",
+            "gender": "female"
+        }
+    ]
+}

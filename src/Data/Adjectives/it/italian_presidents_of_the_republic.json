@@ -1,0 +1,66 @@
+{
+    "key": "italian_presidents_of_the_republic",
+    "locale": "it",
+    "values": [
+        {
+            "name": "rispettato",
+            "gender": "male"
+        },
+        {
+            "name": "affidabile",
+            "gender": "neutral"
+        },
+        {
+            "name": "autoritario",
+            "gender": "male"
+        },
+        {
+            "name": "imparziale",
+            "gender": "neutral"
+        },
+        {
+            "name": "diplomatico",
+            "gender": "male"
+        },
+        {
+            "name": "onorato",
+            "gender": "male"
+        },
+        {
+            "name": "indipendente",
+            "gender": "neutral"
+        },
+        {
+            "name": "equilibrato",
+            "gender": "male"
+        },
+        {
+            "name": "prestigioso",
+            "gender": "male"
+        },
+        {
+            "name": "lungimirante",
+            "gender": "neutral"
+        },
+        {
+            "name": "risoluto",
+            "gender": "male"
+        },
+        {
+            "name": "fidato",
+            "gender": "male"
+        },
+        {
+            "name": "storico",
+            "gender": "male"
+        },
+        {
+            "name": "solido",
+            "gender": "male"
+        },
+        {
+            "name": "composto",
+            "gender": "male"
+        }
+    ]
+}

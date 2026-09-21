@@ -1,0 +1,106 @@
+{
+    "key": "italian_mountains",
+    "locale": "it",
+    "values": [
+        {
+            "name": "imponente",
+            "gender": "neutral"
+        },
+        {
+            "name": "maestoso",
+            "gender": "male"
+        },
+        {
+            "name": "maestosa",
+            "gender": "female"
+        },
+        {
+            "name": "innevato",
+            "gender": "male"
+        },
+        {
+            "name": "innevata",
+            "gender": "female"
+        },
+        {
+            "name": "roccioso",
+            "gender": "male"
+        },
+        {
+            "name": "rocciosa",
+            "gender": "female"
+        },
+        {
+            "name": "alto",
+            "gender": "male"
+        },
+        {
+            "name": "alta",
+            "gender": "female"
+        },
+        {
+            "name": "ghiacciato",
+            "gender": "male"
+        },
+        {
+            "name": "ghiacciata",
+            "gender": "female"
+        },
+        {
+            "name": "selvaggio",
+            "gender": "male"
+        },
+        {
+            "name": "selvaggia",
+            "gender": "female"
+        },
+        {
+            "name": "panoramico",
+            "gender": "male"
+        },
+        {
+            "name": "panoramica",
+            "gender": "female"
+        },
+        {
+            "name": "scosceso",
+            "gender": "male"
+        },
+        {
+            "name": "scoscesa",
+            "gender": "female"
+        },
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        },
+        {
+            "name": "leggendario",
+            "gender": "male"
+        },
+        {
+            "name": "leggendaria",
+            "gender": "female"
+        },
+        {
+            "name": "vertiginoso",
+            "gender": "male"
+        },
+        {
+            "name": "vertiginosa",
+            "gender": "female"
+        },
+        {
+            "name": "alpino",
+            "gender": "male"
+        },
+        {
+            "name": "alpina",
+            "gender": "female"
+        }
+    ]
+}

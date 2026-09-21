@@ -1,0 +1,106 @@
+{
+    "key": "italian_cured_meats",
+    "locale": "it",
+    "values": [
+        {
+            "name": "saporito",
+            "gender": "male"
+        },
+        {
+            "name": "saporita",
+            "gender": "female"
+        },
+        {
+            "name": "stagionato",
+            "gender": "male"
+        },
+        {
+            "name": "stagionata",
+            "gender": "female"
+        },
+        {
+            "name": "speziato",
+            "gender": "male"
+        },
+        {
+            "name": "speziata",
+            "gender": "female"
+        },
+        {
+            "name": "saporoso",
+            "gender": "male"
+        },
+        {
+            "name": "saporosa",
+            "gender": "female"
+        },
+        {
+            "name": "tradizionale",
+            "gender": "neutral"
+        },
+        {
+            "name": "rustico",
+            "gender": "male"
+        },
+        {
+            "name": "rustica",
+            "gender": "female"
+        },
+        {
+            "name": "intenso",
+            "gender": "male"
+        },
+        {
+            "name": "intensa",
+            "gender": "female"
+        },
+        {
+            "name": "pregiato",
+            "gender": "male"
+        },
+        {
+            "name": "pregiata",
+            "gender": "female"
+        },
+        {
+            "name": "affumicato",
+            "gender": "male"
+        },
+        {
+            "name": "affumicata",
+            "gender": "female"
+        },
+        {
+            "name": "dolce",
+            "gender": "neutral"
+        },
+        {
+            "name": "piccante",
+            "gender": "neutral"
+        },
+        {
+            "name": "morbido",
+            "gender": "male"
+        },
+        {
+            "name": "morbida",
+            "gender": "female"
+        },
+        {
+            "name": "iconico",
+            "gender": "male"
+        },
+        {
+            "name": "iconica",
+            "gender": "female"
+        },
+        {
+            "name": "genuino",
+            "gender": "male"
+        },
+        {
+            "name": "genuina",
+            "gender": "female"
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "key": "italian_rappers",
+    "locale": "it",
+    "values": [
+        {
+            "name": "ribelle",
+            "gender": "neutral"
+        },
+        {
+            "name": "graffiante",
+            "gender": "neutral"
+        },
+        {
+            "name": "tagliente",
+            "gender": "neutral"
+        },
+        {
+            "name": "audace",
+            "gender": "neutral"
+        },
+        {
+            "name": "spavaldo",
+            "gender": "male"
+        },
+        {
+            "name": "spavalda",
+            "gender": "female"
+        },
+        {
+            "name": "scatenato",
+            "gender": "male"
+        },
+        {
+            "name": "scatenata",
+            "gender": "female"
+        },
+        {
+            "name": "viscerale",
+            "gender": "neutral"
+        },
+        {
+            "name": "carismatico",
+            "gender": "male"
+        },
+        {
+            "name": "carismatica",
+            "gender": "female"
+        },
+        {
+            "name": "iconico",
+            "gender": "male"
+        },
+        {
+            "name": "iconica",
+            "gender": "female"
+        },
+        {
+            "name": "grintoso",
+            "gender": "male"
+        },
+        {
+            "name": "grintosa",
+            "gender": "female"
+        },
+        {
+            "name": "irriverente",
+            "gender": "neutral"
+        },
+        {
+            "name": "magnetico",
+            "gender": "male"
+        },
+        {
+            "name": "magnetica",
+            "gender": "female"
+        },
+        {
+            "name": "potente",
+            "gender": "neutral"
+        },
+        {
+            "name": "veloce",
+            "gender": "neutral"
+        },
+        {
+            "name": "diretto",
+            "gender": "male"
+        },
+        {
+            "name": "diretta",
+            "gender": "female"
+        },
+        {
+            "name": "esplosivo",
+            "gender": "male"
+        },
+        {
+            "name": "esplosiva",
+            "gender": "female"
+        }
+    ]
+}

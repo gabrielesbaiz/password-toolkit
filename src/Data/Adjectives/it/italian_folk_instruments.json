@@ -1,0 +1,98 @@
+{
+    "key": "italian_folk_instruments",
+    "locale": "it",
+    "values": [
+        {
+            "name": "melodico",
+            "gender": "male"
+        },
+        {
+            "name": "melodica",
+            "gender": "female"
+        },
+        {
+            "name": "armonioso",
+            "gender": "male"
+        },
+        {
+            "name": "armoniosa",
+            "gender": "female"
+        },
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        },
+        {
+            "name": "tradizionale",
+            "gender": "neutral"
+        },
+        {
+            "name": "popolare",
+            "gender": "neutral"
+        },
+        {
+            "name": "rustico",
+            "gender": "male"
+        },
+        {
+            "name": "rustica",
+            "gender": "female"
+        },
+        {
+            "name": "evocativo",
+            "gender": "male"
+        },
+        {
+            "name": "evocativa",
+            "gender": "female"
+        },
+        {
+            "name": "vibrante",
+            "gender": "neutral"
+        },
+        {
+            "name": "ritmico",
+            "gender": "male"
+        },
+        {
+            "name": "ritmica",
+            "gender": "female"
+        },
+        {
+            "name": "festoso",
+            "gender": "male"
+        },
+        {
+            "name": "festosa",
+            "gender": "female"
+        },
+        {
+            "name": "delicato",
+            "gender": "male"
+        },
+        {
+            "name": "delicata",
+            "gender": "female"
+        },
+        {
+            "name": "intonato",
+            "gender": "male"
+        },
+        {
+            "name": "intonata",
+            "gender": "female"
+        },
+        {
+            "name": "sonoro",
+            "gender": "male"
+        },
+        {
+            "name": "sonora",
+            "gender": "female"
+        }
+    ]
+}

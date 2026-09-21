@@ -1,0 +1,106 @@
+{
+    "key": "italian_lakes",
+    "locale": "it",
+    "values": [
+        {
+            "name": "calmo",
+            "gender": "male"
+        },
+        {
+            "name": "calma",
+            "gender": "female"
+        },
+        {
+            "name": "limpido",
+            "gender": "male"
+        },
+        {
+            "name": "limpida",
+            "gender": "female"
+        },
+        {
+            "name": "cristallino",
+            "gender": "male"
+        },
+        {
+            "name": "cristallina",
+            "gender": "female"
+        },
+        {
+            "name": "panoramico",
+            "gender": "male"
+        },
+        {
+            "name": "panoramica",
+            "gender": "female"
+        },
+        {
+            "name": "suggestivo",
+            "gender": "male"
+        },
+        {
+            "name": "suggestiva",
+            "gender": "female"
+        },
+        {
+            "name": "incantevole",
+            "gender": "neutral"
+        },
+        {
+            "name": "alpino",
+            "gender": "male"
+        },
+        {
+            "name": "alpina",
+            "gender": "female"
+        },
+        {
+            "name": "azzurro",
+            "gender": "male"
+        },
+        {
+            "name": "azzurra",
+            "gender": "female"
+        },
+        {
+            "name": "profondo",
+            "gender": "male"
+        },
+        {
+            "name": "profonda",
+            "gender": "female"
+        },
+        {
+            "name": "tranquillo",
+            "gender": "male"
+        },
+        {
+            "name": "tranquilla",
+            "gender": "female"
+        },
+        {
+            "name": "ghiacciato",
+            "gender": "male"
+        },
+        {
+            "name": "ghiacciata",
+            "gender": "female"
+        },
+        {
+            "name": "romantico",
+            "gender": "male"
+        },
+        {
+            "name": "romantica",
+            "gender": "female"
+        },
+        {
+            "name": "antico",
+            "gender": "male"
+        },
+        {
+            "name": "antica",
+            "gender": "female"
+        }
+    ]
+}

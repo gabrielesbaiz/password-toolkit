@@ -19,8 +19,3 @@ parameters:
         # Collections returned by the dictionary layer are homogeneous but
         # annotating every one of them buys nothing at level 6.
         - identifier: missingType.generics
-
-        # The config file is the one place env() is legitimate.
-        -
-            identifier: larastan.noEnvCallsOutsideOfConfig
-            path: config/*

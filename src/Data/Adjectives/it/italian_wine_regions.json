@@ -1,0 +1,102 @@
+{
+    "key": "italian_wine_regions",
+    "locale": "it",
+    "values": [
+        {
+            "name": "corposo",
+            "gender": "male"
+        },
+        {
+            "name": "corposa",
+            "gender": "female"
+        },
+        {
+            "name": "robusto",
+            "gender": "male"
+        },
+        {
+            "name": "robusta",
+            "gender": "female"
+        },
+        {
+            "name": "elegante",
+            "gender": "neutral"
+        },
+        {
+            "name": "raffinato",
+            "gender": "male"
+        },
+        {
+            "name": "raffinata",
+            "gender": "female"
+        },
+        {
+            "name": "fruttato",
+            "gender": "male"
+        },
+        {
+            "name": "fruttata",
+            "gender": "female"
+        },
+        {
+            "name": "speziato",
+            "gender": "male"
+        },
+        {
+            "name": "speziata",
+            "gender": "female"
+        },
+        {
+            "name": "tannico",
+            "gender": "male"
+        },
+        {
+            "name": "tannica",
+            "gender": "female"
+        },
+        {
+            "name": "morbido",
+            "gender": "male"
+        },
+        {
+            "name": "morbida",
+            "gender": "female"
+        },
+        {
+            "name": "intenso",
+            "gender": "male"
+        },
+        {
+            "name": "intensa",
+            "gender": "female"
+        },
+        {
+            "name": "profumato",
+            "gender": "male"
+        },
+        {
+            "name": "profumata",
+            "gender": "female"
+        },
+        {
+            "name": "pregiato",
+            "gender": "male"
+        },
+        {
+            "name": "pregiata",
+            "gender": "female"
+        },
+        {
+            "name": "frizzante",
+            "gender": "neutral"
+        },
+        {
+            "name": "iconico",
+            "gender": "male"
+        },
+        {
+            "name": "iconica",
+            "gender": "female"
+        }
+    ]
+}

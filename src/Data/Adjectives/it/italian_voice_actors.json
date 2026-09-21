@@ -1,0 +1,98 @@
+{
+    "key": "italian_voice_actors",
+    "locale": "it",
+    "values": [
+        {
+            "name": "espressivo",
+            "gender": "male"
+        },
+        {
+            "name": "espressiva",
+            "gender": "female"
+        },
+        {
+            "name": "vellutato",
+            "gender": "male"
+        },
+        {
+            "name": "vellutata",
+            "gender": "female"
+        },
+        {
+            "name": "profondo",
+            "gender": "male"
+        },
+        {
+            "name": "profonda",
+            "gender": "female"
+        },
+        {
+            "name": "carismatico",
+            "gender": "male"
+        },
+        {
+            "name": "carismatica",
+            "gender": "female"
+        },
+        {
+            "name": "iconico",
+            "gender": "male"
+        },
+        {
+            "name": "iconica",
+            "gender": "female"
+        },
+        {
+            "name": "magnetico",
+            "gender": "male"
+        },
+        {
+            "name": "magnetica",
+            "gender": "female"
+        },
+        {
+            "name": "intenso",
+            "gender": "male"
+        },
+        {
+            "name": "intensa",
+            "gender": "female"
+        },
+        {
+            "name": "elegante",
+            "gender": "neutral"
+        },
+        {
+            "name": "versatile",
+            "gender": "neutral"
+        },
+        {
+            "name": "preciso",
+            "gender": "male"
+        },
+        {
+            "name": "precisa",
+            "gender": "female"
+        },
+        {
+            "name": "raffinato",
+            "gender": "male"
+        },
+        {
+            "name": "raffinata",
+            "gender": "female"
+        },
+        {
+            "name": "evocativo",
+            "gender": "male"
+        },
+        {
+            "name": "evocativa",
+            "gender": "female"
+        },
+        {
+            "name": "teatrale",
+            "gender": "neutral"
+        }
+    ]
+}

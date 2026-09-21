@@ -1,0 +1,98 @@
+{
+    "key": "italian_dj_producers",
+    "locale": "it",
+    "values": [
+        {
+            "name": "ipnotico",
+            "gender": "male"
+        },
+        {
+            "name": "ipnotica",
+            "gender": "female"
+        },
+        {
+            "name": "scatenato",
+            "gender": "male"
+        },
+        {
+            "name": "scatenata",
+            "gender": "female"
+        },
+        {
+            "name": "elettrico",
+            "gender": "male"
+        },
+        {
+            "name": "elettrica",
+            "gender": "female"
+        },
+        {
+            "name": "ritmico",
+            "gender": "male"
+        },
+        {
+            "name": "ritmica",
+            "gender": "female"
+        },
+        {
+            "name": "groovy",
+            "gender": "neutral"
+        },
+        {
+            "name": "energico",
+            "gender": "male"
+        },
+        {
+            "name": "energica",
+            "gender": "female"
+        },
+        {
+            "name": "esplosivo",
+            "gender": "male"
+        },
+        {
+            "name": "esplosiva",
+            "gender": "female"
+        },
+        {
+            "name": "magnetico",
+            "gender": "male"
+        },
+        {
+            "name": "magnetica",
+            "gender": "female"
+        },
+        {
+            "name": "innovativo",
+            "gender": "male"
+        },
+        {
+            "name": "innovativa",
+            "gender": "female"
+        },
+        {
+            "name": "iconico",
+            "gender": "male"
+        },
+        {
+            "name": "iconica",
+            "gender": "female"
+        },
+        {
+            "name": "cult",
+            "gender": "neutral"
+        },
+        {
+            "name": "trendy",
+            "gender": "neutral"
+        },
+        {
+            "name": "potente",
+            "gender": "neutral"
+        },
+        {
+            "name": "trascinante",
+            "gender": "neutral"
+        }
+    ]
+}
