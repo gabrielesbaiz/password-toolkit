@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-137 dictionaries — **95 of people** and **42 of things** — holding
-2,647 names and 1,019 names respectively, each with themed adjectives in both
+147 dictionaries — **99 of people** and **48 of things** — holding
+2,492 names and 1,109 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -241,13 +241,14 @@ Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
 is translated where a translation exists and left alone where it should be.
 
 <details>
-<summary><b>People (95)</b></summary>
+<summary><b>People (99)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
 | `a_clockwork_orange` | 🍊 screen | en | 13 | Alex DeLarge |
 | `alien` | 👽 screen | en | 15 | Ellen Ripley |
 | `apocalypse_now` | 🚁 screen | en | 10 | Benjamin Willard |
+| `arthurian_legend` | ⚔️ myth | en | 15 | Arthur |
 | `back_to_the_future` | 🚗 screen | en | 17 | Marty McFly |
 | `barbie` | 💗 screen | en | 15 | Barbie |
 | `blade_runner` | 🌧️ screen | en | 10 | Rick Deckard |
@@ -258,6 +259,7 @@ is translated where a translation exists and left alone where it should be.
 | `disney_villains` | 😈 screen | en | 20 | Maleficent |
 | `django_unchained` | 🤠 screen | en | 10 | Django Freeman |
 | `dune` | 🪱 screen | en | 15 | Paul Atreides |
+| `egyptian_mythology` | 🐈 myth | en | 15 | Ra |
 | `encanto` | 🕯️ screen | en | 14 | Mirabel Madrigal |
 | `everything_everywhere` | 🥯 screen | en | 12 | Evelyn Wang |
 | `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
@@ -278,9 +280,9 @@ is translated where a translation exists and left alone where it should be.
 | `italian_cyclists` | 🚴 sport | it | 50 | Fausto Coppi |
 | `italian_dj_producers` | 🎧 arts | it | 20 | Benny Benassi |
 | `italian_explorers` | 🧭 history | it | 42 | Cristoforo Colombo |
-| `italian_fashion_designers` | 👗 arts | it | 48 | Giorgio Armani |
+| `italian_fashion_designers` | 👗 arts | it | 15 | Giorgio Armani |
 | `italian_film_directors` | 🎬 arts | it | 56 | Federico Fellini |
-| `italian_football_legends` | ⚽ sport | it | 74 | Roberto Baggio |
+| `italian_football_legends` | ⚽ sport | it | 15 | Giuseppe Meazza |
 | `italian_inventors` | 💡 science | it | 20 | Antonio Meucci |
 | `italian_journalists` | 📰 screen | it | 20 | Indro Montanelli |
 | `italian_mathematicians` | 📐 science | it | 20 | Leonardo Fibonacci |
@@ -292,7 +294,7 @@ is translated where a translation exists and left alone where it should be.
 | `italian_painters` | 🖼️ arts | it | 50 | Amedeo Modigliani |
 | `italian_poets` | ✒️ arts | it | 47 | Dante Alighieri |
 | `italian_presidents_of_the_republic` | 🇮🇹 history | it | 11 | Enrico De Nicola |
-| `italian_racing_drivers` | 🏁 sport | it | 49 | Alberto Ascari |
+| `italian_racing_drivers` | 🏁 sport | it | 15 | Tazio Nuvolari |
 | `italian_rappers` | 🎤 arts | it | 20 | Fabri Fibra |
 | `italian_renaissance_artists` | 🎨 arts | it | 64 | Leonardo da Vinci |
 | `italian_scientists` | 🔬 science | it | 68 | Galileo Galilei |
@@ -304,7 +306,7 @@ is translated where a translation exists and left alone where it should be.
 | `italian_voice_actors` | 🎙️ screen | it | 20 | Ferruccio Amendola |
 | `italian_volleyball_legends` | 🏐 sport | it | 20 | Ivan Zaytsev |
 | `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
-| `italian_youtubers` | ▶️ screen | it | 48 | Favij |
+| `italian_youtubers` | ▶️ screen | it | 15 | Favij |
 | `james_bond` | 🕴️ screen | en | 14 | James Bond |
 | `jaws` | 🦈 screen | en | 12 | Martin Brody |
 | `john_wick` | 🐕 screen | en | 15 | John Wick |
@@ -314,6 +316,8 @@ is translated where a translation exists and left alone where it should be.
 | `mad_max` | 🏜️ screen | en | 15 | Max Rockatansky |
 | `men_in_black` | 🕶️ screen | en | 13 | Agent K |
 | `monty_python_holy_grail` | 🥥 screen | en | 13 | Arthur |
+| `nba_hall_of_fame` | 🏀 sport | en | 15 | Michael Jordan |
+| `norse_mythology` | 🔨 myth | en | 15 | Odin |
 | `oppenheimer` | ⚛️ screen | en | 15 | Robert Oppenheimer |
 | `philosophers` | 🤔 science | en | 35 | Socrates |
 | `pixar_characters` | 💡 screen | en | 45 | Woody |
@@ -324,7 +328,7 @@ is translated where a translation exists and left alone where it should be.
 | `roman_mythology` | ⚡ myth | en | 30 | Jupiter |
 | `saturday_night_fever` | 🪩 screen | en | 12 | Tony Manero |
 | `spider_verse` | 🕸️ screen | en | 15 | Miles Morales |
-| `star_wars` | 🚀 screen | en | 71 | Luke Skywalker |
+| `star_wars` | 🚀 screen | en | 15 | Luke Skywalker |
 | `superman` | 🦸 screen | en | 15 | Superman |
 | `terminator` | 🤖 screen | en | 15 | The Terminator |
 | `the_avengers` | 🛡️ screen | en | 11 | Tony Stark |
@@ -343,11 +347,12 @@ is translated where a translation exists and left alone where it should be.
 </details>
 
 <details>
-<summary><b>Things (42)</b></summary>
+<summary><b>Things (48)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
 | `car_brands` | 🚘 vehicles | en | 49 | Ferrari |
+| `football_clubs` | ⚽ sport | en | 15 | Real Madrid |
 | `italian_aperitivi` | 🍹 drink | it | 18 | Spritz |
 | `italian_breads` | 🥖 food | it | 20 | Ciabatta |
 | `italian_card_games` | 🃏 culture | it | 18 | Scopa |
@@ -360,6 +365,7 @@ is translated where a translation exists and left alone where it should be.
 | `italian_children_games_80s` | 🕹️ culture | it | 28 | He Man |
 | `italian_children_games_90s` | 🎮 culture | it | 28 | Tamagotchi |
 | `italian_circus_terms` | 🎪 culture | it | 20 | Saltimbanco |
+| `italian_cities` | 🏙️ places | it | 15 | Roma |
 | `italian_coffee_brands` | ☕ drink | it | 25 | Lavazza |
 | `italian_cryptids_legends` | 👻 culture | it | 20 | Befana |
 | `italian_cured_meats` | 🥓 food | it | 20 | Prosciutto |
@@ -368,6 +374,8 @@ is translated where a translation exists and left alone where it should be.
 | `italian_desserts` | 🍰 food | it | 20 | Tiramisu |
 | `italian_dialect_words` | 🗣️ culture | it | 20 | Guaglione |
 | `italian_folk_instruments` | 🪕 culture | it | 20 | Mandolino |
+| `italian_football_clubs` | 🇮🇹 sport | it | 15 | Juventus |
+| `italian_grape_varieties` | 🍇 drink | it | 15 | Sangiovese |
 | `italian_icecream_flavors` | 🍨 food | it | 18 | Stracciatella |
 | `italian_invented_words` | 💬 culture | it | 19 | Petaloso |
 | `italian_islands` | 🏝️ nature | it | 23 | Capri |
@@ -378,10 +386,12 @@ is translated where a translation exists and left alone where it should be.
 | `italian_mountains` | 🏔️ nature | it | 20 | Cervino |
 | `italian_old_currencies` | 🪙 culture | it | 21 | Lira |
 | `italian_old_jobs` | 🔨 culture | it | 25 | Arrotino |
+| `italian_operas` | 🎭 arts | it | 15 | Aida |
 | `italian_pasta_shapes` | 🍝 food | it | 20 | Fusilli |
 | `italian_pizza_types` | 🍕 food | it | 20 | Margherita |
 | `italian_progressive_rock_bands` | 🎸 arts | it | 20 | PFM |
 | `italian_regional_foods` | 🍲 food | it | 57 | Cacciucco |
+| `italian_regions` | 🗺️ places | it | 15 | Toscana |
 | `italian_rivers` | 🌊 nature | it | 22 | Po |
 | `italian_sea_creatures` | 🐙 food | it | 26 | Polpo |
 | `italian_street_foods` | 🥪 food | it | 20 | Arancino |

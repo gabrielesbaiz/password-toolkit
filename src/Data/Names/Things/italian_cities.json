@@ -1,0 +1,26 @@
+{
+    "key": "italian_cities",
+    "type": "things",
+    "locale": "it",
+    "group": "places",
+    "tags": ["geography", "italian"],
+    "icon": "🏙️",
+    "reach": "global",
+    "values": [
+        { "name": "Roma", "gender": "female" },
+        { "name": "Milano", "gender": "male" },
+        { "name": "Napoli", "gender": "female" },
+        { "name": "Torino", "gender": "male" },
+        { "name": "Firenze", "gender": "female" },
+        { "name": "Venezia", "gender": "female" },
+        { "name": "Genova", "gender": "female" },
+        { "name": "Bologna", "gender": "female" },
+        { "name": "Palermo", "gender": "male" },
+        { "name": "Verona", "gender": "female" },
+        { "name": "Padova", "gender": "female" },
+        { "name": "Siena", "gender": "female" },
+        { "name": "Pisa", "gender": "female" },
+        { "name": "Trieste", "gender": "female" },
+        { "name": "Mantova", "gender": "female" }
+    ]
+}

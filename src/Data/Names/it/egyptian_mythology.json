@@ -1,0 +1,13 @@
+{
+    "key": "egyptian_mythology",
+    "locale": "it",
+    "values": {
+        "Amun": "Amon",
+        "Anubis": "Anubi",
+        "Isis": "Iside",
+        "Nephthys": "Nefti",
+        "Osiris": "Osiride",
+        "Set": "Seth",
+        "Thoth": "Thot"
+    }
+}

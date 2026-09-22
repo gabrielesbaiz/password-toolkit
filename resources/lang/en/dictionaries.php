@@ -172,6 +172,16 @@ return [
         'wicked' => 'Wicked',
         'poor_things' => 'Poor Things',
         'james_bond' => 'James Bond',
+        'nba_hall_of_fame' => 'NBA Hall of Fame',
+        'norse_mythology' => 'Norse Mythology',
+        'egyptian_mythology' => 'Egyptian Mythology',
+        'arthurian_legend' => 'Arthurian Legend',
+        'football_clubs' => 'Football Clubs',
+        'italian_cities' => 'Italian Cities',
+        'italian_regions' => 'Italian Regions',
+        'italian_football_clubs' => 'Italian Football Clubs',
+        'italian_operas' => 'Italian Operas',
+        'italian_grape_varieties' => 'Italian Grape Varieties',
     ],
 
     /*

@@ -1,0 +1,26 @@
+{
+    "key": "italian_operas",
+    "type": "things",
+    "locale": "it",
+    "group": "arts",
+    "tags": ["classical", "italian", "opera"],
+    "icon": "🎭",
+    "reach": "global",
+    "values": [
+        { "name": "Aida", "gender": "female" },
+        { "name": "Tosca", "gender": "female" },
+        { "name": "Rigoletto", "gender": "male" },
+        { "name": "Nabucco", "gender": "male" },
+        { "name": "Turandot", "gender": "female" },
+        { "name": "Norma", "gender": "female" },
+        { "name": "Otello", "gender": "male" },
+        { "name": "Falstaff", "gender": "male" },
+        { "name": "La Traviata", "gender": "female" },
+        { "name": "Il Trovatore", "gender": "male" },
+        { "name": "Madama Butterfly", "gender": "female" },
+        { "name": "Cavalleria Rusticana", "gender": "female" },
+        { "name": "Pagliacci", "gender": "male" },
+        { "name": "Ernani", "gender": "male" },
+        { "name": "Macbeth", "gender": "male" }
+    ]
+}

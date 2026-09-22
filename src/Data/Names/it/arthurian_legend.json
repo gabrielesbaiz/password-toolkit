@@ -1,0 +1,15 @@
+{
+    "key": "arthurian_legend",
+    "locale": "it",
+    "values": {
+        "Arthur": "Artu",
+        "Gawain": "Galvano",
+        "Guinevere": "Ginevra",
+        "Isolde": "Isotta",
+        "Lancelot": "Lancillotto",
+        "Merlin": "Merlino",
+        "Morgan le Fay": "Fata Morgana",
+        "Percival": "Parsifal",
+        "Tristan": "Tristano"
+    }
+}

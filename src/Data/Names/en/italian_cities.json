@@ -1,0 +1,15 @@
+{
+    "key": "italian_cities",
+    "locale": "en",
+    "values": {
+        "Firenze": "Florence",
+        "Genova": "Genoa",
+        "Mantova": "Mantua",
+        "Milano": "Milan",
+        "Napoli": "Naples",
+        "Padova": "Padua",
+        "Roma": "Rome",
+        "Torino": "Turin",
+        "Venezia": "Venice"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "key": "norse_mythology",
+    "locale": "it",
+    "values": {
+        "Freyja": "Freia",
+        "Heimdall": "Heimdallr",
+        "Odin": "Odino",
+        "Valkyrie": "Valchiria",
+        "Yggdrasil": "Yggdrasill"
+    }
+}

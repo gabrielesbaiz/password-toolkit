@@ -1,0 +1,26 @@
+{
+    "key": "italian_regions",
+    "type": "things",
+    "locale": "it",
+    "group": "places",
+    "tags": ["geography", "italian"],
+    "icon": "🗺️",
+    "reach": "global",
+    "values": [
+        { "name": "Toscana", "gender": "female" },
+        { "name": "Lombardia", "gender": "female" },
+        { "name": "Puglia", "gender": "female" },
+        { "name": "Sicilia", "gender": "female" },
+        { "name": "Sardegna", "gender": "female" },
+        { "name": "Piemonte", "gender": "male" },
+        { "name": "Veneto", "gender": "male" },
+        { "name": "Lazio", "gender": "male" },
+        { "name": "Campania", "gender": "female" },
+        { "name": "Liguria", "gender": "female" },
+        { "name": "Umbria", "gender": "female" },
+        { "name": "Calabria", "gender": "female" },
+        { "name": "Abruzzo", "gender": "male" },
+        { "name": "Molise", "gender": "male" },
+        { "name": "Basilicata", "gender": "female" }
+    ]
+}

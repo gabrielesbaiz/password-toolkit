@@ -1,0 +1,26 @@
+{
+    "key": "norse_mythology",
+    "type": "people",
+    "locale": "en",
+    "group": "myth",
+    "tags": ["gods", "norse"],
+    "icon": "🔨",
+    "reach": "global",
+    "values": [
+        { "name": "Odin", "gender": "male" },
+        { "name": "Thor", "gender": "male" },
+        { "name": "Loki", "gender": "male" },
+        { "name": "Freyja", "gender": "female" },
+        { "name": "Frigg", "gender": "female" },
+        { "name": "Baldr", "gender": "male" },
+        { "name": "Heimdall", "gender": "male" },
+        { "name": "Tyr", "gender": "male" },
+        { "name": "Hel", "gender": "female" },
+        { "name": "Ymir", "gender": "male" },
+        { "name": "Fenrir", "gender": "neutral" },
+        { "name": "Jormungandr", "gender": "neutral" },
+        { "name": "Sleipnir", "gender": "neutral" },
+        { "name": "Yggdrasil", "gender": "neutral" },
+        { "name": "Valkyrie", "gender": "female" }
+    ]
+}
