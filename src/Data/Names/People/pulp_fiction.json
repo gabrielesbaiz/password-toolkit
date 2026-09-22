@@ -1,0 +1,26 @@
+{
+    "key": "pulp_fiction",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["crime", "film", "nineties"],
+    "icon": "🍔",
+    "reach": "global",
+    "values": [
+        { "name": "Vincent Vega", "gender": "male" },
+        { "name": "Jules Winnfield", "gender": "male" },
+        { "name": "Mia Wallace", "gender": "female" },
+        { "name": "Butch Coolidge", "gender": "male" },
+        { "name": "Marsellus Wallace", "gender": "male" },
+        { "name": "Winston Wolfe", "gender": "male" },
+        { "name": "Fabienne", "gender": "female" },
+        { "name": "Lance", "gender": "male" },
+        { "name": "Jody", "gender": "female" },
+        { "name": "Captain Koons", "gender": "male" },
+        { "name": "Pumpkin", "gender": "male" },
+        { "name": "Honey Bunny", "gender": "female" },
+        { "name": "Marvin", "gender": "male" },
+        { "name": "Jimmie", "gender": "male" },
+        { "name": "Zed", "gender": "male" }
+    ]
+}

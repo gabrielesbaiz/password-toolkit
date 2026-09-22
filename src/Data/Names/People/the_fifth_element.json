@@ -1,0 +1,25 @@
+{
+    "key": "the_fifth_element",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "nineties", "sciencefiction"],
+    "icon": "🚕",
+    "reach": "global",
+    "values": [
+        { "name": "Korben Dallas", "gender": "male" },
+        { "name": "Leeloo", "gender": "female" },
+        { "name": "Vito Cornelius", "gender": "male" },
+        { "name": "Ruby Rhod", "gender": "male" },
+        { "name": "Zorg", "gender": "male" },
+        { "name": "Billy Masterson", "gender": "male" },
+        { "name": "General Munro", "gender": "male" },
+        { "name": "President Lindberg", "gender": "male" },
+        { "name": "Fog", "gender": "male" },
+        { "name": "David", "gender": "male" },
+        { "name": "Right Arm", "gender": "male" },
+        { "name": "General Staedert", "gender": "male" },
+        { "name": "Professor Pacoli", "gender": "male" },
+        { "name": "Diva Plavalaguna", "gender": "female" }
+    ]
+}

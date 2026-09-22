@@ -1,0 +1,23 @@
+{
+    "key": "trainspotting",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["cult", "film", "nineties"],
+    "icon": "💉",
+    "reach": "global",
+    "values": [
+        { "name": "Mark Renton", "gender": "male" },
+        { "name": "Spud", "gender": "male" },
+        { "name": "Sick Boy", "gender": "male" },
+        { "name": "Begbie", "gender": "male" },
+        { "name": "Tommy", "gender": "male" },
+        { "name": "Diane", "gender": "female" },
+        { "name": "Swanney", "gender": "male" },
+        { "name": "Allison", "gender": "female" },
+        { "name": "Lizzy", "gender": "female" },
+        { "name": "Gail", "gender": "female" },
+        { "name": "Gavin", "gender": "male" },
+        { "name": "Mikey Forrester", "gender": "male" }
+    ]
+}

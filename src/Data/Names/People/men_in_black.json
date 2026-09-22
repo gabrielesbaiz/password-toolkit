@@ -1,0 +1,24 @@
+{
+    "key": "men_in_black",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "nineties", "sciencefiction"],
+    "icon": "🕶️",
+    "reach": "global",
+    "values": [
+        { "name": "Agent K", "gender": "male" },
+        { "name": "Agent J", "gender": "male" },
+        { "name": "Laurel Weaver", "gender": "female" },
+        { "name": "Zed", "gender": "male" },
+        { "name": "Edgar", "gender": "male" },
+        { "name": "Jack Jeebs", "gender": "male" },
+        { "name": "Frank the Pug", "gender": "neutral" },
+        { "name": "Mikey", "gender": "neutral" },
+        { "name": "Beatrice", "gender": "female" },
+        { "name": "Gentle Rosenberg", "gender": "male" },
+        { "name": "Jake Jensen", "gender": "male" },
+        { "name": "Agent D", "gender": "male" },
+        { "name": "Newton", "gender": "male" }
+    ]
+}

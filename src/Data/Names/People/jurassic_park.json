@@ -1,0 +1,26 @@
+{
+    "key": "jurassic_park",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["dinosaurs", "film", "nineties"],
+    "icon": "🦖",
+    "reach": "global",
+    "values": [
+        { "name": "Alan Grant", "gender": "male" },
+        { "name": "Ellie Sattler", "gender": "female" },
+        { "name": "Ian Malcolm", "gender": "male" },
+        { "name": "John Hammond", "gender": "male" },
+        { "name": "Robert Muldoon", "gender": "male" },
+        { "name": "Donald Gennaro", "gender": "male" },
+        { "name": "Henry Wu", "gender": "male" },
+        { "name": "Ray Arnold", "gender": "male" },
+        { "name": "Dennis Nedry", "gender": "male" },
+        { "name": "Tim Murphy", "gender": "male" },
+        { "name": "Lex Murphy", "gender": "female" },
+        { "name": "Lewis Dodgson", "gender": "male" },
+        { "name": "Tyrannosaurus Rex", "gender": "neutral" },
+        { "name": "Velociraptor", "gender": "neutral" },
+        { "name": "Dilophosaurus", "gender": "neutral" }
+    ]
+}
