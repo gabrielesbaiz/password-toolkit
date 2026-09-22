@@ -1,0 +1,24 @@
+{
+    "key": "ghostbusters",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comedy", "eighties", "film"],
+    "icon": "👻",
+    "reach": "global",
+    "values": [
+        { "name": "Peter Venkman", "gender": "male" },
+        { "name": "Ray Stantz", "gender": "male" },
+        { "name": "Egon Spengler", "gender": "male" },
+        { "name": "Winston Zeddemore", "gender": "male" },
+        { "name": "Dana Barrett", "gender": "female" },
+        { "name": "Louis Tully", "gender": "male" },
+        { "name": "Janine Melnitz", "gender": "female" },
+        { "name": "Walter Peck", "gender": "male" },
+        { "name": "Gozer", "gender": "neutral" },
+        { "name": "Zuul", "gender": "neutral" },
+        { "name": "Vinz Clortho", "gender": "neutral" },
+        { "name": "Slimer", "gender": "neutral" },
+        { "name": "Stay Puft", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "key": "die_hard",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["action", "eighties", "film"],
+    "icon": "🏢",
+    "reach": "global",
+    "values": [
+        { "name": "John McClane", "gender": "male" },
+        { "name": "Hans Gruber", "gender": "male" },
+        { "name": "Karl Vreski", "gender": "male" },
+        { "name": "Holly Gennaro", "gender": "female" },
+        { "name": "Al Powell", "gender": "male" },
+        { "name": "Dwayne Robinson", "gender": "male" },
+        { "name": "Argyle", "gender": "male" },
+        { "name": "Richard Thornburg", "gender": "male" },
+        { "name": "Theo", "gender": "male" },
+        { "name": "Harry Ellis", "gender": "male" },
+        { "name": "Joseph Takagi", "gender": "male" },
+        { "name": "Tony Vreski", "gender": "male" }
+    ]
+}

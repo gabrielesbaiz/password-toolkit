@@ -1,0 +1,22 @@
+{
+    "key": "the_goonies",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["adventure", "eighties", "film"],
+    "icon": "🗺️",
+    "reach": "global",
+    "values": [
+        { "name": "Mikey", "gender": "male" },
+        { "name": "Brand", "gender": "male" },
+        { "name": "Chunk", "gender": "male" },
+        { "name": "Mouth", "gender": "male" },
+        { "name": "Data", "gender": "male" },
+        { "name": "Andy", "gender": "female" },
+        { "name": "Stef", "gender": "female" },
+        { "name": "Sloth", "gender": "male" },
+        { "name": "Jake Fratelli", "gender": "male" },
+        { "name": "Francis Fratelli", "gender": "male" },
+        { "name": "Mama Fratelli", "gender": "female" }
+    ]
+}
