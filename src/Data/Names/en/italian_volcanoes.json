@@ -1,0 +1,9 @@
+{
+    "key": "italian_volcanoes",
+    "locale": "en",
+    "values": {
+        "Campi Flegrei": "Phlegraean Fields",
+        "Colli Albani": "Alban Hills",
+        "Vesuvio": "Vesuvius"
+    }
+}

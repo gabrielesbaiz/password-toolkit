@@ -1,0 +1,28 @@
+{
+    "key": "roman_emperors",
+    "locale": "en",
+    "values": {
+        "Adriano": "Hadrian",
+        "Alessandro Severo": "Severus Alexander",
+        "Antonino Pio": "Antoninus Pius",
+        "Augusto": "Augustus",
+        "Caligola": "Caligula",
+        "Claudio": "Claudius",
+        "Commodo": "Commodus",
+        "Costantino": "Constantine",
+        "Diocleziano": "Diocletian",
+        "Domiziano": "Domitian",
+        "Eliogabalo": "Elagabalus",
+        "Giuliano": "Julian",
+        "Marco Aurelio": "Marcus Aurelius",
+        "Nerone": "Nero",
+        "Otone": "Otho",
+        "Settimio Severo": "Septimius Severus",
+        "Teodosio": "Theodosius",
+        "Tiberio": "Tiberius",
+        "Tito": "Titus",
+        "Traiano": "Trajan",
+        "Vespasiano": "Vespasian",
+        "Vitellio": "Vitellius"
+    }
+}
