@@ -1,0 +1,12 @@
+{
+    "key": "italian_regions",
+    "locale": "en",
+    "values": {
+        "Lombardia": "Lombardy",
+        "Piemonte": "Piedmont",
+        "Puglia": "Apulia",
+        "Sardegna": "Sardinia",
+        "Sicilia": "Sicily",
+        "Toscana": "Tuscany"
+    }
+}

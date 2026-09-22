@@ -1,0 +1,26 @@
+{
+    "key": "italian_grape_varieties",
+    "type": "things",
+    "locale": "it",
+    "group": "drink",
+    "tags": ["italian", "wine"],
+    "icon": "🍇",
+    "reach": "italian",
+    "values": [
+        { "name": "Sangiovese", "gender": "male" },
+        { "name": "Nebbiolo", "gender": "male" },
+        { "name": "Primitivo", "gender": "male" },
+        { "name": "Barbera", "gender": "female" },
+        { "name": "Vermentino", "gender": "male" },
+        { "name": "Aglianico", "gender": "male" },
+        { "name": "Montepulciano", "gender": "male" },
+        { "name": "Trebbiano", "gender": "male" },
+        { "name": "Verdicchio", "gender": "male" },
+        { "name": "Garganega", "gender": "female" },
+        { "name": "Glera", "gender": "female" },
+        { "name": "Corvina", "gender": "female" },
+        { "name": "Dolcetto", "gender": "male" },
+        { "name": "Falanghina", "gender": "female" },
+        { "name": "Fiano", "gender": "male" }
+    ]
+}

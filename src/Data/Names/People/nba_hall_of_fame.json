@@ -1,0 +1,26 @@
+{
+    "key": "nba_hall_of_fame",
+    "type": "people",
+    "locale": "en",
+    "group": "sport",
+    "tags": ["basketball", "usa"],
+    "icon": "🏀",
+    "reach": "global",
+    "values": [
+        { "name": "Michael Jordan", "gender": "male" },
+        { "name": "Kobe Bryant", "gender": "male" },
+        { "name": "Shaquille ONeal", "gender": "male" },
+        { "name": "Magic Johnson", "gender": "male" },
+        { "name": "Larry Bird", "gender": "male" },
+        { "name": "Kareem Abdul Jabbar", "gender": "male" },
+        { "name": "Wilt Chamberlain", "gender": "male" },
+        { "name": "Bill Russell", "gender": "male" },
+        { "name": "Tim Duncan", "gender": "male" },
+        { "name": "Kevin Garnett", "gender": "male" },
+        { "name": "Allen Iverson", "gender": "male" },
+        { "name": "Hakeem Olajuwon", "gender": "male" },
+        { "name": "Charles Barkley", "gender": "male" },
+        { "name": "Scottie Pippen", "gender": "male" },
+        { "name": "Dennis Rodman", "gender": "male" }
+    ]
+}

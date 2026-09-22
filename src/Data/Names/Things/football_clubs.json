@@ -1,0 +1,26 @@
+{
+    "key": "football_clubs",
+    "type": "things",
+    "locale": "en",
+    "group": "sport",
+    "tags": ["clubs", "football"],
+    "icon": "⚽",
+    "reach": "global",
+    "values": [
+        { "name": "Real Madrid", "gender": "male" },
+        { "name": "Barcelona", "gender": "male" },
+        { "name": "Atletico Madrid", "gender": "male" },
+        { "name": "Manchester United", "gender": "male" },
+        { "name": "Manchester City", "gender": "male" },
+        { "name": "Liverpool", "gender": "male" },
+        { "name": "Arsenal", "gender": "male" },
+        { "name": "Bayern Munich", "gender": "male" },
+        { "name": "Borussia Dortmund", "gender": "male" },
+        { "name": "Paris Saint Germain", "gender": "male" },
+        { "name": "Ajax", "gender": "male" },
+        { "name": "Benfica", "gender": "male" },
+        { "name": "Boca Juniors", "gender": "male" },
+        { "name": "Flamengo", "gender": "male" },
+        { "name": "Celtic", "gender": "male" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "key": "italian_football_clubs",
+    "type": "things",
+    "locale": "it",
+    "group": "sport",
+    "tags": ["clubs", "football", "italian"],
+    "icon": "🇮🇹",
+    "reach": "italian",
+    "values": [
+        { "name": "Juventus", "gender": "female" },
+        { "name": "Milan", "gender": "male" },
+        { "name": "Inter", "gender": "female" },
+        { "name": "Roma", "gender": "female" },
+        { "name": "Napoli", "gender": "male" },
+        { "name": "Lazio", "gender": "female" },
+        { "name": "Fiorentina", "gender": "female" },
+        { "name": "Atalanta", "gender": "female" },
+        { "name": "Torino", "gender": "male" },
+        { "name": "Sampdoria", "gender": "female" },
+        { "name": "Genoa", "gender": "male" },
+        { "name": "Bologna", "gender": "male" },
+        { "name": "Udinese", "gender": "female" },
+        { "name": "Cagliari", "gender": "male" },
+        { "name": "Parma", "gender": "male" }
+    ]
+}

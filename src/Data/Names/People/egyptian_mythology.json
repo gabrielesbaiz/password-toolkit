@@ -1,0 +1,26 @@
+{
+    "key": "egyptian_mythology",
+    "type": "people",
+    "locale": "en",
+    "group": "myth",
+    "tags": ["egyptian", "gods"],
+    "icon": "🐈",
+    "reach": "global",
+    "values": [
+        { "name": "Ra", "gender": "male" },
+        { "name": "Osiris", "gender": "male" },
+        { "name": "Isis", "gender": "female" },
+        { "name": "Horus", "gender": "male" },
+        { "name": "Anubis", "gender": "male" },
+        { "name": "Set", "gender": "male" },
+        { "name": "Thoth", "gender": "male" },
+        { "name": "Hathor", "gender": "female" },
+        { "name": "Bastet", "gender": "female" },
+        { "name": "Sobek", "gender": "male" },
+        { "name": "Amun", "gender": "male" },
+        { "name": "Ptah", "gender": "male" },
+        { "name": "Sekhmet", "gender": "female" },
+        { "name": "Nephthys", "gender": "female" },
+        { "name": "Maat", "gender": "female" }
+    ]
+}

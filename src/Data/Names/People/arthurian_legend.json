@@ -1,0 +1,26 @@
+{
+    "key": "arthurian_legend",
+    "type": "people",
+    "locale": "en",
+    "group": "myth",
+    "tags": ["arthurian", "medieval"],
+    "icon": "⚔️",
+    "reach": "global",
+    "values": [
+        { "name": "Arthur", "gender": "male" },
+        { "name": "Lancelot", "gender": "male" },
+        { "name": "Guinevere", "gender": "female" },
+        { "name": "Merlin", "gender": "male" },
+        { "name": "Morgan le Fay", "gender": "female" },
+        { "name": "Gawain", "gender": "male" },
+        { "name": "Percival", "gender": "male" },
+        { "name": "Galahad", "gender": "male" },
+        { "name": "Tristan", "gender": "male" },
+        { "name": "Isolde", "gender": "female" },
+        { "name": "Mordred", "gender": "male" },
+        { "name": "Bedivere", "gender": "male" },
+        { "name": "Kay", "gender": "male" },
+        { "name": "Uther Pendragon", "gender": "male" },
+        { "name": "Excalibur", "gender": "neutral" }
+    ]
+}
