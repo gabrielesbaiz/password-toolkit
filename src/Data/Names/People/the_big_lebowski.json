@@ -1,0 +1,25 @@
+{
+    "key": "the_big_lebowski",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comedy", "film", "nineties"],
+    "icon": "🎳",
+    "reach": "global",
+    "values": [
+        { "name": "The Dude", "gender": "male" },
+        { "name": "Walter Sobchak", "gender": "male" },
+        { "name": "Maude Lebowski", "gender": "female" },
+        { "name": "Donny Kerabatsos", "gender": "male" },
+        { "name": "Jeffrey Lebowski", "gender": "male" },
+        { "name": "Brandt", "gender": "male" },
+        { "name": "Bunny Lebowski", "gender": "female" },
+        { "name": "Jesus Quintana", "gender": "male" },
+        { "name": "The Stranger", "gender": "male" },
+        { "name": "Jackie Treehorn", "gender": "male" },
+        { "name": "Knox Harrington", "gender": "male" },
+        { "name": "Uli Kunkel", "gender": "male" },
+        { "name": "Da Fino", "gender": "male" },
+        { "name": "Smokey", "gender": "male" }
+    ]
+}

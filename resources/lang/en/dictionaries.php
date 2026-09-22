@@ -136,6 +136,16 @@ return [
         'mad_max' => 'Mad Max',
         'a_clockwork_orange' => 'A Clockwork Orange',
         'saturday_night_fever' => 'Saturday Night Fever',
+        'jurassic_park' => 'Jurassic Park',
+        'the_matrix' => 'The Matrix',
+        'pulp_fiction' => 'Pulp Fiction',
+        'the_big_lebowski' => 'The Big Lebowski',
+        'men_in_black' => 'Men in Black',
+        'home_alone' => 'Home Alone',
+        'the_fifth_element' => 'The Fifth Element',
+        'trainspotting' => 'Trainspotting',
+        'the_silence_of_the_lambs' => 'The Silence of the Lambs',
+        'terminator' => 'Terminator',
     ],
 
     /*

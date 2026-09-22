@@ -1,0 +1,25 @@
+{
+    "key": "the_matrix",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "nineties", "sciencefiction"],
+    "icon": "💊",
+    "reach": "global",
+    "values": [
+        { "name": "Neo", "gender": "male" },
+        { "name": "Morpheus", "gender": "male" },
+        { "name": "Trinity", "gender": "female" },
+        { "name": "Agent Smith", "gender": "male" },
+        { "name": "The Oracle", "gender": "female" },
+        { "name": "Cypher", "gender": "male" },
+        { "name": "Tank", "gender": "male" },
+        { "name": "Dozer", "gender": "male" },
+        { "name": "Apoc", "gender": "male" },
+        { "name": "Mouse", "gender": "male" },
+        { "name": "Switch", "gender": "female" },
+        { "name": "Agent Brown", "gender": "male" },
+        { "name": "Agent Jones", "gender": "male" },
+        { "name": "Thomas Anderson", "gender": "male" }
+    ]
+}

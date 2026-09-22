@@ -1,0 +1,25 @@
+{
+    "key": "the_silence_of_the_lambs",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "nineties", "thriller"],
+    "icon": "🦋",
+    "reach": "global",
+    "values": [
+        { "name": "Clarice Starling", "gender": "female" },
+        { "name": "Hannibal Lecter", "gender": "male" },
+        { "name": "Jack Crawford", "gender": "male" },
+        { "name": "Jame Gumb", "gender": "male" },
+        { "name": "Frederick Chilton", "gender": "male" },
+        { "name": "Catherine Martin", "gender": "female" },
+        { "name": "Ruth Martin", "gender": "female" },
+        { "name": "Ardelia Mapp", "gender": "female" },
+        { "name": "Barney Matthews", "gender": "male" },
+        { "name": "Paul Krendler", "gender": "male" },
+        { "name": "Bill Boyle", "gender": "male" },
+        { "name": "Lamar", "gender": "male" },
+        { "name": "Hayden Burke", "gender": "male" },
+        { "name": "Pilcher", "gender": "male" }
+    ]
+}

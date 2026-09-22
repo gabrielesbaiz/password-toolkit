@@ -1,0 +1,10 @@
+{
+    "key": "the_matrix",
+    "locale": "it",
+    "values": {
+        "Agent Brown": "Agente Brown",
+        "Agent Jones": "Agente Jones",
+        "Agent Smith": "Agente Smith",
+        "The Oracle": "Oracolo"
+    }
+}

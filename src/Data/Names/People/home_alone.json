@@ -1,0 +1,25 @@
+{
+    "key": "home_alone",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comedy", "film", "nineties"],
+    "icon": "🏠",
+    "reach": "global",
+    "values": [
+        { "name": "Kevin McCallister", "gender": "male" },
+        { "name": "Harry", "gender": "male" },
+        { "name": "Marv", "gender": "male" },
+        { "name": "Kate McCallister", "gender": "female" },
+        { "name": "Peter McCallister", "gender": "male" },
+        { "name": "Buzz McCallister", "gender": "male" },
+        { "name": "Linnie McCallister", "gender": "female" },
+        { "name": "Megan McCallister", "gender": "female" },
+        { "name": "Jeff McCallister", "gender": "male" },
+        { "name": "Frank McCallister", "gender": "male" },
+        { "name": "Fuller McCallister", "gender": "male" },
+        { "name": "Gus Polinski", "gender": "male" },
+        { "name": "Marley", "gender": "male" },
+        { "name": "Larry Balzak", "gender": "male" }
+    ]
+}

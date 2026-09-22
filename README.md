@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-101 dictionaries — **59 of people** and **42 of things** — holding
-2,171 names and 1,019 names respectively, each with themed adjectives in both
+111 dictionaries — **69 of people** and **42 of things** — holding
+2,311 names and 1,019 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -241,7 +241,7 @@ Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
 is translated where a translation exists and left alone where it should be.
 
 <details>
-<summary><b>People (59)</b></summary>
+<summary><b>People (69)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
@@ -256,6 +256,7 @@ is translated where a translation exists and left alone where it should be.
 | `greek_mythology` | 🏺 myth | en | 68 | Zeus |
 | `harry_potter` | 🧙 screen | en | 71 | Harry Potter |
 | `hayao_miyazaki` | 🌸 screen | en | 20 | Totoro |
+| `home_alone` | 🏠 screen | en | 14 | Kevin McCallister |
 | `italian_actors` | 🎭 screen | it | 69 | Roberto Benigni |
 | `italian_architects` | 📐 arts | it | 43 | Renzo Piano |
 | `italian_basketball_legends` | 🏀 sport | it | 71 | Dino Meneghin |
@@ -292,18 +293,27 @@ is translated where a translation exists and left alone where it should be.
 | `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
 | `italian_youtubers` | ▶️ screen | it | 48 | Favij |
 | `jaws` | 🦈 screen | en | 12 | Martin Brody |
+| `jurassic_park` | 🦖 screen | en | 15 | Alan Grant |
 | `lupin_iii_characters` | 🕵️ screen | en | 18 | Lupin |
 | `mad_max` | 🏜️ screen | en | 15 | Max Rockatansky |
+| `men_in_black` | 🕶️ screen | en | 13 | Agent K |
 | `monty_python_holy_grail` | 🥥 screen | en | 13 | Arthur |
 | `philosophers` | 🤔 science | en | 35 | Socrates |
 | `pixar_characters` | 💡 screen | en | 45 | Woody |
+| `pulp_fiction` | 🍔 screen | en | 15 | Vincent Vega |
 | `rocky` | 🥊 screen | en | 10 | Rocky Balboa |
 | `roman_emperors` | 🏛️ history | en | 25 | Augustus |
 | `roman_mythology` | ⚡ myth | en | 30 | Jupiter |
 | `saturday_night_fever` | 🪩 screen | en | 12 | Tony Manero |
 | `star_wars` | 🚀 screen | en | 71 | Luke Skywalker |
 | `superman` | 🦸 screen | en | 15 | Superman |
+| `terminator` | 🤖 screen | en | 15 | The Terminator |
+| `the_big_lebowski` | 🎳 screen | en | 14 | The Dude |
+| `the_fifth_element` | 🚕 screen | en | 14 | Korben Dallas |
 | `the_godfather` | 🎩 screen | en | 15 | Vito Corleone |
+| `the_matrix` | 💊 screen | en | 14 | Neo |
+| `the_silence_of_the_lambs` | 🦋 screen | en | 14 | Clarice Starling |
+| `trainspotting` | 💉 screen | en | 12 | Mark Renton |
 </details>
 
 <details>

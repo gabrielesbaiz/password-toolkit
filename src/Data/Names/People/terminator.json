@@ -1,0 +1,26 @@
+{
+    "key": "terminator",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "nineties", "sciencefiction"],
+    "icon": "🤖",
+    "reach": "global",
+    "values": [
+        { "name": "The Terminator", "gender": "neutral" },
+        { "name": "Sarah Connor", "gender": "female" },
+        { "name": "Kyle Reese", "gender": "male" },
+        { "name": "John Connor", "gender": "male" },
+        { "name": "T 1000", "gender": "neutral" },
+        { "name": "Miles Dyson", "gender": "male" },
+        { "name": "Peter Silberman", "gender": "male" },
+        { "name": "Ed Traxler", "gender": "male" },
+        { "name": "Hal Vukovich", "gender": "male" },
+        { "name": "Ginger", "gender": "female" },
+        { "name": "Matt", "gender": "male" },
+        { "name": "Janelle Voight", "gender": "female" },
+        { "name": "Todd Voight", "gender": "male" },
+        { "name": "Tarissa Dyson", "gender": "female" },
+        { "name": "Enrique Salceda", "gender": "male" }
+    ]
+}
