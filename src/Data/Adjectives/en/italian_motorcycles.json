@@ -1,0 +1,66 @@
+{
+    "key": "italian_motorcycles",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Handy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Light",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lightning",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Reckless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Roaring",
+            "gender": "neutral"
+        },
+        {
+            "name": "Robust",
+            "gender": "neutral"
+        },
+        {
+            "name": "Snappy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sporty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        }
+    ]
+}

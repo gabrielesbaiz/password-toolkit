@@ -1,0 +1,58 @@
+{
+    "key": "italian_folk_instruments",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Delicate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Evocative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Harmonious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Melodic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Merry",
+            "gender": "neutral"
+        },
+        {
+            "name": "Popular",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rhythmic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rustic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sonorous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Traditional",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tuneful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vibrant",
+            "gender": "neutral"
+        }
+    ]
+}

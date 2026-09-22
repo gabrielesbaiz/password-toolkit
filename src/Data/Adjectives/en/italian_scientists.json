@@ -1,0 +1,78 @@
+{
+    "key": "italian_scientists",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Analytical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Curious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Determined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Enlightened",
+            "gender": "neutral"
+        },
+        {
+            "name": "Extraordinary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immortal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Methodical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Perceptive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Pioneering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Revolutionary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sharp",
+            "gender": "neutral"
+        },
+        {
+            "name": "Systematic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

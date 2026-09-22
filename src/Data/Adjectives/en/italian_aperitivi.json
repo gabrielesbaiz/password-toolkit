@@ -1,0 +1,66 @@
+{
+    "key": "italian_aperitivi",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bitter",
+            "gender": "neutral"
+        },
+        {
+            "name": "Boozy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Citrusy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Frozen",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Light",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lively",
+            "gender": "neutral"
+        },
+        {
+            "name": "Perfumed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refreshing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sparkling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Summery",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sweet",
+            "gender": "neutral"
+        },
+        {
+            "name": "Traditional",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "key": "italian_inventors",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Farsighted",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intuitive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Inventive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Methodical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Pioneering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Revolutionary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Technical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "key": "italian_musicians",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immortal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intense",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lyrical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Melodious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Overwhelming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Passionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Poetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rebellious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Romantic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Scathing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Talented",
+            "gender": "neutral"
+        },
+        {
+            "name": "Thrilling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Vibrant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Virtuoso",
+            "gender": "neutral"
+        }
+    ]
+}

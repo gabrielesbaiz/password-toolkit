@@ -1,0 +1,78 @@
+{
+    "key": "italian_film_directors",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dramatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immortal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Inspired",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intense",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Masterful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Neorealist",
+            "gender": "neutral"
+        },
+        {
+            "name": "Poetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Provocative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Revolutionary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

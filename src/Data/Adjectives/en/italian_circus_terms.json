@@ -1,0 +1,70 @@
+{
+    "key": "italian_circus_terms",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Acrobatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Colorful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elastic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Flamboyant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Funny",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hypnotic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Jocular",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lively",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Noisy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Phenomenal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Reckless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Snappy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spectacular",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "key": "italian_fashion_designers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Artisanal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Chic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Eccentric",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Exclusive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glamorous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Luxurious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Original",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Revolutionary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sophisticated",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sublime",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

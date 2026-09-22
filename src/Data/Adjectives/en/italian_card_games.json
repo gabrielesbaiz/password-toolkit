@@ -1,0 +1,62 @@
+{
+    "key": "italian_card_games",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Amusing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cunning",
+            "gender": "neutral"
+        },
+        {
+            "name": "Devious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hilarious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lucky",
+            "gender": "neutral"
+        },
+        {
+            "name": "Popular",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rapid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Shrewd",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sly",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strategic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swaggering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tactical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Traditional",
+            "gender": "neutral"
+        },
+        {
+            "name": "Winning",
+            "gender": "neutral"
+        }
+    ]
+}

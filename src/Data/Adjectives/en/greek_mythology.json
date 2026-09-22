@@ -1,0 +1,78 @@
+{
+    "key": "greek_mythology",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Celestial",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cunning",
+            "gender": "neutral"
+        },
+        {
+            "name": "Divine",
+            "gender": "neutral"
+        },
+        {
+            "name": "Epic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fearsome",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glorious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Heroic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immortal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Invincible",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnificent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mysterious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mythical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Olympic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Venerable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wise",
+            "gender": "neutral"
+        }
+    ]
+}

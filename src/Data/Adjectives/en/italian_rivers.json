@@ -1,0 +1,58 @@
+{
+    "key": "italian_rivers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Calm",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fertile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fluent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Impetuous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Limpid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Long",
+            "gender": "neutral"
+        },
+        {
+            "name": "Navigable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Noisy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Panoramic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sinuous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wild",
+            "gender": "neutral"
+        },
+        {
+            "name": "Winding",
+            "gender": "neutral"
+        }
+    ]
+}

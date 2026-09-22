@@ -1,0 +1,74 @@
+{
+    "key": "hayao_miyazaki",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dreaming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Enchanted",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ethereal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fairytale",
+            "gender": "neutral"
+        },
+        {
+            "name": "Feral",
+            "gender": "neutral"
+        },
+        {
+            "name": "Flying",
+            "gender": "neutral"
+        },
+        {
+            "name": "Kind",
+            "gender": "neutral"
+        },
+        {
+            "name": "Luminous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mysterious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Proud",
+            "gender": "neutral"
+        },
+        {
+            "name": "Pure",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rebellious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Silent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wandering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wise",
+            "gender": "neutral"
+        }
+    ]
+}

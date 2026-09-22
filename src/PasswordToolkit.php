@@ -8,6 +8,7 @@ use Gabrielesbaiz\PasswordToolkit\Contracts\DictionaryRepository;
 use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\AdjectiveResolver;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\Entry;
+use Gabrielesbaiz\PasswordToolkit\Dictionaries\NameTranslator;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\NoDictionariesEnabledException;
 use Gabrielesbaiz\PasswordToolkit\Generator\LeetspeakTransformer;
@@ -40,6 +41,7 @@ class PasswordToolkit implements PasswordGenerator
     public function __construct(
         protected readonly DictionaryRepository $dictionaries,
         protected readonly AdjectiveResolver $adjectives,
+        protected readonly NameTranslator $names,
         protected readonly LeetspeakTransformer $leetspeak = new LeetspeakTransformer,
     ) {}
 
@@ -259,6 +261,7 @@ class PasswordToolkit implements PasswordGenerator
     {
         $this->dictionaries->flush();
         $this->adjectives->flush();
+        $this->names->flush();
     }
 
     /**
@@ -296,6 +299,11 @@ class PasswordToolkit implements PasswordGenerator
     protected function assemble(Entry $entry, Options $options): string
     {
         $separator = $options->separator ?? '';
+
+        // Most names are proper nouns and come back untouched; only the
+        // dictionaries that hold Italian dub or exonym forms have anything to
+        // translate.
+        $entry = $this->names->translate($entry, $options);
 
         // Names may come from a dictionary the application supplied — the
         // README suggests User::pluck() — so nothing is trusted to be clean.

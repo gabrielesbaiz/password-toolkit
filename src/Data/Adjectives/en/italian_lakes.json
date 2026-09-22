@@ -1,0 +1,58 @@
+{
+    "key": "italian_lakes",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Alpine",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Azure",
+            "gender": "neutral"
+        },
+        {
+            "name": "Calm",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Crystalline",
+            "gender": "neutral"
+        },
+        {
+            "name": "Evocative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Frozen",
+            "gender": "neutral"
+        },
+        {
+            "name": "Limpid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Panoramic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Profound",
+            "gender": "neutral"
+        },
+        {
+            "name": "Romantic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tranquil",
+            "gender": "neutral"
+        }
+    ]
+}

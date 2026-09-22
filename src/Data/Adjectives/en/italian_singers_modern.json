@@ -1,0 +1,66 @@
+{
+    "key": "italian_singers_modern",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Energetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fresh",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Modern",
+            "gender": "neutral"
+        },
+        {
+            "name": "Passionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Poppy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rebellious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Thrilling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Trendy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unleashed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visceral",
+            "gender": "neutral"
+        }
+    ]
+}

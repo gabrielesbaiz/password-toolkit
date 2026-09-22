@@ -10,6 +10,7 @@ use Gabrielesbaiz\PasswordToolkit\Contracts\DictionaryRepository;
 use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\AdjectiveResolver;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\FileDictionaryRepository;
+use Gabrielesbaiz\PasswordToolkit\Dictionaries\NameTranslator;
 use Gabrielesbaiz\PasswordToolkit\Generator\LeetspeakTransformer;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -42,6 +43,13 @@ class PasswordToolkitServiceProvider extends PackageServiceProvider
             $paths = (array) config('password-toolkit.dictionaries.paths', []);
 
             return $resolver->usingPaths(array_values(array_filter($paths, 'is_string')));
+        });
+
+        $this->app->singleton(NameTranslator::class, function (): NameTranslator {
+            /** @var array<int, string> $paths */
+            $paths = (array) config('password-toolkit.dictionaries.paths', []);
+
+            return (new NameTranslator)->usingPaths(array_values(array_filter($paths, 'is_string')));
         });
 
         $this->app->singleton(LeetspeakTransformer::class);

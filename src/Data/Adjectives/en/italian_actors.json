@@ -1,0 +1,86 @@
+{
+    "key": "italian_actors",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Authentic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Emotive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Expressive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fascinating",
+            "gender": "neutral"
+        },
+        {
+            "name": "Incisive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intellectual",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intelligent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intense",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Passionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Profound",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sensitive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sophisticated",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spirited",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strong",
+            "gender": "neutral"
+        },
+        {
+            "name": "Talented",
+            "gender": "neutral"
+        },
+        {
+            "name": "Versatile",
+            "gender": "neutral"
+        }
+    ]
+}

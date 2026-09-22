@@ -1,0 +1,82 @@
+{
+    "key": "italian_basketball_legends",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Decisive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Determined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dominant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hardy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Skilled",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strategic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strong",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tactical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Talented",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tenacious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Versatile",
+            "gender": "neutral"
+        }
+    ]
+}

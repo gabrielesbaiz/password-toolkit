@@ -84,7 +84,7 @@ it('switches locale for one call only', function () {
     $adjective = explode('-', $english)[0];
 
     $pool = array_column(json_decode(
-        (string) file_get_contents(packagePath('src/Data/Adjectives/en/_default.json')),
+        (string) file_get_contents(packagePath('src/Data/Adjectives/en/star_wars.json')),
         true,
     )['values'], 'name');
 

@@ -1,0 +1,90 @@
+{
+    "key": "italian_cyclists",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Champion",
+            "gender": "neutral"
+        },
+        {
+            "name": "Climbing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Determined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dominant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Explosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Extraordinary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Formidable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glorious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hardy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lightning",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Snappy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tenacious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unbeatable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unstoppable",
+            "gender": "neutral"
+        }
+    ]
+}

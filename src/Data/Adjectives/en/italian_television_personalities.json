@@ -1,0 +1,86 @@
+{
+    "key": "italian_television_personalities",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Affectionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Amusing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Compassionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Distinctive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Enthusiastic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Exuberant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fascinating",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fresh",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innocent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intelligent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ironic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Likeable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sharp",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sincere",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spontaneous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sunny",
+            "gender": "neutral"
+        }
+    ]
+}

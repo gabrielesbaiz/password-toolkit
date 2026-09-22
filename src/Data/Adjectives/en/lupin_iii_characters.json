@@ -1,0 +1,62 @@
+{
+    "key": "lupin_iii_characters",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ironic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Madcap",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mysterious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Reckless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Shrewd",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sly",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swaggering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Thieving",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unpredictable",
+            "gender": "neutral"
+        }
+    ]
+}
