@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-91 dictionaries — **49 of people** and **42 of things** — holding
-2,046 names and 1,019 names respectively, each with themed adjectives in both
+101 dictionaries — **59 of people** and **42 of things** — holding
+2,171 names and 1,019 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -241,15 +241,18 @@ Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
 is translated where a translation exists and left alone where it should be.
 
 <details>
-<summary><b>People (49)</b></summary>
+<summary><b>People (59)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
+| `a_clockwork_orange` | 🍊 screen | en | 13 | Alex DeLarge |
+| `apocalypse_now` | 🚁 screen | en | 10 | Benjamin Willard |
 | `back_to_the_future` | 🚗 screen | en | 17 | Marty McFly |
 | `cartoons` | 📺 screen | en | 146 | Mickey Mouse |
 | `disney_characters` | 🏰 screen | en | 60 | Mickey Mouse |
 | `disney_villains` | 😈 screen | en | 20 | Maleficent |
 | `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
+| `grease` | 🕺 screen | en | 10 | Danny Zuko |
 | `greek_mythology` | 🏺 myth | en | 68 | Zeus |
 | `harry_potter` | 🧙 screen | en | 71 | Harry Potter |
 | `hayao_miyazaki` | 🌸 screen | en | 20 | Totoro |
@@ -288,12 +291,19 @@ is translated where a translation exists and left alone where it should be.
 | `italian_volleyball_legends` | 🏐 sport | it | 20 | Ivan Zaytsev |
 | `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
 | `italian_youtubers` | ▶️ screen | it | 48 | Favij |
+| `jaws` | 🦈 screen | en | 12 | Martin Brody |
 | `lupin_iii_characters` | 🕵️ screen | en | 18 | Lupin |
+| `mad_max` | 🏜️ screen | en | 15 | Max Rockatansky |
+| `monty_python_holy_grail` | 🥥 screen | en | 13 | Arthur |
 | `philosophers` | 🤔 science | en | 35 | Socrates |
 | `pixar_characters` | 💡 screen | en | 45 | Woody |
+| `rocky` | 🥊 screen | en | 10 | Rocky Balboa |
 | `roman_emperors` | 🏛️ history | en | 25 | Augustus |
 | `roman_mythology` | ⚡ myth | en | 30 | Jupiter |
+| `saturday_night_fever` | 🪩 screen | en | 12 | Tony Manero |
 | `star_wars` | 🚀 screen | en | 71 | Luke Skywalker |
+| `superman` | 🦸 screen | en | 15 | Superman |
+| `the_godfather` | 🎩 screen | en | 15 | Vito Corleone |
 </details>
 
 <details>

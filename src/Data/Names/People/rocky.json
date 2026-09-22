@@ -1,0 +1,21 @@
+{
+    "key": "rocky",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "seventies", "sport"],
+    "icon": "🥊",
+    "reach": "global",
+    "values": [
+        { "name": "Rocky Balboa", "gender": "male" },
+        { "name": "Adrian Pennino", "gender": "female" },
+        { "name": "Paulie Pennino", "gender": "male" },
+        { "name": "Apollo Creed", "gender": "male" },
+        { "name": "Mickey Goldmill", "gender": "male" },
+        { "name": "George Jergens", "gender": "male" },
+        { "name": "Tony Gazzo", "gender": "male" },
+        { "name": "Duke Evers", "gender": "male" },
+        { "name": "Spider Rico", "gender": "male" },
+        { "name": "Big Dipper Brown", "gender": "male" }
+    ]
+}

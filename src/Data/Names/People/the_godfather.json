@@ -1,0 +1,26 @@
+{
+    "key": "the_godfather",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["crime", "film", "seventies"],
+    "icon": "🎩",
+    "reach": "global",
+    "values": [
+        { "name": "Vito Corleone", "gender": "male" },
+        { "name": "Michael Corleone", "gender": "male" },
+        { "name": "Sonny Corleone", "gender": "male" },
+        { "name": "Fredo Corleone", "gender": "male" },
+        { "name": "Connie Corleone", "gender": "female" },
+        { "name": "Tom Hagen", "gender": "male" },
+        { "name": "Kay Adams", "gender": "female" },
+        { "name": "Peter Clemenza", "gender": "male" },
+        { "name": "Salvatore Tessio", "gender": "male" },
+        { "name": "Luca Brasi", "gender": "male" },
+        { "name": "Carlo Rizzi", "gender": "male" },
+        { "name": "Virgil Sollozzo", "gender": "male" },
+        { "name": "Emilio Barzini", "gender": "male" },
+        { "name": "Moe Greene", "gender": "male" },
+        { "name": "Jack Woltz", "gender": "male" }
+    ]
+}

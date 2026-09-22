@@ -22,7 +22,9 @@ beforeEach(function () {
 
 describe('selection', function () {
     it('lists every built-in dictionary', function () {
-        expect(PasswordToolkit::dictionaries())->toHaveCount(91);
+        $onDisk = count((array) glob(packagePath('src/Data/Names/{People,Things}/*.json'), GLOB_BRACE));
+
+        expect(PasswordToolkit::dictionaries())->toHaveCount($onDisk);
     });
 
     it('honours except', function () {

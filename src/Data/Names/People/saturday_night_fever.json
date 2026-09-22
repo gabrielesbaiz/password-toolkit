@@ -1,0 +1,23 @@
+{
+    "key": "saturday_night_fever",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "musical", "seventies"],
+    "icon": "🪩",
+    "reach": "global",
+    "values": [
+        { "name": "Tony Manero", "gender": "male" },
+        { "name": "Stephanie Mangano", "gender": "female" },
+        { "name": "Bobby C", "gender": "male" },
+        { "name": "Joey", "gender": "male" },
+        { "name": "Double J", "gender": "male" },
+        { "name": "Annette", "gender": "female" },
+        { "name": "Gus", "gender": "male" },
+        { "name": "Frank Manero Sr", "gender": "male" },
+        { "name": "Flo Manero", "gender": "female" },
+        { "name": "Frank Manero Jr", "gender": "male" },
+        { "name": "Linda Manero", "gender": "female" },
+        { "name": "Connie", "gender": "female" }
+    ]
+}

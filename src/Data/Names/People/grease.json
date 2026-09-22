@@ -1,0 +1,21 @@
+{
+    "key": "grease",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "musical", "seventies"],
+    "icon": "🕺",
+    "reach": "global",
+    "values": [
+        { "name": "Danny Zuko", "gender": "male" },
+        { "name": "Sandy Olsson", "gender": "female" },
+        { "name": "Kenickie", "gender": "male" },
+        { "name": "Betty Rizzo", "gender": "female" },
+        { "name": "Frenchy", "gender": "female" },
+        { "name": "Jan", "gender": "female" },
+        { "name": "Marty Maraschino", "gender": "female" },
+        { "name": "Doody", "gender": "male" },
+        { "name": "Sonny LaTierri", "gender": "male" },
+        { "name": "Putzie", "gender": "male" }
+    ]
+}

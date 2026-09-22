@@ -62,7 +62,10 @@ it('reports the dictionary counts the readme claims', function () {
     $people = $dictionaries->where('type', 'people');
     $things = $dictionaries->where('type', 'things');
 
+    // Counts move every time a dictionary lands, and a README that quietly
+    // drifts out of step is worse than no number at all.
     expect(readme())
+        ->toContain($dictionaries->count().' dictionaries')
         ->toContain("**{$people->count()} of people**")
         ->toContain("**{$things->count()} of things**")
         ->toContain(number_format($people->sum('count')).' names')

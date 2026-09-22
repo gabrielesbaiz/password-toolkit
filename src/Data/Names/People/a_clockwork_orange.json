@@ -1,0 +1,24 @@
+{
+    "key": "a_clockwork_orange",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["cult", "film", "seventies"],
+    "icon": "🍊",
+    "reach": "global",
+    "values": [
+        { "name": "Alex DeLarge", "gender": "male" },
+        { "name": "Georgie", "gender": "male" },
+        { "name": "Dim", "gender": "male" },
+        { "name": "Pete", "gender": "male" },
+        { "name": "Frank Alexander", "gender": "male" },
+        { "name": "Mary Alexander", "gender": "female" },
+        { "name": "Deltoid", "gender": "male" },
+        { "name": "Barnes", "gender": "male" },
+        { "name": "Brodsky", "gender": "male" },
+        { "name": "Branom", "gender": "female" },
+        { "name": "Weathers", "gender": "female" },
+        { "name": "Rubinstein", "gender": "female" },
+        { "name": "Sonietta", "gender": "female" }
+    ]
+}

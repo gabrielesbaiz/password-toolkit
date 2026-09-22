@@ -1,0 +1,23 @@
+{
+    "key": "jaws",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "sea", "seventies"],
+    "icon": "🦈",
+    "reach": "global",
+    "values": [
+        { "name": "Martin Brody", "gender": "male" },
+        { "name": "Quint", "gender": "male" },
+        { "name": "Matt Hooper", "gender": "male" },
+        { "name": "Ellen Brody", "gender": "female" },
+        { "name": "Larry Vaughn", "gender": "male" },
+        { "name": "Leonard Hendricks", "gender": "male" },
+        { "name": "Meadows", "gender": "male" },
+        { "name": "Chrissie Watkins", "gender": "female" },
+        { "name": "Mrs Kintner", "gender": "female" },
+        { "name": "Alex Kintner", "gender": "male" },
+        { "name": "Ben Gardner", "gender": "male" },
+        { "name": "Michael Brody", "gender": "male" }
+    ]
+}
