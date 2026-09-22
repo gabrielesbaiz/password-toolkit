@@ -1,0 +1,26 @@
+{
+    "key": "rock_bands_80s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["eighties", "music", "rock"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "U2", "gender": "male" },
+        { "name": "Van Halen", "gender": "male" },
+        { "name": "Bon Jovi", "gender": "male" },
+        { "name": "Motley Crue", "gender": "male" },
+        { "name": "Guns N Roses", "gender": "male" },
+        { "name": "Def Leppard", "gender": "male" },
+        { "name": "The Police", "gender": "male" },
+        { "name": "Metallica", "gender": "male" },
+        { "name": "Iron Maiden", "gender": "male" },
+        { "name": "The Cure", "gender": "male" },
+        { "name": "Dire Straits", "gender": "male" },
+        { "name": "Talking Heads", "gender": "male" },
+        { "name": "Judas Priest", "gender": "male" },
+        { "name": "The Smiths", "gender": "male" },
+        { "name": "Scorpions", "gender": "male" }
+    ]
+}

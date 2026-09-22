@@ -1,0 +1,22 @@
+{
+    "key": "rock_bands_2020s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "rock", "twentytwenties"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "Maneskin", "gender": "male" },
+        { "name": "Sleep Token", "gender": "male" },
+        { "name": "Turnstile", "gender": "male" },
+        { "name": "Fontaines DC", "gender": "male" },
+        { "name": "Wet Leg", "gender": "male" },
+        { "name": "Idles", "gender": "male" },
+        { "name": "Wolf Alice", "gender": "male" },
+        { "name": "Spiritbox", "gender": "male" },
+        { "name": "Bad Omens", "gender": "male" },
+        { "name": "Knocked Loose", "gender": "male" },
+        { "name": "Viagra Boys", "gender": "male" }
+    ]
+}

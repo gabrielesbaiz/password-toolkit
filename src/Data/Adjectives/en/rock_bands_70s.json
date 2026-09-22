@@ -1,0 +1,24 @@
+{
+    "key": "rock_bands_70s",
+    "locale": "en",
+    "values": [
+        { "name": "Baroque", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Distorted", "gender": "neutral" },
+        { "name": "Epic", "gender": "neutral" },
+        { "name": "Grand", "gender": "neutral" },
+        { "name": "Grandiloquent", "gender": "neutral" },
+        { "name": "Heavy", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Mammoth", "gender": "neutral" },
+        { "name": "Monumental", "gender": "neutral" },
+        { "name": "Progressive", "gender": "neutral" },
+        { "name": "Sulfurous", "gender": "neutral" },
+        { "name": "Symphonic", "gender": "neutral" },
+        { "name": "Telluric", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" },
+        { "name": "Thundering", "gender": "neutral" },
+        { "name": "Thunderous", "gender": "neutral" },
+        { "name": "Virtuoso", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "key": "rock_bands_2010s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "rock", "twentytens"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "Imagine Dragons", "gender": "male" },
+        { "name": "The Black Keys", "gender": "male" },
+        { "name": "Tame Impala", "gender": "male" },
+        { "name": "Twenty One Pilots", "gender": "male" },
+        { "name": "Mumford And Sons", "gender": "male" },
+        { "name": "Alabama Shakes", "gender": "male" },
+        { "name": "Cage The Elephant", "gender": "male" },
+        { "name": "Royal Blood", "gender": "male" },
+        { "name": "Greta Van Fleet", "gender": "male" },
+        { "name": "The 1975", "gender": "male" },
+        { "name": "Vampire Weekend", "gender": "male" },
+        { "name": "Foals", "gender": "male" },
+        { "name": "Ghost", "gender": "male" },
+        { "name": "The Lumineers", "gender": "male" },
+        { "name": "Haim", "gender": "male" }
+    ]
+}

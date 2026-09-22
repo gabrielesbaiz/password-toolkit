@@ -96,3 +96,54 @@ it('gives every themed English pack enough adjectives to be worth having', funct
         expect($count)->toBeGreaterThanOrEqual(10, basename((string) $file).' has only '.$count);
     }
 });
+
+it('gives every dictionary a themed adjective pack in both languages', function () {
+    // The default pool is a fallback, not a plan. A dictionary without its own
+    // vocabulary produced things like Magic-Johnson-Corposo — a basketball
+    // player described with a wine word.
+    foreach ((array) glob(packagePath('src/Data/Names/{People,Things}/*.json'), GLOB_BRACE) as $file) {
+        $key = basename((string) $file, '.json');
+
+        foreach (['it', 'en'] as $locale) {
+            expect(file_exists(packagePath("src/Data/Adjectives/{$locale}/{$key}.json")))
+                ->toBeTrue("no {$locale} adjective pack for [{$key}]");
+        }
+    }
+});
+
+it('keeps the default pool free of domain-bound vocabulary', function () {
+    // _default was once the union of every themed pack, which is why it was
+    // full of food and wine terms. It is the pool a dictionary falls back to,
+    // so it has to suit a person, a place or a thing equally.
+    $culinary = [
+        'Corposo', 'Gustoso', 'Saporito', 'Cremoso', 'Delizioso', 'Goloso', 'Fragrante',
+        'Succulento', 'Tannico', 'Fruttato', 'Speziato', 'Salato', 'Croccante', 'Filante',
+        'Profumato', 'Aromatico', 'Balsamico', 'Affumicato', 'Alcolico', 'Stagionato',
+    ];
+
+    $pool = array_column(
+        json_decode((string) file_get_contents(packagePath('src/Data/Adjectives/it/_default.json')), true)['values'],
+        'name',
+    );
+
+    expect(array_values(array_intersect($pool, $culinary)))->toBe([]);
+});
+
+it('caps a themed pack so it stays sharp', function () {
+    foreach ((array) glob(packagePath('src/Data/Adjectives/it/*.json')) as $file) {
+        if (basename((string) $file) === '_default.json') {
+            continue;
+        }
+
+        $values = json_decode((string) file_get_contents((string) $file), true)['values'];
+        $lemmas = count(array_unique(array_map(
+            static fn (array $entry): string => $entry['gender'] === 'neutral'
+                ? mb_strtolower($entry['name'])
+                : (string) preg_replace('/[oa]$/u', '', mb_strtolower($entry['name'])),
+            $values,
+        )));
+
+        // A long themed pack dissolves back into a generic one.
+        expect($lemmas)->toBeLessThanOrEqual(20, basename((string) $file).' has '.$lemmas.' lemmas');
+    }
+});

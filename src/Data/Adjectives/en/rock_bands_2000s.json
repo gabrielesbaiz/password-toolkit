@@ -1,0 +1,24 @@
+{
+    "key": "rock_bands_2000s",
+    "locale": "en",
+    "values": [
+        { "name": "Angular", "gender": "neutral" },
+        { "name": "Artisanal", "gender": "neutral" },
+        { "name": "Cerebral", "gender": "neutral" },
+        { "name": "Digital", "gender": "neutral" },
+        { "name": "Dry", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Emotive", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Ironic", "gender": "neutral" },
+        { "name": "Metropolitan", "gender": "neutral" },
+        { "name": "Minimal", "gender": "neutral" },
+        { "name": "Nervous", "gender": "neutral" },
+        { "name": "Nostalgic", "gender": "neutral" },
+        { "name": "Rousing", "gender": "neutral" },
+        { "name": "Sentimental", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Syncopated", "gender": "neutral" },
+        { "name": "Urban", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "key": "rock_bands_80s",
+    "locale": "en",
+    "values": [
+        { "name": "Boundless", "gender": "neutral" },
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Electric", "gender": "neutral" },
+        { "name": "Excessive", "gender": "neutral" },
+        { "name": "Exuberant", "gender": "neutral" },
+        { "name": "Flashy", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Glorious", "gender": "neutral" },
+        { "name": "Glossy", "gender": "neutral" },
+        { "name": "Lacquered", "gender": "neutral" },
+        { "name": "Muscular", "gender": "neutral" },
+        { "name": "Ostentatious", "gender": "neutral" },
+        { "name": "Roaring", "gender": "neutral" },
+        { "name": "Rowdy", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Synthetic", "gender": "neutral" },
+        { "name": "Triumphal", "gender": "neutral" },
+        { "name": "Winking", "gender": "neutral" }
+    ]
+}

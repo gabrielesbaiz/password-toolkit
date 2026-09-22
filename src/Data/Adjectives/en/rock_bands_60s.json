@@ -1,0 +1,23 @@
+{
+    "key": "rock_bands_60s",
+    "locale": "en",
+    "values": [
+        { "name": "Carefree", "gender": "neutral" },
+        { "name": "Choral", "gender": "neutral" },
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Dreamy", "gender": "neutral" },
+        { "name": "Floral", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Harmonious", "gender": "neutral" },
+        { "name": "Innocent", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Lysergic", "gender": "neutral" },
+        { "name": "Melodic", "gender": "neutral" },
+        { "name": "Protesting", "gender": "neutral" },
+        { "name": "Psychedelic", "gender": "neutral" },
+        { "name": "Radiant", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Utopian", "gender": "neutral" },
+        { "name": "Youthful", "gender": "neutral" }
+    ]
+}

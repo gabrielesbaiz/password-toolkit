@@ -1,0 +1,26 @@
+{
+    "key": "rock_bands_70s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "rock", "seventies"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "Led Zeppelin", "gender": "male" },
+        { "name": "Pink Floyd", "gender": "male" },
+        { "name": "Queen", "gender": "male" },
+        { "name": "Black Sabbath", "gender": "male" },
+        { "name": "Deep Purple", "gender": "male" },
+        { "name": "Fleetwood Mac", "gender": "male" },
+        { "name": "ACDC", "gender": "male" },
+        { "name": "Aerosmith", "gender": "male" },
+        { "name": "Ramones", "gender": "male" },
+        { "name": "Eagles", "gender": "male" },
+        { "name": "The Clash", "gender": "male" },
+        { "name": "Sex Pistols", "gender": "male" },
+        { "name": "Lynyrd Skynyrd", "gender": "male" },
+        { "name": "Rush", "gender": "male" },
+        { "name": "Kiss", "gender": "male" }
+    ]
+}
