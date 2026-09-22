@@ -140,9 +140,9 @@ Adjectives resolve in this order, first hit wins:
 3. `{fallback_locale}/{dictionary}.json`
 4. `{fallback_locale}/_default.json`
 
-Italian and English both ship themed adjectives for all 91 dictionaries, plus a
-default pool (1,237 words in Italian, gender-agreeing; 224 in English, all
-neutral). English packs are generated from
+Every dictionary has a themed adjective pack in both languages, capped at twenty
+words. Missing packs fall back to `_default`, 193 neutral adjectives that suit a
+person, place or thing equally. English packs are generated from
 `src/Data/Adjectives/_glossary.it-en.json` by `build/build-adjectives.php` —
 edit the glossary, never a generated file.
 

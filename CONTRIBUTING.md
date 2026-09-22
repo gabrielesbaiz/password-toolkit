@@ -81,12 +81,23 @@ composer test      # pest
 
 ## Translating
 
-**Adjectives** are generated, never hand-written. Edit
+**English adjectives** are generated, never hand-written. Edit
 `src/Data/Adjectives/_glossary.it-en.json` and run:
 
 ```bash
 php build/build-adjectives.php
 ```
+
+**Italian adjectives** are the source. A new dictionary needs a pack at
+`src/Data/Adjectives/it/<key>.json` of no more than twenty adjectives, each one
+chosen against that dictionary's actual names — if a word would suit any
+dictionary equally it belongs in `_default`, not in a themed pack. Keep roughly
+a third invariant (`-e` endings), since those work with any gender. Then run
+the build script to produce the English pack.
+
+`build/install-adjectives.php` takes packs in `{it, it_f, en}` form, writes the
+Italian file, and folds the translations into the glossary — refusing any word
+whose lemma already means something else rather than silently redefining it.
 
 A test regenerates the packs and compares them byte for byte, so editing a
 generated file directly fails the build rather than being quietly reverted by

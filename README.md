@@ -568,11 +568,25 @@ be understood by someone who did not get the locale they asked for. A French or
 German application therefore gets English adjectives and English names, and only
 the entries that are genuinely Italian stay Italian.
 
-Both Italian and English ship themed adjectives for all 91 dictionaries, plus a
-default pool for anything without one — 1,237 words in Italian, 224 in English.
+Every dictionary has its own themed adjectives, in both languages, capped at
+twenty so a pack stays sharp rather than dissolving into general vocabulary.
 Italian adjectives agree with the gender of the name; English ones are all
 neutral, because English adjectives do not agree, so every one is eligible for
 every name.
+
+```php
+PasswordToolkit::make()->locale('it')->only('rock_bands_70s')->generate();
+// "Fleetwood-Mac-Tonante"        <- thundering
+
+PasswordToolkit::make()->locale('it')->only('rock_bands_2020s')->generate();
+// "Sleep-Token-Insolente"        <- insolent
+```
+
+A dictionary without a pack falls back to `_default`, which holds 193
+adjectives that suit a person, a place or a thing equally. It is deliberately
+free of domain-bound vocabulary: a pool containing culinary words produces
+`Magic-Johnson-Corposo`, a basketball player described as full-bodied, and a
+test now prevents exactly that.
 
 Neither pack derives from the other at runtime: both are first-class data.
 `src/Data/Adjectives/_glossary.it-en.json` records the correspondence between

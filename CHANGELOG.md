@@ -12,6 +12,12 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
   through a fallback chain — themed file, locale default, fallback locale — so a
   new language needs one `_default.json`, not 91 themed files. An English pack
   of 224 adjectives ships with the package.
+- **A themed adjective pack for every dictionary, in both languages**, capped at
+  twenty words so a pack stays specific. A dictionary without one falls back to
+  `_default`, which was rebuilt as 193 genuinely neutral adjectives — it had
+  been the union of every themed pack, and therefore saturated with food and
+  wine vocabulary, which is how a basketball player ended up described as
+  *corposo* (full-bodied).
 - **English themed adjectives for all 91 dictionaries.** English previously had
   one generic pool, so an English password lost every bit of theming the Italian
   data carries. The 2,811 Italian entries reduce to 626 lemmas once gendered
