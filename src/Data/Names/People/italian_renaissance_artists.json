@@ -2,6 +2,10 @@
     "key": "italian_renaissance_artists",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["italian", "renaissance"],
+    "icon": "🎨",
+    "reach": "global",
     "values": [
         { "name": "Leonardo da Vinci", "gender": "male" },
         { "name": "Michelangelo Buonarroti", "gender": "male" },

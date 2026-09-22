@@ -2,6 +2,10 @@
     "key": "italian_olympic_legends",
     "type": "people",
     "locale": "it",
+    "group": "sport",
+    "tags": ["italian", "olympics"],
+    "icon": "🥇",
+    "reach": "italian",
     "values": [
         { "name": "Alberto Tomba", "gender": "male" },
         { "name": "Federica Pellegrini", "gender": "female" },

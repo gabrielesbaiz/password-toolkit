@@ -2,8 +2,9 @@
     "key": "back_to_the_future",
     "locale": "it",
     "values": {
-        "Mayor Goldie Wilson": "Sindaco Goldie Wilson",
+        "Copernicus": "Copernico",
+        "Jules Brown": "Giulio Eratostene Brown",
         "Mad Dog Tannen": "Cane Pazzo Tannen",
-        "Copernicus": "Copernico"
+        "Mayor Goldie Wilson": "Sindaco Goldie Wilson"
     }
 }

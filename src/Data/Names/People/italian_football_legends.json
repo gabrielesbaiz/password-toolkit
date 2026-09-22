@@ -2,6 +2,10 @@
     "key": "italian_football_legends",
     "type": "people",
     "locale": "it",
+    "group": "sport",
+    "tags": ["football", "italian"],
+    "icon": "⚽",
+    "reach": "global",
     "values": [
         { "name": "Roberto Baggio", "gender": "male" },
         { "name": "Paolo Maldini", "gender": "male" },

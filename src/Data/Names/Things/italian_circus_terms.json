@@ -2,6 +2,10 @@
     "key": "italian_circus_terms",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["circus", "italian"],
+    "icon": "🎪",
+    "reach": "niche",
     "values": [
         { "name": "Saltimbanco", "gender": "male" },
         { "name": "Giocoliere", "gender": "male" },

@@ -2,6 +2,10 @@
     "key": "italian_coffee_brands",
     "type": "things",
     "locale": "it",
+    "group": "drink",
+    "tags": ["brands", "coffee", "italian"],
+    "icon": "☕",
+    "reach": "italian",
     "values": [
         { "name": "Lavazza", "gender": "neutral" },
         { "name": "Illy", "gender": "neutral" },

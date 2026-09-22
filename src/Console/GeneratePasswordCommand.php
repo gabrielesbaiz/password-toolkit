@@ -20,6 +20,9 @@ class GeneratePasswordCommand extends Command
         {--only=* : Restrict to these dictionary keys}
         {--except=* : Exclude these dictionary keys}
         {--type=* : Restrict to people, things, or both}
+        {--group=* : Restrict to thematic groups: food, screen, sport, …}
+        {--tag=* : Restrict to dictionaries carrying all of these tags}
+        {--reach= : Minimum recognisability: global, italian or niche}
         {--separator= : Separator between segments}
         {--digits= : Length of the numeric segment}
         {--position= : Where the numbers go: start, middle or end}
@@ -100,6 +103,18 @@ class GeneratePasswordCommand extends Command
             $builder = $builder->types($types);
         }
 
+        if ($groups = $this->arrayOption('group')) {
+            $builder = $builder->groups($groups);
+        }
+
+        if ($tags = $this->arrayOption('tag')) {
+            $builder = $builder->tagged($tags);
+        }
+
+        if (is_string($reach = $this->option('reach')) && $reach !== '') {
+            $builder = $builder->reach($reach);
+        }
+
         if (is_string($separator = $this->option('separator'))) {
             $builder = $builder->separator($separator);
         }
@@ -137,22 +152,31 @@ class GeneratePasswordCommand extends Command
             return self::SUCCESS;
         }
 
-        $this->table(
-            ['Key', 'Type', 'Entries', 'Source'],
-            $dictionaries
-                ->map(static fn (array $row): array => [
-                    $row['key'],
-                    $row['type'],
-                    $row['count'],
-                    $row['built_in'] ? 'built-in' : 'custom',
-                ])
-                ->values()
-                ->all(),
-        );
+        $rows = [];
+
+        foreach ($dictionaries as $row) {
+            $rows[] = [
+                $row['icon'] ?? '',
+                $row['key'],
+                $row['label'],
+                $row['group'] ?? '—',
+                $row['reach'],
+                $row['locale'] ?? '—',
+                $row['count'],
+                implode(', ', $row['tags']),
+            ];
+        }
+
+        $this->table(['', 'Key', 'Label', 'Group', 'Reach', 'Lang', 'Entries', 'Tags'], $rows);
 
         $pools = $toolkit->poolSizes($options);
+        $groups = $toolkit->groups($options)
+            ->map(static fn (array $group): string => "{$group['icon']} {$group['value']} ({$group['count']})")
+            ->implode('  ');
+
         $this->newLine();
         $this->components->info("{$dictionaries->count()} dictionaries, {$pools['names']} names, ~{$pools['adjectives']} adjectives each.");
+        $this->line('  '.$groups);
 
         return self::SUCCESS;
     }

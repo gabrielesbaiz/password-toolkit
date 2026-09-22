@@ -2,6 +2,10 @@
     "key": "italian_cyclists",
     "type": "people",
     "locale": "it",
+    "group": "sport",
+    "tags": ["cycling", "italian"],
+    "icon": "🚴",
+    "reach": "global",
     "values": [
         { "name": "Fausto Coppi", "gender": "male" },
         { "name": "Gino Bartali", "gender": "male" },

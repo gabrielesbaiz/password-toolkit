@@ -2,6 +2,10 @@
     "key": "italian_train_stations_classic",
     "type": "things",
     "locale": "it",
+    "group": "places",
+    "tags": ["italian", "railway"],
+    "icon": "🚉",
+    "reach": "niche",
     "values": [
         { "name": "Roma Termini", "gender": "neutral" },
         { "name": "Milano Centrale", "gender": "neutral" },

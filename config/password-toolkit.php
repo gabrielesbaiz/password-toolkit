@@ -54,6 +54,22 @@ return [
 
         'types' => ['people', 'things'],
 
+        /*
+         * Thematic filters. Empty means no restriction.
+         *
+         * 'groups' is a closed vocabulary: food, drink, nature, places,
+         * culture, arts, screen, sport, science, history, myth, vehicles.
+         * 'tags' is free-form, and a dictionary must carry all of them.
+         * 'reach' is how widely recognisable the names are — set it to
+         * 'global' for an international audience, since a password is only
+         * memorable if the reader actually knows the word.
+         */
+        'groups' => [],
+
+        'tags' => [],
+
+        'reach' => null,
+
         'paths' => [
             // resource_path('password-dictionaries'),
         ],

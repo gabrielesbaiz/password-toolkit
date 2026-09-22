@@ -2,6 +2,10 @@
     "key": "roman_emperors",
     "type": "people",
     "locale": "en",
+    "group": "history",
+    "tags": ["classical", "roman"],
+    "icon": "🏛️",
+    "reach": "global",
     "values": [
         { "name": "Augustus", "gender": "male" },
         { "name": "Tiberius", "gender": "male" },

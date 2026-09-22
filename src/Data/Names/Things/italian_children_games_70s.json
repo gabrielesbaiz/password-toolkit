@@ -2,6 +2,10 @@
     "key": "italian_children_games_70s",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["childhood", "italian", "seventies"],
+    "icon": "🧸",
+    "reach": "niche",
     "values": [
         { "name": "Subbuteo", "gender": "male" },
         { "name": "Allegro Chirurgo", "gender": "male" },

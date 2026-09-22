@@ -1,0 +1,12 @@
+{
+    "key": "star_wars",
+    "locale": "it",
+    "values": {
+        "Admiral Ackbar": "Ammiraglio Ackbar",
+        "Count Dooku": "Conte Dooku",
+        "Director Krennic": "Direttore Krennic",
+        "General Hux": "Generale Hux",
+        "Grand Moff Tarkin": "Granmoff Tarkin",
+        "Vice Admiral Holdo": "Viceammiraglio Holdo"
+    }
+}

@@ -2,6 +2,10 @@
     "key": "italian_mountains",
     "type": "things",
     "locale": "it",
+    "group": "nature",
+    "tags": ["geography", "italian"],
+    "icon": "🏔️",
+    "reach": "global",
     "values": [
         { "name": "Cervino", "gender": "male" },
         { "name": "Gran Sasso", "gender": "male" },

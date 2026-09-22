@@ -2,6 +2,10 @@
     "key": "italian_comedians",
     "type": "people",
     "locale": "it",
+    "group": "screen",
+    "tags": ["comedy", "italian"],
+    "icon": "😂",
+    "reach": "italian",
     "values": [
         { "name": "Roberto Benigni", "gender": "male" },
         { "name": "Paolo Villaggio", "gender": "male" },

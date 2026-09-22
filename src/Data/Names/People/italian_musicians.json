@@ -2,6 +2,10 @@
     "key": "italian_musicians",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["italian", "music"],
+    "icon": "🎵",
+    "reach": "italian",
     "values": [
         { "name": "Lucio Battisti", "gender": "male" },
         { "name": "Pino Daniele", "gender": "male" },

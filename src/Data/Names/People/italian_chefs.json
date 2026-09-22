@@ -2,6 +2,10 @@
     "key": "italian_chefs",
     "type": "people",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian"],
+    "icon": "👨‍🍳",
+    "reach": "italian",
     "values": [
         { "name": "Gualtiero Marchesi", "gender": "male" },
         { "name": "Massimo Bottura", "gender": "male" },

@@ -42,6 +42,8 @@ Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-4271` in It
   - [Strength](#strength)
 - [Dictionaries](#dictionaries)
   - [Built-in](#built-in)
+  - [Groups, tags and reach](#groups-tags-and-reach)
+  - [Building a picker](#building-a-picker)
   - [Your own dictionaries](#your-own-dictionaries)
   - [Locales and adjectives](#locales-and-adjectives)
   - [Translated names](#translated-names)
@@ -231,116 +233,193 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 ### Built-in
 
 91 dictionaries — **49 of people** and **42 of things** — holding
-2,049 names and 1,019 names respectively, each with themed adjectives in both
-Italian and English. The `source` column is the language a dictionary's names
-are written in; anything not in your locale is translated where a translation
-exists and left alone where it should be.
+2,046 names and 1,019 names respectively, each with themed adjectives in both
+Italian and English.
+
+Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
+`Source` is the language its names are written in; anything not in your locale
+is translated where a translation exists and left alone where it should be.
 
 <details>
 <summary><b>People (49)</b></summary>
 
-| Dictionary | Source | Entries | Example |
-|---|---|---|---|
-| `back_to_the_future` | en | 17 | Marty McFly |
-| `cartoons` | en | 149 | Mickey Mouse |
-| `disney_characters` | en | 60 | Mickey Mouse |
-| `disney_villains` | en | 20 | Maleficent |
-| `game_of_thrones` | en | 54 | Jon Snow |
-| `greek_mythology` | en | 68 | Zeus |
-| `harry_potter` | en | 71 | Harry Potter |
-| `hayao_miyazaki` | en | 20 | Totoro |
-| `italian_actors` | it | 69 | Roberto Benigni |
-| `italian_architects` | it | 43 | Renzo Piano |
-| `italian_basketball_legends` | it | 71 | Dino Meneghin |
-| `italian_chefs` | it | 44 | Gualtiero Marchesi |
-| `italian_comedians` | it | 40 | Roberto Benigni |
-| `italian_cyclists` | it | 50 | Fausto Coppi |
-| `italian_dj_producers` | it | 20 | Benny Benassi |
-| `italian_explorers` | it | 42 | Cristoforo Colombo |
-| `italian_fashion_designers` | it | 48 | Giorgio Armani |
-| `italian_film_directors` | it | 56 | Federico Fellini |
-| `italian_football_legends` | it | 74 | Roberto Baggio |
-| `italian_inventors` | it | 20 | Antonio Meucci |
-| `italian_journalists` | it | 20 | Indro Montanelli |
-| `italian_mathematicians` | it | 20 | Leonardo Fibonacci |
-| `italian_motogp_legends` | it | 20 | Valentino Rossi |
-| `italian_musicians` | it | 56 | Lucio Battisti |
-| `italian_nobel_prize_winners` | it | 14 | Guglielmo Marconi |
-| `italian_olympic_legends` | it | 20 | Alberto Tomba |
-| `italian_opera_composers` | it | 48 | Giuseppe Verdi |
-| `italian_painters` | it | 50 | Amedeo Modigliani |
-| `italian_poets` | it | 47 | Dante Alighieri |
-| `italian_presidents_of_the_republic` | it | 11 | Enrico De Nicola |
-| `italian_racing_drivers` | it | 49 | Alberto Ascari |
-| `italian_rappers` | it | 20 | Fabri Fibra |
-| `italian_renaissance_artists` | it | 64 | Leonardo da Vinci |
-| `italian_scientists` | it | 68 | Galileo Galilei |
-| `italian_singers_classic` | it | 20 | Mina |
-| `italian_singers_modern` | it | 20 | Marco Mengoni |
-| `italian_superheroes` | it | 35 | Diabolik |
-| `italian_television_personalities` | it | 35 | Maria De Filippi |
-| `italian_tennis_players` | it | 18 | Jannik Sinner |
-| `italian_voice_actors` | it | 20 | Ferruccio Amendola |
-| `italian_volleyball_legends` | it | 20 | Ivan Zaytsev |
-| `italian_writers` | it | 66 | Dante Alighieri |
-| `italian_youtubers` | it | 48 | Favij |
-| `lupin_iii_characters` | en | 18 | Lupin |
-| `philosophers` | en | 35 | Socrates |
-| `pixar_characters` | en | 45 | Woody |
-| `roman_emperors` | en | 25 | Augustus |
-| `roman_mythology` | en | 30 | Jupiter |
-| `star_wars` | en | 71 | Luke Skywalker |
+| Dictionary | Group | Source | Entries | Example |
+|---|---|---|---|---|
+| `back_to_the_future` | 🚗 screen | en | 17 | Marty McFly |
+| `cartoons` | 📺 screen | en | 146 | Mickey Mouse |
+| `disney_characters` | 🏰 screen | en | 60 | Mickey Mouse |
+| `disney_villains` | 😈 screen | en | 20 | Maleficent |
+| `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
+| `greek_mythology` | 🏺 myth | en | 68 | Zeus |
+| `harry_potter` | 🧙 screen | en | 71 | Harry Potter |
+| `hayao_miyazaki` | 🌸 screen | en | 20 | Totoro |
+| `italian_actors` | 🎭 screen | it | 69 | Roberto Benigni |
+| `italian_architects` | 📐 arts | it | 43 | Renzo Piano |
+| `italian_basketball_legends` | 🏀 sport | it | 71 | Dino Meneghin |
+| `italian_chefs` | 👨‍🍳 food | it | 44 | Gualtiero Marchesi |
+| `italian_comedians` | 😂 screen | it | 40 | Roberto Benigni |
+| `italian_cyclists` | 🚴 sport | it | 50 | Fausto Coppi |
+| `italian_dj_producers` | 🎧 arts | it | 20 | Benny Benassi |
+| `italian_explorers` | 🧭 history | it | 42 | Cristoforo Colombo |
+| `italian_fashion_designers` | 👗 arts | it | 48 | Giorgio Armani |
+| `italian_film_directors` | 🎬 arts | it | 56 | Federico Fellini |
+| `italian_football_legends` | ⚽ sport | it | 74 | Roberto Baggio |
+| `italian_inventors` | 💡 science | it | 20 | Antonio Meucci |
+| `italian_journalists` | 📰 screen | it | 20 | Indro Montanelli |
+| `italian_mathematicians` | 📐 science | it | 20 | Leonardo Fibonacci |
+| `italian_motogp_legends` | 🏍️ sport | it | 20 | Valentino Rossi |
+| `italian_musicians` | 🎵 arts | it | 56 | Lucio Battisti |
+| `italian_nobel_prize_winners` | 🏅 science | it | 14 | Guglielmo Marconi |
+| `italian_olympic_legends` | 🥇 sport | it | 20 | Alberto Tomba |
+| `italian_opera_composers` | 🎼 arts | it | 48 | Giuseppe Verdi |
+| `italian_painters` | 🖼️ arts | it | 50 | Amedeo Modigliani |
+| `italian_poets` | ✒️ arts | it | 47 | Dante Alighieri |
+| `italian_presidents_of_the_republic` | 🇮🇹 history | it | 11 | Enrico De Nicola |
+| `italian_racing_drivers` | 🏁 sport | it | 49 | Alberto Ascari |
+| `italian_rappers` | 🎤 arts | it | 20 | Fabri Fibra |
+| `italian_renaissance_artists` | 🎨 arts | it | 64 | Leonardo da Vinci |
+| `italian_scientists` | 🔬 science | it | 68 | Galileo Galilei |
+| `italian_singers_classic` | 🎙️ arts | it | 20 | Mina |
+| `italian_singers_modern` | 🎙️ arts | it | 20 | Marco Mengoni |
+| `italian_superheroes` | 🦸 screen | it | 35 | Diabolik |
+| `italian_television_personalities` | 📺 screen | it | 35 | Maria De Filippi |
+| `italian_tennis_players` | 🎾 sport | it | 18 | Jannik Sinner |
+| `italian_voice_actors` | 🎙️ screen | it | 20 | Ferruccio Amendola |
+| `italian_volleyball_legends` | 🏐 sport | it | 20 | Ivan Zaytsev |
+| `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
+| `italian_youtubers` | ▶️ screen | it | 48 | Favij |
+| `lupin_iii_characters` | 🕵️ screen | en | 18 | Lupin |
+| `philosophers` | 🤔 science | en | 35 | Socrates |
+| `pixar_characters` | 💡 screen | en | 45 | Woody |
+| `roman_emperors` | 🏛️ history | en | 25 | Augustus |
+| `roman_mythology` | ⚡ myth | en | 30 | Jupiter |
+| `star_wars` | 🚀 screen | en | 71 | Luke Skywalker |
 </details>
 
 <details>
 <summary><b>Things (42)</b></summary>
 
-| Dictionary | Source | Entries | Example |
-|---|---|---|---|
-| `car_brands` | en | 49 | Ferrari |
-| `italian_aperitivi` | it | 18 | Spritz |
-| `italian_breads` | it | 20 | Ciabatta |
-| `italian_card_games` | it | 18 | Scopa |
-| `italian_carnival_masks` | it | 20 | Arlecchino |
-| `italian_cars` | it | 20 | Cinquecento |
-| `italian_castles` | it | 20 | Castel del Monte |
-| `italian_cheeses` | it | 24 | Parmigiano Reggiano |
-| `italian_children_games_2000s` | it | 28 | Beyblade |
-| `italian_children_games_70s` | it | 27 | Subbuteo |
-| `italian_children_games_80s` | it | 28 | He Man |
-| `italian_children_games_90s` | it | 28 | Tamagotchi |
-| `italian_circus_terms` | it | 20 | Saltimbanco |
-| `italian_coffee_brands` | it | 25 | Lavazza |
-| `italian_cryptids_legends` | it | 20 | Befana |
-| `italian_cured_meats` | it | 20 | Prosciutto |
-| `italian_dance_styles` | it | 18 | Tarantella |
-| `italian_design_objects` | it | 21 | Arco |
-| `italian_desserts` | it | 20 | Tiramisu |
-| `italian_dialect_words` | it | 20 | Guaglione |
-| `italian_folk_instruments` | it | 20 | Mandolino |
-| `italian_icecream_flavors` | it | 18 | Stracciatella |
-| `italian_invented_words` | it | 19 | Petaloso |
-| `italian_islands` | it | 23 | Capri |
-| `italian_lakes` | it | 20 | Garda |
-| `italian_liqueurs` | it | 22 | Limoncello |
-| `italian_monuments` | it | 41 | Colosseo |
-| `italian_motorcycles` | it | 20 | Vespa |
-| `italian_mountains` | it | 20 | Cervino |
-| `italian_old_currencies` | it | 21 | Lira |
-| `italian_old_jobs` | it | 25 | Arrotino |
-| `italian_pasta_shapes` | it | 20 | Fusilli |
-| `italian_pizza_types` | it | 20 | Margherita |
-| `italian_progressive_rock_bands` | it | 20 | PFM |
-| `italian_regional_foods` | it | 57 | Cacciucco |
-| `italian_rivers` | it | 22 | Po |
-| `italian_sea_creatures` | it | 26 | Polpo |
-| `italian_street_foods` | it | 20 | Arancino |
-| `italian_train_stations_classic` | it | 21 | Roma Termini |
-| `italian_volcanoes` | it | 18 | Etna |
-| `italian_wine_regions` | it | 22 | Chianti |
-| `italian_wines` | it | 60 | Barolo |
+| Dictionary | Group | Source | Entries | Example |
+|---|---|---|---|---|
+| `car_brands` | 🚘 vehicles | en | 49 | Ferrari |
+| `italian_aperitivi` | 🍹 drink | it | 18 | Spritz |
+| `italian_breads` | 🥖 food | it | 20 | Ciabatta |
+| `italian_card_games` | 🃏 culture | it | 18 | Scopa |
+| `italian_carnival_masks` | 🎭 culture | it | 20 | Arlecchino |
+| `italian_cars` | 🚗 vehicles | it | 20 | Cinquecento |
+| `italian_castles` | 🏯 places | it | 20 | Castel del Monte |
+| `italian_cheeses` | 🧀 food | it | 24 | Parmigiano Reggiano |
+| `italian_children_games_2000s` | 💾 culture | it | 28 | Beyblade |
+| `italian_children_games_70s` | 🧸 culture | it | 27 | Subbuteo |
+| `italian_children_games_80s` | 🕹️ culture | it | 28 | He Man |
+| `italian_children_games_90s` | 🎮 culture | it | 28 | Tamagotchi |
+| `italian_circus_terms` | 🎪 culture | it | 20 | Saltimbanco |
+| `italian_coffee_brands` | ☕ drink | it | 25 | Lavazza |
+| `italian_cryptids_legends` | 👻 culture | it | 20 | Befana |
+| `italian_cured_meats` | 🥓 food | it | 20 | Prosciutto |
+| `italian_dance_styles` | 💃 culture | it | 18 | Tarantella |
+| `italian_design_objects` | 🪑 culture | it | 21 | Arco |
+| `italian_desserts` | 🍰 food | it | 20 | Tiramisu |
+| `italian_dialect_words` | 🗣️ culture | it | 20 | Guaglione |
+| `italian_folk_instruments` | 🪕 culture | it | 20 | Mandolino |
+| `italian_icecream_flavors` | 🍨 food | it | 18 | Stracciatella |
+| `italian_invented_words` | 💬 culture | it | 19 | Petaloso |
+| `italian_islands` | 🏝️ nature | it | 23 | Capri |
+| `italian_lakes` | 🏞️ nature | it | 20 | Garda |
+| `italian_liqueurs` | 🥃 drink | it | 22 | Limoncello |
+| `italian_monuments` | 🏛️ places | it | 41 | Colosseo |
+| `italian_motorcycles` | 🛵 vehicles | it | 20 | Vespa |
+| `italian_mountains` | 🏔️ nature | it | 20 | Cervino |
+| `italian_old_currencies` | 🪙 culture | it | 21 | Lira |
+| `italian_old_jobs` | 🔨 culture | it | 25 | Arrotino |
+| `italian_pasta_shapes` | 🍝 food | it | 20 | Fusilli |
+| `italian_pizza_types` | 🍕 food | it | 20 | Margherita |
+| `italian_progressive_rock_bands` | 🎸 arts | it | 20 | PFM |
+| `italian_regional_foods` | 🍲 food | it | 57 | Cacciucco |
+| `italian_rivers` | 🌊 nature | it | 22 | Po |
+| `italian_sea_creatures` | 🐙 food | it | 26 | Polpo |
+| `italian_street_foods` | 🥪 food | it | 20 | Arancino |
+| `italian_train_stations_classic` | 🚉 places | it | 21 | Roma Termini |
+| `italian_volcanoes` | 🌋 nature | it | 18 | Etna |
+| `italian_wine_regions` | 🍇 drink | it | 22 | Chianti |
+| `italian_wines` | 🍷 drink | it | 60 | Barolo |
 
 </details>
+
+### Groups, tags and reach
+
+Every dictionary carries four attributes beyond its names, so you can select a
+pool by what it is *about* rather than by listing keys.
+
+| Attribute | What it is |
+|---|---|
+| `group` | One thematic bucket from a closed set: `food` `drink` `nature` `places` `culture` `arts` `screen` `sport` `science` `history` `myth` `vehicles` |
+| `tags` | Free-form and multiple: `italian`, `cuisine`, `eighties`, `anime` |
+| `icon` | One emoji, for display only — it never enters a password |
+| `reach` | `global`, `italian` or `niche` |
+
+```php
+PasswordToolkit::make()->groups('food')->generate();
+PasswordToolkit::make()->groups(['screen', 'myth'])->generate();
+PasswordToolkit::make()->tagged(['italian', 'sweet'])->generate();   // all tags, not any
+PasswordToolkit::make()->reach('global')->generate();
+```
+
+Or in config, applied to every call:
+
+```php
+'dictionaries' => [
+    'groups' => ['food', 'drink'],
+    'tags'   => ['italian'],
+    'reach'  => 'global',
+],
+```
+
+Naming a dictionary explicitly wins over any filter — `->only('italian_dialect_words')`
+gives you exactly that, whatever its group or reach.
+
+> [!TIP]
+> **`reach` is the one to reach for.** A memorable password only works if the
+> reader recognises the word. `Guaglione-Fortunato-1234` means nothing outside
+> southern Italy. `->reach('global')` keeps the pool to names a reader anywhere
+> is likely to know; `italian` also accepts `global`, because anything
+> universally recognisable is recognisable to an Italian too.
+
+### Building a picker
+
+`dictionaries()` returns everything a UI needs for one row, translated:
+
+```php
+PasswordToolkit::dictionaries()->get('italian_pasta_shapes');
+// [
+//   'key' => 'italian_pasta_shapes',
+//   'label' => 'Italian Pasta Shapes',      // 'Formati di Pasta' in Italian
+//   'description' => null,
+//   'icon' => '🍝',
+//   'type' => 'things',
+//   'group' => 'food',  'group_label' => 'Food',
+//   'tags' => ['cuisine', 'italian'],
+//   'reach' => 'global', 'reach_label' => 'Worldwide',
+//   'locale' => 'it',
+//   'count' => 20,
+//   'built_in' => true,
+// ]
+```
+
+`dictionariesWithSamples()` adds a freshly generated `sample` per dictionary —
+a row reading `Fusilli-Gustoso-4271` tells a user far more than "20 entries".
+
+`groups()` and `tags()` return the vocabulary actually in use, with counts, so a
+filter UI never hardcodes the list:
+
+```php
+PasswordToolkit::groups();
+// [['value' => 'food', 'label' => 'Food', 'icon' => '🍝', 'count' => 10], …]
+```
+
+Labels and descriptions live in `resources/lang/{locale}/dictionaries.php`, so
+they translate like everything else. A dictionary without a label falls back to
+its key made readable, and `description` is `null` until one is written.
 
 ### Your own dictionaries
 
@@ -554,6 +633,9 @@ use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
 PasswordToolkit::make()
     ->locale('en')                          // adjective language
     ->only(['star_wars'])                   // or ->except([…]), ->types('people')
+    ->groups(['screen', 'myth'])            // thematic buckets
+    ->tagged(['italian'])                   // must carry every tag
+    ->reach('global')                       // minimum recognisability
     ->paths([storage_path('dictionaries')]) // extra dictionary directory
     ->separator('_')                        // or ->separator(null)
     ->keepWordBreaks(false)                 // "LukeSkywalker" instead of "Luke_Skywalker"
@@ -640,13 +722,16 @@ one the user chose.
 | `password-toolkit:generate {count}` | Generate passwords |
 | `password-toolkit:generate --report` | …with score, entropy and crack time |
 | `password-toolkit:generate --json` | …as JSON, for piping |
-| `password-toolkit:generate --list` | Show which dictionaries resolve, and stop |
+| `password-toolkit:generate --list` | Show which dictionaries resolve, with group, reach and tags |
+| `password-toolkit:generate --group= --tag= --reach=` | Filter the pool thematically |
 | `password-toolkit:make-dictionary {key}` | Scaffold a dictionary of your own |
 
 ```bash
 php artisan password-toolkit:generate 5 --report
 php artisan password-toolkit:generate 3 --locale=en --only=star_wars --json
 php artisan password-toolkit:generate --separator=_ --digits=6 --leet=basic
+php artisan password-toolkit:generate --group=food --reach=global
+php artisan password-toolkit:generate --list --group=drink
 php artisan password-toolkit:make-dictionary my_team --type=people --locale=en
 ```
 

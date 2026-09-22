@@ -2,6 +2,10 @@
     "key": "italian_superheroes",
     "type": "people",
     "locale": "it",
+    "group": "screen",
+    "tags": ["comics", "italian"],
+    "icon": "🦸",
+    "reach": "italian",
     "values": [
         { "name": "Diabolik", "gender": "male" },
         { "name": "Tex Willer", "gender": "male" },

@@ -6,8 +6,10 @@ namespace Gabrielesbaiz\PasswordToolkit\Generator;
 
 use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
 use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
+use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
+use Gabrielesbaiz\PasswordToolkit\Enums\Reach;
 use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
 
 /**
@@ -72,6 +74,46 @@ final readonly class PasswordBuilder
     public function paths(array|string $paths): self
     {
         return $this->derive(paths: array_values(array_unique([...$this->options->paths, ...(array) $paths])));
+    }
+
+    /**
+     * Restrict to one or more thematic groups: food, screen, sport and so on.
+     *
+     * @param  array<int, DictionaryGroup|string>|DictionaryGroup|string  $groups
+     */
+    public function groups(array|DictionaryGroup|string $groups): self
+    {
+        // Not (array) $groups: casting an enum yields its properties, not the
+        // enum itself.
+        $groups = is_array($groups) ? $groups : [$groups];
+
+        return $this->derive(groups: array_map(
+            static fn (DictionaryGroup|string $group): DictionaryGroup => is_string($group)
+                ? DictionaryGroup::parse($group)
+                : $group,
+            array_values($groups),
+        ));
+    }
+
+    /**
+     * Restrict to dictionaries carrying all of these tags.
+     *
+     * @param  array<int, string>|string  $tags
+     */
+    public function tagged(array|string $tags): self
+    {
+        return $this->derive(tags: array_values((array) $tags));
+    }
+
+    /**
+     * Restrict to dictionaries at least this widely recognisable.
+     *
+     * ->reach('global') is the sensible default for an international audience:
+     * a password is only memorable if the reader knows the word.
+     */
+    public function reach(Reach|string|null $reach): self
+    {
+        return $this->derive(reach: is_string($reach) ? Reach::parse($reach) : $reach);
     }
 
     public function locale(?string $locale): self

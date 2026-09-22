@@ -2,6 +2,10 @@
     "key": "italian_journalists",
     "type": "people",
     "locale": "it",
+    "group": "screen",
+    "tags": ["italian", "media"],
+    "icon": "📰",
+    "reach": "niche",
     "values": [
         { "name": "Indro Montanelli", "gender": "male" },
         { "name": "Enzo Biagi", "gender": "male" },

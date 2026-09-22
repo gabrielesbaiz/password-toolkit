@@ -2,6 +2,10 @@
     "key": "italian_progressive_rock_bands",
     "type": "things",
     "locale": "it",
+    "group": "arts",
+    "tags": ["italian", "music", "seventies"],
+    "icon": "🎸",
+    "reach": "niche",
     "values": [
         { "name": "PFM", "gender": "neutral" },
         { "name": "Banco Mutuo Soccorso", "gender": "neutral" },

@@ -2,6 +2,10 @@
     "key": "italian_volleyball_legends",
     "type": "people",
     "locale": "it",
+    "group": "sport",
+    "tags": ["italian", "volleyball"],
+    "icon": "🏐",
+    "reach": "italian",
     "values": [
         { "name": "Ivan Zaytsev", "gender": "male" },
         { "name": "Paola Egonu", "gender": "female" },

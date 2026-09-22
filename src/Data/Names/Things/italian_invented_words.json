@@ -2,6 +2,10 @@
     "key": "italian_invented_words",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["italian", "language"],
+    "icon": "💬",
+    "reach": "niche",
     "values": [
         { "name": "Petaloso", "gender": "male" },
         { "name": "Apericena", "gender": "female" },

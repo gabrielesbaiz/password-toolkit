@@ -2,6 +2,10 @@
     "key": "italian_film_directors",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["cinema", "italian"],
+    "icon": "🎬",
+    "reach": "global",
     "values": [
         { "name": "Federico Fellini", "gender": "male" },
         { "name": "Luchino Visconti", "gender": "male" },

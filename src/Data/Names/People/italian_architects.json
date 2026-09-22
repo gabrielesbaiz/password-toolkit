@@ -2,6 +2,10 @@
     "key": "italian_architects",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["architecture", "italian"],
+    "icon": "📐",
+    "reach": "global",
     "values": [
         { "name": "Renzo Piano", "gender": "male" },
         { "name": "Carlo Scarpa", "gender": "male" },

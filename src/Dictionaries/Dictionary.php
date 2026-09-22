@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Gabrielesbaiz\PasswordToolkit\Dictionaries;
 
+use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
+use Gabrielesbaiz\PasswordToolkit\Enums\Reach;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
@@ -17,6 +19,7 @@ final readonly class Dictionary
 
     /**
      * @param  array<int, Entry>  $entries
+     * @param  array<int, string>  $tags
      */
     public function __construct(
         public string $key,
@@ -24,6 +27,10 @@ final readonly class Dictionary
         public array $entries,
         public ?string $locale = null,
         public bool $builtIn = false,
+        public ?DictionaryGroup $group = null,
+        public array $tags = [],
+        public ?string $icon = null,
+        public Reach $reach = Reach::Global,
     ) {}
 
     /**
@@ -68,7 +75,26 @@ final readonly class Dictionary
             $entries[] = Entry::fromArray($value, $key, $locale);
         }
 
-        return new self($key, $type, $entries, $locale, $builtIn);
+        return new self(
+            key: $key,
+            type: $type,
+            entries: $entries,
+            locale: $locale,
+            builtIn: $builtIn,
+            group: isset($data['group']) && is_string($data['group'])
+                ? DictionaryGroup::parse($data['group'])
+                : null,
+            tags: array_values(array_filter(
+                is_array($data['tags'] ?? null) ? $data['tags'] : [],
+                'is_string',
+            )),
+            icon: isset($data['icon']) && is_string($data['icon']) ? $data['icon'] : null,
+            // A dictionary that does not say is assumed to travel: a user's own
+            // dictionary is by definition meaningful to its own users.
+            reach: isset($data['reach']) && is_string($data['reach'])
+                ? Reach::parse($data['reach'])
+                : Reach::Global,
+        );
     }
 
     public function count(): int
@@ -76,14 +102,53 @@ final readonly class Dictionary
         return count($this->entries);
     }
 
+    public function hasTag(string $tag): bool
+    {
+        return in_array(strtolower($tag), array_map('strtolower', $this->tags), true);
+    }
+
     /**
-     * @return array{key: string, type: string, locale: string|null, count: int, built_in: bool}
+     * Translated display name, falling back to the key made readable.
+     */
+    public function label(): string
+    {
+        $key = 'password-toolkit::dictionaries.labels.'.$this->key;
+        $translated = trans($key);
+
+        return is_string($translated) && $translated !== $key
+            ? $translated
+            : ucwords(str_replace('_', ' ', $this->key));
+    }
+
+    /**
+     * Translated one-line description, or null when none is written yet.
+     */
+    public function description(): ?string
+    {
+        $key = 'password-toolkit::dictionaries.descriptions.'.$this->key;
+        $translated = trans($key);
+
+        return is_string($translated) && $translated !== $key ? $translated : null;
+    }
+
+    /**
+     * Everything a picker needs to render this dictionary as one row.
+     *
+     * @return array{key: string, label: string, description: string|null, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}
      */
     public function toArray(): array
     {
         return [
             'key' => $this->key,
+            'label' => $this->label(),
+            'description' => $this->description(),
+            'icon' => $this->icon ?? $this->group?->icon(),
             'type' => $this->type,
+            'group' => $this->group?->value,
+            'group_label' => $this->group?->label(),
+            'tags' => $this->tags,
+            'reach' => $this->reach->value,
+            'reach_label' => $this->reach->label(),
             'locale' => $this->locale,
             'count' => $this->count(),
             'built_in' => $this->builtIn,

@@ -2,6 +2,10 @@
     "key": "car_brands",
     "type": "things",
     "locale": "en",
+    "group": "vehicles",
+    "tags": ["brands", "cars"],
+    "icon": "🚘",
+    "reach": "global",
     "values": [
         { "name": "Ferrari", "gender": "female" },
         { "name": "Lamborghini", "gender": "female" },

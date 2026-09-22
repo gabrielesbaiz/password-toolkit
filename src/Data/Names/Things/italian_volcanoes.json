@@ -2,6 +2,10 @@
     "key": "italian_volcanoes",
     "type": "things",
     "locale": "it",
+    "group": "nature",
+    "tags": ["geography", "italian"],
+    "icon": "🌋",
+    "reach": "global",
     "values": [
         { "name": "Etna", "gender": "male" },
         { "name": "Vesuvio", "gender": "male" },

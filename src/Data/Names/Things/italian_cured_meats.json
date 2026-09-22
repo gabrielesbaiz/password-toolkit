@@ -2,6 +2,10 @@
     "key": "italian_cured_meats",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian"],
+    "icon": "🥓",
+    "reach": "global",
     "values": [
         { "name": "Prosciutto", "gender": "male" },
         { "name": "Bresaola", "gender": "female" },

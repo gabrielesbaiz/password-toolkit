@@ -2,6 +2,10 @@
     "key": "italian_television_personalities",
     "type": "people",
     "locale": "it",
+    "group": "screen",
+    "tags": ["italian", "television"],
+    "icon": "📺",
+    "reach": "italian",
     "values": [
         { "name": "Maria De Filippi", "gender": "female" },
         { "name": "Gerry Scotti", "gender": "male" },

@@ -2,6 +2,10 @@
     "key": "italian_sea_creatures",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian", "sea"],
+    "icon": "🐙",
+    "reach": "italian",
     "values": [
         { "name": "Polpo", "gender": "male" },
         { "name": "Seppia", "gender": "female" },

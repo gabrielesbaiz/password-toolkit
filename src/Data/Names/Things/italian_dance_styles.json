@@ -2,6 +2,10 @@
     "key": "italian_dance_styles",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["dance", "folk", "italian"],
+    "icon": "💃",
+    "reach": "italian",
     "values": [
         { "name": "Tarantella", "gender": "female" },
         { "name": "Pizzica", "gender": "female" },

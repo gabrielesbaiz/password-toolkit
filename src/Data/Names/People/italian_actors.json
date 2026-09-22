@@ -2,6 +2,10 @@
     "key": "italian_actors",
     "type": "people",
     "locale": "it",
+    "group": "screen",
+    "tags": ["cinema", "italian"],
+    "icon": "🎭",
+    "reach": "italian",
     "values": [
         { "name": "Roberto Benigni", "gender": "male" },
         { "name": "Sophia Loren", "gender": "female" },

@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Gabrielesbaiz\PasswordToolkit\Generator;
 
+use Gabrielesbaiz\PasswordToolkit\Dictionaries\Dictionary;
 use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
+use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
+use Gabrielesbaiz\PasswordToolkit\Enums\Reach;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
@@ -24,6 +27,8 @@ final readonly class Options
      * @param  array<int, string>|string  $enabled  '*' for every dictionary
      * @param  array<int, string>  $except
      * @param  array<int, string>  $types
+     * @param  array<int, DictionaryGroup>  $groups  empty means every group
+     * @param  array<int, string>  $tags  a dictionary must carry all of them
      * @param  array<int, string>  $paths
      * @param  array<string, array<string, mixed>>  $custom
      */
@@ -31,6 +36,9 @@ final readonly class Options
         public array|string $enabled = '*',
         public array $except = [],
         public array $types = ['people', 'things'],
+        public array $groups = [],
+        public array $tags = [],
+        public ?Reach $reach = null,
         public array $paths = [],
         public array $custom = [],
         public ?string $locale = null,
@@ -95,6 +103,14 @@ final readonly class Options
             enabled: $enabled,
             except: $except,
             types: self::stringList($dictionaries['types'] ?? ['people', 'things']),
+            groups: array_map(
+                DictionaryGroup::parse(...),
+                self::stringList($dictionaries['groups'] ?? []),
+            ),
+            tags: self::stringList($dictionaries['tags'] ?? []),
+            reach: is_string($dictionaries['reach'] ?? null) && $dictionaries['reach'] !== ''
+                ? Reach::parse($dictionaries['reach'])
+                : null,
             paths: self::stringList($dictionaries['paths'] ?? []),
             custom: is_array($dictionaries['custom'] ?? null) ? $dictionaries['custom'] : [],
             locale: is_string($config['locale'] ?? null) ? $config['locale'] : null,
@@ -129,19 +145,36 @@ final readonly class Options
     }
 
     /**
-     * Whether a dictionary key is selected by this option set.
+     * Whether a dictionary is selected by this option set.
+     *
+     * Named keys win outright: asking for a dictionary by name means you want
+     * it, whatever group or reach it happens to carry.
      */
-    public function selects(string $key, string $type): bool
+    public function selects(Dictionary $dictionary): bool
     {
-        if (! in_array($type, $this->types, true)) {
+        if (in_array($dictionary->key, $this->except, true)) {
             return false;
         }
 
-        if (in_array($key, $this->except, true)) {
+        if (is_array($this->enabled)) {
+            return in_array($dictionary->key, $this->enabled, true);
+        }
+
+        if (! in_array($dictionary->type, $this->types, true)) {
             return false;
         }
 
-        return $this->enabled === '*' || in_array($key, (array) $this->enabled, true);
+        if ($this->groups !== [] && ! in_array($dictionary->group, $this->groups, true)) {
+            return false;
+        }
+
+        foreach ($this->tags as $tag) {
+            if (! $dictionary->hasTag($tag)) {
+                return false;
+            }
+        }
+
+        return $this->reach === null || $dictionary->reach->satisfies($this->reach);
     }
 
     /**
@@ -153,6 +186,9 @@ final readonly class Options
             $this->enabled,
             $this->except,
             $this->types,
+            array_map(static fn (DictionaryGroup $group): string => $group->value, $this->groups),
+            $this->tags,
+            $this->reach?->value,
             $this->paths,
             array_keys($this->custom),
         ]));
@@ -171,6 +207,9 @@ final readonly class Options
             enabled: $changes['enabled'] ?? $this->enabled,
             except: $changes['except'] ?? $this->except,
             types: $changes['types'] ?? $this->types,
+            groups: $changes['groups'] ?? $this->groups,
+            tags: $changes['tags'] ?? $this->tags,
+            reach: array_key_exists('reach', $changes) ? $changes['reach'] : $this->reach,
             paths: $changes['paths'] ?? $this->paths,
             custom: $changes['custom'] ?? $this->custom,
             locale: array_key_exists('locale', $changes) ? $changes['locale'] : $this->locale,

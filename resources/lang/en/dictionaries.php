@@ -1,0 +1,139 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+
+    /*
+     * Thematic groups. A closed vocabulary, so a picker can render a stable list.
+     */
+    'groups' => [
+        'food' => 'Food',
+        'drink' => 'Drink',
+        'nature' => 'Nature',
+        'places' => 'Places',
+        'culture' => 'Culture',
+        'arts' => 'Arts',
+        'screen' => 'Screen',
+        'sport' => 'Sport',
+        'science' => 'Science',
+        'history' => 'History',
+        'myth' => 'Myth',
+        'vehicles' => 'Vehicles',
+    ],
+
+    /*
+     * How widely recognisable a dictionary's names are.
+     */
+    'reach' => [
+        'global' => 'Worldwide',
+        'italian' => 'Italian',
+        'niche' => 'Niche',
+    ],
+
+    /*
+     * Display names, one per dictionary.
+     */
+    'labels' => [
+        'back_to_the_future' => 'Back to the Future',
+        'car_brands' => 'Car Brands',
+        'cartoons' => 'Cartoons',
+        'disney_characters' => 'Disney Characters',
+        'disney_villains' => 'Disney Villains',
+        'game_of_thrones' => 'Game of Thrones',
+        'greek_mythology' => 'Greek Mythology',
+        'harry_potter' => 'Harry Potter',
+        'hayao_miyazaki' => 'Hayao Miyazaki',
+        'italian_actors' => 'Italian Actors',
+        'italian_aperitivi' => 'Italian Aperitivi',
+        'italian_architects' => 'Italian Architects',
+        'italian_basketball_legends' => 'Italian Basketball Legends',
+        'italian_breads' => 'Italian Breads',
+        'italian_card_games' => 'Italian Card Games',
+        'italian_carnival_masks' => 'Italian Carnival Masks',
+        'italian_cars' => 'Italian Cars',
+        'italian_castles' => 'Italian Castles',
+        'italian_cheeses' => 'Italian Cheeses',
+        'italian_chefs' => 'Italian Chefs',
+        'italian_children_games_2000s' => 'Italian 2000s Childhood Games',
+        'italian_children_games_70s' => 'Italian 70s Childhood Games',
+        'italian_children_games_80s' => 'Italian 80s Childhood Games',
+        'italian_children_games_90s' => 'Italian 90s Childhood Games',
+        'italian_circus_terms' => 'Italian Circus Terms',
+        'italian_coffee_brands' => 'Italian Coffee Brands',
+        'italian_comedians' => 'Italian Comedians',
+        'italian_cryptids_legends' => 'Italian Cryptids Legends',
+        'italian_cured_meats' => 'Italian Cured Meats',
+        'italian_cyclists' => 'Italian Cyclists',
+        'italian_dance_styles' => 'Italian Dance Styles',
+        'italian_design_objects' => 'Italian Design Objects',
+        'italian_desserts' => 'Italian Desserts',
+        'italian_dialect_words' => 'Italian Dialect Words',
+        'italian_dj_producers' => 'Italian DJ Producers',
+        'italian_explorers' => 'Italian Explorers',
+        'italian_fashion_designers' => 'Italian Fashion Designers',
+        'italian_film_directors' => 'Italian Film Directors',
+        'italian_folk_instruments' => 'Italian Folk Instruments',
+        'italian_football_legends' => 'Italian Football Legends',
+        'italian_icecream_flavors' => 'Italian Gelato Flavours',
+        'italian_invented_words' => 'Italian Invented Words',
+        'italian_inventors' => 'Italian Inventors',
+        'italian_islands' => 'Italian Islands',
+        'italian_journalists' => 'Italian Journalists',
+        'italian_lakes' => 'Italian Lakes',
+        'italian_liqueurs' => 'Italian Liqueurs',
+        'italian_mathematicians' => 'Italian Mathematicians',
+        'italian_monuments' => 'Italian Monuments',
+        'italian_motogp_legends' => 'Italian MotoGP Legends',
+        'italian_motorcycles' => 'Italian Motorcycles',
+        'italian_mountains' => 'Italian Mountains',
+        'italian_musicians' => 'Italian Musicians',
+        'italian_nobel_prize_winners' => 'Italian Nobel Laureates',
+        'italian_old_currencies' => 'Italian Old Currencies',
+        'italian_old_jobs' => 'Italian Old Jobs',
+        'italian_olympic_legends' => 'Italian Olympic Legends',
+        'italian_opera_composers' => 'Italian Opera Composers',
+        'italian_painters' => 'Italian Painters',
+        'italian_pasta_shapes' => 'Italian Pasta Shapes',
+        'italian_pizza_types' => 'Italian Pizza Types',
+        'italian_poets' => 'Italian Poets',
+        'italian_presidents_of_the_republic' => 'Italian Presidents',
+        'italian_progressive_rock_bands' => 'Italian Progressive Rock Bands',
+        'italian_racing_drivers' => 'Italian Racing Drivers',
+        'italian_rappers' => 'Italian Rappers',
+        'italian_regional_foods' => 'Italian Regional Foods',
+        'italian_renaissance_artists' => 'Italian Renaissance Artists',
+        'italian_rivers' => 'Italian Rivers',
+        'italian_scientists' => 'Italian Scientists',
+        'italian_sea_creatures' => 'Italian Sea Creatures',
+        'italian_singers_classic' => 'Italian Singers Classic',
+        'italian_singers_modern' => 'Italian Singers Modern',
+        'italian_street_foods' => 'Italian Street Foods',
+        'italian_superheroes' => 'Italian Superheroes',
+        'italian_television_personalities' => 'Italian TV Personalities',
+        'italian_tennis_players' => 'Italian Tennis Players',
+        'italian_train_stations_classic' => 'Classic Italian Stations',
+        'italian_voice_actors' => 'Italian Voice Actors',
+        'italian_volcanoes' => 'Italian Volcanoes',
+        'italian_volleyball_legends' => 'Italian Volleyball Legends',
+        'italian_wine_regions' => 'Italian Wine Regions',
+        'italian_wines' => 'Italian Wines',
+        'italian_writers' => 'Italian Writers',
+        'italian_youtubers' => 'Italian Youtubers',
+        'lupin_iii_characters' => 'Lupin III Characters',
+        'philosophers' => 'Philosophers',
+        'pixar_characters' => 'Pixar Characters',
+        'roman_emperors' => 'Roman Emperors',
+        'roman_mythology' => 'Roman Mythology',
+        'star_wars' => 'Star Wars',
+    ],
+
+    /*
+     * Optional one-line descriptions, keyed by dictionary. Anything absent
+     * simply has no description; nothing breaks.
+     */
+    'descriptions' => [
+        //
+    ],
+
+];

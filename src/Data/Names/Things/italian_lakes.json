@@ -2,6 +2,10 @@
     "key": "italian_lakes",
     "type": "things",
     "locale": "it",
+    "group": "nature",
+    "tags": ["geography", "italian"],
+    "icon": "🏞️",
+    "reach": "italian",
     "values": [
         { "name": "Garda", "gender": "male" },
         { "name": "Como", "gender": "male" },

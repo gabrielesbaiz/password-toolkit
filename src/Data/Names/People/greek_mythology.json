@@ -2,6 +2,10 @@
     "key": "greek_mythology",
     "type": "people",
     "locale": "en",
+    "group": "myth",
+    "tags": ["classical", "greek"],
+    "icon": "🏺",
+    "reach": "global",
     "values": [
         { "name": "Zeus", "gender": "male" },
         { "name": "Poseidon", "gender": "male" },

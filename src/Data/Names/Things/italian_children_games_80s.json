@@ -2,6 +2,10 @@
     "key": "italian_children_games_80s",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["childhood", "eighties", "italian"],
+    "icon": "🕹️",
+    "reach": "italian",
     "values": [
         { "name": "He Man", "gender": "male" },
         { "name": "Skeletor", "gender": "male" },

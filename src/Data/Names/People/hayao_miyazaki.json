@@ -2,6 +2,10 @@
     "key": "hayao_miyazaki",
     "type": "people",
     "locale": "en",
+    "group": "screen",
+    "tags": ["animation", "anime"],
+    "icon": "🌸",
+    "reach": "global",
     "values": [
         { "name": "Totoro", "gender": "male" },
         { "name": "Satsuki", "gender": "female" },

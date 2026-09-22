@@ -2,6 +2,10 @@
     "key": "italian_icecream_flavors",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian", "sweet"],
+    "icon": "🍨",
+    "reach": "global",
     "values": [
         { "name": "Stracciatella", "gender": "female" },
         { "name": "Pistacchio", "gender": "male" },

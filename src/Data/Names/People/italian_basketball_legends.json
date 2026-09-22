@@ -2,6 +2,10 @@
     "key": "italian_basketball_legends",
     "type": "people",
     "locale": "it",
+    "group": "sport",
+    "tags": ["basketball", "italian"],
+    "icon": "🏀",
+    "reach": "italian",
     "values": [
         { "name": "Dino Meneghin", "gender": "male" },
         { "name": "Sandro Gamba", "gender": "male" },

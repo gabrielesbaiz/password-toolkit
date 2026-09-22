@@ -2,6 +2,10 @@
     "key": "italian_dj_producers",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["electronic", "italian", "music"],
+    "icon": "🎧",
+    "reach": "niche",
     "values": [
         { "name": "Benny Benassi", "gender": "male" },
         { "name": "Gabry Ponte", "gender": "male" },
