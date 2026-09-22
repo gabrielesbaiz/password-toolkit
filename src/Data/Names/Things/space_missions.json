@@ -1,0 +1,26 @@
+{
+    "key": "space_missions",
+    "type": "things",
+    "locale": "en",
+    "group": "science",
+    "tags": ["exploration", "space"],
+    "icon": "🚀",
+    "reach": "global",
+    "values": [
+        { "name": "Apollo", "gender": "male" },
+        { "name": "Voyager", "gender": "male" },
+        { "name": "Cassini", "gender": "male" },
+        { "name": "Juno", "gender": "male" },
+        { "name": "Artemis", "gender": "male" },
+        { "name": "Sputnik", "gender": "male" },
+        { "name": "Rosetta", "gender": "male" },
+        { "name": "Galileo", "gender": "male" },
+        { "name": "Curiosity", "gender": "male" },
+        { "name": "Perseverance", "gender": "male" },
+        { "name": "Pioneer", "gender": "male" },
+        { "name": "Viking", "gender": "male" },
+        { "name": "Magellan", "gender": "male" },
+        { "name": "Hubble", "gender": "male" },
+        { "name": "Kepler", "gender": "male" }
+    ]
+}

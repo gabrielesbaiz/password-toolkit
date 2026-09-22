@@ -1,0 +1,24 @@
+{
+    "key": "planets_and_moons",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Astral", "gender": "neutral" },
+        { "name": "Celestial", "gender": "neutral" },
+        { "name": "Cratered", "gender": "neutral" },
+        { "name": "Distant", "gender": "neutral" },
+        { "name": "Dusty", "gender": "neutral" },
+        { "name": "Frozen", "gender": "neutral" },
+        { "name": "Gaseous", "gender": "neutral" },
+        { "name": "Gigantic", "gender": "neutral" },
+        { "name": "Icy", "gender": "neutral" },
+        { "name": "Inhospitable", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Noiseless", "gender": "neutral" },
+        { "name": "Orbiting", "gender": "neutral" },
+        { "name": "Ringed", "gender": "neutral" },
+        { "name": "Rocky", "gender": "neutral" },
+        { "name": "Volcanic", "gender": "neutral" }
+    ]
+}

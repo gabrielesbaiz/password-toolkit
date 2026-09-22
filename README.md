@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-154 dictionaries — **99 of people** and **55 of things** — holding
-2,492 names and 1,210 names respectively, each with themed adjectives in both
+163 dictionaries — **99 of people** and **64 of things** — holding
+2,492 names and 1,365 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -347,12 +347,15 @@ is translated where a translation exists and left alone where it should be.
 </details>
 
 <details>
-<summary><b>Things (55)</b></summary>
+<summary><b>Things (64)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
 | `car_brands` | 🚘 vehicles | en | 49 | Ferrari |
+| `electronic_acts` | 🎛️ arts | en | 15 | Daft Punk |
 | `football_clubs` | ⚽ sport | en | 15 | Real Madrid |
+| `greek_letters` | 🔤 science | en | 24 | Alpha |
+| `hip_hop_groups` | 🎤 arts | en | 15 | Run DMC |
 | `italian_aperitivi` | 🍹 drink | it | 18 | Spritz |
 | `italian_breads` | 🥖 food | it | 20 | Ciabatta |
 | `italian_card_games` | 🃏 culture | it | 18 | Scopa |
@@ -399,6 +402,11 @@ is translated where a translation exists and left alone where it should be.
 | `italian_volcanoes` | 🌋 nature | it | 18 | Etna |
 | `italian_wine_regions` | 🍇 drink | it | 22 | Chianti |
 | `italian_wines` | 🍷 drink | it | 60 | Barolo |
+| `metal_bands` | 🤘 arts | en | 15 | Slayer |
+| `nato_alphabet` | 📻 culture | en | 26 | Alfa |
+| `planets_and_moons` | 🪐 nature | en | 15 | Mercury |
+| `pop_groups` | ✨ arts | en | 15 | ABBA |
+| `punk_bands` | 🧷 arts | en | 15 | Bad Religion |
 | `rock_bands_2000s` | 🎸 arts | en | 15 | The White Stripes |
 | `rock_bands_2010s` | 🎸 arts | en | 15 | Imagine Dragons |
 | `rock_bands_2020s` | 🎸 arts | en | 11 | Maneskin |
@@ -406,6 +414,7 @@ is translated where a translation exists and left alone where it should be.
 | `rock_bands_70s` | 🎸 arts | en | 15 | Led Zeppelin |
 | `rock_bands_80s` | 🎸 arts | en | 15 | U2 |
 | `rock_bands_90s` | 🎸 arts | en | 15 | Nirvana |
+| `space_missions` | 🚀 science | en | 15 | Apollo |
 
 </details>
 

@@ -1,0 +1,26 @@
+{
+    "key": "electronic_acts",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["acts", "electronic", "music"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "Daft Punk", "gender": "male" },
+        { "name": "The Chemical Brothers", "gender": "male" },
+        { "name": "The Prodigy", "gender": "male" },
+        { "name": "Kraftwerk", "gender": "male" },
+        { "name": "Depeche Mode", "gender": "male" },
+        { "name": "Massive Attack", "gender": "male" },
+        { "name": "Underworld", "gender": "male" },
+        { "name": "Orbital", "gender": "male" },
+        { "name": "Disclosure", "gender": "male" },
+        { "name": "Justice", "gender": "male" },
+        { "name": "Pet Shop Boys", "gender": "male" },
+        { "name": "Air", "gender": "male" },
+        { "name": "Boards Of Canada", "gender": "male" },
+        { "name": "Swedish House Mafia", "gender": "male" },
+        { "name": "Basement Jaxx", "gender": "male" }
+    ]
+}

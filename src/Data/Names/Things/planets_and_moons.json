@@ -1,0 +1,26 @@
+{
+    "key": "planets_and_moons",
+    "type": "things",
+    "locale": "en",
+    "group": "nature",
+    "tags": ["astronomy", "space"],
+    "icon": "🪐",
+    "reach": "global",
+    "values": [
+        { "name": "Mercury", "gender": "male" },
+        { "name": "Venus", "gender": "male" },
+        { "name": "Mars", "gender": "male" },
+        { "name": "Jupiter", "gender": "male" },
+        { "name": "Saturn", "gender": "male" },
+        { "name": "Uranus", "gender": "male" },
+        { "name": "Neptune", "gender": "male" },
+        { "name": "Europa", "gender": "male" },
+        { "name": "Ganymede", "gender": "male" },
+        { "name": "Callisto", "gender": "male" },
+        { "name": "Titan", "gender": "male" },
+        { "name": "Enceladus", "gender": "male" },
+        { "name": "Triton", "gender": "male" },
+        { "name": "Phobos", "gender": "male" },
+        { "name": "Deimos", "gender": "male" }
+    ]
+}
