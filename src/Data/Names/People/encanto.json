@@ -1,0 +1,25 @@
+{
+    "key": "encanto",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["animation", "film", "twentytwenties"],
+    "icon": "🕯️",
+    "reach": "global",
+    "values": [
+        { "name": "Mirabel Madrigal", "gender": "female" },
+        { "name": "Abuela Alma", "gender": "female" },
+        { "name": "Bruno Madrigal", "gender": "male" },
+        { "name": "Luisa Madrigal", "gender": "female" },
+        { "name": "Isabela Madrigal", "gender": "female" },
+        { "name": "Camilo Madrigal", "gender": "male" },
+        { "name": "Dolores Madrigal", "gender": "female" },
+        { "name": "Antonio Madrigal", "gender": "male" },
+        { "name": "Julieta Madrigal", "gender": "female" },
+        { "name": "Pepa Madrigal", "gender": "female" },
+        { "name": "Felix Madrigal", "gender": "male" },
+        { "name": "Agustin Madrigal", "gender": "male" },
+        { "name": "Mariano Guzman", "gender": "male" },
+        { "name": "Pico", "gender": "neutral" }
+    ]
+}

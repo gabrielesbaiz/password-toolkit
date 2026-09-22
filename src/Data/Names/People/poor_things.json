@@ -1,0 +1,22 @@
+{
+    "key": "poor_things",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["cult", "film", "twentytwenties"],
+    "icon": "🧠",
+    "reach": "global",
+    "values": [
+        { "name": "Bella Baxter", "gender": "female" },
+        { "name": "Godwin Baxter", "gender": "male" },
+        { "name": "Duncan Wedderburn", "gender": "male" },
+        { "name": "Max McCandles", "gender": "male" },
+        { "name": "Alfie Blessington", "gender": "male" },
+        { "name": "Victoria Blessington", "gender": "female" },
+        { "name": "Harry Astley", "gender": "male" },
+        { "name": "Madame Swiney", "gender": "female" },
+        { "name": "Toinette", "gender": "female" },
+        { "name": "Felicity", "gender": "female" },
+        { "name": "Martha von Kurtzroc", "gender": "female" }
+    ]
+}

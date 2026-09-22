@@ -1,0 +1,26 @@
+{
+    "key": "spider_verse",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["animation", "comics", "film", "twentytwenties"],
+    "icon": "🕸️",
+    "reach": "global",
+    "values": [
+        { "name": "Miles Morales", "gender": "male" },
+        { "name": "Gwen Stacy", "gender": "female" },
+        { "name": "Peter Parker", "gender": "male" },
+        { "name": "Jefferson Davis", "gender": "male" },
+        { "name": "Rio Morales", "gender": "female" },
+        { "name": "Aaron Davis", "gender": "male" },
+        { "name": "May Parker", "gender": "female" },
+        { "name": "Mary Jane", "gender": "female" },
+        { "name": "Peni Parker", "gender": "female" },
+        { "name": "Peter Porker", "gender": "male" },
+        { "name": "Olivia Octavius", "gender": "female" },
+        { "name": "Wilson Fisk", "gender": "male" },
+        { "name": "Miguel OHara", "gender": "male" },
+        { "name": "Hobie Brown", "gender": "male" },
+        { "name": "Pavitr Prabhakar", "gender": "male" }
+    ]
+}

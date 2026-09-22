@@ -1,0 +1,26 @@
+{
+    "key": "knives_out",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "mystery", "twentytwenties"],
+    "icon": "🔪",
+    "reach": "global",
+    "values": [
+        { "name": "Benoit Blanc", "gender": "male" },
+        { "name": "Marta Cabrera", "gender": "female" },
+        { "name": "Harlan Thrombey", "gender": "male" },
+        { "name": "Ransom Drysdale", "gender": "male" },
+        { "name": "Linda Drysdale", "gender": "female" },
+        { "name": "Richard Drysdale", "gender": "male" },
+        { "name": "Walt Thrombey", "gender": "male" },
+        { "name": "Joni Thrombey", "gender": "female" },
+        { "name": "Meg Thrombey", "gender": "female" },
+        { "name": "Jacob Thrombey", "gender": "male" },
+        { "name": "Miles Bron", "gender": "male" },
+        { "name": "Helen Brand", "gender": "female" },
+        { "name": "Birdie Jay", "gender": "female" },
+        { "name": "Duke Cody", "gender": "male" },
+        { "name": "Claire Debella", "gender": "female" }
+    ]
+}
