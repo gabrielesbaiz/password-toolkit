@@ -1,0 +1,26 @@
+{
+    "key": "pop_groups",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["groups", "music", "pop"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "ABBA", "gender": "male" },
+        { "name": "Spice Girls", "gender": "male" },
+        { "name": "Backstreet Boys", "gender": "male" },
+        { "name": "NSYNC", "gender": "male" },
+        { "name": "Take That", "gender": "male" },
+        { "name": "Destinys Child", "gender": "male" },
+        { "name": "The Jackson 5", "gender": "male" },
+        { "name": "Bee Gees", "gender": "male" },
+        { "name": "One Direction", "gender": "male" },
+        { "name": "BTS", "gender": "male" },
+        { "name": "Blackpink", "gender": "male" },
+        { "name": "Little Mix", "gender": "male" },
+        { "name": "The Supremes", "gender": "male" },
+        { "name": "TLC", "gender": "male" },
+        { "name": "Boyz II Men", "gender": "male" }
+    ]
+}

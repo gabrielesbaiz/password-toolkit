@@ -1,0 +1,24 @@
+{
+    "key": "greek_letters",
+    "locale": "en",
+    "values": [
+        { "name": "Abstract", "gender": "neutral" },
+        { "name": "Algebraic", "gender": "neutral" },
+        { "name": "Canonical", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Erudite", "gender": "neutral" },
+        { "name": "Essential", "gender": "neutral" },
+        { "name": "Formal", "gender": "neutral" },
+        { "name": "Geometric", "gender": "neutral" },
+        { "name": "Hellenic", "gender": "neutral" },
+        { "name": "Immutable", "gender": "neutral" },
+        { "name": "Lapidary", "gender": "neutral" },
+        { "name": "Mathematical", "gender": "neutral" },
+        { "name": "Millenary", "gender": "neutral" },
+        { "name": "Numeric", "gender": "neutral" },
+        { "name": "Philosophical", "gender": "neutral" },
+        { "name": "Rigorous", "gender": "neutral" },
+        { "name": "Symbolic", "gender": "neutral" },
+        { "name": "Theoretical", "gender": "neutral" }
+    ]
+}

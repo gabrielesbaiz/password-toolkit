@@ -1,0 +1,24 @@
+{
+    "key": "nato_alphabet",
+    "locale": "en",
+    "values": [
+        { "name": "Audible", "gender": "neutral" },
+        { "name": "Clear", "gender": "neutral" },
+        { "name": "Concise", "gender": "neutral" },
+        { "name": "Conventional", "gender": "neutral" },
+        { "name": "Crisp", "gender": "neutral" },
+        { "name": "Encoded", "gender": "neutral" },
+        { "name": "Enunciated", "gender": "neutral" },
+        { "name": "Military", "gender": "neutral" },
+        { "name": "Operational", "gender": "neutral" },
+        { "name": "Orderly", "gender": "neutral" },
+        { "name": "Punctual", "gender": "neutral" },
+        { "name": "Radiophonic", "gender": "neutral" },
+        { "name": "Sharp", "gender": "neutral" },
+        { "name": "Sonorous", "gender": "neutral" },
+        { "name": "Standardised", "gender": "neutral" },
+        { "name": "Syllabic", "gender": "neutral" },
+        { "name": "Transmitted", "gender": "neutral" },
+        { "name": "Unambiguous", "gender": "neutral" }
+    ]
+}

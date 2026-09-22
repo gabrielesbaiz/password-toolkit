@@ -1,0 +1,24 @@
+{
+    "key": "space_missions",
+    "locale": "en",
+    "values": [
+        { "name": "Ambitious", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Cosmic", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Interplanetary", "gender": "neutral" },
+        { "name": "Longlived", "gender": "neutral" },
+        { "name": "Lunar", "gender": "neutral" },
+        { "name": "Martian", "gender": "neutral" },
+        { "name": "Orbital", "gender": "neutral" },
+        { "name": "Pioneering", "gender": "neutral" },
+        { "name": "Probing", "gender": "neutral" },
+        { "name": "Remote", "gender": "neutral" },
+        { "name": "Robotic", "gender": "neutral" },
+        { "name": "Scientific", "gender": "neutral" },
+        { "name": "Sidereal", "gender": "neutral" },
+        { "name": "Silent", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" }
+    ]
+}

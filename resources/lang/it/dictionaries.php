@@ -189,6 +189,15 @@ return [
         'rock_bands_2000s' => 'Rock Anni 2000',
         'rock_bands_2010s' => 'Rock Anni 2010',
         'rock_bands_2020s' => 'Rock Anni 2020',
+        'nato_alphabet' => 'Alfabeto NATO',
+        'greek_letters' => 'Lettere Greche',
+        'space_missions' => 'Missioni Spaziali',
+        'planets_and_moons' => 'Pianeti e Lune',
+        'metal_bands' => 'Gruppi Metal',
+        'punk_bands' => 'Gruppi Punk',
+        'hip_hop_groups' => 'Gruppi Hip Hop',
+        'electronic_acts' => 'Gruppi Elettronici',
+        'pop_groups' => 'Gruppi Pop',
     ],
 
     /*
