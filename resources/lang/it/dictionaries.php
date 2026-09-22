@@ -152,6 +152,16 @@ return [
         'blade_runner' => 'Blade Runner',
         'die_hard' => 'Trappola di Cristallo',
         'alien' => 'Alien',
+        'inception' => 'Inception',
+        'interstellar' => 'Interstellar',
+        'the_avengers' => 'The Avengers',
+        'guardians_of_the_galaxy' => 'Guardiani della Galassia',
+        'django_unchained' => 'Django Unchained',
+        'the_grand_budapest_hotel' => 'Grand Budapest Hotel',
+        'john_wick' => 'John Wick',
+        'the_hunger_games' => 'Hunger Games',
+        'the_martian' => 'Sopravvissuto',
+        'deadpool' => 'Deadpool',
     ],
 
     /*

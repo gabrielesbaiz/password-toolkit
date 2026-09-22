@@ -1,0 +1,26 @@
+{
+    "key": "the_hunger_games",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["dystopia", "film", "twentytens"],
+    "icon": "🏹",
+    "reach": "global",
+    "values": [
+        { "name": "Katniss Everdeen", "gender": "female" },
+        { "name": "Peeta Mellark", "gender": "male" },
+        { "name": "Gale Hawthorne", "gender": "male" },
+        { "name": "Haymitch Abernathy", "gender": "male" },
+        { "name": "Effie Trinket", "gender": "female" },
+        { "name": "Cinna", "gender": "male" },
+        { "name": "Primrose Everdeen", "gender": "female" },
+        { "name": "Coriolanus Snow", "gender": "male" },
+        { "name": "Finnick Odair", "gender": "male" },
+        { "name": "Johanna Mason", "gender": "female" },
+        { "name": "Rue", "gender": "female" },
+        { "name": "Beetee Latier", "gender": "male" },
+        { "name": "Plutarch Heavensbee", "gender": "male" },
+        { "name": "Alma Coin", "gender": "female" },
+        { "name": "Caesar Flickerman", "gender": "male" }
+    ]
+}

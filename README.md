@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-117 dictionaries — **75 of people** and **42 of things** — holding
-2,387 names and 1,019 names respectively, each with themed adjectives in both
+127 dictionaries — **85 of people** and **42 of things** — holding
+2,507 names and 1,019 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -241,7 +241,7 @@ Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
 is translated where a translation exists and left alone where it should be.
 
 <details>
-<summary><b>People (75)</b></summary>
+<summary><b>People (85)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
@@ -251,16 +251,21 @@ is translated where a translation exists and left alone where it should be.
 | `back_to_the_future` | 🚗 screen | en | 17 | Marty McFly |
 | `blade_runner` | 🌧️ screen | en | 10 | Rick Deckard |
 | `cartoons` | 📺 screen | en | 146 | Mickey Mouse |
+| `deadpool` | 🗡️ screen | en | 10 | Wade Wilson |
 | `die_hard` | 🏢 screen | en | 12 | John McClane |
 | `disney_characters` | 🏰 screen | en | 60 | Mickey Mouse |
 | `disney_villains` | 😈 screen | en | 20 | Maleficent |
+| `django_unchained` | 🤠 screen | en | 10 | Django Freeman |
 | `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
 | `ghostbusters` | 👻 screen | en | 13 | Peter Venkman |
 | `grease` | 🕺 screen | en | 10 | Danny Zuko |
 | `greek_mythology` | 🏺 myth | en | 68 | Zeus |
+| `guardians_of_the_galaxy` | 🌌 screen | en | 13 | Peter Quill |
 | `harry_potter` | 🧙 screen | en | 71 | Harry Potter |
 | `hayao_miyazaki` | 🌸 screen | en | 20 | Totoro |
 | `home_alone` | 🏠 screen | en | 14 | Kevin McCallister |
+| `inception` | 🌀 screen | en | 10 | Dom Cobb |
+| `interstellar` | 🪐 screen | en | 12 | Joseph Cooper |
 | `italian_actors` | 🎭 screen | it | 69 | Roberto Benigni |
 | `italian_architects` | 📐 arts | it | 43 | Renzo Piano |
 | `italian_basketball_legends` | 🏀 sport | it | 71 | Dino Meneghin |
@@ -297,6 +302,7 @@ is translated where a translation exists and left alone where it should be.
 | `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
 | `italian_youtubers` | ▶️ screen | it | 48 | Favij |
 | `jaws` | 🦈 screen | en | 12 | Martin Brody |
+| `john_wick` | 🐕 screen | en | 15 | John Wick |
 | `jurassic_park` | 🦖 screen | en | 15 | Alan Grant |
 | `lupin_iii_characters` | 🕵️ screen | en | 18 | Lupin |
 | `mad_max` | 🏜️ screen | en | 15 | Max Rockatansky |
@@ -312,10 +318,14 @@ is translated where a translation exists and left alone where it should be.
 | `star_wars` | 🚀 screen | en | 71 | Luke Skywalker |
 | `superman` | 🦸 screen | en | 15 | Superman |
 | `terminator` | 🤖 screen | en | 15 | The Terminator |
+| `the_avengers` | 🛡️ screen | en | 11 | Tony Stark |
 | `the_big_lebowski` | 🎳 screen | en | 14 | The Dude |
 | `the_fifth_element` | 🚕 screen | en | 14 | Korben Dallas |
 | `the_godfather` | 🎩 screen | en | 15 | Vito Corleone |
 | `the_goonies` | 🗺️ screen | en | 11 | Mikey |
+| `the_grand_budapest_hotel` | 🛎️ screen | en | 13 | Monsieur Gustave |
+| `the_hunger_games` | 🏹 screen | en | 15 | Katniss Everdeen |
+| `the_martian` | 🥔 screen | en | 11 | Mark Watney |
 | `the_matrix` | 💊 screen | en | 14 | Neo |
 | `the_silence_of_the_lambs` | 🦋 screen | en | 14 | Clarice Starling |
 | `top_gun` | ✈️ screen | en | 15 | Maverick |

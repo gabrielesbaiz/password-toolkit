@@ -1,0 +1,22 @@
+{
+    "key": "the_martian",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "space", "twentytens"],
+    "icon": "🥔",
+    "reach": "global",
+    "values": [
+        { "name": "Mark Watney", "gender": "male" },
+        { "name": "Melissa Lewis", "gender": "female" },
+        { "name": "Vincent Kapoor", "gender": "male" },
+        { "name": "Annie Montrose", "gender": "female" },
+        { "name": "Teddy Sanders", "gender": "male" },
+        { "name": "Rick Martinez", "gender": "male" },
+        { "name": "Mitch Henderson", "gender": "male" },
+        { "name": "Beth Johanssen", "gender": "female" },
+        { "name": "Chris Beck", "gender": "male" },
+        { "name": "Alex Vogel", "gender": "male" },
+        { "name": "Mindy Park", "gender": "female" }
+    ]
+}

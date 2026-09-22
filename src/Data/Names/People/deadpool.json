@@ -1,0 +1,21 @@
+{
+    "key": "deadpool",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comics", "film", "twentytens"],
+    "icon": "🗡️",
+    "reach": "global",
+    "values": [
+        { "name": "Wade Wilson", "gender": "male" },
+        { "name": "Vanessa Carlysle", "gender": "female" },
+        { "name": "Ajax", "gender": "male" },
+        { "name": "Weasel", "gender": "male" },
+        { "name": "Angel Dust", "gender": "female" },
+        { "name": "Negasonic Teenage Warhead", "gender": "female" },
+        { "name": "Blind Al", "gender": "female" },
+        { "name": "Dopinder", "gender": "male" },
+        { "name": "Colossus", "gender": "male" },
+        { "name": "The Recruiter", "gender": "male" }
+    ]
+}

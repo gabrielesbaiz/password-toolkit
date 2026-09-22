@@ -1,0 +1,23 @@
+{
+    "key": "interstellar",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "space", "twentytens"],
+    "icon": "🪐",
+    "reach": "global",
+    "values": [
+        { "name": "Joseph Cooper", "gender": "male" },
+        { "name": "Murph Cooper", "gender": "female" },
+        { "name": "Amelia Brand", "gender": "female" },
+        { "name": "John Brand", "gender": "male" },
+        { "name": "Tom Cooper", "gender": "male" },
+        { "name": "Donald", "gender": "male" },
+        { "name": "Doyle", "gender": "male" },
+        { "name": "Romilly", "gender": "male" },
+        { "name": "Doctor Mann", "gender": "male" },
+        { "name": "Getty", "gender": "male" },
+        { "name": "TARS", "gender": "neutral" },
+        { "name": "CASE", "gender": "neutral" }
+    ]
+}

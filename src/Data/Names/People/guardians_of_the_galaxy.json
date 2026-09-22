@@ -1,0 +1,24 @@
+{
+    "key": "guardians_of_the_galaxy",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comics", "film", "space", "twentytens"],
+    "icon": "🌌",
+    "reach": "global",
+    "values": [
+        { "name": "Peter Quill", "gender": "male" },
+        { "name": "Gamora", "gender": "female" },
+        { "name": "Drax the Destroyer", "gender": "male" },
+        { "name": "Groot", "gender": "neutral" },
+        { "name": "Rocket Raccoon", "gender": "male" },
+        { "name": "Ronan", "gender": "male" },
+        { "name": "Yondu Udonta", "gender": "male" },
+        { "name": "Nebula", "gender": "female" },
+        { "name": "Korath", "gender": "male" },
+        { "name": "Rhomann Dey", "gender": "male" },
+        { "name": "Irani Rael", "gender": "female" },
+        { "name": "The Collector", "gender": "male" },
+        { "name": "Thanos", "gender": "male" }
+    ]
+}

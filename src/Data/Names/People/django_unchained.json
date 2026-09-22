@@ -1,0 +1,21 @@
+{
+    "key": "django_unchained",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "twentytens", "western"],
+    "icon": "🤠",
+    "reach": "global",
+    "values": [
+        { "name": "Django Freeman", "gender": "male" },
+        { "name": "King Schultz", "gender": "male" },
+        { "name": "Calvin Candie", "gender": "male" },
+        { "name": "Broomhilda von Shaft", "gender": "female" },
+        { "name": "Stephen", "gender": "male" },
+        { "name": "Billy Crash", "gender": "male" },
+        { "name": "Leonide Moguy", "gender": "male" },
+        { "name": "Butch Pooch", "gender": "male" },
+        { "name": "Big Daddy", "gender": "male" },
+        { "name": "Roy", "gender": "male" }
+    ]
+}
