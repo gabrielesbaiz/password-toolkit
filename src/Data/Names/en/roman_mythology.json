@@ -1,0 +1,24 @@
+{
+    "key": "roman_mythology",
+    "locale": "en",
+    "values": {
+        "Bacco": "Bacchus",
+        "Cerere": "Ceres",
+        "Enea": "Aeneas",
+        "Fauno": "Faunus",
+        "Giano": "Janus",
+        "Giove": "Jupiter",
+        "Giunone": "Juno",
+        "Marte": "Mars",
+        "Mercurio": "Mercury",
+        "Nettuno": "Neptune",
+        "Plutone": "Pluto",
+        "Quirino": "Quirinus",
+        "Remo": "Remus",
+        "Romolo": "Romulus",
+        "Saturno": "Saturn",
+        "Silvano": "Silvanus",
+        "Venere": "Venus",
+        "Vulcano": "Vulcan"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "key": "italian_mountains",
+    "locale": "en",
+    "values": {
+        "Cervino": "Matterhorn",
+        "Monte Bianco": "Mont Blanc",
+        "Vesuvio": "Vesuvius"
+    }
+}
