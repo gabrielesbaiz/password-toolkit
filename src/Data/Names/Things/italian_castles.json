@@ -1,6 +1,7 @@
 {
-    "name": "italian_castles",
+    "key": "italian_castles",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Castel del Monte", "gender": "male" },
         { "name": "Castello Sforzesco", "gender": "male" },

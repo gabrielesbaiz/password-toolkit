@@ -1,6 +1,7 @@
 {
-    "name": "italian_writers",
+    "key": "italian_writers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Dante Alighieri", "gender": "male" },
         { "name": "Giovanni Boccaccio", "gender": "male" },

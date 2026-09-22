@@ -1,6 +1,7 @@
 {
-    "name": "italian_renaissance_artists",
+    "key": "italian_renaissance_artists",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Leonardo da Vinci", "gender": "male" },
         { "name": "Michelangelo Buonarroti", "gender": "male" },

@@ -1,6 +1,7 @@
 {
-    "name": "italian_street_foods",
+    "key": "italian_street_foods",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Arancino", "gender": "male" },
         { "name": "Suppli", "gender": "male" },

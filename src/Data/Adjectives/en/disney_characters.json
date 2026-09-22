@@ -2,73 +2,22 @@
     "key": "disney_characters",
     "locale": "en",
     "values": [
-        {
-            "name": "Adventurous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bold",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brave",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brilliant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Cheerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Curious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dreaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Enchanted",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fabulous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fairytale",
-            "gender": "neutral"
-        },
-        {
-            "name": "Heroic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Immortal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Likeable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        }
+        { "name": "Adventurous", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Cheerful", "gender": "neutral" },
+        { "name": "Curious", "gender": "neutral" },
+        { "name": "Dreaming", "gender": "neutral" },
+        { "name": "Enchanted", "gender": "neutral" },
+        { "name": "Fabulous", "gender": "neutral" },
+        { "name": "Fairytale", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Likeable", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" }
     ]
 }

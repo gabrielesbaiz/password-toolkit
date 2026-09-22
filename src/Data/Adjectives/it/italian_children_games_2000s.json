@@ -2,137 +2,38 @@
     "key": "italian_children_games_2000s",
     "locale": "it",
     "values": [
-        {
-            "name": "nostalgico",
-            "gender": "male"
-        },
-        {
-            "name": "nostalgica",
-            "gender": "female"
-        },
-        {
-            "name": "mitico",
-            "gender": "male"
-        },
-        {
-            "name": "mitica",
-            "gender": "female"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        },
-        {
-            "name": "digitale",
-            "gender": "neutral"
-        },
-        {
-            "name": "virtuale",
-            "gender": "neutral"
-        },
-        {
-            "name": "multimediale",
-            "gender": "neutral"
-        },
-        {
-            "name": "portatile",
-            "gender": "neutral"
-        },
-        {
-            "name": "connesso",
-            "gender": "male"
-        },
-        {
-            "name": "connessa",
-            "gender": "female"
-        },
-        {
-            "name": "luccicante",
-            "gender": "neutral"
-        },
-        {
-            "name": "sgargiante",
-            "gender": "neutral"
-        },
-        {
-            "name": "scoppiettante",
-            "gender": "neutral"
-        },
-        {
-            "name": "fenomenale",
-            "gender": "neutral"
-        },
-        {
-            "name": "ipnotico",
-            "gender": "male"
-        },
-        {
-            "name": "ipnotica",
-            "gender": "female"
-        },
-        {
-            "name": "futuristico",
-            "gender": "male"
-        },
-        {
-            "name": "futuristica",
-            "gender": "female"
-        },
-        {
-            "name": "irresistibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "frizzante",
-            "gender": "neutral"
-        },
-        {
-            "name": "magnetico",
-            "gender": "male"
-        },
-        {
-            "name": "magnetica",
-            "gender": "female"
-        },
-        {
-            "name": "spettacolare",
-            "gender": "neutral"
-        },
-        {
-            "name": "effervescente",
-            "gender": "neutral"
-        },
-        {
-            "name": "accattivante",
-            "gender": "neutral"
-        },
-        {
-            "name": "esuberante",
-            "gender": "neutral"
-        },
-        {
-            "name": "eccentrico",
-            "gender": "male"
-        },
-        {
-            "name": "eccentrica",
-            "gender": "female"
-        },
-        {
-            "name": "coloratissimo",
-            "gender": "male"
-        },
-        {
-            "name": "coloratissima",
-            "gender": "female"
-        },
-        {
-            "name": "brillante",
-            "gender": "neutral"
-        }
+        { "name": "nostalgico", "gender": "male" },
+        { "name": "nostalgica", "gender": "female" },
+        { "name": "mitico", "gender": "male" },
+        { "name": "mitica", "gender": "female" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" },
+        { "name": "digitale", "gender": "neutral" },
+        { "name": "virtuale", "gender": "neutral" },
+        { "name": "multimediale", "gender": "neutral" },
+        { "name": "portatile", "gender": "neutral" },
+        { "name": "connesso", "gender": "male" },
+        { "name": "connessa", "gender": "female" },
+        { "name": "luccicante", "gender": "neutral" },
+        { "name": "sgargiante", "gender": "neutral" },
+        { "name": "scoppiettante", "gender": "neutral" },
+        { "name": "fenomenale", "gender": "neutral" },
+        { "name": "ipnotico", "gender": "male" },
+        { "name": "ipnotica", "gender": "female" },
+        { "name": "futuristico", "gender": "male" },
+        { "name": "futuristica", "gender": "female" },
+        { "name": "irresistibile", "gender": "neutral" },
+        { "name": "frizzante", "gender": "neutral" },
+        { "name": "magnetico", "gender": "male" },
+        { "name": "magnetica", "gender": "female" },
+        { "name": "spettacolare", "gender": "neutral" },
+        { "name": "effervescente", "gender": "neutral" },
+        { "name": "accattivante", "gender": "neutral" },
+        { "name": "esuberante", "gender": "neutral" },
+        { "name": "eccentrico", "gender": "male" },
+        { "name": "eccentrica", "gender": "female" },
+        { "name": "coloratissimo", "gender": "male" },
+        { "name": "coloratissima", "gender": "female" },
+        { "name": "brillante", "gender": "neutral" }
     ]
 }

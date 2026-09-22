@@ -2,61 +2,19 @@
     "key": "italian_liqueurs",
     "locale": "en",
     "values": [
-        {
-            "name": "Amber",
-            "gender": "neutral"
-        },
-        {
-            "name": "Aromatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Balsamic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bitter",
-            "gender": "neutral"
-        },
-        {
-            "name": "Digestive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dry",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfumed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Robust",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spiced",
-            "gender": "neutral"
-        },
-        {
-            "name": "Strong",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sweet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Amber", "gender": "neutral" },
+        { "name": "Aromatic", "gender": "neutral" },
+        { "name": "Balsamic", "gender": "neutral" },
+        { "name": "Bitter", "gender": "neutral" },
+        { "name": "Digestive", "gender": "neutral" },
+        { "name": "Dry", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Robust", "gender": "neutral" },
+        { "name": "Spiced", "gender": "neutral" },
+        { "name": "Strong", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

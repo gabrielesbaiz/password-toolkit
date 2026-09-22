@@ -1,6 +1,7 @@
 {
-    "name": "italian_old_jobs",
+    "key": "italian_old_jobs",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Arrotino", "gender": "male" },
         { "name": "Lustrascarpe", "gender": "male" },

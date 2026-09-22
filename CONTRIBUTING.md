@@ -44,11 +44,22 @@ composer test      # pest
    {
        "key": "my_dictionary",
        "type": "things",
+       "locale": "it",
        "values": [
            { "name": "Example", "gender": "neutral" }
        ]
    }
    ```
+
+   `locale` is the language the **names** are in, and it decides whether they
+   ever get translated. A dictionary about Italian wines is `it` and needs no
+   translations at all — Barolo is Barolo in every language. A dictionary about
+   something with an international name is `en`, and Italian becomes an overlay.
+   Get this wrong and either the names are translated when they should not be,
+   or an English reader is shown a dub name they will not recognise.
+
+   Keep each entry on one line. A dictionary is a list of short records, and one
+   record per line is what makes a diff readable.
 
 2. Optionally add themed adjectives at
    `src/Data/Adjectives/{locale}/my_dictionary.json`. Without one, the

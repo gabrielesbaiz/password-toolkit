@@ -1,6 +1,7 @@
 {
-    "name": "italian_cyclists",
+    "key": "italian_cyclists",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Fausto Coppi", "gender": "male" },
         { "name": "Gino Bartali", "gender": "male" },

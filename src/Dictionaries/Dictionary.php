@@ -44,6 +44,10 @@ final readonly class Dictionary
             );
         }
 
+        // The language the names themselves are in. A dictionary about Italian
+        // wines is Italian in every locale; one about Harry Potter is English.
+        $locale = isset($data['locale']) && is_string($data['locale']) ? $data['locale'] : null;
+
         $values = $data['values'] ?? [];
 
         if (! is_array($values) || $values === []) {
@@ -61,10 +65,8 @@ final readonly class Dictionary
                 throw InvalidOptionException::because("Dictionary [{$key}] contains a malformed entry.");
             }
 
-            $entries[] = Entry::fromArray($value, $key);
+            $entries[] = Entry::fromArray($value, $key, $locale);
         }
-
-        $locale = isset($data['locale']) && is_string($data['locale']) ? $data['locale'] : null;
 
         return new self($key, $type, $entries, $locale, $builtIn);
     }

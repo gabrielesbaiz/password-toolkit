@@ -1,6 +1,7 @@
 {
-    "name": "italian_poets",
+    "key": "italian_poets",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Dante Alighieri", "gender": "male" },
         { "name": "Francesco Petrarca", "gender": "male" },

@@ -1,6 +1,7 @@
 {
-    "name": "italian_breads",
+    "key": "italian_breads",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Ciabatta", "gender": "female" },
         { "name": "Coppia Ferrarese", "gender": "female" },

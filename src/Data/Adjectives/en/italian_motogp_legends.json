@@ -2,65 +2,20 @@
     "key": "italian_motogp_legends",
     "locale": "en",
     "values": [
-        {
-            "name": "Bold",
-            "gender": "neutral"
-        },
-        {
-            "name": "Concentrated",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gritty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lightning",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Reckless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Roaring",
-            "gender": "neutral"
-        },
-        {
-            "name": "Snappy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Swift",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Triumphant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unbeatable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Winning",
-            "gender": "neutral"
-        }
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Concentrated", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Lightning", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Reckless", "gender": "neutral" },
+        { "name": "Roaring", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Triumphant", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Winning", "gender": "neutral" }
     ]
 }

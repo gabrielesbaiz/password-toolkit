@@ -1,6 +1,7 @@
 {
-    "name": "italian_children_games_80s",
+    "key": "italian_children_games_80s",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "He Man", "gender": "male" },
         { "name": "Skeletor", "gender": "male" },

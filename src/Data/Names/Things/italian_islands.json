@@ -1,6 +1,7 @@
 {
-    "name": "italian_islands",
+    "key": "italian_islands",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Capri", "gender": "female" },
         { "name": "Ischia", "gender": "female" },

@@ -2,93 +2,27 @@
     "key": "italian_pasta_shapes",
     "locale": "it",
     "values": [
-        {
-            "name": "gustoso",
-            "gender": "male"
-        },
-        {
-            "name": "gustosa",
-            "gender": "female"
-        },
-        {
-            "name": "saporito",
-            "gender": "male"
-        },
-        {
-            "name": "saporita",
-            "gender": "female"
-        },
-        {
-            "name": "cremoso",
-            "gender": "male"
-        },
-        {
-            "name": "cremosa",
-            "gender": "female"
-        },
-        {
-            "name": "fumante",
-            "gender": "neutral"
-        },
-        {
-            "name": "delizioso",
-            "gender": "male"
-        },
-        {
-            "name": "deliziosa",
-            "gender": "female"
-        },
-        {
-            "name": "goloso",
-            "gender": "male"
-        },
-        {
-            "name": "golosa",
-            "gender": "female"
-        },
-        {
-            "name": "fragrante",
-            "gender": "neutral"
-        },
-        {
-            "name": "succulento",
-            "gender": "male"
-        },
-        {
-            "name": "succulenta",
-            "gender": "female"
-        },
-        {
-            "name": "tradizionale",
-            "gender": "neutral"
-        },
-        {
-            "name": "autentico",
-            "gender": "male"
-        },
-        {
-            "name": "autentica",
-            "gender": "female"
-        },
-        {
-            "name": "genuino",
-            "gender": "male"
-        },
-        {
-            "name": "genuina",
-            "gender": "female"
-        },
-        {
-            "name": "irresistibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "rustico",
-            "gender": "male"
-        },
-        {
-            "name": "rustica",
-            "gender": "female"
-        }
+        { "name": "gustoso", "gender": "male" },
+        { "name": "gustosa", "gender": "female" },
+        { "name": "saporito", "gender": "male" },
+        { "name": "saporita", "gender": "female" },
+        { "name": "cremoso", "gender": "male" },
+        { "name": "cremosa", "gender": "female" },
+        { "name": "fumante", "gender": "neutral" },
+        { "name": "delizioso", "gender": "male" },
+        { "name": "deliziosa", "gender": "female" },
+        { "name": "goloso", "gender": "male" },
+        { "name": "golosa", "gender": "female" },
+        { "name": "fragrante", "gender": "neutral" },
+        { "name": "succulento", "gender": "male" },
+        { "name": "succulenta", "gender": "female" },
+        { "name": "tradizionale", "gender": "neutral" },
+        { "name": "autentico", "gender": "male" },
+        { "name": "autentica", "gender": "female" },
+        { "name": "genuino", "gender": "male" },
+        { "name": "genuina", "gender": "female" },
+        { "name": "irresistibile", "gender": "neutral" },
+        { "name": "rustico", "gender": "male" },
+        { "name": "rustica", "gender": "female" }
     ]
 }

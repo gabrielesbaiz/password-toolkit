@@ -1,6 +1,7 @@
 {
-    "name": "italian_opera_composers",
+    "key": "italian_opera_composers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Giuseppe Verdi", "gender": "male" },
         { "name": "Giacomo Puccini", "gender": "male" },

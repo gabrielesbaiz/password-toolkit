@@ -2,85 +2,25 @@
     "key": "italian_superheroes",
     "locale": "en",
     "values": [
-        {
-            "name": "Audacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bold",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brave",
-            "gender": "neutral"
-        },
-        {
-            "name": "Cunning",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dark",
-            "gender": "neutral"
-        },
-        {
-            "name": "Extraordinary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Formidable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Heroic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Immortal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Invincible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irresistible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Merciless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Mysterious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Relentless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unstoppable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Untameable",
-            "gender": "neutral"
-        }
+        { "name": "Audacious", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Extraordinary", "gender": "neutral" },
+        { "name": "Formidable", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Invincible", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Mysterious", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Unstoppable", "gender": "neutral" },
+        { "name": "Untameable", "gender": "neutral" }
     ]
 }

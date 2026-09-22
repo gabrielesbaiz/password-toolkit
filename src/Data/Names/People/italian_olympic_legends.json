@@ -1,6 +1,7 @@
 {
-    "name": "italian_olympic_legends",
+    "key": "italian_olympic_legends",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Alberto Tomba", "gender": "male" },
         { "name": "Federica Pellegrini", "gender": "female" },

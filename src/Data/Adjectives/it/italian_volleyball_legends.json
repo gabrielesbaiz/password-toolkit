@@ -2,97 +2,28 @@
     "key": "italian_volleyball_legends",
     "locale": "it",
     "values": [
-        {
-            "name": "potente",
-            "gender": "neutral"
-        },
-        {
-            "name": "agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "scattante",
-            "gender": "neutral"
-        },
-        {
-            "name": "vincente",
-            "gender": "neutral"
-        },
-        {
-            "name": "esplosivo",
-            "gender": "male"
-        },
-        {
-            "name": "esplosiva",
-            "gender": "female"
-        },
-        {
-            "name": "tecnico",
-            "gender": "male"
-        },
-        {
-            "name": "tecnica",
-            "gender": "female"
-        },
-        {
-            "name": "atletico",
-            "gender": "male"
-        },
-        {
-            "name": "atletica",
-            "gender": "female"
-        },
-        {
-            "name": "grintoso",
-            "gender": "male"
-        },
-        {
-            "name": "grintosa",
-            "gender": "female"
-        },
-        {
-            "name": "tenace",
-            "gender": "neutral"
-        },
-        {
-            "name": "leggendario",
-            "gender": "male"
-        },
-        {
-            "name": "leggendaria",
-            "gender": "female"
-        },
-        {
-            "name": "carismatico",
-            "gender": "male"
-        },
-        {
-            "name": "carismatica",
-            "gender": "female"
-        },
-        {
-            "name": "alto",
-            "gender": "male"
-        },
-        {
-            "name": "alta",
-            "gender": "female"
-        },
-        {
-            "name": "imbattibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "concentrato",
-            "gender": "male"
-        },
-        {
-            "name": "concentrata",
-            "gender": "female"
-        },
-        {
-            "name": "trionfante",
-            "gender": "neutral"
-        }
+        { "name": "potente", "gender": "neutral" },
+        { "name": "agile", "gender": "neutral" },
+        { "name": "scattante", "gender": "neutral" },
+        { "name": "vincente", "gender": "neutral" },
+        { "name": "esplosivo", "gender": "male" },
+        { "name": "esplosiva", "gender": "female" },
+        { "name": "tecnico", "gender": "male" },
+        { "name": "tecnica", "gender": "female" },
+        { "name": "atletico", "gender": "male" },
+        { "name": "atletica", "gender": "female" },
+        { "name": "grintoso", "gender": "male" },
+        { "name": "grintosa", "gender": "female" },
+        { "name": "tenace", "gender": "neutral" },
+        { "name": "leggendario", "gender": "male" },
+        { "name": "leggendaria", "gender": "female" },
+        { "name": "carismatico", "gender": "male" },
+        { "name": "carismatica", "gender": "female" },
+        { "name": "alto", "gender": "male" },
+        { "name": "alta", "gender": "female" },
+        { "name": "imbattibile", "gender": "neutral" },
+        { "name": "concentrato", "gender": "male" },
+        { "name": "concentrata", "gender": "female" },
+        { "name": "trionfante", "gender": "neutral" }
     ]
 }

@@ -1,6 +1,7 @@
 {
-    "name": "italian_comedians",
+    "key": "italian_comedians",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Roberto Benigni", "gender": "male" },
         { "name": "Paolo Villaggio", "gender": "male" },

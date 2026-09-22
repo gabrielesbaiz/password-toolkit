@@ -1,6 +1,7 @@
 {
-    "name": "italian_carnival_masks",
+    "key": "italian_carnival_masks",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Arlecchino", "gender": "male" },
         { "name": "Pulcinella", "gender": "male" },

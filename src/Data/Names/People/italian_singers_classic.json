@@ -1,6 +1,7 @@
 {
-    "name": "italian_singers_classic",
+    "key": "italian_singers_classic",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Mina", "gender": "female" },
         { "name": "Lucio Battisti", "gender": "male" },

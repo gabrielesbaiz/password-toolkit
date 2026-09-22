@@ -1,0 +1,16 @@
+{
+    "key": "philosophers",
+    "locale": "it",
+    "values": {
+        "Socrates": "Socrate",
+        "Plato": "Platone",
+        "Aristotle": "Aristotele",
+        "Rene Descartes": "Cartesio",
+        "Confucius": "Confucio",
+        "Zeno of Citium": "Zenone di Cizio",
+        "Pythagoras": "Pitagora",
+        "Epicurus": "Epicuro",
+        "Heraclitus": "Eraclito",
+        "Anaximander": "Anassimandro"
+    }
+}

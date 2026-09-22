@@ -1,6 +1,7 @@
 {
-    "name": "italian_children_games_70s",
+    "key": "italian_children_games_70s",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Subbuteo", "gender": "male" },
         { "name": "Allegro Chirurgo", "gender": "male" },

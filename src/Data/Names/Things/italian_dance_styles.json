@@ -1,6 +1,7 @@
 {
-    "name": "italian_dance_styles",
+    "key": "italian_dance_styles",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Tarantella", "gender": "female" },
         { "name": "Pizzica", "gender": "female" },

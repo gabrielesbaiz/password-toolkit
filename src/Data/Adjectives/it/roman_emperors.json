@@ -2,101 +2,29 @@
     "key": "roman_emperors",
     "locale": "it",
     "values": [
-        {
-            "name": "imperiale",
-            "gender": "neutral"
-        },
-        {
-            "name": "potente",
-            "gender": "neutral"
-        },
-        {
-            "name": "ambizioso",
-            "gender": "male"
-        },
-        {
-            "name": "ambiziosa",
-            "gender": "female"
-        },
-        {
-            "name": "spietato",
-            "gender": "male"
-        },
-        {
-            "name": "spietata",
-            "gender": "female"
-        },
-        {
-            "name": "saggio",
-            "gender": "male"
-        },
-        {
-            "name": "saggia",
-            "gender": "female"
-        },
-        {
-            "name": "severo",
-            "gender": "male"
-        },
-        {
-            "name": "severa",
-            "gender": "female"
-        },
-        {
-            "name": "glorioso",
-            "gender": "male"
-        },
-        {
-            "name": "gloriosa",
-            "gender": "female"
-        },
-        {
-            "name": "tirannico",
-            "gender": "male"
-        },
-        {
-            "name": "tirannica",
-            "gender": "female"
-        },
-        {
-            "name": "leggendario",
-            "gender": "male"
-        },
-        {
-            "name": "leggendaria",
-            "gender": "female"
-        },
-        {
-            "name": "regale",
-            "gender": "neutral"
-        },
-        {
-            "name": "antico",
-            "gender": "male"
-        },
-        {
-            "name": "antica",
-            "gender": "female"
-        },
-        {
-            "name": "marziale",
-            "gender": "neutral"
-        },
-        {
-            "name": "valoroso",
-            "gender": "male"
-        },
-        {
-            "name": "valorosa",
-            "gender": "female"
-        },
-        {
-            "name": "stratega",
-            "gender": "neutral"
-        },
-        {
-            "name": "trionfante",
-            "gender": "neutral"
-        }
+        { "name": "imperiale", "gender": "neutral" },
+        { "name": "potente", "gender": "neutral" },
+        { "name": "ambizioso", "gender": "male" },
+        { "name": "ambiziosa", "gender": "female" },
+        { "name": "spietato", "gender": "male" },
+        { "name": "spietata", "gender": "female" },
+        { "name": "saggio", "gender": "male" },
+        { "name": "saggia", "gender": "female" },
+        { "name": "severo", "gender": "male" },
+        { "name": "severa", "gender": "female" },
+        { "name": "glorioso", "gender": "male" },
+        { "name": "gloriosa", "gender": "female" },
+        { "name": "tirannico", "gender": "male" },
+        { "name": "tirannica", "gender": "female" },
+        { "name": "leggendario", "gender": "male" },
+        { "name": "leggendaria", "gender": "female" },
+        { "name": "regale", "gender": "neutral" },
+        { "name": "antico", "gender": "male" },
+        { "name": "antica", "gender": "female" },
+        { "name": "marziale", "gender": "neutral" },
+        { "name": "valoroso", "gender": "male" },
+        { "name": "valorosa", "gender": "female" },
+        { "name": "stratega", "gender": "neutral" },
+        { "name": "trionfante", "gender": "neutral" }
     ]
 }

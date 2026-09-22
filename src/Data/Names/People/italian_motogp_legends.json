@@ -1,6 +1,7 @@
 {
-    "name": "italian_motogp_legends",
+    "key": "italian_motogp_legends",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Valentino Rossi", "gender": "male" },
         { "name": "Giacomo Agostini", "gender": "male" },

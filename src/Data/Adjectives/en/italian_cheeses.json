@@ -2,65 +2,20 @@
     "key": "italian_cheeses",
     "locale": "en",
     "values": [
-        {
-            "name": "Aromatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creamy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fragrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fresh",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intensive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Nourishing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rich",
-            "gender": "neutral"
-        },
-        {
-            "name": "Savory",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spicy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tantalizing",
-            "gender": "neutral"
-        }
+        { "name": "Aromatic", "gender": "neutral" },
+        { "name": "Creamy", "gender": "neutral" },
+        { "name": "Delicious", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Fragrant", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Intensive", "gender": "neutral" },
+        { "name": "Nourishing", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Rich", "gender": "neutral" },
+        { "name": "Savory", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Spicy", "gender": "neutral" },
+        { "name": "Tantalizing", "gender": "neutral" }
     ]
 }

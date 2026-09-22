@@ -1,6 +1,7 @@
 {
-    "name": "italian_old_currencies",
+    "key": "italian_old_currencies",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Lira", "gender": "female" },
         { "name": "Soldo", "gender": "male" },

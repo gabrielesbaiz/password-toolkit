@@ -2,85 +2,25 @@
     "key": "italian_chefs",
     "locale": "en",
     "values": [
-        {
-            "name": "Artisanal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Authentic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Awarded",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Excellent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gastronomic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gourmand",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gourmet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imaginative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innovative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Masterful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Passionate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Starry",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sublime",
-            "gender": "neutral"
-        },
-        {
-            "name": "Superfine",
-            "gender": "neutral"
-        },
-        {
-            "name": "Talented",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Artisanal", "gender": "neutral" },
+        { "name": "Authentic", "gender": "neutral" },
+        { "name": "Awarded", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Excellent", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Gastronomic", "gender": "neutral" },
+        { "name": "Gourmand", "gender": "neutral" },
+        { "name": "Gourmet", "gender": "neutral" },
+        { "name": "Imaginative", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Innovative", "gender": "neutral" },
+        { "name": "Masterful", "gender": "neutral" },
+        { "name": "Passionate", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Starry", "gender": "neutral" },
+        { "name": "Sublime", "gender": "neutral" },
+        { "name": "Superfine", "gender": "neutral" },
+        { "name": "Talented", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

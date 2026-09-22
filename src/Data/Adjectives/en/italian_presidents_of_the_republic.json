@@ -2,65 +2,20 @@
     "key": "italian_presidents_of_the_republic",
     "locale": "en",
     "values": [
-        {
-            "name": "Balanced",
-            "gender": "neutral"
-        },
-        {
-            "name": "Composed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Diplomatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Domineering",
-            "gender": "neutral"
-        },
-        {
-            "name": "Farsighted",
-            "gender": "neutral"
-        },
-        {
-            "name": "Historic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Honored",
-            "gender": "neutral"
-        },
-        {
-            "name": "Impartial",
-            "gender": "neutral"
-        },
-        {
-            "name": "Independent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Prestigious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Reliable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Resolute",
-            "gender": "neutral"
-        },
-        {
-            "name": "Respected",
-            "gender": "neutral"
-        },
-        {
-            "name": "Solid",
-            "gender": "neutral"
-        },
-        {
-            "name": "Trusted",
-            "gender": "neutral"
-        }
+        { "name": "Balanced", "gender": "neutral" },
+        { "name": "Composed", "gender": "neutral" },
+        { "name": "Diplomatic", "gender": "neutral" },
+        { "name": "Domineering", "gender": "neutral" },
+        { "name": "Farsighted", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Honored", "gender": "neutral" },
+        { "name": "Impartial", "gender": "neutral" },
+        { "name": "Independent", "gender": "neutral" },
+        { "name": "Prestigious", "gender": "neutral" },
+        { "name": "Reliable", "gender": "neutral" },
+        { "name": "Resolute", "gender": "neutral" },
+        { "name": "Respected", "gender": "neutral" },
+        { "name": "Solid", "gender": "neutral" },
+        { "name": "Trusted", "gender": "neutral" }
     ]
 }

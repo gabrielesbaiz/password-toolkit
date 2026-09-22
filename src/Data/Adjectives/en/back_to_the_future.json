@@ -2,65 +2,20 @@
     "key": "back_to_the_future",
     "locale": "en",
     "values": [
-        {
-            "name": "Adventurous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brave",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brazen",
-            "gender": "neutral"
-        },
-        {
-            "name": "Determined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Eccentric",
-            "gender": "neutral"
-        },
-        {
-            "name": "Enterprising",
-            "gender": "neutral"
-        },
-        {
-            "name": "Idealistic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Impulsive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intelligent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Loquacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Patient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Romantic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Swaggering",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wise",
-            "gender": "neutral"
-        }
+        { "name": "Adventurous", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Determined", "gender": "neutral" },
+        { "name": "Eccentric", "gender": "neutral" },
+        { "name": "Enterprising", "gender": "neutral" },
+        { "name": "Idealistic", "gender": "neutral" },
+        { "name": "Impulsive", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Intelligent", "gender": "neutral" },
+        { "name": "Loquacious", "gender": "neutral" },
+        { "name": "Patient", "gender": "neutral" },
+        { "name": "Romantic", "gender": "neutral" },
+        { "name": "Swaggering", "gender": "neutral" },
+        { "name": "Wise", "gender": "neutral" }
     ]
 }

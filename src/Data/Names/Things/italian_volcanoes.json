@@ -1,6 +1,7 @@
 {
-    "name": "italian_volcanoes",
+    "key": "italian_volcanoes",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Etna", "gender": "male" },
         { "name": "Vesuvio", "gender": "male" },

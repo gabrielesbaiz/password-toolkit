@@ -2,101 +2,29 @@
     "key": "italian_icecream_flavors",
     "locale": "it",
     "values": [
-        {
-            "name": "cremoso",
-            "gender": "male"
-        },
-        {
-            "name": "cremosa",
-            "gender": "female"
-        },
-        {
-            "name": "fresco",
-            "gender": "male"
-        },
-        {
-            "name": "fresca",
-            "gender": "female"
-        },
-        {
-            "name": "dolce",
-            "gender": "neutral"
-        },
-        {
-            "name": "goloso",
-            "gender": "male"
-        },
-        {
-            "name": "golosa",
-            "gender": "female"
-        },
-        {
-            "name": "vellutato",
-            "gender": "male"
-        },
-        {
-            "name": "vellutata",
-            "gender": "female"
-        },
-        {
-            "name": "gustoso",
-            "gender": "male"
-        },
-        {
-            "name": "gustosa",
-            "gender": "female"
-        },
-        {
-            "name": "delizioso",
-            "gender": "male"
-        },
-        {
-            "name": "deliziosa",
-            "gender": "female"
-        },
-        {
-            "name": "irresistibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "rinfrescante",
-            "gender": "neutral"
-        },
-        {
-            "name": "profumato",
-            "gender": "male"
-        },
-        {
-            "name": "profumata",
-            "gender": "female"
-        },
-        {
-            "name": "cioccolatoso",
-            "gender": "male"
-        },
-        {
-            "name": "cioccolatosa",
-            "gender": "female"
-        },
-        {
-            "name": "estivo",
-            "gender": "male"
-        },
-        {
-            "name": "estiva",
-            "gender": "female"
-        },
-        {
-            "name": "soffice",
-            "gender": "neutral"
-        },
-        {
-            "name": "morbido",
-            "gender": "male"
-        },
-        {
-            "name": "morbida",
-            "gender": "female"
-        }
+        { "name": "cremoso", "gender": "male" },
+        { "name": "cremosa", "gender": "female" },
+        { "name": "fresco", "gender": "male" },
+        { "name": "fresca", "gender": "female" },
+        { "name": "dolce", "gender": "neutral" },
+        { "name": "goloso", "gender": "male" },
+        { "name": "golosa", "gender": "female" },
+        { "name": "vellutato", "gender": "male" },
+        { "name": "vellutata", "gender": "female" },
+        { "name": "gustoso", "gender": "male" },
+        { "name": "gustosa", "gender": "female" },
+        { "name": "delizioso", "gender": "male" },
+        { "name": "deliziosa", "gender": "female" },
+        { "name": "irresistibile", "gender": "neutral" },
+        { "name": "rinfrescante", "gender": "neutral" },
+        { "name": "profumato", "gender": "male" },
+        { "name": "profumata", "gender": "female" },
+        { "name": "cioccolatoso", "gender": "male" },
+        { "name": "cioccolatosa", "gender": "female" },
+        { "name": "estivo", "gender": "male" },
+        { "name": "estiva", "gender": "female" },
+        { "name": "soffice", "gender": "neutral" },
+        { "name": "morbido", "gender": "male" },
+        { "name": "morbida", "gender": "female" }
     ]
 }

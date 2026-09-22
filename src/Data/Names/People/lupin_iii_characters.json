@@ -1,6 +1,7 @@
 {
-    "name": "lupin_iii_characters",
+    "key": "lupin_iii_characters",
     "type": "people",
+    "locale": "en",
     "values": [
         { "name": "Lupin", "gender": "male" },
         { "name": "Jigen", "gender": "male" },
@@ -14,7 +15,7 @@
         { "name": "Albert", "gender": "male" },
         { "name": "Maurice", "gender": "male" },
         { "name": "Lupin Primo", "gender": "male" },
-        { "name": "Conte Cagliostro", "gender": "male" },
+        { "name": "Count Cagliostro", "gender": "male" },
         { "name": "Clarisse", "gender": "female" },
         { "name": "Daisuke Jigen", "gender": "male" },
         { "name": "Goemon Ishikawa", "gender": "male" },

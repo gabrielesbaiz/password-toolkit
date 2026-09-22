@@ -1,6 +1,7 @@
 {
-    "name": "italian_sea_creatures",
+    "key": "italian_sea_creatures",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Polpo", "gender": "male" },
         { "name": "Seppia", "gender": "female" },

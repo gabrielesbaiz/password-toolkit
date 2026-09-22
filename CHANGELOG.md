@@ -61,6 +61,24 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 
 ### Changed
 
+- **English is the reference locale.** `fallback_locale` defaults to `en`, so an
+  application in a language with no packs of its own gets English rather than
+  Italian. The package was written Italian-first; for one published
+  internationally that was the wrong default.
+- **Every dictionary declares the language its names are written in.** There is
+  no single right answer for all 91: a dictionary of Italian wines is Italian in
+  every locale, because Barolo is Barolo, while one about Harry Potter is
+  English and Italian is the dub. The 14 dictionaries with a non-Italian subject
+  moved to an English base with an Italian overlay — `Albus Dumbledore` is now
+  canonical and `Albus Silente` is the translation, where it was the other way
+  round. The 77 Italian ones are untouched, and correct untranslated.
+- Name lookup now resolves `{locale}` → `{fallback_locale}` → the base, so a
+  French reader gets the English rendering wherever one exists.
+- `coffee_brands` is now `italian_coffee_brands`, and the two non-Italian
+  entries in it (Nespresso, Starbucks) were dropped to match the name.
+  `car_brands` stays as it is — Porsche, Tesla and Toyota are not Italian.
+- Data files keep each entry on one line — `{ "name": "Amarone", "gender":
+  "male" }` — so a dictionary stays scannable and a diff stays readable.
 - **The service is an object, not a static class**, bound as a singleton. The
   facade now actually resolves through the container, so `swap()` and
   `shouldReceive()` work — in 1.x the accessor pointed at a class with no

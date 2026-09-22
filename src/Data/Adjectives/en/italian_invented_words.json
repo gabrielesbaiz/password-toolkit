@@ -2,65 +2,20 @@
     "key": "italian_invented_words",
     "locale": "en",
     "values": [
-        {
-            "name": "Bizarre",
-            "gender": "neutral"
-        },
-        {
-            "name": "Colloquial",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flamboyant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Funny",
-            "gender": "neutral"
-        },
-        {
-            "name": "Hilarious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imaginative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ironic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Jocular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lively",
-            "gender": "neutral"
-        },
-        {
-            "name": "Modern",
-            "gender": "neutral"
-        },
-        {
-            "name": "Original",
-            "gender": "neutral"
-        },
-        {
-            "name": "Popular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Satirical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Trendy",
-            "gender": "neutral"
-        }
+        { "name": "Bizarre", "gender": "neutral" },
+        { "name": "Colloquial", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Funny", "gender": "neutral" },
+        { "name": "Hilarious", "gender": "neutral" },
+        { "name": "Imaginative", "gender": "neutral" },
+        { "name": "Ironic", "gender": "neutral" },
+        { "name": "Jocular", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Modern", "gender": "neutral" },
+        { "name": "Original", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Satirical", "gender": "neutral" },
+        { "name": "Trendy", "gender": "neutral" }
     ]
 }

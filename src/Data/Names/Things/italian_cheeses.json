@@ -1,6 +1,7 @@
 {
-    "name": "italian_cheeses",
+    "key": "italian_cheeses",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Parmigiano Reggiano", "gender": "male" },
         { "name": "Mozzarella", "gender": "female" },

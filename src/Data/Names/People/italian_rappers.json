@@ -1,6 +1,7 @@
 {
-    "name": "italian_rappers",
+    "key": "italian_rappers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Fabri Fibra", "gender": "male" },
         { "name": "Marracash", "gender": "male" },

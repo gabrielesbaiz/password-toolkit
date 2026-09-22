@@ -2,101 +2,29 @@
     "key": "disney_villains",
     "locale": "it",
     "values": [
-        {
-            "name": "malvagio",
-            "gender": "male"
-        },
-        {
-            "name": "malvagia",
-            "gender": "female"
-        },
-        {
-            "name": "perfido",
-            "gender": "male"
-        },
-        {
-            "name": "perfida",
-            "gender": "female"
-        },
-        {
-            "name": "oscuro",
-            "gender": "male"
-        },
-        {
-            "name": "oscura",
-            "gender": "female"
-        },
-        {
-            "name": "sinistro",
-            "gender": "male"
-        },
-        {
-            "name": "sinistra",
-            "gender": "female"
-        },
-        {
-            "name": "spietato",
-            "gender": "male"
-        },
-        {
-            "name": "spietata",
-            "gender": "female"
-        },
-        {
-            "name": "subdolo",
-            "gender": "male"
-        },
-        {
-            "name": "subdola",
-            "gender": "female"
-        },
-        {
-            "name": "vendicativo",
-            "gender": "male"
-        },
-        {
-            "name": "vendicativa",
-            "gender": "female"
-        },
-        {
-            "name": "infido",
-            "gender": "male"
-        },
-        {
-            "name": "infida",
-            "gender": "female"
-        },
-        {
-            "name": "temibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        },
-        {
-            "name": "diabolico",
-            "gender": "male"
-        },
-        {
-            "name": "diabolica",
-            "gender": "female"
-        },
-        {
-            "name": "crudele",
-            "gender": "neutral"
-        },
-        {
-            "name": "tirannico",
-            "gender": "male"
-        },
-        {
-            "name": "tirannica",
-            "gender": "female"
-        }
+        { "name": "malvagio", "gender": "male" },
+        { "name": "malvagia", "gender": "female" },
+        { "name": "perfido", "gender": "male" },
+        { "name": "perfida", "gender": "female" },
+        { "name": "oscuro", "gender": "male" },
+        { "name": "oscura", "gender": "female" },
+        { "name": "sinistro", "gender": "male" },
+        { "name": "sinistra", "gender": "female" },
+        { "name": "spietato", "gender": "male" },
+        { "name": "spietata", "gender": "female" },
+        { "name": "subdolo", "gender": "male" },
+        { "name": "subdola", "gender": "female" },
+        { "name": "vendicativo", "gender": "male" },
+        { "name": "vendicativa", "gender": "female" },
+        { "name": "infido", "gender": "male" },
+        { "name": "infida", "gender": "female" },
+        { "name": "temibile", "gender": "neutral" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" },
+        { "name": "diabolico", "gender": "male" },
+        { "name": "diabolica", "gender": "female" },
+        { "name": "crudele", "gender": "neutral" },
+        { "name": "tirannico", "gender": "male" },
+        { "name": "tirannica", "gender": "female" }
     ]
 }

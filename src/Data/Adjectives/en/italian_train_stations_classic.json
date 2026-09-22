@@ -2,61 +2,19 @@
     "key": "italian_train_stations_classic",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bustling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Central",
-            "gender": "neutral"
-        },
-        {
-            "name": "Crowded",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Frantic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Historic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imposing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Metropolitan",
-            "gender": "neutral"
-        },
-        {
-            "name": "Monumental",
-            "gender": "neutral"
-        },
-        {
-            "name": "Noisy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Railbound",
-            "gender": "neutral"
-        },
-        {
-            "name": "Vast",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Bustling", "gender": "neutral" },
+        { "name": "Central", "gender": "neutral" },
+        { "name": "Crowded", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Imposing", "gender": "neutral" },
+        { "name": "Metropolitan", "gender": "neutral" },
+        { "name": "Monumental", "gender": "neutral" },
+        { "name": "Noisy", "gender": "neutral" },
+        { "name": "Railbound", "gender": "neutral" },
+        { "name": "Vast", "gender": "neutral" }
     ]
 }

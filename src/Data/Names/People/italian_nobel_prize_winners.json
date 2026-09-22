@@ -1,6 +1,7 @@
 {
-    "name": "italian_nobel_prize_winners",
+    "key": "italian_nobel_prize_winners",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Guglielmo Marconi", "gender": "male" },
         { "name": "Enrico Fermi", "gender": "male" },

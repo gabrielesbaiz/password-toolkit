@@ -1,6 +1,7 @@
 {
-    "name": "italian_presidents_of_the_republic",
+    "key": "italian_presidents_of_the_republic",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Enrico De Nicola", "gender": "male" },
         { "name": "Giovanni Gronchi", "gender": "male" },

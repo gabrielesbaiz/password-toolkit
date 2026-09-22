@@ -2,73 +2,22 @@
     "key": "italian_explorers",
     "locale": "en",
     "values": [
-        {
-            "name": "Adventurous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Audacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bold",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brave",
-            "gender": "neutral"
-        },
-        {
-            "name": "Curious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Daring",
-            "gender": "neutral"
-        },
-        {
-            "name": "Determined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Extraordinary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Glorious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Heroic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Indomitable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intrepid",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Pioneering",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tireless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Undaunted",
-            "gender": "neutral"
-        }
+        { "name": "Adventurous", "gender": "neutral" },
+        { "name": "Audacious", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Curious", "gender": "neutral" },
+        { "name": "Daring", "gender": "neutral" },
+        { "name": "Determined", "gender": "neutral" },
+        { "name": "Extraordinary", "gender": "neutral" },
+        { "name": "Glorious", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Indomitable", "gender": "neutral" },
+        { "name": "Intrepid", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Pioneering", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Undaunted", "gender": "neutral" }
     ]
 }

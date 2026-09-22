@@ -1,6 +1,7 @@
 {
-    "name": "italian_aperitivi",
+    "key": "italian_aperitivi",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Spritz", "gender": "male" },
         { "name": "Negroni", "gender": "male" },

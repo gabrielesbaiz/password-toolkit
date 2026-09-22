@@ -1,6 +1,7 @@
 {
-    "name": "italian_voice_actors",
+    "key": "italian_voice_actors",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Ferruccio Amendola", "gender": "male" },
         { "name": "Luca Ward", "gender": "male" },

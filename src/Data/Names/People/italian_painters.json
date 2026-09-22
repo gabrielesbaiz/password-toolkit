@@ -1,6 +1,7 @@
 {
-    "name": "italian_painters",
+    "key": "italian_painters",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Amedeo Modigliani", "gender": "male" },
         { "name": "Giorgio de Chirico", "gender": "male" },

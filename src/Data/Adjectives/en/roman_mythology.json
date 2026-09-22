@@ -2,77 +2,23 @@
     "key": "roman_mythology",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Divine",
-            "gender": "neutral"
-        },
-        {
-            "name": "Eternal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Glorious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Immortal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imperial",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magnanimous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Olympic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Proud",
-            "gender": "neutral"
-        },
-        {
-            "name": "Regal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Relentless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sacred",
-            "gender": "neutral"
-        },
-        {
-            "name": "Valiant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Victorious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Warlike",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wise",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Divine", "gender": "neutral" },
+        { "name": "Eternal", "gender": "neutral" },
+        { "name": "Glorious", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Imperial", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Magnanimous", "gender": "neutral" },
+        { "name": "Olympic", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Proud", "gender": "neutral" },
+        { "name": "Regal", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Sacred", "gender": "neutral" },
+        { "name": "Valiant", "gender": "neutral" },
+        { "name": "Victorious", "gender": "neutral" },
+        { "name": "Warlike", "gender": "neutral" },
+        { "name": "Wise", "gender": "neutral" }
     ]
 }

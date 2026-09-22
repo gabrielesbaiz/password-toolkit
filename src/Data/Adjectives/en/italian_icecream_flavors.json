@@ -2,61 +2,19 @@
     "key": "italian_icecream_flavors",
     "locale": "en",
     "values": [
-        {
-            "name": "Chocolatey",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creamy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fluffy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fresh",
-            "gender": "neutral"
-        },
-        {
-            "name": "Greedy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irresistible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfumed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refreshing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Summery",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sweet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tasty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Velvety",
-            "gender": "neutral"
-        }
+        { "name": "Chocolatey", "gender": "neutral" },
+        { "name": "Creamy", "gender": "neutral" },
+        { "name": "Delicious", "gender": "neutral" },
+        { "name": "Fluffy", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Greedy", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Refreshing", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Summery", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Tasty", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" }
     ]
 }

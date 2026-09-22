@@ -2,65 +2,20 @@
     "key": "italian_sea_creatures",
     "locale": "en",
     "values": [
-        {
-            "name": "Abyssal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dark",
-            "gender": "neutral"
-        },
-        {
-            "name": "Darting",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fresh",
-            "gender": "neutral"
-        },
-        {
-            "name": "Marine",
-            "gender": "neutral"
-        },
-        {
-            "name": "Mysterious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Savory",
-            "gender": "neutral"
-        },
-        {
-            "name": "Shining",
-            "gender": "neutral"
-        },
-        {
-            "name": "Silvered",
-            "gender": "neutral"
-        },
-        {
-            "name": "Slippery",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sprawling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Swift",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wildcaught",
-            "gender": "neutral"
-        }
+        { "name": "Abyssal", "gender": "neutral" },
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Darting", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Marine", "gender": "neutral" },
+        { "name": "Mysterious", "gender": "neutral" },
+        { "name": "Savory", "gender": "neutral" },
+        { "name": "Shining", "gender": "neutral" },
+        { "name": "Silvered", "gender": "neutral" },
+        { "name": "Slippery", "gender": "neutral" },
+        { "name": "Sprawling", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Wildcaught", "gender": "neutral" }
     ]
 }

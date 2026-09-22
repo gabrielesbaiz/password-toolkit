@@ -2,185 +2,50 @@
     "key": "italian_wines",
     "locale": "en",
     "values": [
-        {
-            "name": "Alive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Aromatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Austere",
-            "gender": "neutral"
-        },
-        {
-            "name": "Balanced",
-            "gender": "neutral"
-        },
-        {
-            "name": "Balsamic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Circling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Complex",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creamy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Distinctive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dry",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Exotic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Floral",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fragrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fresh",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fruity",
-            "gender": "neutral"
-        },
-        {
-            "name": "Full",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fullbodied",
-            "gender": "neutral"
-        },
-        {
-            "name": "Harmonic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Light",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lively",
-            "gender": "neutral"
-        },
-        {
-            "name": "Mature",
-            "gender": "neutral"
-        },
-        {
-            "name": "Mineral",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfect",
-            "gender": "neutral"
-        },
-        {
-            "name": "Persistent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Plush",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Resolved",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rich",
-            "gender": "neutral"
-        },
-        {
-            "name": "Silky",
-            "gender": "neutral"
-        },
-        {
-            "name": "Simple",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sophisticated",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spiced",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sustained",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sweet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tannic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tasteful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Truffled",
-            "gender": "neutral"
-        },
-        {
-            "name": "Velvety",
-            "gender": "neutral"
-        },
-        {
-            "name": "Vibrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Voluptuous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Warm",
-            "gender": "neutral"
-        }
+        { "name": "Alive", "gender": "neutral" },
+        { "name": "Aromatic", "gender": "neutral" },
+        { "name": "Austere", "gender": "neutral" },
+        { "name": "Balanced", "gender": "neutral" },
+        { "name": "Balsamic", "gender": "neutral" },
+        { "name": "Circling", "gender": "neutral" },
+        { "name": "Complex", "gender": "neutral" },
+        { "name": "Creamy", "gender": "neutral" },
+        { "name": "Delicate", "gender": "neutral" },
+        { "name": "Distinctive", "gender": "neutral" },
+        { "name": "Dry", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Exotic", "gender": "neutral" },
+        { "name": "Floral", "gender": "neutral" },
+        { "name": "Fragrant", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Fruity", "gender": "neutral" },
+        { "name": "Full", "gender": "neutral" },
+        { "name": "Fullbodied", "gender": "neutral" },
+        { "name": "Harmonic", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Light", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Mature", "gender": "neutral" },
+        { "name": "Mineral", "gender": "neutral" },
+        { "name": "Perfect", "gender": "neutral" },
+        { "name": "Persistent", "gender": "neutral" },
+        { "name": "Plush", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Resolved", "gender": "neutral" },
+        { "name": "Rich", "gender": "neutral" },
+        { "name": "Silky", "gender": "neutral" },
+        { "name": "Simple", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Sophisticated", "gender": "neutral" },
+        { "name": "Spiced", "gender": "neutral" },
+        { "name": "Sustained", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Tannic", "gender": "neutral" },
+        { "name": "Tasteful", "gender": "neutral" },
+        { "name": "Truffled", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" },
+        { "name": "Vibrant", "gender": "neutral" },
+        { "name": "Voluptuous", "gender": "neutral" },
+        { "name": "Warm", "gender": "neutral" }
     ]
 }

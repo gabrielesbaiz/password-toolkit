@@ -1,6 +1,7 @@
 {
-    "name": "italian_progressive_rock_bands",
+    "key": "italian_progressive_rock_bands",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "PFM", "gender": "neutral" },
         { "name": "Banco Mutuo Soccorso", "gender": "neutral" },

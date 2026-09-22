@@ -1,13 +1,12 @@
 {
-    "name": "coffee_brands",
+    "key": "italian_coffee_brands",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Lavazza", "gender": "neutral" },
         { "name": "Illy", "gender": "neutral" },
         { "name": "Segafredo", "gender": "neutral" },
         { "name": "Kimbo", "gender": "neutral" },
-        { "name": "Nespresso", "gender": "neutral" },
-        { "name": "Starbucks", "gender": "neutral" },
         { "name": "Bialetti", "gender": "neutral" },
         { "name": "Vergnano", "gender": "neutral" },
         { "name": "Torrisi", "gender": "neutral" },

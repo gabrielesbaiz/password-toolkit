@@ -2,65 +2,20 @@
     "key": "italian_carnival_masks",
     "locale": "en",
     "values": [
-        {
-            "name": "Bizarre",
-            "gender": "neutral"
-        },
-        {
-            "name": "Cheerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Comic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Eccentric",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flamboyant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Funny",
-            "gender": "neutral"
-        },
-        {
-            "name": "Hilarious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Jocular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lively",
-            "gender": "neutral"
-        },
-        {
-            "name": "Masked",
-            "gender": "neutral"
-        },
-        {
-            "name": "Popular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Prankish",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sly",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Bizarre", "gender": "neutral" },
+        { "name": "Cheerful", "gender": "neutral" },
+        { "name": "Comic", "gender": "neutral" },
+        { "name": "Eccentric", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Funny", "gender": "neutral" },
+        { "name": "Hilarious", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Jocular", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Masked", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Prankish", "gender": "neutral" },
+        { "name": "Sly", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

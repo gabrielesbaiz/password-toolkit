@@ -1,6 +1,7 @@
 {
-    "name": "italian_icecream_flavors",
+    "key": "italian_icecream_flavors",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Stracciatella", "gender": "female" },
         { "name": "Pistacchio", "gender": "male" },

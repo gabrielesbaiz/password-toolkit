@@ -1,6 +1,7 @@
 {
-    "name": "italian_card_games",
+    "key": "italian_card_games",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Scopa", "gender": "female" },
         { "name": "Briscola", "gender": "female" },

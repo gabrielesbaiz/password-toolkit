@@ -1,6 +1,7 @@
 {
-    "name": "italian_musicians",
+    "key": "italian_musicians",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Lucio Battisti", "gender": "male" },
         { "name": "Pino Daniele", "gender": "male" },

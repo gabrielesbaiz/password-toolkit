@@ -2,69 +2,21 @@
     "key": "italian_olympic_legends",
     "locale": "en",
     "values": [
-        {
-            "name": "Agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "Athletic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Explosive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gritty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Olympic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Snappy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Swift",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tireless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tonic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Triumphant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unbeatable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Winning",
-            "gender": "neutral"
-        }
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Athletic", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Olympic", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Tonic", "gender": "neutral" },
+        { "name": "Triumphant", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Winning", "gender": "neutral" }
     ]
 }

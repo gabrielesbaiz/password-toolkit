@@ -1,6 +1,7 @@
 {
-    "name": "italian_children_games_90s",
+    "key": "italian_children_games_90s",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Tamagotchi", "gender": "male" },
         { "name": "Furby", "gender": "male" },

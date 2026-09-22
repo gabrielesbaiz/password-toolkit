@@ -1,6 +1,7 @@
 {
-    "name": "italian_folk_instruments",
+    "key": "italian_folk_instruments",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Mandolino", "gender": "male" },
         { "name": "Zampogna", "gender": "female" },

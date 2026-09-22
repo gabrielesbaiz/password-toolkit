@@ -2,57 +2,18 @@
     "key": "disney_villains",
     "locale": "en",
     "values": [
-        {
-            "name": "Cruel",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dark",
-            "gender": "neutral"
-        },
-        {
-            "name": "Diabolical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fearsome",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Merciless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfidious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sinister",
-            "gender": "neutral"
-        },
-        {
-            "name": "Treacherous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tyrannical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Underhanded",
-            "gender": "neutral"
-        },
-        {
-            "name": "Vengeful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Villainous",
-            "gender": "neutral"
-        }
+        { "name": "Cruel", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Diabolical", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Perfidious", "gender": "neutral" },
+        { "name": "Sinister", "gender": "neutral" },
+        { "name": "Treacherous", "gender": "neutral" },
+        { "name": "Tyrannical", "gender": "neutral" },
+        { "name": "Underhanded", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" },
+        { "name": "Villainous", "gender": "neutral" }
     ]
 }

@@ -2,97 +2,28 @@
     "key": "italian_pizza_types",
     "locale": "it",
     "values": [
-        {
-            "name": "fumante",
-            "gender": "neutral"
-        },
-        {
-            "name": "croccante",
-            "gender": "neutral"
-        },
-        {
-            "name": "morbido",
-            "gender": "male"
-        },
-        {
-            "name": "morbida",
-            "gender": "female"
-        },
-        {
-            "name": "soffice",
-            "gender": "neutral"
-        },
-        {
-            "name": "filante",
-            "gender": "neutral"
-        },
-        {
-            "name": "saporito",
-            "gender": "male"
-        },
-        {
-            "name": "saporita",
-            "gender": "female"
-        },
-        {
-            "name": "profumato",
-            "gender": "male"
-        },
-        {
-            "name": "profumata",
-            "gender": "female"
-        },
-        {
-            "name": "delizioso",
-            "gender": "male"
-        },
-        {
-            "name": "deliziosa",
-            "gender": "female"
-        },
-        {
-            "name": "irresistibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "tradizionale",
-            "gender": "neutral"
-        },
-        {
-            "name": "autentico",
-            "gender": "male"
-        },
-        {
-            "name": "autentica",
-            "gender": "female"
-        },
-        {
-            "name": "rustico",
-            "gender": "male"
-        },
-        {
-            "name": "rustica",
-            "gender": "female"
-        },
-        {
-            "name": "fragrante",
-            "gender": "neutral"
-        },
-        {
-            "name": "appetitoso",
-            "gender": "male"
-        },
-        {
-            "name": "appetitosa",
-            "gender": "female"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        }
+        { "name": "fumante", "gender": "neutral" },
+        { "name": "croccante", "gender": "neutral" },
+        { "name": "morbido", "gender": "male" },
+        { "name": "morbida", "gender": "female" },
+        { "name": "soffice", "gender": "neutral" },
+        { "name": "filante", "gender": "neutral" },
+        { "name": "saporito", "gender": "male" },
+        { "name": "saporita", "gender": "female" },
+        { "name": "profumato", "gender": "male" },
+        { "name": "profumata", "gender": "female" },
+        { "name": "delizioso", "gender": "male" },
+        { "name": "deliziosa", "gender": "female" },
+        { "name": "irresistibile", "gender": "neutral" },
+        { "name": "tradizionale", "gender": "neutral" },
+        { "name": "autentico", "gender": "male" },
+        { "name": "autentica", "gender": "female" },
+        { "name": "rustico", "gender": "male" },
+        { "name": "rustica", "gender": "female" },
+        { "name": "fragrante", "gender": "neutral" },
+        { "name": "appetitoso", "gender": "male" },
+        { "name": "appetitosa", "gender": "female" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" }
     ]
 }

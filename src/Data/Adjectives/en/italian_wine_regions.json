@@ -2,57 +2,18 @@
     "key": "italian_wine_regions",
     "locale": "en",
     "values": [
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fruity",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fullbodied",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfumed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Prized",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Robust",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sparkling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spiced",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tannic",
-            "gender": "neutral"
-        }
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Fruity", "gender": "neutral" },
+        { "name": "Fullbodied", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Prized", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Robust", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Spiced", "gender": "neutral" },
+        { "name": "Tannic", "gender": "neutral" }
     ]
 }

@@ -1,6 +1,7 @@
 {
-    "name": "italian_children_games_2000s",
+    "key": "italian_children_games_2000s",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Beyblade", "gender": "male" },
         { "name": "Yu Gi Oh", "gender": "male" },

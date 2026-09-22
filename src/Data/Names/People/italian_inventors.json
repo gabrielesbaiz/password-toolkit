@@ -1,6 +1,7 @@
 {
-    "name": "italian_inventors",
+    "key": "italian_inventors",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Antonio Meucci", "gender": "male" },
         { "name": "Guglielmo Marconi", "gender": "male" },

@@ -2,73 +2,22 @@
     "key": "italian_poets",
     "locale": "en",
     "values": [
-        {
-            "name": "Accursed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Classic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dreaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Eloquent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Immortal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Inspired",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lyric",
-            "gender": "neutral"
-        },
-        {
-            "name": "Melancholic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Passionate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perceptive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Poetic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Romantic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sublime",
-            "gender": "neutral"
-        },
-        {
-            "name": "Visionary",
-            "gender": "neutral"
-        }
+        { "name": "Accursed", "gender": "neutral" },
+        { "name": "Classic", "gender": "neutral" },
+        { "name": "Dreaming", "gender": "neutral" },
+        { "name": "Eloquent", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Inspired", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Lyric", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Passionate", "gender": "neutral" },
+        { "name": "Perceptive", "gender": "neutral" },
+        { "name": "Poetic", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Romantic", "gender": "neutral" },
+        { "name": "Sublime", "gender": "neutral" },
+        { "name": "Visionary", "gender": "neutral" }
     ]
 }

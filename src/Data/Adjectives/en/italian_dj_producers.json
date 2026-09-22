@@ -2,61 +2,19 @@
     "key": "italian_dj_producers",
     "locale": "en",
     "values": [
-        {
-            "name": "Cult",
-            "gender": "neutral"
-        },
-        {
-            "name": "Electric",
-            "gender": "neutral"
-        },
-        {
-            "name": "Energetic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Explosive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Groovy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Hypnotic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innovative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magnetic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rhythmic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rousing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Trendy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unleashed",
-            "gender": "neutral"
-        }
+        { "name": "Cult", "gender": "neutral" },
+        { "name": "Electric", "gender": "neutral" },
+        { "name": "Energetic", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Groovy", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Innovative", "gender": "neutral" },
+        { "name": "Magnetic", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Rhythmic", "gender": "neutral" },
+        { "name": "Rousing", "gender": "neutral" },
+        { "name": "Trendy", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" }
     ]
 }

@@ -2,97 +2,28 @@
     "key": "italian_olympic_legends",
     "locale": "it",
     "values": [
-        {
-            "name": "vincente",
-            "gender": "neutral"
-        },
-        {
-            "name": "atletico",
-            "gender": "male"
-        },
-        {
-            "name": "atletica",
-            "gender": "female"
-        },
-        {
-            "name": "scattante",
-            "gender": "neutral"
-        },
-        {
-            "name": "tenace",
-            "gender": "neutral"
-        },
-        {
-            "name": "leggendario",
-            "gender": "male"
-        },
-        {
-            "name": "leggendaria",
-            "gender": "female"
-        },
-        {
-            "name": "grintoso",
-            "gender": "male"
-        },
-        {
-            "name": "grintosa",
-            "gender": "female"
-        },
-        {
-            "name": "veloce",
-            "gender": "neutral"
-        },
-        {
-            "name": "esplosivo",
-            "gender": "male"
-        },
-        {
-            "name": "esplosiva",
-            "gender": "female"
-        },
-        {
-            "name": "imbattibile",
-            "gender": "neutral"
-        },
-        {
-            "name": "olimpico",
-            "gender": "male"
-        },
-        {
-            "name": "olimpica",
-            "gender": "female"
-        },
-        {
-            "name": "tonico",
-            "gender": "male"
-        },
-        {
-            "name": "tonica",
-            "gender": "female"
-        },
-        {
-            "name": "agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "instancabile",
-            "gender": "neutral"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        },
-        {
-            "name": "potente",
-            "gender": "neutral"
-        },
-        {
-            "name": "trionfante",
-            "gender": "neutral"
-        }
+        { "name": "vincente", "gender": "neutral" },
+        { "name": "atletico", "gender": "male" },
+        { "name": "atletica", "gender": "female" },
+        { "name": "scattante", "gender": "neutral" },
+        { "name": "tenace", "gender": "neutral" },
+        { "name": "leggendario", "gender": "male" },
+        { "name": "leggendaria", "gender": "female" },
+        { "name": "grintoso", "gender": "male" },
+        { "name": "grintosa", "gender": "female" },
+        { "name": "veloce", "gender": "neutral" },
+        { "name": "esplosivo", "gender": "male" },
+        { "name": "esplosiva", "gender": "female" },
+        { "name": "imbattibile", "gender": "neutral" },
+        { "name": "olimpico", "gender": "male" },
+        { "name": "olimpica", "gender": "female" },
+        { "name": "tonico", "gender": "male" },
+        { "name": "tonica", "gender": "female" },
+        { "name": "agile", "gender": "neutral" },
+        { "name": "instancabile", "gender": "neutral" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" },
+        { "name": "potente", "gender": "neutral" },
+        { "name": "trionfante", "gender": "neutral" }
     ]
 }
