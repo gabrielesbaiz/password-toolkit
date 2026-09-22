@@ -19,13 +19,12 @@
         { "name": "Sfincione", "gender": "male" },
         { "name": "Calzone", "gender": "male" },
         { "name": "Schiacciata", "gender": "female" },
-        { "name": "Olive Ascolane", "gender": "female" },
-        { "name": "Panelle", "gender": "female" },
+        { "name": "Oliva Ascolana", "gender": "female" },
+        { "name": "Panella", "gender": "female" },
         { "name": "Pane e Panelle", "gender": "male" },
         { "name": "Pani ca Meusa", "gender": "male" },
         { "name": "Bombolone", "gender": "male" },
         { "name": "Cuoppo", "gender": "male" },
-        { "name": "Frittatina", "gender": "female" },
-        { "name": "Cazzilli", "gender": "male" }
+        { "name": "Frittatina", "gender": "female" }
     ]
 }
