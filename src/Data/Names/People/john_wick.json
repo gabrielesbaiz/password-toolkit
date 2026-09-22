@@ -1,0 +1,26 @@
+{
+    "key": "john_wick",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["action", "film", "twentytens"],
+    "icon": "🐕",
+    "reach": "global",
+    "values": [
+        { "name": "John Wick", "gender": "male" },
+        { "name": "Helen Wick", "gender": "female" },
+        { "name": "Viggo Tarasov", "gender": "male" },
+        { "name": "Iosef Tarasov", "gender": "male" },
+        { "name": "Marcus", "gender": "male" },
+        { "name": "Winston Scott", "gender": "male" },
+        { "name": "Charon", "gender": "male" },
+        { "name": "Aurelio", "gender": "male" },
+        { "name": "Perkins", "gender": "female" },
+        { "name": "The Bowery King", "gender": "male" },
+        { "name": "Cassian", "gender": "male" },
+        { "name": "Ares", "gender": "female" },
+        { "name": "Sofia", "gender": "female" },
+        { "name": "Zero", "gender": "male" },
+        { "name": "Caine", "gender": "male" }
+    ]
+}

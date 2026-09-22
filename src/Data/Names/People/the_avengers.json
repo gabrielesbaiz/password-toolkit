@@ -1,0 +1,22 @@
+{
+    "key": "the_avengers",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comics", "film", "twentytens"],
+    "icon": "🛡️",
+    "reach": "global",
+    "values": [
+        { "name": "Tony Stark", "gender": "male" },
+        { "name": "Steve Rogers", "gender": "male" },
+        { "name": "Bruce Banner", "gender": "male" },
+        { "name": "Thor", "gender": "male" },
+        { "name": "Natasha Romanoff", "gender": "female" },
+        { "name": "Clint Barton", "gender": "male" },
+        { "name": "Loki", "gender": "male" },
+        { "name": "Nick Fury", "gender": "male" },
+        { "name": "Phil Coulson", "gender": "male" },
+        { "name": "Maria Hill", "gender": "female" },
+        { "name": "Erik Selvig", "gender": "male" }
+    ]
+}

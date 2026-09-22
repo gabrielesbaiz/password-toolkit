@@ -1,0 +1,21 @@
+{
+    "key": "inception",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "sciencefiction", "twentytens"],
+    "icon": "🌀",
+    "reach": "global",
+    "values": [
+        { "name": "Dom Cobb", "gender": "male" },
+        { "name": "Arthur", "gender": "male" },
+        { "name": "Ariadne", "gender": "female" },
+        { "name": "Eames", "gender": "male" },
+        { "name": "Saito", "gender": "male" },
+        { "name": "Mal", "gender": "female" },
+        { "name": "Robert Fischer", "gender": "male" },
+        { "name": "Peter Browning", "gender": "male" },
+        { "name": "Stephen Miles", "gender": "male" },
+        { "name": "Yusuf", "gender": "male" }
+    ]
+}

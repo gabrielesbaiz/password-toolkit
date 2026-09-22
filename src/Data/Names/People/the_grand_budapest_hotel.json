@@ -1,0 +1,24 @@
+{
+    "key": "the_grand_budapest_hotel",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comedy", "film", "twentytens"],
+    "icon": "🛎️",
+    "reach": "global",
+    "values": [
+        { "name": "Monsieur Gustave", "gender": "male" },
+        { "name": "Zero Moustafa", "gender": "male" },
+        { "name": "Agatha", "gender": "female" },
+        { "name": "Dmitri", "gender": "male" },
+        { "name": "Jopling", "gender": "male" },
+        { "name": "Madame D", "gender": "female" },
+        { "name": "Albert Henckels", "gender": "male" },
+        { "name": "Serge", "gender": "male" },
+        { "name": "Vilmos Kovacs", "gender": "male" },
+        { "name": "Ludwig", "gender": "male" },
+        { "name": "Monsieur Ivan", "gender": "male" },
+        { "name": "Monsieur Jean", "gender": "male" },
+        { "name": "Clotilde", "gender": "female" }
+    ]
+}
