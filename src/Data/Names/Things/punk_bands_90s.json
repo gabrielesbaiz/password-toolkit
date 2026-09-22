@@ -1,0 +1,26 @@
+{
+    "key": "punk_bands_90s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "nineties", "punk"],
+    "icon": "🧷",
+    "reach": "global",
+    "values": [
+        { "name": "NOFX", "gender": "male" },
+        { "name": "Rancid", "gender": "male" },
+        { "name": "Fugazi", "gender": "male" },
+        { "name": "Pennywise", "gender": "male" },
+        { "name": "Lagwagon", "gender": "male" },
+        { "name": "Face To Face", "gender": "male" },
+        { "name": "Jawbreaker", "gender": "male" },
+        { "name": "Sublime", "gender": "male" },
+        { "name": "Less Than Jake", "gender": "male" },
+        { "name": "Reel Big Fish", "gender": "male" },
+        { "name": "Refused", "gender": "male" },
+        { "name": "Bikini Kill", "gender": "male" },
+        { "name": "Sleater Kinney", "gender": "male" },
+        { "name": "Hot Water Music", "gender": "male" },
+        { "name": "Millencolin", "gender": "male" }
+    ]
+}

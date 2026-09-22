@@ -1,0 +1,26 @@
+{
+    "key": "punk_bands_80s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["eighties", "music", "punk"],
+    "icon": "🧷",
+    "reach": "global",
+    "values": [
+        { "name": "Dead Kennedys", "gender": "male" },
+        { "name": "Black Flag", "gender": "male" },
+        { "name": "Minor Threat", "gender": "male" },
+        { "name": "Bad Brains", "gender": "male" },
+        { "name": "Misfits", "gender": "male" },
+        { "name": "Circle Jerks", "gender": "male" },
+        { "name": "Descendents", "gender": "male" },
+        { "name": "Husker Du", "gender": "male" },
+        { "name": "Minutemen", "gender": "male" },
+        { "name": "Suicidal Tendencies", "gender": "male" },
+        { "name": "Agnostic Front", "gender": "male" },
+        { "name": "Cro Mags", "gender": "male" },
+        { "name": "Bad Religion", "gender": "male" },
+        { "name": "Social Distortion", "gender": "male" },
+        { "name": "The Exploited", "gender": "male" }
+    ]
+}

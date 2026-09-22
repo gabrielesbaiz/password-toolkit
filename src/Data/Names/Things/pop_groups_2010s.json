@@ -1,0 +1,25 @@
+{
+    "key": "pop_groups_2010s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "pop", "twentytens"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "One Direction", "gender": "male" },
+        { "name": "Little Mix", "gender": "male" },
+        { "name": "Fifth Harmony", "gender": "male" },
+        { "name": "BTS", "gender": "male" },
+        { "name": "Blackpink", "gender": "male" },
+        { "name": "EXO", "gender": "male" },
+        { "name": "Twice", "gender": "male" },
+        { "name": "Big Bang", "gender": "male" },
+        { "name": "Girls Generation", "gender": "male" },
+        { "name": "Red Velvet", "gender": "male" },
+        { "name": "Maroon 5", "gender": "male" },
+        { "name": "The Chainsmokers", "gender": "male" },
+        { "name": "CNCO", "gender": "male" },
+        { "name": "AKB48", "gender": "male" }
+    ]
+}

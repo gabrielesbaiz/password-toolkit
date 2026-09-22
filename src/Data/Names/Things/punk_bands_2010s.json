@@ -1,0 +1,26 @@
+{
+    "key": "punk_bands_2010s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "punk", "twentytens"],
+    "icon": "🧷",
+    "reach": "niche",
+    "values": [
+        { "name": "Joyce Manor", "gender": "male" },
+        { "name": "The Menzingers", "gender": "male" },
+        { "name": "Modern Baseball", "gender": "male" },
+        { "name": "PUP", "gender": "male" },
+        { "name": "Touche Amore", "gender": "male" },
+        { "name": "La Dispute", "gender": "male" },
+        { "name": "Title Fight", "gender": "male" },
+        { "name": "Basement", "gender": "male" },
+        { "name": "Citizen", "gender": "male" },
+        { "name": "Neck Deep", "gender": "male" },
+        { "name": "State Champs", "gender": "male" },
+        { "name": "Pierce The Veil", "gender": "male" },
+        { "name": "Sleeping With Sirens", "gender": "male" },
+        { "name": "Iceage", "gender": "male" },
+        { "name": "Protomartyr", "gender": "male" }
+    ]
+}

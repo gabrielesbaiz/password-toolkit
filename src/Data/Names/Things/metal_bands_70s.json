@@ -1,0 +1,26 @@
+{
+    "key": "metal_bands_70s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["metal", "music", "seventies"],
+    "icon": "🤘",
+    "reach": "global",
+    "values": [
+        { "name": "Motorhead", "gender": "male" },
+        { "name": "Rainbow", "gender": "male" },
+        { "name": "Blue Oyster Cult", "gender": "male" },
+        { "name": "Thin Lizzy", "gender": "male" },
+        { "name": "UFO", "gender": "male" },
+        { "name": "Budgie", "gender": "male" },
+        { "name": "Uriah Heep", "gender": "male" },
+        { "name": "Nazareth", "gender": "male" },
+        { "name": "Alice Cooper", "gender": "male" },
+        { "name": "Montrose", "gender": "male" },
+        { "name": "Bad Company", "gender": "male" },
+        { "name": "Grand Funk Railroad", "gender": "male" },
+        { "name": "Hawkwind", "gender": "male" },
+        { "name": "Foghat", "gender": "male" },
+        { "name": "Mountain", "gender": "male" }
+    ]
+}

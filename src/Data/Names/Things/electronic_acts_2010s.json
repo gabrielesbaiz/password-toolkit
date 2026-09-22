@@ -1,0 +1,26 @@
+{
+    "key": "electronic_acts_2010s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["electronic", "music", "twentytens"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "Disclosure", "gender": "male" },
+        { "name": "Swedish House Mafia", "gender": "male" },
+        { "name": "Major Lazer", "gender": "male" },
+        { "name": "Odesza", "gender": "male" },
+        { "name": "Chvrches", "gender": "male" },
+        { "name": "Purity Ring", "gender": "male" },
+        { "name": "Sylvan Esso", "gender": "male" },
+        { "name": "Clean Bandit", "gender": "male" },
+        { "name": "Galantis", "gender": "male" },
+        { "name": "Zeds Dead", "gender": "male" },
+        { "name": "Knife Party", "gender": "male" },
+        { "name": "Rufus Du Sol", "gender": "male" },
+        { "name": "Moderat", "gender": "male" },
+        { "name": "The Glitch Mob", "gender": "male" },
+        { "name": "Above And Beyond", "gender": "male" }
+    ]
+}

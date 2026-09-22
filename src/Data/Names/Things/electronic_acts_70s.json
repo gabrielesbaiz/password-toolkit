@@ -1,0 +1,25 @@
+{
+    "key": "electronic_acts_70s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["electronic", "music", "seventies"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "Kraftwerk", "gender": "male" },
+        { "name": "Tangerine Dream", "gender": "male" },
+        { "name": "Can", "gender": "male" },
+        { "name": "Neu", "gender": "male" },
+        { "name": "Cluster", "gender": "male" },
+        { "name": "Harmonia", "gender": "male" },
+        { "name": "Faust", "gender": "male" },
+        { "name": "Suicide", "gender": "male" },
+        { "name": "Yellow Magic Orchestra", "gender": "male" },
+        { "name": "Popol Vuh", "gender": "male" },
+        { "name": "Amon Duul II", "gender": "male" },
+        { "name": "Ash Ra Tempel", "gender": "male" },
+        { "name": "La Dusseldorf", "gender": "male" },
+        { "name": "Sparks", "gender": "male" }
+    ]
+}

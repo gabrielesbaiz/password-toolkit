@@ -1,0 +1,21 @@
+{
+    "key": "hip_hop_groups_2020s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["hiphop", "music", "twentytwenties"],
+    "icon": "🎤",
+    "reach": "global",
+    "values": [
+        { "name": "Griselda", "gender": "male" },
+        { "name": "Paris Texas", "gender": "male" },
+        { "name": "Armand Hammer", "gender": "male" },
+        { "name": "Drain Gang", "gender": "male" },
+        { "name": "Injury Reserve", "gender": "male" },
+        { "name": "City Morgue", "gender": "male" },
+        { "name": "Mount Westmore", "gender": "male" },
+        { "name": "Suicideboys", "gender": "male" },
+        { "name": "Kneecap", "gender": "male" },
+        { "name": "Bob Vylan", "gender": "male" }
+    ]
+}

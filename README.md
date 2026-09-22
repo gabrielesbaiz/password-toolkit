@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-163 dictionaries — **99 of people** and **64 of things** — holding
-2,492 names and 1,365 names respectively, each with themed adjectives in both
+188 dictionaries — **99 of people** and **89 of things** — holding
+2,492 names and 1,725 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -347,15 +347,24 @@ is translated where a translation exists and left alone where it should be.
 </details>
 
 <details>
-<summary><b>Things (64)</b></summary>
+<summary><b>Things (89)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
 | `car_brands` | 🚘 vehicles | en | 49 | Ferrari |
-| `electronic_acts` | 🎛️ arts | en | 15 | Daft Punk |
+| `electronic_acts_2000s` | 🎛️ arts | en | 15 | Daft Punk |
+| `electronic_acts_2010s` | 🎛️ arts | en | 15 | Disclosure |
+| `electronic_acts_2020s` | 🎛️ arts | en | 13 | Overmono |
+| `electronic_acts_70s` | 🎛️ arts | en | 14 | Kraftwerk |
+| `electronic_acts_80s` | 🎛️ arts | en | 15 | Depeche Mode |
+| `electronic_acts_90s` | 🎛️ arts | en | 15 | The Prodigy |
 | `football_clubs` | ⚽ sport | en | 15 | Real Madrid |
 | `greek_letters` | 🔤 science | en | 24 | Alpha |
-| `hip_hop_groups` | 🎤 arts | en | 15 | Run DMC |
+| `hip_hop_groups_2000s` | 🎤 arts | en | 15 | Outkast |
+| `hip_hop_groups_2010s` | 🎤 arts | en | 15 | Migos |
+| `hip_hop_groups_2020s` | 🎤 arts | en | 10 | Griselda |
+| `hip_hop_groups_80s` | 🎤 arts | en | 15 | Run DMC |
+| `hip_hop_groups_90s` | 🎤 arts | en | 15 | Wu Tang Clan |
 | `italian_aperitivi` | 🍹 drink | it | 18 | Spritz |
 | `italian_breads` | 🥖 food | it | 20 | Ciabatta |
 | `italian_card_games` | 🃏 culture | it | 18 | Scopa |
@@ -402,11 +411,27 @@ is translated where a translation exists and left alone where it should be.
 | `italian_volcanoes` | 🌋 nature | it | 18 | Etna |
 | `italian_wine_regions` | 🍇 drink | it | 22 | Chianti |
 | `italian_wines` | 🍷 drink | it | 60 | Barolo |
-| `metal_bands` | 🤘 arts | en | 15 | Slayer |
+| `metal_bands_2000s` | 🤘 arts | en | 15 | Slipknot |
+| `metal_bands_2010s` | 🤘 arts | en | 15 | Sabaton |
+| `metal_bands_2020s` | 🤘 arts | en | 15 | Lorna Shore |
+| `metal_bands_70s` | 🤘 arts | en | 15 | Motorhead |
+| `metal_bands_80s` | 🤘 arts | en | 15 | Megadeth |
+| `metal_bands_90s` | 🤘 arts | en | 15 | Sepultura |
 | `nato_alphabet` | 📻 culture | en | 26 | Alfa |
 | `planets_and_moons` | 🪐 nature | en | 15 | Mercury |
-| `pop_groups` | ✨ arts | en | 15 | ABBA |
-| `punk_bands` | 🧷 arts | en | 15 | Bad Religion |
+| `pop_groups_2000s` | ✨ arts | en | 15 | Destinys Child |
+| `pop_groups_2010s` | ✨ arts | en | 14 | One Direction |
+| `pop_groups_2020s` | ✨ arts | en | 15 | Stray Kids |
+| `pop_groups_60s` | ✨ arts | en | 15 | The Supremes |
+| `pop_groups_70s` | ✨ arts | en | 15 | ABBA |
+| `pop_groups_80s` | ✨ arts | en | 10 | Wham |
+| `pop_groups_90s` | ✨ arts | en | 15 | Spice Girls |
+| `punk_bands_2000s` | 🧷 arts | en | 15 | Rise Against |
+| `punk_bands_2010s` | 🧷 arts | en | 15 | Joyce Manor |
+| `punk_bands_2020s` | 🧷 arts | en | 14 | Gel |
+| `punk_bands_70s` | 🧷 arts | en | 15 | Buzzcocks |
+| `punk_bands_80s` | 🧷 arts | en | 15 | Dead Kennedys |
+| `punk_bands_90s` | 🧷 arts | en | 15 | NOFX |
 | `rock_bands_2000s` | 🎸 arts | en | 15 | The White Stripes |
 | `rock_bands_2010s` | 🎸 arts | en | 15 | Imagine Dragons |
 | `rock_bands_2020s` | 🎸 arts | en | 11 | Maneskin |

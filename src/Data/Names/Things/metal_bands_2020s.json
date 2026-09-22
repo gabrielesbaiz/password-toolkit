@@ -1,0 +1,26 @@
+{
+    "key": "metal_bands_2020s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["metal", "music", "twentytwenties"],
+    "icon": "🤘",
+    "reach": "niche",
+    "values": [
+        { "name": "Lorna Shore", "gender": "male" },
+        { "name": "Code Orange", "gender": "male" },
+        { "name": "Blood Incantation", "gender": "male" },
+        { "name": "Jinjer", "gender": "male" },
+        { "name": "Employed To Serve", "gender": "male" },
+        { "name": "Frozen Soul", "gender": "male" },
+        { "name": "Undeath", "gender": "male" },
+        { "name": "Gatecreeper", "gender": "male" },
+        { "name": "Sanguisugabogg", "gender": "male" },
+        { "name": "Kublai Khan", "gender": "male" },
+        { "name": "Alpha Wolf", "gender": "male" },
+        { "name": "Malevolence", "gender": "male" },
+        { "name": "Dying Wish", "gender": "male" },
+        { "name": "Full Of Hell", "gender": "male" },
+        { "name": "Chat Pile", "gender": "male" }
+    ]
+}

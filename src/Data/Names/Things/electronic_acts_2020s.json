@@ -1,0 +1,24 @@
+{
+    "key": "electronic_acts_2020s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["electronic", "music", "twentytwenties"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "Overmono", "gender": "male" },
+        { "name": "Two Shell", "gender": "male" },
+        { "name": "Anotr", "gender": "male" },
+        { "name": "Keinemusik", "gender": "male" },
+        { "name": "Magdalena Bay", "gender": "male" },
+        { "name": "Confidence Man", "gender": "male" },
+        { "name": "Jungle", "gender": "male" },
+        { "name": "Bicep", "gender": "male" },
+        { "name": "Kx5", "gender": "male" },
+        { "name": "Meduza", "gender": "male" },
+        { "name": "Chase And Status", "gender": "male" },
+        { "name": "Jockstrap", "gender": "male" },
+        { "name": "Sofi Tukker", "gender": "male" }
+    ]
+}

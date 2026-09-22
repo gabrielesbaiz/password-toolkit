@@ -1,0 +1,26 @@
+{
+    "key": "hip_hop_groups_2010s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["hiphop", "music", "twentytens"],
+    "icon": "🎤",
+    "reach": "global",
+    "values": [
+        { "name": "Migos", "gender": "male" },
+        { "name": "Run The Jewels", "gender": "male" },
+        { "name": "Rae Sremmurd", "gender": "male" },
+        { "name": "Brockhampton", "gender": "male" },
+        { "name": "Odd Future", "gender": "male" },
+        { "name": "ASAP Mob", "gender": "male" },
+        { "name": "Flatbush Zombies", "gender": "male" },
+        { "name": "Death Grips", "gender": "male" },
+        { "name": "Black Hippy", "gender": "male" },
+        { "name": "Pro Era", "gender": "male" },
+        { "name": "Slaughterhouse", "gender": "male" },
+        { "name": "EarthGang", "gender": "male" },
+        { "name": "Shabazz Palaces", "gender": "male" },
+        { "name": "Czarface", "gender": "male" },
+        { "name": "The Underachievers", "gender": "male" }
+    ]
+}

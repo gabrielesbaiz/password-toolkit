@@ -1,0 +1,26 @@
+{
+    "key": "metal_bands_2000s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["metal", "music", "twothousands"],
+    "icon": "🤘",
+    "reach": "global",
+    "values": [
+        { "name": "Slipknot", "gender": "male" },
+        { "name": "Lamb Of God", "gender": "male" },
+        { "name": "Killswitch Engage", "gender": "male" },
+        { "name": "Trivium", "gender": "male" },
+        { "name": "Mastodon", "gender": "male" },
+        { "name": "Opeth", "gender": "male" },
+        { "name": "Meshuggah", "gender": "male" },
+        { "name": "Nightwish", "gender": "male" },
+        { "name": "Within Temptation", "gender": "male" },
+        { "name": "Children Of Bodom", "gender": "male" },
+        { "name": "Arch Enemy", "gender": "male" },
+        { "name": "Avenged Sevenfold", "gender": "male" },
+        { "name": "Amon Amarth", "gender": "male" },
+        { "name": "Behemoth", "gender": "male" },
+        { "name": "Gojira", "gender": "male" }
+    ]
+}

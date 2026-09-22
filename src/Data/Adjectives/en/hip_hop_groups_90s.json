@@ -1,0 +1,24 @@
+{
+    "key": "hip_hop_groups_90s",
+    "locale": "en",
+    "values": [
+        { "name": "Cadenced", "gender": "neutral" },
+        { "name": "Cheeky", "gender": "neutral" },
+        { "name": "Combative", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Cutting", "gender": "neutral" },
+        { "name": "Eloquent", "gender": "neutral" },
+        { "name": "Fluent", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Inventive", "gender": "neutral" },
+        { "name": "Loquacious", "gender": "neutral" },
+        { "name": "Metropolitan", "gender": "neutral" },
+        { "name": "Pungent", "gender": "neutral" },
+        { "name": "Sly", "gender": "neutral" },
+        { "name": "Swaggering", "gender": "neutral" },
+        { "name": "Syncopated", "gender": "neutral" },
+        { "name": "Unyielding", "gender": "neutral" },
+        { "name": "Vainglorious", "gender": "neutral" },
+        { "name": "Witty", "gender": "neutral" }
+    ]
+}

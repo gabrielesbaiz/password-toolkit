@@ -1,0 +1,24 @@
+{
+    "key": "punk_bands_70s",
+    "locale": "en",
+    "values": [
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Chaotic", "gender": "neutral" },
+        { "name": "Impertinent", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Lightning", "gender": "neutral" },
+        { "name": "Mocking", "gender": "neutral" },
+        { "name": "Provocative", "gender": "neutral" },
+        { "name": "Raging", "gender": "neutral" },
+        { "name": "Raucous", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Scruffy", "gender": "neutral" },
+        { "name": "Shabby", "gender": "neutral" },
+        { "name": "Subversive", "gender": "neutral" },
+        { "name": "Turbulent", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" },
+        { "name": "Untameable", "gender": "neutral" },
+        { "name": "Vehement", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "key": "electronic_acts_2000s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["electronic", "music", "twothousands"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "Daft Punk", "gender": "male" },
+        { "name": "Justice", "gender": "male" },
+        { "name": "LCD Soundsystem", "gender": "male" },
+        { "name": "Hot Chip", "gender": "male" },
+        { "name": "The Knife", "gender": "male" },
+        { "name": "Royksopp", "gender": "male" },
+        { "name": "Goldfrapp", "gender": "male" },
+        { "name": "Ladytron", "gender": "male" },
+        { "name": "Crystal Castles", "gender": "male" },
+        { "name": "Cut Copy", "gender": "male" },
+        { "name": "Simian Mobile Disco", "gender": "male" },
+        { "name": "MSTRKRFT", "gender": "male" },
+        { "name": "Digitalism", "gender": "male" },
+        { "name": "Soulwax", "gender": "male" },
+        { "name": "Zero 7", "gender": "male" }
+    ]
+}
