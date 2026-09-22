@@ -1,0 +1,23 @@
+{
+    "key": "pop_groups_80s",
+    "locale": "en",
+    "values": [
+        { "name": "Captivating", "gender": "neutral" },
+        { "name": "Carefree", "gender": "neutral" },
+        { "name": "Catchy", "gender": "neutral" },
+        { "name": "Choreographic", "gender": "neutral" },
+        { "name": "Cohesive", "gender": "neutral" },
+        { "name": "Contagious", "gender": "neutral" },
+        { "name": "Dazzling", "gender": "neutral" },
+        { "name": "Glossy", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Joyful", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Melodic", "gender": "neutral" },
+        { "name": "Radiant", "gender": "neutral" },
+        { "name": "Smiling", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Sugary", "gender": "neutral" },
+        { "name": "Sunny", "gender": "neutral" }
+    ]
+}

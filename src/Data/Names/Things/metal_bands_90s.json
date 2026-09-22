@@ -1,0 +1,26 @@
+{
+    "key": "metal_bands_90s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["metal", "music", "nineties"],
+    "icon": "🤘",
+    "reach": "global",
+    "values": [
+        { "name": "Sepultura", "gender": "male" },
+        { "name": "Death", "gender": "male" },
+        { "name": "Cannibal Corpse", "gender": "male" },
+        { "name": "Morbid Angel", "gender": "male" },
+        { "name": "Deicide", "gender": "male" },
+        { "name": "At The Gates", "gender": "male" },
+        { "name": "In Flames", "gender": "male" },
+        { "name": "Emperor", "gender": "male" },
+        { "name": "Mayhem", "gender": "male" },
+        { "name": "Darkthrone", "gender": "male" },
+        { "name": "Cradle Of Filth", "gender": "male" },
+        { "name": "Type O Negative", "gender": "male" },
+        { "name": "Korn", "gender": "male" },
+        { "name": "Deftones", "gender": "male" },
+        { "name": "Carcass", "gender": "male" }
+    ]
+}

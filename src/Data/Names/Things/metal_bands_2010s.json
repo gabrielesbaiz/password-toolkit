@@ -1,0 +1,26 @@
+{
+    "key": "metal_bands_2010s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["metal", "music", "twentytens"],
+    "icon": "🤘",
+    "reach": "global",
+    "values": [
+        { "name": "Sabaton", "gender": "male" },
+        { "name": "Baroness", "gender": "male" },
+        { "name": "Deafheaven", "gender": "male" },
+        { "name": "Pallbearer", "gender": "male" },
+        { "name": "Power Trip", "gender": "male" },
+        { "name": "Architects", "gender": "male" },
+        { "name": "Parkway Drive", "gender": "male" },
+        { "name": "Periphery", "gender": "male" },
+        { "name": "Animals As Leaders", "gender": "male" },
+        { "name": "Tesseract", "gender": "male" },
+        { "name": "Whitechapel", "gender": "male" },
+        { "name": "Suicide Silence", "gender": "male" },
+        { "name": "Cattle Decapitation", "gender": "male" },
+        { "name": "Volbeat", "gender": "male" },
+        { "name": "Zeal And Ardor", "gender": "male" }
+    ]
+}

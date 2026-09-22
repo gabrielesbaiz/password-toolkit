@@ -1,0 +1,24 @@
+{
+    "key": "electronic_acts_2020s",
+    "locale": "en",
+    "values": [
+        { "name": "Abstract", "gender": "neutral" },
+        { "name": "Algorithmic", "gender": "neutral" },
+        { "name": "Cerebral", "gender": "neutral" },
+        { "name": "Cybernetic", "gender": "neutral" },
+        { "name": "Digital", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Geometric", "gender": "neutral" },
+        { "name": "Glacial", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Minimal", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Oscillating", "gender": "neutral" },
+        { "name": "Polished", "gender": "neutral" },
+        { "name": "Pulsing", "gender": "neutral" },
+        { "name": "Repetitive", "gender": "neutral" },
+        { "name": "Robotic", "gender": "neutral" },
+        { "name": "Stroboscopic", "gender": "neutral" },
+        { "name": "Synthetic", "gender": "neutral" }
+    ]
+}

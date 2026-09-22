@@ -1,0 +1,26 @@
+{
+    "key": "pop_groups_2000s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "pop", "twothousands"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "Destinys Child", "gender": "male" },
+        { "name": "Westlife", "gender": "male" },
+        { "name": "Sugababes", "gender": "male" },
+        { "name": "Girls Aloud", "gender": "male" },
+        { "name": "The Pussycat Dolls", "gender": "male" },
+        { "name": "Busted", "gender": "male" },
+        { "name": "McFly", "gender": "male" },
+        { "name": "RBD", "gender": "male" },
+        { "name": "Tokio Hotel", "gender": "male" },
+        { "name": "Jonas Brothers", "gender": "male" },
+        { "name": "Atomic Kitten", "gender": "male" },
+        { "name": "Blue", "gender": "male" },
+        { "name": "Il Divo", "gender": "male" },
+        { "name": "Las Ketchup", "gender": "male" },
+        { "name": "Wonder Girls", "gender": "male" }
+    ]
+}

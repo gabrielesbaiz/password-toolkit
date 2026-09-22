@@ -1,0 +1,21 @@
+{
+    "key": "pop_groups_80s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["eighties", "music", "pop"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "Wham", "gender": "male" },
+        { "name": "Duran Duran", "gender": "male" },
+        { "name": "Culture Club", "gender": "male" },
+        { "name": "Tears For Fears", "gender": "male" },
+        { "name": "Bananarama", "gender": "male" },
+        { "name": "Spandau Ballet", "gender": "male" },
+        { "name": "New Edition", "gender": "male" },
+        { "name": "Modern Talking", "gender": "male" },
+        { "name": "The Bangles", "gender": "male" },
+        { "name": "Mecano", "gender": "male" }
+    ]
+}

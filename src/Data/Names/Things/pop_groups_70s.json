@@ -1,0 +1,26 @@
+{
+    "key": "pop_groups_70s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "pop", "seventies"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "ABBA", "gender": "male" },
+        { "name": "The Bee Gees", "gender": "male" },
+        { "name": "The Jackson 5", "gender": "male" },
+        { "name": "The Carpenters", "gender": "male" },
+        { "name": "The Osmonds", "gender": "male" },
+        { "name": "Boney M", "gender": "male" },
+        { "name": "Village People", "gender": "male" },
+        { "name": "Earth Wind Fire", "gender": "male" },
+        { "name": "The Commodores", "gender": "male" },
+        { "name": "Chic", "gender": "male" },
+        { "name": "Sister Sledge", "gender": "male" },
+        { "name": "The Spinners", "gender": "male" },
+        { "name": "Bay City Rollers", "gender": "male" },
+        { "name": "Hot Chocolate", "gender": "male" },
+        { "name": "The Three Degrees", "gender": "male" }
+    ]
+}

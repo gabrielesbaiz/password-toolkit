@@ -1,0 +1,26 @@
+{
+    "key": "punk_bands_2000s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "punk", "twothousands"],
+    "icon": "🧷",
+    "reach": "global",
+    "values": [
+        { "name": "Rise Against", "gender": "male" },
+        { "name": "AFI", "gender": "male" },
+        { "name": "Anti Flag", "gender": "male" },
+        { "name": "Jimmy Eat World", "gender": "male" },
+        { "name": "Alkaline Trio", "gender": "male" },
+        { "name": "Dropkick Murphys", "gender": "male" },
+        { "name": "Flogging Molly", "gender": "male" },
+        { "name": "Sum 41", "gender": "male" },
+        { "name": "Good Charlotte", "gender": "male" },
+        { "name": "New Found Glory", "gender": "male" },
+        { "name": "Taking Back Sunday", "gender": "male" },
+        { "name": "Thrice", "gender": "male" },
+        { "name": "Underoath", "gender": "male" },
+        { "name": "The Used", "gender": "male" },
+        { "name": "Fall Out Boy", "gender": "male" }
+    ]
+}

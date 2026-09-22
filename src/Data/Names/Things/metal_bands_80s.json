@@ -1,0 +1,26 @@
+{
+    "key": "metal_bands_80s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["eighties", "metal", "music"],
+    "icon": "🤘",
+    "reach": "global",
+    "values": [
+        { "name": "Megadeth", "gender": "male" },
+        { "name": "Slayer", "gender": "male" },
+        { "name": "Anthrax", "gender": "male" },
+        { "name": "Testament", "gender": "male" },
+        { "name": "Exodus", "gender": "male" },
+        { "name": "Overkill", "gender": "male" },
+        { "name": "Celtic Frost", "gender": "male" },
+        { "name": "Bathory", "gender": "male" },
+        { "name": "Venom", "gender": "male" },
+        { "name": "Mercyful Fate", "gender": "male" },
+        { "name": "Manowar", "gender": "male" },
+        { "name": "Accept", "gender": "male" },
+        { "name": "Queensryche", "gender": "male" },
+        { "name": "Helloween", "gender": "male" },
+        { "name": "Kreator", "gender": "male" }
+    ]
+}

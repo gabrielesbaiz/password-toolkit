@@ -1,0 +1,26 @@
+{
+    "key": "hip_hop_groups_2000s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["hiphop", "music", "twothousands"],
+    "icon": "🎤",
+    "reach": "global",
+    "values": [
+        { "name": "Outkast", "gender": "male" },
+        { "name": "Black Eyed Peas", "gender": "male" },
+        { "name": "D12", "gender": "male" },
+        { "name": "Clipse", "gender": "male" },
+        { "name": "Little Brother", "gender": "male" },
+        { "name": "The Diplomats", "gender": "male" },
+        { "name": "G Unit", "gender": "male" },
+        { "name": "Three 6 Mafia", "gender": "male" },
+        { "name": "Ying Yang Twins", "gender": "male" },
+        { "name": "Gnarls Barkley", "gender": "male" },
+        { "name": "Jurassic 5", "gender": "male" },
+        { "name": "Dilated Peoples", "gender": "male" },
+        { "name": "Atmosphere", "gender": "male" },
+        { "name": "NERD", "gender": "male" },
+        { "name": "Dead Prez", "gender": "male" }
+    ]
+}

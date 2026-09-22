@@ -1,0 +1,25 @@
+{
+    "key": "punk_bands_2020s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "punk", "twentytwenties"],
+    "icon": "🧷",
+    "reach": "niche",
+    "values": [
+        { "name": "Gel", "gender": "male" },
+        { "name": "Zulu", "gender": "male" },
+        { "name": "Soul Glo", "gender": "male" },
+        { "name": "Sunami", "gender": "male" },
+        { "name": "Scowl", "gender": "male" },
+        { "name": "Militarie Gun", "gender": "male" },
+        { "name": "Drug Church", "gender": "male" },
+        { "name": "One Step Closer", "gender": "male" },
+        { "name": "Mannequin Pussy", "gender": "male" },
+        { "name": "The Chats", "gender": "male" },
+        { "name": "Dry Cleaning", "gender": "male" },
+        { "name": "Yard Act", "gender": "male" },
+        { "name": "High Vis", "gender": "male" },
+        { "name": "Sprints", "gender": "male" }
+    ]
+}

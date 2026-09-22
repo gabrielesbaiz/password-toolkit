@@ -1,0 +1,26 @@
+{
+    "key": "electronic_acts_90s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["electronic", "music", "nineties"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "The Prodigy", "gender": "male" },
+        { "name": "The Chemical Brothers", "gender": "male" },
+        { "name": "Underworld", "gender": "male" },
+        { "name": "Orbital", "gender": "male" },
+        { "name": "Massive Attack", "gender": "male" },
+        { "name": "Portishead", "gender": "male" },
+        { "name": "Leftfield", "gender": "male" },
+        { "name": "The Orb", "gender": "male" },
+        { "name": "Autechre", "gender": "male" },
+        { "name": "Boards Of Canada", "gender": "male" },
+        { "name": "Air", "gender": "male" },
+        { "name": "Basement Jaxx", "gender": "male" },
+        { "name": "Faithless", "gender": "male" },
+        { "name": "Morcheeba", "gender": "male" },
+        { "name": "808 State", "gender": "male" }
+    ]
+}

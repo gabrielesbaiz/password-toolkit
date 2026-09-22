@@ -1,0 +1,26 @@
+{
+    "key": "pop_groups_60s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "pop", "sixties"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "The Supremes", "gender": "male" },
+        { "name": "The Temptations", "gender": "male" },
+        { "name": "The Four Tops", "gender": "male" },
+        { "name": "The Ronettes", "gender": "male" },
+        { "name": "The Shirelles", "gender": "male" },
+        { "name": "The Four Seasons", "gender": "male" },
+        { "name": "The Drifters", "gender": "male" },
+        { "name": "The Miracles", "gender": "male" },
+        { "name": "The Marvelettes", "gender": "male" },
+        { "name": "Simon And Garfunkel", "gender": "male" },
+        { "name": "The Righteous Brothers", "gender": "male" },
+        { "name": "The Hollies", "gender": "male" },
+        { "name": "The Turtles", "gender": "male" },
+        { "name": "The Fifth Dimension", "gender": "male" },
+        { "name": "Hermans Hermits", "gender": "male" }
+    ]
+}

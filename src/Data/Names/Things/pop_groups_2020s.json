@@ -1,0 +1,26 @@
+{
+    "key": "pop_groups_2020s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "pop", "twentytwenties"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "Stray Kids", "gender": "male" },
+        { "name": "Seventeen", "gender": "male" },
+        { "name": "NewJeans", "gender": "male" },
+        { "name": "Aespa", "gender": "male" },
+        { "name": "Ive", "gender": "male" },
+        { "name": "Le Sserafim", "gender": "male" },
+        { "name": "Itzy", "gender": "male" },
+        { "name": "Enhypen", "gender": "male" },
+        { "name": "Tomorrow X Together", "gender": "male" },
+        { "name": "NCT Dream", "gender": "male" },
+        { "name": "Katseye", "gender": "male" },
+        { "name": "Fifty Fifty", "gender": "male" },
+        { "name": "Ateez", "gender": "male" },
+        { "name": "Silk Sonic", "gender": "male" },
+        { "name": "Babymonster", "gender": "male" }
+    ]
+}

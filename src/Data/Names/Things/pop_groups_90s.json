@@ -1,0 +1,26 @@
+{
+    "key": "pop_groups_90s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "nineties", "pop"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "Spice Girls", "gender": "male" },
+        { "name": "Backstreet Boys", "gender": "male" },
+        { "name": "Take That", "gender": "male" },
+        { "name": "Boyz II Men", "gender": "male" },
+        { "name": "TLC", "gender": "male" },
+        { "name": "NSYNC", "gender": "male" },
+        { "name": "All Saints", "gender": "male" },
+        { "name": "Ace Of Base", "gender": "male" },
+        { "name": "Aqua", "gender": "male" },
+        { "name": "Eiffel 65", "gender": "male" },
+        { "name": "Steps", "gender": "male" },
+        { "name": "Hanson", "gender": "male" },
+        { "name": "Boyzone", "gender": "male" },
+        { "name": "En Vogue", "gender": "male" },
+        { "name": "Roxette", "gender": "male" }
+    ]
+}

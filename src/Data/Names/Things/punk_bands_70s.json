@@ -1,0 +1,26 @@
+{
+    "key": "punk_bands_70s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "punk", "seventies"],
+    "icon": "🧷",
+    "reach": "global",
+    "values": [
+        { "name": "Buzzcocks", "gender": "male" },
+        { "name": "Dead Boys", "gender": "male" },
+        { "name": "Television", "gender": "male" },
+        { "name": "Blondie", "gender": "male" },
+        { "name": "Wire", "gender": "male" },
+        { "name": "The Stranglers", "gender": "male" },
+        { "name": "The Jam", "gender": "male" },
+        { "name": "The Saints", "gender": "male" },
+        { "name": "Devo", "gender": "male" },
+        { "name": "New York Dolls", "gender": "male" },
+        { "name": "Joy Division", "gender": "male" },
+        { "name": "Gang Of Four", "gender": "male" },
+        { "name": "Stiff Little Fingers", "gender": "male" },
+        { "name": "The Stooges", "gender": "male" },
+        { "name": "Sham 69", "gender": "male" }
+    ]
+}

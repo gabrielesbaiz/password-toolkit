@@ -1,0 +1,26 @@
+{
+    "key": "hip_hop_groups_90s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["hiphop", "music", "nineties"],
+    "icon": "🎤",
+    "reach": "global",
+    "values": [
+        { "name": "Wu Tang Clan", "gender": "male" },
+        { "name": "Cypress Hill", "gender": "male" },
+        { "name": "Mobb Deep", "gender": "male" },
+        { "name": "The Fugees", "gender": "male" },
+        { "name": "Naughty By Nature", "gender": "male" },
+        { "name": "Gang Starr", "gender": "male" },
+        { "name": "Onyx", "gender": "male" },
+        { "name": "The Pharcyde", "gender": "male" },
+        { "name": "Goodie Mob", "gender": "male" },
+        { "name": "Geto Boys", "gender": "male" },
+        { "name": "Digable Planets", "gender": "male" },
+        { "name": "Souls Of Mischief", "gender": "male" },
+        { "name": "The Roots", "gender": "male" },
+        { "name": "Arrested Development", "gender": "male" },
+        { "name": "Digital Underground", "gender": "male" }
+    ]
+}

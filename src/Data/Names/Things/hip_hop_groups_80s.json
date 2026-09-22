@@ -1,0 +1,26 @@
+{
+    "key": "hip_hop_groups_80s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["eighties", "hiphop", "music"],
+    "icon": "🎤",
+    "reach": "global",
+    "values": [
+        { "name": "Run DMC", "gender": "male" },
+        { "name": "NWA", "gender": "male" },
+        { "name": "Public Enemy", "gender": "male" },
+        { "name": "Beastie Boys", "gender": "male" },
+        { "name": "De La Soul", "gender": "male" },
+        { "name": "Salt N Pepa", "gender": "male" },
+        { "name": "EPMD", "gender": "male" },
+        { "name": "Whodini", "gender": "male" },
+        { "name": "Ultramagnetic MCs", "gender": "male" },
+        { "name": "Boogie Down Productions", "gender": "male" },
+        { "name": "Stetsasonic", "gender": "male" },
+        { "name": "Jungle Brothers", "gender": "male" },
+        { "name": "2 Live Crew", "gender": "male" },
+        { "name": "Kid N Play", "gender": "male" },
+        { "name": "The Fat Boys", "gender": "male" }
+    ]
+}

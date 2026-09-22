@@ -1,0 +1,26 @@
+{
+    "key": "electronic_acts_80s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["eighties", "electronic", "music"],
+    "icon": "🎛️",
+    "reach": "global",
+    "values": [
+        { "name": "Depeche Mode", "gender": "male" },
+        { "name": "New Order", "gender": "male" },
+        { "name": "Pet Shop Boys", "gender": "male" },
+        { "name": "Soft Cell", "gender": "male" },
+        { "name": "The Human League", "gender": "male" },
+        { "name": "Erasure", "gender": "male" },
+        { "name": "Yazoo", "gender": "male" },
+        { "name": "Eurythmics", "gender": "male" },
+        { "name": "Art Of Noise", "gender": "male" },
+        { "name": "Cabaret Voltaire", "gender": "male" },
+        { "name": "Front 242", "gender": "male" },
+        { "name": "Yello", "gender": "male" },
+        { "name": "Ultravox", "gender": "male" },
+        { "name": "Heaven 17", "gender": "male" },
+        { "name": "Bronski Beat", "gender": "male" }
+    ]
+}
