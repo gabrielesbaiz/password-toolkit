@@ -1,0 +1,26 @@
+{
+    "key": "dune",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "sciencefiction", "twentytwenties"],
+    "icon": "🪱",
+    "reach": "global",
+    "values": [
+        { "name": "Paul Atreides", "gender": "male" },
+        { "name": "Lady Jessica", "gender": "female" },
+        { "name": "Leto Atreides", "gender": "male" },
+        { "name": "Duncan Idaho", "gender": "male" },
+        { "name": "Gurney Halleck", "gender": "male" },
+        { "name": "Thufir Hawat", "gender": "male" },
+        { "name": "Chani", "gender": "female" },
+        { "name": "Stilgar", "gender": "male" },
+        { "name": "Vladimir Harkonnen", "gender": "male" },
+        { "name": "Glossu Rabban", "gender": "male" },
+        { "name": "Piter De Vries", "gender": "male" },
+        { "name": "Feyd Rautha", "gender": "male" },
+        { "name": "Princess Irulan", "gender": "female" },
+        { "name": "Liet Kynes", "gender": "female" },
+        { "name": "Shaddam", "gender": "male" }
+    ]
+}

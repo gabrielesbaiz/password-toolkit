@@ -1,0 +1,26 @@
+{
+    "key": "oppenheimer",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "history", "twentytwenties"],
+    "icon": "⚛️",
+    "reach": "global",
+    "values": [
+        { "name": "Robert Oppenheimer", "gender": "male" },
+        { "name": "Kitty Oppenheimer", "gender": "female" },
+        { "name": "Leslie Groves", "gender": "male" },
+        { "name": "Lewis Strauss", "gender": "male" },
+        { "name": "Jean Tatlock", "gender": "female" },
+        { "name": "Ernest Lawrence", "gender": "male" },
+        { "name": "Boris Pash", "gender": "male" },
+        { "name": "Niels Bohr", "gender": "male" },
+        { "name": "Albert Einstein", "gender": "male" },
+        { "name": "Edward Teller", "gender": "male" },
+        { "name": "Isidor Rabi", "gender": "male" },
+        { "name": "Richard Feynman", "gender": "male" },
+        { "name": "Hans Bethe", "gender": "male" },
+        { "name": "Klaus Fuchs", "gender": "male" },
+        { "name": "David Hill", "gender": "male" }
+    ]
+}

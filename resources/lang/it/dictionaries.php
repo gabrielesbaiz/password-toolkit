@@ -162,6 +162,16 @@ return [
         'the_hunger_games' => 'Hunger Games',
         'the_martian' => 'Sopravvissuto',
         'deadpool' => 'Deadpool',
+        'dune' => 'Dune',
+        'oppenheimer' => 'Oppenheimer',
+        'barbie' => 'Barbie',
+        'everything_everywhere' => 'Everything Everywhere All at Once',
+        'knives_out' => 'Cena con Delitto',
+        'encanto' => 'Encanto',
+        'spider_verse' => 'Spider Verse',
+        'wicked' => 'Wicked',
+        'poor_things' => 'Povere Creature',
+        'james_bond' => 'James Bond',
     ],
 
     /*

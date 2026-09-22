@@ -1,0 +1,26 @@
+{
+    "key": "barbie",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comedy", "film", "twentytwenties"],
+    "icon": "💗",
+    "reach": "global",
+    "values": [
+        { "name": "Barbie", "gender": "female" },
+        { "name": "Ken", "gender": "male" },
+        { "name": "Gloria", "gender": "female" },
+        { "name": "Sasha", "gender": "female" },
+        { "name": "Allan", "gender": "male" },
+        { "name": "Weird Barbie", "gender": "female" },
+        { "name": "President Barbie", "gender": "female" },
+        { "name": "Writer Barbie", "gender": "female" },
+        { "name": "Physicist Barbie", "gender": "female" },
+        { "name": "Mermaid Barbie", "gender": "female" },
+        { "name": "Judge Barbie", "gender": "female" },
+        { "name": "Lawyer Barbie", "gender": "female" },
+        { "name": "Basketball Ken", "gender": "male" },
+        { "name": "Artist Ken", "gender": "male" },
+        { "name": "Ruth Handler", "gender": "female" }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "key": "james_bond",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "franchise", "spy"],
+    "icon": "🕴️",
+    "reach": "global",
+    "values": [
+        { "name": "James Bond", "gender": "male" },
+        { "name": "M", "gender": "neutral" },
+        { "name": "Q", "gender": "male" },
+        { "name": "Moneypenny", "gender": "female" },
+        { "name": "Blofeld", "gender": "male" },
+        { "name": "Goldfinger", "gender": "male" },
+        { "name": "Jaws", "gender": "male" },
+        { "name": "Oddjob", "gender": "male" },
+        { "name": "Le Chiffre", "gender": "male" },
+        { "name": "Vesper Lynd", "gender": "female" },
+        { "name": "Felix Leiter", "gender": "male" },
+        { "name": "Scaramanga", "gender": "male" },
+        { "name": "Silva", "gender": "male" },
+        { "name": "Doctor No", "gender": "male" }
+    ]
+}

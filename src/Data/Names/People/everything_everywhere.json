@@ -1,0 +1,23 @@
+{
+    "key": "everything_everywhere",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["cult", "film", "twentytwenties"],
+    "icon": "🥯",
+    "reach": "global",
+    "values": [
+        { "name": "Evelyn Wang", "gender": "female" },
+        { "name": "Waymond Wang", "gender": "male" },
+        { "name": "Joy Wang", "gender": "female" },
+        { "name": "Jobu Tupaki", "gender": "female" },
+        { "name": "Gong Gong", "gender": "male" },
+        { "name": "Deirdre Beaubeirdre", "gender": "female" },
+        { "name": "Becky Sregor", "gender": "female" },
+        { "name": "Chad", "gender": "male" },
+        { "name": "Rick", "gender": "male" },
+        { "name": "Raccacoonie", "gender": "neutral" },
+        { "name": "Alpha Waymond", "gender": "male" },
+        { "name": "Alpha Gong Gong", "gender": "male" }
+    ]
+}

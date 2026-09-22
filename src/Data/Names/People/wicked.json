@@ -1,0 +1,25 @@
+{
+    "key": "wicked",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "musical", "twentytwenties"],
+    "icon": "💚",
+    "reach": "global",
+    "values": [
+        { "name": "Elphaba Thropp", "gender": "female" },
+        { "name": "Glinda Upland", "gender": "female" },
+        { "name": "Fiyero Tigelaar", "gender": "male" },
+        { "name": "Nessarose Thropp", "gender": "female" },
+        { "name": "Boq Woodsman", "gender": "male" },
+        { "name": "Madame Morrible", "gender": "female" },
+        { "name": "Doctor Dillamond", "gender": "male" },
+        { "name": "Pfannee", "gender": "female" },
+        { "name": "ShenShen", "gender": "female" },
+        { "name": "Governor Thropp", "gender": "male" },
+        { "name": "Avaric", "gender": "male" },
+        { "name": "Miss Coddle", "gender": "female" },
+        { "name": "Dulcibear", "gender": "neutral" },
+        { "name": "Professor Nikidik", "gender": "male" }
+    ]
+}
