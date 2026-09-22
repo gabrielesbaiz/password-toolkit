@@ -58,6 +58,33 @@ composer test      # pest
    there is no list to update.
 4. Update the dictionary table in the README.
 
+## Translating
+
+**Adjectives** are generated, never hand-written. Edit
+`src/Data/Adjectives/_glossary.it-en.json` and run:
+
+```bash
+php build/build-adjectives.php
+```
+
+A test regenerates the packs and compares them byte for byte, so editing a
+generated file directly fails the build rather than being quietly reverted by
+the next run. English targets must be a single ASCII word in Title Case.
+
+**Names** are translated sparsely, in `src/Data/Names/{locale}/{key}.json`:
+
+```json
+{ "key": "roman_mythology", "locale": "en", "values": { "Giove": "Jupiter" } }
+```
+
+List only the entries that actually differ. Most names are proper nouns and
+must not be translated at all — Barolo is Barolo in every language. Leaving an
+entry out is the correct outcome, not a gap, and it is always better than a
+guess: if you cannot establish a mapping from a source, do not add it. Every
+key must name an entry that really exists in the base dictionary, and targets
+obey the same ASCII, three-word, no-apostrophe rules as the base data. All of
+that is enforced by `tests/NameTranslationTest.php`.
+
 ## Adding a locale
 
 1. Create `src/Data/Adjectives/{locale}/_default.json`. That single file is
@@ -77,7 +104,11 @@ composer test      # pest
    that every locale declares one, because a locale that does not silently
    inherits Italian word order.
 2. Add `resources/lang/{locale}/strength.php`, copying the English file.
-3. Themed files per dictionary are optional and can land later.
+3. Themed adjective files per dictionary are optional. To generate a full set
+   from the Italian packs, copy `build/build-adjectives.php` and point it at a
+   glossary for your language.
+4. Name translations are optional too, and should stay sparse — see
+   **Translating** above.
 
 ## Pull requests
 

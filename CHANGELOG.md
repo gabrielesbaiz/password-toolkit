@@ -12,6 +12,19 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
   through a fallback chain — themed file, locale default, fallback locale — so a
   new language needs one `_default.json`, not 91 themed files. An English pack
   of 224 adjectives ships with the package.
+- **English themed adjectives for all 91 dictionaries.** English previously had
+  one generic pool, so an English password lost every bit of theming the Italian
+  data carries. The 2,811 Italian entries reduce to 626 lemmas once gendered
+  pairs are collapsed, so the translation lives in one reviewable glossary —
+  `src/Data/Adjectives/_glossary.it-en.json` — and `build/build-adjectives.php`
+  applies it. A test regenerates the packs and asserts they come back
+  byte-identical, so hand-editing a generated file fails the build.
+- **Translated names**, for the 15 dictionaries that hold Italian forms of
+  something with a real name elsewhere: Giove is Jupiter, Topolino is Mickey
+  Mouse, Albus Silente is Dumbledore, Cervino is the Matterhorn. 211 in all.
+  Translations are sparse and additive — a file lists only what differs — so
+  every proper noun that should not translate simply keeps its Italian form.
+  Barolo is Barolo in every language.
 - **Word order follows the language.** Each locale declares
   `adjective_position` in its `_default.json`: Italian puts the adjective after
   the noun (`Goldrake-Mitico`), English puts it before
