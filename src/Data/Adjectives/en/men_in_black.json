@@ -1,0 +1,26 @@
+{
+    "key": "men_in_black",
+    "locale": "en",
+    "values": [
+        { "name": "Alien", "gender": "neutral" },
+        { "name": "Anonymous", "gender": "neutral" },
+        { "name": "Armed", "gender": "neutral" },
+        { "name": "Black", "gender": "neutral" },
+        { "name": "Clandestine", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Elusive", "gender": "neutral" },
+        { "name": "Extraterrestrial", "gender": "neutral" },
+        { "name": "Galactic", "gender": "neutral" },
+        { "name": "Impassive", "gender": "neutral" },
+        { "name": "Invisible", "gender": "neutral" },
+        { "name": "Metropolitan", "gender": "neutral" },
+        { "name": "Occult", "gender": "neutral" },
+        { "name": "Professional", "gender": "neutral" },
+        { "name": "Reserved", "gender": "neutral" },
+        { "name": "Sarcastic", "gender": "neutral" },
+        { "name": "Secret", "gender": "neutral" },
+        { "name": "Technological", "gender": "neutral" },
+        { "name": "Unflappable", "gender": "neutral" },
+        { "name": "Watchful", "gender": "neutral" }
+    ]
+}

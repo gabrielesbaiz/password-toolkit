@@ -1,0 +1,26 @@
+{
+    "key": "a_clockwork_orange",
+    "locale": "en",
+    "values": [
+        { "name": "Aggressive", "gender": "neutral" },
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Cruel", "gender": "neutral" },
+        { "name": "Desperate", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Gloomy", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Menacing", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Mocking", "gender": "neutral" },
+        { "name": "Obsessive", "gender": "neutral" },
+        { "name": "Perfidious", "gender": "neutral" },
+        { "name": "Provocative", "gender": "neutral" },
+        { "name": "Psychedelic", "gender": "neutral" },
+        { "name": "Sinister", "gender": "neutral" },
+        { "name": "Unsettling", "gender": "neutral" },
+        { "name": "Villainous", "gender": "neutral" },
+        { "name": "Violent", "gender": "neutral" }
+    ]
+}

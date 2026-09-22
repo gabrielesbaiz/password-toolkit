@@ -1,0 +1,26 @@
+{
+    "key": "die_hard",
+    "locale": "en",
+    "values": [
+        { "name": "Audacious", "gender": "neutral" },
+        { "name": "Barefoot", "gender": "neutral" },
+        { "name": "Besieged", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Hardened", "gender": "neutral" },
+        { "name": "Hardy", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Obstinate", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Sarcastic", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Tough", "gender": "neutral" },
+        { "name": "Unstoppable", "gender": "neutral" },
+        { "name": "Untameable", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" },
+        { "name": "Wounded", "gender": "neutral" }
+    ]
+}

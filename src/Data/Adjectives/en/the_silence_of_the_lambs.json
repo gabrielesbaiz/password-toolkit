@@ -1,0 +1,26 @@
+{
+    "key": "the_silence_of_the_lambs",
+    "locale": "en",
+    "values": [
+        { "name": "Analytical", "gender": "neutral" },
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Cannibal", "gender": "neutral" },
+        { "name": "Chilling", "gender": "neutral" },
+        { "name": "Clinical", "gender": "neutral" },
+        { "name": "Confined", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Glacial", "gender": "neutral" },
+        { "name": "Investigative", "gender": "neutral" },
+        { "name": "Learned", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Methodical", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Perverse", "gender": "neutral" },
+        { "name": "Predatory", "gender": "neutral" },
+        { "name": "Sinister", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Underhanded", "gender": "neutral" },
+        { "name": "Unsettling", "gender": "neutral" }
+    ]
+}

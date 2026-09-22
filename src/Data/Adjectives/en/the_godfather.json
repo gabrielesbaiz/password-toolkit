@@ -1,0 +1,24 @@
+{
+    "key": "the_godfather",
+    "locale": "en",
+    "values": [
+        { "name": "Authoritative", "gender": "neutral" },
+        { "name": "Cold", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Gloomy", "gender": "neutral" },
+        { "name": "Honored", "gender": "neutral" },
+        { "name": "Loyal", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Reserved", "gender": "neutral" },
+        { "name": "Respected", "gender": "neutral" },
+        { "name": "Shady", "gender": "neutral" },
+        { "name": "Sicilian", "gender": "neutral" },
+        { "name": "Silent", "gender": "neutral" },
+        { "name": "Solemn", "gender": "neutral" },
+        { "name": "Treacherous", "gender": "neutral" },
+        { "name": "Untouchable", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" }
+    ]
+}

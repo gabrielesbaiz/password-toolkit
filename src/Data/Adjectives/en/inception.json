@@ -1,0 +1,26 @@
+{
+    "key": "inception",
+    "locale": "en",
+    "values": [
+        { "name": "Abstract", "gender": "neutral" },
+        { "name": "Cerebral", "gender": "neutral" },
+        { "name": "Complex", "gender": "neutral" },
+        { "name": "Dizzying", "gender": "neutral" },
+        { "name": "Elusive", "gender": "neutral" },
+        { "name": "Enigmatic", "gender": "neutral" },
+        { "name": "Ephemeral", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Illusory", "gender": "neutral" },
+        { "name": "Labyrinthine", "gender": "neutral" },
+        { "name": "Layered", "gender": "neutral" },
+        { "name": "Mental", "gender": "neutral" },
+        { "name": "Mirrored", "gender": "neutral" },
+        { "name": "Nebulous", "gender": "neutral" },
+        { "name": "Oneiric", "gender": "neutral" },
+        { "name": "Rarefied", "gender": "neutral" },
+        { "name": "Recursive", "gender": "neutral" },
+        { "name": "Suspended", "gender": "neutral" },
+        { "name": "Ungraspable", "gender": "neutral" },
+        { "name": "Unstable", "gender": "neutral" }
+    ]
+}

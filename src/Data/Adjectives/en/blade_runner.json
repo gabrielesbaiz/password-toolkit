@@ -1,0 +1,26 @@
+{
+    "key": "blade_runner",
+    "locale": "en",
+    "values": [
+        { "name": "Artificial", "gender": "neutral" },
+        { "name": "Cybernetic", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Dystopian", "gender": "neutral" },
+        { "name": "Electric", "gender": "neutral" },
+        { "name": "Ephemeral", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Futuristic", "gender": "neutral" },
+        { "name": "Humid", "gender": "neutral" },
+        { "name": "Luminescent", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Metropolitan", "gender": "neutral" },
+        { "name": "Mortal", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Nostalgic", "gender": "neutral" },
+        { "name": "Rainy", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Spectral", "gender": "neutral" },
+        { "name": "Synthetic", "gender": "neutral" },
+        { "name": "Urban", "gender": "neutral" }
+    ]
+}

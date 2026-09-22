@@ -1,0 +1,26 @@
+{
+    "key": "everything_everywhere",
+    "locale": "en",
+    "values": [
+        { "name": "Absolute", "gender": "neutral" },
+        { "name": "Absurd", "gender": "neutral" },
+        { "name": "Acrobatic", "gender": "neutral" },
+        { "name": "Changeable", "gender": "neutral" },
+        { "name": "Chaotic", "gender": "neutral" },
+        { "name": "Cosmic", "gender": "neutral" },
+        { "name": "Dizzying", "gender": "neutral" },
+        { "name": "Empathetic", "gender": "neutral" },
+        { "name": "Existential", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Grotesque", "gender": "neutral" },
+        { "name": "Improbable", "gender": "neutral" },
+        { "name": "Infinite", "gender": "neutral" },
+        { "name": "Moving", "gender": "neutral" },
+        { "name": "Nihilistic", "gender": "neutral" },
+        { "name": "Parallel", "gender": "neutral" },
+        { "name": "Simultaneous", "gender": "neutral" },
+        { "name": "Surreal", "gender": "neutral" },
+        { "name": "Tender", "gender": "neutral" },
+        { "name": "Unstable", "gender": "neutral" }
+    ]
+}

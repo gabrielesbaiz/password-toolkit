@@ -1,0 +1,26 @@
+{
+    "key": "guardians_of_the_galaxy",
+    "locale": "en",
+    "values": [
+        { "name": "Alien", "gender": "neutral" },
+        { "name": "Bizarre", "gender": "neutral" },
+        { "name": "Cosmic", "gender": "neutral" },
+        { "name": "Easygoing", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Funny", "gender": "neutral" },
+        { "name": "Intergalactic", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Madcap", "gender": "neutral" },
+        { "name": "Ramshackle", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Rowdy", "gender": "neutral" },
+        { "name": "Sarcastic", "gender": "neutral" },
+        { "name": "Spatial", "gender": "neutral" },
+        { "name": "Stellar", "gender": "neutral" },
+        { "name": "Stubborn", "gender": "neutral" },
+        { "name": "Undaunted", "gender": "neutral" },
+        { "name": "Wandering", "gender": "neutral" },
+        { "name": "Wayward", "gender": "neutral" }
+    ]
+}

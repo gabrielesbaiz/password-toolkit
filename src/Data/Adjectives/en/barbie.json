@@ -1,0 +1,26 @@
+{
+    "key": "barbie",
+    "locale": "en",
+    "values": [
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Carefree", "gender": "neutral" },
+        { "name": "Cheerful", "gender": "neutral" },
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Fabulous", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Garish", "gender": "neutral" },
+        { "name": "Ironic", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Merry", "gender": "neutral" },
+        { "name": "Optimistic", "gender": "neutral" },
+        { "name": "Perfect", "gender": "neutral" },
+        { "name": "Pink", "gender": "neutral" },
+        { "name": "Plastic", "gender": "neutral" },
+        { "name": "Smiling", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Sugary", "gender": "neutral" },
+        { "name": "Sunny", "gender": "neutral" }
+    ]
+}

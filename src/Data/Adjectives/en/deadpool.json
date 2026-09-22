@@ -1,0 +1,26 @@
+{
+    "key": "deadpool",
+    "locale": "en",
+    "values": [
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Chaotic", "gender": "neutral" },
+        { "name": "Comic", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Hilarious", "gender": "neutral" },
+        { "name": "Impertinent", "gender": "neutral" },
+        { "name": "Insane", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Loquacious", "gender": "neutral" },
+        { "name": "Madcap", "gender": "neutral" },
+        { "name": "Masked", "gender": "neutral" },
+        { "name": "Mocking", "gender": "neutral" },
+        { "name": "Provocative", "gender": "neutral" },
+        { "name": "Regenerating", "gender": "neutral" },
+        { "name": "Rowdy", "gender": "neutral" },
+        { "name": "Sarcastic", "gender": "neutral" },
+        { "name": "Satirical", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" },
+        { "name": "Vulgar", "gender": "neutral" }
+    ]
+}

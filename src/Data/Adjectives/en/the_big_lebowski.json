@@ -1,0 +1,24 @@
+{
+    "key": "the_big_lebowski",
+    "locale": "en",
+    "values": [
+        { "name": "Bizarre", "gender": "neutral" },
+        { "name": "Carefree", "gender": "neutral" },
+        { "name": "Confused", "gender": "neutral" },
+        { "name": "Dawdling", "gender": "neutral" },
+        { "name": "Distracted", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Indolent", "gender": "neutral" },
+        { "name": "Irascible", "gender": "neutral" },
+        { "name": "Lazy", "gender": "neutral" },
+        { "name": "Loquacious", "gender": "neutral" },
+        { "name": "Nihilistic", "gender": "neutral" },
+        { "name": "Paranoid", "gender": "neutral" },
+        { "name": "Peaceful", "gender": "neutral" },
+        { "name": "Ramshackle", "gender": "neutral" },
+        { "name": "Relaxed", "gender": "neutral" },
+        { "name": "Scruffy", "gender": "neutral" },
+        { "name": "Slow", "gender": "neutral" },
+        { "name": "Stoned", "gender": "neutral" }
+    ]
+}

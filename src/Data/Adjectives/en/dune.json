@@ -1,0 +1,26 @@
+{
+    "key": "dune",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Arid", "gender": "neutral" },
+        { "name": "Ascetic", "gender": "neutral" },
+        { "name": "Austere", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Feudal", "gender": "neutral" },
+        { "name": "Hereditary", "gender": "neutral" },
+        { "name": "Imperial", "gender": "neutral" },
+        { "name": "Inexorable", "gender": "neutral" },
+        { "name": "Infinite", "gender": "neutral" },
+        { "name": "Mystical", "gender": "neutral" },
+        { "name": "Noble", "gender": "neutral" },
+        { "name": "Oneiric", "gender": "neutral" },
+        { "name": "Primordial", "gender": "neutral" },
+        { "name": "Prophetic", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Sandy", "gender": "neutral" },
+        { "name": "Torrid", "gender": "neutral" },
+        { "name": "Tribal", "gender": "neutral" },
+        { "name": "Visionary", "gender": "neutral" }
+    ]
+}

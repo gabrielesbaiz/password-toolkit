@@ -1,0 +1,26 @@
+{
+    "key": "superman",
+    "locale": "en",
+    "values": [
+        { "name": "Celestial", "gender": "neutral" },
+        { "name": "Flying", "gender": "neutral" },
+        { "name": "Generous", "gender": "neutral" },
+        { "name": "Gigantic", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Honest", "gender": "neutral" },
+        { "name": "Indestructible", "gender": "neutral" },
+        { "name": "Invincible", "gender": "neutral" },
+        { "name": "Kryptonian", "gender": "neutral" },
+        { "name": "Loyal", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Noble", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Protective", "gender": "neutral" },
+        { "name": "Sunny", "gender": "neutral" },
+        { "name": "Supersonic", "gender": "neutral" },
+        { "name": "Titanic", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Upright", "gender": "neutral" }
+    ]
+}

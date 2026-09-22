@@ -1,0 +1,26 @@
+{
+    "key": "football_clubs",
+    "locale": "en",
+    "values": [
+        { "name": "Combative", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Glorious", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Hardened", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Illustrious", "gender": "neutral" },
+        { "name": "Invincible", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Olympic", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Prestigious", "gender": "neutral" },
+        { "name": "Sporty", "gender": "neutral" },
+        { "name": "Titanic", "gender": "neutral" },
+        { "name": "Triumphant", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" },
+        { "name": "Untameable", "gender": "neutral" },
+        { "name": "Victorious", "gender": "neutral" },
+        { "name": "Winning", "gender": "neutral" }
+    ]
+}

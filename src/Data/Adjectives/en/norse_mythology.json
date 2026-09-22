@@ -1,0 +1,26 @@
+{
+    "key": "norse_mythology",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Divine", "gender": "neutral" },
+        { "name": "Eternal", "gender": "neutral" },
+        { "name": "Fatal", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Glacial", "gender": "neutral" },
+        { "name": "Icy", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Mighty", "gender": "neutral" },
+        { "name": "Nordic", "gender": "neutral" },
+        { "name": "Prophetic", "gender": "neutral" },
+        { "name": "Runic", "gender": "neutral" },
+        { "name": "Sacred", "gender": "neutral" },
+        { "name": "Snowy", "gender": "neutral" },
+        { "name": "Thundering", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" },
+        { "name": "Warlike", "gender": "neutral" },
+        { "name": "Wild", "gender": "neutral" }
+    ]
+}

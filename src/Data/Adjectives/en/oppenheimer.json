@@ -1,0 +1,26 @@
+{
+    "key": "oppenheimer",
+    "locale": "en",
+    "values": [
+        { "name": "Analytical", "gender": "neutral" },
+        { "name": "Atomic", "gender": "neutral" },
+        { "name": "Austere", "gender": "neutral" },
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Cerebral", "gender": "neutral" },
+        { "name": "Devastating", "gender": "neutral" },
+        { "name": "Experimental", "gender": "neutral" },
+        { "name": "Gloomy", "gender": "neutral" },
+        { "name": "Grave", "gender": "neutral" },
+        { "name": "Incandescent", "gender": "neutral" },
+        { "name": "Nuclear", "gender": "neutral" },
+        { "name": "Radioactive", "gender": "neutral" },
+        { "name": "Rational", "gender": "neutral" },
+        { "name": "Reflective", "gender": "neutral" },
+        { "name": "Restless", "gender": "neutral" },
+        { "name": "Scientific", "gender": "neutral" },
+        { "name": "Secret", "gender": "neutral" },
+        { "name": "Theoretical", "gender": "neutral" },
+        { "name": "Tormented", "gender": "neutral" },
+        { "name": "Tragic", "gender": "neutral" }
+    ]
+}

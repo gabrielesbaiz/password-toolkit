@@ -1,0 +1,26 @@
+{
+    "key": "monty_python_holy_grail",
+    "locale": "en",
+    "values": [
+        { "name": "Absurd", "gender": "neutral" },
+        { "name": "Chivalrous", "gender": "neutral" },
+        { "name": "Comic", "gender": "neutral" },
+        { "name": "Cowardly", "gender": "neutral" },
+        { "name": "Demented", "gender": "neutral" },
+        { "name": "Funny", "gender": "neutral" },
+        { "name": "Grotesque", "gender": "neutral" },
+        { "name": "Hilarious", "gender": "neutral" },
+        { "name": "Impertinent", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Jocular", "gender": "neutral" },
+        { "name": "Madcap", "gender": "neutral" },
+        { "name": "Medieval", "gender": "neutral" },
+        { "name": "Noble", "gender": "neutral" },
+        { "name": "Ridiculous", "gender": "neutral" },
+        { "name": "Silly", "gender": "neutral" },
+        { "name": "Valiant", "gender": "neutral" },
+        { "name": "Wandering", "gender": "neutral" },
+        { "name": "Zany", "gender": "neutral" }
+    ]
+}

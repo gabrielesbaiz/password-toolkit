@@ -1,0 +1,25 @@
+{
+    "key": "trainspotting",
+    "locale": "en",
+    "values": [
+        { "name": "Cynical", "gender": "neutral" },
+        { "name": "Desperate", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Filthy", "gender": "neutral" },
+        { "name": "Fleeing", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Lying", "gender": "neutral" },
+        { "name": "Miserable", "gender": "neutral" },
+        { "name": "Nihilistic", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Restless", "gender": "neutral" },
+        { "name": "Scottish", "gender": "neutral" },
+        { "name": "Selfdestructive", "gender": "neutral" },
+        { "name": "Squalid", "gender": "neutral" },
+        { "name": "Stoned", "gender": "neutral" },
+        { "name": "Unstable", "gender": "neutral" },
+        { "name": "Violent", "gender": "neutral" },
+        { "name": "Vulnerable", "gender": "neutral" },
+        { "name": "Wayward", "gender": "neutral" }
+    ]
+}

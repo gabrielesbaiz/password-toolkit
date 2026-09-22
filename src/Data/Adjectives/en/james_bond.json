@@ -1,0 +1,26 @@
+{
+    "key": "james_bond",
+    "locale": "en",
+    "values": [
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Clandestine", "gender": "neutral" },
+        { "name": "Cold", "gender": "neutral" },
+        { "name": "Confident", "gender": "neutral" },
+        { "name": "Deadly", "gender": "neutral" },
+        { "name": "Diabolical", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Elusive", "gender": "neutral" },
+        { "name": "Impeccable", "gender": "neutral" },
+        { "name": "Lethal", "gender": "neutral" },
+        { "name": "Luxurious", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Secret", "gender": "neutral" },
+        { "name": "Seductive", "gender": "neutral" },
+        { "name": "Sophisticated", "gender": "neutral" },
+        { "name": "Tactical", "gender": "neutral" },
+        { "name": "Uncatchable", "gender": "neutral" },
+        { "name": "Worldly", "gender": "neutral" }
+    ]
+}

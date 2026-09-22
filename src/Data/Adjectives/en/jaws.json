@@ -1,0 +1,26 @@
+{
+    "key": "jaws",
+    "locale": "en",
+    "values": [
+        { "name": "Abyssal", "gender": "neutral" },
+        { "name": "Bloodthirsty", "gender": "neutral" },
+        { "name": "Coastal", "gender": "neutral" },
+        { "name": "Cutting", "gender": "neutral" },
+        { "name": "Darting", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Gigantic", "gender": "neutral" },
+        { "name": "Marine", "gender": "neutral" },
+        { "name": "Menacing", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Nautical", "gender": "neutral" },
+        { "name": "Predatory", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Savory", "gender": "neutral" },
+        { "name": "Stormy", "gender": "neutral" },
+        { "name": "Submerged", "gender": "neutral" },
+        { "name": "Summery", "gender": "neutral" },
+        { "name": "Tense", "gender": "neutral" },
+        { "name": "Unsettling", "gender": "neutral" },
+        { "name": "Voracious", "gender": "neutral" }
+    ]
+}

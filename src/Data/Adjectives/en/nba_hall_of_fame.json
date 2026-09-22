@@ -1,0 +1,26 @@
+{
+    "key": "nba_hall_of_fame",
+    "locale": "en",
+    "values": [
+        { "name": "Acrobatic", "gender": "neutral" },
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Athletic", "gender": "neutral" },
+        { "name": "Competitive", "gender": "neutral" },
+        { "name": "Dominant", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Muscular", "gender": "neutral" },
+        { "name": "Olympic", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Precise", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Talented", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Towering", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Winning", "gender": "neutral" }
+    ]
+}

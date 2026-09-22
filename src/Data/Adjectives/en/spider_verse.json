@@ -1,0 +1,26 @@
+{
+    "key": "spider_verse",
+    "locale": "en",
+    "values": [
+        { "name": "Acrobatic", "gender": "neutral" },
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Darting", "gender": "neutral" },
+        { "name": "Elastic", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Graphic", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Kinetic", "gender": "neutral" },
+        { "name": "Masked", "gender": "neutral" },
+        { "name": "Multidimensional", "gender": "neutral" },
+        { "name": "Parallel", "gender": "neutral" },
+        { "name": "Psychedelic", "gender": "neutral" },
+        { "name": "Reckless", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Teenage", "gender": "neutral" },
+        { "name": "Undaunted", "gender": "neutral" },
+        { "name": "Urban", "gender": "neutral" },
+        { "name": "Youthful", "gender": "neutral" }
+    ]
+}

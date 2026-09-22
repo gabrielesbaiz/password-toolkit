@@ -1,0 +1,26 @@
+{
+    "key": "django_unchained",
+    "locale": "en",
+    "values": [
+        { "name": "Arid", "gender": "neutral" },
+        { "name": "Bloodthirsty", "gender": "neutral" },
+        { "name": "Cruel", "gender": "neutral" },
+        { "name": "Cutting", "gender": "neutral" },
+        { "name": "Dusty", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Fiery", "gender": "neutral" },
+        { "name": "Free", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Proud", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Sardonic", "gender": "neutral" },
+        { "name": "Scorching", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Undaunted", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" },
+        { "name": "Wild", "gender": "neutral" }
+    ]
+}

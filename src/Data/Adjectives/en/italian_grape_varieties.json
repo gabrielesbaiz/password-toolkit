@@ -1,0 +1,26 @@
+{
+    "key": "italian_grape_varieties",
+    "locale": "en",
+    "values": [
+        { "name": "Aromatic", "gender": "neutral" },
+        { "name": "Balanced", "gender": "neutral" },
+        { "name": "Dry", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Floral", "gender": "neutral" },
+        { "name": "Fruity", "gender": "neutral" },
+        { "name": "Fullbodied", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Mature", "gender": "neutral" },
+        { "name": "Mellow", "gender": "neutral" },
+        { "name": "Mineral", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Persistent", "gender": "neutral" },
+        { "name": "Silky", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Spiced", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Tannic", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" },
+        { "name": "Vigorous", "gender": "neutral" }
+    ]
+}

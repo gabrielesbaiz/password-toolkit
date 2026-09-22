@@ -1,0 +1,26 @@
+{
+    "key": "the_matrix",
+    "locale": "en",
+    "values": [
+        { "name": "Artificial", "gender": "neutral" },
+        { "name": "Binary", "gender": "neutral" },
+        { "name": "Cloned", "gender": "neutral" },
+        { "name": "Cybernetic", "gender": "neutral" },
+        { "name": "Digital", "gender": "neutral" },
+        { "name": "Elusive", "gender": "neutral" },
+        { "name": "Encoded", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Illusory", "gender": "neutral" },
+        { "name": "Lucid", "gender": "neutral" },
+        { "name": "Occult", "gender": "neutral" },
+        { "name": "Oneiric", "gender": "neutral" },
+        { "name": "Prophetic", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Simulated", "gender": "neutral" },
+        { "name": "Underground", "gender": "neutral" },
+        { "name": "Unfathomable", "gender": "neutral" },
+        { "name": "Unpredictable", "gender": "neutral" },
+        { "name": "Unstoppable", "gender": "neutral" },
+        { "name": "Virtual", "gender": "neutral" }
+    ]
+}

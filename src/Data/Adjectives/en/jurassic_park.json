@@ -1,0 +1,26 @@
+{
+    "key": "jurassic_park",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Colossal", "gender": "neutral" },
+        { "name": "Extinct", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Fossilized", "gender": "neutral" },
+        { "name": "Huge", "gender": "neutral" },
+        { "name": "Menacing", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Monstrous", "gender": "neutral" },
+        { "name": "Predatory", "gender": "neutral" },
+        { "name": "Prehistoric", "gender": "neutral" },
+        { "name": "Primordial", "gender": "neutral" },
+        { "name": "Reptilian", "gender": "neutral" },
+        { "name": "Roaring", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Territorial", "gender": "neutral" },
+        { "name": "Tropical", "gender": "neutral" },
+        { "name": "Untameable", "gender": "neutral" },
+        { "name": "Voracious", "gender": "neutral" }
+    ]
+}
