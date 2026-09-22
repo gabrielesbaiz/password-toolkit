@@ -1,0 +1,66 @@
+{
+    "key": "italian_progressive_rock_bands",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dreamy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Epic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Experimental",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hypnotic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Psychedelic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rebellious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Symphonic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Timeless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Virtuoso",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "key": "italian_children_games_70s",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Adventurous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Amusing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bouncing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Carefree",
+            "gender": "neutral"
+        },
+        {
+            "name": "Classic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Colorful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Engaging",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hilarious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mischievous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mythical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Nostalgic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Playful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rowdy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Timeless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unleashed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Zany",
+            "gender": "neutral"
+        }
+    ]
+}

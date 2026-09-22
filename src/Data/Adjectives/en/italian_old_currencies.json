@@ -1,0 +1,66 @@
+{
+    "key": "italian_old_currencies",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Golden",
+            "gender": "neutral"
+        },
+        {
+            "name": "Heavy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Historic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Imperial",
+            "gender": "neutral"
+        },
+        {
+            "name": "Jingling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Minted",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rare",
+            "gender": "neutral"
+        },
+        {
+            "name": "Regal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Shining",
+            "gender": "neutral"
+        },
+        {
+            "name": "Silvery",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sought",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sparkling",
+            "gender": "neutral"
+        }
+    ]
+}

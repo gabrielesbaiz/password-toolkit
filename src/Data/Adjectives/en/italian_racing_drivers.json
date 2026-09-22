@@ -1,0 +1,82 @@
+{
+    "key": "italian_racing_drivers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Audacious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Blistering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Champion",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dominant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Explosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Extraordinary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lightning",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Supersonic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Technical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unbeatable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unstoppable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Untameable",
+            "gender": "neutral"
+        }
+    ]
+}

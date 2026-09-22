@@ -1,0 +1,82 @@
+{
+    "key": "italian_youtubers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Amusing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Contagious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Digital",
+            "gender": "neutral"
+        },
+        {
+            "name": "Engaging",
+            "gender": "neutral"
+        },
+        {
+            "name": "Explosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Exuberant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hilarious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ironic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Irreverent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mediatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Popular",
+            "gender": "neutral"
+        },
+        {
+            "name": "Pungent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unleashed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Viral",
+            "gender": "neutral"
+        }
+    ]
+}

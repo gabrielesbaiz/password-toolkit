@@ -1,0 +1,66 @@
+{
+    "key": "roman_emperors",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Ambitious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glorious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Imperial",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Martial",
+            "gender": "neutral"
+        },
+        {
+            "name": "Merciless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Regal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Severe",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strategic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Triumphant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tyrannical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Valiant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wise",
+            "gender": "neutral"
+        }
+    ]
+}

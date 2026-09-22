@@ -1,0 +1,78 @@
+{
+    "key": "italian_children_games_80s",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Classic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Electric",
+            "gender": "neutral"
+        },
+        {
+            "name": "Epic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Explosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Futuristic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Groundbreaking",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intergalactic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Kaleidoscopic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lively",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mythical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Nostalgic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Robotic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sparkling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spatial",
+            "gender": "neutral"
+        },
+        {
+            "name": "Supersonic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Timeless",
+            "gender": "neutral"
+        }
+    ]
+}

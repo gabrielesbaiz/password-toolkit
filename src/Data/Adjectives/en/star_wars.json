@@ -1,0 +1,250 @@
+{
+    "key": "star_wars",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Admirable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Affectionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Aggressive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Altruistic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brazen",
+            "gender": "neutral"
+        },
+        {
+            "name": "Clearest",
+            "gender": "neutral"
+        },
+        {
+            "name": "Committed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Corrosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cunning",
+            "gender": "neutral"
+        },
+        {
+            "name": "Determined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Diplomatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dominant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elusive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Empathetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Enthusiastic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Erudite",
+            "gender": "neutral"
+        },
+        {
+            "name": "Excellent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fascinating",
+            "gender": "neutral"
+        },
+        {
+            "name": "Flexible",
+            "gender": "neutral"
+        },
+        {
+            "name": "Furious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Generous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hardened",
+            "gender": "neutral"
+        },
+        {
+            "name": "Honest",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hungry",
+            "gender": "neutral"
+        },
+        {
+            "name": "Impulsive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intelligent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intense",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intrepid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Loyal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Luminous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Nervous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Noble",
+            "gender": "neutral"
+        },
+        {
+            "name": "Optimistic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Passionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Patient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Proactive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Relaxed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Resolute",
+            "gender": "neutral"
+        },
+        {
+            "name": "Respectful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rugged",
+            "gender": "neutral"
+        },
+        {
+            "name": "Selfish",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sharp",
+            "gender": "neutral"
+        },
+        {
+            "name": "Shrewd",
+            "gender": "neutral"
+        },
+        {
+            "name": "Simple",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sincere",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sly",
+            "gender": "neutral"
+        },
+        {
+            "name": "Solid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strategic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strong",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strongwilled",
+            "gender": "neutral"
+        },
+        {
+            "name": "Suspicious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tender",
+            "gender": "neutral"
+        },
+        {
+            "name": "Undaunted",
+            "gender": "neutral"
+        },
+        {
+            "name": "Underhanded",
+            "gender": "neutral"
+        },
+        {
+            "name": "Violent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wise",
+            "gender": "neutral"
+        }
+    ]
+}

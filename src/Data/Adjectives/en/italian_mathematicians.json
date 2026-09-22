@@ -1,0 +1,62 @@
+{
+    "key": "italian_mathematicians",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Abstract",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Enlightened",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Inventive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Logical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Methodical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rational",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rigorous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Theoretical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

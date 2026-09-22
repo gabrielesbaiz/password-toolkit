@@ -1,0 +1,78 @@
+{
+    "key": "italian_opera_composers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Classic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Divine",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dramatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Grand",
+            "gender": "neutral"
+        },
+        {
+            "name": "Harmonious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immortal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Inspired",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lyric",
+            "gender": "neutral"
+        },
+        {
+            "name": "Majestic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Melodious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Passionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Romantic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sublime",
+            "gender": "neutral"
+        },
+        {
+            "name": "Virtuoso",
+            "gender": "neutral"
+        }
+    ]
+}

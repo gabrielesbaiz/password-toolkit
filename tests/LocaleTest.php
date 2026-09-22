@@ -34,12 +34,23 @@ it('prefers the themed file for the active locale', function () {
     expect(adjectiveNames('it', 'star_wars'))->toContain($adjective);
 });
 
-it('falls back to the locale default pool when there is no themed file', function () {
+it('prefers the themed English pack over the default pool', function () {
     config()->set('password-toolkit.locale', 'en');
     onlyDictionaries('star_wars');
 
-    // There is no en/star_wars.json, so this must come from en/_default.json —
-    // and English puts the adjective first.
+    $adjective = explode('-', PasswordToolkit::generate())[0];
+
+    expect(adjectiveNames('en', 'star_wars'))->toContain($adjective);
+});
+
+it('falls back to the locale default pool when there is no themed file', function () {
+    config()->set('password-toolkit.locale', 'en');
+
+    // A runtime dictionary ships no adjectives of its own, so it must land on
+    // en/_default.json.
+    PasswordToolkit::registerDictionary('improvised', ['Whoever'], 'people');
+    onlyDictionaries('improvised');
+
     $adjective = explode('-', PasswordToolkit::generate())[0];
 
     expect(adjectiveNames('en', '_default'))->toContain($adjective);
@@ -72,7 +83,7 @@ it('follows the application locale when none is configured', function () {
 
     $adjective = explode('-', PasswordToolkit::generate())[0];
 
-    expect(adjectiveNames('en', '_default'))->toContain($adjective);
+    expect(adjectiveNames('en', 'star_wars'))->toContain($adjective);
 });
 
 it('agrees with the gender of the name in Italian', function () {
@@ -109,7 +120,7 @@ it('reports a pool size per locale', function () {
     expect($resolver->poolSize('star_wars', (new Options)->with(locale: 'it')))
         ->toBe(count(adjectiveNames('it', 'star_wars')))
         ->and($resolver->poolSize('star_wars', (new Options)->with(locale: 'en')))
-        ->toBe(count(adjectiveNames('en', '_default')));
+        ->toBe(count(adjectiveNames('en', 'star_wars')));
 });
 
 describe('word order', function () {
@@ -128,7 +139,7 @@ describe('word order', function () {
 
         [$first, $second] = explode('-', PasswordToolkit::make()->keepWordBreaks(false)->generate());
 
-        expect(adjectiveNames('en', '_default'))->toContain($first)->not->toContain($second);
+        expect(adjectiveNames('en', 'star_wars'))->toContain($first)->not->toContain($second);
     });
 
     it('reads the order from the locale pack', function () {
@@ -173,7 +184,7 @@ describe('word order', function () {
             ->adjectiveAt(AdjectivePosition::After)
             ->generate();
 
-        expect(adjectiveNames('en', '_default'))->toContain(explode('-', $password)[1]);
+        expect(adjectiveNames('en', 'star_wars'))->toContain(explode('-', $password)[1]);
     });
 
     it('goes back to following the locale when the override is cleared', function () {

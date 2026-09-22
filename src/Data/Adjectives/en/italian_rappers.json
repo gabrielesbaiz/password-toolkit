@@ -1,0 +1,70 @@
+{
+    "key": "italian_rappers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cutting",
+            "gender": "neutral"
+        },
+        {
+            "name": "Direct",
+            "gender": "neutral"
+        },
+        {
+            "name": "Explosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Irreverent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rebellious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Scathing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swaggering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unleashed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visceral",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "key": "italian_children_games_2000s",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Captivating",
+            "gender": "neutral"
+        },
+        {
+            "name": "Connected",
+            "gender": "neutral"
+        },
+        {
+            "name": "Crackling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Digital",
+            "gender": "neutral"
+        },
+        {
+            "name": "Eccentric",
+            "gender": "neutral"
+        },
+        {
+            "name": "Effervescent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Exuberant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Futuristic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Garish",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glittering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hypnotic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Irresistible",
+            "gender": "neutral"
+        },
+        {
+            "name": "Kaleidoscopic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Magnetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Multimedia",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mythical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Nostalgic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Phenomenal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Portable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sparkling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Spectacular",
+            "gender": "neutral"
+        },
+        {
+            "name": "Virtual",
+            "gender": "neutral"
+        }
+    ]
+}

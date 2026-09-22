@@ -1,0 +1,62 @@
+{
+    "key": "italian_breads",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Crunchy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Flavorful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fluffy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fragrant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Genuine",
+            "gender": "neutral"
+        },
+        {
+            "name": "Homemade",
+            "gender": "neutral"
+        },
+        {
+            "name": "Leavened",
+            "gender": "neutral"
+        },
+        {
+            "name": "Perfumed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rustic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Soft",
+            "gender": "neutral"
+        },
+        {
+            "name": "Traditional",
+            "gender": "neutral"
+        },
+        {
+            "name": "Warm",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wholesome",
+            "gender": "neutral"
+        }
+    ]
+}

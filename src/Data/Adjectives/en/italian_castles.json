@@ -1,0 +1,70 @@
+{
+    "key": "italian_castles",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Ancient",
+            "gender": "neutral"
+        },
+        {
+            "name": "Bewitched",
+            "gender": "neutral"
+        },
+        {
+            "name": "Evocative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fortified",
+            "gender": "neutral"
+        },
+        {
+            "name": "Imposing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Majestic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Medieval",
+            "gender": "neutral"
+        },
+        {
+            "name": "Monumental",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mysterious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Panoramic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Regal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Renaissance",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ruined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Towering",
+            "gender": "neutral"
+        },
+        {
+            "name": "Uncatchable",
+            "gender": "neutral"
+        }
+    ]
+}

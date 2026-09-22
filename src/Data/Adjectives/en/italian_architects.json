@@ -1,0 +1,82 @@
+{
+    "key": "italian_architects",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Bold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Brilliant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Creative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Extraordinary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Futuristic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Harmonious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Immortal",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ingenious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Majestic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Minimalist",
+            "gender": "neutral"
+        },
+        {
+            "name": "Modern",
+            "gender": "neutral"
+        },
+        {
+            "name": "Monumental",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rational",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Revolutionary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Visionary",
+            "gender": "neutral"
+        }
+    ]
+}

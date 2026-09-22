@@ -1,0 +1,86 @@
+{
+    "key": "italian_football_legends",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Brave",
+            "gender": "neutral"
+        },
+        {
+            "name": "Champion",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Decisive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Determined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Explosive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Glorious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Imaginative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Masterful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strong",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Talented",
+            "gender": "neutral"
+        },
+        {
+            "name": "Technical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unbeatable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Winning",
+            "gender": "neutral"
+        }
+    ]
+}

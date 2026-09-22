@@ -1,0 +1,70 @@
+{
+    "key": "italian_tennis_players",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cold",
+            "gender": "neutral"
+        },
+        {
+            "name": "Concentrated",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Gritty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Precise",
+            "gender": "neutral"
+        },
+        {
+            "name": "Snappy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Talented",
+            "gender": "neutral"
+        },
+        {
+            "name": "Technical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tenacious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Tireless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Unbeatable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Winning",
+            "gender": "neutral"
+        }
+    ]
+}

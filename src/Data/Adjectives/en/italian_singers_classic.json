@@ -1,0 +1,66 @@
+{
+    "key": "italian_singers_classic",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Charismatic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dreamy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intense",
+            "gender": "neutral"
+        },
+        {
+            "name": "Legendary",
+            "gender": "neutral"
+        },
+        {
+            "name": "Melancholic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Melodic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Mythical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Passionate",
+            "gender": "neutral"
+        },
+        {
+            "name": "Poetic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Scathing",
+            "gender": "neutral"
+        },
+        {
+            "name": "Thrilling",
+            "gender": "neutral"
+        },
+        {
+            "name": "Timeless",
+            "gender": "neutral"
+        },
+        {
+            "name": "Velvety",
+            "gender": "neutral"
+        }
+    ]
+}

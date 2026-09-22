@@ -1,0 +1,78 @@
+{
+    "key": "philosophers",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Analytical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Concrete",
+            "gender": "neutral"
+        },
+        {
+            "name": "Critical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Dialectical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Epistemic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Historic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Intellectual",
+            "gender": "neutral"
+        },
+        {
+            "name": "Logical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Methodical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Philosophical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Profound",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rational",
+            "gender": "neutral"
+        },
+        {
+            "name": "Reflective",
+            "gender": "neutral"
+        },
+        {
+            "name": "Theoretical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Transcendental",
+            "gender": "neutral"
+        },
+        {
+            "name": "Utopian",
+            "gender": "neutral"
+        },
+        {
+            "name": "Wise",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,126 @@
+{
+    "key": "car_brands",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Adaptable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Agile",
+            "gender": "neutral"
+        },
+        {
+            "name": "Charming",
+            "gender": "neutral"
+        },
+        {
+            "name": "Compact",
+            "gender": "neutral"
+        },
+        {
+            "name": "Confident",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cozy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ecological",
+            "gender": "neutral"
+        },
+        {
+            "name": "Economical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Electric",
+            "gender": "neutral"
+        },
+        {
+            "name": "Elegant",
+            "gender": "neutral"
+        },
+        {
+            "name": "Famous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fascinating",
+            "gender": "neutral"
+        },
+        {
+            "name": "Fastest",
+            "gender": "neutral"
+        },
+        {
+            "name": "Futuristic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Handy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Hardy",
+            "gender": "neutral"
+        },
+        {
+            "name": "Impressive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Innovative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Luxurious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Modern",
+            "gender": "neutral"
+        },
+        {
+            "name": "Powerful",
+            "gender": "neutral"
+        },
+        {
+            "name": "Practical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Refined",
+            "gender": "neutral"
+        },
+        {
+            "name": "Reliable",
+            "gender": "neutral"
+        },
+        {
+            "name": "Silent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sophisticated",
+            "gender": "neutral"
+        },
+        {
+            "name": "Sporty",
+            "gender": "neutral"
+        },
+        {
+            "name": "Strapping",
+            "gender": "neutral"
+        },
+        {
+            "name": "Swift",
+            "gender": "neutral"
+        },
+        {
+            "name": "Technological",
+            "gender": "neutral"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "key": "italian_journalists",
+    "locale": "en",
+    "values": [
+        {
+            "name": "Authoritative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Curious",
+            "gender": "neutral"
+        },
+        {
+            "name": "Cutting",
+            "gender": "neutral"
+        },
+        {
+            "name": "Iconic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Incisive",
+            "gender": "neutral"
+        },
+        {
+            "name": "Independent",
+            "gender": "neutral"
+        },
+        {
+            "name": "Informed",
+            "gender": "neutral"
+        },
+        {
+            "name": "Investigative",
+            "gender": "neutral"
+        },
+        {
+            "name": "Ironic",
+            "gender": "neutral"
+        },
+        {
+            "name": "Learned",
+            "gender": "neutral"
+        },
+        {
+            "name": "Lucid",
+            "gender": "neutral"
+        },
+        {
+            "name": "Polemical",
+            "gender": "neutral"
+        },
+        {
+            "name": "Punctual",
+            "gender": "neutral"
+        },
+        {
+            "name": "Rigorous",
+            "gender": "neutral"
+        },
+        {
+            "name": "Scathing",
+            "gender": "neutral"
+        }
+    ]
+}
