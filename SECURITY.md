@@ -56,9 +56,10 @@ when the pool is smaller than the request.
 These are deliberate. Please do not report them as vulnerabilities.
 
 **Memorable passwords have less entropy than random ones.** That is the entire
-trade. A default `Goldrake-Mitico-4271` sits around 35–40 bits under the
+trade. A default `Goldrake-Mitico-427193` sits around 37 bits under the
 structural model, not the 120-odd bits its length suggests under a naive
-charset model. This is why the package ships two entropy models and why
+charset model. Raise `numbers_digits` if you need more — it is the only setting
+that scales. This is why the package ships two entropy models and why
 `structuralReport()` — the pessimistic, honest one — is what
 `generateWithReport()` returns.
 

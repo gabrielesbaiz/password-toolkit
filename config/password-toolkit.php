@@ -128,11 +128,18 @@ return [
     | with random_int(), so the numeric segment is cryptographically random
     | even though the words are not the whole of the entropy.
     |
+    | 'numbers_digits' is the one setting that scales. The word pools are fixed
+    | by the data that ships, so the digits are where the entropy is: each one
+    | adds 3.32 bits, and against an attacker who knows this package they carry
+    | more of the total than the words do. Six is the floor worth shipping;
+    | raise it to twelve or more if the passwords guard anything that matters.
+    | The range is 1 to 18.
+    |
     */
 
     'add_numbers' => true,
 
-    'numbers_digits' => 4,
+    'numbers_digits' => 6,
 
     'numbers_position' => 'end',
 

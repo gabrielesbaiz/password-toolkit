@@ -4,7 +4,7 @@
 
 # PasswordToolkit
 
-Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-4271` in Italian, `Fearless-Luke-Skywalker-3301` in English — built from 91 curated dictionaries, in the language you choose, with dictionaries of your own alongside them.
+Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-427193` in Italian, `Fearless-Luke-Skywalker-330174` in English — built from 91 curated dictionaries, in the language you choose, with dictionaries of your own alongside them.
 
 [![Latest version](https://img.shields.io/packagist/v/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
 [![PHP](https://img.shields.io/packagist/dependency-v/gabrielesbaiz/password-toolkit/php?style=flat-square)](composer.json)
@@ -76,7 +76,7 @@ That is higher entropy, shorter, and nobody has to read it aloud.
 
 You want this package when a **human** is in the loop: when someone has to
 dictate the password over the phone, type it off a printed sheet, or remember it
-until they change it. `Goldrake-Mitico-4271` survives that. `xK#9$!qZ` does not.
+until they change it. `Goldrake-Mitico-427193` survives that. `xK#9$!qZ` does not.
 
 The realistic uses are user onboarding, initial credentials, demo and staging
 accounts, share links, and seeded fixtures. Every one of those trades entropy
@@ -108,16 +108,16 @@ The defaults generate working passwords with no configuration at all.
 use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
 
 PasswordToolkit::generate();
-// "Goldrake-Mitico-4271"
+// "Goldrake-Mitico-427193"
 
 PasswordToolkit::generateMany(10);
-// ["Goldrake-Mitico-4271", "Vespa-Veloce-9921", …] — exactly 10
+// ["Goldrake-Mitico-427193", "Vespa-Veloce-992148", …] — exactly 10
 
 PasswordToolkit::generateUnique(10);
 // the same, with no repeats
 
 PasswordToolkit::generateWithReport();
-// ['password' => "Goldrake-Mitico-4271", 'report' => StrengthReport]
+// ['password' => "Goldrake-Mitico-427193", 'report' => StrengthReport]
 ```
 
 Or override anything for a single call, without touching your config:
@@ -184,11 +184,37 @@ each locale declares its own — see [Locales and adjectives](#locales-and-adjec
 
 ```php
 'add_numbers'      => true,
-'numbers_digits'   => 4,
+'numbers_digits'   => 6,
 'numbers_position' => 'end',   // start | middle | end
 ```
 
-Digits are drawn with `random_int()`.
+Digits are drawn with `random_int()`, and they are the setting that matters
+most. The word pools are fixed by the data that ships, so the digits are where
+the entropy is: each one adds 3.32 bits, and against an attacker who knows this
+package they carry more of the total than the words do. Adding dictionaries is
+a poor lever by comparison — doubling every one of them buys a single bit.
+
+The default is **6**. Raise it when the passwords guard something real:
+
+| `numbers_digits` | structural bits | offline crack, 10^10 guesses/sec |
+|---|---|---|
+| 4 | 30 | 0.1 seconds |
+| 6 *(default)* | 37 | 13 seconds |
+| 10 | 50 | 31 hours |
+| 12 | 57 | 1.4 years |
+| 14 | 63 | 143 years |
+| 18 *(max)* | 77 | 410,000 years |
+
+> [!IMPORTANT]
+> Those times assume a fast unsalted hash. Behind bcrypt or argon2 the guess
+> rate drops by five or six orders of magnitude and even four digits holds for
+> days — so treat the table as the worst case, not the expected one. It also
+> assumes the attacker knows the package and your configuration, which is the
+> assumption to keep: this code is public.
+
+For a password a human has to retype, 12 digits is usually past the point of
+being memorable. If you need more than that, you want a random string, not this
+package — see [Do you need this?](#do-you-need-this).
 
 ### Leetspeak
 
@@ -233,7 +259,7 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 ### Built-in
 
 188 dictionaries — **99 of people** and **89 of things** — holding
-2,492 names and 1,725 names respectively, each with themed adjectives in both
+2,492 names and 1,724 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -399,14 +425,14 @@ is translated where a translation exists and left alone where it should be.
 | `italian_old_currencies` | 🪙 culture | it | 21 | Lira |
 | `italian_old_jobs` | 🔨 culture | it | 25 | Arrotino |
 | `italian_operas` | 🎭 arts | it | 15 | Aida |
-| `italian_pasta_shapes` | 🍝 food | it | 20 | Fusilli |
+| `italian_pasta_shapes` | 🍝 food | it | 20 | Fusillo |
 | `italian_pizza_types` | 🍕 food | it | 20 | Margherita |
 | `italian_progressive_rock_bands` | 🎸 arts | it | 20 | PFM |
 | `italian_regional_foods` | 🍲 food | it | 57 | Cacciucco |
 | `italian_regions` | 🗺️ places | it | 15 | Toscana |
 | `italian_rivers` | 🌊 nature | it | 22 | Po |
 | `italian_sea_creatures` | 🐙 food | it | 26 | Polpo |
-| `italian_street_foods` | 🥪 food | it | 20 | Arancino |
+| `italian_street_foods` | 🥪 food | it | 19 | Arancino |
 | `italian_train_stations_classic` | 🚉 places | it | 21 | Roma Termini |
 | `italian_volcanoes` | 🌋 nature | it | 18 | Etna |
 | `italian_wine_regions` | 🍇 drink | it | 22 | Chianti |
@@ -504,7 +530,7 @@ PasswordToolkit::dictionaries()->get('italian_pasta_shapes');
 ```
 
 `dictionariesWithSamples()` adds a freshly generated `sample` per dictionary —
-a row reading `Fusilli-Gustoso-4271` tells a user far more than "20 entries".
+a row reading `Fusilli-Gustoso-427193` tells a user far more than "20 entries".
 
 `groups()` and `tags()` return the vocabulary actually in use, with counts, so a
 filter UI never hardcodes the list:
@@ -635,10 +661,10 @@ to a native speaker — which defeats the point of a memorable password.
 
 ```php
 PasswordToolkit::make()->locale('it')->generate();
-// "Goldrake-Mitico-4271"
+// "Goldrake-Mitico-427193"
 
 PasswordToolkit::make()->locale('en')->generate();
-// "Legendary-Goldrake-4271"
+// "Legendary-Goldrake-427193"
 ```
 
 Each locale declares its own order in its `_default.json`:
@@ -693,16 +719,16 @@ English rendering wherever one exists and the untouched base everywhere else.
 
 ```php
 PasswordToolkit::make()->locale('en')->only('roman_mythology')->generate();
-// "Olympic-Jupiter-5377"
+// "Olympic-Jupiter-537712"
 
 PasswordToolkit::make()->locale('it')->only('roman_mythology')->generate();
-// "Giove-Eterno-5656"
+// "Giove-Eterno-565640"
 
 PasswordToolkit::make()->locale('fr')->only('italian_monuments')->generate();
-// "Historic-Uffizi-Gallery-1556"   <- no French pack, so English
+// "Historic-Uffizi-Gallery-155689"   <- no French pack, so English
 
 PasswordToolkit::make()->locale('de')->only('italian_wines')->generate();
-// "Mineral-Malvasia-6925"          <- nothing to translate, in any language
+// "Mineral-Malvasia-692534"          <- nothing to translate, in any language
 ```
 
 A base file declares its own language; translation files at
@@ -764,7 +790,7 @@ Enums and their string spellings are interchangeable — `->leet('basic')` and
 ## Strength reporting
 
 ```php
-$report = PasswordToolkit::strength('Goldrake-Mitico-4271');
+$report = PasswordToolkit::strength('Goldrake-Mitico-427193');
 
 $report->score;             // 0..4
 $report->label;             // very_weak | weak | fair | strong | very_strong
@@ -792,7 +818,7 @@ an attacker who knows you use this package searches the pool, not the alphabet.
 ['password' => $pwd, 'report' => $report] = PasswordToolkit::generateWithReport();
 
 $report->components;
-// ['name' => 11.6, 'adjective' => 5.2, 'number' => 13.3, 'leetspeak_bonus' => 0.0, 'total' => 30.1]
+// ['name' => 11.6, 'adjective' => 5.2, 'number' => 19.9, 'leetspeak_bonus' => 0.0, 'total' => 36.7]
 ```
 
 Use the structural figure when deciding whether a generated password is strong
@@ -879,7 +905,7 @@ PasswordToolkit::registerDictionary('products', ['Orbit', 'Beacon', 'Lantern']);
 
 // wherever you generate
 PasswordToolkit::make()->only('products')->locale('en')->generate();
-// "Luminous-Beacon-8814"
+// "Luminous-Beacon-881407"
 ```
 </details>
 

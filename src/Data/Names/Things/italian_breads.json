@@ -20,12 +20,12 @@
         { "name": "Schiacciata", "gender": "female" },
         { "name": "Crescentina", "gender": "female" },
         { "name": "Pinza", "gender": "female" },
-        { "name": "Friselle", "gender": "female" },
+        { "name": "Frisella", "gender": "female" },
         { "name": "Casatiello", "gender": "male" },
         { "name": "Tortano", "gender": "male" },
         { "name": "Pancarre", "gender": "male" },
-        { "name": "Grissini", "gender": "male" },
-        { "name": "Taralli", "gender": "male" },
+        { "name": "Grissino", "gender": "male" },
+        { "name": "Tarallo", "gender": "male" },
         { "name": "Pane Genzano", "gender": "male" }
     ]
 }
