@@ -1,6 +1,7 @@
 {
-    "name": "italian_film_directors",
+    "key": "italian_film_directors",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Federico Fellini", "gender": "male" },
         { "name": "Luchino Visconti", "gender": "male" },

@@ -123,7 +123,7 @@ Three keys are new and have no 1.x equivalent:
 
 ```php
 'locale' => null,               // null follows the application locale
-'fallback_locale' => 'it',      // where adjectives come from when the locale has none
+'fallback_locale' => 'en',      // used when the locale has no resources of its own
 'adjective_position' => null,   // null follows the locale's own word order
 ```
 
@@ -131,6 +131,15 @@ Leave `adjective_position` at `null`. Word order is a property of the language �
 Italian says `Goldrake-Mitico`, English says `Legendary-Goldrake` — and each
 locale declares its own. 1.x was Italian-only and always put the adjective last,
 so an Italian-locale install produces the same order it always did.
+
+> [!IMPORTANT]
+> **If your application is Italian, set `'locale' => 'it'` explicitly.**
+>
+> 1.x had no locales and produced Italian. 2.0 follows the application locale
+> and falls back to **English**, so an app running with `app.locale` of `en` —
+> or anything without its own packs — now generates English passwords. That is
+> deliberate for a package published internationally, but it is a visible change
+> for an Italian install that never set a locale.
 
 Leave `fallback_locale` at `it` unless you have your own adjective packs. The
 built-in themed adjectives are Italian, and an English request falls through to

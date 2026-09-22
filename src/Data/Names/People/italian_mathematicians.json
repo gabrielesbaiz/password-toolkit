@@ -1,6 +1,7 @@
 {
-    "name": "italian_mathematicians",
+    "key": "italian_mathematicians",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Leonardo Fibonacci", "gender": "male" },
         { "name": "Gerolamo Cardano", "gender": "male" },

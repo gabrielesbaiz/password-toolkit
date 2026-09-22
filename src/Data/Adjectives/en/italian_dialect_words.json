@@ -2,65 +2,20 @@
     "key": "italian_dialect_words",
     "locale": "en",
     "values": [
-        {
-            "name": "Authentic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Chatty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flamboyant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Frank",
-            "gender": "neutral"
-        },
-        {
-            "name": "Freerange",
-            "gender": "neutral"
-        },
-        {
-            "name": "Funny",
-            "gender": "neutral"
-        },
-        {
-            "name": "Hilarious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irreverent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Likeable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lively",
-            "gender": "neutral"
-        },
-        {
-            "name": "Popular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Prankish",
-            "gender": "neutral"
-        },
-        {
-            "name": "Shrewd",
-            "gender": "neutral"
-        },
-        {
-            "name": "Typical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Vivid",
-            "gender": "neutral"
-        }
+        { "name": "Authentic", "gender": "neutral" },
+        { "name": "Chatty", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Frank", "gender": "neutral" },
+        { "name": "Freerange", "gender": "neutral" },
+        { "name": "Funny", "gender": "neutral" },
+        { "name": "Hilarious", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Likeable", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Prankish", "gender": "neutral" },
+        { "name": "Shrewd", "gender": "neutral" },
+        { "name": "Typical", "gender": "neutral" },
+        { "name": "Vivid", "gender": "neutral" }
     ]
 }

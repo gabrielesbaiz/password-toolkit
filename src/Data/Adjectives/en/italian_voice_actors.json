@@ -2,57 +2,18 @@
     "key": "italian_voice_actors",
     "locale": "en",
     "values": [
-        {
-            "name": "Charismatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Evocative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Expressive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magnetic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Precise",
-            "gender": "neutral"
-        },
-        {
-            "name": "Profound",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Theatrical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Velvety",
-            "gender": "neutral"
-        },
-        {
-            "name": "Versatile",
-            "gender": "neutral"
-        }
+        { "name": "Charismatic", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Evocative", "gender": "neutral" },
+        { "name": "Expressive", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Magnetic", "gender": "neutral" },
+        { "name": "Precise", "gender": "neutral" },
+        { "name": "Profound", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" },
+        { "name": "Versatile", "gender": "neutral" }
     ]
 }

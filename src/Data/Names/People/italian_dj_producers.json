@@ -1,6 +1,7 @@
 {
-    "name": "italian_dj_producers",
+    "key": "italian_dj_producers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Benny Benassi", "gender": "male" },
         { "name": "Gabry Ponte", "gender": "male" },

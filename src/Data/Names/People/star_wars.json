@@ -1,6 +1,7 @@
 {
-    "name": "star_wars",
+    "key": "star_wars",
     "type": "people",
+    "locale": "en",
     "values": [
         { "name": "Luke Skywalker", "gender": "male" },
         { "name": "Leia Organa", "gender": "female" },

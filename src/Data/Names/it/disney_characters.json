@@ -1,0 +1,21 @@
+{
+    "key": "disney_characters",
+    "locale": "it",
+    "values": {
+        "Mickey Mouse": "Topolino",
+        "Donald Duck": "Paperino",
+        "Goofy": "Pippo",
+        "Genie": "Genio",
+        "Beast": "Bestia",
+        "Cogsworth": "Tockins",
+        "Hades": "Ade",
+        "Captain Hook": "Capitan Uncino",
+        "Minnie Mouse": "Minni",
+        "Daisy Duck": "Paperina",
+        "Tinker Bell": "Trilli",
+        "Maleficent": "Malefica",
+        "Cinderella": "Cenerentola",
+        "Snow White": "Biancaneve",
+        "Moana": "Vaiana"
+    }
+}

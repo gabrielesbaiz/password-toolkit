@@ -1,0 +1,11 @@
+{
+    "key": "disney_villains",
+    "locale": "it",
+    "values": {
+        "Maleficent": "Malefica",
+        "Cruella De Vil": "Crudelia De Mon",
+        "Captain Hook": "Capitan Uncino",
+        "Evil Queen": "Regina Cattiva",
+        "Madam Mim": "Maga Mago"
+    }
+}

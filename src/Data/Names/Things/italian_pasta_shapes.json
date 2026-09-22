@@ -1,6 +1,7 @@
 {
-    "name": "italian_pasta_shapes",
+    "key": "italian_pasta_shapes",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Fusilli", "gender": "male" },
         { "name": "Orecchiette", "gender": "female" },

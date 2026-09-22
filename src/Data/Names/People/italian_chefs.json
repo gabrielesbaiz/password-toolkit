@@ -1,6 +1,7 @@
 {
-    "name": "italian_chefs",
+    "key": "italian_chefs",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Gualtiero Marchesi", "gender": "male" },
         { "name": "Massimo Bottura", "gender": "male" },

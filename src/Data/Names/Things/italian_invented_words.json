@@ -1,6 +1,7 @@
 {
-    "name": "italian_invented_words",
+    "key": "italian_invented_words",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Petaloso", "gender": "male" },
         { "name": "Apericena", "gender": "female" },

@@ -2,77 +2,23 @@
     "key": "pixar_characters",
     "locale": "en",
     "values": [
-        {
-            "name": "Adventurous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brave",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brilliant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Curious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Determined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dreaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Extraordinary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Heroic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Immortal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Likeable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Special",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tireless",
-            "gender": "neutral"
-        }
+        { "name": "Adventurous", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Curious", "gender": "neutral" },
+        { "name": "Determined", "gender": "neutral" },
+        { "name": "Dreaming", "gender": "neutral" },
+        { "name": "Extraordinary", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Likeable", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Special", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" }
     ]
 }

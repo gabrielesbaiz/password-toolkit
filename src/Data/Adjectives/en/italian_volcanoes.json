@@ -2,65 +2,20 @@
     "key": "italian_volcanoes",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ardent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Explosive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fiery",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imposing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Incandescent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Infernal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Majestic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Menacing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Primordial",
-            "gender": "neutral"
-        },
-        {
-            "name": "Seething",
-            "gender": "neutral"
-        },
-        {
-            "name": "Steaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wild",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Ardent", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Fiery", "gender": "neutral" },
+        { "name": "Imposing", "gender": "neutral" },
+        { "name": "Incandescent", "gender": "neutral" },
+        { "name": "Infernal", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Menacing", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Primordial", "gender": "neutral" },
+        { "name": "Seething", "gender": "neutral" },
+        { "name": "Steaming", "gender": "neutral" },
+        { "name": "Wild", "gender": "neutral" }
     ]
 }

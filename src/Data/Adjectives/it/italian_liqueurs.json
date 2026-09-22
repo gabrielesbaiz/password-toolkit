@@ -2,105 +2,30 @@
     "key": "italian_liqueurs",
     "locale": "it",
     "values": [
-        {
-            "name": "amaro",
-            "gender": "male"
-        },
-        {
-            "name": "amara",
-            "gender": "female"
-        },
-        {
-            "name": "aromatico",
-            "gender": "male"
-        },
-        {
-            "name": "aromatica",
-            "gender": "female"
-        },
-        {
-            "name": "profumato",
-            "gender": "male"
-        },
-        {
-            "name": "profumata",
-            "gender": "female"
-        },
-        {
-            "name": "intenso",
-            "gender": "male"
-        },
-        {
-            "name": "intensa",
-            "gender": "female"
-        },
-        {
-            "name": "secco",
-            "gender": "male"
-        },
-        {
-            "name": "secca",
-            "gender": "female"
-        },
-        {
-            "name": "dolce",
-            "gender": "neutral"
-        },
-        {
-            "name": "forte",
-            "gender": "neutral"
-        },
-        {
-            "name": "tradizionale",
-            "gender": "neutral"
-        },
-        {
-            "name": "balsamico",
-            "gender": "male"
-        },
-        {
-            "name": "balsamica",
-            "gender": "female"
-        },
-        {
-            "name": "ambrato",
-            "gender": "male"
-        },
-        {
-            "name": "ambrata",
-            "gender": "female"
-        },
-        {
-            "name": "digestivo",
-            "gender": "male"
-        },
-        {
-            "name": "digestiva",
-            "gender": "female"
-        },
-        {
-            "name": "speziato",
-            "gender": "male"
-        },
-        {
-            "name": "speziata",
-            "gender": "female"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        },
-        {
-            "name": "robusto",
-            "gender": "male"
-        },
-        {
-            "name": "robusta",
-            "gender": "female"
-        }
+        { "name": "amaro", "gender": "male" },
+        { "name": "amara", "gender": "female" },
+        { "name": "aromatico", "gender": "male" },
+        { "name": "aromatica", "gender": "female" },
+        { "name": "profumato", "gender": "male" },
+        { "name": "profumata", "gender": "female" },
+        { "name": "intenso", "gender": "male" },
+        { "name": "intensa", "gender": "female" },
+        { "name": "secco", "gender": "male" },
+        { "name": "secca", "gender": "female" },
+        { "name": "dolce", "gender": "neutral" },
+        { "name": "forte", "gender": "neutral" },
+        { "name": "tradizionale", "gender": "neutral" },
+        { "name": "balsamico", "gender": "male" },
+        { "name": "balsamica", "gender": "female" },
+        { "name": "ambrato", "gender": "male" },
+        { "name": "ambrata", "gender": "female" },
+        { "name": "digestivo", "gender": "male" },
+        { "name": "digestiva", "gender": "female" },
+        { "name": "speziato", "gender": "male" },
+        { "name": "speziata", "gender": "female" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" },
+        { "name": "robusto", "gender": "male" },
+        { "name": "robusta", "gender": "female" }
     ]
 }

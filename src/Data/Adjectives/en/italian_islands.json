@@ -2,57 +2,18 @@
     "key": "italian_islands",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Azure",
-            "gender": "neutral"
-        },
-        {
-            "name": "Charming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Crystalline",
-            "gender": "neutral"
-        },
-        {
-            "name": "Evocative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Heavenly",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Panoramic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Remote",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rocky",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sunlit",
-            "gender": "neutral"
-        },
-        {
-            "name": "Volcanic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wild",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Azure", "gender": "neutral" },
+        { "name": "Charming", "gender": "neutral" },
+        { "name": "Crystalline", "gender": "neutral" },
+        { "name": "Evocative", "gender": "neutral" },
+        { "name": "Heavenly", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Panoramic", "gender": "neutral" },
+        { "name": "Remote", "gender": "neutral" },
+        { "name": "Rocky", "gender": "neutral" },
+        { "name": "Sunlit", "gender": "neutral" },
+        { "name": "Volcanic", "gender": "neutral" },
+        { "name": "Wild", "gender": "neutral" }
     ]
 }

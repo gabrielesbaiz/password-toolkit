@@ -2,69 +2,21 @@
     "key": "italian_cars",
     "locale": "en",
     "values": [
-        {
-            "name": "Agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "Comfortable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gritty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Handy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Reliable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Roaring",
-            "gender": "neutral"
-        },
-        {
-            "name": "Robust",
-            "gender": "neutral"
-        },
-        {
-            "name": "Snappy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sporty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Swift",
-            "gender": "neutral"
-        },
-        {
-            "name": "Timeless",
-            "gender": "neutral"
-        }
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Comfortable", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Handy", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Reliable", "gender": "neutral" },
+        { "name": "Roaring", "gender": "neutral" },
+        { "name": "Robust", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Sporty", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Timeless", "gender": "neutral" }
     ]
 }

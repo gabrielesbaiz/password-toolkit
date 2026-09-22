@@ -159,7 +159,7 @@ Everything lives in `config/password-toolkit.php`.
 
 ```php
 'locale'          => null,   // null follows the application locale
-'fallback_locale' => 'it',   // used when the locale has no adjectives at all
+'fallback_locale' => 'en',   // used when the locale has no resources of its own
 ```
 
 ### Separator and word breaks
@@ -231,112 +231,114 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 ### Built-in
 
 91 dictionaries — **49 of people** and **42 of things** — holding
-2,049 names and 1,021 names respectively, each paired with themed Italian
-adjectives.
+2,049 names and 1,019 names respectively, each with themed adjectives in both
+Italian and English. The `source` column is the language a dictionary's names
+are written in; anything not in your locale is translated where a translation
+exists and left alone where it should be.
 
 <details>
 <summary><b>People (49)</b></summary>
 
-| Dictionary | Entries | Example |
-|---|---|---|
-| `back_to_the_future` | 17 | Marty McFly |
-| `cartoons` | 149 | Topolino |
-| `disney_characters` | 60 | Topolino |
-| `disney_villains` | 20 | Malefica |
-| `game_of_thrones` | 54 | Jon Snow |
-| `greek_mythology` | 68 | Zeus |
-| `harry_potter` | 71 | Harry Potter |
-| `hayao_miyazaki` | 20 | Totoro |
-| `italian_actors` | 69 | Roberto Benigni |
-| `italian_architects` | 43 | Renzo Piano |
-| `italian_basketball_legends` | 71 | Dino Meneghin |
-| `italian_chefs` | 44 | Gualtiero Marchesi |
-| `italian_comedians` | 40 | Roberto Benigni |
-| `italian_cyclists` | 50 | Fausto Coppi |
-| `italian_dj_producers` | 20 | Benny Benassi |
-| `italian_explorers` | 42 | Cristoforo Colombo |
-| `italian_fashion_designers` | 48 | Giorgio Armani |
-| `italian_film_directors` | 56 | Federico Fellini |
-| `italian_football_legends` | 74 | Roberto Baggio |
-| `italian_inventors` | 20 | Antonio Meucci |
-| `italian_journalists` | 20 | Indro Montanelli |
-| `italian_mathematicians` | 20 | Leonardo Fibonacci |
-| `italian_motogp_legends` | 20 | Valentino Rossi |
-| `italian_musicians` | 56 | Lucio Battisti |
-| `italian_nobel_prize_winners` | 14 | Guglielmo Marconi |
-| `italian_olympic_legends` | 20 | Alberto Tomba |
-| `italian_opera_composers` | 48 | Giuseppe Verdi |
-| `italian_painters` | 50 | Amedeo Modigliani |
-| `italian_poets` | 47 | Dante Alighieri |
-| `italian_presidents_of_the_republic` | 11 | Enrico De Nicola |
-| `italian_racing_drivers` | 49 | Alberto Ascari |
-| `italian_rappers` | 20 | Fabri Fibra |
-| `italian_renaissance_artists` | 64 | Leonardo da Vinci |
-| `italian_scientists` | 68 | Galileo Galilei |
-| `italian_singers_classic` | 20 | Mina |
-| `italian_singers_modern` | 20 | Marco Mengoni |
-| `italian_superheroes` | 35 | Diabolik |
-| `italian_television_personalities` | 35 | Maria De Filippi |
-| `italian_tennis_players` | 18 | Jannik Sinner |
-| `italian_voice_actors` | 20 | Ferruccio Amendola |
-| `italian_volleyball_legends` | 20 | Ivan Zaytsev |
-| `italian_writers` | 66 | Dante Alighieri |
-| `italian_youtubers` | 48 | Favij |
-| `lupin_iii_characters` | 18 | Lupin |
-| `philosophers` | 35 | Socrate |
-| `pixar_characters` | 45 | Woody |
-| `roman_emperors` | 25 | Augusto |
-| `roman_mythology` | 30 | Giove |
-| `star_wars` | 71 | Luke Skywalker |
+| Dictionary | Source | Entries | Example |
+|---|---|---|---|
+| `back_to_the_future` | en | 17 | Marty McFly |
+| `cartoons` | en | 149 | Mickey Mouse |
+| `disney_characters` | en | 60 | Mickey Mouse |
+| `disney_villains` | en | 20 | Maleficent |
+| `game_of_thrones` | en | 54 | Jon Snow |
+| `greek_mythology` | en | 68 | Zeus |
+| `harry_potter` | en | 71 | Harry Potter |
+| `hayao_miyazaki` | en | 20 | Totoro |
+| `italian_actors` | it | 69 | Roberto Benigni |
+| `italian_architects` | it | 43 | Renzo Piano |
+| `italian_basketball_legends` | it | 71 | Dino Meneghin |
+| `italian_chefs` | it | 44 | Gualtiero Marchesi |
+| `italian_comedians` | it | 40 | Roberto Benigni |
+| `italian_cyclists` | it | 50 | Fausto Coppi |
+| `italian_dj_producers` | it | 20 | Benny Benassi |
+| `italian_explorers` | it | 42 | Cristoforo Colombo |
+| `italian_fashion_designers` | it | 48 | Giorgio Armani |
+| `italian_film_directors` | it | 56 | Federico Fellini |
+| `italian_football_legends` | it | 74 | Roberto Baggio |
+| `italian_inventors` | it | 20 | Antonio Meucci |
+| `italian_journalists` | it | 20 | Indro Montanelli |
+| `italian_mathematicians` | it | 20 | Leonardo Fibonacci |
+| `italian_motogp_legends` | it | 20 | Valentino Rossi |
+| `italian_musicians` | it | 56 | Lucio Battisti |
+| `italian_nobel_prize_winners` | it | 14 | Guglielmo Marconi |
+| `italian_olympic_legends` | it | 20 | Alberto Tomba |
+| `italian_opera_composers` | it | 48 | Giuseppe Verdi |
+| `italian_painters` | it | 50 | Amedeo Modigliani |
+| `italian_poets` | it | 47 | Dante Alighieri |
+| `italian_presidents_of_the_republic` | it | 11 | Enrico De Nicola |
+| `italian_racing_drivers` | it | 49 | Alberto Ascari |
+| `italian_rappers` | it | 20 | Fabri Fibra |
+| `italian_renaissance_artists` | it | 64 | Leonardo da Vinci |
+| `italian_scientists` | it | 68 | Galileo Galilei |
+| `italian_singers_classic` | it | 20 | Mina |
+| `italian_singers_modern` | it | 20 | Marco Mengoni |
+| `italian_superheroes` | it | 35 | Diabolik |
+| `italian_television_personalities` | it | 35 | Maria De Filippi |
+| `italian_tennis_players` | it | 18 | Jannik Sinner |
+| `italian_voice_actors` | it | 20 | Ferruccio Amendola |
+| `italian_volleyball_legends` | it | 20 | Ivan Zaytsev |
+| `italian_writers` | it | 66 | Dante Alighieri |
+| `italian_youtubers` | it | 48 | Favij |
+| `lupin_iii_characters` | en | 18 | Lupin |
+| `philosophers` | en | 35 | Socrates |
+| `pixar_characters` | en | 45 | Woody |
+| `roman_emperors` | en | 25 | Augustus |
+| `roman_mythology` | en | 30 | Jupiter |
+| `star_wars` | en | 71 | Luke Skywalker |
 </details>
 
 <details>
 <summary><b>Things (42)</b></summary>
 
-| Dictionary | Entries | Example |
-|---|---|---|
-| `car_brands` | 49 | Ferrari |
-| `coffee_brands` | 27 | Lavazza |
-| `italian_aperitivi` | 18 | Spritz |
-| `italian_breads` | 20 | Ciabatta |
-| `italian_card_games` | 18 | Scopa |
-| `italian_carnival_masks` | 20 | Arlecchino |
-| `italian_cars` | 20 | Cinquecento |
-| `italian_castles` | 20 | Castel del Monte |
-| `italian_cheeses` | 24 | Parmigiano Reggiano |
-| `italian_children_games_2000s` | 28 | Beyblade |
-| `italian_children_games_70s` | 27 | Subbuteo |
-| `italian_children_games_80s` | 28 | He Man |
-| `italian_children_games_90s` | 28 | Tamagotchi |
-| `italian_circus_terms` | 20 | Saltimbanco |
-| `italian_cryptids_legends` | 20 | Befana |
-| `italian_cured_meats` | 20 | Prosciutto |
-| `italian_dance_styles` | 18 | Tarantella |
-| `italian_design_objects` | 21 | Arco |
-| `italian_desserts` | 20 | Tiramisu |
-| `italian_dialect_words` | 20 | Guaglione |
-| `italian_folk_instruments` | 20 | Mandolino |
-| `italian_icecream_flavors` | 18 | Stracciatella |
-| `italian_invented_words` | 19 | Petaloso |
-| `italian_islands` | 23 | Capri |
-| `italian_lakes` | 20 | Garda |
-| `italian_liqueurs` | 22 | Limoncello |
-| `italian_monuments` | 41 | Colosseo |
-| `italian_motorcycles` | 20 | Vespa |
-| `italian_mountains` | 20 | Cervino |
-| `italian_old_currencies` | 21 | Lira |
-| `italian_old_jobs` | 25 | Arrotino |
-| `italian_pasta_shapes` | 20 | Fusilli |
-| `italian_pizza_types` | 20 | Margherita |
-| `italian_progressive_rock_bands` | 20 | PFM |
-| `italian_regional_foods` | 57 | Cacciucco |
-| `italian_rivers` | 22 | Po |
-| `italian_sea_creatures` | 26 | Polpo |
-| `italian_street_foods` | 20 | Arancino |
-| `italian_train_stations_classic` | 21 | Roma Termini |
-| `italian_volcanoes` | 18 | Etna |
-| `italian_wine_regions` | 22 | Chianti |
-| `italian_wines` | 60 | Barolo |
+| Dictionary | Source | Entries | Example |
+|---|---|---|---|
+| `car_brands` | en | 49 | Ferrari |
+| `italian_aperitivi` | it | 18 | Spritz |
+| `italian_breads` | it | 20 | Ciabatta |
+| `italian_card_games` | it | 18 | Scopa |
+| `italian_carnival_masks` | it | 20 | Arlecchino |
+| `italian_cars` | it | 20 | Cinquecento |
+| `italian_castles` | it | 20 | Castel del Monte |
+| `italian_cheeses` | it | 24 | Parmigiano Reggiano |
+| `italian_children_games_2000s` | it | 28 | Beyblade |
+| `italian_children_games_70s` | it | 27 | Subbuteo |
+| `italian_children_games_80s` | it | 28 | He Man |
+| `italian_children_games_90s` | it | 28 | Tamagotchi |
+| `italian_circus_terms` | it | 20 | Saltimbanco |
+| `italian_coffee_brands` | it | 25 | Lavazza |
+| `italian_cryptids_legends` | it | 20 | Befana |
+| `italian_cured_meats` | it | 20 | Prosciutto |
+| `italian_dance_styles` | it | 18 | Tarantella |
+| `italian_design_objects` | it | 21 | Arco |
+| `italian_desserts` | it | 20 | Tiramisu |
+| `italian_dialect_words` | it | 20 | Guaglione |
+| `italian_folk_instruments` | it | 20 | Mandolino |
+| `italian_icecream_flavors` | it | 18 | Stracciatella |
+| `italian_invented_words` | it | 19 | Petaloso |
+| `italian_islands` | it | 23 | Capri |
+| `italian_lakes` | it | 20 | Garda |
+| `italian_liqueurs` | it | 22 | Limoncello |
+| `italian_monuments` | it | 41 | Colosseo |
+| `italian_motorcycles` | it | 20 | Vespa |
+| `italian_mountains` | it | 20 | Cervino |
+| `italian_old_currencies` | it | 21 | Lira |
+| `italian_old_jobs` | it | 25 | Arrotino |
+| `italian_pasta_shapes` | it | 20 | Fusilli |
+| `italian_pizza_types` | it | 20 | Margherita |
+| `italian_progressive_rock_bands` | it | 20 | PFM |
+| `italian_regional_foods` | it | 57 | Cacciucco |
+| `italian_rivers` | it | 22 | Po |
+| `italian_sea_creatures` | it | 26 | Polpo |
+| `italian_street_foods` | it | 20 | Arancino |
+| `italian_train_stations_classic` | it | 21 | Roma Termini |
+| `italian_volcanoes` | it | 18 | Etna |
+| `italian_wine_regions` | it | 22 | Chianti |
+| `italian_wines` | it | 60 | Barolo |
 
 </details>
 
@@ -418,16 +420,24 @@ first hit wins:
 3. `{fallback_locale}/{dictionary}.json`
 4. `{fallback_locale}/_default.json`
 
+**English is the reference locale.** A locale with no resources of its own falls
+back to English, not to Italian, because English is the language most likely to
+be understood by someone who did not get the locale they asked for. A French or
+German application therefore gets English adjectives and English names, and only
+the entries that are genuinely Italian stay Italian.
+
 Both Italian and English ship themed adjectives for all 91 dictionaries, plus a
 default pool for anything without one — 1,237 words in Italian, 224 in English.
 Italian adjectives agree with the gender of the name; English ones are all
 neutral, because English adjectives do not agree, so every one is eligible for
 every name.
 
-The English packs are generated from the Italian ones through a single
-glossary, `src/Data/Adjectives/_glossary.it-en.json`. Correcting a word is a
-one-line edit there followed by `php build/build-adjectives.php` — never a hand
-edit to a generated file, which a test will catch.
+Neither pack derives from the other at runtime: both are first-class data.
+`src/Data/Adjectives/_glossary.it-en.json` records the correspondence between
+them and `php build/build-adjectives.php` re-derives the English packs when the
+Italian ones gain entries. Correct a word in the glossary and re-run — never
+hand-edit a generated file, which a test will catch. A **new** locale should be
+translated from the English packs.
 
 **Word order follows the language.** Italian puts the adjective after the noun,
 English puts it before, and a password that gets this backwards reads as broken
@@ -465,46 +475,66 @@ later.
 
 ### Translated names
 
-Adjectives are only half of it. Some dictionaries hold Italian forms of
-something that has a real name elsewhere, and an English reader would not
-recognise the entry at all:
+**Every dictionary declares the language its names are written in**, because
+there is no single right answer for all 91 of them.
 
-| Italian | English |
-|---|---|
-| `Giove` | Jupiter |
-| `Marco Aurelio` | Marcus Aurelius |
-| `Cartesio` | Rene Descartes |
-| `Topolino` | Mickey Mouse |
-| `Albus Silente` | Albus Dumbledore |
-| `Saetta McQueen` | Lightning McQueen |
-| `Cervino` | Matterhorn |
-| `Colosseo` | Colosseum |
+A dictionary about Italian wines is Italian in every locale — `Barolo` is
+`Barolo`, and so is every pasta shape, cyclist and volcano. There is nothing to
+translate, and pretending otherwise would be worse than leaving it. 77
+dictionaries are like this.
 
-211 such names are translated, across 15 dictionaries. **Everything else is
-deliberately left alone.** Barolo is Barolo in every language, and so is every
-pasta shape, wine region and volcano — proper nouns do not translate, and
-pretending otherwise would be worse than leaving them.
+A dictionary about Harry Potter is English, and Italian is the dub. Its base
+holds `Albus Dumbledore`; `Albus Silente` lives in the Italian overlay. 14
+dictionaries are like this.
+
+| Base | Source | Italian | English |
+|---|---|---|---|
+| `harry_potter` | en | Albus Silente | **Albus Dumbledore** |
+| `disney_characters` | en | Topolino | **Mickey Mouse** |
+| `roman_emperors` | en | Marco Aurelio | **Marcus Aurelius** |
+| `philosophers` | en | Cartesio | **Rene Descartes** |
+| `italian_monuments` | it | **Colosseo** | Colosseum |
+| `italian_mountains` | it | **Cervino** | Matterhorn |
+| `italian_wines` | it | **Barolo** | *(none — and none wanted)* |
+
+211 names are translated, in both directions, across 15 dictionaries. Names
+resolve `{locale}` → `{fallback_locale}` → the base, so a French reader gets the
+English rendering wherever one exists and the untouched base everywhere else.
 
 ```php
-PasswordToolkit::make()->locale('it')->only('roman_mythology')->generate();
-// "Giunone-Potente-4507"
-
 PasswordToolkit::make()->locale('en')->only('roman_mythology')->generate();
-// "Powerful-Juno-5884"
+// "Olympic-Jupiter-5377"
 
-PasswordToolkit::make()->locale('en')->only('italian_wines')->generate();
-// "Voluptuous-Barolo-7000"   <- no translation, and none wanted
+PasswordToolkit::make()->locale('it')->only('roman_mythology')->generate();
+// "Giove-Eterno-5656"
+
+PasswordToolkit::make()->locale('fr')->only('italian_monuments')->generate();
+// "Historic-Uffizi-Gallery-1556"   <- no French pack, so English
+
+PasswordToolkit::make()->locale('de')->only('italian_wines')->generate();
+// "Mineral-Malvasia-6925"          <- nothing to translate, in any language
 ```
 
-Translation files live at `Data/Names/{locale}/{key}.json` and are a plain map.
-They are sparse on purpose: list only what differs, and anything absent keeps
-its base name.
+A base file declares its own language; translation files at
+`Data/Names/{locale}/{key}.json` are a plain map, sparse on purpose — list only
+what differs, and anything absent keeps its base name.
 
 ```json
 {
-    "key": "roman_mythology",
+    "key": "harry_potter",
+    "type": "people",
     "locale": "en",
-    "values": { "Giove": "Jupiter", "Nettuno": "Neptune" }
+    "values": [
+        { "name": "Albus Dumbledore", "gender": "male" }
+    ]
+}
+```
+
+```json
+{
+    "key": "harry_potter",
+    "locale": "it",
+    "values": { "Albus Dumbledore": "Albus Silente" }
 }
 ```
 
@@ -705,7 +735,8 @@ everything in `enabled`, or an `except` that cancels out the whole list.
 
 Neither your locale nor your fallback locale has any adjective pool for that
 dictionary. Every locale directory needs a `_default.json`; check
-`fallback_locale` points at one that has it.
+`fallback_locale` points at one that has it. It defaults to `en`, which always
+does.
 </details>
 
 <details>

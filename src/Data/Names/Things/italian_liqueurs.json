@@ -1,6 +1,7 @@
 {
-    "name": "italian_liqueurs",
+    "key": "italian_liqueurs",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Limoncello", "gender": "male" },
         { "name": "Amaro", "gender": "male" },

@@ -2,69 +2,21 @@
     "key": "italian_old_jobs",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Coarse",
-            "gender": "neutral"
-        },
-        {
-            "name": "Expert",
-            "gender": "neutral"
-        },
-        {
-            "name": "Handcrafted",
-            "gender": "neutral"
-        },
-        {
-            "name": "Hardworking",
-            "gender": "neutral"
-        },
-        {
-            "name": "Humble",
-            "gender": "neutral"
-        },
-        {
-            "name": "Industrious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Inventive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Patient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Robust",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Scrupulous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Skilled",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tireless",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Coarse", "gender": "neutral" },
+        { "name": "Expert", "gender": "neutral" },
+        { "name": "Handcrafted", "gender": "neutral" },
+        { "name": "Hardworking", "gender": "neutral" },
+        { "name": "Humble", "gender": "neutral" },
+        { "name": "Industrious", "gender": "neutral" },
+        { "name": "Inventive", "gender": "neutral" },
+        { "name": "Patient", "gender": "neutral" },
+        { "name": "Robust", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Scrupulous", "gender": "neutral" },
+        { "name": "Skilled", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

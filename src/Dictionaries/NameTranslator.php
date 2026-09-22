@@ -10,11 +10,12 @@ use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 /**
  * Renders a dictionary entry's name in the active locale.
  *
- * The shipped name data is Italian, and most of it is proper nouns that do not
- * translate: Barolo is Barolo in every language, and so are Etna, Ferrari and
- * every pasta shape. A few dictionaries are different — they hold Italian dub
- * or exonym forms of something that has a real name elsewhere, so Topolino is
- * Mickey Mouse, Cartesio is Descartes and Cervino is the Matterhorn.
+ * Every dictionary declares the language its names are written in, because
+ * there is no single right answer: a dictionary of Italian wines is Italian in
+ * every locale — Barolo is Barolo, and so are Etna, Cacciucco and every pasta
+ * shape — while one about Harry Potter is English, and Italian is the dub.
+ * Storing Albus Silente as canonical and Dumbledore as a translation would be
+ * backwards for an internationally published package.
  *
  * Translations are therefore additive and sparse. A locale file lists only the
  * entries that actually differ; anything absent keeps the base name, and a
@@ -22,10 +23,16 @@ use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
  * makes it safe to translate a handful of dictionaries well rather than all of
  * them badly.
  *
+ * Lookup order, first hit wins:
+ *
+ *   1. {locale}/{key}.json
+ *   2. {fallback}/{key}.json   — English exonyms for a locale with no pack
+ *   3. the base name
+ *
  * Files live at Data/Names/{locale}/{key}.json, shaped as a simple map:
  *
- *     { "key": "disney_characters", "locale": "en",
- *       "values": { "Topolino": "Mickey Mouse" } }
+ *     { "key": "harry_potter", "locale": "it",
+ *       "values": { "Albus Dumbledore": "Albus Silente" } }
  */
 final class NameTranslator
 {
@@ -74,15 +81,21 @@ final class NameTranslator
     {
         $locale = $options->resolvedLocale();
 
-        if ($locale === $options->fallbackLocale) {
+        // The dictionary is already in this language; there is nothing to look
+        // up, and no file should exist.
+        if ($entry->sourceLocale !== null && $locale === $entry->sourceLocale) {
             return $entry;
         }
 
-        $translated = $this->map($locale, $entry->dictionary)[$entry->name] ?? null;
+        foreach ([$locale, $options->fallbackLocale] as $candidate) {
+            $translated = $this->map($candidate, $entry->dictionary)[$entry->name] ?? null;
 
-        return $translated === null
-            ? $entry
-            : new Entry($translated, $entry->gender, $entry->dictionary);
+            if ($translated !== null) {
+                return new Entry($translated, $entry->gender, $entry->dictionary, $entry->sourceLocale);
+            }
+        }
+
+        return $entry;
     }
 
     /**

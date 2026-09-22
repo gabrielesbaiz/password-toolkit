@@ -2,81 +2,24 @@
     "key": "italian_painters",
     "locale": "en",
     "values": [
-        {
-            "name": "Abstract",
-            "gender": "neutral"
-        },
-        {
-            "name": "Avantgarde",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bold",
-            "gender": "neutral"
-        },
-        {
-            "name": "Brilliant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Colorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Expressionist",
-            "gender": "neutral"
-        },
-        {
-            "name": "Figurative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Futurist",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Immortal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innovative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Inspired",
-            "gender": "neutral"
-        },
-        {
-            "name": "Picturesque",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Revolutionary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sublime",
-            "gender": "neutral"
-        },
-        {
-            "name": "Visionary",
-            "gender": "neutral"
-        }
+        { "name": "Abstract", "gender": "neutral" },
+        { "name": "Avantgarde", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Expressionist", "gender": "neutral" },
+        { "name": "Figurative", "gender": "neutral" },
+        { "name": "Futurist", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Innovative", "gender": "neutral" },
+        { "name": "Inspired", "gender": "neutral" },
+        { "name": "Picturesque", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Revolutionary", "gender": "neutral" },
+        { "name": "Sublime", "gender": "neutral" },
+        { "name": "Visionary", "gender": "neutral" }
     ]
 }

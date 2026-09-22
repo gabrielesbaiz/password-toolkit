@@ -2,145 +2,40 @@
     "key": "italian_regional_foods",
     "locale": "en",
     "values": [
-        {
-            "name": "Aromatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Authentic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bitter",
-            "gender": "neutral"
-        },
-        {
-            "name": "Classic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creamy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Crunchy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Exotic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fluffy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fresh",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fried",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fruity",
-            "gender": "neutral"
-        },
-        {
-            "name": "Full",
-            "gender": "neutral"
-        },
-        {
-            "name": "Greedy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Light",
-            "gender": "neutral"
-        },
-        {
-            "name": "Limpid",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfumed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Plush",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rich",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Savory",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spicy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Steaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Subtle",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sweet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tantalizing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tasty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tender",
-            "gender": "neutral"
-        },
-        {
-            "name": "Velvety",
-            "gender": "neutral"
-        },
-        {
-            "name": "Vibrant",
-            "gender": "neutral"
-        }
+        { "name": "Aromatic", "gender": "neutral" },
+        { "name": "Authentic", "gender": "neutral" },
+        { "name": "Bitter", "gender": "neutral" },
+        { "name": "Classic", "gender": "neutral" },
+        { "name": "Creamy", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Crunchy", "gender": "neutral" },
+        { "name": "Delicate", "gender": "neutral" },
+        { "name": "Delicious", "gender": "neutral" },
+        { "name": "Dense", "gender": "neutral" },
+        { "name": "Exotic", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Fluffy", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Fried", "gender": "neutral" },
+        { "name": "Fruity", "gender": "neutral" },
+        { "name": "Full", "gender": "neutral" },
+        { "name": "Greedy", "gender": "neutral" },
+        { "name": "Light", "gender": "neutral" },
+        { "name": "Limpid", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Plush", "gender": "neutral" },
+        { "name": "Rich", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Savory", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Spicy", "gender": "neutral" },
+        { "name": "Steaming", "gender": "neutral" },
+        { "name": "Subtle", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Tantalizing", "gender": "neutral" },
+        { "name": "Tasty", "gender": "neutral" },
+        { "name": "Tender", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" },
+        { "name": "Vibrant", "gender": "neutral" }
     ]
 }

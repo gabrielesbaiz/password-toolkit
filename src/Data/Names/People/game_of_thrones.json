@@ -1,6 +1,7 @@
 {
-    "name": "game_of_thrones",
+    "key": "game_of_thrones",
     "type": "people",
+    "locale": "en",
     "values": [
         { "name": "Jon Snow", "gender": "male" },
         { "name": "Daenerys Targaryen", "gender": "female" },

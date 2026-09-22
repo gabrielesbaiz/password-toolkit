@@ -1,0 +1,31 @@
+{
+    "key": "cartoons",
+    "locale": "it",
+    "values": {
+        "Mickey Mouse": "Topolino",
+        "Donald Duck": "Paperino",
+        "Daisy Duck": "Paperina",
+        "Goofy": "Pippo",
+        "Squidward": "Squiddy",
+        "Mister Krabs": "Signor Krabs",
+        "Pearl": "Perla",
+        "Krusty the Clown": "Krusty il Clown",
+        "Bear": "Orso",
+        "Donkey": "Ciuchino",
+        "Snow White": "Biancaneve",
+        "Jiminy Cricket": "Grillo Parlante",
+        "Cinderella": "Cenerentola",
+        "Blue Fairy": "Fata Turchina",
+        "Sleeping Beauty": "Bella Addormentata",
+        "Maleficent": "Malefica",
+        "Belle": "Bella",
+        "Beast": "Bestia",
+        "Tinker Bell": "Trilli",
+        "Captain Hook": "Capitan Uncino",
+        "Tramp": "Vagabondo",
+        "Aladdin": "Aladino",
+        "Popeye": "Braccio di Ferro",
+        "Olive Oyl": "Oliva",
+        "Wimpy": "Poldo"
+    }
+}

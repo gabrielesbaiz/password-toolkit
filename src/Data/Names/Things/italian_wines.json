@@ -1,6 +1,7 @@
 {
-    "name": "italian_wines",
+    "key": "italian_wines",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Barolo", "gender": "male" },
         { "name": "Chianti", "gender": "male" },

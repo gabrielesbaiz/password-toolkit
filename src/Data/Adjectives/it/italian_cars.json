@@ -2,97 +2,28 @@
     "key": "italian_cars",
     "locale": "it",
     "values": [
-        {
-            "name": "veloce",
-            "gender": "neutral"
-        },
-        {
-            "name": "elegante",
-            "gender": "neutral"
-        },
-        {
-            "name": "sportivo",
-            "gender": "male"
-        },
-        {
-            "name": "sportiva",
-            "gender": "female"
-        },
-        {
-            "name": "scattante",
-            "gender": "neutral"
-        },
-        {
-            "name": "potente",
-            "gender": "neutral"
-        },
-        {
-            "name": "agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "rombante",
-            "gender": "neutral"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        },
-        {
-            "name": "leggendario",
-            "gender": "male"
-        },
-        {
-            "name": "leggendaria",
-            "gender": "female"
-        },
-        {
-            "name": "raffinato",
-            "gender": "male"
-        },
-        {
-            "name": "raffinata",
-            "gender": "female"
-        },
-        {
-            "name": "comodo",
-            "gender": "male"
-        },
-        {
-            "name": "comoda",
-            "gender": "female"
-        },
-        {
-            "name": "robusto",
-            "gender": "male"
-        },
-        {
-            "name": "robusta",
-            "gender": "female"
-        },
-        {
-            "name": "affidabile",
-            "gender": "neutral"
-        },
-        {
-            "name": "maneggevole",
-            "gender": "neutral"
-        },
-        {
-            "name": "intramontabile",
-            "gender": "neutral"
-        },
-        {
-            "name": "grintoso",
-            "gender": "male"
-        },
-        {
-            "name": "grintosa",
-            "gender": "female"
-        }
+        { "name": "veloce", "gender": "neutral" },
+        { "name": "elegante", "gender": "neutral" },
+        { "name": "sportivo", "gender": "male" },
+        { "name": "sportiva", "gender": "female" },
+        { "name": "scattante", "gender": "neutral" },
+        { "name": "potente", "gender": "neutral" },
+        { "name": "agile", "gender": "neutral" },
+        { "name": "rombante", "gender": "neutral" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" },
+        { "name": "leggendario", "gender": "male" },
+        { "name": "leggendaria", "gender": "female" },
+        { "name": "raffinato", "gender": "male" },
+        { "name": "raffinata", "gender": "female" },
+        { "name": "comodo", "gender": "male" },
+        { "name": "comoda", "gender": "female" },
+        { "name": "robusto", "gender": "male" },
+        { "name": "robusta", "gender": "female" },
+        { "name": "affidabile", "gender": "neutral" },
+        { "name": "maneggevole", "gender": "neutral" },
+        { "name": "intramontabile", "gender": "neutral" },
+        { "name": "grintoso", "gender": "male" },
+        { "name": "grintosa", "gender": "female" }
     ]
 }

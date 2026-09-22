@@ -1,6 +1,7 @@
 {
-    "name": "pixar_characters",
+    "key": "pixar_characters",
     "type": "people",
+    "locale": "en",
     "values": [
         { "name": "Woody", "gender": "male" },
         { "name": "Buzz Lightyear", "gender": "male" },
@@ -20,8 +21,8 @@
         { "name": "Dug", "gender": "male" },
         { "name": "Syndrome", "gender": "male" },
         { "name": "Dash", "gender": "male" },
-        { "name": "Cricchetto", "gender": "male" },
-        { "name": "Saetta McQueen", "gender": "male" },
+        { "name": "Mater", "gender": "male" },
+        { "name": "Lightning McQueen", "gender": "male" },
         { "name": "Chick Hicks", "gender": "male" },
         { "name": "Arlo", "gender": "male" },
         { "name": "Spot", "gender": "male" },
@@ -30,8 +31,8 @@
         { "name": "Joe Gardner", "gender": "male" },
         { "name": "Ian Lightfoot", "gender": "male" },
         { "name": "Barley Lightfoot", "gender": "male" },
-        { "name": "Paura", "gender": "male" },
-        { "name": "Rabbia", "gender": "male" },
+        { "name": "Fear", "gender": "male" },
+        { "name": "Anger", "gender": "male" },
         { "name": "Bing Bong", "gender": "male" },
         { "name": "Finn McMissile", "gender": "male" },
         { "name": "Jessie", "gender": "female" },
@@ -42,10 +43,10 @@
         { "name": "Boo", "gender": "female" },
         { "name": "Edna Mode", "gender": "female" },
         { "name": "Elastigirl", "gender": "female" },
-        { "name": "Violetta", "gender": "female" },
+        { "name": "Violet", "gender": "female" },
         { "name": "Merida", "gender": "female" },
-        { "name": "Gioia", "gender": "female" },
-        { "name": "Tristezza", "gender": "female" },
-        { "name": "Disgusto", "gender": "female" }
+        { "name": "Joy", "gender": "female" },
+        { "name": "Sadness", "gender": "female" },
+        { "name": "Disgust", "gender": "female" }
     ]
 }

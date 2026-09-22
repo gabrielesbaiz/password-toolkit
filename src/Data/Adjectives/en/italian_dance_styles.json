@@ -2,61 +2,19 @@
     "key": "italian_dance_styles",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Cheerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Energetic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Frantic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lively",
-            "gender": "neutral"
-        },
-        {
-            "name": "Merry",
-            "gender": "neutral"
-        },
-        {
-            "name": "Passionate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Popular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rhythmic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rousing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unleashed",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Cheerful", "gender": "neutral" },
+        { "name": "Energetic", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Merry", "gender": "neutral" },
+        { "name": "Passionate", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Rhythmic", "gender": "neutral" },
+        { "name": "Rousing", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" }
     ]
 }

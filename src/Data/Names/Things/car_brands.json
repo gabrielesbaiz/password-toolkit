@@ -1,6 +1,7 @@
 {
-    "name": "car_brands",
+    "key": "car_brands",
     "type": "things",
+    "locale": "en",
     "values": [
         { "name": "Ferrari", "gender": "female" },
         { "name": "Lamborghini", "gender": "female" },

@@ -1,6 +1,7 @@
 {
-    "name": "italian_mountains",
+    "key": "italian_mountains",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Cervino", "gender": "male" },
         { "name": "Gran Sasso", "gender": "male" },

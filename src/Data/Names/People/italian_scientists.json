@@ -1,6 +1,7 @@
 {
-    "name": "italian_scientists",
+    "key": "italian_scientists",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Galileo Galilei", "gender": "male" },
         { "name": "Alessandro Volta", "gender": "male" },

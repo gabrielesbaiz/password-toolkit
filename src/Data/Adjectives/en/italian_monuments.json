@@ -2,69 +2,21 @@
     "key": "italian_monuments",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Curious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Emblematic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Evocative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Famous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fascinating",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gorgeous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Historic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imposing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Impressive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magnificent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Majestic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sublime",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unique",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Curious", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Emblematic", "gender": "neutral" },
+        { "name": "Evocative", "gender": "neutral" },
+        { "name": "Famous", "gender": "neutral" },
+        { "name": "Fascinating", "gender": "neutral" },
+        { "name": "Gorgeous", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Imposing", "gender": "neutral" },
+        { "name": "Impressive", "gender": "neutral" },
+        { "name": "Magnificent", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Sublime", "gender": "neutral" },
+        { "name": "Unique", "gender": "neutral" }
     ]
 }

@@ -2,97 +2,28 @@
     "key": "italian_singers_modern",
     "locale": "it",
     "values": [
-        {
-            "name": "moderno",
-            "gender": "male"
-        },
-        {
-            "name": "moderna",
-            "gender": "female"
-        },
-        {
-            "name": "trendy",
-            "gender": "neutral"
-        },
-        {
-            "name": "energico",
-            "gender": "male"
-        },
-        {
-            "name": "energica",
-            "gender": "female"
-        },
-        {
-            "name": "carismatico",
-            "gender": "male"
-        },
-        {
-            "name": "carismatica",
-            "gender": "female"
-        },
-        {
-            "name": "ribelle",
-            "gender": "neutral"
-        },
-        {
-            "name": "audace",
-            "gender": "neutral"
-        },
-        {
-            "name": "innovativo",
-            "gender": "male"
-        },
-        {
-            "name": "innovativa",
-            "gender": "female"
-        },
-        {
-            "name": "pop",
-            "gender": "neutral"
-        },
-        {
-            "name": "iconico",
-            "gender": "male"
-        },
-        {
-            "name": "iconica",
-            "gender": "female"
-        },
-        {
-            "name": "emozionante",
-            "gender": "neutral"
-        },
-        {
-            "name": "passionale",
-            "gender": "neutral"
-        },
-        {
-            "name": "scatenato",
-            "gender": "male"
-        },
-        {
-            "name": "scatenata",
-            "gender": "female"
-        },
-        {
-            "name": "viscerale",
-            "gender": "neutral"
-        },
-        {
-            "name": "magnetico",
-            "gender": "male"
-        },
-        {
-            "name": "magnetica",
-            "gender": "female"
-        },
-        {
-            "name": "fresco",
-            "gender": "male"
-        },
-        {
-            "name": "fresca",
-            "gender": "female"
-        }
+        { "name": "moderno", "gender": "male" },
+        { "name": "moderna", "gender": "female" },
+        { "name": "trendy", "gender": "neutral" },
+        { "name": "energico", "gender": "male" },
+        { "name": "energica", "gender": "female" },
+        { "name": "carismatico", "gender": "male" },
+        { "name": "carismatica", "gender": "female" },
+        { "name": "ribelle", "gender": "neutral" },
+        { "name": "audace", "gender": "neutral" },
+        { "name": "innovativo", "gender": "male" },
+        { "name": "innovativa", "gender": "female" },
+        { "name": "pop", "gender": "neutral" },
+        { "name": "iconico", "gender": "male" },
+        { "name": "iconica", "gender": "female" },
+        { "name": "emozionante", "gender": "neutral" },
+        { "name": "passionale", "gender": "neutral" },
+        { "name": "scatenato", "gender": "male" },
+        { "name": "scatenata", "gender": "female" },
+        { "name": "viscerale", "gender": "neutral" },
+        { "name": "magnetico", "gender": "male" },
+        { "name": "magnetica", "gender": "female" },
+        { "name": "fresco", "gender": "male" },
+        { "name": "fresca", "gender": "female" }
     ]
 }

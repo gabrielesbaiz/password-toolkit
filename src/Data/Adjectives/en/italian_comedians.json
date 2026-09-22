@@ -2,81 +2,24 @@
     "key": "italian_comedians",
     "locale": "en",
     "values": [
-        {
-            "name": "Affectionate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Amusing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Charismatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Cheerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Enthusiastic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Exuberant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fresh",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gritty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innocent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intelligent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ironic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Playful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sharp",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sincere",
-            "gender": "neutral"
-        },
-        {
-            "name": "Smiling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sparkling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spontaneous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sympathetic",
-            "gender": "neutral"
-        }
+        { "name": "Affectionate", "gender": "neutral" },
+        { "name": "Amusing", "gender": "neutral" },
+        { "name": "Charismatic", "gender": "neutral" },
+        { "name": "Cheerful", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Enthusiastic", "gender": "neutral" },
+        { "name": "Exuberant", "gender": "neutral" },
+        { "name": "Fresh", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Innocent", "gender": "neutral" },
+        { "name": "Intelligent", "gender": "neutral" },
+        { "name": "Ironic", "gender": "neutral" },
+        { "name": "Playful", "gender": "neutral" },
+        { "name": "Sharp", "gender": "neutral" },
+        { "name": "Sincere", "gender": "neutral" },
+        { "name": "Smiling", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Spontaneous", "gender": "neutral" },
+        { "name": "Sympathetic", "gender": "neutral" }
     ]
 }

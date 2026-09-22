@@ -1,6 +1,7 @@
 {
-    "name": "italian_actors",
+    "key": "italian_actors",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Roberto Benigni", "gender": "male" },
         { "name": "Sophia Loren", "gender": "female" },

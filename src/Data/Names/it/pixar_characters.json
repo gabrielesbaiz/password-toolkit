@@ -1,0 +1,14 @@
+{
+    "key": "pixar_characters",
+    "locale": "it",
+    "values": {
+        "Mater": "Cricchetto",
+        "Lightning McQueen": "Saetta McQueen",
+        "Fear": "Paura",
+        "Anger": "Rabbia",
+        "Violet": "Violetta",
+        "Joy": "Gioia",
+        "Sadness": "Tristezza",
+        "Disgust": "Disgusto"
+    }
+}

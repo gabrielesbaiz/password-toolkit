@@ -2,69 +2,21 @@
     "key": "italian_street_foods",
     "locale": "en",
     "values": [
-        {
-            "name": "Appetizing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Authentic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Crunchy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Filling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fragrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Freerange",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fried",
-            "gender": "neutral"
-        },
-        {
-            "name": "Greasy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Greedy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irresistible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Popular",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Steaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tasty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Appetizing", "gender": "neutral" },
+        { "name": "Authentic", "gender": "neutral" },
+        { "name": "Crunchy", "gender": "neutral" },
+        { "name": "Filling", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Fragrant", "gender": "neutral" },
+        { "name": "Freerange", "gender": "neutral" },
+        { "name": "Fried", "gender": "neutral" },
+        { "name": "Greasy", "gender": "neutral" },
+        { "name": "Greedy", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Steaming", "gender": "neutral" },
+        { "name": "Tasty", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

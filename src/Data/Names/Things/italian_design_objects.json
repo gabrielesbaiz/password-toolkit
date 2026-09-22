@@ -1,6 +1,7 @@
 {
-    "name": "italian_design_objects",
+    "key": "italian_design_objects",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Arco", "gender": "male" },
         { "name": "Tolomeo", "gender": "male" },

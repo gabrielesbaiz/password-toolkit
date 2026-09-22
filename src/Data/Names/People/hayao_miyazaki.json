@@ -1,6 +1,7 @@
 {
-    "name": "hayao_miyazaki",
+    "key": "hayao_miyazaki",
     "type": "people",
+    "locale": "en",
     "values": [
         { "name": "Totoro", "gender": "male" },
         { "name": "Satsuki", "gender": "female" },

@@ -1,6 +1,7 @@
 {
-    "name": "italian_wine_regions",
+    "key": "italian_wine_regions",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Chianti", "gender": "male" },
         { "name": "Barolo", "gender": "male" },

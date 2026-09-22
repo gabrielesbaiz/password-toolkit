@@ -1,6 +1,7 @@
 {
-    "name": "italian_desserts",
+    "key": "italian_desserts",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Tiramisu", "gender": "male" },
         { "name": "Cannolo", "gender": "male" },

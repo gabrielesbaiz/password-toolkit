@@ -2,65 +2,20 @@
     "key": "italian_volleyball_legends",
     "locale": "en",
     "values": [
-        {
-            "name": "Agile",
-            "gender": "neutral"
-        },
-        {
-            "name": "Athletic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Charismatic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Concentrated",
-            "gender": "neutral"
-        },
-        {
-            "name": "Explosive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Gritty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Powerful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Snappy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tall",
-            "gender": "neutral"
-        },
-        {
-            "name": "Technical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tenacious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Triumphant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unbeatable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Winning",
-            "gender": "neutral"
-        }
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Athletic", "gender": "neutral" },
+        { "name": "Charismatic", "gender": "neutral" },
+        { "name": "Concentrated", "gender": "neutral" },
+        { "name": "Explosive", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Powerful", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Tall", "gender": "neutral" },
+        { "name": "Technical", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Triumphant", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Winning", "gender": "neutral" }
     ]
 }

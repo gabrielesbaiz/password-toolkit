@@ -1,0 +1,18 @@
+{
+    "key": "harry_potter",
+    "locale": "it",
+    "values": {
+        "Albus Dumbledore": "Albus Silente",
+        "Minerva McGonagall": "Minerva McGranitt",
+        "Severus Snape": "Severus Piton",
+        "Neville Longbottom": "Neville Paciock",
+        "Gilderoy Lockhart": "Gilderoy Allock",
+        "Filius Flitwick": "Filius Vitious",
+        "Horace Slughorn": "Horace Lumacorno",
+        "Madam Malkin": "Madama Malkin",
+        "Sybill Trelawney": "Sibilla Cooman",
+        "Ariana Dumbledore": "Arianna Silente",
+        "Peter Pettigrew": "Peter Minus",
+        "Lavender Brown": "Lavanda Brown"
+    }
+}

@@ -2,89 +2,26 @@
     "key": "italian_children_games_90s",
     "locale": "en",
     "values": [
-        {
-            "name": "Carefree",
-            "gender": "neutral"
-        },
-        {
-            "name": "Collectible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Digital",
-            "gender": "neutral"
-        },
-        {
-            "name": "Electrifying",
-            "gender": "neutral"
-        },
-        {
-            "name": "Electronic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fabulous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fluorescent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innovative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Kaleidoscopic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Lively",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magnetic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Monstrous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Multimedia",
-            "gender": "neutral"
-        },
-        {
-            "name": "Mythical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Nostalgic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Portable",
-            "gender": "neutral"
-        },
-        {
-            "name": "Revolutionary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sparkling",
-            "gender": "neutral"
-        },
-        {
-            "name": "Virtual",
-            "gender": "neutral"
-        }
+        { "name": "Carefree", "gender": "neutral" },
+        { "name": "Collectible", "gender": "neutral" },
+        { "name": "Digital", "gender": "neutral" },
+        { "name": "Electrifying", "gender": "neutral" },
+        { "name": "Electronic", "gender": "neutral" },
+        { "name": "Fabulous", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Innovative", "gender": "neutral" },
+        { "name": "Kaleidoscopic", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Magnetic", "gender": "neutral" },
+        { "name": "Monstrous", "gender": "neutral" },
+        { "name": "Multimedia", "gender": "neutral" },
+        { "name": "Mythical", "gender": "neutral" },
+        { "name": "Nostalgic", "gender": "neutral" },
+        { "name": "Portable", "gender": "neutral" },
+        { "name": "Revolutionary", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Virtual", "gender": "neutral" }
     ]
 }

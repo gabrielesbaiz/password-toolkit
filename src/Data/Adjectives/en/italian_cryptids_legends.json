@@ -2,61 +2,19 @@
     "key": "italian_cryptids_legends",
     "locale": "en",
     "values": [
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Bewitched",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dark",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elusive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Feral",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ferocious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Magical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Mysterious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Nocturnal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Occult",
-            "gender": "neutral"
-        },
-        {
-            "name": "Shadowy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spectral",
-            "gender": "neutral"
-        },
-        {
-            "name": "Unsettling",
-            "gender": "neutral"
-        }
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Bewitched", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Elusive", "gender": "neutral" },
+        { "name": "Feral", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Mysterious", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Occult", "gender": "neutral" },
+        { "name": "Shadowy", "gender": "neutral" },
+        { "name": "Spectral", "gender": "neutral" },
+        { "name": "Unsettling", "gender": "neutral" }
     ]
 }

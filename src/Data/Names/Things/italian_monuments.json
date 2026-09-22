@@ -1,6 +1,7 @@
 {
-    "name": "italian_monuments",
+    "key": "italian_monuments",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Colosseo", "gender": "male" },
         { "name": "Torre di Pisa", "gender": "female" },

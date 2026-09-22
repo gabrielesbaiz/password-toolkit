@@ -1,6 +1,7 @@
 {
-    "name": "italian_pizza_types",
+    "key": "italian_pizza_types",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Margherita", "gender": "female" },
         { "name": "Marinara", "gender": "female" },

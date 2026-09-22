@@ -1,6 +1,7 @@
 {
-    "name": "italian_circus_terms",
+    "key": "italian_circus_terms",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Saltimbanco", "gender": "male" },
         { "name": "Giocoliere", "gender": "male" },

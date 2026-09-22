@@ -2,57 +2,18 @@
     "key": "italian_mountains",
     "locale": "en",
     "values": [
-        {
-            "name": "Alpine",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ancient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Dizzying",
-            "gender": "neutral"
-        },
-        {
-            "name": "Frozen",
-            "gender": "neutral"
-        },
-        {
-            "name": "Imposing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Legendary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Majestic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Panoramic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rocky",
-            "gender": "neutral"
-        },
-        {
-            "name": "Snowy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Steep",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tall",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wild",
-            "gender": "neutral"
-        }
+        { "name": "Alpine", "gender": "neutral" },
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Dizzying", "gender": "neutral" },
+        { "name": "Frozen", "gender": "neutral" },
+        { "name": "Imposing", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Panoramic", "gender": "neutral" },
+        { "name": "Rocky", "gender": "neutral" },
+        { "name": "Snowy", "gender": "neutral" },
+        { "name": "Steep", "gender": "neutral" },
+        { "name": "Tall", "gender": "neutral" },
+        { "name": "Wild", "gender": "neutral" }
     ]
 }

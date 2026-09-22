@@ -19,12 +19,14 @@ final readonly class Entry
         public string $name,
         public Gender $gender,
         public string $dictionary,
+        /** The language this dictionary's names are written in. */
+        public ?string $sourceLocale = null,
     ) {}
 
     /**
      * @param  array<string, mixed>  $data
      */
-    public static function fromArray(array $data, string $dictionary): self
+    public static function fromArray(array $data, string $dictionary, ?string $sourceLocale = null): self
     {
         $name = isset($data['name']) && is_scalar($data['name'])
             ? trim((string) preg_replace('/\s+/u', ' ', (string) $data['name']))
@@ -47,6 +49,6 @@ final readonly class Entry
             ? Gender::parse((string) $data['gender'])
             : Gender::Neutral;
 
-        return new self($name, $gender, $dictionary);
+        return new self($name, $gender, $dictionary, $sourceLocale);
     }
 }

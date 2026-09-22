@@ -1,6 +1,7 @@
 {
-    "name": "italian_youtubers",
+    "key": "italian_youtubers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Favij", "gender": "male" },
         { "name": "Frank Matano", "gender": "male" },

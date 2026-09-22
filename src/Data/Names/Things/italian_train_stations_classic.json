@@ -1,6 +1,7 @@
 {
-    "name": "italian_train_stations_classic",
+    "key": "italian_train_stations_classic",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Roma Termini", "gender": "neutral" },
         { "name": "Milano Centrale", "gender": "neutral" },

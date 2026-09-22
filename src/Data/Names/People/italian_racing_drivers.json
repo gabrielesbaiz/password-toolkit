@@ -1,6 +1,7 @@
 {
-    "name": "italian_racing_drivers",
+    "key": "italian_racing_drivers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Alberto Ascari", "gender": "male" },
         { "name": "Tazio Nuvolari", "gender": "male" },

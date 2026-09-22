@@ -1,6 +1,7 @@
 {
-    "name": "italian_explorers",
+    "key": "italian_explorers",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Cristoforo Colombo", "gender": "male" },
         { "name": "Amerigo Vespucci", "gender": "male" },

@@ -15,6 +15,37 @@ dataset('translationFiles', fn () => collect((array) glob(dirname(__DIR__).'/src
         basename(dirname((string) $path)).'/'.basename((string) $path) => [(string) $path],
     ])->all());
 
+/**
+ * Every name in a dictionary, as the given locale would render it.
+ */
+function renderAll(string $key, string $locale): array
+{
+    $translator = app(NameTranslator::class);
+    $options = (new Options)->with(locale: $locale, fallbackLocale: 'en');
+    $source = sourceLocale($key);
+
+    return array_map(
+        fn (string $name): string => $translator->translate(
+            new Entry($name, Gender::Neutral, $key, $source),
+            $options,
+        )->name,
+        baseNames($key),
+    );
+}
+
+function sourceLocale(string $key): ?string
+{
+    foreach (['People', 'Things'] as $type) {
+        $path = packagePath("src/Data/Names/{$type}/{$key}.json");
+
+        if (file_exists($path)) {
+            return json_decode((string) file_get_contents($path), true)['locale'] ?? null;
+        }
+    }
+
+    return null;
+}
+
 function baseNames(string $key): array
 {
     foreach (['People', 'Things'] as $type) {
@@ -78,51 +109,40 @@ describe('translation behaviour', function () {
     });
 
     it('renders translated names in the target locale', function () {
-        $translator = app(NameTranslator::class);
-        $options = (new Options)->with(locale: 'en', fallbackLocale: 'it');
-
-        // Asserted over the whole dictionary rather than a random sample, so
-        // the test cannot flake on an unlucky draw.
-        $rendered = array_map(
-            fn (string $name): string => $translator->translate(
-                new Entry($name, Gender::Neutral, 'roman_mythology'),
-                $options,
-            )->name,
-            baseNames('roman_mythology'),
-        );
-
-        expect($rendered)->toContain('Jupiter')->not->toContain('Giove');
-    });
-
-    it('leaves the base locale untouched', function () {
-        $translator = app(NameTranslator::class);
-        $options = (new Options)->with(locale: 'it', fallbackLocale: 'it');
-
-        $rendered = array_map(
-            fn (string $name): string => $translator->translate(
-                new Entry($name, Gender::Neutral, 'roman_mythology'),
-                $options,
-            )->name,
-            baseNames('roman_mythology'),
-        );
+        // roman_mythology is an English-base dictionary now, so Italian is the
+        // translation. Asserted over the whole dictionary rather than a random
+        // sample, so the test cannot flake on an unlucky draw.
+        $rendered = renderAll('roman_mythology', 'it');
 
         expect($rendered)->toContain('Giove')->not->toContain('Jupiter');
     });
 
+    it('leaves a dictionary already in the active language untouched', function () {
+        expect(renderAll('roman_mythology', 'en'))->toContain('Jupiter')->not->toContain('Giove');
+    });
+
+    it('translates an Italian-base dictionary into English', function () {
+        // italian_monuments is the other direction: the subject is Italian, so
+        // the base stays Italian and English is the overlay.
+        expect(renderAll('italian_monuments', 'en'))->toContain('Colosseum')->not->toContain('Colosseo');
+    });
+
+    it('gives an unsupported locale the fallback rendering', function () {
+        // French has no packs, so it should land on English rather than on
+        // whatever the base happens to be.
+        expect(renderAll('italian_monuments', 'fr'))->toContain('Colosseum')
+            ->and(renderAll('roman_mythology', 'fr'))->toContain('Jupiter');
+    });
+
     it('renders a translated name into a generated password', function () {
-        config()->set('password-toolkit.locale', 'en');
-        PasswordToolkit::registerDictionary('solo', ['Giove'], 'people');
-        onlyDictionaries('solo');
+        config()->set('password-toolkit.locale', 'it');
+        onlyDictionaries('harry_potter');
 
-        // A one-entry dictionary makes this deterministic, but it is keyed
-        // 'solo', so nothing translates it.
-        expect(PasswordToolkit::make()->keepWordBreaks(false)->generate())->toContain('Giove');
+        $names = collect(PasswordToolkit::make()->keepWordBreaks(false)->many(60))
+            ->map(fn (string $password): string => explode('-', $password)[0]);
 
-        onlyDictionaries('roman_mythology');
-        config()->set('password-toolkit.dictionaries.except', array_values(array_diff(
-            baseNames('roman_mythology'),
-            ['Giove'],
-        )));
+        // Italian readers know him as Silente, and the base now says Dumbledore.
+        expect($names)->not->toContain('Dumbledore');
     });
 
     it('keeps untranslated names as they are', function () {
@@ -143,9 +163,9 @@ describe('translation behaviour', function () {
 
     it('falls through for a name the file does not list', function () {
         $translator = app(NameTranslator::class);
-        $options = (new Options)->with(locale: 'en', fallbackLocale: 'it');
+        $options = (new Options)->with(locale: 'it', fallbackLocale: 'en');
 
-        $entry = new Entry('Apollo', Gender::Male, 'roman_mythology');
+        $entry = new Entry('Apollo', Gender::Male, 'roman_mythology', 'en');
 
         // Apollo is Apollo in both languages, so it is deliberately absent.
         expect($translator->translate($entry, $options)->name)->toBe('Apollo');
@@ -154,7 +174,63 @@ describe('translation behaviour', function () {
     it('reports coverage per dictionary', function () {
         $translator = app(NameTranslator::class);
 
-        expect($translator->coverage('roman_mythology', 'en'))->toBeGreaterThan(0)
+        expect($translator->coverage('roman_mythology', 'it'))->toBeGreaterThan(0)
+            ->and($translator->coverage('italian_monuments', 'en'))->toBeGreaterThan(0)
             ->and($translator->coverage('italian_wines', 'en'))->toBe(0);
+    });
+});
+
+describe('source locale', function () {
+    it('is declared by every built-in dictionary', function () {
+        foreach ((array) glob(packagePath('src/Data/Names/{People,Things}/*.json'), GLOB_BRACE) as $file) {
+            $json = json_decode((string) file_get_contents((string) $file), true);
+
+            // Without this the translator cannot tell "nothing to translate"
+            // from "not translated yet".
+            expect($json['locale'] ?? null)->toBeIn(['en', 'it'], basename((string) $file).' declares none');
+        }
+    });
+
+    it('never ships a translation file for a dictionary already in that language', function () {
+        foreach ((array) glob(packagePath('src/Data/Names/*/*.json')) as $file) {
+            $locale = basename(dirname((string) $file));
+
+            if (in_array($locale, ['People', 'Things'], true)) {
+                continue;
+            }
+
+            $key = basename((string) $file, '.json');
+
+            expect(sourceLocale($key))->not->toBe(
+                $locale,
+                "[{$key}] is already in [{$locale}] but ships a {$locale}/ overlay",
+            );
+        }
+    });
+
+    it('keeps dictionaries about Italian subjects on an Italian base', function () {
+        // Barolo is Barolo in every language. Calling these English-base would
+        // be mislabelling, not internationalising.
+        foreach (['italian_wines', 'italian_pasta_shapes', 'italian_volcanoes', 'italian_cyclists'] as $key) {
+            expect(sourceLocale($key))->toBe('it');
+        }
+    });
+
+    it('puts dictionaries about non-Italian subjects on an English base', function () {
+        foreach (['harry_potter', 'star_wars', 'disney_characters', 'greek_mythology', 'roman_emperors'] as $key) {
+            expect(sourceLocale($key))->toBe('en');
+        }
+    });
+
+    it('holds the original name in the base, not the dub', function () {
+        expect(baseNames('harry_potter'))->toContain('Albus Dumbledore')->not->toContain('Albus Silente')
+            ->and(baseNames('roman_mythology'))->toContain('Jupiter')->not->toContain('Giove')
+            ->and(baseNames('disney_characters'))->toContain('Mickey Mouse')->not->toContain('Topolino');
+    });
+
+    it('still renders Italian for an Italian reader', function () {
+        expect(renderAll('harry_potter', 'it'))->toContain('Albus Silente')
+            ->and(renderAll('disney_characters', 'it'))->toContain('Topolino')
+            ->and(renderAll('italian_wines', 'it'))->toContain('Barolo');
     });
 });

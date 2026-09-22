@@ -2,65 +2,20 @@
     "key": "italian_pizza_types",
     "locale": "en",
     "values": [
-        {
-            "name": "Appetizing",
-            "gender": "neutral"
-        },
-        {
-            "name": "Authentic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Crunchy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fluffy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fragrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irresistible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfumed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Steaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Stringy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Appetizing", "gender": "neutral" },
+        { "name": "Authentic", "gender": "neutral" },
+        { "name": "Crunchy", "gender": "neutral" },
+        { "name": "Delicious", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Fluffy", "gender": "neutral" },
+        { "name": "Fragrant", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Steaming", "gender": "neutral" },
+        { "name": "Stringy", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

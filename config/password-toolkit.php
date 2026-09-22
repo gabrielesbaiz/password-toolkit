@@ -14,15 +14,20 @@ return [
     | every locale ships a _default pool, so a dictionary without a themed file
     | for the active locale still works.
     |
-    | 'fallback_locale' is used when the active locale has no pool at all. It
-    | defaults to Italian because that is where the built-in themed adjectives
-    | are, and because the built-in names are largely Italian too.
+    | 'fallback_locale' is what a locale with no resources of its own falls back
+    | to. English, because it is the language most likely to be understood by
+    | someone who does not read the locale they asked for.
+    |
+    | Names work the same way, with one difference: each dictionary declares the
+    | language its names are written in. A dictionary of Italian wines is
+    | Italian in every locale, because Barolo is Barolo; one about Harry Potter
+    | is English, and Italian is a translation of it.
     |
     */
 
     'locale' => null,
 
-    'fallback_locale' => 'it',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

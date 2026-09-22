@@ -1,6 +1,7 @@
 {
-    "name": "italian_cryptids_legends",
+    "key": "italian_cryptids_legends",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Befana", "gender": "female" },
         { "name": "Mazzamurello", "gender": "male" },

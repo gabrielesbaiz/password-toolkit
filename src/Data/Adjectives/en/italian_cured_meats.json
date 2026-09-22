@@ -2,57 +2,18 @@
     "key": "italian_cured_meats",
     "locale": "en",
     "values": [
-        {
-            "name": "Aged",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Genuine",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intense",
-            "gender": "neutral"
-        },
-        {
-            "name": "Prized",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Smoked",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spiced",
-            "gender": "neutral"
-        },
-        {
-            "name": "Spicy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sweet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Aged", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Genuine", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Intense", "gender": "neutral" },
+        { "name": "Prized", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Smoked", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Spiced", "gender": "neutral" },
+        { "name": "Spicy", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

@@ -1,6 +1,7 @@
 {
-    "name": "back_to_the_future",
+    "key": "back_to_the_future",
     "type": "people",
+    "locale": "en",
     "values": [
         { "name": "Marty McFly", "gender": "male" },
         { "name": "Doc Brown", "gender": "male" },
@@ -9,15 +10,15 @@
         { "name": "George McFly", "gender": "male" },
         { "name": "Lorraine Baines", "gender": "female" },
         { "name": "Einstein", "gender": "male" },
-        { "name": "Sindaco Goldie Wilson", "gender": "male" },
+        { "name": "Mayor Goldie Wilson", "gender": "male" },
         { "name": "Clara Clayton", "gender": "female" },
-        { "name": "Cane Pazzo Tannen", "gender": "male" },
+        { "name": "Mad Dog Tannen", "gender": "male" },
         { "name": "Seamus McFly", "gender": "male" },
         { "name": "Maggie McFly", "gender": "female" },
         { "name": "Marlene McFly", "gender": "female" },
         { "name": "Marty McFly Junior", "gender": "male" },
         { "name": "Linda McFly", "gender": "female" },
         { "name": "Giulio Eratostene Brown", "gender": "male" },
-        { "name": "Copernico", "gender": "male" }
+        { "name": "Copernicus", "gender": "male" }
     ]
 }

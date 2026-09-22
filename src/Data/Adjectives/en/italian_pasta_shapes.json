@@ -2,57 +2,18 @@
     "key": "italian_pasta_shapes",
     "locale": "en",
     "values": [
-        {
-            "name": "Authentic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creamy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Flavorful",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fragrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Genuine",
-            "gender": "neutral"
-        },
-        {
-            "name": "Greedy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irresistible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Rustic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Steaming",
-            "gender": "neutral"
-        },
-        {
-            "name": "Succulent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Tasty",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        }
+        { "name": "Authentic", "gender": "neutral" },
+        { "name": "Creamy", "gender": "neutral" },
+        { "name": "Delicious", "gender": "neutral" },
+        { "name": "Flavorful", "gender": "neutral" },
+        { "name": "Fragrant", "gender": "neutral" },
+        { "name": "Genuine", "gender": "neutral" },
+        { "name": "Greedy", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Rustic", "gender": "neutral" },
+        { "name": "Steaming", "gender": "neutral" },
+        { "name": "Succulent", "gender": "neutral" },
+        { "name": "Tasty", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" }
     ]
 }

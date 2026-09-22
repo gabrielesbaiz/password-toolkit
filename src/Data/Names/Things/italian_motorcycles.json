@@ -1,6 +1,7 @@
 {
-    "name": "italian_motorcycles",
+    "key": "italian_motorcycles",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Vespa", "gender": "female" },
         { "name": "Monster", "gender": "neutral" },

@@ -78,7 +78,7 @@ PasswordToolkit::make()
 
 ```php
 'locale'          => null,   // null follows app()->getLocale()
-'fallback_locale' => 'it',
+'fallback_locale' => 'en',
 
 'dictionaries' => [
     'enabled' => '*',                    // '*' or ['star_wars', …]
@@ -146,12 +146,19 @@ neutral). English packs are generated from
 `src/Data/Adjectives/_glossary.it-en.json` by `build/build-adjectives.php` —
 edit the glossary, never a generated file.
 
-Names are translated sparsely: 211 entries across 15 dictionaries, where an
-Italian form has a real English one (Giove/Jupiter, Topolino/Mickey Mouse,
-Albus Silente/Dumbledore, Cervino/Matterhorn). Proper nouns are deliberately
-untranslated — Barolo is Barolo in every language. Files live at
+English is the reference locale: `fallback_locale` is `en`, so an app in a
+language with no packs gets English, not Italian.
+
+Every dictionary declares the language its **names** are in, via `locale` in the
+base file. 77 are `it` — Italian wines, pasta, cyclists, volcanoes — and are
+correct untranslated in every locale, because Barolo is Barolo. 14 are `en`,
+with Italian as an overlay: the base says `Albus Dumbledore`, and
+`Data/Names/it/harry_potter.json` maps it to `Albus Silente`.
+
+Names resolve `{locale}` → `{fallback_locale}` → base. Files live at
 `Data/Names/{locale}/{key}.json` as a plain map, or
-`{userpath}/names/{locale}/{key}.json` for a user dictionary.
+`{userpath}/names/{locale}/{key}.json` for a user dictionary. When adding a
+dictionary, setting `locale` correctly is the decision that matters.
 
 **Word order follows the language.** Each locale's `_default.json` declares
 `"adjective_position": "before" | "after"` — Italian says `Goldrake-Mitico`,

@@ -2,65 +2,20 @@
     "key": "italian_design_objects",
     "locale": "en",
     "values": [
-        {
-            "name": "Bold",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Essential",
-            "gender": "neutral"
-        },
-        {
-            "name": "Futuristic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Geometric",
-            "gender": "neutral"
-        },
-        {
-            "name": "Iconic",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innovative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Linear",
-            "gender": "neutral"
-        },
-        {
-            "name": "Luminous",
-            "gender": "neutral"
-        },
-        {
-            "name": "Minimal",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sculptural",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Timeless",
-            "gender": "neutral"
-        }
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Essential", "gender": "neutral" },
+        { "name": "Futuristic", "gender": "neutral" },
+        { "name": "Geometric", "gender": "neutral" },
+        { "name": "Iconic", "gender": "neutral" },
+        { "name": "Innovative", "gender": "neutral" },
+        { "name": "Linear", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Minimal", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Sculptural", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Timeless", "gender": "neutral" }
     ]
 }

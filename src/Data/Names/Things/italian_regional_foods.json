@@ -1,6 +1,7 @@
 {
-    "name": "italian_regional_foods",
+    "key": "italian_regional_foods",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Cacciucco", "gender": "male" },
         { "name": "Frittura", "gender": "female" },

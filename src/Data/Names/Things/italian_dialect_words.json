@@ -1,6 +1,7 @@
 {
-    "name": "italian_dialect_words",
+    "key": "italian_dialect_words",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Guaglione", "gender": "male" },
         { "name": "Belin", "gender": "male" },

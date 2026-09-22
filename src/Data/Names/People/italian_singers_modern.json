@@ -1,6 +1,7 @@
 {
-    "name": "italian_singers_modern",
+    "key": "italian_singers_modern",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Marco Mengoni", "gender": "male" },
         { "name": "Tiziano Ferro", "gender": "male" },

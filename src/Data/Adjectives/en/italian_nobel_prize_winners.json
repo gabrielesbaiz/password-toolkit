@@ -2,81 +2,24 @@
     "key": "italian_nobel_prize_winners",
     "locale": "en",
     "values": [
-        {
-            "name": "Brilliant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Compassionate",
-            "gender": "neutral"
-        },
-        {
-            "name": "Creative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Determined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Excellent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Exceptional",
-            "gender": "neutral"
-        },
-        {
-            "name": "Extraordinary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fascinating",
-            "gender": "neutral"
-        },
-        {
-            "name": "Impressive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Influential",
-            "gender": "neutral"
-        },
-        {
-            "name": "Ingenious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Innovative",
-            "gender": "neutral"
-        },
-        {
-            "name": "Intelligent",
-            "gender": "neutral"
-        },
-        {
-            "name": "Methodical",
-            "gender": "neutral"
-        },
-        {
-            "name": "Pioneering",
-            "gender": "neutral"
-        },
-        {
-            "name": "Profound",
-            "gender": "neutral"
-        },
-        {
-            "name": "Resilient",
-            "gender": "neutral"
-        },
-        {
-            "name": "Visionary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Wonderful",
-            "gender": "neutral"
-        }
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Compassionate", "gender": "neutral" },
+        { "name": "Creative", "gender": "neutral" },
+        { "name": "Determined", "gender": "neutral" },
+        { "name": "Excellent", "gender": "neutral" },
+        { "name": "Exceptional", "gender": "neutral" },
+        { "name": "Extraordinary", "gender": "neutral" },
+        { "name": "Fascinating", "gender": "neutral" },
+        { "name": "Impressive", "gender": "neutral" },
+        { "name": "Influential", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Innovative", "gender": "neutral" },
+        { "name": "Intelligent", "gender": "neutral" },
+        { "name": "Methodical", "gender": "neutral" },
+        { "name": "Pioneering", "gender": "neutral" },
+        { "name": "Profound", "gender": "neutral" },
+        { "name": "Resilient", "gender": "neutral" },
+        { "name": "Visionary", "gender": "neutral" },
+        { "name": "Wonderful", "gender": "neutral" }
     ]
 }

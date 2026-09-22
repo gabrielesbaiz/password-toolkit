@@ -1,6 +1,7 @@
 {
-    "name": "italian_rivers",
+    "key": "italian_rivers",
     "type": "things",
+    "locale": "it",
     "values": [
         { "name": "Po", "gender": "male" },
         { "name": "Tevere", "gender": "male" },

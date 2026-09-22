@@ -1,6 +1,7 @@
 {
-    "name": "italian_basketball_legends",
+    "key": "italian_basketball_legends",
     "type": "people",
+    "locale": "it",
     "values": [
         { "name": "Dino Meneghin", "gender": "male" },
         { "name": "Sandro Gamba", "gender": "male" },

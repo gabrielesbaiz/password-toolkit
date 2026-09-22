@@ -2,65 +2,20 @@
     "key": "italian_desserts",
     "locale": "en",
     "values": [
-        {
-            "name": "Creamy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Delicious",
-            "gender": "neutral"
-        },
-        {
-            "name": "Elegant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Festive",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fluffy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Fragrant",
-            "gender": "neutral"
-        },
-        {
-            "name": "Greedy",
-            "gender": "neutral"
-        },
-        {
-            "name": "Irresistible",
-            "gender": "neutral"
-        },
-        {
-            "name": "Perfumed",
-            "gender": "neutral"
-        },
-        {
-            "name": "Refined",
-            "gender": "neutral"
-        },
-        {
-            "name": "Soft",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sugary",
-            "gender": "neutral"
-        },
-        {
-            "name": "Sweet",
-            "gender": "neutral"
-        },
-        {
-            "name": "Traditional",
-            "gender": "neutral"
-        },
-        {
-            "name": "Velvety",
-            "gender": "neutral"
-        }
+        { "name": "Creamy", "gender": "neutral" },
+        { "name": "Delicious", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Festive", "gender": "neutral" },
+        { "name": "Fluffy", "gender": "neutral" },
+        { "name": "Fragrant", "gender": "neutral" },
+        { "name": "Greedy", "gender": "neutral" },
+        { "name": "Irresistible", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Soft", "gender": "neutral" },
+        { "name": "Sugary", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Traditional", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" }
     ]
 }
