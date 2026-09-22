@@ -1,0 +1,21 @@
+{
+    "key": "apocalypse_now",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "seventies", "war"],
+    "icon": "🚁",
+    "reach": "global",
+    "values": [
+        { "name": "Benjamin Willard", "gender": "male" },
+        { "name": "Walter Kurtz", "gender": "male" },
+        { "name": "Bill Kilgore", "gender": "male" },
+        { "name": "George Phillips", "gender": "male" },
+        { "name": "Jay Hicks", "gender": "male" },
+        { "name": "Lance Johnson", "gender": "male" },
+        { "name": "Tyrone Miller", "gender": "male" },
+        { "name": "Richard Colby", "gender": "male" },
+        { "name": "Corman", "gender": "male" },
+        { "name": "Lucas", "gender": "male" }
+    ]
+}

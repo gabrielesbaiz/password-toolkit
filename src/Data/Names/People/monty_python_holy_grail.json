@@ -1,0 +1,24 @@
+{
+    "key": "monty_python_holy_grail",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comedy", "film", "seventies"],
+    "icon": "🥥",
+    "reach": "global",
+    "values": [
+        { "name": "Arthur", "gender": "male" },
+        { "name": "Lancelot", "gender": "male" },
+        { "name": "Galahad", "gender": "male" },
+        { "name": "Robin", "gender": "male" },
+        { "name": "Bedevere", "gender": "male" },
+        { "name": "Patsy", "gender": "male" },
+        { "name": "Concorde", "gender": "male" },
+        { "name": "Tim", "gender": "male" },
+        { "name": "Herbert", "gender": "male" },
+        { "name": "Dennis", "gender": "male" },
+        { "name": "Roger", "gender": "male" },
+        { "name": "Maynard", "gender": "male" },
+        { "name": "Bors", "gender": "male" }
+    ]
+}

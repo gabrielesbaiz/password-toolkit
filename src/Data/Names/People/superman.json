@@ -1,0 +1,26 @@
+{
+    "key": "superman",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["comics", "film", "seventies"],
+    "icon": "🦸",
+    "reach": "global",
+    "values": [
+        { "name": "Superman", "gender": "male" },
+        { "name": "Clark Kent", "gender": "male" },
+        { "name": "Lois Lane", "gender": "female" },
+        { "name": "Lex Luthor", "gender": "male" },
+        { "name": "Jor El", "gender": "male" },
+        { "name": "Lara", "gender": "female" },
+        { "name": "Jonathan Kent", "gender": "male" },
+        { "name": "Martha Kent", "gender": "female" },
+        { "name": "Perry White", "gender": "male" },
+        { "name": "Jimmy Olsen", "gender": "male" },
+        { "name": "Otis", "gender": "male" },
+        { "name": "Eve Teschmacher", "gender": "female" },
+        { "name": "General Zod", "gender": "male" },
+        { "name": "Ursa", "gender": "female" },
+        { "name": "Non", "gender": "male" }
+    ]
+}

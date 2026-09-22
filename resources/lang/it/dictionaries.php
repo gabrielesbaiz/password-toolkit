@@ -126,6 +126,16 @@ return [
         'roman_emperors' => 'Imperatori Romani',
         'roman_mythology' => 'Mitologia Romana',
         'star_wars' => 'Star Wars',
+        'the_godfather' => 'Il Padrino',
+        'rocky' => 'Rocky',
+        'jaws' => 'Lo Squalo',
+        'grease' => 'Grease',
+        'superman' => 'Superman',
+        'apocalypse_now' => 'Apocalypse Now',
+        'monty_python_holy_grail' => 'Monty Python e il Sacro Graal',
+        'mad_max' => 'Mad Max',
+        'a_clockwork_orange' => 'Arancia Meccanica',
+        'saturday_night_fever' => 'La Febbre del Sabato Sera',
     ],
 
     /*

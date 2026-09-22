@@ -1,0 +1,26 @@
+{
+    "key": "mad_max",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["film", "postapocalyptic", "seventies"],
+    "icon": "🏜️",
+    "reach": "global",
+    "values": [
+        { "name": "Max Rockatansky", "gender": "male" },
+        { "name": "Jessie Rockatansky", "gender": "female" },
+        { "name": "Toecutter", "gender": "male" },
+        { "name": "Goose", "gender": "male" },
+        { "name": "Nightrider", "gender": "male" },
+        { "name": "Fifi Macaffee", "gender": "male" },
+        { "name": "Johnny the Boy", "gender": "male" },
+        { "name": "Furiosa", "gender": "female" },
+        { "name": "Immortan Joe", "gender": "male" },
+        { "name": "Nux", "gender": "male" },
+        { "name": "Rictus Erectus", "gender": "male" },
+        { "name": "Slit", "gender": "male" },
+        { "name": "Splendid Angharad", "gender": "female" },
+        { "name": "Toast the Knowing", "gender": "female" },
+        { "name": "Capable", "gender": "female" }
+    ]
+}
