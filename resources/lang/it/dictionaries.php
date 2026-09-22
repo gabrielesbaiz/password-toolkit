@@ -182,6 +182,13 @@ return [
         'italian_football_clubs' => 'Squadre di Serie A',
         'italian_operas' => 'Opere Liriche',
         'italian_grape_varieties' => 'Vitigni Italiani',
+        'rock_bands_60s' => 'Rock Anni 60',
+        'rock_bands_70s' => 'Rock Anni 70',
+        'rock_bands_80s' => 'Rock Anni 80',
+        'rock_bands_90s' => 'Rock Anni 90',
+        'rock_bands_2000s' => 'Rock Anni 2000',
+        'rock_bands_2010s' => 'Rock Anni 2010',
+        'rock_bands_2020s' => 'Rock Anni 2020',
     ],
 
     /*

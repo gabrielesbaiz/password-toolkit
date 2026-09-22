@@ -1,0 +1,26 @@
+{
+    "key": "rock_bands_60s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "rock", "sixties"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "The Beatles", "gender": "male" },
+        { "name": "The Rolling Stones", "gender": "male" },
+        { "name": "The Beach Boys", "gender": "male" },
+        { "name": "The Doors", "gender": "male" },
+        { "name": "The Who", "gender": "male" },
+        { "name": "The Kinks", "gender": "male" },
+        { "name": "Cream", "gender": "male" },
+        { "name": "The Byrds", "gender": "male" },
+        { "name": "Jefferson Airplane", "gender": "male" },
+        { "name": "The Velvet Underground", "gender": "male" },
+        { "name": "The Animals", "gender": "male" },
+        { "name": "Grateful Dead", "gender": "male" },
+        { "name": "The Yardbirds", "gender": "male" },
+        { "name": "Buffalo Springfield", "gender": "male" },
+        { "name": "The Monkees", "gender": "male" }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "key": "rock_bands_90s",
+    "locale": "en",
+    "values": [
+        { "name": "Alienated", "gender": "neutral" },
+        { "name": "Angry", "gender": "neutral" },
+        { "name": "Bitter", "gender": "neutral" },
+        { "name": "Coarse", "gender": "neutral" },
+        { "name": "Dirty", "gender": "neutral" },
+        { "name": "Disillusioned", "gender": "neutral" },
+        { "name": "Impatient", "gender": "neutral" },
+        { "name": "Introspective", "gender": "neutral" },
+        { "name": "Jarring", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Nihilistic", "gender": "neutral" },
+        { "name": "Poignant", "gender": "neutral" },
+        { "name": "Raw", "gender": "neutral" },
+        { "name": "Restless", "gender": "neutral" },
+        { "name": "Scathing", "gender": "neutral" },
+        { "name": "Screaming", "gender": "neutral" },
+        { "name": "Spare", "gender": "neutral" }
+    ]
+}

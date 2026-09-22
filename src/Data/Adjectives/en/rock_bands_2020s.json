@@ -1,0 +1,24 @@
+{
+    "key": "rock_bands_2020s",
+    "locale": "en",
+    "values": [
+        { "name": "Abrasive", "gender": "neutral" },
+        { "name": "Androgynous", "gender": "neutral" },
+        { "name": "Brutal", "gender": "neutral" },
+        { "name": "Caustic", "gender": "neutral" },
+        { "name": "Cheeky", "gender": "neutral" },
+        { "name": "Corrosive", "gender": "neutral" },
+        { "name": "Cutting", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Insolent", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Militant", "gender": "neutral" },
+        { "name": "Mocking", "gender": "neutral" },
+        { "name": "Nonconformist", "gender": "neutral" },
+        { "name": "Provocative", "gender": "neutral" },
+        { "name": "Raging", "gender": "neutral" },
+        { "name": "Scenic", "gender": "neutral" },
+        { "name": "Unscrupulous", "gender": "neutral" },
+        { "name": "Visceral", "gender": "neutral" }
+    ]
+}

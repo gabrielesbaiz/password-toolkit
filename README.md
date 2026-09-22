@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-147 dictionaries — **99 of people** and **48 of things** — holding
-2,492 names and 1,109 names respectively, each with themed adjectives in both
+154 dictionaries — **99 of people** and **55 of things** — holding
+2,492 names and 1,210 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -347,7 +347,7 @@ is translated where a translation exists and left alone where it should be.
 </details>
 
 <details>
-<summary><b>Things (48)</b></summary>
+<summary><b>Things (55)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
@@ -399,6 +399,13 @@ is translated where a translation exists and left alone where it should be.
 | `italian_volcanoes` | 🌋 nature | it | 18 | Etna |
 | `italian_wine_regions` | 🍇 drink | it | 22 | Chianti |
 | `italian_wines` | 🍷 drink | it | 60 | Barolo |
+| `rock_bands_2000s` | 🎸 arts | en | 15 | The White Stripes |
+| `rock_bands_2010s` | 🎸 arts | en | 15 | Imagine Dragons |
+| `rock_bands_2020s` | 🎸 arts | en | 11 | Maneskin |
+| `rock_bands_60s` | 🎸 arts | en | 15 | The Beatles |
+| `rock_bands_70s` | 🎸 arts | en | 15 | Led Zeppelin |
+| `rock_bands_80s` | 🎸 arts | en | 15 | U2 |
+| `rock_bands_90s` | 🎸 arts | en | 15 | Nirvana |
 
 </details>
 

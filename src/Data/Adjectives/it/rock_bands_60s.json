@@ -1,0 +1,33 @@
+{
+    "key": "rock_bands_60s",
+    "locale": "it",
+    "values": [
+        { "name": "Armoniosa", "gender": "female" },
+        { "name": "Armonioso", "gender": "male" },
+        { "name": "Colorata", "gender": "female" },
+        { "name": "Colorato", "gender": "male" },
+        { "name": "Contestataria", "gender": "female" },
+        { "name": "Contestatario", "gender": "male" },
+        { "name": "Corale", "gender": "neutral" },
+        { "name": "Floreale", "gender": "neutral" },
+        { "name": "Fresca", "gender": "female" },
+        { "name": "Fresco", "gender": "male" },
+        { "name": "Giovanile", "gender": "neutral" },
+        { "name": "Innocente", "gender": "neutral" },
+        { "name": "Lisergica", "gender": "female" },
+        { "name": "Lisergico", "gender": "male" },
+        { "name": "Melodica", "gender": "female" },
+        { "name": "Melodico", "gender": "male" },
+        { "name": "Psichedelica", "gender": "female" },
+        { "name": "Psichedelico", "gender": "male" },
+        { "name": "Radiosa", "gender": "female" },
+        { "name": "Radioso", "gender": "male" },
+        { "name": "Ribelle", "gender": "neutral" },
+        { "name": "Sognante", "gender": "neutral" },
+        { "name": "Spensierata", "gender": "female" },
+        { "name": "Spensierato", "gender": "male" },
+        { "name": "Utopica", "gender": "female" },
+        { "name": "Utopico", "gender": "male" },
+        { "name": "Vivace", "gender": "neutral" }
+    ]
+}

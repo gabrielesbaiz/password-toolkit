@@ -1,0 +1,26 @@
+{
+    "key": "rock_bands_90s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "nineties", "rock"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "Nirvana", "gender": "male" },
+        { "name": "Pearl Jam", "gender": "male" },
+        { "name": "Soundgarden", "gender": "male" },
+        { "name": "Alice In Chains", "gender": "male" },
+        { "name": "Radiohead", "gender": "male" },
+        { "name": "Oasis", "gender": "male" },
+        { "name": "Blur", "gender": "male" },
+        { "name": "Green Day", "gender": "male" },
+        { "name": "Foo Fighters", "gender": "male" },
+        { "name": "The Smashing Pumpkins", "gender": "male" },
+        { "name": "Weezer", "gender": "male" },
+        { "name": "Pantera", "gender": "male" },
+        { "name": "The Offspring", "gender": "male" },
+        { "name": "Stone Temple Pilots", "gender": "male" },
+        { "name": "Nine Inch Nails", "gender": "male" }
+    ]
+}

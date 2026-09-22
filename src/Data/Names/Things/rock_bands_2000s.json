@@ -1,0 +1,26 @@
+{
+    "key": "rock_bands_2000s",
+    "type": "things",
+    "locale": "en",
+    "group": "arts",
+    "tags": ["music", "rock", "twothousands"],
+    "icon": "🎸",
+    "reach": "global",
+    "values": [
+        { "name": "The White Stripes", "gender": "male" },
+        { "name": "The Strokes", "gender": "male" },
+        { "name": "Coldplay", "gender": "male" },
+        { "name": "Linkin Park", "gender": "male" },
+        { "name": "Muse", "gender": "male" },
+        { "name": "The Killers", "gender": "male" },
+        { "name": "Arctic Monkeys", "gender": "male" },
+        { "name": "My Chemical Romance", "gender": "male" },
+        { "name": "Arcade Fire", "gender": "male" },
+        { "name": "Franz Ferdinand", "gender": "male" },
+        { "name": "Kings Of Leon", "gender": "male" },
+        { "name": "Blink 182", "gender": "male" },
+        { "name": "Interpol", "gender": "male" },
+        { "name": "Evanescence", "gender": "male" },
+        { "name": "Yeah Yeah Yeahs", "gender": "male" }
+    ]
+}

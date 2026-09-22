@@ -15,16 +15,12 @@
         { "name": "Glittering", "gender": "neutral" },
         { "name": "Hypnotic", "gender": "neutral" },
         { "name": "Iconic", "gender": "neutral" },
-        { "name": "Irresistible", "gender": "neutral" },
         { "name": "Kaleidoscopic", "gender": "neutral" },
-        { "name": "Magnetic", "gender": "neutral" },
         { "name": "Multimedia", "gender": "neutral" },
-        { "name": "Mythical", "gender": "neutral" },
         { "name": "Nostalgic", "gender": "neutral" },
         { "name": "Phenomenal", "gender": "neutral" },
         { "name": "Portable", "gender": "neutral" },
         { "name": "Sparkling", "gender": "neutral" },
-        { "name": "Spectacular", "gender": "neutral" },
         { "name": "Virtual", "gender": "neutral" }
     ]
 }

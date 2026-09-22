@@ -1,0 +1,24 @@
+{
+    "key": "rock_bands_2010s",
+    "locale": "en",
+    "values": [
+        { "name": "Atmospheric", "gender": "neutral" },
+        { "name": "Blurred", "gender": "neutral" },
+        { "name": "Enveloping", "gender": "neutral" },
+        { "name": "Ethereal", "gender": "neutral" },
+        { "name": "Floating", "gender": "neutral" },
+        { "name": "Hybrid", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Iridescent", "gender": "neutral" },
+        { "name": "Layered", "gender": "neutral" },
+        { "name": "Liquid", "gender": "neutral" },
+        { "name": "Lucid", "gender": "neutral" },
+        { "name": "Muffled", "gender": "neutral" },
+        { "name": "Oneiric", "gender": "neutral" },
+        { "name": "Polished", "gender": "neutral" },
+        { "name": "Pulsing", "gender": "neutral" },
+        { "name": "Reverberant", "gender": "neutral" },
+        { "name": "Throbbing", "gender": "neutral" },
+        { "name": "Velvety", "gender": "neutral" }
+    ]
+}

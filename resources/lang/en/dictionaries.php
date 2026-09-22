@@ -182,6 +182,13 @@ return [
         'italian_football_clubs' => 'Italian Football Clubs',
         'italian_operas' => 'Italian Operas',
         'italian_grape_varieties' => 'Italian Grape Varieties',
+        'rock_bands_60s' => 'Rock Bands of the 60s',
+        'rock_bands_70s' => 'Rock Bands of the 70s',
+        'rock_bands_80s' => 'Rock Bands of the 80s',
+        'rock_bands_90s' => 'Rock Bands of the 90s',
+        'rock_bands_2000s' => 'Rock Bands of the 2000s',
+        'rock_bands_2010s' => 'Rock Bands of the 2010s',
+        'rock_bands_2020s' => 'Rock Bands of the 2020s',
     ],
 
     /*
