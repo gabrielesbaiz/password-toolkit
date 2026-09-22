@@ -1,0 +1,26 @@
+{
+    "key": "alien",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["eighties", "film", "sciencefiction"],
+    "icon": "👽",
+    "reach": "global",
+    "values": [
+        { "name": "Ellen Ripley", "gender": "female" },
+        { "name": "Dallas", "gender": "male" },
+        { "name": "Kane", "gender": "male" },
+        { "name": "Ash", "gender": "male" },
+        { "name": "Lambert", "gender": "female" },
+        { "name": "Brett", "gender": "male" },
+        { "name": "Parker", "gender": "male" },
+        { "name": "Dwayne Hicks", "gender": "male" },
+        { "name": "Carter Burke", "gender": "male" },
+        { "name": "Bishop", "gender": "male" },
+        { "name": "Newt", "gender": "female" },
+        { "name": "William Hudson", "gender": "male" },
+        { "name": "Jenette Vasquez", "gender": "female" },
+        { "name": "Gorman", "gender": "male" },
+        { "name": "Apone", "gender": "male" }
+    ]
+}

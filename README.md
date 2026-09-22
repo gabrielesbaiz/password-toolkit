@@ -232,8 +232,8 @@ Raise it towards `1e12` if your threat model includes a well-funded adversary.
 
 ### Built-in
 
-111 dictionaries — **69 of people** and **42 of things** — holding
-2,311 names and 1,019 names respectively, each with themed adjectives in both
+117 dictionaries — **75 of people** and **42 of things** — holding
+2,387 names and 1,019 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -241,17 +241,21 @@ Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
 is translated where a translation exists and left alone where it should be.
 
 <details>
-<summary><b>People (69)</b></summary>
+<summary><b>People (75)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
 | `a_clockwork_orange` | 🍊 screen | en | 13 | Alex DeLarge |
+| `alien` | 👽 screen | en | 15 | Ellen Ripley |
 | `apocalypse_now` | 🚁 screen | en | 10 | Benjamin Willard |
 | `back_to_the_future` | 🚗 screen | en | 17 | Marty McFly |
+| `blade_runner` | 🌧️ screen | en | 10 | Rick Deckard |
 | `cartoons` | 📺 screen | en | 146 | Mickey Mouse |
+| `die_hard` | 🏢 screen | en | 12 | John McClane |
 | `disney_characters` | 🏰 screen | en | 60 | Mickey Mouse |
 | `disney_villains` | 😈 screen | en | 20 | Maleficent |
 | `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
+| `ghostbusters` | 👻 screen | en | 13 | Peter Venkman |
 | `grease` | 🕺 screen | en | 10 | Danny Zuko |
 | `greek_mythology` | 🏺 myth | en | 68 | Zeus |
 | `harry_potter` | 🧙 screen | en | 71 | Harry Potter |
@@ -311,8 +315,10 @@ is translated where a translation exists and left alone where it should be.
 | `the_big_lebowski` | 🎳 screen | en | 14 | The Dude |
 | `the_fifth_element` | 🚕 screen | en | 14 | Korben Dallas |
 | `the_godfather` | 🎩 screen | en | 15 | Vito Corleone |
+| `the_goonies` | 🗺️ screen | en | 11 | Mikey |
 | `the_matrix` | 💊 screen | en | 14 | Neo |
 | `the_silence_of_the_lambs` | 🦋 screen | en | 14 | Clarice Starling |
+| `top_gun` | ✈️ screen | en | 15 | Maverick |
 | `trainspotting` | 💉 screen | en | 12 | Mark Renton |
 </details>
 

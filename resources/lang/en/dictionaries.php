@@ -146,6 +146,12 @@ return [
         'trainspotting' => 'Trainspotting',
         'the_silence_of_the_lambs' => 'The Silence of the Lambs',
         'terminator' => 'Terminator',
+        'ghostbusters' => 'Ghostbusters',
+        'top_gun' => 'Top Gun',
+        'the_goonies' => 'The Goonies',
+        'blade_runner' => 'Blade Runner',
+        'die_hard' => 'Die Hard',
+        'alien' => 'Alien',
     ],
 
     /*

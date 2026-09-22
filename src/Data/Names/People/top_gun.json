@@ -1,0 +1,26 @@
+{
+    "key": "top_gun",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["aviation", "eighties", "film"],
+    "icon": "✈️",
+    "reach": "global",
+    "values": [
+        { "name": "Maverick", "gender": "male" },
+        { "name": "Goose", "gender": "male" },
+        { "name": "Iceman", "gender": "male" },
+        { "name": "Viper", "gender": "male" },
+        { "name": "Jester", "gender": "male" },
+        { "name": "Slider", "gender": "male" },
+        { "name": "Charlie", "gender": "female" },
+        { "name": "Rooster", "gender": "male" },
+        { "name": "Hangman", "gender": "male" },
+        { "name": "Phoenix", "gender": "female" },
+        { "name": "Bob", "gender": "male" },
+        { "name": "Payback", "gender": "male" },
+        { "name": "Fanboy", "gender": "male" },
+        { "name": "Coyote", "gender": "male" },
+        { "name": "Cyclone", "gender": "male" }
+    ]
+}

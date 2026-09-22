@@ -1,0 +1,21 @@
+{
+    "key": "blade_runner",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["eighties", "film", "sciencefiction"],
+    "icon": "🌧️",
+    "reach": "global",
+    "values": [
+        { "name": "Rick Deckard", "gender": "male" },
+        { "name": "Roy Batty", "gender": "male" },
+        { "name": "Rachael", "gender": "female" },
+        { "name": "Gaff", "gender": "male" },
+        { "name": "Bryant", "gender": "male" },
+        { "name": "Pris", "gender": "female" },
+        { "name": "Sebastian", "gender": "male" },
+        { "name": "Leon Kowalski", "gender": "male" },
+        { "name": "Eldon Tyrell", "gender": "male" },
+        { "name": "Zhora", "gender": "female" }
+    ]
+}
