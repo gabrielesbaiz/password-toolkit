@@ -2,6 +2,10 @@
     "key": "italian_desserts",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian", "sweet"],
+    "icon": "🍰",
+    "reach": "global",
     "values": [
         { "name": "Tiramisu", "gender": "male" },
         { "name": "Cannolo", "gender": "male" },

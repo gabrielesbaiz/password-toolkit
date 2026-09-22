@@ -2,6 +2,10 @@
     "key": "italian_islands",
     "type": "things",
     "locale": "it",
+    "group": "nature",
+    "tags": ["geography", "italian", "sea"],
+    "icon": "🏝️",
+    "reach": "italian",
     "values": [
         { "name": "Capri", "gender": "female" },
         { "name": "Ischia", "gender": "female" },

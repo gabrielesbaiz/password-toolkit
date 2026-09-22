@@ -2,6 +2,10 @@
     "key": "italian_cryptids_legends",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["folklore", "italian"],
+    "icon": "👻",
+    "reach": "italian",
     "values": [
         { "name": "Befana", "gender": "female" },
         { "name": "Mazzamurello", "gender": "male" },

@@ -33,13 +33,22 @@ it('does not mutate the builder it was derived from', function () {
 });
 
 it('restricts to the given dictionaries', function () {
-    $names = collect(PasswordToolkit::make()->only('star_wars')->withoutNumbers()->many(20))
-        ->map(fn (string $password): string => explode('-', $password)[0]);
+    // Locale-explicit: star_wars is an English-base dictionary, and the Italian
+    // overlay renames a handful of ranks (Count Dooku -> Conte Dooku). English
+    // also leads with the adjective, so the name is the second segment.
+    $names = collect(
+        PasswordToolkit::make()
+            ->only('star_wars')
+            ->locale('en')
+            ->withoutNumbers()
+            ->keepWordBreaks(false)
+            ->many(20),
+    )->map(fn (string $password): string => explode('-', $password)[1]);
 
     $starWars = collect(json_decode(
         (string) file_get_contents(packagePath('src/Data/Names/People/star_wars.json')),
         true,
-    )['values'])->map(fn (array $entry): string => explode(' ', $entry['name'])[0]);
+    )['values'])->map(fn (array $entry): string => str_replace(' ', '', $entry['name']));
 
     expect($names->diff($starWars)->all())->toBe([]);
 });

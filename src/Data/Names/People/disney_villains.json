@@ -2,6 +2,10 @@
     "key": "disney_villains",
     "type": "people",
     "locale": "en",
+    "group": "screen",
+    "tags": ["animation", "disney", "villains"],
+    "icon": "😈",
+    "reach": "global",
     "values": [
         { "name": "Maleficent", "gender": "female" },
         { "name": "Cruella De Vil", "gender": "female" },

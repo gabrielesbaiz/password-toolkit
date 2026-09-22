@@ -1,0 +1,10 @@
+{
+    "key": "game_of_thrones",
+    "locale": "it",
+    "values": {
+        "Brienne of Tarth": "Brienne di Tarth",
+        "Grey Worm": "Verme Grigio",
+        "Night King": "Re della Notte",
+        "Qhorin Halfhand": "Qhorin Mezzamano"
+    }
+}

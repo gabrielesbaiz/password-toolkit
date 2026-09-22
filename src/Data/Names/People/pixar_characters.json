@@ -2,6 +2,10 @@
     "key": "pixar_characters",
     "type": "people",
     "locale": "en",
+    "group": "screen",
+    "tags": ["animation", "pixar"],
+    "icon": "💡",
+    "reach": "global",
     "values": [
         { "name": "Woody", "gender": "male" },
         { "name": "Buzz Lightyear", "gender": "male" },

@@ -58,6 +58,16 @@ composer test      # pest
    Get this wrong and either the names are translated when they should not be,
    or an English reader is shown a dub name they will not recognise.
 
+   Then add the dictionary to `build/metadata.php` — its group, tags, icon and
+   reach — and run `php build/apply-metadata.php`. Add a label to
+   `resources/lang/en/dictionaries.php` and `resources/lang/it/dictionaries.php`.
+   Tests enforce all of this, so a dictionary cannot ship half-described.
+
+   Be honest about `reach`. `global` means a reader anywhere is likely to know
+   the names; `italian` means an Italian audience will; `niche` means it is
+   specialist even in Italy. Over-claiming it puts unrecognisable words into
+   someone's password.
+
    Keep each entry on one line. A dictionary is a list of short records, and one
    record per line is what makes a diff readable.
 

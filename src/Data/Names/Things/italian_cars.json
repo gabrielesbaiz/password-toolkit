@@ -2,6 +2,10 @@
     "key": "italian_cars",
     "type": "things",
     "locale": "it",
+    "group": "vehicles",
+    "tags": ["cars", "italian"],
+    "icon": "🚗",
+    "reach": "italian",
     "values": [
         { "name": "Cinquecento", "gender": "neutral" },
         { "name": "Panda", "gender": "neutral" },

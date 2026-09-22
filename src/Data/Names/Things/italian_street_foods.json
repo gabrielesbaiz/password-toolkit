@@ -2,6 +2,10 @@
     "key": "italian_street_foods",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian", "street"],
+    "icon": "🥪",
+    "reach": "italian",
     "values": [
         { "name": "Arancino", "gender": "male" },
         { "name": "Suppli", "gender": "male" },

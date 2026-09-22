@@ -2,6 +2,10 @@
     "key": "italian_children_games_90s",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["childhood", "italian", "nineties"],
+    "icon": "🎮",
+    "reach": "italian",
     "values": [
         { "name": "Tamagotchi", "gender": "male" },
         { "name": "Furby", "gender": "male" },

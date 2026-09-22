@@ -64,10 +64,7 @@ final class FileDictionaryRepository implements DictionaryRepository
             $this->registered,
         );
 
-        return array_filter(
-            $pool,
-            static fn (Dictionary $dictionary): bool => $options->selects($dictionary->key, $dictionary->type),
-        );
+        return array_filter($pool, $options->selects(...));
     }
 
     public function find(string $key): Dictionary

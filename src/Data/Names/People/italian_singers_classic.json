@@ -2,6 +2,10 @@
     "key": "italian_singers_classic",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["italian", "music"],
+    "icon": "🎙️",
+    "reach": "italian",
     "values": [
         { "name": "Mina", "gender": "female" },
         { "name": "Lucio Battisti", "gender": "male" },

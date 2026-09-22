@@ -2,6 +2,10 @@
     "key": "italian_fashion_designers",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["fashion", "italian"],
+    "icon": "👗",
+    "reach": "global",
     "values": [
         { "name": "Giorgio Armani", "gender": "male" },
         { "name": "Valentino Garavani", "gender": "male" },

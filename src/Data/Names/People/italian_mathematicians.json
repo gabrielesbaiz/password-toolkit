@@ -2,6 +2,10 @@
     "key": "italian_mathematicians",
     "type": "people",
     "locale": "it",
+    "group": "science",
+    "tags": ["italian", "mathematics"],
+    "icon": "📐",
+    "reach": "global",
     "values": [
         { "name": "Leonardo Fibonacci", "gender": "male" },
         { "name": "Gerolamo Cardano", "gender": "male" },

@@ -2,6 +2,10 @@
     "key": "italian_inventors",
     "type": "people",
     "locale": "it",
+    "group": "science",
+    "tags": ["invention", "italian"],
+    "icon": "💡",
+    "reach": "global",
     "values": [
         { "name": "Antonio Meucci", "gender": "male" },
         { "name": "Guglielmo Marconi", "gender": "male" },

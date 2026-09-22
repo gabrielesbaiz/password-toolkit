@@ -205,6 +205,28 @@ php artisan password-toolkit:generate --list
 php artisan password-toolkit:make-dictionary my_team --type=people --locale=en
 ```
 
+## Dictionary metadata
+
+Every dictionary carries `group` (closed set: food, drink, nature, places,
+culture, arts, screen, sport, science, history, myth, vehicles), free-form
+`tags`, an `icon`, and a `reach` of `global` | `italian` | `niche`.
+
+```php
+PasswordToolkit::make()->groups(['food', 'drink'])->generate();
+PasswordToolkit::make()->tagged(['italian', 'sweet'])->generate();  // ALL tags
+PasswordToolkit::make()->reach('global')->generate();               // international audience
+```
+
+`->only()` beats every filter: naming a dictionary means you want it.
+
+For a UI: `dictionaries()` gives key, translated label/description, icon, group,
+group_label, tags, reach, reach_label, type, locale, count, built_in.
+`dictionariesWithSamples()` adds a live `sample` password per dictionary.
+`groups()` and `tags()` return the vocabulary in use with counts.
+
+Prefer `->reach('global')` for a non-Italian audience — it is the difference
+between a password a user can repeat and one they cannot.
+
 ## Safety rules to respect
 
 - **Dictionary keys** must match `[A-Za-z0-9_][A-Za-z0-9_-]*`; **locales** must

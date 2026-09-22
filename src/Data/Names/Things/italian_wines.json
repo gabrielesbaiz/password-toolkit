@@ -2,6 +2,10 @@
     "key": "italian_wines",
     "type": "things",
     "locale": "it",
+    "group": "drink",
+    "tags": ["italian", "wine"],
+    "icon": "🍷",
+    "reach": "global",
     "values": [
         { "name": "Barolo", "gender": "male" },
         { "name": "Chianti", "gender": "male" },

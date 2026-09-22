@@ -2,6 +2,10 @@
     "key": "italian_old_currencies",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["history", "italian", "money"],
+    "icon": "🪙",
+    "reach": "niche",
     "values": [
         { "name": "Lira", "gender": "female" },
         { "name": "Soldo", "gender": "male" },

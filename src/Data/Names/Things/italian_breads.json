@@ -2,6 +2,10 @@
     "key": "italian_breads",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian"],
+    "icon": "🥖",
+    "reach": "global",
     "values": [
         { "name": "Ciabatta", "gender": "female" },
         { "name": "Coppia Ferrarese", "gender": "female" },

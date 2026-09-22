@@ -2,6 +2,10 @@
     "key": "italian_rivers",
     "type": "things",
     "locale": "it",
+    "group": "nature",
+    "tags": ["geography", "italian"],
+    "icon": "🌊",
+    "reach": "italian",
     "values": [
         { "name": "Po", "gender": "male" },
         { "name": "Tevere", "gender": "male" },

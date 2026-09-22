@@ -2,6 +2,10 @@
     "key": "italian_singers_modern",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["italian", "modern", "music"],
+    "icon": "🎙️",
+    "reach": "italian",
     "values": [
         { "name": "Marco Mengoni", "gender": "male" },
         { "name": "Tiziano Ferro", "gender": "male" },

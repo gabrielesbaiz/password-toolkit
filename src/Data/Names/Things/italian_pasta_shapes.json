@@ -2,6 +2,10 @@
     "key": "italian_pasta_shapes",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian"],
+    "icon": "🍝",
+    "reach": "global",
     "values": [
         { "name": "Fusilli", "gender": "male" },
         { "name": "Orecchiette", "gender": "female" },

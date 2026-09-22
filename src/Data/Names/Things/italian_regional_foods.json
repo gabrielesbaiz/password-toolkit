@@ -2,6 +2,10 @@
     "key": "italian_regional_foods",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian", "regional"],
+    "icon": "🍲",
+    "reach": "italian",
     "values": [
         { "name": "Cacciucco", "gender": "male" },
         { "name": "Frittura", "gender": "female" },

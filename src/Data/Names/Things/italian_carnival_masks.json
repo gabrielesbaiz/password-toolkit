@@ -2,6 +2,10 @@
     "key": "italian_carnival_masks",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["italian", "tradition"],
+    "icon": "🎭",
+    "reach": "italian",
     "values": [
         { "name": "Arlecchino", "gender": "male" },
         { "name": "Pulcinella", "gender": "male" },

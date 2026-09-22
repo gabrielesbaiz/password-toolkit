@@ -2,6 +2,10 @@
     "key": "italian_aperitivi",
     "type": "things",
     "locale": "it",
+    "group": "drink",
+    "tags": ["cocktails", "italian"],
+    "icon": "🍹",
+    "reach": "global",
     "values": [
         { "name": "Spritz", "gender": "male" },
         { "name": "Negroni", "gender": "male" },

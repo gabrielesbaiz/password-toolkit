@@ -9,6 +9,7 @@ use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\AdjectiveResolver;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\Entry;
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\NameTranslator;
+use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\NoDictionariesEnabledException;
 use Gabrielesbaiz\PasswordToolkit\Generator\LeetspeakTransformer;
@@ -231,7 +232,7 @@ class PasswordToolkit implements PasswordGenerator
     /**
      * Every dictionary currently visible, as plain arrays.
      *
-     * @return Collection<string, array{key: string, type: string, locale: string|null, count: int, built_in: bool}>
+     * @return Collection<string, array{key: string, label: string, description: string|null, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}>
      */
     public function dictionaries(?Options $options = null): Collection
     {
@@ -240,6 +241,65 @@ class PasswordToolkit implements PasswordGenerator
             : $this->dictionaries->enabled($options);
 
         return collect($pool)->map(fn ($dictionary) => $dictionary->toArray());
+    }
+
+    /**
+     * Dictionaries with a live sample password each.
+     *
+     * The sample is what makes a picker useful — a row saying "Italian Pasta
+     * Shapes, 41 entries" tells you much less than one showing
+     * "Fusilli-Gustoso-4271".
+     *
+     * @return Collection<string, array<string, mixed>>
+     */
+    public function dictionariesWithSamples(?Options $options = null): Collection
+    {
+        $options ??= Options::fromConfig();
+
+        /** @var Collection<string, array<string, mixed>> $rows */
+        $rows = collect($this->dictionaries->enabled($options))->map(
+            fn ($dictionary): array => $dictionary->toArray() + [
+                'sample' => $this->generate($options->with(enabled: [$dictionary->key])),
+            ],
+        );
+
+        return $rows;
+    }
+
+    /**
+     * The thematic groups in play, with how many dictionaries each holds.
+     *
+     * Everything a picker needs to render a group filter without hardcoding the
+     * vocabulary.
+     *
+     * @return Collection<int, array{value: string, label: string, icon: string, count: int}>
+     */
+    public function groups(?Options $options = null): Collection
+    {
+        return $this->dictionaries($options ?? Options::fromConfig())
+            ->groupBy('group')
+            ->map(fn (Collection $rows, string $group): array => [
+                'value' => $group,
+                'label' => DictionaryGroup::from($group)->label(),
+                'icon' => DictionaryGroup::from($group)->icon(),
+                'count' => $rows->count(),
+            ])
+            ->values();
+    }
+
+    /**
+     * Every tag in play, with how many dictionaries carry it.
+     *
+     * @return Collection<int, array{value: string, count: int}>
+     */
+    public function tags(?Options $options = null): Collection
+    {
+        return $this->dictionaries($options ?? Options::fromConfig())
+            ->flatMap(static fn (array $row): array => $row['tags'])
+            ->countBy()
+            ->map(fn (int $count, string $tag): array => ['value' => $tag, 'count' => $count])
+            ->sortBy('value')
+            ->values();
     }
 
     /**

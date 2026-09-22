@@ -1,0 +1,139 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+
+    /*
+     * Thematic groups. A closed vocabulary, so a picker can render a stable list.
+     */
+    'groups' => [
+        'food' => 'Cibo',
+        'drink' => 'Bevande',
+        'nature' => 'Natura',
+        'places' => 'Luoghi',
+        'culture' => 'Cultura',
+        'arts' => 'Arte',
+        'screen' => 'Schermo',
+        'sport' => 'Sport',
+        'science' => 'Scienza',
+        'history' => 'Storia',
+        'myth' => 'Mito',
+        'vehicles' => 'Veicoli',
+    ],
+
+    /*
+     * How widely recognisable a dictionary's names are.
+     */
+    'reach' => [
+        'global' => 'Mondiale',
+        'italian' => 'Italiano',
+        'niche' => 'Di Nicchia',
+    ],
+
+    /*
+     * Display names, one per dictionary.
+     */
+    'labels' => [
+        'back_to_the_future' => 'Ritorno al Futuro',
+        'car_brands' => 'Marche di Auto',
+        'cartoons' => 'Cartoni Animati',
+        'disney_characters' => 'Personaggi Disney',
+        'disney_villains' => 'Cattivi Disney',
+        'game_of_thrones' => 'Il Trono di Spade',
+        'greek_mythology' => 'Mitologia Greca',
+        'harry_potter' => 'Harry Potter',
+        'hayao_miyazaki' => 'Hayao Miyazaki',
+        'italian_actors' => 'Attori Italiani',
+        'italian_aperitivi' => 'Aperitivi Italiani',
+        'italian_architects' => 'Architetti Italiani',
+        'italian_basketball_legends' => 'Leggende del Basket',
+        'italian_breads' => 'Pani Italiani',
+        'italian_card_games' => 'Giochi di Carte',
+        'italian_carnival_masks' => 'Maschere di Carnevale',
+        'italian_cars' => 'Auto Italiane',
+        'italian_castles' => 'Castelli Italiani',
+        'italian_cheeses' => 'Formaggi Italiani',
+        'italian_chefs' => 'Chef Italiani',
+        'italian_children_games_2000s' => 'Giochi Anni 2000',
+        'italian_children_games_70s' => 'Giochi Anni 70',
+        'italian_children_games_80s' => 'Giochi Anni 80',
+        'italian_children_games_90s' => 'Giochi Anni 90',
+        'italian_circus_terms' => 'Termini del Circo',
+        'italian_coffee_brands' => 'Marche di Caffe',
+        'italian_comedians' => 'Comici Italiani',
+        'italian_cryptids_legends' => 'Creature Leggendarie',
+        'italian_cured_meats' => 'Salumi Italiani',
+        'italian_cyclists' => 'Ciclisti Italiani',
+        'italian_dance_styles' => 'Danze Popolari',
+        'italian_design_objects' => 'Oggetti di Design',
+        'italian_desserts' => 'Dolci Italiani',
+        'italian_dialect_words' => 'Parole Dialettali',
+        'italian_dj_producers' => 'DJ e Producer',
+        'italian_explorers' => 'Esploratori Italiani',
+        'italian_fashion_designers' => 'Stilisti Italiani',
+        'italian_film_directors' => 'Registi Italiani',
+        'italian_folk_instruments' => 'Strumenti Popolari',
+        'italian_football_legends' => 'Leggende del Calcio',
+        'italian_icecream_flavors' => 'Gusti di Gelato',
+        'italian_invented_words' => 'Parole Inventate',
+        'italian_inventors' => 'Inventori Italiani',
+        'italian_islands' => 'Isole Italiane',
+        'italian_journalists' => 'Giornalisti Italiani',
+        'italian_lakes' => 'Laghi Italiani',
+        'italian_liqueurs' => 'Liquori Italiani',
+        'italian_mathematicians' => 'Matematici Italiani',
+        'italian_monuments' => 'Monumenti Italiani',
+        'italian_motogp_legends' => 'Leggende della MotoGP',
+        'italian_motorcycles' => 'Moto Italiane',
+        'italian_mountains' => 'Montagne Italiane',
+        'italian_musicians' => 'Musicisti Italiani',
+        'italian_nobel_prize_winners' => 'Premi Nobel Italiani',
+        'italian_old_currencies' => 'Vecchie Monete',
+        'italian_old_jobs' => 'Mestieri di Una Volta',
+        'italian_olympic_legends' => 'Leggende Olimpiche',
+        'italian_opera_composers' => 'Compositori Lirici',
+        'italian_painters' => 'Pittori Italiani',
+        'italian_pasta_shapes' => 'Formati di Pasta',
+        'italian_pizza_types' => 'Tipi di Pizza',
+        'italian_poets' => 'Poeti Italiani',
+        'italian_presidents_of_the_republic' => 'Presidenti della Repubblica',
+        'italian_progressive_rock_bands' => 'Rock Progressivo',
+        'italian_racing_drivers' => 'Piloti Italiani',
+        'italian_rappers' => 'Rapper Italiani',
+        'italian_regional_foods' => 'Piatti Regionali',
+        'italian_renaissance_artists' => 'Artisti del Rinascimento',
+        'italian_rivers' => 'Fiumi Italiani',
+        'italian_scientists' => 'Scienziati Italiani',
+        'italian_sea_creatures' => 'Creature Marine',
+        'italian_singers_classic' => 'Cantanti Classici',
+        'italian_singers_modern' => 'Cantanti Moderni',
+        'italian_street_foods' => 'Street Food Italiano',
+        'italian_superheroes' => 'Supereroi Italiani',
+        'italian_television_personalities' => 'Personaggi TV',
+        'italian_tennis_players' => 'Tennisti Italiani',
+        'italian_train_stations_classic' => 'Stazioni Storiche',
+        'italian_voice_actors' => 'Doppiatori Italiani',
+        'italian_volcanoes' => 'Vulcani Italiani',
+        'italian_volleyball_legends' => 'Leggende della Pallavolo',
+        'italian_wine_regions' => 'Zone del Vino',
+        'italian_wines' => 'Vini Italiani',
+        'italian_writers' => 'Scrittori Italiani',
+        'italian_youtubers' => 'YouTuber Italiani',
+        'lupin_iii_characters' => 'Lupin III',
+        'philosophers' => 'Filosofi',
+        'pixar_characters' => 'Personaggi Pixar',
+        'roman_emperors' => 'Imperatori Romani',
+        'roman_mythology' => 'Mitologia Romana',
+        'star_wars' => 'Star Wars',
+    ],
+
+    /*
+     * Optional one-line descriptions, keyed by dictionary. Anything absent
+     * simply has no description; nothing breaks.
+     */
+    'descriptions' => [
+        //
+    ],
+
+];

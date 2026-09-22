@@ -2,6 +2,10 @@
     "key": "disney_characters",
     "type": "people",
     "locale": "en",
+    "group": "screen",
+    "tags": ["animation", "disney"],
+    "icon": "🏰",
+    "reach": "global",
     "values": [
         { "name": "Mickey Mouse", "gender": "male" },
         { "name": "Donald Duck", "gender": "male" },

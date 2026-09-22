@@ -2,6 +2,10 @@
     "key": "italian_liqueurs",
     "type": "things",
     "locale": "it",
+    "group": "drink",
+    "tags": ["italian", "spirits"],
+    "icon": "🥃",
+    "reach": "global",
     "values": [
         { "name": "Limoncello", "gender": "male" },
         { "name": "Amaro", "gender": "male" },

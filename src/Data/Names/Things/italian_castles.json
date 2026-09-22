@@ -2,6 +2,10 @@
     "key": "italian_castles",
     "type": "things",
     "locale": "it",
+    "group": "places",
+    "tags": ["architecture", "history", "italian"],
+    "icon": "🏯",
+    "reach": "italian",
     "values": [
         { "name": "Castel del Monte", "gender": "male" },
         { "name": "Castello Sforzesco", "gender": "male" },

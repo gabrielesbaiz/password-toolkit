@@ -2,6 +2,10 @@
     "key": "italian_design_objects",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["design", "italian"],
+    "icon": "🪑",
+    "reach": "niche",
     "values": [
         { "name": "Arco", "gender": "male" },
         { "name": "Tolomeo", "gender": "male" },

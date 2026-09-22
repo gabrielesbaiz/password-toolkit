@@ -2,6 +2,10 @@
     "key": "roman_mythology",
     "type": "people",
     "locale": "en",
+    "group": "myth",
+    "tags": ["classical", "roman"],
+    "icon": "⚡",
+    "reach": "global",
     "values": [
         { "name": "Jupiter", "gender": "male" },
         { "name": "Juno", "gender": "female" },

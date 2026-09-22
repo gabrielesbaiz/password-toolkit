@@ -2,6 +2,10 @@
     "key": "italian_motorcycles",
     "type": "things",
     "locale": "it",
+    "group": "vehicles",
+    "tags": ["italian", "motorcycles"],
+    "icon": "🛵",
+    "reach": "italian",
     "values": [
         { "name": "Vespa", "gender": "female" },
         { "name": "Monster", "gender": "neutral" },

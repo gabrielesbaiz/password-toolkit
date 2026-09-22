@@ -2,6 +2,10 @@
     "key": "italian_old_jobs",
     "type": "things",
     "locale": "it",
+    "group": "culture",
+    "tags": ["history", "italian", "trades"],
+    "icon": "🔨",
+    "reach": "niche",
     "values": [
         { "name": "Arrotino", "gender": "male" },
         { "name": "Lustrascarpe", "gender": "male" },

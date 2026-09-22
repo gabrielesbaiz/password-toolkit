@@ -2,6 +2,10 @@
     "key": "harry_potter",
     "type": "people",
     "locale": "en",
+    "group": "screen",
+    "tags": ["books", "fantasy"],
+    "icon": "🧙",
+    "reach": "global",
     "values": [
         { "name": "Harry Potter", "gender": "male" },
         { "name": "Hermione Granger", "gender": "female" },

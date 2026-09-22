@@ -19,6 +19,19 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
   `src/Data/Adjectives/_glossary.it-en.json` — and `build/build-adjectives.php`
   applies it. A test regenerates the packs and asserts they come back
   byte-identical, so hand-editing a generated file fails the build.
+- **Dictionary metadata.** Every dictionary now carries a `group` (a closed
+  vocabulary of twelve themes), free-form `tags`, an `icon` and a `reach`.
+  Filter with `->groups()`, `->tagged()` and `->reach()`, with
+  `--group` / `--tag` / `--reach` on the command, or from config.
+- **`reach`** — `global`, `italian` or `niche` — is how widely recognisable a
+  dictionary's names are. A memorable password only works if the reader knows
+  the word, so an international application can ask for `global` and get a pool
+  its users will actually remember, instead of hand-listing keys.
+- **Picker data.** `dictionaries()` returns a translated label, description,
+  icon, group, tags, reach, locale and count per dictionary;
+  `dictionariesWithSamples()` adds a live sample password; `groups()` and
+  `tags()` return the vocabulary in use with counts. Enough for a UI to render a
+  dictionary chooser without hardcoding anything.
 - **Translated names**, for the 15 dictionaries that hold Italian forms of
   something with a real name elsewhere: Giove is Jupiter, Topolino is Mickey
   Mouse, Albus Silente is Dumbledore, Cervino is the Matterhorn. 211 in all.

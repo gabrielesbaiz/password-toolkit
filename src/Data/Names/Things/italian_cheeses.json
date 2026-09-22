@@ -2,6 +2,10 @@
     "key": "italian_cheeses",
     "type": "things",
     "locale": "it",
+    "group": "food",
+    "tags": ["cuisine", "italian"],
+    "icon": "🧀",
+    "reach": "global",
     "values": [
         { "name": "Parmigiano Reggiano", "gender": "male" },
         { "name": "Mozzarella", "gender": "female" },

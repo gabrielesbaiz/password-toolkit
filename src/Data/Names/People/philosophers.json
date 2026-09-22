@@ -2,6 +2,10 @@
     "key": "philosophers",
     "type": "people",
     "locale": "en",
+    "group": "science",
+    "tags": ["classical", "thought"],
+    "icon": "🤔",
+    "reach": "global",
     "values": [
         { "name": "Socrates", "gender": "male" },
         { "name": "Plato", "gender": "male" },

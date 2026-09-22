@@ -2,6 +2,10 @@
     "key": "italian_wine_regions",
     "type": "things",
     "locale": "it",
+    "group": "drink",
+    "tags": ["italian", "regional", "wine"],
+    "icon": "🍇",
+    "reach": "global",
     "values": [
         { "name": "Chianti", "gender": "male" },
         { "name": "Barolo", "gender": "male" },

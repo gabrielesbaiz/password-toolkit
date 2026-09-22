@@ -2,6 +2,10 @@
     "key": "italian_tennis_players",
     "type": "people",
     "locale": "it",
+    "group": "sport",
+    "tags": ["italian", "tennis"],
+    "icon": "🎾",
+    "reach": "global",
     "values": [
         { "name": "Jannik Sinner", "gender": "male" },
         { "name": "Matteo Berrettini", "gender": "male" },

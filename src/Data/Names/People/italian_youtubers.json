@@ -2,6 +2,10 @@
     "key": "italian_youtubers",
     "type": "people",
     "locale": "it",
+    "group": "screen",
+    "tags": ["internet", "italian", "modern"],
+    "icon": "▶️",
+    "reach": "niche",
     "values": [
         { "name": "Favij", "gender": "male" },
         { "name": "Frank Matano", "gender": "male" },

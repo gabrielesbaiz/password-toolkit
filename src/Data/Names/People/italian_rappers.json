@@ -2,6 +2,10 @@
     "key": "italian_rappers",
     "type": "people",
     "locale": "it",
+    "group": "arts",
+    "tags": ["italian", "modern", "music"],
+    "icon": "🎤",
+    "reach": "niche",
     "values": [
         { "name": "Fabri Fibra", "gender": "male" },
         { "name": "Marracash", "gender": "male" },
