@@ -8,6 +8,7 @@ use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
+use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
 /**
  * Everything the generator needs for one password, resolved once.
@@ -55,6 +56,24 @@ final readonly class Options
                     "Unknown dictionary type [{$type}]. Expected people or things.",
                 );
             }
+        }
+
+        // Locales and dictionary keys are interpolated into a filesystem path,
+        // so they are validated the moment they enter rather than where they
+        // are used. An application passing a request value into ->locale()
+        // could otherwise read any JSON file the process can see.
+        if ($this->locale !== null) {
+            Identifier::locale($this->locale);
+        }
+
+        Identifier::locale($this->fallbackLocale);
+
+        foreach (is_array($this->enabled) ? $this->enabled : [] as $key) {
+            Identifier::key($key);
+        }
+
+        foreach ($this->except as $key) {
+            Identifier::key($key);
         }
     }
 
@@ -104,7 +123,9 @@ final readonly class Options
 
         $appLocale = app()->getLocale();
 
-        return $appLocale !== '' ? $appLocale : $this->fallbackLocale;
+        // An application is free to set a locale this package cannot safely
+        // turn into a path. Fall back rather than refuse to generate.
+        return Identifier::isLocale($appLocale) ? $appLocale : $this->fallbackLocale;
     }
 
     /**

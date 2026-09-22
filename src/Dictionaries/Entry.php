@@ -26,10 +26,21 @@ final readonly class Entry
      */
     public static function fromArray(array $data, string $dictionary): self
     {
-        $name = isset($data['name']) && is_scalar($data['name']) ? trim((string) $data['name']) : '';
+        $name = isset($data['name']) && is_scalar($data['name'])
+            ? trim((string) preg_replace('/\s+/u', ' ', (string) $data['name']))
+            : '';
 
         if ($name === '') {
             throw InvalidOptionException::because("Dictionary [{$dictionary}] contains an entry with no name.");
+        }
+
+        // A name is stripped down to letters and digits on its way into a
+        // password. One that has none left would silently produce a password
+        // missing a whole segment, so it is rejected where it is defined.
+        if (preg_match('/[\p{L}\p{N}]/u', $name) !== 1) {
+            throw InvalidOptionException::because(
+                "Dictionary [{$dictionary}] entry [{$name}] has no letters or digits.",
+            );
         }
 
         $gender = isset($data['gender']) && is_scalar($data['gender'])

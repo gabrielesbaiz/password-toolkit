@@ -162,3 +162,8 @@ optimistic one.
 
 2.0 picks uniformly across entries, so the model and the behaviour now match.
 If you assert on exact bit counts anywhere, expect them to move.
+
+Leetspeak also no longer adds bits. 1.x did not have a strength reporter at all,
+so this only affects you if you tracked 2.0 during development — but the
+reasoning matters: leetspeak is a deterministic transform, and the structural
+model assumes an attacker who has read your config.

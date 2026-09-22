@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Gabrielesbaiz\PasswordToolkit\Dictionaries;
 
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
+use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
 /**
  * A named collection of entries: one JSON file, one config block, or one
@@ -32,6 +33,9 @@ final readonly class Dictionary
      */
     public static function fromArray(string $key, array $data, bool $builtIn = false): self
     {
+        // The key becomes part of the adjective lookup path.
+        Identifier::key($key);
+
         $type = isset($data['type']) && is_string($data['type']) ? strtolower($data['type']) : 'things';
 
         if (! in_array($type, self::TYPES, true)) {

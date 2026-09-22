@@ -24,6 +24,11 @@ interface PasswordGenerator
     public function generateMany(int $count, ?Options $options = null): array;
 
     /**
+     * @return array<int, string>
+     */
+    public function generateUnique(int $count, ?Options $options = null): array;
+
+    /**
      * @return array{password: string, report: StrengthReport}
      */
     public function generateWithReport(?Options $options = null): array;

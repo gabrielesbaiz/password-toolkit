@@ -110,6 +110,9 @@ PasswordToolkit::generate();
 PasswordToolkit::generateMany(10);
 // ["Goldrake-Mitico-4271", "Vespa-Veloce-9921", …] — exactly 10
 
+PasswordToolkit::generateUnique(10);
+// the same, with no repeats
+
 PasswordToolkit::generateWithReport();
 // ['password' => "Goldrake-Mitico-4271", 'report' => StrengthReport]
 ```
@@ -193,6 +196,12 @@ Digits are drawn with `random_int()`.
 `basic` substitutes single characters and preserves length. `advanced` adds
 multi-character glyphs, which lengthens the password — useful against a strict
 minimum-length policy.
+
+> [!NOTE]
+> Leetspeak is worth **zero** entropy bits and the strength report says so. It
+> is a deterministic transform, so it adds no work for an attacker who knows
+> your configuration. Reach for it to satisfy a character-class or length
+> policy, not to make a password stronger.
 
 | char | basic | advanced |
 |---|---|---|
@@ -387,6 +396,17 @@ You do not have to supply adjectives. A dictionary without them falls back to
 the locale's default pool, so the smallest useful personal collection is one
 file of names.
 
+> [!IMPORTANT]
+> Dictionary keys must match `[A-Za-z0-9_][A-Za-z0-9_-]*` and locales must look
+> like `en`, `it` or `pt_BR`. Both end up in a filesystem path, so a value that
+> does not match is rejected rather than followed — see
+> [Security](#security).
+
+Names themselves need no sanitising on your side. Whatever you register —
+including values straight out of a database — is stripped to letters, digits and
+the separator before it reaches a password, so a nickname carrying a quote, a
+semicolon or a newline cannot end up in one.
+
 ### Locales and adjectives
 
 Adjectives live in `src/Data/Adjectives/{locale}/`, and resolve in this order —
@@ -456,7 +476,7 @@ PasswordToolkit::make()
     ->adjectiveAt('before')                 // override the locale's word order
     ->leet(Leetspeak::Basic)                // none | basic | advanced
     ->guessesPerSecond(1e12)                // attacker assumption for the report
-    ->generate();                           // ->many(10), ->withReport(), ->manyWithReport(10)
+    ->generate();                           // ->many(10), ->unique(10), ->withReport(), ->manyWithReport(10)
 ```
 
 Enums and their string spellings are interchangeable — `->leet('basic')` and
@@ -675,7 +695,22 @@ That trade is the point of this package, and `structuralReport()` exists so you
 can see exactly what you paid. For secrets no human reads — API keys, tokens,
 root credentials — use `Str::password()` or `random_bytes()` instead.
 
-Names, adjectives and digits are all drawn with `random_int()`.
+- **Every choice uses `random_int()`** — names, adjectives and digits alike.
+- **Locales and dictionary keys are validated before they touch the
+  filesystem.** Both are interpolated into a path, and an application may well
+  pass a request value into `->locale(...)`. A value that does not match a
+  strict pattern is rejected, not followed. An application locale that fails
+  validation is ignored in favour of the fallback.
+- **Dictionary content is treated as untrusted.** Names are stripped to letters,
+  digits and the separator, so nothing from your own data can smuggle a quote, a
+  semicolon, a newline or a NUL byte into a password.
+- **Leetspeak is credited zero entropy**, because a deterministic transform adds
+  none against an attacker who knows your configuration.
+- **Batches are bounded** so a count reaching `generateMany()` from a request
+  cannot exhaust the process.
+
+`SECURITY.md` has the full list, including the deliberate design decisions that
+are not bugs.
 
 ### Reporting a vulnerability
 

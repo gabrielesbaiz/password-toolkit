@@ -39,8 +39,12 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
   message, in English and Italian.
 - **Contracts.** `DictionaryRepository` and `PasswordGenerator` are bound in the
   container, so either half can be replaced without subclassing.
-- `Strength`, `Leetspeak`, `NumbersPosition` and `Gender` enums, carrying the
-  behaviour that used to be `match` statements on raw strings.
+- **`generateUnique()`** and `->unique()` on the builder, for a batch with no
+  repeats. It gives up with a clear message when the pool is smaller than the
+  request rather than looping.
+- `Strength`, `Leetspeak`, `NumbersPosition`, `AdjectivePosition` and `Gender`
+  enums, carrying the behaviour that used to be `match` statements on raw
+  strings.
 
 ### Changed
 
@@ -73,6 +77,29 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 - `leetspeak_conversion` spells its off state `'none'`; `'no'` still parses.
 - Requires PHP 8.2 and supports Laravel 10 through 13.
 
+### Security
+
+- **Locales and dictionary keys can no longer escape their directory.** Both are
+  interpolated into `{root}/{locale}/{key}.json`, so an application passing a
+  request value into `->locale(...)` — or keying a dictionary by one — could
+  read any JSON file the PHP process could see. Both are now validated against a
+  strict pattern where they enter, and again immediately before the path is
+  built. An application locale that fails validation is ignored in favour of the
+  fallback; Laravel's own `setLocale()` guard permits `.` and `..`, so arriving
+  through it was not sufficient.
+- **Dictionary content is treated as untrusted.** The documented pattern is to
+  register a dictionary from application data, so names are stripped to letters,
+  digits and the configured separator before assembly, with whitespace runs
+  collapsed first. Quotes, semicolons, angle brackets, pipes, backslashes,
+  newlines, tabs and NUL bytes can no longer reach a generated password.
+- **Leetspeak is credited zero entropy bits.** Earlier 2.0 development builds
+  credited 6 and 12; a deterministic transform adds nothing against the
+  attacker the structural model assumes, so those figures overstated every
+  leetspeak password.
+- **Batches are bounded.** `generateMany()` builds its result in memory and now
+  caps at `PasswordToolkit::MAX_BATCH`, so a count arriving from a request
+  cannot exhaust the process.
+
 ### Fixed
 
 - **Crack time no longer overflows to `INF`.** `2 ** $bits` overflowed well
@@ -84,6 +111,10 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 - Leetspeak is applied when `add_numbers` is false. 1.x skipped the transform
   entirely on that branch.
 - 48 duplicate adjective entries removed across nine files.
+- A malformed user dictionary now reports itself as invalid JSON rather than as
+  "has no values", which sent people looking in the wrong place.
+- An entry with no letters or digits is rejected where it is defined, rather
+  than silently producing a password missing a segment.
 - Multibyte handling is consistent — the repetition penalty counted bytes while
   the charset model counted characters.
 

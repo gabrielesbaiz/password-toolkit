@@ -50,13 +50,23 @@ describe('structural model', function () {
             ->and($report->entropyBits)->toBeGreaterThan(0.0);
     });
 
-    it('credits leetspeak', function () {
+    it('credits leetspeak with nothing', function () {
+        // Leetspeak is deterministic. It does not enlarge the set of passwords
+        // the package can produce, so under a model that assumes the attacker
+        // knows the configuration it is worth exactly zero bits.
         $none = Entropy::structuralBits(100, 30, 4, Leetspeak::None);
         $basic = Entropy::structuralBits(100, 30, 4, Leetspeak::Basic);
         $advanced = Entropy::structuralBits(100, 30, 4, Leetspeak::Advanced);
 
-        expect($basic['total'])->toBeGreaterThan($none['total'])
-            ->and($advanced['total'])->toBeGreaterThan($basic['total']);
+        expect($basic['total'])->toBe($none['total'])
+            ->and($advanced['total'])->toBe($none['total'])
+            ->and($advanced['leetspeak_bonus'])->toBe(0.0);
+    });
+
+    it('still reports the leetspeak component', function () {
+        // Callers reading the array should not have to branch on the key.
+        expect(Entropy::structuralBits(100, 30, 4, Leetspeak::Advanced))
+            ->toHaveKey('leetspeak_bonus');
     });
 
     it('accepts the legacy string spelling', function () {

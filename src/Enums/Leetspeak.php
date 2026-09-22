@@ -97,18 +97,19 @@ enum Leetspeak: string
     }
 
     /**
-     * Extra entropy bits credited to a password in this mode.
+     * Extra entropy bits this mode contributes. Always zero.
      *
-     * Leetspeak is a deterministic transform, so strictly it adds nothing an
-     * attacker who knows the mode has to guess. These figures model the
-     * attacker who does not, and are deliberately modest for that reason.
+     * Leetspeak is a deterministic transform of an already-chosen password: it
+     * does not enlarge the set of passwords the package can produce, so it adds
+     * no work for an attacker who knows the configuration — which is precisely
+     * the attacker the structural model assumes. 2.0.0-dev credited 6 and 12
+     * bits here; those figures modelled an attacker who had not read the config
+     * file, and overstated the strength of every leetspeak password.
+     *
+     * Use leetspeak to satisfy a character-class policy, not to add strength.
      */
     public function entropyBonus(): float
     {
-        return match ($this) {
-            self::None => 0.0,
-            self::Basic => 6.0,
-            self::Advanced => 12.0,
-        };
+        return 0.0;
     }
 }

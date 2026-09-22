@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static PasswordBuilder make(Options|null $options = null)
  * @method static string generate(Options|null $options = null)
  * @method static array<int, string> generateMany(int $count, Options|null $options = null)
+ * @method static array<int, string> generateUnique(int $count, Options|null $options = null)
  * @method static array{password: string, report: \Gabrielesbaiz\PasswordToolkit\Support\StrengthReport} generateWithReport(Options|null $options = null)
  * @method static array<int, array{password: string, report: \Gabrielesbaiz\PasswordToolkit\Support\StrengthReport}> generateManyWithReport(int $count, Options|null $options = null)
  * @method static \Gabrielesbaiz\PasswordToolkit\Support\StrengthReport strength(string $password, Options|null $options = null)

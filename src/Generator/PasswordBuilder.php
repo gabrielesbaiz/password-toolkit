@@ -148,6 +148,16 @@ final readonly class PasswordBuilder
     }
 
     /**
+     * A batch with no repeats.
+     *
+     * @return array<int, string>
+     */
+    public function unique(int $count): array
+    {
+        return $this->generator->generateUnique($count, $this->options);
+    }
+
+    /**
      * @return array{password: string, report: StrengthReport}
      */
     public function withReport(): array

@@ -30,6 +30,7 @@ use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
 
 PasswordToolkit::generate();                  // string — throws if nothing is enabled
 PasswordToolkit::generateMany(10);            // array<int, string>, exactly 10
+PasswordToolkit::generateUnique(10);          // the same, with no repeats
 PasswordToolkit::generateWithReport();         // ['password' => string, 'report' => StrengthReport]
 PasswordToolkit::generateManyWithReport(5);    // array of the above
 
@@ -68,7 +69,7 @@ PasswordToolkit::make()
     ->adjectiveAt('before')                 // override the locale's word order
     ->leet(Leetspeak::Basic)                // or 'basic'
     ->guessesPerSecond(1e12)
-    ->generate();                           // ->many(10) ->withReport() ->manyWithReport(10)
+    ->generate();                           // ->many(10) ->unique(10) ->withReport() ->manyWithReport(10)
 ```
 
 ## Configuration
@@ -186,6 +187,19 @@ php artisan password-toolkit:generate 3 --locale=en --only=star_wars --json
 php artisan password-toolkit:generate --list
 php artisan password-toolkit:make-dictionary my_team --type=people --locale=en
 ```
+
+## Safety rules to respect
+
+- **Dictionary keys** must match `[A-Za-z0-9_][A-Za-z0-9_-]*`; **locales** must
+  look like `en`, `it`, `pt_BR`. Both are interpolated into a filesystem path,
+  so anything else throws `InvalidOptionException`. Never pass a raw request
+  value into `->locale()` or `registerDictionary()` without expecting that.
+- **Do not sanitise names yourself.** Registered names are stripped to letters,
+  digits and the separator automatically, so `User::pluck('nickname')` is safe
+  to hand over as-is.
+- **Leetspeak is worth zero entropy bits** and the report says so. Use it for a
+  character-class or length policy, never to claim strength.
+- **`generateMany()` caps at `PasswordToolkit::MAX_BATCH`.** Chunk beyond that.
 
 ## Exceptions
 

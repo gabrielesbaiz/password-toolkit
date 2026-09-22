@@ -8,6 +8,7 @@ use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Gender;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\DictionaryNotFoundException;
 use Gabrielesbaiz\PasswordToolkit\Generator\Options;
+use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
 /**
  * Finds an adjective that agrees with a given name.
@@ -144,6 +145,8 @@ final class AdjectiveResolver
             return $this->positions[$locale];
         }
 
+        Identifier::locale($locale);
+
         foreach ([...$this->paths, $this->basePath] as $root) {
             $path = rtrim($root, '/').'/'.$locale.'/'.self::DEFAULT_KEY.'.json';
 
@@ -185,6 +188,11 @@ final class AdjectiveResolver
      */
     private function load(string $locale, string $key): array
     {
+        // Defence in depth: these are validated on the way in, but this is the
+        // method that concatenates them into a path, so it checks again.
+        Identifier::locale($locale);
+        Identifier::key($key);
+
         $cacheKey = $locale.'/'.$key;
 
         if (array_key_exists($cacheKey, $this->cache)) {

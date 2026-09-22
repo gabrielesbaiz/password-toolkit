@@ -101,6 +101,10 @@ final class Entropy
      * Entropy under the structural model: the size of the space this package
      * can actually produce, given the pools in play.
      *
+     * Leetspeak contributes nothing — see Leetspeak::entropyBonus(). The
+     * component is still reported, at zero, so callers reading the array do not
+     * have to branch on whether the key is there.
+     *
      * @return array{name: float, adjective: float, number: float, leetspeak_bonus: float, total: float}
      */
     public static function structuralBits(

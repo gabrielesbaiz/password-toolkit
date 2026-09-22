@@ -27,6 +27,16 @@ use Illuminate\Support\Collection;
  */
 class PasswordToolkit implements PasswordGenerator
 {
+    /**
+     * Upper bound on one batch.
+     *
+     * Not a security boundary, a blast radius: generateMany() builds the whole
+     * array in memory, so a count that reached it from a request parameter
+     * would exhaust the process. Anything legitimately larger should be
+     * chunked by the caller.
+     */
+    public const MAX_BATCH = 100_000;
+
     public function __construct(
         protected readonly DictionaryRepository $dictionaries,
         protected readonly AdjectiveResolver $adjectives,
@@ -66,6 +76,45 @@ class PasswordToolkit implements PasswordGenerator
         }
 
         return $passwords;
+    }
+
+    /**
+     * Generate a batch with no repeats.
+     *
+     * The pool is finite, so this can be asked for more passwords than exist.
+     * Rather than spin forever it gives up after a bounded number of attempts
+     * and says how many it managed — a silent short array would be worse.
+     *
+     * @return array<int, string>
+     */
+    public function generateUnique(int $count, ?Options $options = null): array
+    {
+        $this->guardCount($count);
+
+        $options ??= Options::fromConfig();
+        $entries = $this->entries($options);
+
+        $passwords = [];
+        $attempts = 0;
+        $limit = $count * 10 + 100;
+
+        while (count($passwords) < $count && $attempts < $limit) {
+            $attempts++;
+            $password = $this->assemble($entries[random_int(0, count($entries) - 1)], $options);
+            $passwords[$password] = true;
+        }
+
+        if (count($passwords) < $count) {
+            throw InvalidOptionException::because(sprintf(
+                'Could only generate %d unique passwords out of %d requested in %d attempts. '
+                .'Enable more dictionaries, or add digits to widen the space.',
+                count($passwords),
+                $count,
+                $attempts,
+            ));
+        }
+
+        return array_keys($passwords);
     }
 
     /**
@@ -248,13 +297,23 @@ class PasswordToolkit implements PasswordGenerator
     {
         $separator = $options->separator ?? '';
 
-        $name = $options->nameSeparator
-            ? str_replace(' ', $separator, $entry->name)
-            : $this->alphanumeric($entry->name);
+        // Names may come from a dictionary the application supplied — the
+        // README suggests User::pluck() — so nothing is trusted to be clean.
+        // Whitespace becomes the separator or disappears, and everything that
+        // is neither a letter, a digit, nor the separator is removed. Without
+        // this a nickname carrying a quote, a semicolon or a newline would end
+        // up inside the password.
+        $name = $this->sanitize(
+            $options->nameSeparator
+                ? str_replace(' ', $separator, $entry->name)
+                : str_replace(' ', '', $entry->name),
+            $separator,
+        );
 
-        $adjective = $this->alphanumeric($this->adjectives->for($entry, $options)->name);
-
-        $adjective = mb_convert_case($adjective, MB_CASE_TITLE);
+        $adjective = mb_convert_case(
+            $this->alphanumeric($this->adjectives->for($entry, $options)->name),
+            MB_CASE_TITLE,
+        );
 
         // Word order is a property of the language, not a preference: Italian
         // says "Goldrake Mitico", English says "Legendary Goldrake". The locale
@@ -276,12 +335,37 @@ class PasswordToolkit implements PasswordGenerator
     /**
      * Strip everything that is not a letter or a digit.
      *
-     * Adjectives and un-separated names must not smuggle a space or an
-     * apostrophe into the password, where it would break shells and copy-paste.
+     * An adjective is a single word, so nothing else is allowed through.
      */
     protected function alphanumeric(string $value): string
     {
         return (string) preg_replace('/[^\p{L}\p{N}]/u', '', $value);
+    }
+
+    /**
+     * Strip everything that is neither a letter, a digit, nor the separator.
+     *
+     * A password that carries a quote, a semicolon, a newline or a control
+     * character breaks shells, CSV exports and copy-paste — and is exactly what
+     * an unsanitised name from an application's own dictionary would produce.
+     */
+    protected function sanitize(string $value, string $separator): string
+    {
+        if ($separator === '') {
+            return $this->alphanumeric($value);
+        }
+
+        $quoted = preg_quote($separator, '/');
+
+        // Skip over separator occurrences, strip everything else that is not
+        // alphanumeric.
+        $value = (string) preg_replace('/(?:'.$quoted.')(*SKIP)(*FAIL)|[^\p{L}\p{N}]/u', '', $value);
+
+        // Stripping can leave separators adjacent — "O'Brien Jr." collapses to
+        // "OBrien-Jr-" — so runs are folded back to one and the edges trimmed.
+        $value = (string) preg_replace('/(?:'.$quoted.')+/u', $separator, $value);
+
+        return trim($value, $separator);
     }
 
     protected function randomNumber(int $digits): int
@@ -296,6 +380,12 @@ class PasswordToolkit implements PasswordGenerator
     {
         if ($count < 1) {
             throw InvalidOptionException::because("Count must be 1 or more, got {$count}.");
+        }
+
+        if ($count > self::MAX_BATCH) {
+            throw InvalidOptionException::because(
+                'Count must be at most '.self::MAX_BATCH.", got {$count}. Generate in chunks.",
+            );
         }
     }
 }

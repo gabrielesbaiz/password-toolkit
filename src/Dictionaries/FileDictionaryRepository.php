@@ -6,6 +6,7 @@ namespace Gabrielesbaiz\PasswordToolkit\Dictionaries;
 
 use Gabrielesbaiz\PasswordToolkit\Contracts\DictionaryRepository;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\DictionaryNotFoundException;
+use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Generator\Options;
 
 /**
@@ -203,13 +204,27 @@ final class FileDictionaryRepository implements DictionaryRepository
 
     private function decode(string $key, string $path, ?string $type, bool $builtIn): Dictionary
     {
-        /** @var array<string, mixed> $data */
-        $data = (array) json_decode((string) file_get_contents($path), true);
+        $raw = @file_get_contents($path);
+
+        if ($raw === false) {
+            throw InvalidOptionException::because("Dictionary [{$key}] at {$path} could not be read.");
+        }
+
+        $data = json_decode($raw, true);
+
+        // Without this a syntax error in a user's dictionary surfaced as
+        // "has no values", which sends them looking in the wrong place.
+        if (! is_array($data)) {
+            throw InvalidOptionException::because(
+                "Dictionary [{$key}] at {$path} is not valid JSON: ".json_last_error_msg().'.',
+            );
+        }
 
         if ($type !== null) {
             $data['type'] = $type;
         }
 
+        /** @var array<string, mixed> $data */
         return Dictionary::fromArray($key, $data, $builtIn);
     }
 }
