@@ -1,0 +1,26 @@
+{
+    "key": "knives_out",
+    "locale": "en",
+    "values": [
+        { "name": "Ambiguous", "gender": "neutral" },
+        { "name": "Analytical", "gender": "neutral" },
+        { "name": "Courteous", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Deductive", "gender": "neutral" },
+        { "name": "Elusive", "gender": "neutral" },
+        { "name": "Enigmatic", "gender": "neutral" },
+        { "name": "Guilty", "gender": "neutral" },
+        { "name": "Impeccable", "gender": "neutral" },
+        { "name": "Intriguing", "gender": "neutral" },
+        { "name": "Investigative", "gender": "neutral" },
+        { "name": "Meticulous", "gender": "neutral" },
+        { "name": "Mysterious", "gender": "neutral" },
+        { "name": "Perceptive", "gender": "neutral" },
+        { "name": "Rich", "gender": "neutral" },
+        { "name": "Sly", "gender": "neutral" },
+        { "name": "Subtle", "gender": "neutral" },
+        { "name": "Suspicious", "gender": "neutral" },
+        { "name": "Underhanded", "gender": "neutral" },
+        { "name": "Unsettling", "gender": "neutral" }
+    ]
+}

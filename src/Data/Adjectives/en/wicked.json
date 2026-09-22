@@ -1,0 +1,26 @@
+{
+    "key": "wicked",
+    "locale": "en",
+    "values": [
+        { "name": "Ambitious", "gender": "neutral" },
+        { "name": "Bewitched", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Charming", "gender": "neutral" },
+        { "name": "Emerald", "gender": "neutral" },
+        { "name": "Fairytale", "gender": "neutral" },
+        { "name": "Flying", "gender": "neutral" },
+        { "name": "Glittering", "gender": "neutral" },
+        { "name": "Green", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Misunderstood", "gender": "neutral" },
+        { "name": "Outcast", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Prodigious", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" },
+        { "name": "Underhanded", "gender": "neutral" },
+        { "name": "Villainous", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "key": "encanto",
+    "locale": "en",
+    "values": [
+        { "name": "Affectionate", "gender": "neutral" },
+        { "name": "Caring", "gender": "neutral" },
+        { "name": "Charming", "gender": "neutral" },
+        { "name": "Cheerful", "gender": "neutral" },
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Enchanted", "gender": "neutral" },
+        { "name": "Familial", "gender": "neutral" },
+        { "name": "Flowery", "gender": "neutral" },
+        { "name": "Magical", "gender": "neutral" },
+        { "name": "Merry", "gender": "neutral" },
+        { "name": "Musical", "gender": "neutral" },
+        { "name": "Prodigious", "gender": "neutral" },
+        { "name": "Prophetic", "gender": "neutral" },
+        { "name": "Sensitive", "gender": "neutral" },
+        { "name": "Stubborn", "gender": "neutral" },
+        { "name": "Sunny", "gender": "neutral" },
+        { "name": "Tropical", "gender": "neutral" },
+        { "name": "United", "gender": "neutral" },
+        { "name": "Warm", "gender": "neutral" },
+        { "name": "Welcoming", "gender": "neutral" }
+    ]
+}

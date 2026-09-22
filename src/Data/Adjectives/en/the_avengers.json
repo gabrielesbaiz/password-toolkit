@@ -1,0 +1,24 @@
+{
+    "key": "the_avengers",
+    "locale": "en",
+    "values": [
+        { "name": "Armored", "gender": "neutral" },
+        { "name": "Colossal", "gender": "neutral" },
+        { "name": "Cosmic", "gender": "neutral" },
+        { "name": "Deceptive", "gender": "neutral" },
+        { "name": "Divine", "gender": "neutral" },
+        { "name": "Furious", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Indomitable", "gender": "neutral" },
+        { "name": "Ingenious", "gender": "neutral" },
+        { "name": "Invincible", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Lethal", "gender": "neutral" },
+        { "name": "Solemn", "gender": "neutral" },
+        { "name": "Swaggering", "gender": "neutral" },
+        { "name": "Thundering", "gender": "neutral" },
+        { "name": "Titanic", "gender": "neutral" },
+        { "name": "Valiant", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" }
+    ]
+}

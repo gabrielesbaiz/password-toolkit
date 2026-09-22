@@ -1,0 +1,26 @@
+{
+    "key": "italian_operas",
+    "locale": "en",
+    "values": [
+        { "name": "Choral", "gender": "neutral" },
+        { "name": "Dramatic", "gender": "neutral" },
+        { "name": "Fatal", "gender": "neutral" },
+        { "name": "Heroic", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Lyric", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Melodious", "gender": "neutral" },
+        { "name": "Moving", "gender": "neutral" },
+        { "name": "Passionate", "gender": "neutral" },
+        { "name": "Poignant", "gender": "neutral" },
+        { "name": "Romantic", "gender": "neutral" },
+        { "name": "Solemn", "gender": "neutral" },
+        { "name": "Sublime", "gender": "neutral" },
+        { "name": "Sumptuous", "gender": "neutral" },
+        { "name": "Symphonic", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" },
+        { "name": "Tragic", "gender": "neutral" },
+        { "name": "Vibrant", "gender": "neutral" }
+    ]
+}

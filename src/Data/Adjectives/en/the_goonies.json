@@ -1,0 +1,26 @@
+{
+    "key": "the_goonies",
+    "locale": "en",
+    "values": [
+        { "name": "Adventurous", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Combative", "gender": "neutral" },
+        { "name": "Curious", "gender": "neutral" },
+        { "name": "Exuberant", "gender": "neutral" },
+        { "name": "Faithful", "gender": "neutral" },
+        { "name": "Funny", "gender": "neutral" },
+        { "name": "Inseparable", "gender": "neutral" },
+        { "name": "Intrepid", "gender": "neutral" },
+        { "name": "Inventive", "gender": "neutral" },
+        { "name": "Jocular", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Mischievous", "gender": "neutral" },
+        { "name": "Rowdy", "gender": "neutral" },
+        { "name": "Stubborn", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Undaunted", "gender": "neutral" },
+        { "name": "Underground", "gender": "neutral" }
+    ]
+}

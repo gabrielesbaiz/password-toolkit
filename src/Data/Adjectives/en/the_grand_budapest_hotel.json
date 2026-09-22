@@ -1,0 +1,26 @@
+{
+    "key": "the_grand_budapest_hotel",
+    "locale": "en",
+    "values": [
+        { "name": "Affable", "gender": "neutral" },
+        { "name": "Aristocratic", "gender": "neutral" },
+        { "name": "Ceremonious", "gender": "neutral" },
+        { "name": "Courteous", "gender": "neutral" },
+        { "name": "Discreet", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Genteel", "gender": "neutral" },
+        { "name": "Impeccable", "gender": "neutral" },
+        { "name": "Kind", "gender": "neutral" },
+        { "name": "Luxurious", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Meticulous", "gender": "neutral" },
+        { "name": "Nostalgic", "gender": "neutral" },
+        { "name": "Oldfashioned", "gender": "neutral" },
+        { "name": "Orderly", "gender": "neutral" },
+        { "name": "Perfumed", "gender": "neutral" },
+        { "name": "Polite", "gender": "neutral" },
+        { "name": "Refined", "gender": "neutral" },
+        { "name": "Symmetrical", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" }
+    ]
+}

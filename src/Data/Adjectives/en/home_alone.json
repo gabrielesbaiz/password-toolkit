@@ -1,0 +1,26 @@
+{
+    "key": "home_alone",
+    "locale": "en",
+    "values": [
+        { "name": "Bungling", "gender": "neutral" },
+        { "name": "Christmassy", "gender": "neutral" },
+        { "name": "Clumsy", "gender": "neutral" },
+        { "name": "Crackling", "gender": "neutral" },
+        { "name": "Domestic", "gender": "neutral" },
+        { "name": "Familial", "gender": "neutral" },
+        { "name": "Festive", "gender": "neutral" },
+        { "name": "Hilarious", "gender": "neutral" },
+        { "name": "Icy", "gender": "neutral" },
+        { "name": "Impish", "gender": "neutral" },
+        { "name": "Inventive", "gender": "neutral" },
+        { "name": "Mischievous", "gender": "neutral" },
+        { "name": "Noisy", "gender": "neutral" },
+        { "name": "Reckless", "gender": "neutral" },
+        { "name": "Shrewd", "gender": "neutral" },
+        { "name": "Snowy", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Thieving", "gender": "neutral" },
+        { "name": "Warm", "gender": "neutral" },
+        { "name": "Welcoming", "gender": "neutral" }
+    ]
+}

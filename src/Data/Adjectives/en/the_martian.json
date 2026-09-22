@@ -1,0 +1,26 @@
+{
+    "key": "the_martian",
+    "locale": "en",
+    "values": [
+        { "name": "Arid", "gender": "neutral" },
+        { "name": "Botanical", "gender": "neutral" },
+        { "name": "Cultivated", "gender": "neutral" },
+        { "name": "Dusty", "gender": "neutral" },
+        { "name": "Experimental", "gender": "neutral" },
+        { "name": "Hardy", "gender": "neutral" },
+        { "name": "Improvised", "gender": "neutral" },
+        { "name": "Inventive", "gender": "neutral" },
+        { "name": "Ironic", "gender": "neutral" },
+        { "name": "Isolated", "gender": "neutral" },
+        { "name": "Martian", "gender": "neutral" },
+        { "name": "Methodical", "gender": "neutral" },
+        { "name": "Obstinate", "gender": "neutral" },
+        { "name": "Orbital", "gender": "neutral" },
+        { "name": "Patient", "gender": "neutral" },
+        { "name": "Rational", "gender": "neutral" },
+        { "name": "Scientific", "gender": "neutral" },
+        { "name": "Selfsufficient", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" }
+    ]
+}

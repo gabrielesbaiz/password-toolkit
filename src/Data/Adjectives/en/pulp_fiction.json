@@ -1,0 +1,26 @@
+{
+    "key": "pulp_fiction",
+    "locale": "en",
+    "values": [
+        { "name": "Ambiguous", "gender": "neutral" },
+        { "name": "Bloodthirsty", "gender": "neutral" },
+        { "name": "Brutal", "gender": "neutral" },
+        { "name": "Cheeky", "gender": "neutral" },
+        { "name": "Criminal", "gender": "neutral" },
+        { "name": "Cynical", "gender": "neutral" },
+        { "name": "Fatal", "gender": "neutral" },
+        { "name": "Impertinent", "gender": "neutral" },
+        { "name": "Irreverent", "gender": "neutral" },
+        { "name": "Loquacious", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Nervous", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Nonchalant", "gender": "neutral" },
+        { "name": "Provocative", "gender": "neutral" },
+        { "name": "Relaxed", "gender": "neutral" },
+        { "name": "Shady", "gender": "neutral" },
+        { "name": "Sinister", "gender": "neutral" },
+        { "name": "Stylish", "gender": "neutral" },
+        { "name": "Violent", "gender": "neutral" }
+    ]
+}

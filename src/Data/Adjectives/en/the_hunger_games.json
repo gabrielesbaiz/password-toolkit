@@ -1,0 +1,25 @@
+{
+    "key": "the_hunger_games",
+    "locale": "en",
+    "values": [
+        { "name": "Combative", "gender": "neutral" },
+        { "name": "Cruel", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Desperate", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Hungry", "gender": "neutral" },
+        { "name": "Incendiary", "gender": "neutral" },
+        { "name": "Indomitable", "gender": "neutral" },
+        { "name": "Lethal", "gender": "neutral" },
+        { "name": "Mediatic", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Ostentatious", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Resilient", "gender": "neutral" },
+        { "name": "Sacrificial", "gender": "neutral" },
+        { "name": "Strategic", "gender": "neutral" },
+        { "name": "Tyrannical", "gender": "neutral" },
+        { "name": "Watched", "gender": "neutral" }
+    ]
+}

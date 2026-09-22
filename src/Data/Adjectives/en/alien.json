@@ -1,0 +1,26 @@
+{
+    "key": "alien",
+    "locale": "en",
+    "values": [
+        { "name": "Alien", "gender": "neutral" },
+        { "name": "Claustrophobic", "gender": "neutral" },
+        { "name": "Corrosive", "gender": "neutral" },
+        { "name": "Cramped", "gender": "neutral" },
+        { "name": "Dark", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Hostile", "gender": "neutral" },
+        { "name": "Icy", "gender": "neutral" },
+        { "name": "Industrial", "gender": "neutral" },
+        { "name": "Isolated", "gender": "neutral" },
+        { "name": "Lethal", "gender": "neutral" },
+        { "name": "Metallic", "gender": "neutral" },
+        { "name": "Monstrous", "gender": "neutral" },
+        { "name": "Orbital", "gender": "neutral" },
+        { "name": "Parasitic", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Slimy", "gender": "neutral" },
+        { "name": "Spectral", "gender": "neutral" },
+        { "name": "Terrifying", "gender": "neutral" },
+        { "name": "Underground", "gender": "neutral" }
+    ]
+}

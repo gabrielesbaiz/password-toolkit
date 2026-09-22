@@ -1,0 +1,26 @@
+{
+    "key": "john_wick",
+    "locale": "en",
+    "values": [
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Glacial", "gender": "neutral" },
+        { "name": "Gloomy", "gender": "neutral" },
+        { "name": "Impassive", "gender": "neutral" },
+        { "name": "Incorruptible", "gender": "neutral" },
+        { "name": "Lethal", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Mortal", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Precise", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Silent", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Surgical", "gender": "neutral" },
+        { "name": "Tactical", "gender": "neutral" },
+        { "name": "Trained", "gender": "neutral" },
+        { "name": "Unstoppable", "gender": "neutral" },
+        { "name": "Vengeful", "gender": "neutral" }
+    ]
+}

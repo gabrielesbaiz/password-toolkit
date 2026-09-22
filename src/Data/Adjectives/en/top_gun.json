@@ -1,0 +1,26 @@
+{
+    "key": "top_gun",
+    "locale": "en",
+    "values": [
+        { "name": "Acrobatic", "gender": "neutral" },
+        { "name": "Audacious", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Competitive", "gender": "neutral" },
+        { "name": "Dizzying", "gender": "neutral" },
+        { "name": "Flying", "gender": "neutral" },
+        { "name": "Glacial", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Invincible", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Lightning", "gender": "neutral" },
+        { "name": "Military", "gender": "neutral" },
+        { "name": "Reckless", "gender": "neutral" },
+        { "name": "Roaring", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Supersonic", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Tactical", "gender": "neutral" },
+        { "name": "Undaunted", "gender": "neutral" }
+    ]
+}

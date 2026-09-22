@@ -1,0 +1,26 @@
+{
+    "key": "terminator",
+    "locale": "en",
+    "values": [
+        { "name": "Apocalyptic", "gender": "neutral" },
+        { "name": "Armored", "gender": "neutral" },
+        { "name": "Cold", "gender": "neutral" },
+        { "name": "Cybernetic", "gender": "neutral" },
+        { "name": "Doomed", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Fugitive", "gender": "neutral" },
+        { "name": "Hunted", "gender": "neutral" },
+        { "name": "Indestructible", "gender": "neutral" },
+        { "name": "Inexorable", "gender": "neutral" },
+        { "name": "Lethal", "gender": "neutral" },
+        { "name": "Mechanical", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Metallic", "gender": "neutral" },
+        { "name": "Nuclear", "gender": "neutral" },
+        { "name": "Programmed", "gender": "neutral" },
+        { "name": "Reinforced", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Robotic", "gender": "neutral" },
+        { "name": "Unstoppable", "gender": "neutral" }
+    ]
+}

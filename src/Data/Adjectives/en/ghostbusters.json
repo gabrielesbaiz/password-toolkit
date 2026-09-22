@@ -1,0 +1,26 @@
+{
+    "key": "ghostbusters",
+    "locale": "en",
+    "values": [
+        { "name": "Clumsy", "gender": "neutral" },
+        { "name": "Comic", "gender": "neutral" },
+        { "name": "Demonic", "gender": "neutral" },
+        { "name": "Ectoplasmic", "gender": "neutral" },
+        { "name": "Evanescent", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Ghostly", "gender": "neutral" },
+        { "name": "Haunted", "gender": "neutral" },
+        { "name": "Monstrous", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Occult", "gender": "neutral" },
+        { "name": "Paranormal", "gender": "neutral" },
+        { "name": "Ramshackle", "gender": "neutral" },
+        { "name": "Sarcastic", "gender": "neutral" },
+        { "name": "Slimy", "gender": "neutral" },
+        { "name": "Spectral", "gender": "neutral" },
+        { "name": "Sticky", "gender": "neutral" },
+        { "name": "Supernatural", "gender": "neutral" },
+        { "name": "Terrifying", "gender": "neutral" },
+        { "name": "Unsettling", "gender": "neutral" }
+    ]
+}

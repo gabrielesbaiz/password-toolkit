@@ -1,0 +1,26 @@
+{
+    "key": "italian_football_clubs",
+    "locale": "en",
+    "values": [
+        { "name": "Attacking", "gender": "neutral" },
+        { "name": "Awarded", "gender": "neutral" },
+        { "name": "Combative", "gender": "neutral" },
+        { "name": "Fearsome", "gender": "neutral" },
+        { "name": "Glorious", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Hardened", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Illustrious", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Noisy", "gender": "neutral" },
+        { "name": "Passionate", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Rival", "gender": "neutral" },
+        { "name": "Sporty", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Tactical", "gender": "neutral" },
+        { "name": "Triumphant", "gender": "neutral" },
+        { "name": "Unbeatable", "gender": "neutral" },
+        { "name": "Winning", "gender": "neutral" }
+    ]
+}

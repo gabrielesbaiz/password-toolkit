@@ -1,0 +1,26 @@
+{
+    "key": "grease",
+    "locale": "en",
+    "values": [
+        { "name": "Cheeky", "gender": "neutral" },
+        { "name": "Chromed", "gender": "neutral" },
+        { "name": "Coquettish", "gender": "neutral" },
+        { "name": "Dancing", "gender": "neutral" },
+        { "name": "Enamored", "gender": "neutral" },
+        { "name": "Exuberant", "gender": "neutral" },
+        { "name": "Jaunty", "gender": "neutral" },
+        { "name": "Melodic", "gender": "neutral" },
+        { "name": "Merry", "gender": "neutral" },
+        { "name": "Nostalgic", "gender": "neutral" },
+        { "name": "Pomaded", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Rhythmic", "gender": "neutral" },
+        { "name": "Rousing", "gender": "neutral" },
+        { "name": "Seductive", "gender": "neutral" },
+        { "name": "Songful", "gender": "neutral" },
+        { "name": "Swaggering", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" },
+        { "name": "Vintage", "gender": "neutral" },
+        { "name": "Youthful", "gender": "neutral" }
+    ]
+}

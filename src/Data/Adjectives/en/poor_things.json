@@ -1,0 +1,26 @@
+{
+    "key": "poor_things",
+    "locale": "en",
+    "values": [
+        { "name": "Bizarre", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brazen", "gender": "neutral" },
+        { "name": "Curious", "gender": "neutral" },
+        { "name": "Eccentric", "gender": "neutral" },
+        { "name": "Experimental", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Free", "gender": "neutral" },
+        { "name": "Gothic", "gender": "neutral" },
+        { "name": "Grotesque", "gender": "neutral" },
+        { "name": "Impetuous", "gender": "neutral" },
+        { "name": "Naive", "gender": "neutral" },
+        { "name": "Nonconformist", "gender": "neutral" },
+        { "name": "Oneiric", "gender": "neutral" },
+        { "name": "Rebellious", "gender": "neutral" },
+        { "name": "Reborn", "gender": "neutral" },
+        { "name": "Sensual", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" },
+        { "name": "Unscrupulous", "gender": "neutral" },
+        { "name": "Victorian", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "key": "mad_max",
+    "locale": "en",
+    "values": [
+        { "name": "Arid", "gender": "neutral" },
+        { "name": "Armored", "gender": "neutral" },
+        { "name": "Audacious", "gender": "neutral" },
+        { "name": "Brutal", "gender": "neutral" },
+        { "name": "Desperate", "gender": "neutral" },
+        { "name": "Devastating", "gender": "neutral" },
+        { "name": "Dusty", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Fiery", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Metallic", "gender": "neutral" },
+        { "name": "Raging", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Roaring", "gender": "neutral" },
+        { "name": "Rudimentary", "gender": "neutral" },
+        { "name": "Rusty", "gender": "neutral" },
+        { "name": "Thirsty", "gender": "neutral" },
+        { "name": "Tribal", "gender": "neutral" },
+        { "name": "Unleashed", "gender": "neutral" },
+        { "name": "Wandering", "gender": "neutral" }
+    ]
+}

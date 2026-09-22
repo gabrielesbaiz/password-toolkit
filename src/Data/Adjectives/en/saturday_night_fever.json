@@ -1,0 +1,26 @@
+{
+    "key": "saturday_night_fever",
+    "locale": "en",
+    "values": [
+        { "name": "Dancing", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Garish", "gender": "neutral" },
+        { "name": "Glittering", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Melodic", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Passionate", "gender": "neutral" },
+        { "name": "Restless", "gender": "neutral" },
+        { "name": "Rhythmic", "gender": "neutral" },
+        { "name": "Seductive", "gender": "neutral" },
+        { "name": "Showy", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Stylish", "gender": "neutral" },
+        { "name": "Swaggering", "gender": "neutral" },
+        { "name": "Sweaty", "gender": "neutral" },
+        { "name": "Unbridled", "gender": "neutral" },
+        { "name": "Vain", "gender": "neutral" },
+        { "name": "Youthful", "gender": "neutral" }
+    ]
+}

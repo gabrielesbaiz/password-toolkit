@@ -1,0 +1,26 @@
+{
+    "key": "apocalypse_now",
+    "locale": "en",
+    "values": [
+        { "name": "Alienated", "gender": "neutral" },
+        { "name": "Delirious", "gender": "neutral" },
+        { "name": "Devastated", "gender": "neutral" },
+        { "name": "Feverish", "gender": "neutral" },
+        { "name": "Gloomy", "gender": "neutral" },
+        { "name": "Grim", "gender": "neutral" },
+        { "name": "Hallucinatory", "gender": "neutral" },
+        { "name": "Humid", "gender": "neutral" },
+        { "name": "Incendiary", "gender": "neutral" },
+        { "name": "Infernal", "gender": "neutral" },
+        { "name": "Mad", "gender": "neutral" },
+        { "name": "Merciless", "gender": "neutral" },
+        { "name": "Military", "gender": "neutral" },
+        { "name": "Obsessive", "gender": "neutral" },
+        { "name": "Oppressive", "gender": "neutral" },
+        { "name": "Prophetic", "gender": "neutral" },
+        { "name": "Relentless", "gender": "neutral" },
+        { "name": "Riverine", "gender": "neutral" },
+        { "name": "Tropical", "gender": "neutral" },
+        { "name": "Warlike", "gender": "neutral" }
+    ]
+}

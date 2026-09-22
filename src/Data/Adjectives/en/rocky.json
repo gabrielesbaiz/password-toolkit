@@ -1,0 +1,26 @@
+{
+    "key": "rocky",
+    "locale": "en",
+    "values": [
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Coarse", "gender": "neutral" },
+        { "name": "Combative", "gender": "neutral" },
+        { "name": "Determined", "gender": "neutral" },
+        { "name": "Gritty", "gender": "neutral" },
+        { "name": "Hardworking", "gender": "neutral" },
+        { "name": "Hardy", "gender": "neutral" },
+        { "name": "Hotblooded", "gender": "neutral" },
+        { "name": "Humble", "gender": "neutral" },
+        { "name": "Indomitable", "gender": "neutral" },
+        { "name": "Muscular", "gender": "neutral" },
+        { "name": "Obstinate", "gender": "neutral" },
+        { "name": "Popular", "gender": "neutral" },
+        { "name": "Pugnacious", "gender": "neutral" },
+        { "name": "Sincere", "gender": "neutral" },
+        { "name": "Stubborn", "gender": "neutral" },
+        { "name": "Sweaty", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Trained", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "key": "the_fifth_element",
+    "locale": "en",
+    "values": [
+        { "name": "Alien", "gender": "neutral" },
+        { "name": "Cosmic", "gender": "neutral" },
+        { "name": "Divine", "gender": "neutral" },
+        { "name": "Eccentric", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Fluorescent", "gender": "neutral" },
+        { "name": "Frantic", "gender": "neutral" },
+        { "name": "Futuristic", "gender": "neutral" },
+        { "name": "Garish", "gender": "neutral" },
+        { "name": "Intergalactic", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Multicolored", "gender": "neutral" },
+        { "name": "Orbital", "gender": "neutral" },
+        { "name": "Prophetic", "gender": "neutral" },
+        { "name": "Psychedelic", "gender": "neutral" },
+        { "name": "Rowdy", "gender": "neutral" },
+        { "name": "Spatial", "gender": "neutral" },
+        { "name": "Supersonic", "gender": "neutral" }
+    ]
+}

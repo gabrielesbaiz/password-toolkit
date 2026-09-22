@@ -1,0 +1,26 @@
+{
+    "key": "interstellar",
+    "locale": "en",
+    "values": [
+        { "name": "Astral", "gender": "neutral" },
+        { "name": "Cosmic", "gender": "neutral" },
+        { "name": "Desolate", "gender": "neutral" },
+        { "name": "Dusty", "gender": "neutral" },
+        { "name": "Elegiac", "gender": "neutral" },
+        { "name": "Eternal", "gender": "neutral" },
+        { "name": "Glacial", "gender": "neutral" },
+        { "name": "Gravitational", "gender": "neutral" },
+        { "name": "Infinite", "gender": "neutral" },
+        { "name": "Melancholic", "gender": "neutral" },
+        { "name": "Moving", "gender": "neutral" },
+        { "name": "Orbital", "gender": "neutral" },
+        { "name": "Otherworldly", "gender": "neutral" },
+        { "name": "Remote", "gender": "neutral" },
+        { "name": "Scientific", "gender": "neutral" },
+        { "name": "Sidereal", "gender": "neutral" },
+        { "name": "Silent", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Starry", "gender": "neutral" },
+        { "name": "Vast", "gender": "neutral" }
+    ]
+}

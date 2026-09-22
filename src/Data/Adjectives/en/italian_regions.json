@@ -1,0 +1,26 @@
+{
+    "key": "italian_regions",
+    "locale": "en",
+    "values": [
+        { "name": "Alpine", "gender": "neutral" },
+        { "name": "Coastal", "gender": "neutral" },
+        { "name": "Fertile", "gender": "neutral" },
+        { "name": "Hilly", "gender": "neutral" },
+        { "name": "Hospitable", "gender": "neutral" },
+        { "name": "Lush", "gender": "neutral" },
+        { "name": "Mountainous", "gender": "neutral" },
+        { "name": "Panoramic", "gender": "neutral" },
+        { "name": "Picturesque", "gender": "neutral" },
+        { "name": "Rocky", "gender": "neutral" },
+        { "name": "Rugged", "gender": "neutral" },
+        { "name": "Rural", "gender": "neutral" },
+        { "name": "Southern", "gender": "neutral" },
+        { "name": "Sunbaked", "gender": "neutral" },
+        { "name": "Sunlit", "gender": "neutral" },
+        { "name": "Sunny", "gender": "neutral" },
+        { "name": "Verdant", "gender": "neutral" },
+        { "name": "Volcanic", "gender": "neutral" },
+        { "name": "Windy", "gender": "neutral" },
+        { "name": "Wooded", "gender": "neutral" }
+    ]
+}

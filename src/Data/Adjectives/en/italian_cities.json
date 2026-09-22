@@ -1,0 +1,26 @@
+{
+    "key": "italian_cities",
+    "locale": "en",
+    "values": [
+        { "name": "Academic", "gender": "neutral" },
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Baroque", "gender": "neutral" },
+        { "name": "Bustling", "gender": "neutral" },
+        { "name": "Chaotic", "gender": "neutral" },
+        { "name": "Evocative", "gender": "neutral" },
+        { "name": "Foggy", "gender": "neutral" },
+        { "name": "Fortified", "gender": "neutral" },
+        { "name": "Genteel", "gender": "neutral" },
+        { "name": "Hardworking", "gender": "neutral" },
+        { "name": "Hilly", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Maritime", "gender": "neutral" },
+        { "name": "Medieval", "gender": "neutral" },
+        { "name": "Monumental", "gender": "neutral" },
+        { "name": "Panoramic", "gender": "neutral" },
+        { "name": "Picturesque", "gender": "neutral" },
+        { "name": "Renaissance", "gender": "neutral" },
+        { "name": "Sunlit", "gender": "neutral" },
+        { "name": "Welcoming", "gender": "neutral" }
+    ]
+}
