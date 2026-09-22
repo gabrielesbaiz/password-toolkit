@@ -140,8 +140,18 @@ Adjectives resolve in this order, first hit wins:
 3. `{fallback_locale}/{dictionary}.json`
 4. `{fallback_locale}/_default.json`
 
-Italian ships themed adjectives for all 91 dictionaries (gender-agreeing) plus a
-1,237-word default pool. English ships a 224-word neutral default pool.
+Italian and English both ship themed adjectives for all 91 dictionaries, plus a
+default pool (1,237 words in Italian, gender-agreeing; 224 in English, all
+neutral). English packs are generated from
+`src/Data/Adjectives/_glossary.it-en.json` by `build/build-adjectives.php` —
+edit the glossary, never a generated file.
+
+Names are translated sparsely: 211 entries across 15 dictionaries, where an
+Italian form has a real English one (Giove/Jupiter, Topolino/Mickey Mouse,
+Albus Silente/Dumbledore, Cervino/Matterhorn). Proper nouns are deliberately
+untranslated — Barolo is Barolo in every language. Files live at
+`Data/Names/{locale}/{key}.json` as a plain map, or
+`{userpath}/names/{locale}/{key}.json` for a user dictionary.
 
 **Word order follows the language.** Each locale's `_default.json` declares
 `"adjective_position": "before" | "after"` — Italian says `Goldrake-Mitico`,

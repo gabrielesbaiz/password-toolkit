@@ -44,6 +44,7 @@ Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-4271` in It
   - [Built-in](#built-in)
   - [Your own dictionaries](#your-own-dictionaries)
   - [Locales and adjectives](#locales-and-adjectives)
+  - [Translated names](#translated-names)
 - [The builder](#the-builder)
 - [Strength reporting](#strength-reporting)
   - [The two models](#the-two-models)
@@ -417,10 +418,16 @@ first hit wins:
 3. `{fallback_locale}/{dictionary}.json`
 4. `{fallback_locale}/_default.json`
 
-Italian ships themed adjectives for all 91 dictionaries plus a 1,237-word
-default pool, with correct gender agreement. English ships a 224-word default
-pool, all neutral — English adjectives do not agree, so every one of them is
-eligible for every name.
+Both Italian and English ship themed adjectives for all 91 dictionaries, plus a
+default pool for anything without one — 1,237 words in Italian, 224 in English.
+Italian adjectives agree with the gender of the name; English ones are all
+neutral, because English adjectives do not agree, so every one is eligible for
+every name.
+
+The English packs are generated from the Italian ones through a single
+glossary, `src/Data/Adjectives/_glossary.it-en.json`. Correcting a word is a
+one-line edit there followed by `php build/build-adjectives.php` — never a hand
+edit to a generated file, which a test will catch.
 
 **Word order follows the language.** Italian puts the adjective after the noun,
 English puts it before, and a password that gets this backwards reads as broken
@@ -455,6 +462,55 @@ To add a language, drop one file at
 you keep it in your application — with its `adjective_position`, and it works
 everywhere immediately. Themed files per dictionary are optional and can follow
 later.
+
+### Translated names
+
+Adjectives are only half of it. Some dictionaries hold Italian forms of
+something that has a real name elsewhere, and an English reader would not
+recognise the entry at all:
+
+| Italian | English |
+|---|---|
+| `Giove` | Jupiter |
+| `Marco Aurelio` | Marcus Aurelius |
+| `Cartesio` | Rene Descartes |
+| `Topolino` | Mickey Mouse |
+| `Albus Silente` | Albus Dumbledore |
+| `Saetta McQueen` | Lightning McQueen |
+| `Cervino` | Matterhorn |
+| `Colosseo` | Colosseum |
+
+211 such names are translated, across 15 dictionaries. **Everything else is
+deliberately left alone.** Barolo is Barolo in every language, and so is every
+pasta shape, wine region and volcano — proper nouns do not translate, and
+pretending otherwise would be worse than leaving them.
+
+```php
+PasswordToolkit::make()->locale('it')->only('roman_mythology')->generate();
+// "Giunone-Potente-4507"
+
+PasswordToolkit::make()->locale('en')->only('roman_mythology')->generate();
+// "Powerful-Juno-5884"
+
+PasswordToolkit::make()->locale('en')->only('italian_wines')->generate();
+// "Voluptuous-Barolo-7000"   <- no translation, and none wanted
+```
+
+Translation files live at `Data/Names/{locale}/{key}.json` and are a plain map.
+They are sparse on purpose: list only what differs, and anything absent keeps
+its base name.
+
+```json
+{
+    "key": "roman_mythology",
+    "locale": "en",
+    "values": { "Giove": "Jupiter", "Nettuno": "Neptune" }
+}
+```
+
+For your own dictionaries, the same file goes at `{yourpath}/names/{locale}/{key}.json` —
+under a `names/` subdirectory, so it does not collide with your adjectives at
+`{yourpath}/{locale}/{key}.json`.
 
 ## The builder
 
