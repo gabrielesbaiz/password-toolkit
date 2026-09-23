@@ -265,7 +265,18 @@ function sanitize(v, sep) {
 }
 
 const DEFAULTS = { count: 1, locale: null, only: [], except: [], type: [], group: [], tag: [], reach: null,
-  separator: '-', digits: 6, position: 'end', leet: 'none', numbers: true, report: false, json: false, list: false };
+  separator: '-', digits: 6, position: 'end', leet: 'none', numbers: true, report: false, json: false, list: false,
+  words: 2, case: 'title', adjectivePosition: null, leadingZero: false };
+
+/* Title case leaves a name as the dictionary spelled it, so McFly survives;
+   the other modes apply to every word. That is what the package does. */
+const caseAdj = (w, mode) => mode === 'lower' ? w.toLowerCase()
+  : mode === 'upper' ? w.toUpperCase()
+  : mode === 'preserve' ? w
+  : w.charAt(0).toUpperCase() + w.slice(1);
+const caseName = (w, mode) => mode === 'lower' ? w.toLowerCase()
+  : mode === 'upper' ? w.toUpperCase()
+  : w;
 const REACH = { niche: 1, italian: 2, global: 3 };
 const BANDS = ['very_weak', 'weak', 'fair', 'strong', 'very_strong'];
 
@@ -296,24 +307,34 @@ function generate(o) {
 
   /* Italian adjectives agree with the name; English ones are all neutral. */
   const agreeing = loc === 'it' ? d.it.filter(a => a[1] === gender || a[1] === 'n') : null;
-  // The package runs the adjective through MB_CASE_TITLE, and the Italian
-  // packs store some entries lowercase — without this the demo prints
-  // "Trofia-autentica" where the package produces "Trofia-Autentica".
-  const rawAdj = loc === 'it' ? pick(agreeing)[0] : pick(d.en);
-  const adj = rawAdj.charAt(0).toUpperCase() + rawAdj.slice(1);
+  const words = (loc === 'it' ? agreeing.map(a => a[0]) : d.en.slice());
+
+  /* Distinct by word, not by position: two entries spelling the same adjective
+     would read as a mistake. A pool too small to supply two returns one. */
+  const wanted = o.words === 3 ? 2 : 1;
+  const drawn = [];
+  while (drawn.length < wanted && words.length) {
+    const i = Math.floor(Math.random() * words.length);
+    const w = words.splice(i, 1)[0];
+    if (! drawn.some(x => x.toLowerCase() === w.toLowerCase())) drawn.push(w);
+  }
 
   const sep = o.separator;
-  const nm = sanitize(name.replace(/ /g, sep || ''), sep);
-  const aj = sanitize(adj, sep);
+  const nm = sanitize(caseName(name.replace(/ /g, sep || ''), o.case), sep);
+  const adjectives = drawn.map(w => sanitize(caseAdj(w, o.case), sep));
 
-  /* Word order is a property of the language: Italian says Goldrake Mitico,
-     English says Legendary Goldrake. */
-  const [first, second] = loc === 'it' ? [nm, aj] : [aj, nm];
+  /* Word order belongs to the language — Italian says Goldrake Mitico,
+     English says Legendary Goldrake — unless the config overrides it. */
+  const before = (o.adjectivePosition ?? (loc === 'it' ? 'after' : 'before')) === 'before';
+  const parts = before ? [...adjectives, nm] : [nm, ...adjectives];
+  const [first, second] = [parts[0], parts.slice(1).join(sep)];
 
   let out;
   if (o.numbers && o.digits > 0) {
-    const lo = 10 ** (o.digits - 1), hi = 10 ** o.digits;
-    const num = String(Math.floor(Math.random() * (hi - lo)) + lo);
+    // Leading zeros off keeps the historical draw and costs the segment the
+    // fraction of a bit the report already accounts for.
+    const hi = 10 ** o.digits, lo = o.leadingZero ? 0 : 10 ** (o.digits - 1);
+    const num = String(Math.floor(Math.random() * (hi - lo)) + lo).padStart(o.leadingZero ? o.digits : 0, '0');
     out = ({ start: [num, first, second], middle: [first, num, second], end: [first, second, num] })[o.position].join(sep);
   } else {
     out = first + sep + second;
@@ -331,7 +352,8 @@ function report(o) {
   const c = {
     name: names ? Math.log2(names) : 0,
     adjective: adj ? Math.log2(adj) : 0,
-    number: digits > 0 ? Math.log2(9 * 10 ** (digits - 1)) : 0,
+    second_adjective: o.words === 3 && adj > 1 ? Math.log2(adj - 1) : 0,
+    number: digits > 0 ? Math.log2(o.leadingZero ? 10 ** digits : 9 * 10 ** (digits - 1)) : 0,
     /* A deterministic transform cannot enlarge the space an attacker who read
        the config has to search, so it is worth exactly nothing. */
     leetspeak_bonus: 0,
@@ -435,15 +457,19 @@ function parse(argv) {
       case 'reach': o.reach = raw; break;
       case 'locale': o.locale = raw; break;
       case 'separator': o.separator = raw; break;
-      case 'digits': o.digits = Math.min(12, Math.max(1, +raw || 4)); break;
+      case 'digits': o.digits = Math.min(18, Math.max(1, +raw || 6)); break;
       case 'position': o.position = raw; break;
       case 'leet': o.leet = raw === 'no' ? 'none' : raw; break;
+      case 'case': o.case = raw; break;
+      case 'words': o.words = Math.min(3, Math.max(2, +raw || 2)); break;
+      case 'leading-zero': o.leadingZero = true; break;
       default: bad.push(a);
     }
   }
   if (bad.length) throw new Error(`Unknown option ${bad[0]}. Run help for the full list.`);
   if (!['start', 'middle', 'end'].includes(o.position)) throw new Error(`Unknown numbers position [${o.position}]. Expected start, middle or end.`);
   if (!['none', 'basic', 'advanced'].includes(o.leet)) throw new Error(`Unknown leetspeak mode [${o.leet}]. Expected none, basic or advanced.`);
+  if (!['title', 'lower', 'upper', 'preserve'].includes(o.case)) throw new Error(`Unknown case [${o.case}]. Expected title, lower, upper or preserve.`);
   if (o.reach && !REACH[o.reach]) throw new Error(`Unknown reach [${o.reach}]. Expected global, italian or niche.`);
   if (o.locale && !/^[A-Za-z0-9]+(?:[_-][A-Za-z0-9]+)*$/.test(o.locale)) throw new Error(`[${o.locale}] is not a valid locale.`);
   for (const k of [...o.only, ...o.except]) if (!/^[A-Za-z0-9_][A-Za-z0-9_-]*$/.test(k)) throw new Error(`[${k}] is not a valid dictionary key.`);
@@ -787,11 +813,12 @@ cfgRows.innerHTML = CFG.map(r =>
 /* Chips, not a <select multiple>: the value is a comma-separated list either
    way, and a list of 200 keys needs a filter more than it needs a dropdown. */
 const cfgChosen = k => String(cfgState[k] || '').split(',').map(s => s.trim()).filter(Boolean);
+const cfgPicked = k => cfgChosen(k).filter(v => v !== '*');
 
 function cfgPaint(k, term = '') {
   const box = cfgRows.querySelector(`[data-opts="${k}"]`);
   if (!box) return;
-  const chosen = new Set(cfgChosen(k));
+  const chosen = new Set(cfgPicked(k));
   const all = CFG_SETS[k];
   // Anything already chosen stays visible, so a filter cannot hide your own
   // selection and make it look lost.
@@ -807,10 +834,14 @@ cfgRows.addEventListener('click', e => {
   const chip = e.target.closest('.cfg-opts button');
   if (!chip) return;
   const k = chip.parentElement.dataset.opts;
-  const chosen = cfgChosen(k);
+  // '*' is every dictionary, not a name among them: picking one has to
+  // replace it, or the value reads ['*', 'cocktails'] and says two things.
+  const chosen = cfgChosen(k).filter(x => x !== '*');
   const v = chip.dataset.v;
   const next = chosen.includes(v) ? chosen.filter(x => x !== v) : [...chosen, v];
-  cfgState[k] = next.join(', ');
+
+  // Unticking the last one means "all of them" again rather than "none".
+  cfgState[k] = next.length === 0 && k === 'dictionaries.enabled' ? '*' : next.join(', ');
   const field = cfgRows.querySelector(`input[data-k="${k}"]`);
   if (field) field.value = cfgState[k];
   cfgPaint(k, cfgRows.querySelector(`input[data-pick="${k}"]`)?.value.trim().toLowerCase() || '');
@@ -920,6 +951,7 @@ function cfgRender() {
   o.words = Number(cfgState.word_count) || 2;
   o.case = cfgState.case;
   o.leadingZero = cfgState.numbers_allow_leading_zero;
+  o.adjectivePosition = cfgState.adjective_position === 'null' ? null : cfgState.adjective_position;
 
   try {
     const g = generate(o);
