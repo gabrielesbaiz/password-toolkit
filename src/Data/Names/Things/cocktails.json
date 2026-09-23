@@ -1,0 +1,26 @@
+{
+    "key": "cocktails",
+    "type": "things",
+    "locale": "en",
+    "group": "drink",
+    "tags": ["bar", "mixology"],
+    "icon": "🍸",
+    "reach": "global",
+    "values": [
+        { "name": "Negroni", "gender": "male" },
+        { "name": "Bellini", "gender": "male" },
+        { "name": "Margarita", "gender": "male" },
+        { "name": "Mojito", "gender": "male" },
+        { "name": "Daiquiri", "gender": "male" },
+        { "name": "Manhattan", "gender": "male" },
+        { "name": "Martini", "gender": "male" },
+        { "name": "Spritz", "gender": "male" },
+        { "name": "Cosmopolitan", "gender": "male" },
+        { "name": "Sidecar", "gender": "male" },
+        { "name": "Americano", "gender": "male" },
+        { "name": "Mimosa", "gender": "male" },
+        { "name": "Caipirinha", "gender": "female" },
+        { "name": "Sazerac", "gender": "male" },
+        { "name": "Bloody Mary", "gender": "male" }
+    ]
+}

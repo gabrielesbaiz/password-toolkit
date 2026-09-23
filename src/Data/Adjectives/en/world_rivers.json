@@ -1,0 +1,22 @@
+{
+    "key": "world_rivers",
+    "locale": "en",
+    "values": [
+        { "name": "Icy", "gender": "neutral" },
+        { "name": "Impetuous", "gender": "neutral" },
+        { "name": "Limpid", "gender": "neutral" },
+        { "name": "Long", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Muddy", "gender": "neutral" },
+        { "name": "Murky", "gender": "neutral" },
+        { "name": "Navigable", "gender": "neutral" },
+        { "name": "Perennial", "gender": "neutral" },
+        { "name": "Placid", "gender": "neutral" },
+        { "name": "Sacred", "gender": "neutral" },
+        { "name": "Silty", "gender": "neutral" },
+        { "name": "Sinuous", "gender": "neutral" },
+        { "name": "Tropical", "gender": "neutral" },
+        { "name": "Wide", "gender": "neutral" },
+        { "name": "Winding", "gender": "neutral" }
+    ]
+}

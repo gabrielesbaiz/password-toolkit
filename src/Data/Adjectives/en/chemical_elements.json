@@ -1,0 +1,22 @@
+{
+    "key": "chemical_elements",
+    "locale": "en",
+    "values": [
+        { "name": "Atomic", "gender": "neutral" },
+        { "name": "Conductive", "gender": "neutral" },
+        { "name": "Corrosive", "gender": "neutral" },
+        { "name": "Flammable", "gender": "neutral" },
+        { "name": "Gaseous", "gender": "neutral" },
+        { "name": "Inert", "gender": "neutral" },
+        { "name": "Isotopic", "gender": "neutral" },
+        { "name": "Metallic", "gender": "neutral" },
+        { "name": "Molecular", "gender": "neutral" },
+        { "name": "Noble", "gender": "neutral" },
+        { "name": "Pure", "gender": "neutral" },
+        { "name": "Radioactive", "gender": "neutral" },
+        { "name": "Reactive", "gender": "neutral" },
+        { "name": "Soluble", "gender": "neutral" },
+        { "name": "Unstable", "gender": "neutral" },
+        { "name": "Volatile", "gender": "neutral" }
+    ]
+}

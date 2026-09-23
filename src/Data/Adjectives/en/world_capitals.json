@@ -1,0 +1,22 @@
+{
+    "key": "world_capitals",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Central", "gender": "neutral" },
+        { "name": "Chaotic", "gender": "neutral" },
+        { "name": "Distant", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Fascinating", "gender": "neutral" },
+        { "name": "Historic", "gender": "neutral" },
+        { "name": "Imperial", "gender": "neutral" },
+        { "name": "Lively", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Metropolitan", "gender": "neutral" },
+        { "name": "Modern", "gender": "neutral" },
+        { "name": "Monumental", "gender": "neutral" },
+        { "name": "Nordic", "gender": "neutral" },
+        { "name": "Populous", "gender": "neutral" },
+        { "name": "Touristic", "gender": "neutral" }
+    ]
+}

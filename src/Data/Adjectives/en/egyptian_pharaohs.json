@@ -1,0 +1,22 @@
+{
+    "key": "egyptian_pharaohs",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Divine", "gender": "neutral" },
+        { "name": "Embalmed", "gender": "neutral" },
+        { "name": "Eternal", "gender": "neutral" },
+        { "name": "Glorious", "gender": "neutral" },
+        { "name": "Golden", "gender": "neutral" },
+        { "name": "Immortal", "gender": "neutral" },
+        { "name": "Majestic", "gender": "neutral" },
+        { "name": "Monumental", "gender": "neutral" },
+        { "name": "Mummified", "gender": "neutral" },
+        { "name": "Mysterious", "gender": "neutral" },
+        { "name": "Pharaonic", "gender": "neutral" },
+        { "name": "Pyramidal", "gender": "neutral" },
+        { "name": "Regal", "gender": "neutral" },
+        { "name": "Sacred", "gender": "neutral" },
+        { "name": "Solemn", "gender": "neutral" }
+    ]
+}

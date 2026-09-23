@@ -1,0 +1,20 @@
+{
+    "key": "chemical_elements",
+    "locale": "it",
+    "values": {
+        "Hydrogen": "Idrogeno",
+        "Helium": "Elio",
+        "Carbon": "Carbonio",
+        "Nitrogen": "Azoto",
+        "Oxygen": "Ossigeno",
+        "Sulfur": "Zolfo",
+        "Iron": "Ferro",
+        "Copper": "Rame",
+        "Silver": "Argento",
+        "Gold": "Oro",
+        "Platinum": "Platino",
+        "Titanium": "Titanio",
+        "Uranium": "Uranio",
+        "Krypton": "Kripton"
+    }
+}

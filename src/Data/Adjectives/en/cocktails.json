@@ -1,0 +1,22 @@
+{
+    "key": "cocktails",
+    "locale": "en",
+    "values": [
+        { "name": "Bitter", "gender": "neutral" },
+        { "name": "Boozy", "gender": "neutral" },
+        { "name": "Citrusy", "gender": "neutral" },
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Effervescent", "gender": "neutral" },
+        { "name": "Frozen", "gender": "neutral" },
+        { "name": "Mixed", "gender": "neutral" },
+        { "name": "Quenching", "gender": "neutral" },
+        { "name": "Refreshing", "gender": "neutral" },
+        { "name": "Shaken", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Spiced", "gender": "neutral" },
+        { "name": "Strong", "gender": "neutral" },
+        { "name": "Summery", "gender": "neutral" },
+        { "name": "Sweet", "gender": "neutral" },
+        { "name": "Tropical", "gender": "neutral" }
+    ]
+}

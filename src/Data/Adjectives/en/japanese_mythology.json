@@ -1,0 +1,22 @@
+{
+    "key": "japanese_mythology",
+    "locale": "en",
+    "values": [
+        { "name": "Ancestral", "gender": "neutral" },
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Benevolent", "gender": "neutral" },
+        { "name": "Celestial", "gender": "neutral" },
+        { "name": "Cunning", "gender": "neutral" },
+        { "name": "Divine", "gender": "neutral" },
+        { "name": "Imperial", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Mysterious", "gender": "neutral" },
+        { "name": "Ritual", "gender": "neutral" },
+        { "name": "Sacred", "gender": "neutral" },
+        { "name": "Spiritual", "gender": "neutral" },
+        { "name": "Stormy", "gender": "neutral" },
+        { "name": "Thundering", "gender": "neutral" },
+        { "name": "Venerated", "gender": "neutral" },
+        { "name": "Warlike", "gender": "neutral" }
+    ]
+}

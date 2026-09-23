@@ -1,0 +1,31 @@
+{
+    "key": "chemical_elements",
+    "locale": "it",
+    "values": [
+        { "name": "reattivo", "gender": "male" },
+        { "name": "reattiva", "gender": "female" },
+        { "name": "volatile", "gender": "neutral" },
+        { "name": "radioattivo", "gender": "male" },
+        { "name": "radioattiva", "gender": "female" },
+        { "name": "inerte", "gender": "neutral" },
+        { "name": "metallico", "gender": "male" },
+        { "name": "metallica", "gender": "female" },
+        { "name": "gassoso", "gender": "male" },
+        { "name": "gassosa", "gender": "female" },
+        { "name": "nobile", "gender": "neutral" },
+        { "name": "molecolare", "gender": "neutral" },
+        { "name": "atomico", "gender": "male" },
+        { "name": "atomica", "gender": "female" },
+        { "name": "instabile", "gender": "neutral" },
+        { "name": "corrosivo", "gender": "male" },
+        { "name": "corrosiva", "gender": "female" },
+        { "name": "conduttivo", "gender": "male" },
+        { "name": "conduttiva", "gender": "female" },
+        { "name": "isotopico", "gender": "male" },
+        { "name": "isotopica", "gender": "female" },
+        { "name": "solubile", "gender": "neutral" },
+        { "name": "infiammabile", "gender": "neutral" },
+        { "name": "puro", "gender": "male" },
+        { "name": "pura", "gender": "female" }
+    ]
+}

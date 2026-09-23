@@ -1,0 +1,22 @@
+{
+    "key": "bicycle_brands",
+    "locale": "en",
+    "values": [
+        { "name": "Aerodynamic", "gender": "neutral" },
+        { "name": "Agile", "gender": "neutral" },
+        { "name": "Artisanal", "gender": "neutral" },
+        { "name": "Compact", "gender": "neutral" },
+        { "name": "Elegant", "gender": "neutral" },
+        { "name": "Hardy", "gender": "neutral" },
+        { "name": "Light", "gender": "neutral" },
+        { "name": "Prestigious", "gender": "neutral" },
+        { "name": "Professional", "gender": "neutral" },
+        { "name": "Reliable", "gender": "neutral" },
+        { "name": "Robust", "gender": "neutral" },
+        { "name": "Silent", "gender": "neutral" },
+        { "name": "Snappy", "gender": "neutral" },
+        { "name": "Sporty", "gender": "neutral" },
+        { "name": "Swift", "gender": "neutral" },
+        { "name": "Technical", "gender": "neutral" }
+    ]
+}

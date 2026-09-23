@@ -1,0 +1,32 @@
+{
+    "key": "japanese_mythology",
+    "locale": "it",
+    "values": [
+        { "name": "divino", "gender": "male" },
+        { "name": "divina", "gender": "female" },
+        { "name": "ancestrale", "gender": "neutral" },
+        { "name": "sacro", "gender": "male" },
+        { "name": "sacra", "gender": "female" },
+        { "name": "spirituale", "gender": "neutral" },
+        { "name": "tempestoso", "gender": "male" },
+        { "name": "tempestosa", "gender": "female" },
+        { "name": "luminoso", "gender": "male" },
+        { "name": "luminosa", "gender": "female" },
+        { "name": "imperiale", "gender": "neutral" },
+        { "name": "misterioso", "gender": "male" },
+        { "name": "misteriosa", "gender": "female" },
+        { "name": "astuto", "gender": "male" },
+        { "name": "astuta", "gender": "female" },
+        { "name": "tonante", "gender": "neutral" },
+        { "name": "benevolo", "gender": "male" },
+        { "name": "benevola", "gender": "female" },
+        { "name": "antico", "gender": "male" },
+        { "name": "antica", "gender": "female" },
+        { "name": "guerriero", "gender": "male" },
+        { "name": "guerriera", "gender": "female" },
+        { "name": "celeste", "gender": "neutral" },
+        { "name": "rituale", "gender": "neutral" },
+        { "name": "venerato", "gender": "male" },
+        { "name": "venerata", "gender": "female" }
+    ]
+}

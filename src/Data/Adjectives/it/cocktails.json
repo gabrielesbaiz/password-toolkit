@@ -1,0 +1,31 @@
+{
+    "key": "cocktails",
+    "locale": "it",
+    "values": [
+        { "name": "ghiacciato", "gender": "male" },
+        { "name": "ghiacciata", "gender": "female" },
+        { "name": "agrumato", "gender": "male" },
+        { "name": "agrumata", "gender": "female" },
+        { "name": "shakerato", "gender": "male" },
+        { "name": "shakerata", "gender": "female" },
+        { "name": "amaro", "gender": "male" },
+        { "name": "amara", "gender": "female" },
+        { "name": "dolce", "gender": "neutral" },
+        { "name": "frizzante", "gender": "neutral" },
+        { "name": "alcolico", "gender": "male" },
+        { "name": "alcolica", "gender": "female" },
+        { "name": "rinfrescante", "gender": "neutral" },
+        { "name": "tropicale", "gender": "neutral" },
+        { "name": "speziato", "gender": "male" },
+        { "name": "speziata", "gender": "female" },
+        { "name": "miscelato", "gender": "male" },
+        { "name": "miscelata", "gender": "female" },
+        { "name": "colorato", "gender": "male" },
+        { "name": "colorata", "gender": "female" },
+        { "name": "estivo", "gender": "male" },
+        { "name": "estiva", "gender": "female" },
+        { "name": "effervescente", "gender": "neutral" },
+        { "name": "forte", "gender": "neutral" },
+        { "name": "dissetante", "gender": "neutral" }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "key": "egyptian_pharaohs",
+    "locale": "it",
+    "values": {
+        "Tutankhamun": "Tutankhamon",
+        "Ramesses": "Ramesse",
+        "Akhenaten": "Akhenaton",
+        "Khufu": "Cheope",
+        "Khafre": "Chefren",
+        "Menkaure": "Micerino",
+        "Sneferu": "Snefru"
+    }
+}

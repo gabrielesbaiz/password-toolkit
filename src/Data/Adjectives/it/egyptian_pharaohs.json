@@ -1,0 +1,33 @@
+{
+    "key": "egyptian_pharaohs",
+    "locale": "it",
+    "values": [
+        { "name": "divino", "gender": "male" },
+        { "name": "divina", "gender": "female" },
+        { "name": "eterno", "gender": "male" },
+        { "name": "eterna", "gender": "female" },
+        { "name": "dorato", "gender": "male" },
+        { "name": "dorata", "gender": "female" },
+        { "name": "regale", "gender": "neutral" },
+        { "name": "sacro", "gender": "male" },
+        { "name": "sacra", "gender": "female" },
+        { "name": "immortale", "gender": "neutral" },
+        { "name": "monumentale", "gender": "neutral" },
+        { "name": "antico", "gender": "male" },
+        { "name": "antica", "gender": "female" },
+        { "name": "misterioso", "gender": "male" },
+        { "name": "misteriosa", "gender": "female" },
+        { "name": "solenne", "gender": "neutral" },
+        { "name": "maestoso", "gender": "male" },
+        { "name": "maestosa", "gender": "female" },
+        { "name": "piramidale", "gender": "neutral" },
+        { "name": "mummificato", "gender": "male" },
+        { "name": "mummificata", "gender": "female" },
+        { "name": "faraonico", "gender": "male" },
+        { "name": "faraonica", "gender": "female" },
+        { "name": "imbalsamato", "gender": "male" },
+        { "name": "imbalsamata", "gender": "female" },
+        { "name": "glorioso", "gender": "male" },
+        { "name": "gloriosa", "gender": "female" }
+    ]
+}

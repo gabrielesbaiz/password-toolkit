@@ -1,0 +1,22 @@
+{
+    "key": "constellations",
+    "locale": "en",
+    "values": [
+        { "name": "Ancient", "gender": "neutral" },
+        { "name": "Austral", "gender": "neutral" },
+        { "name": "Boreal", "gender": "neutral" },
+        { "name": "Brilliant", "gender": "neutral" },
+        { "name": "Celestial", "gender": "neutral" },
+        { "name": "Circumpolar", "gender": "neutral" },
+        { "name": "Infinite", "gender": "neutral" },
+        { "name": "Luminous", "gender": "neutral" },
+        { "name": "Mythical", "gender": "neutral" },
+        { "name": "Nebulous", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Remote", "gender": "neutral" },
+        { "name": "Shining", "gender": "neutral" },
+        { "name": "Sidereal", "gender": "neutral" },
+        { "name": "Starry", "gender": "neutral" },
+        { "name": "Zodiacal", "gender": "neutral" }
+    ]
+}

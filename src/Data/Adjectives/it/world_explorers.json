@@ -1,0 +1,31 @@
+{
+    "key": "world_explorers",
+    "locale": "it",
+    "values": [
+        { "name": "audace", "gender": "neutral" },
+        { "name": "coraggioso", "gender": "male" },
+        { "name": "coraggiosa", "gender": "female" },
+        { "name": "intrepido", "gender": "male" },
+        { "name": "intrepida", "gender": "female" },
+        { "name": "temerario", "gender": "male" },
+        { "name": "temeraria", "gender": "female" },
+        { "name": "avventuroso", "gender": "male" },
+        { "name": "avventurosa", "gender": "female" },
+        { "name": "pionieristico", "gender": "male" },
+        { "name": "pionieristica", "gender": "female" },
+        { "name": "nomade", "gender": "neutral" },
+        { "name": "errante", "gender": "neutral" },
+        { "name": "resistente", "gender": "neutral" },
+        { "name": "indomito", "gender": "male" },
+        { "name": "indomita", "gender": "female" },
+        { "name": "solitario", "gender": "male" },
+        { "name": "solitaria", "gender": "female" },
+        { "name": "leggendario", "gender": "male" },
+        { "name": "leggendaria", "gender": "female" },
+        { "name": "tenace", "gender": "neutral" },
+        { "name": "polare", "gender": "neutral" },
+        { "name": "remoto", "gender": "male" },
+        { "name": "remota", "gender": "female" },
+        { "name": "instancabile", "gender": "neutral" }
+    ]
+}

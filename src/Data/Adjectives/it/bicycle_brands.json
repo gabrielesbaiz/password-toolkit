@@ -1,0 +1,30 @@
+{
+    "key": "bicycle_brands",
+    "locale": "it",
+    "values": [
+        { "name": "leggero", "gender": "male" },
+        { "name": "leggera", "gender": "female" },
+        { "name": "aerodinamico", "gender": "male" },
+        { "name": "aerodinamica", "gender": "female" },
+        { "name": "scattante", "gender": "neutral" },
+        { "name": "resistente", "gender": "neutral" },
+        { "name": "veloce", "gender": "neutral" },
+        { "name": "agile", "gender": "neutral" },
+        { "name": "artigianale", "gender": "neutral" },
+        { "name": "sportivo", "gender": "male" },
+        { "name": "sportiva", "gender": "female" },
+        { "name": "elegante", "gender": "neutral" },
+        { "name": "tecnico", "gender": "male" },
+        { "name": "tecnica", "gender": "female" },
+        { "name": "professionale", "gender": "neutral" },
+        { "name": "robusto", "gender": "male" },
+        { "name": "robusta", "gender": "female" },
+        { "name": "silenzioso", "gender": "male" },
+        { "name": "silenziosa", "gender": "female" },
+        { "name": "affidabile", "gender": "neutral" },
+        { "name": "compatto", "gender": "male" },
+        { "name": "compatta", "gender": "female" },
+        { "name": "prestigioso", "gender": "male" },
+        { "name": "prestigiosa", "gender": "female" }
+    ]
+}

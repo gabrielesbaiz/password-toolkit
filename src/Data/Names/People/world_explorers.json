@@ -1,0 +1,26 @@
+{
+    "key": "world_explorers",
+    "type": "people",
+    "locale": "en",
+    "group": "history",
+    "tags": ["exploration", "adventure"],
+    "icon": "🧭",
+    "reach": "global",
+    "values": [
+        { "name": "Ferdinand Magellan", "gender": "male" },
+        { "name": "Roald Amundsen", "gender": "male" },
+        { "name": "James Cook", "gender": "male" },
+        { "name": "Ernest Shackleton", "gender": "male" },
+        { "name": "Vasco da Gama", "gender": "male" },
+        { "name": "Robert Falcon Scott", "gender": "male" },
+        { "name": "David Livingstone", "gender": "male" },
+        { "name": "Hernan Cortes", "gender": "male" },
+        { "name": "Francisco Pizarro", "gender": "male" },
+        { "name": "Henry Hudson", "gender": "male" },
+        { "name": "Jacques Cartier", "gender": "male" },
+        { "name": "Fridtjof Nansen", "gender": "male" },
+        { "name": "Zheng He", "gender": "male" },
+        { "name": "Ibn Battuta", "gender": "male" },
+        { "name": "Edmund Hillary", "gender": "male" }
+    ]
+}
