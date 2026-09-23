@@ -1,5 +1,6 @@
 {
     "key": "space_missions",
+    "name": "Space Missions",
     "type": "things",
     "locale": "en",
     "group": "science",

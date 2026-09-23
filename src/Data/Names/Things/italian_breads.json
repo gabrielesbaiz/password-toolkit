@@ -1,5 +1,6 @@
 {
     "key": "italian_breads",
+    "name": "Italian Breads",
     "type": "things",
     "locale": "it",
     "group": "food",

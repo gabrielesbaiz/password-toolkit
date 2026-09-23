@@ -1,5 +1,6 @@
 {
     "key": "star_wars",
+    "name": "Star Wars",
     "type": "people",
     "locale": "en",
     "group": "screen",

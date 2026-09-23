@@ -1,5 +1,6 @@
 {
     "key": "italian_cured_meats",
+    "name": "Italian Cured Meats",
     "type": "things",
     "locale": "it",
     "group": "food",

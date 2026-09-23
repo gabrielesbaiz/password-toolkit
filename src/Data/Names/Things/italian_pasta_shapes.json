@@ -1,5 +1,6 @@
 {
     "key": "italian_pasta_shapes",
+    "name": "Italian Pasta Shapes",
     "type": "things",
     "locale": "it",
     "group": "food",

@@ -1,5 +1,6 @@
 {
     "key": "italian_old_currencies",
+    "name": "Italian Old Currencies",
     "type": "things",
     "locale": "it",
     "group": "culture",

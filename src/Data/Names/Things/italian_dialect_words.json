@@ -1,5 +1,6 @@
 {
     "key": "italian_dialect_words",
+    "name": "Italian Dialect Words",
     "type": "things",
     "locale": "it",
     "group": "culture",

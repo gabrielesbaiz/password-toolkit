@@ -1,5 +1,6 @@
 {
     "key": "chemical_elements",
+    "name": "Chemical Elements",
     "type": "things",
     "locale": "en",
     "group": "science",

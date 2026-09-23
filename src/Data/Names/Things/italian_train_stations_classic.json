@@ -1,5 +1,6 @@
 {
     "key": "italian_train_stations_classic",
+    "name": "Classic Italian Stations",
     "type": "things",
     "locale": "it",
     "group": "places",

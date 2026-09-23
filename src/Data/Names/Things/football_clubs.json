@@ -1,5 +1,6 @@
 {
     "key": "football_clubs",
+    "name": "Football Clubs",
     "type": "things",
     "locale": "en",
     "group": "sport",

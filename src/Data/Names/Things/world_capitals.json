@@ -1,9 +1,10 @@
 {
     "key": "world_capitals",
+    "name": "World Capitals",
     "type": "things",
     "locale": "en",
     "group": "places",
-    "tags": ["geography", "cities"],
+    "tags": ["cities", "geography"],
     "icon": "🌍",
     "reach": "global",
     "values": [

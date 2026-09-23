@@ -1,9 +1,10 @@
 {
     "key": "japanese_mythology",
+    "name": "Japanese Mythology",
     "type": "people",
     "locale": "en",
     "group": "myth",
-    "tags": ["japanese", "gods"],
+    "tags": ["gods", "japanese"],
     "icon": "⛩️",
     "reach": "global",
     "values": [

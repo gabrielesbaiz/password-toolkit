@@ -1,5 +1,6 @@
 {
     "key": "italian_cheeses",
+    "name": "Italian Cheeses",
     "type": "things",
     "locale": "it",
     "group": "food",

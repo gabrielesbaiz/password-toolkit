@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Gabrielesbaiz\PasswordToolkit\Dictionaries\Dictionary;
 use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
 use Gabrielesbaiz\PasswordToolkit\Enums\Reach;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
@@ -26,15 +27,23 @@ describe('dictionary metadata', function () {
         }
     })->with('dictionaryFiles');
 
-    it('has a translated label in every shipped locale', function (string $path) {
-        $key = pathinfo($path, PATHINFO_FILENAME);
+    it('declares a name and resolves a label in every shipped locale', function (string $path) {
+        $data = json_decode((string) file_get_contents($path), true);
+
+        // The name lives with the dictionary so one file is all it takes to add
+        // one — and so a dictionary of your own can carry a proper name without
+        // publishing the package's translations.
+        expect($data['name'] ?? null)->toBeString("no name in [{$path}]")
+            ->and($data['name'])->not->toBe('');
+
+        $dictionary = Dictionary::fromArray($data['key'], $data, true);
 
         foreach (['en', 'it'] as $locale) {
-            $labels = require dirname(__DIR__)."/resources/lang/{$locale}/dictionaries.php";
+            app()->setLocale($locale);
 
-            // Without a label a picker shows a snake_case key, which is the
-            // kind of thing that ships and then stays.
-            expect($labels['labels'][$key] ?? null)->toBeString("no {$locale} label for [{$key}]");
+            // Without this a picker shows a snake_case key, which is the kind of
+            // thing that ships and then stays.
+            expect($dictionary->label())->not->toBe($data['key'], "{$locale} label for [{$data['key']}]");
         }
     })->with('dictionaryFiles');
 

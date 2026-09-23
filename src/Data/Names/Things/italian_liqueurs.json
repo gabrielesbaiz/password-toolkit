@@ -1,5 +1,6 @@
 {
     "key": "italian_liqueurs",
+    "name": "Italian Liqueurs",
     "type": "things",
     "locale": "it",
     "group": "drink",

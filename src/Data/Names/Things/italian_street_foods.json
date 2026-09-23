@@ -1,5 +1,6 @@
 {
     "key": "italian_street_foods",
+    "name": "Italian Street Foods",
     "type": "things",
     "locale": "it",
     "group": "food",

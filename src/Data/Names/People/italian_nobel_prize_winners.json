@@ -1,5 +1,6 @@
 {
     "key": "italian_nobel_prize_winners",
+    "name": "Italian Nobel Laureates",
     "type": "people",
     "locale": "it",
     "group": "science",

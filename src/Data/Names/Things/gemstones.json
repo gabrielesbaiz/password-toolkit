@@ -1,9 +1,10 @@
 {
     "key": "gemstones",
+    "name": "Gemstones",
     "type": "things",
     "locale": "en",
     "group": "nature",
-    "tags": ["minerals", "jewels"],
+    "tags": ["jewels", "minerals"],
     "icon": "💎",
     "reach": "global",
     "values": [

@@ -1,5 +1,6 @@
 {
     "key": "disney_characters",
+    "name": "Disney Characters",
     "type": "people",
     "locale": "en",
     "group": "screen",
