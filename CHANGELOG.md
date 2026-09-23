@@ -77,6 +77,32 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 - `Strength`, `Leetspeak`, `NumbersPosition`, `AdjectivePosition` and `Gender`
   enums, carrying the behaviour that used to be `match` statements on raw
   strings.
+- **A third word.** `word_count` accepts 2 or 3; three draws a second adjective
+  from the same agreeing pool, ordered per locale — `Brave-Mighty-Goldrake` in
+  English, `Goldrake-Mitico-Potente` in Italian — with both adjectives agreeing
+  with the name's gender. The pair is drawn without replacement, so it is worth
+  `log2(A) + log2(A-1)` and reported as its own `second_adjective` component
+  rather than folded into `adjective`. A pool too small to supply two distinct
+  words falls back to one, and the report credits only what was drawn.
+  `->words(3)` on the builder, `--words=` on the command.
+- **`case`** — `title`, `lower`, `upper` or `preserve` — with `->casing()` and
+  `--case=`. `title` is the default and leaves names spelled as their dictionary
+  wrote them, because `MB_CASE_TITLE` would flatten `McFly` to `Mcfly`. Like
+  leetspeak it is worth zero bits, and the digits are never touched.
+- **`numbers_allow_leading_zero`**, with `->allowLeadingZero()` and
+  `--leading-zero`. False keeps the historical draw; true widens the segment
+  from `9 * 10^(d-1)` values to `10^d` and zero-pads to a fixed width.
+- **`strength.thresholds`** moves the five band edges, which is what
+  `StrongPassword` accepts at signup. `Strength::fromBits()` takes them as an
+  optional argument — an enum case has no business reading configuration — and
+  bands that do not ascend throw `InvalidOptionException`.
+- **`strength.rule_model`** picks which model `StrongPassword` scores with,
+  `charset` or `structural`, per rule with `->using(...)`. `charset` stays the
+  default: the value under validation is one the user chose, and you know
+  nothing about how they chose it.
+- **`unique_attempts_multiplier`** makes the `generateUnique()` attempt budget
+  configurable. It stays `count * multiplier + 100`, and the base of 100 is what
+  keeps a small batch practical.
 
 ### Changed
 
@@ -125,6 +151,13 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 - `StrengthReport` implements `Arrayable`, `Jsonable` and `JsonSerializable`,
   and carries the `Strength` enum alongside the existing properties.
 - `leetspeak_conversion` spells its off state `'none'`; `'no'` still parses.
+- `numbers_digits` defaults to **6** everywhere. The published config said 6
+  while `Options` defaulted to 4, so an application that constructed `Options`
+  itself — or published no config at all — silently got a weaker password than
+  the file it was reading described.
+- `Entropy::structuralBits()` takes two further arguments, for leading zeros and
+  the adjective count, and reports a `second_adjective` component. Both are
+  optional and default to the previous behaviour.
 - Requires PHP 8.2 and supports Laravel 10 through 13.
 
 ### Security
@@ -152,6 +185,14 @@ A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 
 ### Fixed
 
+- **The numeric segment is no longer credited entropy it never had.** The draw
+  runs from `10^(d-1)` to `10^d - 1`, so six digits are 900,000 values, not
+  1,000,000 — but the structural model credited `d * log2(10)` as though the
+  full decade were available. Every reported figure was about 0.15 bits
+  optimistic. The segment is now worth `log2(9 * 10^(d-1))` when leading zeros
+  are off and `log2(10^d)` when they are on. **Reported entropy will drop very
+  slightly for everyone**; the bands in the README are unchanged at the
+  rounding they are quoted to.
 - **Crack time no longer overflows to `INF`.** `2 ** $bits` overflowed well
   inside the range a long password produces, which made
   `StrengthReport::toArray()` unserialisable for exactly the strongest
