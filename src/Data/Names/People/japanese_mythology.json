@@ -1,0 +1,26 @@
+{
+    "key": "japanese_mythology",
+    "type": "people",
+    "locale": "en",
+    "group": "myth",
+    "tags": ["japanese", "gods"],
+    "icon": "⛩️",
+    "reach": "global",
+    "values": [
+        { "name": "Amaterasu", "gender": "female" },
+        { "name": "Susanoo", "gender": "male" },
+        { "name": "Tsukuyomi", "gender": "male" },
+        { "name": "Izanagi", "gender": "male" },
+        { "name": "Izanami", "gender": "female" },
+        { "name": "Raijin", "gender": "male" },
+        { "name": "Fujin", "gender": "male" },
+        { "name": "Inari", "gender": "male" },
+        { "name": "Hachiman", "gender": "male" },
+        { "name": "Ebisu", "gender": "male" },
+        { "name": "Benzaiten", "gender": "female" },
+        { "name": "Bishamonten", "gender": "male" },
+        { "name": "Tengu", "gender": "male" },
+        { "name": "Kitsune", "gender": "female" },
+        { "name": "Kappa", "gender": "male" }
+    ]
+}

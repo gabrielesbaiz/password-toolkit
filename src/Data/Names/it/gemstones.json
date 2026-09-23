@@ -1,0 +1,21 @@
+{
+    "key": "gemstones",
+    "locale": "it",
+    "values": {
+        "Sapphire": "Zaffiro",
+        "Amber": "Ambra",
+        "Jade": "Giada",
+        "Opal": "Opale",
+        "Turquoise": "Turchese",
+        "Garnet": "Granato",
+        "Topaz": "Topazio",
+        "Peridot": "Peridoto",
+        "Emerald": "Smeraldo",
+        "Ruby": "Rubino",
+        "Diamond": "Diamante",
+        "Amethyst": "Ametista",
+        "Lapis Lazuli": "Lapislazzuli",
+        "Aquamarine": "Acquamarina",
+        "Onyx": "Onice"
+    }
+}

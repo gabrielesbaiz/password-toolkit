@@ -1,0 +1,19 @@
+{
+    "key": "constellations",
+    "locale": "it",
+    "values": {
+        "Orion": "Orione",
+        "Cassiopeia": "Cassiopea",
+        "Pegasus": "Pegaso",
+        "Lyra": "Lira",
+        "Cygnus": "Cigno",
+        "Scorpius": "Scorpione",
+        "Perseus": "Perseo",
+        "Hydra": "Idra",
+        "Draco": "Drago",
+        "Cepheus": "Cefeo",
+        "Phoenix": "Fenice",
+        "Centaurus": "Centauro",
+        "Aquarius": "Acquario"
+    }
+}

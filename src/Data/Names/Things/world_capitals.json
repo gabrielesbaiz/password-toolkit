@@ -1,0 +1,26 @@
+{
+    "key": "world_capitals",
+    "type": "things",
+    "locale": "en",
+    "group": "places",
+    "tags": ["geography", "cities"],
+    "icon": "🌍",
+    "reach": "global",
+    "values": [
+        { "name": "London", "gender": "female" },
+        { "name": "Paris", "gender": "female" },
+        { "name": "Moscow", "gender": "female" },
+        { "name": "Beijing", "gender": "female" },
+        { "name": "Lisbon", "gender": "female" },
+        { "name": "Copenhagen", "gender": "female" },
+        { "name": "Cairo", "gender": "male" },
+        { "name": "Athens", "gender": "female" },
+        { "name": "Warsaw", "gender": "female" },
+        { "name": "Stockholm", "gender": "female" },
+        { "name": "Prague", "gender": "female" },
+        { "name": "Dublin", "gender": "female" },
+        { "name": "Belgrade", "gender": "female" },
+        { "name": "Berlin", "gender": "female" },
+        { "name": "Bucharest", "gender": "female" }
+    ]
+}

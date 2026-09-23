@@ -1,0 +1,26 @@
+{
+    "key": "bicycle_brands",
+    "type": "things",
+    "locale": "en",
+    "group": "vehicles",
+    "tags": ["cycling", "brands"],
+    "icon": "🚲",
+    "reach": "global",
+    "values": [
+        { "name": "Colnago", "gender": "female" },
+        { "name": "Pinarello", "gender": "female" },
+        { "name": "Bianchi", "gender": "female" },
+        { "name": "Cannondale", "gender": "female" },
+        { "name": "Trek", "gender": "female" },
+        { "name": "Specialized", "gender": "female" },
+        { "name": "Wilier", "gender": "female" },
+        { "name": "De Rosa", "gender": "female" },
+        { "name": "Basso", "gender": "female" },
+        { "name": "Giant", "gender": "female" },
+        { "name": "Merida", "gender": "female" },
+        { "name": "Scott", "gender": "female" },
+        { "name": "Orbea", "gender": "female" },
+        { "name": "Canyon", "gender": "female" },
+        { "name": "Ridley", "gender": "female" }
+    ]
+}

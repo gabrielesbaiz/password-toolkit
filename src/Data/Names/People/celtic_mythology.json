@@ -1,0 +1,26 @@
+{
+    "key": "celtic_mythology",
+    "type": "people",
+    "locale": "en",
+    "group": "myth",
+    "tags": ["celtic", "gods"],
+    "icon": "🍀",
+    "reach": "global",
+    "values": [
+        { "name": "Morrigan", "gender": "female" },
+        { "name": "Brigid", "gender": "female" },
+        { "name": "Lugh", "gender": "male" },
+        { "name": "Cernunnos", "gender": "male" },
+        { "name": "Dagda", "gender": "male" },
+        { "name": "Danu", "gender": "female" },
+        { "name": "Epona", "gender": "female" },
+        { "name": "Nuada", "gender": "male" },
+        { "name": "Manannan", "gender": "male" },
+        { "name": "Ogma", "gender": "male" },
+        { "name": "Aengus", "gender": "male" },
+        { "name": "Cu Chulainn", "gender": "male" },
+        { "name": "Taranis", "gender": "male" },
+        { "name": "Belenus", "gender": "male" },
+        { "name": "Arawn", "gender": "male" }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "key": "dinosaurs",
+    "locale": "en",
+    "values": [
+        { "name": "Armored", "gender": "neutral" },
+        { "name": "Biped", "gender": "neutral" },
+        { "name": "Carnivorous", "gender": "neutral" },
+        { "name": "Cretaceous", "gender": "neutral" },
+        { "name": "Extinct", "gender": "neutral" },
+        { "name": "Feathered", "gender": "neutral" },
+        { "name": "Ferocious", "gender": "neutral" },
+        { "name": "Fossilized", "gender": "neutral" },
+        { "name": "Gigantic", "gender": "neutral" },
+        { "name": "Herbivorous", "gender": "neutral" },
+        { "name": "Horned", "gender": "neutral" },
+        { "name": "Huge", "gender": "neutral" },
+        { "name": "Jurassic", "gender": "neutral" },
+        { "name": "Predatory", "gender": "neutral" },
+        { "name": "Prehistoric", "gender": "neutral" },
+        { "name": "Scaly", "gender": "neutral" }
+    ]
+}

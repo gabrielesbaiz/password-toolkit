@@ -1,0 +1,22 @@
+{
+    "key": "world_explorers",
+    "locale": "en",
+    "values": [
+        { "name": "Adventurous", "gender": "neutral" },
+        { "name": "Audacious", "gender": "neutral" },
+        { "name": "Bold", "gender": "neutral" },
+        { "name": "Brave", "gender": "neutral" },
+        { "name": "Hardy", "gender": "neutral" },
+        { "name": "Indomitable", "gender": "neutral" },
+        { "name": "Intrepid", "gender": "neutral" },
+        { "name": "Legendary", "gender": "neutral" },
+        { "name": "Nomadic", "gender": "neutral" },
+        { "name": "Pioneering", "gender": "neutral" },
+        { "name": "Polar", "gender": "neutral" },
+        { "name": "Remote", "gender": "neutral" },
+        { "name": "Solitary", "gender": "neutral" },
+        { "name": "Tenacious", "gender": "neutral" },
+        { "name": "Tireless", "gender": "neutral" },
+        { "name": "Wandering", "gender": "neutral" }
+    ]
+}

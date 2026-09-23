@@ -1,0 +1,30 @@
+{
+    "key": "constellations",
+    "locale": "it",
+    "values": [
+        { "name": "stellato", "gender": "male" },
+        { "name": "stellata", "gender": "female" },
+        { "name": "boreale", "gender": "neutral" },
+        { "name": "australe", "gender": "neutral" },
+        { "name": "luminoso", "gender": "male" },
+        { "name": "luminosa", "gender": "female" },
+        { "name": "celeste", "gender": "neutral" },
+        { "name": "zodiacale", "gender": "neutral" },
+        { "name": "remoto", "gender": "male" },
+        { "name": "remota", "gender": "female" },
+        { "name": "notturno", "gender": "male" },
+        { "name": "notturna", "gender": "female" },
+        { "name": "mitico", "gender": "male" },
+        { "name": "mitica", "gender": "female" },
+        { "name": "splendente", "gender": "neutral" },
+        { "name": "circumpolare", "gender": "neutral" },
+        { "name": "nebuloso", "gender": "male" },
+        { "name": "nebulosa", "gender": "female" },
+        { "name": "antico", "gender": "male" },
+        { "name": "antica", "gender": "female" },
+        { "name": "brillante", "gender": "neutral" },
+        { "name": "infinito", "gender": "male" },
+        { "name": "infinita", "gender": "female" },
+        { "name": "siderale", "gender": "neutral" }
+    ]
+}

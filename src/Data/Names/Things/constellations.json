@@ -1,0 +1,26 @@
+{
+    "key": "constellations",
+    "type": "things",
+    "locale": "en",
+    "group": "nature",
+    "tags": ["astronomy", "sky"],
+    "icon": "✨",
+    "reach": "global",
+    "values": [
+        { "name": "Orion", "gender": "male" },
+        { "name": "Cassiopeia", "gender": "female" },
+        { "name": "Pegasus", "gender": "male" },
+        { "name": "Lyra", "gender": "female" },
+        { "name": "Andromeda", "gender": "female" },
+        { "name": "Cygnus", "gender": "male" },
+        { "name": "Scorpius", "gender": "male" },
+        { "name": "Auriga", "gender": "male" },
+        { "name": "Perseus", "gender": "male" },
+        { "name": "Hydra", "gender": "female" },
+        { "name": "Draco", "gender": "male" },
+        { "name": "Cepheus", "gender": "male" },
+        { "name": "Phoenix", "gender": "female" },
+        { "name": "Centaurus", "gender": "male" },
+        { "name": "Aquarius", "gender": "male" }
+    ]
+}

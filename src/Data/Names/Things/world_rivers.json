@@ -1,0 +1,26 @@
+{
+    "key": "world_rivers",
+    "type": "things",
+    "locale": "en",
+    "group": "nature",
+    "tags": ["geography", "water"],
+    "icon": "🌊",
+    "reach": "global",
+    "values": [
+        { "name": "Nile", "gender": "male" },
+        { "name": "Amazon", "gender": "male" },
+        { "name": "Danube", "gender": "male" },
+        { "name": "Ganges", "gender": "male" },
+        { "name": "Mekong", "gender": "male" },
+        { "name": "Yangtze", "gender": "male" },
+        { "name": "Volga", "gender": "male" },
+        { "name": "Rhine", "gender": "male" },
+        { "name": "Thames", "gender": "male" },
+        { "name": "Zambezi", "gender": "male" },
+        { "name": "Congo", "gender": "male" },
+        { "name": "Mississippi", "gender": "male" },
+        { "name": "Euphrates", "gender": "male" },
+        { "name": "Tigris", "gender": "male" },
+        { "name": "Indus", "gender": "male" }
+    ]
+}

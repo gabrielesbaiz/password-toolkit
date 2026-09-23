@@ -1,0 +1,16 @@
+{
+    "key": "world_rivers",
+    "locale": "it",
+    "values": {
+        "Nile": "Nilo",
+        "Amazon": "Rio delle Amazzoni",
+        "Danube": "Danubio",
+        "Ganges": "Gange",
+        "Rhine": "Reno",
+        "Thames": "Tamigi",
+        "Zambezi": "Zambesi",
+        "Euphrates": "Eufrate",
+        "Tigris": "Tigri",
+        "Indus": "Indo"
+    }
+}

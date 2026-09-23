@@ -1,0 +1,26 @@
+{
+    "key": "dinosaurs",
+    "type": "things",
+    "locale": "en",
+    "group": "science",
+    "tags": ["paleontology", "prehistory"],
+    "icon": "🦖",
+    "reach": "global",
+    "values": [
+        { "name": "Tyrannosaurus", "gender": "male" },
+        { "name": "Triceratops", "gender": "male" },
+        { "name": "Velociraptor", "gender": "male" },
+        { "name": "Stegosaurus", "gender": "male" },
+        { "name": "Brachiosaurus", "gender": "male" },
+        { "name": "Ankylosaurus", "gender": "male" },
+        { "name": "Diplodocus", "gender": "male" },
+        { "name": "Allosaurus", "gender": "male" },
+        { "name": "Spinosaurus", "gender": "male" },
+        { "name": "Apatosaurus", "gender": "male" },
+        { "name": "Iguanodon", "gender": "male" },
+        { "name": "Pteranodon", "gender": "male" },
+        { "name": "Giganotosaurus", "gender": "male" },
+        { "name": "Megalosaurus", "gender": "male" },
+        { "name": "Carnotaurus", "gender": "male" }
+    ]
+}

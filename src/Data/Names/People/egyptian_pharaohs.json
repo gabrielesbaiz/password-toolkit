@@ -1,0 +1,26 @@
+{
+    "key": "egyptian_pharaohs",
+    "type": "people",
+    "locale": "en",
+    "group": "history",
+    "tags": ["egyptian", "rulers"],
+    "icon": "👑",
+    "reach": "global",
+    "values": [
+        { "name": "Tutankhamun", "gender": "male" },
+        { "name": "Ramesses", "gender": "male" },
+        { "name": "Cleopatra", "gender": "female" },
+        { "name": "Hatshepsut", "gender": "female" },
+        { "name": "Akhenaten", "gender": "male" },
+        { "name": "Khufu", "gender": "male" },
+        { "name": "Khafre", "gender": "male" },
+        { "name": "Menkaure", "gender": "male" },
+        { "name": "Nefertiti", "gender": "female" },
+        { "name": "Thutmose", "gender": "male" },
+        { "name": "Djoser", "gender": "male" },
+        { "name": "Seti", "gender": "male" },
+        { "name": "Amenhotep", "gender": "male" },
+        { "name": "Narmer", "gender": "male" },
+        { "name": "Sneferu", "gender": "male" }
+    ]
+}

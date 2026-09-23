@@ -1,0 +1,22 @@
+{
+    "key": "gemstones",
+    "locale": "en",
+    "values": [
+        { "name": "Colorful", "gender": "neutral" },
+        { "name": "Crystalline", "gender": "neutral" },
+        { "name": "Faceted", "gender": "neutral" },
+        { "name": "Glittering", "gender": "neutral" },
+        { "name": "Inset", "gender": "neutral" },
+        { "name": "Iridescent", "gender": "neutral" },
+        { "name": "Opaque", "gender": "neutral" },
+        { "name": "Polished", "gender": "neutral" },
+        { "name": "Precious", "gender": "neutral" },
+        { "name": "Pure", "gender": "neutral" },
+        { "name": "Rare", "gender": "neutral" },
+        { "name": "Raw", "gender": "neutral" },
+        { "name": "Shining", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Tough", "gender": "neutral" },
+        { "name": "Translucent", "gender": "neutral" }
+    ]
+}

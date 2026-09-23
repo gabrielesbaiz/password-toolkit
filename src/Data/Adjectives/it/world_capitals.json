@@ -1,0 +1,32 @@
+{
+    "key": "world_capitals",
+    "locale": "it",
+    "values": [
+        { "name": "metropolitano", "gender": "male" },
+        { "name": "metropolitana", "gender": "female" },
+        { "name": "storico", "gender": "male" },
+        { "name": "storica", "gender": "female" },
+        { "name": "caotico", "gender": "male" },
+        { "name": "caotica", "gender": "female" },
+        { "name": "luminoso", "gender": "male" },
+        { "name": "luminosa", "gender": "female" },
+        { "name": "popoloso", "gender": "male" },
+        { "name": "popolosa", "gender": "female" },
+        { "name": "monumentale", "gender": "neutral" },
+        { "name": "turistico", "gender": "male" },
+        { "name": "turistica", "gender": "female" },
+        { "name": "elegante", "gender": "neutral" },
+        { "name": "lontano", "gender": "male" },
+        { "name": "lontana", "gender": "female" },
+        { "name": "vivace", "gender": "neutral" },
+        { "name": "imperiale", "gender": "neutral" },
+        { "name": "nordico", "gender": "male" },
+        { "name": "nordica", "gender": "female" },
+        { "name": "affascinante", "gender": "neutral" },
+        { "name": "moderno", "gender": "male" },
+        { "name": "moderna", "gender": "female" },
+        { "name": "antico", "gender": "male" },
+        { "name": "antica", "gender": "female" },
+        { "name": "centrale", "gender": "neutral" }
+    ]
+}

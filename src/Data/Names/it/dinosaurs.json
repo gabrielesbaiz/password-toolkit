@@ -1,0 +1,20 @@
+{
+    "key": "dinosaurs",
+    "locale": "it",
+    "values": {
+        "Tyrannosaurus": "Tirannosauro",
+        "Triceratops": "Triceratopo",
+        "Stegosaurus": "Stegosauro",
+        "Brachiosaurus": "Brachiosauro",
+        "Ankylosaurus": "Anchilosauro",
+        "Diplodocus": "Diplodoco",
+        "Allosaurus": "Allosauro",
+        "Spinosaurus": "Spinosauro",
+        "Apatosaurus": "Apatosauro",
+        "Iguanodon": "Iguanodonte",
+        "Pteranodon": "Pteranodonte",
+        "Giganotosaurus": "Giganotosauro",
+        "Megalosaurus": "Megalosauro",
+        "Carnotaurus": "Carnotauro"
+    }
+}

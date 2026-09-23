@@ -223,6 +223,18 @@ return [
         'pop_groups_2000s' => 'Gruppi Pop Anni 2000s',
         'pop_groups_2010s' => 'Gruppi Pop Anni 2010s',
         'pop_groups_2020s' => 'Gruppi Pop Anni 2020s',
+        'world_explorers' => 'Esploratori del Mondo',
+        'egyptian_pharaohs' => 'Faraoni Egizi',
+        'world_capitals' => 'Capitali del Mondo',
+        'world_rivers' => 'Fiumi del Mondo',
+        'constellations' => 'Costellazioni',
+        'gemstones' => 'Pietre Preziose',
+        'chemical_elements' => 'Elementi Chimici',
+        'dinosaurs' => 'Dinosauri',
+        'cocktails' => 'Cocktail',
+        'bicycle_brands' => 'Marchi di Biciclette',
+        'japanese_mythology' => 'Mitologia Giapponese',
+        'celtic_mythology' => 'Mitologia Celtica',
     ],
 
     /*

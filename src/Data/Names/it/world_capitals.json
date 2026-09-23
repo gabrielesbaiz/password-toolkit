@@ -1,0 +1,21 @@
+{
+    "key": "world_capitals",
+    "locale": "it",
+    "values": {
+        "London": "Londra",
+        "Paris": "Parigi",
+        "Moscow": "Mosca",
+        "Beijing": "Pechino",
+        "Lisbon": "Lisbona",
+        "Copenhagen": "Copenaghen",
+        "Cairo": "Il Cairo",
+        "Athens": "Atene",
+        "Warsaw": "Varsavia",
+        "Stockholm": "Stoccolma",
+        "Prague": "Praga",
+        "Dublin": "Dublino",
+        "Belgrade": "Belgrado",
+        "Berlin": "Berlino",
+        "Bucharest": "Bucarest"
+    }
+}

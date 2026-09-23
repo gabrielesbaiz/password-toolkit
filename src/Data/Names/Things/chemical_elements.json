@@ -1,0 +1,26 @@
+{
+    "key": "chemical_elements",
+    "type": "things",
+    "locale": "en",
+    "group": "science",
+    "tags": ["chemistry", "periodic-table"],
+    "icon": "⚗️",
+    "reach": "global",
+    "values": [
+        { "name": "Hydrogen", "gender": "male" },
+        { "name": "Helium", "gender": "male" },
+        { "name": "Carbon", "gender": "male" },
+        { "name": "Nitrogen", "gender": "male" },
+        { "name": "Oxygen", "gender": "male" },
+        { "name": "Neon", "gender": "male" },
+        { "name": "Sulfur", "gender": "male" },
+        { "name": "Iron", "gender": "male" },
+        { "name": "Copper", "gender": "male" },
+        { "name": "Silver", "gender": "male" },
+        { "name": "Gold", "gender": "male" },
+        { "name": "Platinum", "gender": "male" },
+        { "name": "Titanium", "gender": "male" },
+        { "name": "Uranium", "gender": "male" },
+        { "name": "Krypton", "gender": "male" }
+    ]
+}

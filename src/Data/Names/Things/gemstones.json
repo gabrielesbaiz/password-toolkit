@@ -1,0 +1,26 @@
+{
+    "key": "gemstones",
+    "type": "things",
+    "locale": "en",
+    "group": "nature",
+    "tags": ["minerals", "jewels"],
+    "icon": "💎",
+    "reach": "global",
+    "values": [
+        { "name": "Sapphire", "gender": "male" },
+        { "name": "Amber", "gender": "female" },
+        { "name": "Jade", "gender": "female" },
+        { "name": "Opal", "gender": "male" },
+        { "name": "Turquoise", "gender": "male" },
+        { "name": "Garnet", "gender": "male" },
+        { "name": "Topaz", "gender": "male" },
+        { "name": "Peridot", "gender": "male" },
+        { "name": "Emerald", "gender": "male" },
+        { "name": "Ruby", "gender": "male" },
+        { "name": "Diamond", "gender": "male" },
+        { "name": "Amethyst", "gender": "female" },
+        { "name": "Lapis Lazuli", "gender": "male" },
+        { "name": "Aquamarine", "gender": "female" },
+        { "name": "Onyx", "gender": "female" }
+    ]
+}
