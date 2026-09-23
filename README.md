@@ -26,6 +26,25 @@ Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-427193` in 
 
 ---
 
+## Documentation
+
+Full documentation, a configuration builder and a terminal playground where
+every command runs against real dictionary data:
+
+**[gabrielesbaiz.github.io/password-toolkit](https://gabrielesbaiz.github.io/password-toolkit/)**
+
+| Page | What is on it |
+|---|---|
+| [Introduction](https://gabrielesbaiz.github.io/password-toolkit/#intro) | What this is, the four use cases, and whether you need it |
+| [Installation](https://gabrielesbaiz.github.io/password-toolkit/#install) | Install, verify, publish the config |
+| [Quick start](https://gabrielesbaiz.github.io/password-toolkit/#quick) | Generating, batching, reports, the builder, injection |
+| [Configuration](https://gabrielesbaiz.github.io/password-toolkit/#config) | All 27 settings, plus a builder that writes the file for you |
+| [Playground](https://gabrielesbaiz.github.io/password-toolkit/#play) | A live terminal — every flag, real dictionaries, in your browser |
+| [Dictionaries](https://gabrielesbaiz.github.io/password-toolkit/#own) | Your own, locales and adjectives, translated names |
+| [Reference](https://gabrielesbaiz.github.io/password-toolkit/#api) | Every method, the report shape, the enums |
+
+---
+
 ## Contents
 
 - [Do you need this?](#do-you-need-this)
@@ -38,6 +57,8 @@ Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-427193` in 
   - [Separator and word breaks](#separator-and-word-breaks)
   - [Word order](#word-order)
   - [Numbers](#numbers)
+  - [Words](#words)
+  - [Unique batches](#unique-batches)
   - [Leetspeak](#leetspeak)
   - [Strength](#strength)
 - [Dictionaries](#dictionaries)
@@ -48,6 +69,7 @@ Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-427193` in 
   - [Locales and adjectives](#locales-and-adjectives)
   - [Translated names](#translated-names)
 - [The builder](#the-builder)
+- [All methods](#all-methods)
 - [Strength reporting](#strength-reporting)
   - [The two models](#the-two-models)
   - [Score thresholds](#score-thresholds)
@@ -183,9 +205,10 @@ each locale declares its own — see [Locales and adjectives](#locales-and-adjec
 ### Numbers
 
 ```php
-'add_numbers'      => true,
-'numbers_digits'   => 6,
-'numbers_position' => 'end',   // start | middle | end
+'add_numbers'                => true,
+'numbers_digits'             => 6,
+'numbers_position'           => 'end',    // start | middle | end
+'numbers_allow_leading_zero' => false,    // true lets "042193" happen
 ```
 
 Digits are drawn with `random_int()`, and they are the setting that matters
@@ -198,12 +221,12 @@ The default is **6**. Raise it when the passwords guard something real:
 
 | `numbers_digits` | structural bits | offline crack, 10^10 guesses/sec |
 |---|---|---|
-| 4 | 30 | 0.1 seconds |
-| 6 *(default)* | 37 | 13 seconds |
-| 10 | 50 | 31 hours |
-| 12 | 57 | 1.4 years |
-| 14 | 63 | 143 years |
-| 18 *(max)* | 77 | 410,000 years |
+| 4 | 30.1 | 0.1 seconds |
+| 6 *(default)* | 36.7 | 11 seconds |
+| 10 | 50.0 | 31 hours |
+| 12 | 56.7 | 133 days |
+| 14 | 63.3 | 36 years |
+| 18 *(max)* | 76.6 | 3,600 centuries |
 
 > [!IMPORTANT]
 > Those times assume a fast unsalted hash. Behind bcrypt or argon2 the guess
@@ -215,6 +238,54 @@ The default is **6**. Raise it when the passwords guard something real:
 For a password a human has to retype, 12 digits is usually past the point of
 being memorable. If you need more than that, you want a random string, not this
 package — see [Do you need this?](#do-you-need-this).
+
+`numbers_allow_leading_zero` decides whether the segment may start with a zero.
+Left `false` — the historical behaviour — the draw runs from `10^(d-1)` to
+`10^d - 1`, so `042193` never appears and six digits are 900,000 values rather
+than a million. That is 0.15 bits less than the digit count suggests, and the
+strength report says so. Set it `true` to buy those bits back, at the cost of a
+password whose leading zero has to be dictated as "zero four two".
+
+### Words
+
+```php
+'word_count' => 2,         // 2 or 3
+'case'       => 'title',   // title | lower | upper | preserve
+```
+
+`word_count` is one adjective and a name (2), or two adjectives and a name (3).
+The second adjective is drawn from the same agreeing pool without replacement,
+so it still reads as the language writes it — `Brave-Mighty-Goldrake` in
+English, `Goldrake-Mitico-Potente` in Italian — and both adjectives agree with
+the name's gender. The pair is worth `log2(A) + log2(A-1)`, not `2 × log2(A)`,
+which on a themed pool is around nine bits: two more digits buy nearly as much
+for eight fewer characters. Reach for `numbers_digits` first. Where a pool is
+too small to supply two distinct words, the password falls back to one
+adjective, and the report credits only what was actually drawn.
+
+`case` decides how the words are cased:
+
+| value | effect |
+|---|---|
+| `title` *(default)* | adjectives Title Case, names spelled as the dictionary wrote them — `McFly` stays `McFly` |
+| `lower` | every word lower case |
+| `upper` | every word UPPER CASE |
+| `preserve` | both exactly as stored |
+
+Casing never touches the digits, and like leetspeak it is worth **zero** bits:
+it is a deterministic transform, so the entropy figure ignores it.
+
+### Unique batches
+
+```php
+'unique_attempts_multiplier' => 10,
+```
+
+`generateUnique()` draws until it has the count it was asked for, and gives up
+after `count × multiplier + 100` attempts rather than spinning against a pool
+too small to supply them. Raising it buys a better chance of filling a large
+batch out of a narrow pool; widening the pool is the real fix, and the
+exception says which levers to pull.
 
 ### Leetspeak
 
@@ -248,18 +319,38 @@ minimum-length policy.
 
 ```php
 'strength' => [
-    'guesses_per_second' => 1e10,   // one offline GPU against a fast hash
+    'guesses_per_second' => 1e10,        // one offline GPU against a fast hash
+    'thresholds' => [
+        'weak'        => 28,
+        'fair'        => 36,
+        'strong'      => 60,
+        'very_strong' => 128,
+    ],
+    'rule_model' => 'charset',           // charset | structural
 ],
 ```
 
-Raise it towards `1e12` if your threat model includes a well-funded adversary.
+Raise `guesses_per_second` towards `1e12` if your threat model includes a
+well-funded adversary.
+
+`thresholds` are the band edges, in bits, and they must ascend. They decide
+what [`StrongPassword`](#validation) accepts at signup, so they are a policy
+decision rather than a constant: lowering `strong` lets more users through and
+puts more weight on your hashing, raising it turns more of them away at the
+form.
+
+`rule_model` is which model that rule scores with — see
+[the two models](#the-two-models). Keep `charset` for passwords a user chose.
+Set `structural` only where the rule guards passwords this package generated;
+it reports a much lower figure for anything else and would reject perfectly
+good user passwords at the same threshold.
 
 ## Dictionaries
 
 ### Built-in
 
-188 dictionaries — **99 of people** and **89 of things** — holding
-2,492 names and 1,724 names respectively, each with themed adjectives in both
+200 dictionaries — **103 of people** and **97 of things** — holding
+2,552 names and 1,844 names respectively, each with themed adjectives in both
 Italian and English.
 
 Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
@@ -267,7 +358,7 @@ Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
 is translated where a translation exists and left alone where it should be.
 
 <details>
-<summary><b>People (99)</b></summary>
+<summary><b>People (103)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
@@ -279,6 +370,7 @@ is translated where a translation exists and left alone where it should be.
 | `barbie` | 💗 screen | en | 15 | Barbie |
 | `blade_runner` | 🌧️ screen | en | 10 | Rick Deckard |
 | `cartoons` | 📺 screen | en | 146 | Mickey Mouse |
+| `celtic_mythology` | 🍀 myth | en | 15 | Morrigan |
 | `deadpool` | 🗡️ screen | en | 10 | Wade Wilson |
 | `die_hard` | 🏢 screen | en | 12 | John McClane |
 | `disney_characters` | 🏰 screen | en | 60 | Mickey Mouse |
@@ -286,6 +378,7 @@ is translated where a translation exists and left alone where it should be.
 | `django_unchained` | 🤠 screen | en | 10 | Django Freeman |
 | `dune` | 🪱 screen | en | 15 | Paul Atreides |
 | `egyptian_mythology` | 🐈 myth | en | 15 | Ra |
+| `egyptian_pharaohs` | 👑 history | en | 15 | Tutankhamun |
 | `encanto` | 🕯️ screen | en | 14 | Mirabel Madrigal |
 | `everything_everywhere` | 🥯 screen | en | 12 | Evelyn Wang |
 | `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
@@ -334,6 +427,7 @@ is translated where a translation exists and left alone where it should be.
 | `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
 | `italian_youtubers` | ▶️ screen | it | 15 | Favij |
 | `james_bond` | 🕴️ screen | en | 14 | James Bond |
+| `japanese_mythology` | ⛩️ myth | en | 15 | Amaterasu |
 | `jaws` | 🦈 screen | en | 12 | Martin Brody |
 | `john_wick` | 🐕 screen | en | 15 | John Wick |
 | `jurassic_park` | 🦖 screen | en | 15 | Alan Grant |
@@ -370,14 +464,20 @@ is translated where a translation exists and left alone where it should be.
 | `top_gun` | ✈️ screen | en | 15 | Maverick |
 | `trainspotting` | 💉 screen | en | 12 | Mark Renton |
 | `wicked` | 💚 screen | en | 14 | Elphaba Thropp |
+| `world_explorers` | 🧭 history | en | 15 | Ferdinand Magellan |
 </details>
 
 <details>
-<summary><b>Things (89)</b></summary>
+<summary><b>Things (97)</b></summary>
 
 | Dictionary | Group | Source | Entries | Example |
 |---|---|---|---|---|
+| `bicycle_brands` | 🚲 vehicles | en | 15 | Colnago |
 | `car_brands` | 🚘 vehicles | en | 49 | Ferrari |
+| `chemical_elements` | ⚗️ science | en | 15 | Hydrogen |
+| `cocktails` | 🍸 drink | en | 15 | Negroni |
+| `constellations` | ✨ nature | en | 15 | Orion |
+| `dinosaurs` | 🦖 science | en | 15 | Tyrannosaurus |
 | `electronic_acts_2000s` | 🎛️ arts | en | 15 | Daft Punk |
 | `electronic_acts_2010s` | 🎛️ arts | en | 15 | Disclosure |
 | `electronic_acts_2020s` | 🎛️ arts | en | 13 | Overmono |
@@ -385,6 +485,7 @@ is translated where a translation exists and left alone where it should be.
 | `electronic_acts_80s` | 🎛️ arts | en | 15 | Depeche Mode |
 | `electronic_acts_90s` | 🎛️ arts | en | 15 | The Prodigy |
 | `football_clubs` | ⚽ sport | en | 15 | Real Madrid |
+| `gemstones` | 💎 nature | en | 15 | Sapphire |
 | `greek_letters` | 🔤 science | en | 24 | Alpha |
 | `hip_hop_groups_2000s` | 🎤 arts | en | 15 | Outkast |
 | `hip_hop_groups_2010s` | 🎤 arts | en | 15 | Migos |
@@ -466,6 +567,8 @@ is translated where a translation exists and left alone where it should be.
 | `rock_bands_80s` | 🎸 arts | en | 15 | U2 |
 | `rock_bands_90s` | 🎸 arts | en | 15 | Nirvana |
 | `space_missions` | 🚀 science | en | 15 | Apollo |
+| `world_capitals` | 🌍 places | en | 15 | London |
+| `world_rivers` | 🌊 nature | en | 15 | Nile |
 
 </details>
 
@@ -764,11 +867,14 @@ under a `names/` subdirectory, so it does not collide with your adjectives at
 half-configured builder is safe to keep on a property and reuse.
 
 ```php
+use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
+use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
 
 PasswordToolkit::make()
     ->locale('en')                          // adjective language
+    ->fallbackLocale('en')                  // when a locale has no resources
     ->only(['star_wars'])                   // or ->except([…]), ->types('people')
     ->groups(['screen', 'myth'])            // thematic buckets
     ->tagged(['italian'])                   // must carry every tag
@@ -778,6 +884,9 @@ PasswordToolkit::make()
     ->keepWordBreaks(false)                 // "LukeSkywalker" instead of "Luke_Skywalker"
     ->digits(6)                             // or ->withoutNumbers()
     ->numbersAt(NumbersPosition::Middle)    // start | middle | end
+    ->allowLeadingZero()                    // let the digits start with a zero
+    ->words(3)                              // 2 or 3 words
+    ->casing(Casing::Upper)                 // title | lower | upper | preserve
     ->adjectiveAt('before')                 // override the locale's word order
     ->leet(Leetspeak::Basic)                // none | basic | advanced
     ->guessesPerSecond(1e12)                // attacker assumption for the report
@@ -785,7 +894,34 @@ PasswordToolkit::make()
 ```
 
 Enums and their string spellings are interchangeable — `->leet('basic')` and
-`->numbersAt('middle')` both work.
+`->numbersAt('middle')` both work. `->options()` returns the resolved `Options`
+DTO if you want to inspect, store or reuse it instead of generating.
+
+## All methods
+
+Every generator method takes an optional `Options` as its last argument; pass
+one and your config is ignored entirely.
+
+| Method | Returns | What it does |
+|---|---|---|
+| `generate()` | `string` | One password. Throws when no dictionary resolves. |
+| `generateMany($count)` | `array` | Exactly `$count`, one dictionary scan. Repeats possible. |
+| `generateUnique($count)` | `array` | The same, guaranteed distinct. Throws rather than under-deliver. |
+| `generateWithReport()` | `array` | `['password' => string, 'report' => StrengthReport]` |
+| `generateManyWithReport($count)` | `array` | A list of those pairs. |
+| `make()` | `PasswordBuilder` | An immutable builder seeded from config. |
+| `strength($password)` | `StrengthReport` | Charset model — for a password a user chose. |
+| `structuralReport($password)` | `StrengthReport` | Structural model — for one this package made. |
+| `dictionaries()` | `Collection` | Every dictionary in play, with its metadata. |
+| `dictionariesWithSamples()` | `Collection` | The same, plus example entries, for a picker. |
+| `groups()` / `tags()` | `Collection` | The groups and tags present, with counts. |
+| `poolSizes()` | `array` | `['names' => int, 'adjectives' => int]` |
+| `registerDictionary($key, $values, $type, $locale)` | `void` | Add one at runtime. |
+| `flushCache()` | `void` | Forget the decoded JSON after changing config at runtime. |
+
+> [!NOTE]
+> `clearPoolCache()` still works as an alias for `flushCache()`. It is
+> deprecated and goes away in 3.0.
 
 ## Strength reporting
 
@@ -818,7 +954,8 @@ an attacker who knows you use this package searches the pool, not the alphabet.
 ['password' => $pwd, 'report' => $report] = PasswordToolkit::generateWithReport();
 
 $report->components;
-// ['name' => 11.6, 'adjective' => 5.2, 'number' => 19.9, 'leetspeak_bonus' => 0.0, 'total' => 36.7]
+// ['name' => 12.1, 'adjective' => 4.9, 'second_adjective' => 0.0, 'number' => 19.8,
+//  'leetspeak_bonus' => 0.0, 'total' => 36.7]
 ```
 
 Use the structural figure when deciding whether a generated password is strong
@@ -833,6 +970,10 @@ enough for what you are about to do with it.
 | `36–59` | 2 | fair |
 | `60–127` | 3 | strong |
 | `≥ 128` | 4 | very_strong |
+
+These are defaults, not law. Move them with `strength.thresholds` — see
+[Strength](#strength) — when the hash behind the password, or what it guards,
+says a different line is the honest one.
 
 ## Validation
 
@@ -850,7 +991,9 @@ The message names both the band achieved and the band required, and is
 translated: *"The password is Very weak. It must be at least Strong."*
 
 The rule scores with the charset model, because the value under validation is
-one the user chose.
+one the user chose. Switch it with `strength.rule_model`, or per rule with
+`StrongPassword::strong()->using('structural')`, where the passwords it guards
+are ones this package generated.
 
 ## Commands
 
@@ -861,12 +1004,18 @@ one the user chose.
 | `password-toolkit:generate --json` | …as JSON, for piping |
 | `password-toolkit:generate --list` | Show which dictionaries resolve, with group, reach and tags |
 | `password-toolkit:generate --group= --tag= --reach=` | Filter the pool thematically |
+| `password-toolkit:generate --words=3 --case=upper` | Three words, cased to taste |
+| `password-toolkit:generate --position=start` | Where the digits sit: start, middle or end |
+| `password-toolkit:generate --no-numbers` | Words only, no numeric segment |
+| `password-toolkit:generate --leading-zero` | Let the numeric segment start with a zero |
 | `password-toolkit:make-dictionary {key}` | Scaffold a dictionary of your own |
 
 ```bash
 php artisan password-toolkit:generate 5 --report
 php artisan password-toolkit:generate 3 --locale=en --only=star_wars --json
 php artisan password-toolkit:generate --separator=_ --digits=6 --leet=basic
+php artisan password-toolkit:generate --words=3 --case=lower --leading-zero
+php artisan password-toolkit:generate --position=middle --no-numbers
 php artisan password-toolkit:generate --group=food --reach=global
 php artisan password-toolkit:generate --list --group=drink
 php artisan password-toolkit:make-dictionary my_team --type=people --locale=en
