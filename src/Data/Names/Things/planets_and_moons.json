@@ -4,7 +4,7 @@
     "type": "things",
     "locale": "en",
     "group": "nature",
-    "tags": ["astronomy", "space"],
+    "tags": ["astronomy", "science", "sky", "space"],
     "icon": "🪐",
     "reach": "global",
     "values": [

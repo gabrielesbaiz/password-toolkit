@@ -4,7 +4,7 @@
     "type": "people",
     "locale": "it",
     "group": "sport",
-    "tags": ["cycling", "italian"],
+    "tags": ["cycling", "italian", "sport"],
     "icon": "🚴",
     "reach": "global",
     "values": [

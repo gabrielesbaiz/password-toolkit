@@ -4,7 +4,7 @@
     "type": "people",
     "locale": "it",
     "group": "science",
-    "tags": ["italian"],
+    "tags": ["italian", "science"],
     "icon": "🔬",
     "reach": "global",
     "values": [

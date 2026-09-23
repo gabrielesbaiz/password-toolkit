@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>PasswordToolkit</title>
-<meta name="description" content="Memorable, dictatable temporary passwords for Laravel — two words and a number drawn from 200 curated dictionaries, with grammatical agreement, an honest strength report and a validation rule.">
+<meta name="description" content="Memorable, dictatable temporary passwords for Laravel — two words and a number drawn from 201 curated dictionaries, with grammatical agreement, an honest strength report and a validation rule.">
 <link rel="canonical" href="https://gabrielesbaiz.github.io/password-toolkit/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9993;</text></svg>">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PasswordToolkit">
-<meta property="og:description" content="Somebody has to read that password out loud. PasswordToolkit makes the one you send legible — 200 dictionaries, two languages, and a report that never flatters the number.">
+<meta property="og:description" content="Somebody has to read that password out loud. PasswordToolkit makes the one you send legible — 201 dictionaries, two languages, and a report that never flatters the number.">
 <meta property="og:url" content="https://gabrielesbaiz.github.io/password-toolkit/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@
 <div class="mx hero">
   <span class="kicker">Hand delivered · since 1997</span>
   <h1>Somebody has to <em>read that password</em> out loud.</h1>
-  <p class="sub">You generate a temporary password, you put it in an email, and a human on the other end has to type it back. That is the job. <b>PasswordToolkit</b> makes the thing you send legible — 200 curated dictionaries, two languages, and an entropy figure it refuses to flatter.</p>
+  <p class="sub">You generate a temporary password, you put it in an email, and a human on the other end has to type it back. That is the job. <b>PasswordToolkit</b> makes the thing you send legible — 201 curated dictionaries, two languages, and an entropy figure it refuses to flatter.</p>
 
   <div class="tiltwrap"><div class="envelope">
     <div class="tape"></div>
@@ -108,14 +108,14 @@ PasswordToolkit::generateUnique(200); <span class="cm">// a batch, no repeats</s
 </section>
 
 <section id="dictionary-shelf" class="mx rv">
-  <h2>200 dictionaries, and you will not use most of them</h2>
+  <h2>201 dictionaries, and you will not use most of them</h2>
   <p class="lead">That is fine — you only need the handful your users would recognise. Pick by theme, by tag, or by how far the names travel, and ignore the rest until you want them.</p>
 
   <div class="counts">
-    <div><b data-count="200">0</b><span>dictionaries</span></div>
-    <div><b data-count="4396">0</b><span>names</span></div>
+    <div><b data-count="201">0</b><span>dictionaries</span></div>
+    <div><b data-count="4411">0</b><span>names</span></div>
     <div><b data-count="12">0</b><span>groups</span></div>
-    <div><b data-count="124">0</b><span>tags</span></div>
+    <div><b data-count="114">0</b><span>tags</span></div>
   </div>
 
   <div class="belt" aria-hidden="true">
@@ -129,7 +129,7 @@ PasswordToolkit::generateUnique(200); <span class="cm">// a batch, no repeats</s
 PasswordToolkit::make()-&gt;tagged(['italian', 'sweet'])-&gt;generate();
 PasswordToolkit::make()-&gt;reach('global')-&gt;generate();   <span class="cm">// names that travel</span></pre>
   <p class="lead" style="margin:0">A dedicated page lists every one of them with its group, tags, reach and sample entries. <a href="#/shelf" style="color:var(--accent)">Browse the full shelf →</a></p>
-  <p class="deeper"><a href="#/shelf">Browse all 200 with filters <span>&rarr;</span></a></p>
+  <p class="deeper"><a href="#/shelf">Browse all 201 with filters <span>&rarr;</span></a></p>
 </section>
 
 <section id="lang" class="mx rv">
@@ -244,9 +244,9 @@ return [
 
 <section class="mx rv" id="home-numbers" aria-label="By the numbers">
   <div class="band">
-    <div><b data-count="4396">0</b><span>names</span></div>
-    <div><b data-count="9821">0</b><span>adjectives</span></div>
-    <div><b data-count="2850">0</b><span>tests</span></div>
+    <div><b data-count="4411">0</b><span>names</span></div>
+    <div><b data-count="9873">0</b><span>adjectives</span></div>
+    <div><b data-count="2866">0</b><span>tests</span></div>
     <div><b data-count="27">0</b><span>settings</span></div>
   </div>
 </section>
@@ -319,7 +319,7 @@ return [
 
 <section id="intro" data-title="Introduction">
   <h2>What this is</h2>
-  <p class="lead">PasswordToolkit generates passwords a person can read out loud: two words and a number, drawn from 200 curated dictionaries, with correct grammatical agreement in every language it speaks.</p>
+  <p class="lead">PasswordToolkit generates passwords a person can read out loud: two words and a number, drawn from 201 curated dictionaries, with correct grammatical agreement in every language it speaks.</p>
 
   <div class="ba">
     <div class="ba-card">
@@ -599,7 +599,7 @@ public function __construct(private readonly PasswordGenerator $passwords) {}</p
 
 <section id="shelf" data-title="All dictionaries">
   <h2>The whole shelf</h2>
-  <p class="lead">Two hundred dictionaries, 4,396 names. You will use a handful &mdash; the ones your users would recognise &mdash; and the filters exist so you can find them without reading the rest. Everything here is the real metadata: the same groups, tags and reach values <code>password-toolkit:generate --list</code> prints.</p>
+  <p class="lead">Two hundred and one dictionaries, 4,411 names. You will use a handful &mdash; the ones your users would recognise &mdash; and the filters exist so you can find them without reading the rest. Everything here is the real metadata: the same groups, tags and reach values <code>password-toolkit:generate --list</code> prints.</p>
 
   <div class="shelf-bar">
     <input id="sh-q" type="search" placeholder="Search names, keys and tags&hellip;" aria-label="Search dictionaries" autocomplete="off">
@@ -623,7 +623,7 @@ public function __construct(private readonly PasswordGenerator $passwords) {}</p
       <tr><td><code>group</code></td><td>twelve themes</td><td>The broad subject. One per dictionary.</td></tr>
       <tr><td><code>type</code></td><td><code>people</code> / <code>things</code></td><td>Whether the names are people. Italian adjectives agree either way.</td></tr>
       <tr><td><code>reach</code></td><td><code>global</code> / <code>italian</code> / <code>niche</code></td><td>How far a name travels. Global ones a stranger would recognise.</td></tr>
-      <tr><td><code>tags</code></td><td>124 of them</td><td>Free-form and cumulative: a dictionary must carry every tag you ask for.</td></tr>
+      <tr><td><code>tags</code></td><td>114 of them</td><td>Free-form and cumulative: a dictionary must carry every tag you ask for.</td></tr>
       <tr><td><code>locale</code></td><td><code>en</code> / <code>it</code></td><td>The language the <em>names</em> are written in, which is not the same as your app locale.</td></tr>
     </tbody>
   </table>
@@ -985,12 +985,12 @@ $report-&gt;toArray();         <span class="cm">// Arrayable, Jsonable, JsonSeri
   <p class="lead">The structural report breaks the number down, so you can see which setting is actually carrying the password.</p>
   <pre>$report-&gt;components;
 // [
-//     'name'             =&gt; 12.10,   <span class="cm">// log2(4,396 names)</span>
+//     'name'             =&gt; 12.11,   <span class="cm">// log2(4,411 names)</span>
 //     'adjective'        =&gt; 4.17,
 //     'second_adjective' =&gt; 0.00,    <span class="cm">// word_count is 2 here</span>
 //     'number'           =&gt; 19.78,   <span class="cm">// log2(900,000) — six digits, no leading zero</span>
 //     'leetspeak_bonus'  =&gt; 0.00,    <span class="cm">// always, by design</span>
-//     'total'            =&gt; 36.05,
+//     'total'            =&gt; 36.06,
 // ]</pre>
   <p class="lead">Read that column once and the priorities are obvious: <b>the digits carry more than half</b>, the adjective carries least, and leetspeak carries nothing at all. Adding dictionaries is the weakest lever available &mdash; doubling every one of them buys a single bit.</p>
 
@@ -1275,7 +1275,7 @@ composer test      <span class="cm"># pest</span></pre>
 
   <h2>Support this package</h2>
   <p class="lead">This is maintained on evenings and weekends, alongside a full-time job writing insurance software. Keeping it green across new Laravel majors is the unglamorous part, and it is what keeps it installable in your <code>composer.json</code> next year too.</p>
-  <p class="lead">The code took a few weekends. The 200 dictionaries did not &mdash; those were evenings spent checking that every name is real, spelled as an Italian would dub it, and safe to read aloud at a support desk.</p>
+  <p class="lead">The code took a few weekends. The 201 dictionaries did not &mdash; those were evenings spent checking that every name is real, spelled as an Italian would dub it, and safe to read aloud at a support desk.</p>
   <ol class="uses">
     <li><span>01</span><div><b>Star the repository</b><p>Free, thirty seconds, and it is the first signal another developer looks at.</p></div></li>
     <li><span>02</span><div><b>Become a sponsor</b><p>From $5 a month. Company tiers get a logo in the README.</p></div></li>

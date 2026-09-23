@@ -1,0 +1,25 @@
+{
+    "key": "rocky_horror_picture_show",
+    "locale": "en",
+    "values": [
+        { "name": "Alien", "gender": "neutral" },
+        { "name": "Ambiguous", "gender": "neutral" },
+        { "name": "Bizarre", "gender": "neutral" },
+        { "name": "Delirious", "gender": "neutral" },
+        { "name": "Eccentric", "gender": "neutral" },
+        { "name": "Flamboyant", "gender": "neutral" },
+        { "name": "Gothic", "gender": "neutral" },
+        { "name": "Hypnotic", "gender": "neutral" },
+        { "name": "Lacquered", "gender": "neutral" },
+        { "name": "Monstrous", "gender": "neutral" },
+        { "name": "Nocturnal", "gender": "neutral" },
+        { "name": "Provocative", "gender": "neutral" },
+        { "name": "Scandalous", "gender": "neutral" },
+        { "name": "Sensual", "gender": "neutral" },
+        { "name": "Sinful", "gender": "neutral" },
+        { "name": "Sparkling", "gender": "neutral" },
+        { "name": "Theatrical", "gender": "neutral" },
+        { "name": "Transgressive", "gender": "neutral" },
+        { "name": "Unbridled", "gender": "neutral" }
+    ]
+}

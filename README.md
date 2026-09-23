@@ -4,1207 +4,123 @@
 
 # PasswordToolkit
 
-Memorable, human-friendly passwords for Laravel — `Goldrake-Mitico-427193` in Italian, `Fearless-Luke-Skywalker-330174` in English — built from 91 curated dictionaries, in the language you choose, with dictionaries of your own alongside them.
+Memorable passwords for Laravel — `Fearless-Luke-Skywalker-481902` rather than `xK#9$!qZ` — drawn from 200 curated dictionaries, in the language you choose, with dictionaries of your own alongside them.
 
 [![Latest version](https://img.shields.io/packagist/v/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
 [![PHP](https://img.shields.io/packagist/dependency-v/gabrielesbaiz/password-toolkit/php?style=flat-square)](composer.json)
+[![Laravel](https://img.shields.io/packagist/dependency-v/gabrielesbaiz/password-toolkit/illuminate%2Fsupport?style=flat-square&label=laravel)](composer.json)
 [![Downloads](https://img.shields.io/packagist/dt/gabrielesbaiz/password-toolkit.svg?style=flat-square)](https://packagist.org/packages/gabrielesbaiz/password-toolkit)
-[![License](https://img.shields.io/packagist/l/gabrielesbaiz/password-toolkit.svg?style=flat-square)](LICENSE.md)
+[![Stars](https://img.shields.io/github/stars/gabrielesbaiz/password-toolkit?style=flat-square&logo=github)](https://github.com/gabrielesbaiz/password-toolkit/stargazers)
 [![Sponsor](https://img.shields.io/github/sponsors/gabrielesbaiz?style=flat-square&label=sponsor&logo=github)](https://github.com/sponsors/gabrielesbaiz)
+
+### 📖 [Read the documentation →](https://gabrielesbaiz.github.io/password-toolkit/)
+
+Every setting, a builder that writes your config file, a terminal playground
+where every command runs against the real dictionaries, and the whole shelf of
+200 with filters.
 
 > [!CAUTION]
 > **Upgrading from 1.x?** Read [UPGRADE.md](UPGRADE.md) first. `generate($count)`
-> is now `generateMany($count)`, `generate()` throws instead of returning
-> `null`, and the config block changed. Most of it is shimmed; four things are
-> not.
+> is now `generateMany($count)` and `generate()` throws instead of returning
+> `null`. Most of it is shimmed; four changes need an edit in your code.
 
 > [!IMPORTANT]
-> **Does this save you time?**
-> A ⭐ costs you nothing and helps other developers find it.
+> A ⭐ costs you nothing and helps other developers find this package.
 > [Sponsoring](https://github.com/sponsors/gabrielesbaiz) keeps it compatible
 > with every new Laravel release.
 
----
+## What it does
 
-## Documentation
+Laravel ships `Str::password()`. If a machine is the only thing that will ever
+read the secret, use it — it is higher entropy, shorter, and nobody has to say
+it out loud. This package exists for the passwords a person has to handle:
 
-Full documentation, a configuration builder and a terminal playground where
-every command runs against real dictionary data:
+- **201 dictionaries, 4,411 names**, filterable by group, tag and how far the names travel.
+- **Two languages, properly.** Italian adjectives agree with the gender of the name, and word order follows the language.
+- **Your own dictionaries**, from a directory, inline config or a runtime registration.
+- **An honest strength report**, counting what this package could have produced rather than what the alphabet allows.
+- **A validation rule**, configurable bands, and eighteen flags on the artisan command.
 
-**[gabrielesbaiz.github.io/password-toolkit](https://gabrielesbaiz.github.io/password-toolkit/)**
-
-| Page | What is on it |
-|---|---|
-| [Introduction](https://gabrielesbaiz.github.io/password-toolkit/#intro) | What this is, the four use cases, and whether you need it |
-| [Installation](https://gabrielesbaiz.github.io/password-toolkit/#install) | Install, verify, publish the config |
-| [Quick start](https://gabrielesbaiz.github.io/password-toolkit/#quick) | Generating, batching, reports, the builder, injection |
-| [Configuration](https://gabrielesbaiz.github.io/password-toolkit/#config) | All 27 settings, plus a builder that writes the file for you |
-| [Playground](https://gabrielesbaiz.github.io/password-toolkit/#play) | A live terminal — every flag, real dictionaries, in your browser |
-| [Dictionaries](https://gabrielesbaiz.github.io/password-toolkit/#own) | Your own, locales and adjectives, translated names |
-| [Reference](https://gabrielesbaiz.github.io/password-toolkit/#api) | Every method, the report shape, the enums |
-
----
-
-## Contents
-
-- [Do you need this?](#do-you-need-this)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Quick start](#quick-start)
-- [Configuration](#configuration)
-  - [Dictionaries](#dictionaries-1)
-  - [Locale](#locale)
-  - [Separator and word breaks](#separator-and-word-breaks)
-  - [Word order](#word-order)
-  - [Numbers](#numbers)
-  - [Words](#words)
-  - [Unique batches](#unique-batches)
-  - [Leetspeak](#leetspeak)
-  - [Strength](#strength)
-- [Dictionaries](#dictionaries)
-  - [Built-in](#built-in)
-  - [Groups, tags and reach](#groups-tags-and-reach)
-  - [Building a picker](#building-a-picker)
-  - [Your own dictionaries](#your-own-dictionaries)
-  - [Locales and adjectives](#locales-and-adjectives)
-  - [Translated names](#translated-names)
-- [The builder](#the-builder)
-- [All methods](#all-methods)
-- [Strength reporting](#strength-reporting)
-  - [The two models](#the-two-models)
-  - [Score thresholds](#score-thresholds)
-- [Validation](#validation)
-- [Commands](#commands)
-- [Recipes](#recipes)
-- [Troubleshooting](#troubleshooting)
-- [Security](#security)
-  - [Reporting a vulnerability](#reporting-a-vulnerability)
-- [Testing](#testing)
-- [Credits](#credits)
-- [Support this package](#support-this-package)
-- [Disclaimer](#disclaimer)
-- [License](#license)
-
-## Do you need this?
-
-If you need a secret for a machine — an API key, a token, a root credential —
-**you do not need this package**. Use what Laravel already gives you:
-
-```php
-Str::password(32);   // or random_bytes(32)
-```
-
-That is higher entropy, shorter, and nobody has to read it aloud.
-
-You want this package when a **human** is in the loop: when someone has to
-dictate the password over the phone, type it off a printed sheet, or remember it
-until they change it. `Goldrake-Mitico-427193` survives that. `xK#9$!qZ` does not.
-
-The realistic uses are user onboarding, initial credentials, demo and staging
-accounts, share links, and seeded fixtures. Every one of those trades entropy
-for a human being not getting it wrong — and this package will tell you exactly
-how much entropy you traded.
+Leetspeak is credited exactly zero bits, because a deterministic transform adds
+no work for an attacker who has read your config.
 
 ## Requirements
 
-- PHP 8.2 or newer
+- PHP 8.2+
 - Laravel 10, 11, 12 or 13
 
 ## Installation
 
 ```bash
 composer require gabrielesbaiz/password-toolkit
-```
 
-Publish the config if you want to change anything:
+php artisan vendor:publish --tag=password-toolkit-config
+php artisan vendor:publish --tag=password-toolkit-translations
 
-```bash
-php artisan vendor:publish --tag="password-toolkit-config"
-```
-
-The defaults generate working passwords with no configuration at all.
-
-## Quick start
-
-```php
-use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
-
-PasswordToolkit::generate();
-// "Goldrake-Mitico-427193"
-
-PasswordToolkit::generateMany(10);
-// ["Goldrake-Mitico-427193", "Vespa-Veloce-992148", …] — exactly 10
-
-PasswordToolkit::generateUnique(10);
-// the same, with no repeats
-
-PasswordToolkit::generateWithReport();
-// ['password' => "Goldrake-Mitico-427193", 'report' => StrengthReport]
-```
-
-Or override anything for a single call, without touching your config:
-
-```php
-PasswordToolkit::make()
-    ->locale('en')
-    ->only(['star_wars', 'italian_wines'])
-    ->digits(6)
-    ->generate();
-// "Fearless-Luke-Skywalker-481902" — English leads with the adjective
-```
-
-Inject it instead of using the facade, if you prefer:
-
-```php
-use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
-
-public function __construct(private readonly PasswordGenerator $passwords) {}
-```
-
-## Configuration
-
-Everything lives in `config/password-toolkit.php`.
-
-### Dictionaries
-
-```php
-'dictionaries' => [
-    'enabled' => '*',                    // '*', or ['star_wars', 'italian_wines']
-    'except'  => [],                     // applied after 'enabled'
-    'types'   => ['people', 'things'],   // limit to one kind
-    'paths'   => [],                     // directories of your own JSON files
-    'custom'  => [],                     // dictionaries defined inline
-],
-```
-
-`php artisan password-toolkit:generate --list` shows exactly what resolves.
-
-### Locale
-
-```php
-'locale'          => null,   // null follows the application locale
-'fallback_locale' => 'en',   // used when the locale has no resources of its own
-```
-
-### Separator and word breaks
-
-```php
-'separator_symbol' => '-',    // any string, or null for none
-'name_separator'   => true,   // "Luke-Skywalker" (true) or "LukeSkywalker" (false)
-```
-
-### Word order
-
-```php
-'adjective_position' => null,   // null follows the locale; 'before' | 'after' overrides
-```
-
-Leave it `null`. Word order is a property of the language, not a preference, and
-each locale declares its own — see [Locales and adjectives](#locales-and-adjectives).
-
-### Numbers
-
-```php
-'add_numbers'                => true,
-'numbers_digits'             => 6,
-'numbers_position'           => 'end',    // start | middle | end
-'numbers_allow_leading_zero' => false,    // true lets "042193" happen
-```
-
-Digits are drawn with `random_int()`, and they are the setting that matters
-most. The word pools are fixed by the data that ships, so the digits are where
-the entropy is: each one adds 3.32 bits, and against an attacker who knows this
-package they carry more of the total than the words do. Adding dictionaries is
-a poor lever by comparison — doubling every one of them buys a single bit.
-
-The default is **6**. Raise it when the passwords guard something real:
-
-| `numbers_digits` | structural bits | offline crack, 10^10 guesses/sec |
-|---|---|---|
-| 4 | 30.1 | 0.1 seconds |
-| 6 *(default)* | 36.7 | 11 seconds |
-| 10 | 50.0 | 31 hours |
-| 12 | 56.7 | 133 days |
-| 14 | 63.3 | 36 years |
-| 18 *(max)* | 76.6 | 3,600 centuries |
-
-> [!IMPORTANT]
-> Those times assume a fast unsalted hash. Behind bcrypt or argon2 the guess
-> rate drops by five or six orders of magnitude and even four digits holds for
-> days — so treat the table as the worst case, not the expected one. It also
-> assumes the attacker knows the package and your configuration, which is the
-> assumption to keep: this code is public.
-
-For a password a human has to retype, 12 digits is usually past the point of
-being memorable. If you need more than that, you want a random string, not this
-package — see [Do you need this?](#do-you-need-this).
-
-`numbers_allow_leading_zero` decides whether the segment may start with a zero.
-Left `false` — the historical behaviour — the draw runs from `10^(d-1)` to
-`10^d - 1`, so `042193` never appears and six digits are 900,000 values rather
-than a million. That is 0.15 bits less than the digit count suggests, and the
-strength report says so. Set it `true` to buy those bits back, at the cost of a
-password whose leading zero has to be dictated as "zero four two".
-
-### Words
-
-```php
-'word_count' => 2,         // 2 or 3
-'case'       => 'title',   // title | lower | upper | preserve
-```
-
-`word_count` is one adjective and a name (2), or two adjectives and a name (3).
-The second adjective is drawn from the same agreeing pool without replacement,
-so it still reads as the language writes it — `Brave-Mighty-Goldrake` in
-English, `Goldrake-Mitico-Potente` in Italian — and both adjectives agree with
-the name's gender. The pair is worth `log2(A) + log2(A-1)`, not `2 × log2(A)`,
-which on a themed pool is around nine bits: two more digits buy nearly as much
-for eight fewer characters. Reach for `numbers_digits` first. Where a pool is
-too small to supply two distinct words, the password falls back to one
-adjective, and the report credits only what was actually drawn.
-
-`case` decides how the words are cased:
-
-| value | effect |
-|---|---|
-| `title` *(default)* | adjectives Title Case, names spelled as the dictionary wrote them — `McFly` stays `McFly` |
-| `lower` | every word lower case |
-| `upper` | every word UPPER CASE |
-| `preserve` | both exactly as stored |
-
-Casing never touches the digits, and like leetspeak it is worth **zero** bits:
-it is a deterministic transform, so the entropy figure ignores it.
-
-### Unique batches
-
-```php
-'unique_attempts_multiplier' => 10,
-```
-
-`generateUnique()` draws until it has the count it was asked for, and gives up
-after `count × multiplier + 100` attempts rather than spinning against a pool
-too small to supply them. Raising it buys a better chance of filling a large
-batch out of a narrow pool; widening the pool is the real fix, and the
-exception says which levers to pull.
-
-### Leetspeak
-
-```php
-'leetspeak_conversion' => 'none',   // none | basic | advanced
-```
-
-`basic` substitutes single characters and preserves length. `advanced` adds
-multi-character glyphs, which lengthens the password — useful against a strict
-minimum-length policy.
-
-> [!NOTE]
-> Leetspeak is worth **zero** entropy bits and the strength report says so. It
-> is a deterministic transform, so it adds no work for an attacker who knows
-> your configuration. Reach for it to satisfy a character-class or length
-> policy, not to make a password stronger.
-
-| char | basic | advanced |
-|---|---|---|
-| a | `4` | `4` |
-| e | `3` | `3` |
-| i / l | `1` | `1` |
-| o | `0` | `0` |
-| s | `$` | `$` |
-| c | — | `<` |
-| m | — | `\|V\|` |
-| n | — | `\|\\\|` |
-| w | — | `\\/\\/` |
-
-### Strength
-
-```php
-'strength' => [
-    'guesses_per_second' => 1e10,        // one offline GPU against a fast hash
-    'thresholds' => [
-        'weak'        => 28,
-        'fair'        => 36,
-        'strong'      => 60,
-        'very_strong' => 128,
-    ],
-    'rule_model' => 'charset',           // charset | structural
-],
-```
-
-Raise `guesses_per_second` towards `1e12` if your threat model includes a
-well-funded adversary.
-
-`thresholds` are the band edges, in bits, and they must ascend. They decide
-what [`StrongPassword`](#validation) accepts at signup, so they are a policy
-decision rather than a constant: lowering `strong` lets more users through and
-puts more weight on your hashing, raising it turns more of them away at the
-form.
-
-`rule_model` is which model that rule scores with — see
-[the two models](#the-two-models). Keep `charset` for passwords a user chose.
-Set `structural` only where the rule guards passwords this package generated;
-it reports a much lower figure for anything else and would reject perfectly
-good user passwords at the same threshold.
-
-## Dictionaries
-
-### Built-in
-
-200 dictionaries — **103 of people** and **97 of things** — holding
-2,552 names and 1,844 names respectively, each with themed adjectives in both
-Italian and English.
-
-Every one carries a **group**, free-form **tags**, an **icon** and a **reach**.
-`Source` is the language its names are written in; anything not in your locale
-is translated where a translation exists and left alone where it should be.
-
-<details>
-<summary><b>People (103)</b></summary>
-
-| Dictionary | Group | Source | Entries | Example |
-|---|---|---|---|---|
-| `a_clockwork_orange` | 🍊 screen | en | 13 | Alex DeLarge |
-| `alien` | 👽 screen | en | 15 | Ellen Ripley |
-| `apocalypse_now` | 🚁 screen | en | 10 | Benjamin Willard |
-| `arthurian_legend` | ⚔️ myth | en | 15 | Arthur |
-| `back_to_the_future` | 🚗 screen | en | 17 | Marty McFly |
-| `barbie` | 💗 screen | en | 15 | Barbie |
-| `blade_runner` | 🌧️ screen | en | 10 | Rick Deckard |
-| `cartoons` | 📺 screen | en | 146 | Mickey Mouse |
-| `celtic_mythology` | 🍀 myth | en | 15 | Morrigan |
-| `deadpool` | 🗡️ screen | en | 10 | Wade Wilson |
-| `die_hard` | 🏢 screen | en | 12 | John McClane |
-| `disney_characters` | 🏰 screen | en | 60 | Mickey Mouse |
-| `disney_villains` | 😈 screen | en | 20 | Maleficent |
-| `django_unchained` | 🤠 screen | en | 10 | Django Freeman |
-| `dune` | 🪱 screen | en | 15 | Paul Atreides |
-| `egyptian_mythology` | 🐈 myth | en | 15 | Ra |
-| `egyptian_pharaohs` | 👑 history | en | 15 | Tutankhamun |
-| `encanto` | 🕯️ screen | en | 14 | Mirabel Madrigal |
-| `everything_everywhere` | 🥯 screen | en | 12 | Evelyn Wang |
-| `game_of_thrones` | 🐉 screen | en | 54 | Jon Snow |
-| `ghostbusters` | 👻 screen | en | 13 | Peter Venkman |
-| `grease` | 🕺 screen | en | 10 | Danny Zuko |
-| `greek_mythology` | 🏺 myth | en | 68 | Zeus |
-| `guardians_of_the_galaxy` | 🌌 screen | en | 13 | Peter Quill |
-| `harry_potter` | 🧙 screen | en | 71 | Harry Potter |
-| `hayao_miyazaki` | 🌸 screen | en | 20 | Totoro |
-| `home_alone` | 🏠 screen | en | 14 | Kevin McCallister |
-| `inception` | 🌀 screen | en | 10 | Dom Cobb |
-| `interstellar` | 🪐 screen | en | 12 | Joseph Cooper |
-| `italian_actors` | 🎭 screen | it | 69 | Roberto Benigni |
-| `italian_architects` | 📐 arts | it | 43 | Renzo Piano |
-| `italian_basketball_legends` | 🏀 sport | it | 71 | Dino Meneghin |
-| `italian_chefs` | 👨‍🍳 food | it | 44 | Gualtiero Marchesi |
-| `italian_comedians` | 😂 screen | it | 40 | Roberto Benigni |
-| `italian_cyclists` | 🚴 sport | it | 50 | Fausto Coppi |
-| `italian_dj_producers` | 🎧 arts | it | 20 | Benny Benassi |
-| `italian_explorers` | 🧭 history | it | 42 | Cristoforo Colombo |
-| `italian_fashion_designers` | 👗 arts | it | 15 | Giorgio Armani |
-| `italian_film_directors` | 🎬 arts | it | 56 | Federico Fellini |
-| `italian_football_legends` | ⚽ sport | it | 15 | Giuseppe Meazza |
-| `italian_inventors` | 💡 science | it | 20 | Antonio Meucci |
-| `italian_journalists` | 📰 screen | it | 20 | Indro Montanelli |
-| `italian_mathematicians` | 📐 science | it | 20 | Leonardo Fibonacci |
-| `italian_motogp_legends` | 🏍️ sport | it | 20 | Valentino Rossi |
-| `italian_musicians` | 🎵 arts | it | 56 | Lucio Battisti |
-| `italian_nobel_prize_winners` | 🏅 science | it | 14 | Guglielmo Marconi |
-| `italian_olympic_legends` | 🥇 sport | it | 20 | Alberto Tomba |
-| `italian_opera_composers` | 🎼 arts | it | 48 | Giuseppe Verdi |
-| `italian_painters` | 🖼️ arts | it | 50 | Amedeo Modigliani |
-| `italian_poets` | ✒️ arts | it | 47 | Dante Alighieri |
-| `italian_presidents_of_the_republic` | 🇮🇹 history | it | 11 | Enrico De Nicola |
-| `italian_racing_drivers` | 🏁 sport | it | 15 | Tazio Nuvolari |
-| `italian_rappers` | 🎤 arts | it | 20 | Fabri Fibra |
-| `italian_renaissance_artists` | 🎨 arts | it | 64 | Leonardo da Vinci |
-| `italian_scientists` | 🔬 science | it | 68 | Galileo Galilei |
-| `italian_singers_classic` | 🎙️ arts | it | 20 | Mina |
-| `italian_singers_modern` | 🎙️ arts | it | 20 | Marco Mengoni |
-| `italian_superheroes` | 🦸 screen | it | 35 | Diabolik |
-| `italian_television_personalities` | 📺 screen | it | 35 | Maria De Filippi |
-| `italian_tennis_players` | 🎾 sport | it | 18 | Jannik Sinner |
-| `italian_voice_actors` | 🎙️ screen | it | 20 | Ferruccio Amendola |
-| `italian_volleyball_legends` | 🏐 sport | it | 20 | Ivan Zaytsev |
-| `italian_writers` | 📖 arts | it | 66 | Dante Alighieri |
-| `italian_youtubers` | ▶️ screen | it | 15 | Favij |
-| `james_bond` | 🕴️ screen | en | 14 | James Bond |
-| `japanese_mythology` | ⛩️ myth | en | 15 | Amaterasu |
-| `jaws` | 🦈 screen | en | 12 | Martin Brody |
-| `john_wick` | 🐕 screen | en | 15 | John Wick |
-| `jurassic_park` | 🦖 screen | en | 15 | Alan Grant |
-| `knives_out` | 🔪 screen | en | 15 | Benoit Blanc |
-| `lupin_iii_characters` | 🕵️ screen | en | 18 | Lupin |
-| `mad_max` | 🏜️ screen | en | 15 | Max Rockatansky |
-| `men_in_black` | 🕶️ screen | en | 13 | Agent K |
-| `monty_python_holy_grail` | 🥥 screen | en | 13 | Arthur |
-| `nba_hall_of_fame` | 🏀 sport | en | 15 | Michael Jordan |
-| `norse_mythology` | 🔨 myth | en | 15 | Odin |
-| `oppenheimer` | ⚛️ screen | en | 15 | Robert Oppenheimer |
-| `philosophers` | 🤔 science | en | 35 | Socrates |
-| `pixar_characters` | 💡 screen | en | 45 | Woody |
-| `poor_things` | 🧠 screen | en | 11 | Bella Baxter |
-| `pulp_fiction` | 🍔 screen | en | 15 | Vincent Vega |
-| `rocky` | 🥊 screen | en | 10 | Rocky Balboa |
-| `roman_emperors` | 🏛️ history | en | 25 | Augustus |
-| `roman_mythology` | ⚡ myth | en | 30 | Jupiter |
-| `saturday_night_fever` | 🪩 screen | en | 12 | Tony Manero |
-| `spider_verse` | 🕸️ screen | en | 15 | Miles Morales |
-| `star_wars` | 🚀 screen | en | 15 | Luke Skywalker |
-| `superman` | 🦸 screen | en | 15 | Superman |
-| `terminator` | 🤖 screen | en | 15 | The Terminator |
-| `the_avengers` | 🛡️ screen | en | 11 | Tony Stark |
-| `the_big_lebowski` | 🎳 screen | en | 14 | The Dude |
-| `the_fifth_element` | 🚕 screen | en | 14 | Korben Dallas |
-| `the_godfather` | 🎩 screen | en | 15 | Vito Corleone |
-| `the_goonies` | 🗺️ screen | en | 11 | Mikey |
-| `the_grand_budapest_hotel` | 🛎️ screen | en | 13 | Monsieur Gustave |
-| `the_hunger_games` | 🏹 screen | en | 15 | Katniss Everdeen |
-| `the_martian` | 🥔 screen | en | 11 | Mark Watney |
-| `the_matrix` | 💊 screen | en | 14 | Neo |
-| `the_silence_of_the_lambs` | 🦋 screen | en | 14 | Clarice Starling |
-| `top_gun` | ✈️ screen | en | 15 | Maverick |
-| `trainspotting` | 💉 screen | en | 12 | Mark Renton |
-| `wicked` | 💚 screen | en | 14 | Elphaba Thropp |
-| `world_explorers` | 🧭 history | en | 15 | Ferdinand Magellan |
-</details>
-
-<details>
-<summary><b>Things (97)</b></summary>
-
-| Dictionary | Group | Source | Entries | Example |
-|---|---|---|---|---|
-| `bicycle_brands` | 🚲 vehicles | en | 15 | Colnago |
-| `car_brands` | 🚘 vehicles | en | 49 | Ferrari |
-| `chemical_elements` | ⚗️ science | en | 15 | Hydrogen |
-| `cocktails` | 🍸 drink | en | 15 | Negroni |
-| `constellations` | ✨ nature | en | 15 | Orion |
-| `dinosaurs` | 🦖 science | en | 15 | Tyrannosaurus |
-| `electronic_acts_2000s` | 🎛️ arts | en | 15 | Daft Punk |
-| `electronic_acts_2010s` | 🎛️ arts | en | 15 | Disclosure |
-| `electronic_acts_2020s` | 🎛️ arts | en | 13 | Overmono |
-| `electronic_acts_70s` | 🎛️ arts | en | 14 | Kraftwerk |
-| `electronic_acts_80s` | 🎛️ arts | en | 15 | Depeche Mode |
-| `electronic_acts_90s` | 🎛️ arts | en | 15 | The Prodigy |
-| `football_clubs` | ⚽ sport | en | 15 | Real Madrid |
-| `gemstones` | 💎 nature | en | 15 | Sapphire |
-| `greek_letters` | 🔤 science | en | 24 | Alpha |
-| `hip_hop_groups_2000s` | 🎤 arts | en | 15 | Outkast |
-| `hip_hop_groups_2010s` | 🎤 arts | en | 15 | Migos |
-| `hip_hop_groups_2020s` | 🎤 arts | en | 10 | Griselda |
-| `hip_hop_groups_80s` | 🎤 arts | en | 15 | Run DMC |
-| `hip_hop_groups_90s` | 🎤 arts | en | 15 | Wu Tang Clan |
-| `italian_aperitivi` | 🍹 drink | it | 18 | Spritz |
-| `italian_breads` | 🥖 food | it | 20 | Ciabatta |
-| `italian_card_games` | 🃏 culture | it | 18 | Scopa |
-| `italian_carnival_masks` | 🎭 culture | it | 20 | Arlecchino |
-| `italian_cars` | 🚗 vehicles | it | 20 | Cinquecento |
-| `italian_castles` | 🏯 places | it | 20 | Castel del Monte |
-| `italian_cheeses` | 🧀 food | it | 24 | Parmigiano Reggiano |
-| `italian_children_games_2000s` | 💾 culture | it | 28 | Beyblade |
-| `italian_children_games_70s` | 🧸 culture | it | 27 | Subbuteo |
-| `italian_children_games_80s` | 🕹️ culture | it | 28 | He Man |
-| `italian_children_games_90s` | 🎮 culture | it | 28 | Tamagotchi |
-| `italian_circus_terms` | 🎪 culture | it | 20 | Saltimbanco |
-| `italian_cities` | 🏙️ places | it | 15 | Roma |
-| `italian_coffee_brands` | ☕ drink | it | 25 | Lavazza |
-| `italian_cryptids_legends` | 👻 culture | it | 20 | Befana |
-| `italian_cured_meats` | 🥓 food | it | 20 | Prosciutto |
-| `italian_dance_styles` | 💃 culture | it | 18 | Tarantella |
-| `italian_design_objects` | 🪑 culture | it | 21 | Arco |
-| `italian_desserts` | 🍰 food | it | 20 | Tiramisu |
-| `italian_dialect_words` | 🗣️ culture | it | 20 | Guaglione |
-| `italian_folk_instruments` | 🪕 culture | it | 20 | Mandolino |
-| `italian_football_clubs` | 🇮🇹 sport | it | 15 | Juventus |
-| `italian_grape_varieties` | 🍇 drink | it | 15 | Sangiovese |
-| `italian_icecream_flavors` | 🍨 food | it | 18 | Stracciatella |
-| `italian_invented_words` | 💬 culture | it | 19 | Petaloso |
-| `italian_islands` | 🏝️ nature | it | 23 | Capri |
-| `italian_lakes` | 🏞️ nature | it | 20 | Garda |
-| `italian_liqueurs` | 🥃 drink | it | 22 | Limoncello |
-| `italian_monuments` | 🏛️ places | it | 41 | Colosseo |
-| `italian_motorcycles` | 🛵 vehicles | it | 20 | Vespa |
-| `italian_mountains` | 🏔️ nature | it | 20 | Cervino |
-| `italian_old_currencies` | 🪙 culture | it | 21 | Lira |
-| `italian_old_jobs` | 🔨 culture | it | 25 | Arrotino |
-| `italian_operas` | 🎭 arts | it | 15 | Aida |
-| `italian_pasta_shapes` | 🍝 food | it | 20 | Fusillo |
-| `italian_pizza_types` | 🍕 food | it | 20 | Margherita |
-| `italian_progressive_rock_bands` | 🎸 arts | it | 20 | PFM |
-| `italian_regional_foods` | 🍲 food | it | 57 | Cacciucco |
-| `italian_regions` | 🗺️ places | it | 15 | Toscana |
-| `italian_rivers` | 🌊 nature | it | 22 | Po |
-| `italian_sea_creatures` | 🐙 food | it | 26 | Polpo |
-| `italian_street_foods` | 🥪 food | it | 19 | Arancino |
-| `italian_train_stations_classic` | 🚉 places | it | 21 | Roma Termini |
-| `italian_volcanoes` | 🌋 nature | it | 18 | Etna |
-| `italian_wine_regions` | 🍇 drink | it | 22 | Chianti |
-| `italian_wines` | 🍷 drink | it | 60 | Barolo |
-| `metal_bands_2000s` | 🤘 arts | en | 15 | Slipknot |
-| `metal_bands_2010s` | 🤘 arts | en | 15 | Sabaton |
-| `metal_bands_2020s` | 🤘 arts | en | 15 | Lorna Shore |
-| `metal_bands_70s` | 🤘 arts | en | 15 | Motorhead |
-| `metal_bands_80s` | 🤘 arts | en | 15 | Megadeth |
-| `metal_bands_90s` | 🤘 arts | en | 15 | Sepultura |
-| `nato_alphabet` | 📻 culture | en | 26 | Alfa |
-| `planets_and_moons` | 🪐 nature | en | 15 | Mercury |
-| `pop_groups_2000s` | ✨ arts | en | 15 | Destinys Child |
-| `pop_groups_2010s` | ✨ arts | en | 14 | One Direction |
-| `pop_groups_2020s` | ✨ arts | en | 15 | Stray Kids |
-| `pop_groups_60s` | ✨ arts | en | 15 | The Supremes |
-| `pop_groups_70s` | ✨ arts | en | 15 | ABBA |
-| `pop_groups_80s` | ✨ arts | en | 10 | Wham |
-| `pop_groups_90s` | ✨ arts | en | 15 | Spice Girls |
-| `punk_bands_2000s` | 🧷 arts | en | 15 | Rise Against |
-| `punk_bands_2010s` | 🧷 arts | en | 15 | Joyce Manor |
-| `punk_bands_2020s` | 🧷 arts | en | 14 | Gel |
-| `punk_bands_70s` | 🧷 arts | en | 15 | Buzzcocks |
-| `punk_bands_80s` | 🧷 arts | en | 15 | Dead Kennedys |
-| `punk_bands_90s` | 🧷 arts | en | 15 | NOFX |
-| `rock_bands_2000s` | 🎸 arts | en | 15 | The White Stripes |
-| `rock_bands_2010s` | 🎸 arts | en | 15 | Imagine Dragons |
-| `rock_bands_2020s` | 🎸 arts | en | 11 | Maneskin |
-| `rock_bands_60s` | 🎸 arts | en | 15 | The Beatles |
-| `rock_bands_70s` | 🎸 arts | en | 15 | Led Zeppelin |
-| `rock_bands_80s` | 🎸 arts | en | 15 | U2 |
-| `rock_bands_90s` | 🎸 arts | en | 15 | Nirvana |
-| `space_missions` | 🚀 science | en | 15 | Apollo |
-| `world_capitals` | 🌍 places | en | 15 | London |
-| `world_rivers` | 🌊 nature | en | 15 | Nile |
-
-</details>
-
-### Groups, tags and reach
-
-Every dictionary carries four attributes beyond its names, so you can select a
-pool by what it is *about* rather than by listing keys.
-
-| Attribute | What it is |
-|---|---|
-| `group` | One thematic bucket from a closed set: `food` `drink` `nature` `places` `culture` `arts` `screen` `sport` `science` `history` `myth` `vehicles` |
-| `tags` | Free-form and multiple: `italian`, `cuisine`, `eighties`, `anime` |
-| `icon` | One emoji, for display only — it never enters a password |
-| `reach` | `global`, `italian` or `niche` |
-
-```php
-PasswordToolkit::make()->groups('food')->generate();
-PasswordToolkit::make()->groups(['screen', 'myth'])->generate();
-PasswordToolkit::make()->tagged(['italian', 'sweet'])->generate();   // all tags, not any
-PasswordToolkit::make()->reach('global')->generate();
-```
-
-Or in config, applied to every call:
-
-```php
-'dictionaries' => [
-    'groups' => ['food', 'drink'],
-    'tags'   => ['italian'],
-    'reach'  => 'global',
-],
-```
-
-Naming a dictionary explicitly wins over any filter — `->only('italian_dialect_words')`
-gives you exactly that, whatever its group or reach.
-
-> [!TIP]
-> **`reach` is the one to reach for.** A memorable password only works if the
-> reader recognises the word. `Guaglione-Fortunato-1234` means nothing outside
-> southern Italy. `->reach('global')` keeps the pool to names a reader anywhere
-> is likely to know; `italian` also accepts `global`, because anything
-> universally recognisable is recognisable to an Italian too.
-
-### Building a picker
-
-`dictionaries()` returns everything a UI needs for one row, translated:
-
-```php
-PasswordToolkit::dictionaries()->get('italian_pasta_shapes');
-// [
-//   'key' => 'italian_pasta_shapes',
-//   'label' => 'Italian Pasta Shapes',      // 'Formati di Pasta' in Italian
-//   'icon' => '🍝',
-//   'type' => 'things',
-//   'group' => 'food',  'group_label' => 'Food',
-//   'tags' => ['cuisine', 'italian'],
-//   'reach' => 'global', 'reach_label' => 'Worldwide',
-//   'locale' => 'it',
-//   'count' => 20,
-//   'built_in' => true,
-// ]
-```
-
-`dictionariesWithSamples()` adds a freshly generated `sample` per dictionary —
-a row reading `Fusilli-Gustoso-427193` tells a user far more than "20 entries".
-
-`groups()` and `tags()` return the vocabulary actually in use, with counts, so a
-filter UI never hardcodes the list:
-
-```php
-PasswordToolkit::groups();
-// [['value' => 'food', 'label' => 'Food', 'icon' => '🍝', 'count' => 10], …]
-```
-
-A dictionary declares its own `name`, and `resources/lang/{locale}/dictionaries.php`
-overlays a translation where one exists. So a label resolves in that order —
-translation, declared name, key made readable — which is what lets a dictionary
-of your own carry a proper name without touching the package's translations.
-
-### Your own dictionaries
-
-Three ways, depending on where the data lives.
-
-**A directory of JSON files** — the usual choice, and the one that survives
-upgrades:
-
-```php
-'dictionaries' => [
-    'paths' => [resource_path('password-dictionaries')],
-],
-```
-
-```bash
-php artisan password-toolkit:make-dictionary my_team --type=people
-```
-
-```json
-{
-    "key": "my_team",
-    "type": "people",
-    "values": [
-        { "name": "Ada Lovelace", "gender": "female" },
-        { "name": "Alan Turing", "gender": "male" }
-    ]
-}
-```
-
-**Inline in config**, when there are only a handful:
-
-```php
-'dictionaries' => [
-    'custom' => [
-        'company_products' => [
-            'type' => 'things',
-            'values' => ['Orbit', 'Beacon', 'Lantern'],
-        ],
-    ],
-],
-```
-
-A bare list of strings works; `gender` defaults to `neutral`.
-
-**At runtime**, from a service provider, when the data comes from somewhere else:
-
-```php
-PasswordToolkit::registerDictionary(
-    key: 'team_nicknames',
-    values: User::pluck('nickname')->all(),
-    type: 'people',
-);
-```
-
-You do not have to supply adjectives. A dictionary without them falls back to
-the locale's default pool, so the smallest useful personal collection is one
-file of names.
-
-> [!IMPORTANT]
-> Dictionary keys must match `[A-Za-z0-9_][A-Za-z0-9_-]*` and locales must look
-> like `en`, `it` or `pt_BR`. Both end up in a filesystem path, so a value that
-> does not match is rejected rather than followed — see
-> [Security](#security).
-
-Names themselves need no sanitising on your side. Whatever you register —
-including values straight out of a database — is stripped to letters, digits and
-the separator before it reaches a password, so a nickname carrying a quote, a
-semicolon or a newline cannot end up in one.
-
-### Locales and adjectives
-
-Adjectives live in `src/Data/Adjectives/{locale}/`, and resolve in this order —
-first hit wins:
-
-1. `{locale}/{dictionary}.json` — themed, e.g. Italian adjectives written for Star Wars
-2. `{locale}/_default.json` — the locale's general pool
-3. `{fallback_locale}/{dictionary}.json`
-4. `{fallback_locale}/_default.json`
-
-**English is the reference locale.** A locale with no resources of its own falls
-back to English, not to Italian, because English is the language most likely to
-be understood by someone who did not get the locale they asked for. A French or
-German application therefore gets English adjectives and English names, and only
-the entries that are genuinely Italian stay Italian.
-
-Every dictionary has its own themed adjectives, in both languages, capped at
-twenty so a pack stays sharp rather than dissolving into general vocabulary.
-Italian adjectives agree with the gender of the name; English ones are all
-neutral, because English adjectives do not agree, so every one is eligible for
-every name.
-
-```php
-PasswordToolkit::make()->locale('it')->only('rock_bands_70s')->generate();
-// "Fleetwood-Mac-Tonante"        <- thundering
-
-PasswordToolkit::make()->locale('it')->only('rock_bands_2020s')->generate();
-// "Sleep-Token-Insolente"        <- insolent
-```
-
-A dictionary without a pack falls back to `_default`, which holds 193
-adjectives that suit a person, a place or a thing equally. It is deliberately
-free of domain-bound vocabulary: a pool containing culinary words produces
-`Magic-Johnson-Corposo`, a basketball player described as full-bodied, and a
-test now prevents exactly that.
-
-Neither pack derives from the other at runtime: both are first-class data.
-`src/Data/Adjectives/_glossary.it-en.json` records the correspondence between
-them and `php build/build-adjectives.php` re-derives the English packs when the
-Italian ones gain entries. Correct a word in the glossary and re-run — never
-hand-edit a generated file, which a test will catch. A **new** locale should be
-translated from the English packs.
-
-**Word order follows the language.** Italian puts the adjective after the noun,
-English puts it before, and a password that gets this backwards reads as broken
-to a native speaker — which defeats the point of a memorable password.
-
-```php
-PasswordToolkit::make()->locale('it')->generate();
-// "Goldrake-Mitico-427193"
-
-PasswordToolkit::make()->locale('en')->generate();
-// "Legendary-Goldrake-427193"
-```
-
-Each locale declares its own order in its `_default.json`:
-
-```json
-{
-    "key": "_default",
-    "locale": "en",
-    "adjective_position": "before",
-    "values": [{ "name": "Legendary", "gender": "neutral" }]
-}
-```
-
-`before` or `after`. The setting is read from `_default.json` only — it is one
-fact about the language, not something a themed pack restates. Override it for
-every locale with the `adjective_position` config key, or for one call with
-`->adjectiveAt('after')`.
-
-To add a language, drop one file at
-`src/Data/Adjectives/{locale}/_default.json` — or in `{yourpath}/{locale}/` if
-you keep it in your application — with its `adjective_position`, and it works
-everywhere immediately. Themed files per dictionary are optional and can follow
-later.
-
-### Translated names
-
-**Every dictionary declares the language its names are written in**, because
-there is no single right answer for all 91 of them.
-
-A dictionary about Italian wines is Italian in every locale — `Barolo` is
-`Barolo`, and so is every pasta shape, cyclist and volcano. There is nothing to
-translate, and pretending otherwise would be worse than leaving it. 77
-dictionaries are like this.
-
-A dictionary about Harry Potter is English, and Italian is the dub. Its base
-holds `Albus Dumbledore`; `Albus Silente` lives in the Italian overlay. 14
-dictionaries are like this.
-
-| Base | Source | Italian | English |
-|---|---|---|---|
-| `harry_potter` | en | Albus Silente | **Albus Dumbledore** |
-| `disney_characters` | en | Topolino | **Mickey Mouse** |
-| `roman_emperors` | en | Marco Aurelio | **Marcus Aurelius** |
-| `philosophers` | en | Cartesio | **Rene Descartes** |
-| `italian_monuments` | it | **Colosseo** | Colosseum |
-| `italian_mountains` | it | **Cervino** | Matterhorn |
-| `italian_wines` | it | **Barolo** | *(none — and none wanted)* |
-
-211 names are translated, in both directions, across 15 dictionaries. Names
-resolve `{locale}` → `{fallback_locale}` → the base, so a French reader gets the
-English rendering wherever one exists and the untouched base everywhere else.
-
-```php
-PasswordToolkit::make()->locale('en')->only('roman_mythology')->generate();
-// "Olympic-Jupiter-537712"
-
-PasswordToolkit::make()->locale('it')->only('roman_mythology')->generate();
-// "Giove-Eterno-565640"
-
-PasswordToolkit::make()->locale('fr')->only('italian_monuments')->generate();
-// "Historic-Uffizi-Gallery-155689"   <- no French pack, so English
-
-PasswordToolkit::make()->locale('de')->only('italian_wines')->generate();
-// "Mineral-Malvasia-692534"          <- nothing to translate, in any language
-```
-
-A base file declares its own language; translation files at
-`Data/Names/{locale}/{key}.json` are a plain map, sparse on purpose — list only
-what differs, and anything absent keeps its base name.
-
-```json
-{
-    "key": "harry_potter",
-    "type": "people",
-    "locale": "en",
-    "values": [
-        { "name": "Albus Dumbledore", "gender": "male" }
-    ]
-}
-```
-
-```json
-{
-    "key": "harry_potter",
-    "locale": "it",
-    "values": { "Albus Dumbledore": "Albus Silente" }
-}
-```
-
-For your own dictionaries, the same file goes at `{yourpath}/names/{locale}/{key}.json` —
-under a `names/` subdirectory, so it does not collide with your adjectives at
-`{yourpath}/{locale}/{key}.json`.
-
-## The builder
-
-`make()` returns an immutable builder. Every method returns a new one, so a
-half-configured builder is safe to keep on a property and reuse.
-
-```php
-use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
-use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
-use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
-use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
-
-PasswordToolkit::make()
-    ->locale('en')                          // adjective language
-    ->fallbackLocale('en')                  // when a locale has no resources
-    ->only(['star_wars'])                   // or ->except([…]), ->types('people')
-    ->groups(['screen', 'myth'])            // thematic buckets
-    ->tagged(['italian'])                   // must carry every tag
-    ->reach('global')                       // minimum recognisability
-    ->paths([storage_path('dictionaries')]) // extra dictionary directory
-    ->separator('_')                        // or ->separator(null)
-    ->keepWordBreaks(false)                 // "LukeSkywalker" instead of "Luke_Skywalker"
-    ->digits(6)                             // or ->withoutNumbers()
-    ->numbersAt(NumbersPosition::Middle)    // start | middle | end
-    ->allowLeadingZero()                    // let the digits start with a zero
-    ->words(3)                              // 2 or 3 words
-    ->casing(Casing::Upper)                 // title | lower | upper | preserve
-    ->adjectiveAt('before')                 // override the locale's word order
-    ->leet(Leetspeak::Basic)                // none | basic | advanced
-    ->guessesPerSecond(1e12)                // attacker assumption for the report
-    ->generate();                           // ->many(10), ->unique(10), ->withReport(), ->manyWithReport(10)
-```
-
-Enums and their string spellings are interchangeable — `->leet('basic')` and
-`->numbersAt('middle')` both work. `->options()` returns the resolved `Options`
-DTO if you want to inspect, store or reuse it instead of generating.
-
-## All methods
-
-Every generator method takes an optional `Options` as its last argument; pass
-one and your config is ignored entirely.
-
-| Method | Returns | What it does |
-|---|---|---|
-| `generate()` | `string` | One password. Throws when no dictionary resolves. |
-| `generateMany($count)` | `array` | Exactly `$count`, one dictionary scan. Repeats possible. |
-| `generateUnique($count)` | `array` | The same, guaranteed distinct. Throws rather than under-deliver. |
-| `generateWithReport()` | `array` | `['password' => string, 'report' => StrengthReport]` |
-| `generateManyWithReport($count)` | `array` | A list of those pairs. |
-| `make()` | `PasswordBuilder` | An immutable builder seeded from config. |
-| `strength($password)` | `StrengthReport` | Charset model — for a password a user chose. |
-| `structuralReport($password)` | `StrengthReport` | Structural model — for one this package made. |
-| `dictionaries()` | `Collection` | Every dictionary in play, with its metadata. |
-| `dictionariesWithSamples()` | `Collection` | The same, plus example entries, for a picker. |
-| `groups()` / `tags()` | `Collection` | The groups and tags present, with counts. |
-| `poolSizes()` | `array` | `['names' => int, 'adjectives' => int]` |
-| `registerDictionary($key, $values, $type, $locale)` | `void` | Add one at runtime. |
-| `flushCache()` | `void` | Forget the decoded JSON after changing config at runtime. |
-
-> [!NOTE]
-> `clearPoolCache()` still works as an alias for `flushCache()`. It is
-> deprecated and goes away in 3.0.
-
-## Strength reporting
-
-```php
-$report = PasswordToolkit::strength('Goldrake-Mitico-427193');
-
-$report->score;             // 0..4
-$report->label;             // very_weak | weak | fair | strong | very_strong
-$report->displayLabel();    // "Very strong", translated
-$report->strength;          // Strength enum, with ->color() for a meter
-$report->entropyBits;       // float
-$report->charsetFlags;      // ['lower' => true, 'upper' => true, …]
-$report->crackTimeHuman;    // "12 years", translated
-$report->toArray();         // and it is Arrayable / Jsonable / JsonSerializable
-```
-
-### The two models
-
-`strength()` uses the **charset model**: how many strings of this length over
-this alphabet. It is what a generic strength meter reports, and it is the right
-model for a password a user chose, because you know nothing about how they
-chose it.
-
-`structuralReport()` — which is what `generateWithReport()` returns — uses the
-**structural model**: how many passwords this package could have produced given
-the pools in play. It is a much lower number, and it is the honest one, because
-an attacker who knows you use this package searches the pool, not the alphabet.
-
-```php
-['password' => $pwd, 'report' => $report] = PasswordToolkit::generateWithReport();
-
-$report->components;
-// ['name' => 12.1, 'adjective' => 4.9, 'second_adjective' => 0.0, 'number' => 19.8,
-//  'leetspeak_bonus' => 0.0, 'total' => 36.7]
-```
-
-Use the structural figure when deciding whether a generated password is strong
-enough for what you are about to do with it.
-
-### Score thresholds
-
-| bits | score | label |
-|---|---|---|
-| `< 28` | 0 | very_weak |
-| `28–35` | 1 | weak |
-| `36–59` | 2 | fair |
-| `60–127` | 3 | strong |
-| `≥ 128` | 4 | very_strong |
-
-These are defaults, not law. Move them with `strength.thresholds` — see
-[Strength](#strength) — when the hash behind the password, or what it guards,
-says a different line is the honest one.
-
-## Validation
-
-```php
-use Gabrielesbaiz\PasswordToolkit\Rules\StrongPassword;
-
-$request->validate([
-    'password' => ['required', new StrongPassword],          // defaults to "strong"
-    'pin'      => ['required', StrongPassword::fair()],
-    'master'   => ['required', StrongPassword::veryStrong()],
-]);
-```
-
-The message names both the band achieved and the band required, and is
-translated: *"The password is Very weak. It must be at least Strong."*
-
-The rule scores with the charset model, because the value under validation is
-one the user chose. Switch it with `strength.rule_model`, or per rule with
-`StrongPassword::strong()->using('structural')`, where the passwords it guards
-are ones this package generated.
-
-## Commands
-
-| Command | What it does |
-|---|---|
-| `password-toolkit:generate {count}` | Generate passwords |
-| `password-toolkit:generate --report` | …with score, entropy and crack time |
-| `password-toolkit:generate --json` | …as JSON, for piping |
-| `password-toolkit:generate --list` | Show which dictionaries resolve, with group, reach and tags |
-| `password-toolkit:generate --group= --tag= --reach=` | Filter the pool thematically |
-| `password-toolkit:generate --words=3 --case=upper` | Three words, cased to taste |
-| `password-toolkit:generate --position=start` | Where the digits sit: start, middle or end |
-| `password-toolkit:generate --no-numbers` | Words only, no numeric segment |
-| `password-toolkit:generate --leading-zero` | Let the numeric segment start with a zero |
-| `password-toolkit:make-dictionary {key}` | Scaffold a dictionary of your own |
-
-```bash
 php artisan password-toolkit:generate 5 --report
-php artisan password-toolkit:generate 3 --locale=en --only=star_wars --json
-php artisan password-toolkit:generate --separator=_ --digits=6 --leet=basic
-php artisan password-toolkit:generate --words=3 --case=lower --leading-zero
-php artisan password-toolkit:generate --position=middle --no-numbers
-php artisan password-toolkit:generate --group=food --reach=global
-php artisan password-toolkit:generate --list --group=drink
-php artisan password-toolkit:make-dictionary my_team --type=people --locale=en
 ```
 
-`--only`, `--except` and `--type` accept either repeated flags or one
-comma-separated value.
+The service provider is auto-discovered and there is nothing to register: no
+migrations, no tables, no assets. Both publish steps are optional — the defaults
+generate working passwords untouched.
 
-## Recipes
+**[Full installation guide →](https://gabrielesbaiz.github.io/password-toolkit/#/install)**
 
-<details>
-<summary><b>Initial credentials at user creation</b></summary>
+## Artisan commands
 
-```php
-['password' => $plain, 'report' => $report] = PasswordToolkit::generateWithReport();
+| Command | Purpose |
+|---|---|
+| `password-toolkit:generate {count}` | Generate passwords. `--report` adds score, entropy and crack time. |
+| `password-toolkit:generate --list` | Show which dictionaries resolve, with group, reach and tags. |
+| `password-toolkit:make-dictionary {key}` | Scaffold a dictionary of your own. |
 
-$user = User::create([
-    'email' => $data['email'],
-    'password' => Hash::make($plain),
-    'must_change_password' => true,
-]);
+Eighteen flags in all. See the
+[commands page](https://gabrielesbaiz.github.io/password-toolkit/#/commands).
 
-Mail::to($user)->send(new WelcomeMail($plain, $report->crackTimeHuman));
-```
+## Documentation
 
-Store the hash, mail the plaintext once, force a change on first login. The
-report gives the user an honest sense of how long it is safe to keep.
-</details>
-
-<details>
-<summary><b>Company-branded passwords</b></summary>
-
-```php
-// AppServiceProvider::boot()
-PasswordToolkit::registerDictionary('products', ['Orbit', 'Beacon', 'Lantern']);
-
-// wherever you generate
-PasswordToolkit::make()->only('products')->locale('en')->generate();
-// "Luminous-Beacon-881407"
-```
-</details>
-
-<details>
-<summary><b>Seeders and demo data</b></summary>
-
-```php
-$passwords = PasswordToolkit::make()->withoutNumbers()->many(User::count());
-```
-
-One call, one dictionary scan, whatever the row count.
-</details>
-
-<details>
-<summary><b>Enforce a minimum length policy</b></summary>
-
-```php
-$password = PasswordToolkit::make()
-    ->leet('advanced')   // multi-character glyphs lengthen the result
-    ->digits(6)
-    ->generate();
-```
-</details>
-
-<details>
-<summary><b>Swap it out in tests</b></summary>
-
-```php
-PasswordToolkit::shouldReceive('generate')->andReturn('Fixed-Password-0000');
-```
-
-The facade resolves through the container in 2.0, so this works. It did not in
-1.x.
-</details>
-
-## Troubleshooting
-
-<details>
-<summary><b>NoDictionariesEnabledException</b></summary>
-
-Nothing matched your selection. Run
-`php artisan password-toolkit:generate --list` to see what resolves. The usual
-causes are an `enabled` list with a typo, a `types` setting that excludes
-everything in `enabled`, or an `except` that cancels out the whole list.
-</details>
-
-<details>
-<summary><b>DictionaryNotFoundException about adjectives</b></summary>
-
-Neither your locale nor your fallback locale has any adjective pool for that
-dictionary. Every locale directory needs a `_default.json`; check
-`fallback_locale` points at one that has it. It defaults to `en`, which always
-does.
-</details>
-
-<details>
-<summary><b>My config changes are not taking effect</b></summary>
-
-Dictionaries are cached for the life of the process. If you change config at
-runtime — in a test, mostly — call `PasswordToolkit::flushCache()` afterwards.
-</details>
-
-<details>
-<summary><b>A deprecation warning about name_types</b></summary>
-
-Your published config is still the 1.x shape. It works, but re-publish it:
-`php artisan vendor:publish --tag="password-toolkit-config" --force`. See
-[UPGRADE.md](UPGRADE.md).
-</details>
-
-<details>
-<summary><b>My adjective is on the wrong side of the name</b></summary>
-
-Word order comes from the locale's `_default.json`, not from your config. Check
-that the pack for your locale declares `"adjective_position"`, and that it says
-what you expect. A locale that declares nothing inherits the fallback locale's
-order, which for the shipped default is Italian's `after`.
-
-To force it regardless of locale, set `adjective_position` in config or call
-`->adjectiveAt('before')` on the builder.
-</details>
-
-<details>
-<summary><b>My passwords report less entropy than in 1.x</b></summary>
-
-They do, and the 1.x figure was wrong. 1.x picked a dictionary file and then an
-entry within it, but reported entropy as though every name across every
-dictionary were equally likely. 2.0 picks uniformly across entries, so the model
-and the behaviour now agree.
-</details>
-
-## Security
-
-Memorable passwords trade entropy for a human being not getting them wrong.
-That trade is the point of this package, and `structuralReport()` exists so you
-can see exactly what you paid. For secrets no human reads — API keys, tokens,
-root credentials — use `Str::password()` or `random_bytes()` instead.
-
-- **Every choice uses `random_int()`** — names, adjectives and digits alike.
-- **Locales and dictionary keys are validated before they touch the
-  filesystem.** Both are interpolated into a path, and an application may well
-  pass a request value into `->locale(...)`. A value that does not match a
-  strict pattern is rejected, not followed. An application locale that fails
-  validation is ignored in favour of the fallback.
-- **Dictionary content is treated as untrusted.** Names are stripped to letters,
-  digits and the separator, so nothing from your own data can smuggle a quote, a
-  semicolon, a newline or a NUL byte into a password.
-- **Leetspeak is credited zero entropy**, because a deterministic transform adds
-  none against an attacker who knows your configuration.
-- **Batches are bounded** so a count reaching `generateMany()` from a request
-  cannot exhaust the process.
-
-`SECURITY.md` has the full list, including the deliberate design decisions that
-are not bugs.
-
-### Reporting a vulnerability
-
-See [SECURITY.md](SECURITY.md). Please do not open a public issue.
+| | |
+|---|---|
+| [Documentation site](https://gabrielesbaiz.github.io/password-toolkit/) | Everything: install, configure, operate. |
+| [Playground](https://gabrielesbaiz.github.io/password-toolkit/#/play) | Every command, against real dictionaries, in your browser. |
+| [Configuration builder](https://gabrielesbaiz.github.io/password-toolkit/#/config) | Set what you need; it writes the config file. |
+| [All dictionaries](https://gabrielesbaiz.github.io/password-toolkit/#/shelf) | All 201, filterable by group, tag and reach. |
+| [UPGRADE.md](UPGRADE.md) | Upgrading from 1.x. Read before you start. |
+| [CHANGELOG.md](CHANGELOG.md) | What changed, and when. |
 
 ## Testing
 
 ```bash
-composer test      # pest
-composer analyse   # phpstan level 6
-composer format    # pint
-composer lint      # format + analyse
+composer test        # Pest
+composer analyse     # PHPStan
+composer format      # Pint
 ```
 
-There is no CI. Those commands are the contract — see
+There is no CI. Those three commands are the contract.
+
+## Contributing
+
+Thank you for considering contributing. The guide is in
 [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Security vulnerabilities
+
+Please review [SECURITY.md](SECURITY.md) for reporting a vulnerability. Please
+do not open a public issue.
 
 ## Credits
 
-Written and maintained by [Gabriele Sbaiz](https://github.com/gabrielesbaiz),
-with thanks to [everyone who has contributed](../../contributors).
+Written and maintained by [Gabriele Sbaiz](https://github.com/gabrielesbaiz).
 
-It stands on work this package does not contain: Laravel, and
+This package builds on Laravel and
 [spatie/laravel-package-tools](https://github.com/spatie/laravel-package-tools).
 
 ## Support this package
 
-I maintain this on evenings and weekends, alongside a full-time job writing
-insurance software. Keeping it green across new Laravel majors is the
-unglamorous part, and it is what keeps this installable in your
-`composer.json` next year too.
-
 If it is useful to you:
 
 - ⭐ **Star the repo.** Free, thirty seconds, and it is the first signal other developers look at.
-- ❤️ **[Become a sponsor](https://github.com/sponsors/gabrielesbaiz).** From $5 a month. Company tiers get your logo right here in this README.
+- ❤️ **[Become a sponsor](https://github.com/sponsors/gabrielesbaiz).** From $5 a month.
 - 🐛 **Open a good issue.** A clear reproduction is worth more than you think.
 - 🗣️ **Tell another Laravel developer.** Word of mouth is how packages survive.
 
@@ -1212,16 +128,30 @@ If it is useful to you:
 
 ## Disclaimer
 
-This package is provided as is. It generates passwords that are deliberately
-weaker than random ones, in exchange for being memorable, and it reports that
-weakness honestly — deciding whether that trade is acceptable for a given use
-is the deploying application's responsibility, not this package's.
+This package is provided **as is**, without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, title and non-infringement. To the fullest
+extent permitted by applicable law, in no event shall the authors, copyright
+holders or contributors be liable for any claim, damages or other liability —
+whether in an action of contract, tort or otherwise — arising from, out of or in
+connection with this package or its use, including without limitation any
+direct, indirect, incidental, special, exemplary, consequential or punitive
+damages, loss of data, loss of profits, business interruption, account
+compromise, or unauthorised access.
 
-## Changelog
+This package generates passwords that are deliberately weaker than random ones
+in exchange for being memorable, and it reports that weakness honestly. Whoever
+deploys it is responsible for deciding whether that trade is acceptable. That
+responsibility includes, and is not limited to, choosing appropriate settings,
+reading the reported entropy before relying on a password, forcing a change
+after first use, hashing what you store, meeting whatever regulatory or
+contractual obligations apply to you, and reviewing the code yourself before
+putting it in front of an account you cannot afford to lose. Nothing here
+constitutes security, legal or compliance advice.
 
-See [CHANGELOG.md](CHANGELOG.md).
+Use of this package is entirely at your own risk.
 
 ## License
 
 MIT. See [LICENSE.md](LICENSE.md). The MIT licence's warranty disclaimer and
-limitation of liability apply in full, alongside the section above.
+limitation of liability apply in full, alongside the disclaimer above.

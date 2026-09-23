@@ -4,7 +4,7 @@
     "type": "things",
     "locale": "en",
     "group": "science",
-    "tags": ["chemistry", "periodic-table"],
+    "tags": ["chemistry", "periodic-table", "science"],
     "icon": "⚗️",
     "reach": "global",
     "values": [

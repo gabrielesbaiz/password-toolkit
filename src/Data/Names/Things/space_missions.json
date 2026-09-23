@@ -4,7 +4,7 @@
     "type": "things",
     "locale": "en",
     "group": "science",
-    "tags": ["exploration", "space"],
+    "tags": ["exploration", "science", "space"],
     "icon": "🚀",
     "reach": "global",
     "values": [

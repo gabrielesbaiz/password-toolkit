@@ -77,7 +77,9 @@ composer test      # pest
    good outcome — only add a themed file when the theme actually earns it.
 3. Run `composer test`. The shipped config enables everything by default, so
    there is no list to update.
-4. Update the dictionary table in the README.
+4. Run `php build/readme-tables.php` to refresh the dictionary counts the
+   README states, and update the catalogue and counts in `docs/index.html`.
+   `DocumentationTest` fails until both say what the data says.
 
 ## Translating
 

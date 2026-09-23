@@ -4,7 +4,7 @@
     "type": "people",
     "locale": "en",
     "group": "sport",
-    "tags": ["basketball", "usa"],
+    "tags": ["basketball", "sport", "usa"],
     "icon": "🏀",
     "reach": "global",
     "values": [

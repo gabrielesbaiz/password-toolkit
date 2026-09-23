@@ -4,7 +4,7 @@
     "type": "things",
     "locale": "it",
     "group": "drink",
-    "tags": ["cocktails", "italian"],
+    "tags": ["bar", "cocktails", "italian"],
     "icon": "🍹",
     "reach": "global",
     "values": [
