@@ -37,7 +37,7 @@ it('documents only config keys that exist', function () {
         ->merge(['adjective', 'second_adjective', 'number', 'leetspeak_bonus', 'total'])
         ->merge(['values', 'type', 'key', 'products', 'company_products', 'team_nicknames', 'my_team'])
         // Keys of the arrays dictionaries()/groups() return, not config.
-        ->merge(['label', 'description', 'icon', 'group', 'group_label', 'reach_label'])
+        ->merge(['label', 'icon', 'group', 'group_label', 'reach_label'])
         ->merge(['count', 'built_in', 'value', 'sample', 'locale'])
         // Keys of the array poolSizes() returns.
         ->merge(['names', 'adjectives']);

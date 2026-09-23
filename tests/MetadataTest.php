@@ -176,7 +176,7 @@ describe('picker data', function () {
         $row = PasswordToolkit::dictionaries()->get('italian_pasta_shapes');
 
         expect($row)->toHaveKeys([
-            'key', 'label', 'description', 'icon', 'type', 'group', 'group_label',
+            'key', 'label', 'icon', 'type', 'group', 'group_label',
             'tags', 'reach', 'reach_label', 'locale', 'count', 'built_in',
         ])->and($row['label'])->toBe('Italian Pasta Shapes')
             ->and($row['icon'])->toBe('🍝')

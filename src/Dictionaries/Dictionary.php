@@ -142,27 +142,15 @@ final readonly class Dictionary
     }
 
     /**
-     * Get the translated one-line description, or null when none is written yet.
-     */
-    public function description(): ?string
-    {
-        $key = 'password-toolkit::dictionaries.descriptions.'.$this->key;
-        $translated = trans($key);
-
-        return is_string($translated) && $translated !== $key ? $translated : null;
-    }
-
-    /**
      * Get everything a picker needs to render this dictionary as one row.
      *
-     * @return array{key: string, label: string, description: string|null, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}
+     * @return array{key: string, label: string, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}
      */
     public function toArray(): array
     {
         return [
             'key' => $this->key,
             'label' => $this->label(),
-            'description' => $this->description(),
             'icon' => $this->icon ?? $this->group?->icon(),
             'type' => $this->type,
             'group' => $this->group?->value,
