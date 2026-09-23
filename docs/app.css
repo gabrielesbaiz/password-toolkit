@@ -574,8 +574,6 @@ ul.plain code { color: var(--accent); }
 
 /* The postage block closes the page the way the front page does. */
 
-#progress { position: fixed; inset: 0 auto auto 0; height: 3px; width: 0; z-index: 40;
-  background: var(--accent); transition: width .1s linear; }
 footer { padding-block: 26px 40px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; }
 .menu a.here { color: var(--ink); font-weight: 600; }
 .menu a.here::after { right: 0; }
@@ -686,7 +684,11 @@ footer { padding-block: 26px 40px; border-top: 1px solid var(--line); color: var
 /* Scrolling the page is the parcel moving. The bar is its progress and the
    chip is its status, which is the only honest reason to put either here. */
 #sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-.topbar, section, footer, .hero, .doc { position: relative; z-index: 1; }
+/* Lift the page above the fixed canvas at z-index 0. The topbar is left out
+   deliberately: it is position:fixed with a z-index of its own, and listing it
+   here demoted it to relative — which unfixed the header and left a band of
+   empty space where body's padding had allowed for it. */
+section, footer, .hero, .doc { position: relative; z-index: 1; }
 /* ── STATS BAND ─────────────────────────────────────────────── */
 #home .band { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px;
   background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
