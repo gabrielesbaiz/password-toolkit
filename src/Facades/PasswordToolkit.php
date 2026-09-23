@@ -27,6 +27,9 @@ use Illuminate\Support\Facades\Facade;
  */
 class PasswordToolkit extends Facade
 {
+    /**
+     * Get the registered name of the component.
+     */
     protected static function getFacadeAccessor(): string
     {
         return PasswordToolkitService::class;

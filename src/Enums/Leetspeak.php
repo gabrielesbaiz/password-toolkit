@@ -23,8 +23,9 @@ enum Leetspeak: string
     case Advanced = 'advanced';
 
     /**
-     * The full substitution table. Basic mode uses the single-character
-     * entries; advanced uses all of them.
+     * The full substitution table.
+     *
+     * Basic mode uses the single-character entries; advanced uses all of them.
      *
      * @var array<string, string>
      */
@@ -68,6 +69,14 @@ enum Leetspeak: string
      */
     public const BASIC_KEYS = ['a', 'b', 'e', 'g', 'i', 'l', 'o', 'q', 'r', 's', 't', 'z'];
 
+    /**
+     * Parse the given value into a leetspeak mode.
+     *
+     * The 1.x spelling 'no', as well as 'false' and an empty string, are still
+     * accepted and resolve to none.
+     *
+     * @throws InvalidOptionException
+     */
     public static function parse(string $value): self
     {
         $value = strtolower(trim($value));
@@ -83,7 +92,7 @@ enum Leetspeak: string
     }
 
     /**
-     * The substitution table for this mode.
+     * Get the substitution table for this mode.
      *
      * @return array<string, string>
      */
@@ -97,7 +106,7 @@ enum Leetspeak: string
     }
 
     /**
-     * Extra entropy bits this mode contributes. Always zero.
+     * Get the extra entropy bits this mode contributes, which is always zero.
      *
      * Leetspeak is a deterministic transform of an already-chosen password: it
      * does not enlarge the set of passwords the package can produce, so it adds

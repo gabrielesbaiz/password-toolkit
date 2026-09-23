@@ -17,6 +17,8 @@ use Throwable;
 abstract class PasswordToolkitException extends RuntimeException
 {
     /**
+     * Create a new exception instance.
+     *
      * Sealed so that new static() below is always safe: no subclass can
      * change what constructing one costs.
      */
@@ -25,6 +27,9 @@ abstract class PasswordToolkitException extends RuntimeException
         parent::__construct($message, $code, $previous);
     }
 
+    /**
+     * Create a new exception with the given reason as its message.
+     */
     public static function because(string $reason): static
     {
         return new static($reason);

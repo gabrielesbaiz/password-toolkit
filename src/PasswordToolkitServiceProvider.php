@@ -17,6 +17,9 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class PasswordToolkitServiceProvider extends PackageServiceProvider
 {
+    /**
+     * Configure the package.
+     */
     public function configurePackage(Package $package): void
     {
         $package
@@ -29,6 +32,9 @@ class PasswordToolkitServiceProvider extends PackageServiceProvider
             ]);
     }
 
+    /**
+     * Register any package services.
+     */
     public function packageRegistered(): void
     {
         $this->app->singleton(DictionaryRepository::class, FileDictionaryRepository::class);

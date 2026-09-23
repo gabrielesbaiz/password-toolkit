@@ -14,6 +14,9 @@ use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
  */
 final class LeetspeakTransformer
 {
+    /**
+     * Apply the given leetspeak substitution table to the text.
+     */
     public function apply(string $text, Leetspeak $mode): string
     {
         $map = $mode->map();

@@ -23,6 +23,8 @@ final readonly class StrengthReport implements Arrayable, Jsonable, JsonSerializ
     public int $score;
 
     /**
+     * Create a new strength report instance.
+     *
      * @param  array<string, float>  $components
      * @param  array{lower: bool, upper: bool, digits: bool, symbols: bool}  $charsetFlags
      */
@@ -42,7 +44,7 @@ final readonly class StrengthReport implements Arrayable, Jsonable, JsonSerializ
     }
 
     /**
-     * The translated, human-facing band name.
+     * Get the translated, human-facing band name.
      */
     public function displayLabel(): string
     {
@@ -50,6 +52,8 @@ final readonly class StrengthReport implements Arrayable, Jsonable, JsonSerializ
     }
 
     /**
+     * Get the instance as an array.
+     *
      * @return array<string, mixed>
      */
     public function toArray(): array
@@ -69,6 +73,8 @@ final readonly class StrengthReport implements Arrayable, Jsonable, JsonSerializ
     }
 
     /**
+     * Convert the object into something JSON serializable.
+     *
      * @return array<string, mixed>
      */
     public function jsonSerialize(): array
@@ -76,6 +82,11 @@ final readonly class StrengthReport implements Arrayable, Jsonable, JsonSerializ
         return $this->toArray();
     }
 
+    /**
+     * Convert the object to its JSON representation.
+     *
+     * @param  int  $options
+     */
     public function toJson($options = 0): string
     {
         return (string) json_encode($this->toArray(), $options);

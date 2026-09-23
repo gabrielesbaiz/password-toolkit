@@ -40,6 +40,11 @@ enum DictionaryGroup: string
 
     case Vehicles = 'vehicles';
 
+    /**
+     * Parse the given value into a dictionary group.
+     *
+     * @throws InvalidOptionException
+     */
     public static function parse(string $value): self
     {
         return self::tryFrom(strtolower(trim($value)))
@@ -49,6 +54,8 @@ enum DictionaryGroup: string
     }
 
     /**
+     * Get every group value, for validation and for listing the vocabulary.
+     *
      * @return array<int, string>
      */
     public static function values(): array
@@ -57,7 +64,7 @@ enum DictionaryGroup: string
     }
 
     /**
-     * Translated, human-facing name.
+     * Get the translated, human-facing name.
      */
     public function label(): string
     {
@@ -65,7 +72,7 @@ enum DictionaryGroup: string
     }
 
     /**
-     * A display icon, for a picker that would otherwise be 91 identical rows.
+     * Get a display icon, for a picker that would otherwise be 91 identical rows.
      */
     public function icon(): string
     {

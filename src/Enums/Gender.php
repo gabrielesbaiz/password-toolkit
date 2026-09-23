@@ -22,6 +22,11 @@ enum Gender: string
 
     case Neutral = 'neutral';
 
+    /**
+     * Parse the given value into a grammatical gender.
+     *
+     * @throws InvalidOptionException
+     */
     public static function parse(string $value): self
     {
         return self::tryFrom(strtolower(trim($value)))
@@ -29,7 +34,7 @@ enum Gender: string
     }
 
     /**
-     * Whether an adjective of this gender may modify a name of $name gender.
+     * Determine whether an adjective of this gender may modify the given name gender.
      */
     public function agreesWith(self $name): bool
     {

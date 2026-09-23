@@ -6,26 +6,34 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Locale
+    | Default Locale
     |--------------------------------------------------------------------------
     |
-    | Which language the adjectives are drawn from. Null follows the
-    | application locale. Adjectives live in src/Data/Adjectives/{locale}/ and
-    | every locale ships a _default pool, so a dictionary without a themed file
-    | for the active locale still works.
+    | This value determines the language the adjectives are drawn from. When it
+    | is null, the package will simply follow your application's locale, which
+    | is typically what you want. Each locale ships a default pool of
+    | adjectives, so every dictionary will work in every locale you add.
     |
-    | 'fallback_locale' is what a locale with no resources of its own falls back
-    | to. English, because it is the language most likely to be understood by
-    | someone who does not read the locale they asked for.
-    |
-    | Names work the same way, with one difference: each dictionary declares the
-    | language its names are written in. A dictionary of Italian wines is
-    | Italian in every locale, because Barolo is Barolo; one about Harry Potter
-    | is English, and Italian is a translation of it.
+    | Supported out of the box: "en", "it"
     |
     */
 
     'locale' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fallback Locale
+    |--------------------------------------------------------------------------
+    |
+    | This locale will be used when the active one has no resources of its own.
+    | English is the default here since it is the language most likely to be
+    | understood by someone who did not get the locale they asked for.
+    |
+    | Names are handled a little differently: each dictionary declares the
+    | language its own names are written in. A dictionary of Italian wines is
+    | Italian in every locale, because "Barolo" is simply its name.
+    |
+    */
 
     'fallback_locale' => 'en',
 
@@ -34,35 +42,51 @@ return [
     | Dictionaries
     |--------------------------------------------------------------------------
     |
-    | 'enabled'  '*' for every built-in dictionary, or an array of keys.
-    | 'except'   Keys to drop, applied after 'enabled'.
-    | 'types'    Limit to 'people', 'things', or both.
-    | 'paths'    Directories of your own dictionary JSON files.
-    | 'custom'   Dictionaries defined inline, without a file.
+    | Here you may specify which of the built-in dictionaries are used when
+    | building a password, and register any of your own. The "enabled" option
+    | accepts "*" for everything, or an array of the keys you want, while
+    | "except" is applied afterwards to drop the ones you do not.
     |
-    | Run `php artisan password-toolkit:generate --list` to see every key that
-    | is currently resolving, and `php artisan password-toolkit:make-dictionary`
-    | to scaffold one of your own.
+    | You are free to mix these filters however you like. To see exactly what
+    | survives them, you may run:
+    |
+    |     php artisan password-toolkit:generate --list
     |
     */
 
     'dictionaries' => [
 
+        /*
+         * Which dictionaries take part. Supported: "*", or an array of keys.
+         */
         'enabled' => '*',
 
+        /*
+         * Keys to remove. This is applied after "enabled", so it always wins.
+         */
         'except' => [],
 
+        /*
+         * Limit the pool to one kind of name.
+         *
+         * Supported: "people", "things"
+         */
         'types' => ['people', 'things'],
 
         /*
-         * Thematic filters. Empty means no restriction.
+         * Thematic filters. Leaving these empty applies no restriction at all.
          *
-         * 'groups' is a closed vocabulary: food, drink, nature, places,
-         * culture, arts, screen, sport, science, history, myth, vehicles.
-         * 'tags' is free-form, and a dictionary must carry all of them.
-         * 'reach' is how widely recognisable the names are — set it to
-         * 'global' for an international audience, since a password is only
-         * memorable if the reader actually knows the word.
+         * "groups" is a fixed vocabulary, while "tags" is free-form and a
+         * dictionary must carry every tag you list. "reach" describes how
+         * widely the names are recognised, and is worth setting for an
+         * international audience: a password is only memorable if the person
+         * reading it actually knows the word.
+         *
+         * Supported groups: "food", "drink", "nature", "places", "culture",
+         *                   "arts", "screen", "sport", "science", "history",
+         *                   "myth", "vehicles"
+         *
+         * Supported reach: "global", "italian", "niche"
          */
         'groups' => [],
 
@@ -70,10 +94,21 @@ return [
 
         'reach' => null,
 
+        /*
+         * Directories containing dictionaries of your own. Every JSON file in
+         * them is loaded alongside the built-in ones. You may scaffold a file
+         * in the correct shape with:
+         *
+         *     php artisan password-toolkit:make-dictionary my_team
+         */
         'paths' => [
             // resource_path('password-dictionaries'),
         ],
 
+        /*
+         * Dictionaries defined right here, when a file would be overkill. A
+         * bare list of strings is fine and "gender" will default to neutral.
+         */
         'custom' => [
             // 'company_products' => [
             //     'type' => 'things',
@@ -88,13 +123,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Assembly
+    | Separator
     |--------------------------------------------------------------------------
     |
-    | 'separator_symbol'  Placed between segments. Any string, or null for none.
-    | 'name_separator'    Multi-word names: true turns the space into the
-    |                     separator ("Luke-Skywalker"), false strips it
-    |                     ("LukeSkywalker").
+    | This string is placed between the segments of the password. You may use
+    | any string here, or null for none at all. The "name_separator" option
+    | decides what happens inside a name that contains a space: enabling it
+    | gives you "Luke-Skywalker", while disabling it gives "LukeSkywalker".
     |
     */
 
@@ -104,16 +139,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Adjective position
+    | Adjective Position
     |--------------------------------------------------------------------------
     |
-    | Null follows the locale, which is almost always what you want: word order
-    | is a property of the language, not a preference. Italian puts the
-    | adjective after the noun ("Goldrake-Mitico"), English puts it before
-    | ("Legendary-Goldrake"), and each locale declares its own order in its
-    | _default adjective pack.
+    | Word order is a property of the language rather than a preference, so
+    | leaving this null is almost always correct. Italian places the adjective
+    | after the noun ("Goldrake-Mitico") and English places it before
+    | ("Legendary-Goldrake"), and each locale declares its own order.
     |
-    | Set 'before' or 'after' to override that for every locale.
+    | Supported: null, "before", "after"
     |
     */
 
@@ -124,16 +158,16 @@ return [
     | Numbers
     |--------------------------------------------------------------------------
     |
-    | 'numbers_position' is one of 'start', 'middle' or 'end'. Digits are drawn
-    | with random_int(), so the numeric segment is cryptographically random
-    | even though the words are not the whole of the entropy.
+    | The numeric segment is drawn with random_int() and is where most of the
+    | entropy in a generated password lives. The word pools are fixed by the
+    | data that ships, so "numbers_digits" is the setting that actually scales:
+    | every digit adds roughly 3.32 bits.
     |
-    | 'numbers_digits' is the one setting that scales. The word pools are fixed
-    | by the data that ships, so the digits are where the entropy is: each one
-    | adds 3.32 bits, and against an attacker who knows this package they carry
-    | more of the total than the words do. Six is the floor worth shipping;
-    | raise it to twelve or more if the passwords guard anything that matters.
-    | The range is 1 to 18.
+    | Six digits is a sensible floor. Feel free to raise it towards twelve when
+    | the passwords guard something that matters, keeping in mind that someone
+    | has to read them out loud. Any value from 1 to 18 is accepted.
+    |
+    | Supported positions: "start", "middle", "end"
     |
     */
 
@@ -144,14 +178,62 @@ return [
     'numbers_position' => 'end',
 
     /*
+     * Whether the numeric segment may begin with a zero.
+     *
+     * When disabled, the draw runs from 10^(d-1) upwards, so "042193" never
+     * appears and six digits are 900,000 values rather than 1,000,000. The
+     * strength report accounts for the difference. Enabling this buys those
+     * bits back, at the cost of a password whose leading zero has to be
+     * dictated aloud.
+     */
+    'numbers_allow_leading_zero' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Words
+    |--------------------------------------------------------------------------
+    |
+    | A password is built from two words by default: one adjective and one
+    | name. Asking for three adds a second adjective, drawn from the same
+    | agreeing pool without replacement, and still ordered the way the language
+    | writes it — "Brave-Mighty-Goldrake" or "Goldrake-Mitico-Potente".
+    |
+    | The extra word is worth seven or eight bits, which is about two digits'
+    | worth for eight more characters to type. Reach for "numbers_digits"
+    | first, and for a third word when the words themselves are the part that
+    | has to be memorable.
+    |
+    | Supported word counts: 2, 3
+    |
+    */
+
+    'word_count' => 2,
+
+    /*
+     * How the words are cased.
+     *
+     * "title" leaves names spelled as the dictionary wrote them, so "McFly"
+     * stays "McFly". Casing is a deterministic transform, so like leetspeak it
+     * costs nothing and is worth nothing in the entropy figure.
+     *
+     * Supported: "title", "lower", "upper", "preserve"
+     */
+    'case' => 'title',
+
+    /*
     |--------------------------------------------------------------------------
     | Leetspeak
     |--------------------------------------------------------------------------
     |
-    | 'none'      leave the password as assembled
-    | 'basic'     single-character substitutions only, so length is preserved
-    | 'advanced'  adds multi-character glyphs, which lengthens the password and
-    |             helps against strict minimum-length policies
+    | Here you may substitute lookalike characters into the finished password.
+    | "basic" only swaps single characters, so the length is preserved, while
+    | "advanced" adds multi-character glyphs and makes the password longer,
+    | which is useful against a strict minimum-length policy.
+    |
+    | This is worth exactly zero bits and the strength report will say so. It
+    | is here to satisfy a character-class rule, never to add strength.
+    |
+    | Supported: "none", "basic", "advanced"
     |
     */
 
@@ -159,18 +241,58 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Strength reporting
+    | Unique Batches
     |--------------------------------------------------------------------------
     |
-    | The attacker capability assumed when estimating crack time. 1e10 is about
-    | right for a single offline GPU against a fast hash; raise it towards 1e12
-    | if your threat model includes a well-funded adversary.
+    | When generateUnique() is asked for a batch, it will draw until it has
+    | them all, giving up after count * multiplier + 100 attempts rather than
+    | spinning against a pool too small to supply them.
+    |
+    | Raising this improves the odds of filling a large batch from a narrow
+    | pool. Widening the pool with more dictionaries or more digits is usually
+    | the better fix, and the exception that is thrown will say as much.
+    |
+    */
+
+    'unique_attempts_multiplier' => 10,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Strength Reporting
+    |--------------------------------------------------------------------------
+    |
+    | These options configure the strength report and the StrongPassword
+    | validation rule. The "guesses_per_second" value is the attacker you
+    | assume when estimating how long a password would take to crack: 1e10 is
+    | about right for a single offline GPU against a fast hash, and you may
+    | raise it towards 1e12 for a better funded adversary.
+    |
+    | The "thresholds" are the band edges, in bits, and they must ascend. They
+    | decide what the validation rule accepts at sign-up, so treat them as a
+    | policy decision rather than a constant.
+    |
+    | Finally, "rule_model" chooses how that rule scores. The charset model is
+    | the right one for a password your user chose, since you know nothing
+    | about how they chose it. The structural model reports a much lower figure
+    | and should only be used where the rule guards passwords this package
+    | generated itself.
+    |
+    | Supported models: "charset", "structural"
     |
     */
 
     'strength' => [
 
         'guesses_per_second' => 1e10,
+
+        'thresholds' => [
+            'weak' => 28,
+            'fair' => 36,
+            'strong' => 60,
+            'very_strong' => 128,
+        ],
+
+        'rule_model' => 'charset',
 
     ],
 

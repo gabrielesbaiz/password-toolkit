@@ -20,8 +20,9 @@ use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
 use Illuminate\Support\Collection;
 
 /**
- * Assembles memorable passwords from a name, an agreeing adjective and an
- * optional numeric segment.
+ * Assembles memorable passwords from a name, an adjective and some digits.
+ *
+ * The adjective agrees with the name, and the numeric segment is optional.
  *
  * This is an ordinary object bound as a singleton, not a static class. That is
  * what makes the facade genuinely swappable in tests, and what lets an
@@ -39,6 +40,9 @@ class PasswordToolkit implements PasswordGenerator
      */
     public const MAX_BATCH = 100_000;
 
+    /**
+     * Create a new password toolkit instance.
+     */
     public function __construct(
         protected readonly DictionaryRepository $dictionaries,
         protected readonly AdjectiveResolver $adjectives,
@@ -54,6 +58,11 @@ class PasswordToolkit implements PasswordGenerator
         return new PasswordBuilder($this, $options ?? Options::fromConfig());
     }
 
+    /**
+     * Generate a single password.
+     *
+     * @throws NoDictionariesEnabledException
+     */
     public function generate(?Options $options = null): string
     {
         $options ??= Options::fromConfig();
@@ -62,6 +71,8 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
+     * Generate a batch of passwords.
+     *
      * @return array<int, string>
      */
     public function generateMany(int $count, ?Options $options = null): array
@@ -99,7 +110,11 @@ class PasswordToolkit implements PasswordGenerator
 
         $passwords = [];
         $attempts = 0;
-        $limit = $count * 10 + 100;
+
+        // The base of 100 is what makes a small batch practical: asking for
+        // three passwords out of a space of thirty needs far more than thirty
+        // attempts to land three distinct ones.
+        $limit = ($count * $options->uniqueAttemptsMultiplier) + 100;
 
         while (count($passwords) < $count && $attempts < $limit) {
             $attempts++;
@@ -121,6 +136,8 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
+     * Generate one password alongside its strength report.
+     *
      * @return array{password: string, report: StrengthReport}
      */
     public function generateWithReport(?Options $options = null): array
@@ -132,6 +149,8 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
+     * Generate a batch of passwords, each with its strength report.
+     *
      * @return array<int, array{password: string, report: StrengthReport}>
      */
     public function generateManyWithReport(int $count, ?Options $options = null): array
@@ -162,7 +181,7 @@ class PasswordToolkit implements PasswordGenerator
         return new StrengthReport(
             entropyBits: $bits,
             length: $charset['length'],
-            strength: Entropy::strength($bits),
+            strength: Entropy::strength($bits, $options->strengthThresholds),
             components: ['charset_bits' => $bits],
             charsetFlags: $charset['flags'],
             crackTimeSeconds: $crack['seconds'],
@@ -186,6 +205,11 @@ class PasswordToolkit implements PasswordGenerator
             $pools['adjectives'],
             $options->addNumbers ? $options->numbersDigits : 0,
             $options->leetspeak,
+            $options->numbersAllowLeadingZero,
+            // A pool of one cannot supply a second distinct adjective, and the
+            // generator falls back to one word rather than throwing — so the
+            // report credits what the draw could actually have done.
+            $options->wordCount > 2 && $pools['adjectives'] > 1 ? 2 : 1,
         );
 
         $bits = $components['total'];
@@ -194,7 +218,7 @@ class PasswordToolkit implements PasswordGenerator
         return new StrengthReport(
             entropyBits: $bits,
             length: mb_strlen($password),
-            strength: Entropy::strength($bits),
+            strength: Entropy::strength($bits, $options->strengthThresholds),
             components: $components,
             charsetFlags: Entropy::charsetBits($password)['flags'],
             crackTimeSeconds: $crack['seconds'],
@@ -203,7 +227,7 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
-     * How large the name and adjective pools currently are.
+     * Get how large the name and adjective pools currently are.
      *
      * The adjective figure is the mean across the selected dictionaries, since
      * which one applies depends on the name that gets picked.
@@ -230,7 +254,7 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
-     * Every dictionary currently visible, as plain arrays.
+     * Get every dictionary currently visible, as plain arrays.
      *
      * @return Collection<string, array{key: string, label: string, description: string|null, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}>
      */
@@ -244,7 +268,7 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
-     * Dictionaries with a live sample password each.
+     * Get the dictionaries, with a live sample password each.
      *
      * The sample is what makes a picker useful — a row saying "Italian Pasta
      * Shapes, 41 entries" tells you much less than one showing
@@ -267,7 +291,7 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
-     * The thematic groups in play, with how many dictionaries each holds.
+     * Get the thematic groups in play, with how many dictionaries each holds.
      *
      * Everything a picker needs to render a group filter without hardcoding the
      * vocabulary.
@@ -288,7 +312,7 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
-     * Every tag in play, with how many dictionaries carry it.
+     * Get every tag in play, with how many dictionaries carry it.
      *
      * @return Collection<int, array{value: string, count: int}>
      */
@@ -325,6 +349,8 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
+     * Drop every cached dictionary and adjective pool.
+     *
      * @deprecated 2.0 Use flushCache(). Removed in 3.0.
      */
     public function clearPoolCache(): void
@@ -333,6 +359,8 @@ class PasswordToolkit implements PasswordGenerator
     }
 
     /**
+     * Get the flattened entry pool, failing when nothing is enabled.
+     *
      * @return array<int, Entry>
      */
     protected function entries(Options $options): array
@@ -346,6 +374,11 @@ class PasswordToolkit implements PasswordGenerator
         return $entries;
     }
 
+    /**
+     * Draw one name, uniformly across every enabled entry.
+     *
+     * @throws NoDictionariesEnabledException
+     */
     protected function pickName(Options $options): Entry
     {
         $entries = $this->entries($options);
@@ -356,6 +389,9 @@ class PasswordToolkit implements PasswordGenerator
         return $entries[random_int(0, count($entries) - 1)];
     }
 
+    /**
+     * Assemble one password from a name entry and the given options.
+     */
     protected function assemble(Entry $entry, Options $options): string
     {
         $separator = $options->separator ?? '';
@@ -378,24 +414,30 @@ class PasswordToolkit implements PasswordGenerator
             $separator,
         );
 
-        $adjective = mb_convert_case(
-            $this->alphanumeric($this->adjectives->for($entry, $options)->name),
-            MB_CASE_TITLE,
+        $name = $options->casing->applyToName($name);
+
+        // One adjective, or two when word_count is 3. Both agree with the
+        // name's gender, because the resolver filters the pool before drawing
+        // — "Goldrake-Mitico-Potente" only reads as Italian if every word
+        // agrees with every other.
+        $adjectives = array_map(
+            fn (Entry $adjective): string => $options->casing->apply($this->alphanumeric($adjective->name)),
+            $this->adjectives->many($entry, $options, $options->wordCount - 1),
         );
 
         // Word order is a property of the language, not a preference: Italian
         // says "Goldrake Mitico", English says "Legendary Goldrake". The locale
         // declares it; config may override.
-        [$first, $second] = ($options->adjectivePosition ?? $this->adjectives->positionFor($options))
-            ->order($name, $adjective);
+        $position = $options->adjectivePosition ?? $this->adjectives->positionFor($options);
+        $words = $position->words($name, $adjectives);
 
         $password = $options->addNumbers
-            ? implode($separator, $options->numbersPosition->arrange(
-                $first,
-                $second,
-                (string) $this->randomNumber($options->numbersDigits),
+            ? implode($separator, $options->numbersPosition->place(
+                $words,
+                $this->randomNumber($options->numbersDigits, $options->numbersAllowLeadingZero),
+                $position->boundary(count($adjectives)),
             ))
-            : $first.$separator.$second;
+            : implode($separator, $words);
 
         return $this->leetspeak->apply($password, $options->leetspeak);
     }
@@ -436,14 +478,39 @@ class PasswordToolkit implements PasswordGenerator
         return trim($value, $separator);
     }
 
-    protected function randomNumber(int $digits): int
+    /**
+     * Get the numeric segment, as a fixed-width string.
+     *
+     * Without leading zeros the draw starts at 10^(d-1), so "042" can never
+     * appear and six digits are 900,000 values rather than 1,000,000. That is
+     * the historical behaviour and stays the default because a segment that
+     * never starts with zero is easier to read back; allowing them buys the
+     * missing 0.15 bits, at the cost of a password nobody can dictate without
+     * saying "zero four two".
+     */
+    protected function randomNumber(int $digits, bool $allowLeadingZero = false): string
     {
-        $min = 10 ** ($digits - 1);
-        $max = (10 ** $digits) - 1;
+        if ($allowLeadingZero) {
+            return str_pad(
+                (string) random_int(0, (10 ** $digits) - 1),
+                $digits,
+                '0',
+                STR_PAD_LEFT,
+            );
+        }
 
-        return random_int($min, $max);
+        return (string) random_int(10 ** ($digits - 1), (10 ** $digits) - 1);
     }
 
+    /**
+     * Validate the requested batch size.
+     *
+     * The ceiling is a blast radius rather than a security boundary: a batch is
+     * built entirely in memory, so a count arriving from a request parameter
+     * has to be refused before it exhausts the process.
+     *
+     * @throws InvalidOptionException
+     */
     protected function guardCount(int $count): void
     {
         if ($count < 1) {

@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
+use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
+use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
 use Gabrielesbaiz\PasswordToolkit\Generator\PasswordBuilder;
 use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
@@ -126,4 +128,31 @@ it('reports against the builder options, not the config', function () {
 
 it('casts to a password when used as a string', function () {
     expect((string) PasswordToolkit::make()->only('star_wars'))->toBeString()->not->toBeEmpty();
+});
+
+it('overrides the casing', function () {
+    expect(PasswordToolkit::make()->casing('upper')->options()->casing)->toBe(Casing::Upper)
+        ->and(PasswordToolkit::make()->casing(Casing::Lower)->options()->casing)->toBe(Casing::Lower)
+        ->and(PasswordToolkit::make()->options()->casing)->toBe(Casing::Title);
+});
+
+it('overrides the word count', function () {
+    $three = PasswordToolkit::make()->only('star_wars')->words(3)->withoutNumbers()->keepWordBreaks(false);
+
+    expect($three->options()->wordCount)->toBe(3)
+        ->and(substr_count($three->generate(), '-'))->toBe(2)
+        ->and(PasswordToolkit::make()->options()->wordCount)->toBe(2);
+});
+
+it('rejects a word count it cannot build', function () {
+    PasswordToolkit::make()->words(1);
+})->throws(InvalidOptionException::class);
+
+it('allows a leading zero in the numeric segment', function () {
+    $builder = PasswordToolkit::make()->only('star_wars')->digits(2)->allowLeadingZero();
+
+    expect($builder->options()->numbersAllowLeadingZero)->toBeTrue()
+        ->and(PasswordToolkit::make()->options()->numbersAllowLeadingZero)->toBeFalse()
+        ->and(collect($builder->many(200))->filter(fn (string $p): bool => (bool) preg_match('/-0\d$/', $p)))
+        ->not->toBeEmpty();
 });

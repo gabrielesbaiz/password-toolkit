@@ -55,6 +55,34 @@ describe('password-toolkit:generate', function () {
         expect($output)->toContain('_')->not->toMatch('/\d/');
     });
 
+    it('builds three words on demand', function () {
+        $output = trim(artisanOutput('password-toolkit:generate', [
+            '--words' => '3',
+            '--no-numbers' => true,
+        ]));
+
+        expect(substr_count($output, '-'))->toBeGreaterThanOrEqual(2);
+    });
+
+    it('cases the words on demand', function () {
+        $output = trim(artisanOutput('password-toolkit:generate', [
+            '--case' => 'upper',
+            '--no-numbers' => true,
+        ]));
+
+        expect($output)->toBe(strtoupper($output))->toMatch('/^[A-Z-]+$/');
+    });
+
+    it('allows a leading zero on demand', function () {
+        $output = trim(artisanOutput('password-toolkit:generate', [
+            'count' => 200,
+            '--digits' => '2',
+            '--leading-zero' => true,
+        ]));
+
+        expect($output)->toMatch('/-0\d$/m');
+    });
+
     it('accepts a comma-separated only list', function () {
         $decoded = json_decode(artisanOutput('password-toolkit:generate', [
             '--list' => true,

@@ -34,8 +34,9 @@ final class FileDictionaryRepository implements DictionaryRepository
     private array $registered = [];
 
     /**
-     * Dictionaries loaded from user-configured paths, keyed by the path list
-     * they came from.
+     * Dictionaries loaded from user-configured paths.
+     *
+     * Keyed by the path list they came from.
      *
      * @var array<string, array<string, Dictionary>>
      */
@@ -48,13 +49,26 @@ final class FileDictionaryRepository implements DictionaryRepository
      */
     private array $entryCache = [];
 
+    /**
+     * Create a new file dictionary repository instance.
+     */
     public function __construct(private readonly string $basePath = __DIR__.'/../Data/Names') {}
 
+    /**
+     * Get every dictionary this repository knows about, keyed by dictionary key.
+     *
+     * @return array<string, Dictionary>
+     */
     public function all(): array
     {
         return array_merge($this->builtIn(), $this->registered);
     }
 
+    /**
+     * Get the dictionaries the given options select, keyed by dictionary key.
+     *
+     * @return array<string, Dictionary>
+     */
     public function enabled(Options $options): array
     {
         $pool = array_merge(
@@ -67,11 +81,19 @@ final class FileDictionaryRepository implements DictionaryRepository
         return array_filter($pool, $options->selects(...));
     }
 
+    /**
+     * Get the dictionary registered under the given key.
+     */
     public function find(string $key): Dictionary
     {
         return $this->all()[$key] ?? throw DictionaryNotFoundException::key($key);
     }
 
+    /**
+     * Get every entry across the selected dictionaries, flattened.
+     *
+     * @return array<int, Entry>
+     */
     public function entries(Options $options): array
     {
         $fingerprint = $options->selectionFingerprint();
@@ -91,6 +113,11 @@ final class FileDictionaryRepository implements DictionaryRepository
         return $this->entryCache[$fingerprint] = $entries;
     }
 
+    /**
+     * Register a dictionary at runtime.
+     *
+     * @param  array<int, array{name: string, gender?: string}>  $values
+     */
     public function register(string $key, array $values, string $type = 'things', ?string $locale = null): void
     {
         $this->registered[$key] = Dictionary::fromArray($key, [
@@ -103,6 +130,9 @@ final class FileDictionaryRepository implements DictionaryRepository
         $this->entryCache = [];
     }
 
+    /**
+     * Flush the decoded dictionaries and the flattened entry pools.
+     */
     public function flush(): void
     {
         $this->builtIn = null;
@@ -111,6 +141,8 @@ final class FileDictionaryRepository implements DictionaryRepository
     }
 
     /**
+     * Get the built-in dictionaries, decoding them on first use.
+     *
      * @return array<string, Dictionary>
      */
     private function builtIn(): array
@@ -131,6 +163,8 @@ final class FileDictionaryRepository implements DictionaryRepository
     }
 
     /**
+     * Get the dictionaries found in the user-configured paths.
+     *
      * @return array<string, Dictionary>
      */
     private function fromPaths(Options $options): array
@@ -159,6 +193,8 @@ final class FileDictionaryRepository implements DictionaryRepository
     }
 
     /**
+     * Get the dictionaries declared inline in configuration.
+     *
      * @return array<string, Dictionary>
      */
     private function fromCustom(Options $options): array
@@ -177,7 +213,7 @@ final class FileDictionaryRepository implements DictionaryRepository
     }
 
     /**
-     * Every *.json in a directory, keyed by filename without the extension.
+     * Get every *.json in a directory, keyed by filename without the extension.
      *
      * @return array<string, string>
      */
@@ -199,6 +235,9 @@ final class FileDictionaryRepository implements DictionaryRepository
         return $found;
     }
 
+    /**
+     * Decode a single dictionary from its JSON file.
+     */
     private function decode(string $key, string $path, ?string $type, bool $builtIn): Dictionary
     {
         $raw = @file_get_contents($path);

@@ -17,6 +17,9 @@ class MakeDictionaryCommand extends Command
 
     protected $description = 'Scaffold a dictionary of your own';
 
+    /**
+     * Execute the console command.
+     */
     public function handle(): int
     {
         $key = (string) $this->argument('key');
@@ -97,6 +100,9 @@ class MakeDictionaryCommand extends Command
         return self::SUCCESS;
     }
 
+    /**
+     * Resolve the directory to scaffold into, or null when none is configured.
+     */
     protected function directory(): ?string
     {
         if (is_string($path = $this->option('path')) && $path !== '') {
@@ -115,6 +121,9 @@ class MakeDictionaryCommand extends Command
         return null;
     }
 
+    /**
+     * Create the directory when it does not exist yet.
+     */
     protected function ensureDirectory(string $directory): void
     {
         if (! is_dir($directory)) {
@@ -123,6 +132,8 @@ class MakeDictionaryCommand extends Command
     }
 
     /**
+     * Write the scaffolded data to a JSON file.
+     *
      * @param  array<string, mixed>  $data
      */
     protected function write(string $path, array $data): void
