@@ -1,5 +1,6 @@
 {
     "key": "italian_motorcycles",
+    "name": "Italian Motorcycles",
     "type": "things",
     "locale": "it",
     "group": "vehicles",

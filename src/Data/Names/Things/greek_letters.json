@@ -1,5 +1,6 @@
 {
     "key": "greek_letters",
+    "name": "Greek Letters",
     "type": "things",
     "locale": "en",
     "group": "science",

@@ -1,5 +1,6 @@
 {
     "key": "italian_regional_foods",
+    "name": "Italian Regional Foods",
     "type": "things",
     "locale": "it",
     "group": "food",

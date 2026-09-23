@@ -1,5 +1,6 @@
 {
     "key": "harry_potter",
+    "name": "Harry Potter",
     "type": "people",
     "locale": "en",
     "group": "screen",

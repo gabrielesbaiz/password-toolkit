@@ -1,5 +1,6 @@
 {
     "key": "italian_actors",
+    "name": "Italian Actors",
     "type": "people",
     "locale": "it",
     "group": "screen",

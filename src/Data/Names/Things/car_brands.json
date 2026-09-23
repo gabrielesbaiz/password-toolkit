@@ -1,5 +1,6 @@
 {
     "key": "car_brands",
+    "name": "Car Brands",
     "type": "things",
     "locale": "en",
     "group": "vehicles",

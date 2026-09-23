@@ -1,5 +1,6 @@
 {
     "key": "italian_film_directors",
+    "name": "Italian Film Directors",
     "type": "people",
     "locale": "it",
     "group": "arts",

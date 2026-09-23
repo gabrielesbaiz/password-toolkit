@@ -1,5 +1,6 @@
 {
     "key": "roman_emperors",
+    "name": "Roman Emperors",
     "type": "people",
     "locale": "en",
     "group": "history",

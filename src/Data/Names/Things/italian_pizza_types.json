@@ -1,5 +1,6 @@
 {
     "key": "italian_pizza_types",
+    "name": "Italian Pizza Types",
     "type": "things",
     "locale": "it",
     "group": "food",

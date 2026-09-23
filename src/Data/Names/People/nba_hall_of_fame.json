@@ -1,5 +1,6 @@
 {
     "key": "nba_hall_of_fame",
+    "name": "NBA Hall of Fame",
     "type": "people",
     "locale": "en",
     "group": "sport",

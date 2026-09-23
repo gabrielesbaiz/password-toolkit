@@ -29,6 +29,7 @@ final readonly class Dictionary
         public string $key,
         public string $type,
         public array $entries,
+        public ?string $name = null,
         public ?string $locale = null,
         public bool $builtIn = false,
         public ?DictionaryGroup $group = null,
@@ -83,6 +84,9 @@ final readonly class Dictionary
             key: $key,
             type: $type,
             entries: $entries,
+            // The dictionary's own display name. A translation still wins, so
+            // this is the source label rather than the final one.
+            name: isset($data['name']) && is_string($data['name']) ? $data['name'] : null,
             locale: $locale,
             builtIn: $builtIn,
             group: isset($data['group']) && is_string($data['group'])
@@ -118,16 +122,23 @@ final readonly class Dictionary
     }
 
     /**
-     * Get the translated display name, falling back to the key made readable.
+     * Get the display name for this dictionary.
+     *
+     * A translation for the active locale wins, then the name the dictionary
+     * declares for itself, and finally the key made readable. That order is
+     * what lets a dictionary of your own carry a proper name without having to
+     * publish the package's translations to do it.
      */
     public function label(): string
     {
         $key = 'password-toolkit::dictionaries.labels.'.$this->key;
         $translated = trans($key);
 
-        return is_string($translated) && $translated !== $key
-            ? $translated
-            : ucwords(str_replace('_', ' ', $this->key));
+        if (is_string($translated) && $translated !== $key) {
+            return $translated;
+        }
+
+        return $this->name ?? ucwords(str_replace('_', ' ', $this->key));
     }
 
     /**

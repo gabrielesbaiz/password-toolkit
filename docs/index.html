@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>PasswordToolkit</title>
+<meta name="description" content="Memorable, dictatable temporary passwords for Laravel — two words and a number drawn from 200 curated dictionaries, with grammatical agreement, an honest strength report and a validation rule.">
+<link rel="canonical" href="https://gabrielesbaiz.github.io/password-toolkit/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#9993;</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PasswordToolkit">
+<meta property="og:description" content="Somebody has to read that password out loud. PasswordToolkit makes the one you send legible — 200 dictionaries, two languages, and a report that never flatters the number.">
+<meta property="og:url" content="https://gabrielesbaiz.github.io/password-toolkit/">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="app.css">
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <div class="tape"></div>
+<nav>
+  <a class="brand" href="#/home">PasswordToolkit<span class="ver">2.0</span></a>
+  <span class="sp"></span>
+  <div class="menu">
+    <a href="#/home" data-nav="home">Home</a>
+    <a href="#/intro" data-nav="intro">Guide</a>
+    <a href="#/play" data-nav="play">Playground</a>
+    <a href="#/config" data-nav="config">Configuration</a>
+    <a href="#/upgrade" data-nav="upgrade">Upgrade</a>
+    <a href="#/changelog" data-nav="changelog">Changelog</a>
+    <a class="heart" href="https://github.com/sponsors/gabrielesbaiz">&#9829; Sponsor</a>
+  </div>
+  <button class="searchbtn" id="openk" aria-label="Search the documentation" aria-keyshortcuts="Meta+K">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.4 10.4 14 14"/></svg>
+    <span>Search</span><kbd id="kbdhint">&#8984;K</kbd>
+  </button>
+  <button class="themebtn" id="theme">Dark</button>
+</nav>
+  <div id="progress"></div>
+</header>
+
+<h1 class="vh">PasswordToolkit</h1>
+
+<div id="home" class="hidden">
+
+<div class="mx hero">
+  <span class="kicker">Hand delivered · since 1997</span>
+  <h1>Somebody has to <em>read that password</em> out loud.</h1>
+  <p class="sub">You generate a temporary password, you put it in an email, and a human on the other end has to type it back. That is the job. <b>PasswordToolkit</b> makes the thing you send legible — 200 curated dictionaries, two languages, and an entropy figure it refuses to flatter.</p>
+
+  <div class="tiltwrap"><div class="envelope">
+    <div class="tape"></div>
+    <div class="postmark" id="mark">PASSWORD<br>TOOLKIT<br>★ 2.0 ★</div>
+    <p class="to">Deliver to</p>
+    <p class="big pw" id="pw"></p>
+    <p class="small" id="meta"></p>
+    <div class="acts" style="margin-top:22px">
+      <button class="btn" id="gen">Another one</button>
+      <button class="btn ghost" id="copy">Copy</button>
+      <span class="copied" id="copied">Copied</span>
+    </div>
+  </div></div>
+
+  <div class="cta">
+    <a class="btn big-btn" href="#/intro">Get started <span>&rarr;</span></a>
+    <a class="btn ghost big-btn" href="#/install">Installation</a>
+  </div>
+  <button class="cmd" id="cmd" title="Click to copy">
+    <span class="dollar">$</span><code>composer require gabrielesbaiz/password-toolkit</code>
+  </button>
+
+</div>
+
+<section id="why" class="mx rv">
+  <h2>The password you send is not the password you store</h2>
+  <p class="lead">The stored one is a hash and nobody reads it. The <em>sent</em> one crosses a spam filter, a printout, a phone call and somebody's reading glasses. <code>xK#9$!qZ</code> survives none of that — it comes back as a support ticket that says "it says wrong password".</p>
+  <div class="cards">
+    <div class="card"><span class="n">01</span><h3>Onboarding</h3><p>First credential for a new account, mailed once, changed on first sign-in.</p></div>
+    <div class="card"><span class="n">02</span><h3>Support resets</h3><p>An agent reads it down the phone. Every character you save is a character they cannot mishear.</p></div>
+    <div class="card"><span class="n">03</span><h3>Printed handover</h3><p>Seed accounts, demo logins, kiosks, workshops, that one laminated card in the drawer.</p></div>
+    <div class="card"><span class="n">04</span><h3>Share links</h3><p>A passphrase somebody dictates in a meeting without spelling it letter by letter.</p></div>
+  </div>
+  <p class="deeper"><a href="#/intro">The four situations, in full <span>&rarr;</span></a></p>
+</section>
+
+<section id="how" class="mx rv">
+  <h2>One line, then it is your problem again</h2>
+  <p class="lead">No service, no account, no network call. It builds a string and hands it back.</p>
+<pre><span class="cm">// the whole integration</span>
+$plain = PasswordToolkit::generate();
+
+$user-&gt;forceFill([
+    'password' =&gt; Hash::make($plain),
+    'must_change_password' =&gt; true,
+])-&gt;save();
+
+Mail::to($user)-&gt;send(new WelcomeMail($plain));</pre>
+<pre>PasswordToolkit::make()-&gt;locale('it')-&gt;groups('food')-&gt;generate();
+PasswordToolkit::make()-&gt;reach('global')-&gt;digits(6)-&gt;generate();
+PasswordToolkit::generateUnique(200); <span class="cm">// a batch, no repeats</span></pre>
+  <p class="deeper"><a href="#/quick">Quick start, end to end <span>&rarr;</span></a></p>
+</section>
+
+<section id="dictionary-shelf" class="mx rv">
+  <h2>200 dictionaries, and you will not use most of them</h2>
+  <p class="lead">That is fine — you only need the handful your users would recognise. Pick by theme, by tag, or by how far the names travel, and ignore the rest until you want them.</p>
+
+  <div class="counts">
+    <div><b data-count="200">0</b><span>dictionaries</span></div>
+    <div><b data-count="4396">0</b><span>names</span></div>
+    <div><b data-count="12">0</b><span>groups</span></div>
+    <div><b data-count="124">0</b><span>tags</span></div>
+  </div>
+
+  <div class="belt" aria-hidden="true">
+    <div class="belt-row" id="belt-a"></div>
+    <div class="belt-row back" id="belt-b"></div>
+  </div>
+
+  <div class="groups" id="group-row"></div>
+
+  <pre>PasswordToolkit::make()-&gt;groups('food')-&gt;generate();
+PasswordToolkit::make()-&gt;tagged(['italian', 'sweet'])-&gt;generate();
+PasswordToolkit::make()-&gt;reach('global')-&gt;generate();   <span class="cm">// names that travel</span></pre>
+  <p class="lead" style="margin:0">A dedicated page lists every one of them with its group, tags, reach and sample entries. <a href="#/shelf" style="color:var(--accent)">Browse the full shelf →</a></p>
+  <p class="deeper"><a href="#/shelf">Browse all 200 with filters <span>&rarr;</span></a></p>
+</section>
+
+<section id="lang" class="mx rv">
+  <h2><span class="flag">🇮🇹</span> Any language you like. Italian, obsessively.</h2>
+  <p class="lead">The package itself is language-agnostic: a locale is a folder of adjectives and a line saying which side of the noun they go on. Add Portuguese, add Japanese, add whatever your users actually speak — nothing in the code is Italian.</p>
+  <p class="lead"><b>But I am Italian.</b> So Italian is the one that ships finished, and it ships finished properly: adjectives agree with the noun and sit <em>after</em> it, where English puts them before. Nobody gets <em>Fusilli gustosa</em>. Watch it choose — the struck-through form is what a naive implementation would have sent your users.</p>
+  <div class="agree">
+    <div class="tape"></div>
+    <div class="agree-in">
+      <div class="agree-row">
+        <span class="agree-lbl">Italiano — noun first, adjective agrees</span>
+        <div class="agree-line"><span id="it-line"></span><span class="g" id="it-g"></span></div>
+      </div>
+      <div class="agree-row">
+        <span class="agree-lbl">English — adjective first, no agreement to get wrong</span>
+        <div class="agree-line"><span id="en-line"></span></div>
+      </div>
+      <div class="acts">
+        <div class="swap" role="group" aria-label="Dictionary">
+          <button data-d="italian_pasta_shapes" aria-pressed="true">🍝 Pasta</button>
+          <button data-d="italian_wines">🍷 Vini</button>
+          <button data-d="italian_cities">🏙️ Città</button>
+        </div>
+        <button class="btn ghost" id="again">Again</button>
+      </div>
+    </div>
+  </div>
+  <p class="deeper"><a href="#/adjectives">How locales and adjectives resolve <span>&rarr;</span></a></p>
+</section>
+
+<section id="bench" class="mx rv">
+  <h2>Twenty-seven settings, and sane defaults for all of them</h2>
+  <p class="lead">You can install this and never open the config file &mdash; the defaults generate working passwords on the first call. When you do want to change something, <code>config/password-toolkit.php</code> is the entire surface: no service providers to extend, no classes to swap, no events to listen for.</p>
+
+  <div class="cfgmap">
+    <a class="cfgcard" href="#/config/dicts">
+      <b>Dictionaries</b>
+      <code>enabled · except · types<br>groups · tags · reach · paths</code>
+      <span>Which names are in play, by key, theme, tag or how far they travel.</span>
+    </a>
+    <a class="cfgcard" href="#/config/locale">
+      <b>Language</b>
+      <code>locale · fallback_locale<br>adjective_position</code>
+      <span>Where the adjectives come from, and the word order each language declares for itself.</span>
+    </a>
+    <a class="cfgcard" href="#/config/words">
+      <b>Shape</b>
+      <code>separator_symbol · name_separator<br>word_count · case</code>
+      <span>Two words or three, how they are cased, and what sits between them.</span>
+    </a>
+    <a class="cfgcard" href="#/config/numbers">
+      <b>Numbers</b>
+      <code>add_numbers · numbers_digits<br>numbers_position · leading_zero</code>
+      <span>The setting that carries most of your entropy, and where it sits.</span>
+    </a>
+    <a class="cfgcard" href="#/config/leet">
+      <b>Leetspeak</b>
+      <code>leetspeak_conversion</code>
+      <span>None, basic or advanced. Worth zero bits, and the report says so out loud.</span>
+    </a>
+    <a class="cfgcard" href="#/config/bands">
+      <b>Strength</b>
+      <code>guesses_per_second · thresholds<br>rule_model · unique_attempts</code>
+      <span>The attacker you assume, and the bands your validation rule enforces.</span>
+    </a>
+  </div>
+
+  <div class="builderpitch">
+    <div>
+      <span class="kicker" style="margin:0 0 16px">In the documentation</span>
+      <h3>A builder that writes the file for you</h3>
+      <p>Set what you need across six tabs &mdash; picking dictionaries, groups and tags from filterable lists rather than typing keys from memory &mdash; and it generates <code>config/password-toolkit.php</code> containing <b>only the keys that differ from the defaults</b>. A live sample shows what your settings actually produce, with the honest bit count underneath.</p>
+      <div class="acts" style="margin-top:22px">
+        <a class="btn" href="#/config">Open the configuration builder <span>&rarr;</span></a>
+      </div>
+    </div>
+    <figure class="cfgpreview">
+      <figcaption><span class="filedot"></span> config/password-toolkit.php</figcaption>
+      <pre>&lt;?php
+
+return [
+    <span class="st">'locale'</span> =&gt; <span class="st">'it'</span>,
+
+    <span class="st">'dictionaries'</span> =&gt; [
+        <span class="st">'groups'</span> =&gt; [<span class="st">'food'</span>, <span class="st">'drink'</span>],
+    ],
+
+    <span class="st">'word_count'</span> =&gt; <span class="nu">3</span>,
+    <span class="st">'numbers_digits'</span> =&gt; <span class="nu">10</span>,
+];</pre>
+      <p>Four changes. Twenty-three defaults left alone, and out of the file.</p>
+    </figure>
+  </div>
+</section>
+
+<section id="cost" class="mx rv">
+  <h2>What it costs you, stated plainly</h2>
+  <div class="warn"><b>A memorable password is a weaker password.</b> A default one is around 33 bits — minutes against an offline attacker with a GPU. That is fine for a credential that lives for one sign-in and is then replaced. It is not fine as a permanent password, and it is not a machine secret. For those, <code>Str::password()</code> exists and this package will tell you so.</div>
+  <p class="lead" style="margin-top:26px"><b>And it is a dial, not a fixed price.</b> More digits, a wider pool, a longer separator — every setting is yours, and the reported figure moves with them honestly. Turn it up until the number suits the job, then check it with <code>--report</code>.</p>
+
+  <table style="margin-top:28px">
+    <thead><tr><th>Use it for</th><th>Do not use it for</th></tr></thead>
+    <tbody>
+      <tr><td>Temporary passwords mailed to a person</td><td>API keys, tokens, signing secrets</td></tr>
+      <tr><td>Support-desk resets read aloud</td><td>Anything a human never reads</td></tr>
+      <tr><td>Demo, seed and workshop accounts</td><td>A password kept for a year</td></tr>
+      <tr><td>Anything followed by a forced change</td><td>Anything not followed by one</td></tr>
+    </tbody>
+  </table>
+  <p class="deeper"><a href="#/strength">Both entropy models, explained <span>&rarr;</span></a></p>
+</section>
+
+<section class="mx rv" id="home-numbers" aria-label="By the numbers">
+  <div class="band">
+    <div><b data-count="4396">0</b><span>names</span></div>
+    <div><b data-count="9821">0</b><span>adjectives</span></div>
+    <div><b data-count="2850">0</b><span>tests</span></div>
+    <div><b data-count="27">0</b><span>settings</span></div>
+  </div>
+</section>
+
+<section id="sponsor" class="mx rv">
+  <p class="eyebrow">Support this package</p>
+  <div class="sponsor-top">
+    <div>
+      <h2 class="sponsor-head">Free forever.<br>Not free to <em>maintain.</em></h2>
+      <p>A stamp has never cost much. Running the post office always has. This package is free and stays free — but every Laravel major, every dictionary that needs checking, and every <em>"it says wrong password"</em> that turns out to be a real bug lands on the same desk.</p>
+      <p>Sponsorship pays for that desk: the upgrades nobody demos, 2,621 tests kept green, and somebody making sure the Italian still agrees. MIT either way.</p>
+    </div>
+    <div class="stamp-card">
+      <p class="price">$5</p>
+      <p class="price-sub">per month · cancel anytime</p>
+      <a class="sponsor-cta" href="https://github.com/sponsors/gabrielesbaiz">❤ Become a sponsor</a>
+      <p class="price-note">Company tiers get your logo in the README and on this page.</p>
+    </div>
+  </div>
+
+  <div class="tiers">
+    <div class="tier"><span class="free">Free</span><span class="ico">⭐</span><h3>Star the repo</h3>
+      <p>Thirty seconds, and it is the first signal other developers look at when deciding whether to trust a package.</p></div>
+    <div class="tier"><span class="free">Free</span><span class="ico">🐛</span><h3>Open a good issue</h3>
+      <p>A clear reproduction is worth more than you think. Several fixes in 2.0 started as somebody else's bug report.</p></div>
+    <div class="tier"><span class="ico">❤️</span><h3>Sponsor from $5</h3>
+      <p>Goes towards the maintenance nobody sees: framework upgrades, dictionary curation, and keeping the test matrix green.</p></div>
+    <div class="tier"><span class="ico">🏢</span><h3>Company tier</h3>
+      <p>Your logo here and in the README. If this package writes the passwords you mail your customers, it is cheaper than the tickets it prevents.</p></div>
+  </div>
+
+  <p class="why"><span class="ico">❤️</span><span><b>Why ask at all?</b> This package is MIT and always will be. Nothing is paywalled, nothing phones home, and no dictionary is held back for sponsors. Sponsorship buys maintenance time, not features — and if you cannot sponsor, the star and the bug report genuinely help.</span></p>
+</section>
+
+</div>
+
+<div class="mx doc hidden">
+  <aside>
+    <nav class="toc" aria-label="Guide contents">
+      <b>Getting started</b>
+      <a href="#/intro">Introduction</a>
+      <a href="#/install">Installation</a>
+      <a href="#/quick">Quick start</a>
+      <a href="#/play">Playground</a>
+      <a href="#/config">Configuration</a>
+
+      <b>Dictionaries</b>
+      <a href="#/shelf">All dictionaries</a>
+      <a href="#/own">Your own dictionaries</a>
+      <a href="#/adjectives">Locales and adjectives</a>
+      <a href="#/translated">Translated names</a>
+
+      <b>Reference</b>
+      <a href="#/api">All methods</a>
+      <a href="#/strength">Strength reporting</a>
+      <a href="#/validation">Validation</a>
+      <a href="#/commands">Artisan commands</a>
+
+      <b>More</b>
+      <a href="#/recipes">Recipes</a>
+      <a href="#/trouble">Troubleshooting</a>
+      <a href="#/security">Security</a>
+      <a href="#/project">Project &amp; licence</a>
+      <a href="#/upgrade">Upgrading from 1.x</a>
+      <a href="#/changelog">Changelog</a>
+    </nav>
+  </aside>
+
+  <main>
+
+<section id="intro" data-title="Introduction">
+  <h2>What this is</h2>
+  <p class="lead">PasswordToolkit generates passwords a person can read out loud: two words and a number, drawn from 200 curated dictionaries, with correct grammatical agreement in every language it speaks.</p>
+
+  <div class="ba">
+    <div class="ba-card">
+      <span class="ba-tag">What you would have sent</span>
+      <p class="ba-pw small">xK#9$!qZ</p>
+      <ul>
+        <li>52 bits &mdash; genuinely stronger</li>
+        <li>Unreadable down a phone line</li>
+        <li>Mistyped, then reset, then mistyped</li>
+      </ul>
+    </div>
+    <div class="ba-arrow" aria-hidden="true">&rarr;</div>
+    <div class="ba-card is-after">
+      <span class="ba-tag">What this sends</span>
+      <p class="ba-pw">Fearless-Luke-Skywalker-481902</p>
+      <ul>
+        <li>37 bits &mdash; and it says so, in the report</li>
+        <li>Dictated once, spelled by nobody</li>
+        <li><code>Luke-Skywalker-Impavido-481902</code> in Italian</li>
+      </ul>
+    </div>
+  </div>
+
+ <p class="lead">It is one job, done carefully: <b>the temporary password you send somebody, that they have to type back.</b> Everything in the package serves that — the dictionaries are picked for names people recognise and can spell, the separator and digits are tuned for dictation, and the strength report tells you exactly what the legibility cost, in bits, without flattering the number.</p>
+
+  <h2>Use cases</h2>
+  <p class="lead">Four places where a password has to get through a person before it reaches a login form. The defaults are tuned for exactly these, and each one is worked through properly in <a href="#/recipes">Recipes</a>.</p>
+  <ol class="uses">
+    <li><span>01</span><div><b>Onboarding</b><p>Create the account, store the hash, mail the plaintext once. <code>generateWithReport()</code> hands you both at once, so the welcome email can say how long the password is safe to keep.</p></div></li>
+    <li><span>02</span><div><b>Support resets</b><p>Your agent has somebody on the line and one chance to be understood. Two dictionary words survive a bad connection, a strong accent and a noisy room; eight random characters do not.</p></div></li>
+    <li><span>03</span><div><b>Printed handover</b><p>Workshop laptops, kiosk logins, a seeded demo tenant. <code>generateUnique()</code> fills an entire roster in a single pass, with no repeats to explain away.</p></div></li>
+    <li><span>04</span><div><b>Share links</b><p>The password for a shared document, sent through a different channel from the link itself. Short enough to paste into a chat message, legible enough to survive being forwarded twice.</p></div></li>
+  </ol>
+
+  <h2>Do you need it?</h2>
+  <p class="lead">Two questions decide it, and the second one catches more people than the first.</p>
+
+  <ol class="asks">
+    <li><b>Does a human have to read, type or dictate this password?</b><p>If no machine-to-machine secret is involved, keep reading. If one is, stop here &mdash; <code>Str::password(32)</code> is shorter, stronger and costs you nothing to use.</p></li>
+    <li><b>Will it be replaced shortly after it is first used?</b><p>This is the one to be honest about. These passwords are built to be handed over, not to be kept. If nothing forces a change, you are storing a weak password indefinitely and no setting in this package fixes that.</p></li>
+  </ol>
+
+  <div class="verdict">
+    <div class="vcol yes">
+      <b>Reach for this</b>
+      <ul>
+        <li>A credential you are about to put in an email</li>
+        <li>Anything a support agent will say out loud</li>
+        <li>Demo, seed and workshop accounts</li>
+        <li>Anything followed by a forced change</li>
+      </ul>
+    </div>
+    <div class="vcol no">
+      <b>Reach for <code>Str::password()</code></b>
+      <ul>
+        <li>API keys, tokens and signing secrets</li>
+        <li>Anything only a machine will ever read</li>
+        <li>A password that will still be live next year</li>
+        <li>Anything with no forced change behind it</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note warn"><b>Know what you are buying.</b> At the default six digits a generated password is about <b>37 bits</b>. Raising <code>numbers_digits</code> moves that &mdash; twelve digits reaches roughly 57 &mdash; but it will never match a random string of the same length, and <code>strength()</code> will not pretend otherwise. You are paying entropy for the ability to say it out loud.</div>
+
+  <h2>Requirements</h2>
+  <ul class="reqs">
+    <li><b>PHP 8.2</b> or newer</li>
+    <li><b>Laravel 10, 11, 12 or 13</b></li>
+  </ul>
+</section>
+
+<section id="install" data-title="Installation">
+  <h2>Install the package</h2>
+  <pre data-lang="sh">composer require gabrielesbaiz/password-toolkit</pre>
+  <p class="lead">That is the whole install. The service provider is auto-discovered, so there is nothing to register: no migrations to run, no tables, no assets to publish, and no configuration required before the first call works.</p>
+  <p class="lead">Check it landed:</p>
+  <pre data-lang="sh">php artisan password-toolkit:generate 3</pre>
+  <p class="lead">Three passwords means you are done. If that command is not found, clear the cached package manifest with <code>php artisan package:discover</code> and try again.</p>
+
+  <h2>Publish the config</h2>
+  <p class="lead">Optional, and worth skipping until you actually want to change something &mdash; the defaults are chosen to work untouched.</p>
+  <pre data-lang="sh">php artisan vendor:publish --tag="password-toolkit-config"</pre>
+  <p class="lead">That writes <code>config/password-toolkit.php</code>: twenty-seven settings, each with a comment explaining what it costs you rather than just what it does. <a href="#/config">Configuration</a> walks through them.</p>
+  <p class="lead">The strength labels and validation messages can be published too, if you want to reword them or add a language:</p>
+  <pre data-lang="sh">php artisan vendor:publish --tag="password-toolkit-translations"</pre>
+</section>
+
+<section id="quick" data-title="Quick start">
+  <h2>Generate one</h2>
+  <p class="lead">Nothing to configure first. The facade resolves a singleton, and the first call reads the dictionaries once and caches them.</p>
+  <pre>use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
+
+PasswordToolkit::generate();
+// "Fearless-Luke-Skywalker-481902"</pre>
+  <p class="lead">Two words and six digits, drawn with <code>random_int()</code>. The language follows your application locale unless you say otherwise, and word order follows the language.</p>
+
+  <h2>Generate many</h2>
+  <p class="lead">One dictionary scan for the whole batch, whatever the count &mdash; do not loop <code>generate()</code>.</p>
+  <pre>PasswordToolkit::generateMany(10);
+// ["Fearless-Luke-Skywalker-481902", "Aromatic-Barolo-337415", ...] - exactly 10
+
+PasswordToolkit::generateUnique(10);
+// the same, guaranteed distinct</pre>
+  <p class="lead"><code>generateMany()</code> returns exactly what you asked for and can repeat itself; <code>generateUnique()</code> will not repeat, and throws rather than under-deliver if the pool is too narrow to fill the request.</p>
+
+  <h2>Generate with the report</h2>
+  <p class="lead">When you are about to email the password, get its strength in the same call and put the honest number in front of whoever receives it.</p>
+  <pre>['password' => $plain, 'report' => $report] = PasswordToolkit::generateWithReport();
+
+$report->entropyBits;      // 36.7
+$report->displayLabel();   // "Fair"
+$report->crackTimeHuman;   // "11 seconds"</pre>
+  <p class="lead">This is the <a href="#/strength">structural model</a> &mdash; how many passwords this package could have produced &mdash; not the flattering charset figure a generic meter would show.</p>
+
+  <h2>Override one call</h2>
+  <p class="lead">Change anything for a single call without touching your config. The builder is immutable, so one half-configured instance is safe to keep on a property and reuse.</p>
+  <pre>PasswordToolkit::make()
+    ->locale('en')
+    ->only(['star_wars', 'italian_wines'])
+    ->digits(10)
+    ->generate();
+// "Fearless-Luke-Skywalker-4819025517"</pre>
+  <p class="lead">Every option is there &mdash; see <a href="#/api">All methods</a> for the full list.</p>
+
+  <h2>Inject it instead</h2>
+  <p class="lead">If you would rather not reach for the facade. The contract is bound in the container, so it is genuinely swappable in a test rather than a static call wearing a facade's clothes.</p>
+  <pre>use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
+
+public function __construct(private readonly PasswordGenerator $passwords) {}</pre>
+
+  <h2>Everything else</h2>
+  <p class="lead">That is the whole surface you need for the common case. When you want the rest &mdash; batch reporting, inspecting which dictionaries resolve, scoring a password a user chose, the full builder &mdash; <a href="#/api">All methods</a> lists every public call with its signature and return type.</p>
+</section>
+
+<section id="play" data-title="Playground">
+  <h2>Try every command</h2>
+  <p class="lead">This is the real <code>password-toolkit:generate</code> command, running the real dictionaries, in your browser. Every flag works. Nothing is sent anywhere &mdash; the dictionary data ships with the page and the generation happens in front of you.</p>
+
+  <div class="term">
+    <div class="term-bar">
+      <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+      <span>~/app &mdash; password-toolkit</span>
+      <span class="term-meta" id="pg-meta"></span>
+      <button class="term-clear" id="pg-clear" type="button">clear</button>
+    </div>
+    <div class="term-out" id="pg-out" tabindex="0" aria-live="polite" aria-label="Terminal output"></div>
+    <label class="term-prompt"><span>$</span><input id="pg-in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Command" placeholder="password-toolkit:generate 5 --report"></label>
+  </div>
+
+  <div class="term-chips" id="pg-chips"></div>
+  <p class="term-hint"><kbd>&uarr;</kbd> <kbd>&darr;</kbd> history &middot; <kbd>Enter</kbd> run &middot; <b>help</b> for the full flag reference &middot; <b>clear</b> to wipe</p>
+
+  <h2>How it differs from your app</h2>
+  <p class="lead">The page ships a sample of the dictionaries, not all of them, so a pool figure here will be smaller than the one you get in your application. Everything else &mdash; the flags, the word order, the agreement, the maths &mdash; behaves exactly as the package does.</p>
+</section>
+
+<section id="config" data-title="Configuration">
+  <h2 id="dicts">Choosing dictionaries</h2>
+  <p class="lead">Everything lives in <code>config/password-toolkit.php</code>, and none of it is required &mdash; the defaults generate working passwords untouched. Start here, because which names are in play changes how the passwords <em>sound</em> more than any other setting.</p>
+  <pre>'dictionaries' => [
+    'enabled' => '*',        // '*', or ['star_wars', 'italian_wines']
+    'except'  => [],         // applied after 'enabled'
+    'types'   => [],         // ['people'] or ['things']; empty means both
+    'groups'  => [],         // thematic buckets: ['food', 'drink']
+    'tags'    => [],         // must carry EVERY tag listed
+    'reach'   => null,       // 'global' | 'italian' | 'niche'
+    'paths'   => [],         // directories of your own JSON files
+    'custom'  => [],         // dictionaries defined inline, key => [type, values]
+],</pre>
+  <p class="lead"><code>groups</code>, <code>tags</code> and <code>reach</code> narrow the pool thematically: reach is how far a name travels, so <code>global</code> keeps the ones a stranger would recognise and <code>niche</code> allows the rest. Filters combine, and a dictionary must satisfy all of them.</p>
+  <p class="lead"><code>password-toolkit:generate --list</code> shows exactly what resolves, which is faster than reasoning about the three keys above.</p>
+
+  <h2 id="locale">Locale</h2>
+  <pre>'locale'          => null,   // null follows the application locale
+'fallback_locale' => 'en',   // used when a locale has no resources of its own</pre>
+  <p class="lead">Sets which language the adjectives come from. Names carry a language of their own &mdash; see <a href="#/translated">Translated names</a>.</p>
+
+  <h2 id="separator">Separator</h2>
+  <pre>'separator_symbol' => '-',    // any string, or null for none
+'name_separator'   => true,   // "Luke-Skywalker" (true) or "LukeSkywalker" (false)</pre>
+  <p class="lead">The separator goes between every part. <code>name_separator</code> decides whether it also goes inside a name that has a space in it.</p>
+
+  <h2 id="words">Words</h2>
+  <pre>'word_count' => 2,        // 2 or 3
+'case'       => 'title',  // title | lower | upper | preserve</pre>
+  <p class="lead">Three words means a second adjective, drawn without replacement and agreeing with the name in Italian. It buys four to eight bits &mdash; two digits' worth &mdash; and is easier to say than two more digits.</p>
+  <p class="lead">Casing is worth <b>nothing</b> in entropy. <code>lower</code> is the kindest to read aloud; <code>preserve</code> leaves both words exactly as the dictionary wrote them.</p>
+
+  <h2 id="order">Word order</h2>
+  <pre>'adjective_position' => null,   // null follows the locale; 'before' | 'after'</pre>
+  <div class="note"><b>Leave it alone.</b> Word order is a property of the language, not a preference, and each locale declares its own. A password that gets it backwards reads as broken to a native speaker, which defeats the point of a memorable one.</div>
+
+  <h2 id="numbers">Numbers</h2>
+  <pre>'add_numbers'                => true,
+'numbers_digits'             => 6,
+'numbers_position'           => 'end',   // start | middle | end
+'numbers_allow_leading_zero' => false,</pre>
+  <p class="lead">With leading zeros off, <code>042</code> can never be drawn and six digits are 900,000 values rather than a million &mdash; about a sixth of a bit. The structural report accounts for this in both directions, so the figure you read is the space that actually exists.</p>
+  <p class="lead">Digits come from <code>random_int()</code>, and they are the setting that matters most. The word pools are fixed by the data that ships, so the digits are where the entropy is: each one adds 3.32 bits. Adding dictionaries is a poor lever by comparison — doubling <em>every</em> one of them buys a single bit.</p>
+
+  <table>
+    <thead><tr><th>numbers_digits</th><th>structural bits</th><th>offline crack, 10^10 guesses/sec</th></tr></thead>
+    <tbody>
+      <tr><td>4</td><td>30.1</td><td>0.1 seconds</td></tr>
+      <tr><td>6 <span class="dimmed">(default)</span></td><td>36.7</td><td>11 seconds</td></tr>
+      <tr><td>10</td><td>50.0</td><td>31 hours</td></tr>
+      <tr><td>12</td><td>56.7</td><td>133 days</td></tr>
+      <tr><td>14</td><td>63.3</td><td>36 years</td></tr>
+      <tr><td>18 <span class="dimmed">(max)</span></td><td>76.6</td><td>3,600 centuries</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note warn"><b>Read that table as the worst case, not the expected one.</b> It assumes a fast unsalted hash. Behind bcrypt or argon2 the guess rate drops five or six orders of magnitude and even four digits holds for days. It also assumes the attacker knows this package and your configuration — which is the assumption to keep, because this code is public.</div>
+
+  <p class="lead">For a password a human retypes, twelve digits is usually past memorable. If you need more than that you want a random string, not this package.</p>
+
+  <h2 id="leet">Leetspeak</h2>
+  <pre>'leetspeak_conversion' => 'none',   // none | basic | advanced</pre>
+  <p class="lead"><code>basic</code> substitutes twelve single characters and preserves length — <code>Skywalker</code> becomes <code>$kyw41k32</code>. <code>advanced</code> uses the whole table including multi-character glyphs, which lengthens the password and is useful against a strict minimum-length policy.</p>
+  <div class="note warn"><b>Leetspeak is worth exactly zero bits, and the report says so.</b> It is a deterministic transform, so it adds no work at all for an attacker who has read your config. Reach for it to satisfy a character-class policy, never to claim strength.</div>
+
+  <table>
+    <thead><tr><th>char</th><th>basic</th><th>advanced</th></tr></thead>
+    <tbody>
+      <tr><td>a / e / i / l / o</td><td><code>4 3 1 1 0</code></td><td>same</td></tr>
+      <tr><td>b / g / q / r / t / z</td><td><code>8 9 9 2 7 2</code></td><td>same</td></tr>
+      <tr><td>s</td><td><code>$</code></td><td><code>$</code></td></tr>
+      <tr><td>c / h / x</td><td>—</td><td><code>&lt; # %</code></td></tr>
+      <tr><td>m / n / w</td><td>—</td><td><code>|V| |\| \/\/</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="bands">Strength assumptions</h2>
+  <pre>'strength' => [
+    'guesses_per_second' => 1e10,   // one offline GPU against a fast hash
+
+    // The bands every score is read against. They must ascend.
+    'thresholds' => ['weak' => 28, 'fair' => 36, 'strong' => 60, 'very_strong' => 128],
+
+    // Which model the StrongPassword rule scores with.
+    'rule_model' => 'charset',      // charset | structural
+],</pre>
+  <p class="lead">Raise <code>guesses_per_second</code> towards <code>1e12</code> if your threat model includes a well-funded adversary; every reported crack time moves with it. The thresholds decide what <a href="#/validation">StrongPassword</a> accepts at signup, so raising <code>strong</code> raises your signup bar.</p>
+
+  <h2 id="batch">Batch generation</h2>
+  <pre>'unique_attempts_multiplier' => 10,</pre>
+  <p class="lead">How hard <code>generateUnique()</code> tries before admitting the pool is too narrow: it makes <code>count &times; 10 + 100</code> attempts. Raise it if you are drawing many passwords from one small dictionary.</p>
+  <h2>Configuration builder</h2>
+  <p class="lead">Set what you need and copy the result. The file below contains <b>only the keys that differ from the defaults</b> &mdash; everything you leave alone stays out of it, because a config file full of restated defaults is a file nobody can read a year later.</p>
+
+  <div class="cfg-tabs" id="cfg-tabs" role="tablist"></div>
+  <input class="cfg-search" id="cfg-q" type="search" placeholder="&#8984; Filter every setting by name&hellip;" aria-label="Filter settings" autocomplete="off">
+
+  <div class="cfg">
+    <div class="cfg-rows" id="cfg-rows"></div>
+    <div class="cfg-out">
+      <div class="filecard">
+        <div class="filebar"><span class="filedot"></span> config/password-toolkit.php
+          <span class="cfg-count" id="cfg-count"></span>
+          <button class="cfg-copy" id="cfg-copy" type="button">copy</button>
+        </div>
+        <pre id="cfg-file"></pre>
+      </div>
+      <div class="cfg-sample">
+        <span class="cfg-tag">Example output</span>
+        <p class="cfg-pw" id="cfg-pw"></p>
+        <p class="cfg-meta" id="cfg-meta"></p>
+      </div>
+      <div class="cfg-acts">
+        <button class="cfg-again" id="cfg-again" type="button">Draw another</button>
+        <button class="cfg-reset" id="cfg-reset" type="button">Reset every setting</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shelf" data-title="All dictionaries">
+  <h2>The whole shelf</h2>
+  <p class="lead">Two hundred dictionaries, 4,396 names. You will use a handful &mdash; the ones your users would recognise &mdash; and the filters exist so you can find them without reading the rest. Everything here is the real metadata: the same groups, tags and reach values <code>password-toolkit:generate --list</code> prints.</p>
+
+  <div class="shelf-bar">
+    <input id="sh-q" type="search" placeholder="Search names, keys and tags&hellip;" aria-label="Search dictionaries" autocomplete="off">
+    <span class="shelf-tally" id="sh-tally"></span>
+  </div>
+
+  <div class="shelf-filters">
+    <div class="shelf-set"><b>Group</b><div class="shelf-chips" id="sh-group"></div></div>
+    <div class="shelf-set"><b>Type</b><div class="shelf-chips" id="sh-type"></div></div>
+    <div class="shelf-set"><b>Reach</b><div class="shelf-chips" id="sh-reach"></div></div>
+    <div class="shelf-set is-tags"><b>Tag</b><div class="shelf-chips" id="sh-tag"></div></div>
+  </div>
+
+  <div class="shelf-grid" id="sh-grid"></div>
+
+  <h2>Reading the metadata</h2>
+  <p class="lead">Every dictionary carries four things worth filtering on, and all four are available in code as well as on this page.</p>
+  <table>
+    <thead><tr><th>Field</th><th>Values</th><th>What it is for</th></tr></thead>
+    <tbody>
+      <tr><td><code>group</code></td><td>twelve themes</td><td>The broad subject. One per dictionary.</td></tr>
+      <tr><td><code>type</code></td><td><code>people</code> / <code>things</code></td><td>Whether the names are people. Italian adjectives agree either way.</td></tr>
+      <tr><td><code>reach</code></td><td><code>global</code> / <code>italian</code> / <code>niche</code></td><td>How far a name travels. Global ones a stranger would recognise.</td></tr>
+      <tr><td><code>tags</code></td><td>124 of them</td><td>Free-form and cumulative: a dictionary must carry every tag you ask for.</td></tr>
+      <tr><td><code>locale</code></td><td><code>en</code> / <code>it</code></td><td>The language the <em>names</em> are written in, which is not the same as your app locale.</td></tr>
+    </tbody>
+  </table>
+  <pre>PasswordToolkit::make()->groups('food')->reach('global')->generate();
+PasswordToolkit::make()->tagged(['italian', 'sweet'])->generate();
+PasswordToolkit::dictionaries();            <span class="cm">// every one in play, with this metadata</span>
+PasswordToolkit::dictionariesWithSamples(); <span class="cm">// the same, plus example entries</span></pre>
+</section>
+
+<section id="own" data-title="Your own dictionaries">
+  <h2>A directory of JSON files</h2>
+  <p class="lead">The usual route, and the one that survives upgrades. Point the package at a directory and every <code>.json</code> file in it becomes a dictionary.</p>
+  <pre>'dictionaries' => [
+    'paths' => [resource_path('password-dictionaries')],
+],</pre>
+  <p class="lead">Scaffold one rather than remembering the shape:</p>
+  <pre data-lang="sh">php artisan password-toolkit:make-dictionary my_team --type=people</pre>
+  <p class="lead">That writes a working stub you edit in place:</p>
+  <pre data-lang="json">{
+    "key": "my_team",
+    "type": "people",
+    "values": [
+        { "name": "Example One", "gender": "neutral" },
+        { "name": "Example Two", "gender": "neutral" }
+    ]
+}</pre>
+  <table>
+    <thead><tr><th>Flag</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>--type=</code></td><td><code>people</code> or <code>things</code>. Defaults to things.</td></tr>
+      <tr><td><code>--path=</code></td><td>Where to write it. Defaults to your first configured path.</td></tr>
+      <tr><td><code>--locale=</code></td><td>Also scaffolds an adjective file for that locale, beside it.</td></tr>
+      <tr><td><code>--force</code></td><td>Overwrite a file that is already there.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Inline in config</h2>
+  <p class="lead">When there are only a handful and they never change. A bare list of strings works &mdash; <code>gender</code> defaults to neutral.</p>
+  <pre>'dictionaries' => [
+    'custom' => [
+        'company_products' => [
+            'type' => 'things',
+            'values' => ['Orbit', 'Beacon', 'Lantern'],
+        ],
+    ],
+],</pre>
+
+  <h2>At runtime</h2>
+  <p class="lead">From a service provider, when the data lives somewhere else entirely.</p>
+  <pre>PasswordToolkit::registerDictionary(
+    key: 'team_nicknames',
+    values: User::pluck('nickname')->all(),
+    type: 'people',
+    locale: 'en',
+);</pre>
+  <div class="note"><b>Call <code>flushCache()</code> if you register after the first generation.</b> Dictionaries are read once and cached; a late registration is otherwise invisible until the next request.</div>
+
+  <h2>Making it filterable</h2>
+  <p class="lead">A dictionary needs only <code>key</code> and <code>values</code>. <code>name</code> is what a picker shows &mdash; without it the key is made readable, so <code>company_products</code> becomes &ldquo;Company Products&rdquo;. Everything else is optional metadata &mdash; and it is what lets your dictionary be selected the same way the built-in ones are, by group, tag or reach.</p>
+  <pre data-lang="json">{
+    "key": "company_products",
+    "name": "Our Products",
+    "type": "things",
+    "locale": "en",
+    "group": "culture",
+    "tags": ["internal", "products"],
+    "icon": "🛰️",
+    "reach": "niche",
+    "values": [
+        { "name": "Orbit", "gender": "neutral" }
+    ]
+}</pre>
+  <p class="lead"><code>reach</code> is worth setting honestly: your product names are <code>niche</code>, and marking them <code>global</code> only means they survive a filter that was meant to exclude them. Group must be one of the twelve; tags are free-form. See <a href="#/shelf">All dictionaries</a> for what the built-ins use.</p>
+
+  <h2>Adjectives</h2>
+  <p class="lead">You never have to supply adjectives. A dictionary without them falls back to the locale's default pool, so the smallest useful personal collection really is one file of names. When you do want your own, the layout under your configured path is:</p>
+  <table>
+    <thead><tr><th>File</th><th>Holds</th></tr></thead>
+    <tbody>
+      <tr><td><code>{path}/{key}.json</code></td><td>The names.</td></tr>
+      <tr><td><code>{path}/{locale}/{key}.json</code></td><td>Adjectives for that locale.</td></tr>
+      <tr><td><code>{path}/names/{locale}/{key}.json</code></td><td>Name translations for that locale.</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Note the <code>names/</code> segment.</b> Translations sit one level deeper than adjectives on purpose &mdash; without it, <code>{path}/it/my_team.json</code> would have to be two different files at once.</div>
+
+  <h2>What the package guarantees</h2>
+  <div class="note"><b>Names need no sanitising on your side.</b> Whatever you register &mdash; including values straight out of a database &mdash; is stripped to letters, digits and the separator before it reaches a password, so a nickname carrying a quote, a semicolon or a newline cannot end up in one. A name with no letters or digits at all is rejected where it is defined, rather than silently producing a password missing a word.</div>
+  <div class="note warn"><b>Keys and locales end up in a filesystem path.</b> Dictionary keys must match <code>[A-Za-z0-9_][A-Za-z0-9_-]*</code> and locales must look like <code>en</code>, <code>it</code> or <code>pt_BR</code>. A value that does not match is rejected rather than followed &mdash; which matters if a key ever comes from a request.</div>
+</section>
+
+<section id="adjectives" data-title="Locales and adjectives">
+  <h2>How an adjective is chosen</h2>
+  <p class="lead">Adjectives live in <code>src/Data/Adjectives/{locale}/</code> and resolve in this order &mdash; first pool with an agreeing word wins:</p>
+  <ol class="steps">
+    <li><code>{locale}/{dictionary}.json</code> <span>themed: Italian adjectives written for Star Wars</span></li>
+    <li><code>{locale}/_default.json</code> <span>the locale's general pool</span></li>
+    <li><code>{fallback_locale}/{dictionary}.json</code></li>
+    <li><code>{fallback_locale}/_default.json</code></li>
+  </ol>
+  <p class="lead"><b>English is the reference locale.</b> A locale with no resources of its own falls back to English, not Italian, because English is the language most likely to be understood by somebody who did not get the locale they asked for. A French or German application gets English adjectives and English names, and only the entries that are genuinely Italian stay Italian.</p>
+
+  <h2>Agreement and word order</h2>
+  <p class="lead">Italian adjectives agree with the gender of the name, so the pool is filtered before anything is drawn. English ones are all neutral &mdash; English adjectives do not inflect, so every one is eligible for every name.</p>
+  <p class="lead">Word order comes from the language too: Italian puts the adjective after the noun, English before it.</p>
+  <pre>PasswordToolkit::make()->locale('it')->only('rock_bands_70s')->generate();
+// "Fleetwood-Mac-Tonante"        <span class="cm">&lt;- thundering</span>
+
+PasswordToolkit::make()->locale('it')->only('rock_bands_2020s')->generate();
+// "Sleep-Token-Insolente"        <span class="cm">&lt;- insolent</span></pre>
+  <p class="lead">Every dictionary has a themed pack in both languages, kept deliberately small so it stays sharp rather than dissolving into general vocabulary: <b>English packs run 13 to 20 entries</b>. Italian packs look larger &mdash; up to 38 &mdash; because an <code>-o/-a</code> adjective ships both forms as separate entries. The number of distinct <em>words</em> is the same.</p>
+
+  <h2>Two adjectives</h2>
+  <p class="lead">With <a href="#/config/words"><code>word_count</code></a> set to three, two adjectives are drawn from the same pool, both agreeing with the name.</p>
+  <pre>PasswordToolkit::make()->words(3)->locale('it')->only('rock_bands_70s')->generate();
+// "Led-Zeppelin-Maestoso-Tonante"</pre>
+  <p class="lead">They are distinct <b>by word, not by array position</b> — two entries spelling the same adjective would produce <code>Mitico-Mitico</code>, which reads as a mistake rather than a phrase. That is also what makes the reported entropy true of the draw: the pair is worth <code>log2(A) + log2(A&minus;1)</code>, not <code>2 &times; log2(A)</code>.</p>
+  <div class="note"><b>A pool too small to supply two returns one.</b> Fewer words is a smaller password; a thrown exception is no password at all. The report then states the entropy you actually got, not the entropy you asked for.</div>
+
+  <h2>The default pool</h2>
+  <p class="lead">A dictionary without a themed pack falls back to <code>_default</code>: <b>307 adjectives in Italian, 224 in English</b>, chosen to suit a person, a place or a thing equally.</p>
+  <p class="lead">It is deliberately free of domain-bound vocabulary. A general pool carrying culinary words produces <code>Magic-Johnson-Corposo</code> &mdash; a basketball player described as full-bodied &mdash; and a test now prevents exactly that.</p>
+
+  <h2>Adding a language</h2>
+  <p class="lead">Drop one file at <code>{yourpath}/{locale}/_default.json</code> declaring its word order, and it works everywhere immediately. Themed files per dictionary are optional and can follow later.</p>
+  <pre data-lang="json">{
+    "key": "_default",
+    "locale": "en",
+    "adjective_position": "before",
+    "values": [{ "name": "Legendary", "gender": "neutral" }]
+}</pre>
+  <p class="lead"><code>adjective_position</code> is read from <code>_default.json</code> only &mdash; it is one fact about the language, not something a themed pack restates. A locale that declares nothing is treated as putting the adjective after the noun.</p>
+
+  <h2>How the English packs are made</h2>
+  <p class="lead">Neither language is derived from the other at runtime: both are first-class data. But the English packs <em>are</em> generated, from the Italian ones plus a single reviewable glossary.</p>
+  <pre data-lang="sh">php build/build-adjectives.php</pre>
+  <p class="lead"><code>src/Data/Adjectives/_glossary.it-en.json</code> records the correspondence, keyed by Italian lemma. Correct a word there and re-run the build; <b>never hand-edit a generated English file</b> &mdash; a test compares them against the glossary and will catch it. A brand new locale should be translated from the English packs rather than the Italian, since English is the reference.</p>
+</section>
+
+<section id="translated" data-title="Translated names">
+  <h2>Why each dictionary declares a language</h2>
+  <p class="lead">Adjectives belong to the locale you ask for. <b>Names do not.</b> Every dictionary declares the language its own names are written in, because there is no single right answer across two hundred of them.</p>
+  <p class="lead">A dictionary about Italian wines is Italian in every locale &mdash; <code>Barolo</code> is <code>Barolo</code>, and so is every pasta shape, cyclist and volcano. There is nothing to translate, and pretending otherwise would be worse than leaving it alone. A dictionary about Harry Potter is English, and Italian is the dub.</p>
+  <p class="lead">The split across what ships today: <b>119 dictionaries are English-source, 81 are Italian-source.</b> Of those, <b>40 carry a translation overlay</b> covering <b>376 names</b> &mdash; 34 into Italian, 6 into English. The rest need none.</p>
+  <table>
+    <thead><tr><th>Dictionary</th><th>Source</th><th>Italian</th><th>English</th></tr></thead>
+    <tbody>
+      <tr><td><code>harry_potter</code></td><td>en</td><td>Albus Silente</td><td><b>Albus Dumbledore</b></td></tr>
+      <tr><td><code>disney_characters</code></td><td>en</td><td>Topolino</td><td><b>Mickey Mouse</b></td></tr>
+      <tr><td><code>roman_emperors</code></td><td>en</td><td>Marco Aurelio</td><td><b>Marcus Aurelius</b></td></tr>
+      <tr><td><code>italian_monuments</code></td><td>it</td><td><b>Galleria degli Uffizi</b></td><td>Uffizi Gallery</td></tr>
+      <tr><td><code>italian_wines</code></td><td>it</td><td><b>Barolo</b></td><td><span class="dimmed">none, and none wanted</span></td></tr>
+    </tbody>
+  </table>
+  <p class="lead">Bold is the form the dictionary actually stores; the other column is an overlay on top of it.</p>
+
+  <h2>How a name resolves</h2>
+  <p class="lead">A dictionary already written in the language you asked for is returned untouched &mdash; no file is consulted, and none should exist. Otherwise the lookup runs <code>{locale}</code> &rarr; <code>{fallback_locale}</code> &rarr; the stored name.</p>
+  <pre>PasswordToolkit::make()->locale('fr')->only('italian_monuments')->generate();
+// "Historic-Uffizi-Gallery-155689"   <span class="cm">&lt;- no French overlay, so the English one</span>
+
+PasswordToolkit::make()->locale('de')->only('italian_wines')->generate();
+// "Mineral-Malvasia-692534"          <span class="cm">&lt;- nothing to translate, in any language</span></pre>
+  <p class="lead">So a locale you have never heard of still produces sensible output: English names where an English overlay exists, and the untouched original everywhere else.</p>
+
+  <h2>Writing an overlay</h2>
+  <p class="lead">A translation file is a plain map, <b>sparse on purpose</b> &mdash; list only what differs. Anything absent keeps the name the base file stores, so an overlay does not have to be maintained in lockstep with the dictionary it covers.</p>
+  <pre data-lang="json">{
+    "key": "harry_potter",
+    "locale": "it",
+    "values": { "Albus Dumbledore": "Albus Silente" }
+}</pre>
+  <div class="note"><b>Gender travels with the base entry, not the translation.</b> <code>Topolino</code> is masculine because <code>Mickey Mouse</code> is marked masculine in the base file &mdash; so an Italian adjective agrees correctly even though the name it agrees with came from an overlay.</div>
+  <p class="lead">For the package's own dictionaries these live at <code>src/Data/Names/{locale}/{key}.json</code>. For <a href="#/own">your own</a>, the same file goes under <code>{yourpath}/names/{locale}/{key}.json</code>.</p>
+</section>
+
+<section id="api" data-title="All methods">
+  <h2>Generating</h2>
+  <p class="lead">Every one of these takes an optional <code>Options</code> as its last argument. Pass nothing and it reads your config; pass one and it ignores your config entirely.</p>
+  <table>
+    <thead><tr><th>Method</th><th>Returns</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>generate()</code></td><td><code>string</code></td><td>One password. Throws rather than returning null when no dictionary resolves.</td></tr>
+      <tr><td><code>generateMany(int $count)</code></td><td><code>array</code></td><td>Exactly <code>$count</code> passwords, one scan. Repeats are possible.</td></tr>
+      <tr><td><code>generateUnique(int $count)</code></td><td><code>array</code></td><td>The same, guaranteed distinct. Throws rather than under-delivering.</td></tr>
+      <tr><td><code>generateWithReport()</code></td><td><code>array</code></td><td><code>['password' =&gt; string, 'report' =&gt; StrengthReport]</code>, structural model.</td></tr>
+      <tr><td><code>generateManyWithReport(int $count)</code></td><td><code>array</code></td><td>A list of those pairs.</td></tr>
+      <tr><td><code>make()</code></td><td><code>PasswordBuilder</code></td><td>An immutable builder seeded from your config.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The builder</h2>
+  <p class="lead">Each method returns a <b>new</b> builder, so one half-configured instance is safe to hold and reuse. Enums and their string spellings are interchangeable throughout.</p>
+  <table>
+    <thead><tr><th>Method</th><th>Accepts</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>only()</code> / <code>except()</code></td><td><code>array|string</code></td><td>Include or exclude dictionaries by key.</td></tr>
+      <tr><td><code>types()</code></td><td><code>array|string</code></td><td><code>people</code>, <code>things</code>, or both.</td></tr>
+      <tr><td><code>groups()</code></td><td><code>array|DictionaryGroup|string</code></td><td>Filter by thematic group.</td></tr>
+      <tr><td><code>tagged()</code></td><td><code>array|string</code></td><td>Must carry <em>every</em> tag given.</td></tr>
+      <tr><td><code>reach()</code></td><td><code>Reach|string|null</code></td><td>Minimum recognisability: global, italian, niche.</td></tr>
+      <tr><td><code>paths()</code></td><td><code>array|string</code></td><td>Extra directories of your own dictionaries.</td></tr>
+      <tr><td><code>locale()</code> / <code>fallbackLocale()</code></td><td><code>?string</code></td><td>Adjective language, and what an unknown locale falls back to.</td></tr>
+      <tr><td><code>separator()</code></td><td><code>?string</code></td><td>Any string, or <code>null</code> for none.</td></tr>
+      <tr><td><code>keepWordBreaks()</code></td><td><code>bool</code></td><td><code>Luke-Skywalker</code> or <code>LukeSkywalker</code>.</td></tr>
+      <tr><td><code>words()</code></td><td><code>int</code></td><td>Two words or three.</td></tr>
+      <tr><td><code>casing()</code></td><td><code>Casing|string</code></td><td>title, lower, upper or preserve. Worth zero bits.</td></tr>
+      <tr><td><code>digits()</code> / <code>withoutNumbers()</code></td><td><code>int</code></td><td>1 to 18, or none at all.</td></tr>
+      <tr><td><code>allowLeadingZero()</code></td><td><code>bool</code></td><td>Whether <code>042</code> is a possible draw.</td></tr>
+      <tr><td><code>numbersAt()</code></td><td><code>NumbersPosition|string</code></td><td>start, middle or end.</td></tr>
+      <tr><td><code>adjectiveAt()</code></td><td><code>AdjectivePosition|string|null</code></td><td>Override the locale's word order. Leave it null.</td></tr>
+      <tr><td><code>leet()</code></td><td><code>Leetspeak|string</code></td><td>none, basic or advanced.</td></tr>
+      <tr><td><code>guessesPerSecond()</code></td><td><code>float</code></td><td>The attacker the report assumes.</td></tr>
+      <tr><td><code>options()</code></td><td><code>Options</code></td><td>The resolved DTO, if you want to inspect or store it.</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">Terminate with <code>generate()</code> &rarr; <code>string</code>, or <code>many()</code> / <code>unique()</code> / <code>withReport()</code> / <code>manyWithReport()</code> &rarr; <code>array</code>.</p>
+  <pre>use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
+use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
+use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
+
+PasswordToolkit::make()
+    -&gt;locale('en')
+    -&gt;groups(['screen', 'myth'])
+    -&gt;reach('global')
+    -&gt;words(3)
+    -&gt;casing(Casing::Lower)
+    -&gt;digits(10)
+    -&gt;numbersAt(NumbersPosition::Middle)
+    -&gt;leet(Leetspeak::Basic)
+    -&gt;many(5);</pre>
+  <div class="note"><b>Every method returns a new builder.</b> A half-configured one is safe to keep on a property and reuse &mdash; two callers cannot interfere with each other. Enums and their string spellings are interchangeable throughout: <code>-&gt;leet('basic')</code> and <code>-&gt;leet(Leetspeak::Basic)</code> are the same call.</div>
+
+  <h2>Inspecting what resolves</h2>
+  <table>
+    <thead><tr><th>Method</th><th>Returns</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><code>dictionaries()</code></td><td><code>Collection</code></td><td>Every dictionary in play, with key, label, group, tags, reach and count.</td></tr>
+      <tr><td><code>dictionariesWithSamples()</code></td><td><code>Collection</code></td><td>The same, plus example entries &mdash; what a picker UI wants.</td></tr>
+      <tr><td><code>groups()</code> / <code>tags()</code></td><td><code>Collection</code></td><td>The groups and tags actually present, with counts.</td></tr>
+      <tr><td><code>poolSizes()</code></td><td><code>array</code></td><td><code>['names' =&gt; int, 'adjectives' =&gt; int]</code>.</td></tr>
+      <tr><td><code>registerDictionary(...)</code></td><td><code>void</code></td><td>Add one at runtime, from a service provider.</td></tr>
+      <tr><td><code>flushCache()</code></td><td><code>void</code></td><td>Forget the decoded JSON. Needed after changing config at runtime.</td></tr>
+      <tr><td><code>clearPoolCache()</code></td><td><code>void</code></td><td><span class="dimmed">Deprecated alias for <code>flushCache()</code>. Removed in 3.0.</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Scoring an existing password</h2>
+  <pre>PasswordToolkit::strength($password);           // charset model
+PasswordToolkit::structuralReport($password);   // structural model</pre>
+  <p class="lead">Both return a <code>StrengthReport</code>:</p>
+  <table>
+    <thead><tr><th>Property</th><th>Type</th><th></th></tr></thead>
+    <tbody>
+      <tr><td><code>entropyBits</code></td><td><code>float</code></td><td>The figure everything else derives from.</td></tr>
+      <tr><td><code>score</code> / <code>label</code></td><td><code>int</code> / <code>string</code></td><td>0&ndash;4, and <code>very_weak</code> &hellip; <code>very_strong</code>.</td></tr>
+      <tr><td><code>strength</code></td><td><code>Strength</code></td><td>The enum, with <code>-&gt;label()</code> and <code>-&gt;color()</code> for a meter.</td></tr>
+      <tr><td><code>components</code></td><td><code>array</code></td><td>Where the bits came from, per segment.</td></tr>
+      <tr><td><code>charsetFlags</code></td><td><code>array</code></td><td>Which character classes are present.</td></tr>
+      <tr><td><code>crackTimeSeconds</code> / <code>crackTimeHuman</code></td><td><code>float</code> / <code>string</code></td><td>Never <code>INF</code>; the human form is translated.</td></tr>
+      <tr><td><code>length</code></td><td><code>int</code></td><td>Characters, multibyte-aware.</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">It implements <code>Arrayable</code>, <code>Jsonable</code> and <code>JsonSerializable</code>, so <code>toArray()</code>, <code>toJson()</code> and <code>json_encode()</code> all work.</p>
+
+  <h2>When it throws</h2>
+  <p class="lead">Every exception extends <code>PasswordToolkitException</code>, so one <code>catch</code> covers the package.</p>
+  <table>
+    <thead><tr><th>Exception</th><th>Thrown when</th></tr></thead>
+    <tbody>
+      <tr><td><code>NoDictionariesEnabledException</code></td><td>Your filters resolved to an empty pool. <code>generate()</code> throws rather than returning null.</td></tr>
+      <tr><td><code>DictionaryNotFoundException</code></td><td>No adjective pool with an agreeing word resolves in either locale.</td></tr>
+      <tr><td><code>InvalidOptionException</code></td><td>A setting is out of range or misspelled &mdash; digits outside 1&ndash;18, an unknown leetspeak mode, thresholds that do not ascend, <code>generateUnique()</code> unable to fill the request.</td></tr>
+      <tr><td><code>PasswordToolkitException</code></td><td>The abstract base. Catch this to catch all of them.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Injecting instead of the facade</h2>
+  <p class="lead">Two contracts are bound in the container, so a test can swap the real thing for a fake rather than intercepting a static call.</p>
+  <table>
+    <thead><tr><th>Contract</th><th>Resolves to</th></tr></thead>
+    <tbody>
+      <tr><td><code>Contracts\PasswordGenerator</code></td><td>The generator itself &mdash; everything under <b>Generating</b> above.</td></tr>
+      <tr><td><code>Contracts\DictionaryRepository</code></td><td>Dictionary loading and caching, if you want to replace where names come from.</td></tr>
+    </tbody>
+  </table>
+  <pre>public function __construct(private readonly PasswordGenerator $passwords) {}</pre>
+
+  <h2>Validation rule</h2>
+  <pre>new StrongPassword                <span class="cm">// defaults to strong</span>
+StrongPassword::fair()
+StrongPassword::strong()
+StrongPassword::veryStrong()
+StrongPassword::atLeast('fair')   <span class="cm">// Strength|int|string</span></pre>
+  <p class="lead">See <a href="#/validation">Validation</a> for what the failure message says and which entropy model it scores with.</p>
+
+  <h2>Enums</h2>
+  <p class="lead">All string-backed, all accepted as plain strings anywhere they appear.</p>
+  <table>
+    <thead><tr><th>Enum</th><th>Cases</th></tr></thead>
+    <tbody>
+      <tr><td><code>Casing</code></td><td>title, lower, upper, preserve</td></tr>
+      <tr><td><code>NumbersPosition</code></td><td>start, middle, end</td></tr>
+      <tr><td><code>AdjectivePosition</code></td><td>before, after</td></tr>
+      <tr><td><code>Leetspeak</code></td><td>none, basic, advanced</td></tr>
+      <tr><td><code>Strength</code></td><td>very_weak, weak, fair, strong, very_strong &mdash; with <code>label()</code>, <code>score()</code> and <code>color()</code></td></tr>
+      <tr><td><code>StrengthModel</code></td><td>charset, structural</td></tr>
+      <tr><td><code>Reach</code></td><td>global, italian, niche</td></tr>
+      <tr><td><code>Gender</code></td><td>male, female, neutral</td></tr>
+      <tr><td><code>DictionaryGroup</code></td><td>the twelve themes</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="strength" data-title="Strength reporting">
+  <h2>The two models</h2>
+  <p class="lead">The same password gets two very different honest answers, and which one is right depends entirely on who chose it.</p>
+  <div class="verdict">
+    <div class="vcol yes">
+      <b>strength($password) &mdash; charset</b>
+      <ul>
+        <li>How many strings of this length over this alphabet</li>
+        <li>What a generic strength meter reports</li>
+        <li>Right for a password <b>a user chose</b>, because you know nothing about how they chose it</li>
+      </ul>
+    </div>
+    <div class="vcol no">
+      <b>structuralReport($password) &mdash; structural</b>
+      <ul>
+        <li>How many passwords <b>this package</b> could have produced</li>
+        <li>What <code>generateWithReport()</code> returns</li>
+        <li>Right for a password <b>this package made</b>, because an attacker searches the pool, not the alphabet</li>
+      </ul>
+    </div>
+  </div>
+  <p class="lead">The gap is not small. Run the same generated password through both:</p>
+  <pre>PasswordToolkit::strength('Ken-Impetuoso-487609');
+<span class="cm">// 131.1 bits · "very strong" · eternity to crack</span>
+
+PasswordToolkit::structuralReport('Ken-Impetuoso-487609');
+<span class="cm">//  36.1 bits · "fair"        · 7 seconds to crack</span></pre>
+  <div class="note warn"><b>Use the structural figure when deciding whether a generated password is strong enough.</b> The charset number is not wrong &mdash; it is the right answer to a different question, and the wrong one to ask about a password whose recipe is public.</div>
+
+  <h2>What a report holds</h2>
+  <pre>['password' =&gt; $pwd, 'report' =&gt; $report] = PasswordToolkit::generateWithReport();
+
+$report-&gt;entropyBits;       <span class="cm">// 36.05</span>
+$report-&gt;score;             <span class="cm">// 2</span>
+$report-&gt;label;             <span class="cm">// "fair"</span>
+$report-&gt;displayLabel();    <span class="cm">// "Fair" — translated</span>
+$report-&gt;strength;          <span class="cm">// Strength enum: ->label(), ->score(), ->color()</span>
+$report-&gt;length;            <span class="cm">// 20</span>
+$report-&gt;crackTimeSeconds;  <span class="cm">// 7.06</span>
+$report-&gt;crackTimeHuman;    <span class="cm">// "7 seconds" — translated, and never INF</span>
+$report-&gt;charsetFlags;      <span class="cm">// ['lower' => true, 'upper' => true, 'digits' => true, 'symbols' => true]</span>
+$report-&gt;toArray();         <span class="cm">// Arrayable, Jsonable, JsonSerializable</span></pre>
+
+  <h2>Where the bits came from</h2>
+  <p class="lead">The structural report breaks the number down, so you can see which setting is actually carrying the password.</p>
+  <pre>$report-&gt;components;
+// [
+//     'name'             =&gt; 12.10,   <span class="cm">// log2(4,396 names)</span>
+//     'adjective'        =&gt; 4.17,
+//     'second_adjective' =&gt; 0.00,    <span class="cm">// word_count is 2 here</span>
+//     'number'           =&gt; 19.78,   <span class="cm">// log2(900,000) — six digits, no leading zero</span>
+//     'leetspeak_bonus'  =&gt; 0.00,    <span class="cm">// always, by design</span>
+//     'total'            =&gt; 36.05,
+// ]</pre>
+  <p class="lead">Read that column once and the priorities are obvious: <b>the digits carry more than half</b>, the adjective carries least, and leetspeak carries nothing at all. Adding dictionaries is the weakest lever available &mdash; doubling every one of them buys a single bit.</p>
+
+  <h2>Score thresholds</h2>
+  <p class="lead">Bands are <a href="#/config/bands">configurable</a>; these are the defaults.</p>
+  <table>
+    <thead><tr><th>bits</th><th>score</th><th>label</th><th>colour</th></tr></thead>
+    <tbody>
+      <tr><td><code>&lt; 28</code></td><td>0</td><td>very_weak</td><td>red</td></tr>
+      <tr><td><code>28&ndash;35</code></td><td>1</td><td>weak</td><td>red</td></tr>
+      <tr><td><code>36&ndash;59</code></td><td>2</td><td>fair</td><td>amber</td></tr>
+      <tr><td><code>60&ndash;127</code></td><td>3</td><td>strong</td><td>green</td></tr>
+      <tr><td><code>&ge; 128</code></td><td>4</td><td>very_strong</td><td>green</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">A default generated password lands around <b>36 bits &mdash; "fair"</b>, barely above the boundary. That is deliberate: it is honest about being a credential you replace, not one you keep.</p>
+</section>
+
+<section id="validation" data-title="Validation">
+  <h2>The rule</h2>
+  <pre>use Gabrielesbaiz\PasswordToolkit\Rules\StrongPassword;
+
+$request-&gt;validate([
+    'password' =&gt; ['required', new StrongPassword],          <span class="cm">// defaults to strong</span>
+    'pin'      =&gt; ['required', StrongPassword::fair()],
+    'master'   =&gt; ['required', StrongPassword::veryStrong()],
+    'legacy'   =&gt; ['required', StrongPassword::atLeast('weak')],
+]);</pre>
+  <p class="lead"><code>atLeast()</code> takes a <code>Strength</code> enum, its string spelling, or its score as an integer &mdash; whichever your own code already has to hand.</p>
+
+  <h2>What the message says</h2>
+  <p class="lead">The failure names both the band achieved and the band required, so the person reading it knows how far short they fell:</p>
+  <div class="note"><i>&ldquo;The password is <b>Very weak</b>. It must be at least <b>Strong</b>.&rdquo;</i></div>
+  <p class="lead">Both band names are translated, and so is the sentence around them. Publish the strings to reword it:</p>
+  <pre data-lang="sh">php artisan vendor:publish --tag="password-toolkit-translations"</pre>
+  <pre data-lang="php">'too_weak' =&gt; 'The :attribute is :actual. It must be at least :expected.',</pre>
+
+  <h2>Which model it scores with</h2>
+  <p class="lead">By default the rule uses the <a href="#/strength">charset model</a>, because the value under validation is one <em>the user</em> chose &mdash; you have no idea whether it came from a password manager or a keyboard row, so the alphabet is all you can honestly reason about.</p>
+  <p class="lead">Change it globally, or for one rule:</p>
+  <pre>'strength' =&gt; ['rule_model' =&gt; 'structural'],   <span class="cm">// config</span>
+
+StrongPassword::strong()-&gt;using('structural');  <span class="cm">// one rule</span></pre>
+  <div class="note warn"><b>Structural scoring only means something for a password this package generated.</b> Applied to a user-chosen one it measures it against pools the user never drew from, and the number it returns is fiction. Reach for it when you are validating your own output &mdash; a round trip in a test, say &mdash; not a signup form.</div>
+</section>
+
+<section id="commands" data-title="Artisan commands">
+  <h2>Generate</h2>
+  <pre data-lang="sh">php artisan password-toolkit:generate 5 --report</pre>
+  <p class="lead">Every option the builder has, on the command line. Nothing is written anywhere &mdash; it prints and exits, so it is safe to run against production config to see what your settings actually produce.</p>
+
+  <h3>Output</h3>
+  <table>
+    <thead><tr><th>Flag</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>{count}</code></td><td>How many to generate. Defaults to 1.</td></tr>
+      <tr><td><code>--report</code></td><td>Add score, entropy band and offline crack time to each row.</td></tr>
+      <tr><td><code>--json</code></td><td>Emit JSON instead of a table, for piping.</td></tr>
+      <tr><td><code>--list</code></td><td>List the dictionaries that resolve and generate nothing.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Choosing the pool</h3>
+  <table>
+    <thead><tr><th>Flag</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>--only=</code></td><td>Restrict to these dictionary keys.</td></tr>
+      <tr><td><code>--except=</code></td><td>Exclude these keys.</td></tr>
+      <tr><td><code>--type=</code></td><td><code>people</code>, <code>things</code>, or both.</td></tr>
+      <tr><td><code>--group=</code></td><td>Thematic groups: food, screen, sport&hellip;</td></tr>
+      <tr><td><code>--tag=</code></td><td>Dictionaries carrying <em>all</em> of these tags.</td></tr>
+      <tr><td><code>--reach=</code></td><td>Minimum recognisability: global, italian, niche.</td></tr>
+      <tr><td><code>--locale=</code></td><td>Adjective locale. Defaults to the application locale.</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b><code>--only</code>, <code>--except</code>, <code>--type</code>, <code>--group</code> and <code>--tag</code> take either form.</b> Repeat the flag, or pass one comma-separated value &mdash; <code>--only=dune --only=star_wars</code> and <code>--only=dune,star_wars</code> are the same.</div>
+
+  <h3>Shaping the password</h3>
+  <table>
+    <thead><tr><th>Flag</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>--words=</code></td><td><code>2</code> or <code>3</code>. Three adds a second adjective.</td></tr>
+      <tr><td><code>--case=</code></td><td><code>title</code>, <code>lower</code>, <code>upper</code> or <code>preserve</code>.</td></tr>
+      <tr><td><code>--separator=</code></td><td>What goes between the segments.</td></tr>
+      <tr><td><code>--digits=</code></td><td>Length of the numeric segment, 1 to 18.</td></tr>
+      <tr><td><code>--position=</code></td><td><code>start</code>, <code>middle</code> or <code>end</code>.</td></tr>
+      <tr><td><code>--leading-zero</code></td><td>Let the numeric segment begin with a zero.</td></tr>
+      <tr><td><code>--no-numbers</code></td><td>Words only. Costs you every digit of entropy.</td></tr>
+      <tr><td><code>--leet=</code></td><td><code>none</code>, <code>basic</code> or <code>advanced</code>.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Worked examples</h2>
+  <pre data-lang="sh"># Five, with the honest numbers beside each
+php artisan password-toolkit:generate 5 --report
+
+# Italian, three words, read aloud at a support desk
+php artisan password-toolkit:generate --locale=it --words=3 --case=lower
+
+# Only names a stranger would recognise, and plenty of digits
+php artisan password-toolkit:generate --reach=global --digits=10
+
+# Two themed dictionaries, piped somewhere else
+php artisan password-toolkit:generate 20 --only=star_wars,dune --json | jq -r '.[].password'
+
+# What actually resolves, before you commit to it
+php artisan password-toolkit:generate --list --group=drink
+
+# Satisfy a policy that insists on symbols
+php artisan password-toolkit:generate --leet=advanced --digits=8</pre>
+  <div class="note"><b><code>--list</code> is the one to reach for when a filter surprises you.</b> It prints each dictionary that survived with its group, reach, locale, entry count and tags, then the pool totals &mdash; which is faster than reasoning about how six filters combined.</div>
+
+  <h2>Scaffold a dictionary</h2>
+  <pre data-lang="sh">php artisan password-toolkit:make-dictionary my_team --type=people --locale=it</pre>
+  <table>
+    <thead><tr><th>Flag</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><code>--type=</code></td><td><code>people</code> or <code>things</code>. Defaults to things.</td></tr>
+      <tr><td><code>--path=</code></td><td>Where to write it. Defaults to your first configured dictionary path.</td></tr>
+      <tr><td><code>--locale=</code></td><td>Also scaffold an adjective file for that locale, beside it.</td></tr>
+      <tr><td><code>--force</code></td><td>Overwrite a file that already exists.</td></tr>
+    </tbody>
+  </table>
+  <p class="lead">See <a href="#/own">Your own dictionaries</a> for what to put in the file it writes.</p>
+</section>
+
+<section id="recipes" data-title="Recipes">
+  <h2>Onboarding, end to end</h2>
+  <p class="lead">The job this package exists for. Generate once, store the hash, send the plaintext, and make sure it cannot outlive its first use.</p>
+  <pre>['password' =&gt; $plain, 'report' =&gt; $report] = PasswordToolkit::generateWithReport();
+
+$user = User::create([
+    'email' =&gt; $data['email'],
+    'password' =&gt; Hash::make($plain),
+    'must_change_password' =&gt; true,
+]);
+
+Mail::to($user)-&gt;send(new WelcomeMail($plain, $report-&gt;crackTimeHuman));</pre>
+  <p class="lead">Three things are doing work here. <code>generateWithReport()</code> hands you the password and its <a href="#/strength">structural</a> figure in one call, so the email can say how long it is safe to keep. <code>$plain</code> is never stored &mdash; it exists for the length of the request. And <code>must_change_password</code> is what makes 36 bits an acceptable number at all.</p>
+  <div class="note warn"><b>Without the forced change, this recipe is wrong.</b> A memorable password is a credential you replace, and nothing in the package can enforce that for you &mdash; it is a column on your model and a check in your middleware.</div>
+
+  <h2>A support-desk reset</h2>
+  <p class="lead">Somebody is on the phone and your agent has one chance to be understood. This is where the trade actually pays, so tune for the ear rather than for the meter.</p>
+  <pre>$plain = PasswordToolkit::make()
+    -&gt;casing('lower')       <span class="cm">// no "capital F, lowercase e…"</span>
+    -&gt;separator('-')         <span class="cm">// a word the agent can say: "dash"</span>
+    -&gt;reach('global')        <span class="cm">// names a stranger would recognise</span>
+    -&gt;digits(6)
+    -&gt;generate();
+
+<span class="cm">// "tyrannical-gaston-493282"</span></pre>
+  <p class="lead"><code>reach('global')</code> is the one that matters and the one people skip: it drops the dictionaries whose names only land with an Italian audience, which is exactly the wrong thing to read to a stranger. Lower casing removes an entire class of question, and a separator you can <em>say</em> beats one you have to describe.</p>
+
+  <h2>Seeding a demo tenant</h2>
+  <p class="lead">A whole roster in one pass, with no two accounts sharing a password.</p>
+  <pre>$passwords = PasswordToolkit::make()
+    -&gt;only(['star_wars', 'dune'])
+    -&gt;unique(User::count());
+
+User::each(fn (User $u, int $i) =&gt; $u-&gt;update([
+    'password' =&gt; Hash::make($passwords[$i]),
+]));</pre>
+  <p class="lead">Use <code>unique()</code> rather than <code>many()</code> here. Two demo accounts sharing a password is the kind of thing nobody notices until a workshop, and duplicates are likely once the pool is narrow &mdash; two dictionaries and six digits is a smaller space than it looks.</p>
+  <div class="note"><b>It throws rather than under-delivering.</b> If the pool cannot fill the request, you get an <code>InvalidOptionException</code> naming how many it managed. Widen the pool or add digits; do not catch and carry on with a short list.</div>
+
+  <h2>Satisfying a policy you did not choose</h2>
+  <p class="lead">Sixteen characters, mixed case, a digit and a symbol &mdash; a rule somebody wrote in 2009 and nobody can now remove.</p>
+  <pre>$plain = PasswordToolkit::make()
+    -&gt;words(3)
+    -&gt;digits(8)
+    -&gt;leet('advanced')   <span class="cm">// adds symbols, and lengthens</span>
+    -&gt;generate();</pre>
+  <div class="note warn"><b>Only one of those three lines buys you anything.</b> <code>words(3)</code> and <code>digits(8)</code> are real entropy; <code>leet('advanced')</code> is worth <b>zero bits</b> and the report will say so. Reach for it to pass the character-class check, and never to feel safer.</div>
+
+  <h2>Showing strength in your own UI</h2>
+  <p class="lead">The enum carries everything a meter needs, so you are not mapping scores to colours by hand.</p>
+  <pre>$report = PasswordToolkit::strength($request-&gt;input('password'));
+
+$report-&gt;score;              <span class="cm">// 0..4 — the width of the bar</span>
+$report-&gt;strength-&gt;color();  <span class="cm">// 'red' | 'amber' | 'green'</span>
+$report-&gt;displayLabel();     <span class="cm">// "Fair" — translated</span>
+$report-&gt;crackTimeHuman;     <span class="cm">// "7 seconds" — translated</span></pre>
+  <p class="lead">Use <code>strength()</code> here, not <code>structuralReport()</code>. The value came from a human typing into a form, and you have no idea whether it arrived from a password manager or the top row of the keyboard &mdash; the alphabet is the only honest thing to measure it against.</p>
+
+  <h2>Rotating an existing password</h2>
+  <p class="lead">The near-miss case: everything the onboarding recipe does, plus the part people forget.</p>
+  <pre>['password' =&gt; $plain, 'report' =&gt; $report] = PasswordToolkit::generateWithReport();
+
+$user-&gt;forceFill([
+    'password' =&gt; Hash::make($plain),
+    'must_change_password' =&gt; true,
+])-&gt;save();
+
+<span class="cm">// Whatever your app uses: database sessions, Sanctum tokens, Passport grants.</span>
+$user-&gt;tokens()-&gt;delete();
+
+Mail::to($user)-&gt;send(new PasswordRotatedMail($plain, $report-&gt;crackTimeHuman));</pre>
+  <div class="note"><b>Changing the hash does not sign anybody out.</b> An attacker with a live session keeps it until you invalidate the session or token yourself &mdash; which is the entire point of rotating in the first place.</div>
+</section>
+
+<section id="trouble" data-title="Troubleshooting">
+  <h2>Start here</h2>
+  <p class="lead">Most of what goes wrong is a filter that resolved to less than you expected. One command answers that before you reason about anything:</p>
+  <pre data-lang="sh">php artisan password-toolkit:generate --list</pre>
+  <p class="lead">It prints every dictionary that survives your <em>current</em> configuration &mdash; key, label, group, reach, locale, entry count and tags &mdash; and nothing else. Add the same flags you are passing in code and the answer is in front of you.</p>
+
+  <h2>NoDictionariesEnabledException</h2>
+  <p class="lead">Your filters resolved to an empty pool. The filters combine, and <code>tags</code> is the one that catches people: a dictionary must carry <b>every</b> tag you list, not any of them.</p>
+  <pre data-lang="sh">php artisan password-toolkit:generate --list --group=food --tag=italian</pre>
+  <p class="lead">Remove one filter at a time until rows appear. If <code>enabled</code> names a key that does not exist, it contributes nothing and no error is raised &mdash; check your spelling against <a href="#/shelf">All dictionaries</a>.</p>
+
+  <h2>DictionaryNotFoundException</h2>
+  <p class="lead">No adjective pool with an <b>agreeing</b> word resolved, in either locale. In Italian that usually means a pack with no form matching the name's gender &mdash; a pool of only <code>-o</code> adjectives cannot describe a feminine name.</p>
+  <p class="lead">The resolver falls through to <code>_default</code> before it gives up, so this almost always means a custom pack is being found <em>and</em> is missing the gender it needs. Ship both forms, or mark the entry <code>neutral</code>.</p>
+
+  <h2>My own dictionary is not being used</h2>
+  <ul class="plain">
+    <li>Is its directory in <code>dictionaries.paths</code>? Nothing scans by accident.</li>
+    <li>Is the file <code>.json</code>, and does its <code>key</code> match the filename?</li>
+    <li>Does the key match <code>[A-Za-z0-9_][A-Za-z0-9_-]*</code>? A key that does not is rejected, not silently ignored.</li>
+    <li>Did you register it at runtime <em>after</em> the first generation? Dictionaries are cached &mdash; call <code>flushCache()</code>.</li>
+  </ul>
+  <p class="lead"><code>--list</code> settles all four in one go: if it is not in that table, it did not load.</p>
+
+  <h2>The adjectives read oddly</h2>
+  <p class="lead">Your dictionary has no themed pack, so it is drawing from <code>_default</code> &mdash; a general pool that suits a person, a place or a thing equally, and therefore suits none of them precisely. Add <code>{path}/{locale}/{yourkey}.json</code> beside your names and the resolver picks it up with no further configuration.</p>
+
+  <h2>I asked for three words and got two</h2>
+  <p class="lead">The pool had fewer than two <em>distinct</em> agreeing adjectives. Rather than throw, the package returns what it has &mdash; fewer words is a smaller password, an exception is no password at all &mdash; and the report states the entropy you actually got, with <code>second_adjective</code> at <code>0.0</code>.</p>
+  <p class="lead">Check the pack the dictionary is resolving to. A themed Italian pack with two entries for one lemma offers one distinct word, not two.</p>
+
+  <h2>generateUnique() threw</h2>
+  <p class="lead">It could not fill the request, and the message names how many it managed. The space is smaller than it looks: two dictionaries and no digits is a few thousand combinations, and collisions arrive long before exhaustion.</p>
+  <p class="lead">Widen the pool, add digits, or raise <code>unique_attempts_multiplier</code>. Do not catch it and carry on &mdash; a short list is a silent duplicate later.</p>
+
+  <h2>Passwords are in the wrong language</h2>
+  <p class="lead">The locale follows your application unless you set it. But the more common surprise is that it looks half-translated &mdash; and that is correct behaviour: <b>names carry a language of their own</b>. An Italian wine stays Italian in an English application because <code>Barolo</code> is its name, while the adjective beside it is English. See <a href="#/translated">Translated names</a>.</p>
+
+  <h2>Leetspeak did not raise the score</h2>
+  <p class="lead">It never will. A deterministic transform cannot enlarge the space an attacker who has read your config is searching, so it is credited <b>zero bits</b> deliberately. Use it to satisfy a character-class policy; the entropy has to come from digits or words.</p>
+
+  <h2>The validation rule rejects everything</h2>
+  <p class="lead">Two likely causes. Your <a href="#/config/bands">thresholds</a> may have moved &mdash; they must ascend, and raising <code>strong</code> raises your signup bar with it. Or <code>rule_model</code> is set to <code>structural</code>, which measures a user-chosen password against pools it never came from and returns a number close to meaningless. Charset is the right model for a form field.</p>
+
+  <h2>Entropy figures changed after upgrading</h2>
+  <p class="lead">Twice, and both times the old number was wrong. 1.x picked a dictionary file before it picked a name, which made the reported pool bigger than the space being searched. Then the numeric segment was found to be credited a full decade of values when leading zeros are never drawn &mdash; six digits are 900,000, not a million.</p>
+  <div class="note"><b>Nothing got weaker.</b> The passwords are exactly as strong as they always were; the figure finally describes them. A test asserting an exact bit count needs updating &mdash; it was asserting a wrong one.</div>
+
+  <h2>The command is not found</h2>
+  <pre data-lang="sh">php artisan package:discover</pre>
+  <p class="lead">A stale cached package manifest. This is also the first thing to try if the config file appears not to take effect after an install.</p>
+</section>
+
+<section id="security">
+  <h2 class="page-title">Security</h2>
+
+  <h3>The trade, stated</h3>
+  <p class="lead">Memorable passwords are a deliberate entropy-for-usability trade, not an oversight — the package reports exactly what the trade cost. Two things it does <em>not</em> trade:</p>
+  <ul class="plain">
+    <li>Every random choice uses <code>random_int()</code>, names included.</li>
+    <li>Dictionary keys and locales are validated before they touch a path, and registered names are stripped to letters, digits and the separator.</li>
+  </ul>
+  <h3>Reporting a vulnerability</h3>
+  <p class="lead">Found something? <a href="https://github.com/gabrielesbaiz/password-toolkit/blob/main/SECURITY.md">SECURITY.md</a> has the reporting route. Please do not open a public issue.</p>
+</section>
+
+<section id="project" data-title="Project &amp; licence">
+  <h2>Contributing</h2>
+  <p class="lead">Issues and pull requests are welcome. <a href="https://github.com/gabrielesbaiz/password-toolkit/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> has the setup and the house rules; the short version is that there is <b>no CI</b>, so three local gates are the contract:</p>
+  <pre data-lang="sh">composer format    <span class="cm"># pint</span>
+composer analyse   <span class="cm"># phpstan, level 6</span>
+composer test      <span class="cm"># pest</span></pre>
+  <p class="lead">A new dictionary is the easiest contribution to make and the hardest to get right. Every name must be real and verifiable, ASCII-only &mdash; these strings get typed by people &mdash; and no more than three words. Italian entries use the form an Italian would actually say, which for dubbed material is the dub.</p>
+
+  <h2>Security vulnerabilities</h2>
+  <div class="note warn"><b>Do not open a public issue.</b> <a href="https://github.com/gabrielesbaiz/password-toolkit/blob/main/SECURITY.md">SECURITY.md</a> has the reporting route and the supported versions.</div>
+  <p class="lead">One thing worth stating before you report it: <b>memorable passwords being weaker than random ones is not a vulnerability.</b> It is the deliberate trade this package exists to make, and the strength report states the cost in bits rather than hiding it. A flaw in <em>how</em> that trade is made &mdash; a biased draw, a path that escapes its directory, an unsanitised value reaching a password &mdash; very much is.</p>
+
+  <h2>Credits</h2>
+  <p class="lead">Written and maintained by <a href="https://github.com/gabrielesbaiz">Gabriele Sbaiz</a>, with thanks to <a href="https://github.com/gabrielesbaiz/password-toolkit/graphs/contributors">everyone who has contributed</a>.</p>
+  <p class="lead">It stands on work it does not contain: <a href="https://laravel.com">Laravel</a>, and <a href="https://github.com/spatie/laravel-package-tools">spatie/laravel-package-tools</a> &mdash; the only runtime dependency beyond the framework itself.</p>
+
+  <h2>Support this package</h2>
+  <p class="lead">This is maintained on evenings and weekends, alongside a full-time job writing insurance software. Keeping it green across new Laravel majors is the unglamorous part, and it is what keeps it installable in your <code>composer.json</code> next year too.</p>
+  <p class="lead">The code took a few weekends. The 200 dictionaries did not &mdash; those were evenings spent checking that every name is real, spelled as an Italian would dub it, and safe to read aloud at a support desk.</p>
+  <ol class="uses">
+    <li><span>01</span><div><b>Star the repository</b><p>Free, thirty seconds, and it is the first signal another developer looks at.</p></div></li>
+    <li><span>02</span><div><b>Become a sponsor</b><p>From $5 a month. Company tiers get a logo in the README.</p></div></li>
+    <li><span>03</span><div><b>Open a good issue</b><p>A clear reproduction is worth more than you think &mdash; most of what shipped in 2.0 started as somebody describing a real problem precisely.</p></div></li>
+    <li><span>04</span><div><b>Tell another Laravel developer</b><p>Word of mouth is how small packages survive.</p></div></li>
+  </ol>
+  <div class="acts">
+    <a class="btn" href="https://github.com/sponsors/gabrielesbaiz">&#9829; Sponsor</a>
+    <a class="btn ghost" href="https://github.com/gabrielesbaiz/password-toolkit">Star on GitHub</a>
+  </div>
+
+  <h2>Disclaimer</h2>
+  <p class="lead">This package is provided <b>as is</b>. It generates passwords that are deliberately weaker than random ones in exchange for being memorable, and it reports that weakness honestly. Deciding whether that trade is acceptable for a given use &mdash; and configuring, testing and operating it accordingly &mdash; is the deploying application's responsibility, not this package's.</p>
+
+  <h2>Licence</h2>
+  <p class="lead">MIT. See <a href="https://github.com/gabrielesbaiz/password-toolkit/blob/main/LICENSE.md">LICENSE.md</a>. The MIT warranty disclaimer and limitation of liability apply in full, alongside the section above.</p>
+</section>
+
+<section id="upgrade" data-title="Upgrading from 1.x">
+  <h2>Why 2.0 exists</h2>
+  <p class="lead">1.x was a single static class that re-read its data directory on every call, picked a dictionary <em>file</em> before it picked a name, and returned <code>string|array|null</code> from one method. It was Italian-only by construction: adjectives sat in one flat directory with gender agreement baked in, so adding English meant writing 91 new files.</p>
+  <p class="lead">2.0 fixes all of that. The generator is an injectable object, dictionaries are cached and flattened, adjectives resolve through a locale chain, and you can add dictionaries of your own without forking the package.</p>
+  <div class="note warn"><b>This is a breaking release, but most of it is shimmed.</b> Four changes need an edit in your code. The rest keeps working, with a deprecation where it matters.</div>
+
+  <h2>What changed</h2>
+  <table>
+    <thead><tr><th>Change</th><th>Shimmed?</th></tr></thead>
+    <tbody>
+      <tr><td><code>generate($count)</code> &rarr; <code>generateMany($count)</code></td><td>no</td></tr>
+      <tr><td><code>generate()</code> throws instead of returning <code>null</code></td><td>no</td></tr>
+      <tr><td><code>poolSizes()</code> returns <code>['names' =&gt; …, 'adjectives' =&gt; …]</code>, not a list</td><td>no</td></tr>
+      <tr><td>Exceptions no longer extend <code>\InvalidArgumentException</code></td><td>no</td></tr>
+      <tr><td>Config <code>name_types</code> &rarr; <code>dictionaries.enabled</code> / <code>.except</code></td><td><b>yes</b>, with a deprecation</td></tr>
+      <tr><td><code>leetspeak_conversion: 'no'</code> &rarr; <code>'none'</code></td><td><b>yes</b>, <code>'no'</code> still parses</td></tr>
+      <tr><td><code>clearPoolCache()</code> &rarr; <code>flushCache()</code></td><td><b>yes</b>, alias kept until 3.0</td></tr>
+      <tr><td><code>Entropy::LABELS</code> &rarr; <code>Enums\Strength</code></td><td><b>yes</b>, the constant still exists</td></tr>
+      <tr><td>Static calls on the class &rarr; an instance behind the facade</td><td><b>yes</b>, via the facade</td></tr>
+      <tr><td>Adjectives move to <code>Data/Adjectives/{locale}/{key}.json</code></td><td>no, if you forked the data</td></tr>
+      <tr><td><code>humanizeSeconds(90)</code> returns <code>"1 minute"</code></td><td>no &mdash; it was a bug</td></tr>
+      <tr><td>Reported entropy drops: file-first picking overstated it</td><td>no &mdash; the old figure was wrong</td></tr>
+      <tr><td>Requires PHP 8.2 (was 8.0)</td><td>no</td></tr>
+    </tbody>
+  </table>
+  <p class="lead"><code>strength()</code>, <code>structuralReport()</code>, <code>generateWithReport()</code>, <code>generateManyWithReport()</code> and every <code>StrengthReport</code> property are unchanged.</p>
+
+  <h2>The four edits</h2>
+  <pre><span class="cm">// 1 — batch generation</span>
+- $passwords = PasswordToolkit::generate(10);
++ $passwords = PasswordToolkit::generateMany(10);
+
+<span class="cm">// 2 — null handling</span>
+- $p = PasswordToolkit::generate();
+- if ($p === null) { /* ... */ }
++ try { $p = PasswordToolkit::generate(); }
++ catch (NoDictionariesEnabledException $e) { /* ... */ }
+
+<span class="cm">// 3 — pool sizes</span>
+- [$names, $adjectives] = PasswordToolkit::poolSizes();
++ ['names' =&gt; $names, 'adjectives' =&gt; $adjectives] = PasswordToolkit::poolSizes();
+
+<span class="cm">// 4 — caught exceptions</span>
+- catch (\InvalidArgumentException $e)
++ catch (PasswordToolkitException $e)</pre>
+
+  <h2>Configuration</h2>
+  <p class="lead">The shim keeps a 1.x config working, so nothing breaks on deploy. Migrate it anyway &mdash; the new file is around a hundred lines shorter and does not have to be kept in filesystem sync by hand. Re-publishing beats hand-editing:</p>
+  <pre data-lang="sh">php artisan vendor:publish --tag="password-toolkit-config" --force</pre>
+  <p class="lead">Then reapply your choices:</p>
+  <pre>- 'name_types' =&gt; [
+-     'people' =&gt; ['star_wars' =&gt; true, 'cartoons' =&gt; false, <span class="cm">/* 47 more */</span>],
+-     'things' =&gt; ['italian_wines' =&gt; true, <span class="cm">/* 41 more */</span>],
+- ],
++ 'dictionaries' =&gt; [
++     'enabled' =&gt; '*',
++     'except' =&gt; ['cartoons'],
++ ],
+
+- 'leetspeak_conversion' =&gt; 'no',
++ 'leetspeak_conversion' =&gt; 'none',</pre>
+  <div class="note"><b>Leave <code>adjective_position</code> at <code>null</code>.</b> Word order belongs to the language, and each locale declares its own. 1.x was Italian-only and always put the adjective last, so an Italian install produces the order it always did.</div>
+
+  <h2>Your entropy figures will drop</h2>
+  <p class="lead">1.x picked a dictionary file first, then a name inside it &mdash; which made a 20-name dictionary as likely as a 200-name one, and made the reported pool larger than the space actually being searched. 2.0 picks uniformly across every enabled name, and a later fix stopped crediting the numeric segment entropy it never had.</p>
+  <div class="note warn"><b>Nothing got weaker.</b> The passwords are the same strength they always were; the number finally describes them. If a test asserts an exact bit count, it needs updating &mdash; and it was asserting a wrong figure.</div>
+  <p class="lead">Full detail in <a href="https://github.com/gabrielesbaiz/password-toolkit/blob/main/UPGRADE.md">UPGRADE.md</a>.</p>
+</section>
+
+<section id="changelog" data-title="Changelog">
+  <h2>2.0.0 &mdash; unreleased</h2>
+  <p class="lead">A rewrite rather than a release: the whole generator, the data layout and the public API changed. <a href="#/upgrade">Upgrading from 1.x</a> covers what you have to edit.</p>
+
+  <h3>Added</h3>
+  <ul class="plain">
+    <li><b>English as a first-class locale</b>, with adjectives resolving through a four-step chain and word order declared per language.</li>
+    <li><b>Your own dictionaries</b>, from a directory, inline config or a runtime registration.</li>
+    <li><b>A fluent builder</b> &mdash; <code>make()</code> &mdash; immutable, with every option as a method.</li>
+    <li><b>Two artisan commands</b>: <code>generate</code> with eighteen flags, and <code>make-dictionary</code>.</li>
+    <li><b>A validation rule</b>, <code>StrongPassword</code>, with configurable bands and a choice of entropy model.</li>
+    <li><b>Dictionary metadata</b> &mdash; group, tags, icon, reach &mdash; and the methods to filter on it.</li>
+    <li><b>A third word</b>: <code>word_count</code>, two distinct adjectives drawn without replacement.</li>
+    <li><b>Casing</b>, <b>leading zeros</b>, <b>configurable thresholds</b> and a <b>unique-attempt multiplier</b>.</li>
+    <li><b>109 new dictionaries</b>, taking the shelf from 91 at 1.7.0 to 200, and 4,396 names.</li>
+  </ul>
+
+  <h3>Changed</h3>
+  <ul class="plain">
+    <li>The generator is an <b>injectable singleton</b> behind a facade, not a static class.</li>
+    <li>Dictionaries are <b>cached and flattened</b>; a batch of a thousand does one scan, not a thousand.</li>
+    <li>Names are picked <b>uniformly across every entry</b>, not across files.</li>
+    <li><code>numbers_digits</code> defaults to <b>6</b> everywhere &mdash; the config said 6 while <code>Options</code> said 4.</li>
+  </ul>
+
+  <h3>Security</h3>
+  <ul class="plain">
+    <li><b>Every random choice uses <code>random_int()</code></b>. 1.x drew names with <code>mt_rand</code> and only the digits were CSPRNG.</li>
+    <li><b>Locales and dictionary keys are validated before they touch a path.</b> Both are interpolated into a filename, so a request value reaching <code>->locale()</code> could otherwise read any JSON the process could see.</li>
+    <li><b>Registered names are sanitised.</b> Values straight from a database cannot carry a quote, a semicolon or a newline into a password.</li>
+  </ul>
+
+  <h3>Fixed</h3>
+  <ul class="plain">
+    <li><b>Crack time no longer returns <code>INF</code></b> &mdash; computed in log space, so <code>toArray()</code> can be JSON-encoded.</li>
+    <li><b>The numeric segment is no longer credited entropy it never had.</b> Six digits are 900,000 values, not a million; every figure was about 0.15 bits optimistic.</li>
+    <li><b>Very large crack times no longer print "0 centuries."</b> The float was cast to int before the range check and wrapped past <code>PHP_INT_MAX</code>.</li>
+    <li><code>humanizeSeconds(90)</code> says <code>"1 minute"</code>, not <code>"1 minutes"</code>.</li>
+    <li>Leetspeak is credited <b>zero</b> bits. It was worth 6 or 12, which was fiction.</li>
+  </ul>
+
+  <h3>Removed</h3>
+  <ul class="plain">
+    <li><code>generate($count)</code>, the <code>string|array|null</code> return, and the 91 hand-maintained config booleans.</li>
+  </ul>
+
+  <h2>1.7.0 and earlier</h2>
+  <p class="lead">Tagged releases exist from 1.3.0 onward but were never written up. <a href="https://github.com/gabrielesbaiz/password-toolkit/compare/1.3.0...main">Compare on GitHub</a> if you need the detail.</p>
+  <p class="lead">Full file: <a href="https://github.com/gabrielesbaiz/password-toolkit/blob/main/CHANGELOG.md">CHANGELOG.md</a>.</p>
+</section>
+
+    <nav class="pager" aria-label="Guide pages">
+      <a class="pg prev" id="pg-prev"><span>&larr; Previous</span><b></b></a>
+      <a class="pg next" id="pg-next"><span>Next &rarr;</span><b></b></a>
+    </nav>
+
+  </main>
+
+  <aside class="onthis" aria-label="On this page">
+    <b>On this page</b>
+    <div id="subs"></div>
+  </aside>
+</div>
+
+<footer class="mx"><p>MIT licensed &middot; Built by Gabriele Sbaiz</p></footer>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="pal" role="dialog" aria-modal="true" aria-label="Search the documentation">
+    <input id="q" type="text" placeholder="Search the site&hellip;" autocomplete="off" spellcheck="false">
+    <ul id="hits" role="listbox"></ul>
+    <footer><span>&#8593;&#8595; move</span><span>&#8629; open</span><span>esc close</span></footer>
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

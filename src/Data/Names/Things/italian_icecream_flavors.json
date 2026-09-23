@@ -1,5 +1,6 @@
 {
     "key": "italian_icecream_flavors",
+    "name": "Italian Gelato Flavours",
     "type": "things",
     "locale": "it",
     "group": "food",

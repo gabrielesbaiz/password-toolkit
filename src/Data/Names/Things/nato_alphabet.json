@@ -1,5 +1,6 @@
 {
     "key": "nato_alphabet",
+    "name": "NATO Alphabet",
     "type": "things",
     "locale": "en",
     "group": "culture",

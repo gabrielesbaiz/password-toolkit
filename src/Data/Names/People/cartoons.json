@@ -1,5 +1,6 @@
 {
     "key": "cartoons",
+    "name": "Cartoons",
     "type": "people",
     "locale": "en",
     "group": "screen",

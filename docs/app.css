@@ -1,0 +1,865 @@
+/* ══════════════════════════════════════════════════════════════
+   The guide — the same Aerogramma identity as the front page,
+   in a reading layout rather than a persuading one.
+   ══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ── AEROGRAMMA · light ──────────────────────────────────────── */
+:root {
+  --bg: #eef2f6; --ink: #16243a; --dim: #5a6e88; --line: #cbd8e6;
+  --paper: #ffffff; --soft: #e2ebf4; --accent: #1b4fa8; --second: #c8102e;
+  --on-accent: #ffffff; --ring: rgba(27, 79, 168, .2);
+  --tape-a: #c8102e; --tape-b: #1b4fa8; --grain: rgba(22, 36, 58, .045);
+  --bar-bg: rgba(252, 253, 255, .9); --bar-ink: #46566d; --bar-line: rgba(22, 36, 58, .16); --bar-hi: #16243a;
+
+  /* Syntax tokens, kept inside the airmail family rather than borrowed
+     from a code editor that knows nothing about this page. */
+  --t-cm: #7a8ba3; --t-key: #1b4fa8; --t-var: #0f766e;
+  --t-str: #b3123c; --t-fn: #6b21a8; --t-num: #a15c00; --t-op: #46566d;
+}
+
+/* ── DARK (system) ─────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1220; --ink: #e2ecf8; --dim: #8ba3c2; --line: #1f2f47;
+    --paper: #121b2c; --soft: #152136; --accent: #6ba4ff; --second: #ff6b7e;
+    --on-accent: #08101c; --ring: rgba(107, 164, 255, .26);
+    --tape-a: #ff6b7e; --tape-b: #6ba4ff; --grain: rgba(220, 235, 255, .04);
+    --bar-bg: rgba(8, 12, 20, .9); --bar-ink: #a3b4cc; --bar-line: rgba(226, 236, 248, .17); --bar-hi: #ffffff;
+  
+    --t-cm: #6b7f9c; --t-key: #6ba4ff; --t-var: #5eead4;
+    --t-str: #ff8fa3; --t-fn: #c4a7ff; --t-num: #ffc46b; --t-op: #8ba3c2;
+  }
+}
+
+/* ── DARK (forced) ──────────────────────────────────────────── */
+:root[data-theme="dark"] {
+  --bg: #0b1220; --ink: #e2ecf8; --dim: #8ba3c2; --line: #1f2f47;
+  --paper: #121b2c; --soft: #152136; --accent: #6ba4ff; --second: #ff6b7e;
+  --on-accent: #08101c; --ring: rgba(107, 164, 255, .26);
+  --tape-a: #ff6b7e; --tape-b: #6ba4ff; --grain: rgba(220, 235, 255, .04);
+  --bar-bg: rgba(8, 12, 20, .9); --bar-ink: #a3b4cc; --bar-line: rgba(226, 236, 248, .17); --bar-hi: #ffffff;
+
+  --t-cm: #6b7f9c; --t-key: #6ba4ff; --t-var: #5eead4;
+  --t-str: #ff8fa3; --t-fn: #c4a7ff; --t-num: #ffc46b; --t-op: #8ba3c2;
+}
+
+/* ── BASE ───────────────────────────────────────────────────── */
+body { margin: 0; padding-top: 61px; background: var(--bg); color: var(--ink);
+  font-family: "Instrument Sans", system-ui, sans-serif;
+  background-image: radial-gradient(var(--grain) 1px, transparent 1px); background-size: 4px 4px; }
+/* Horizontal only. Vertical spacing belongs to the section, and mixing the
+   two in one shorthand is how sections silently lose their padding. */
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+* { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+*::-webkit-scrollbar { width: 9px; height: 9px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--dim); }
+
+.mx { max-width: 1440px; margin: 0 auto; padding-inline: clamp(18px, 4vw, 36px); }
+
+/* Airmail tape — the single motif that carries the whole identity. */
+.tape { height: 7px; background: repeating-linear-gradient(115deg,
+  var(--tape-a) 0 14px, var(--paper) 14px 25px, var(--tape-b) 25px 39px, var(--paper) 39px 50px); }
+
+.topbar { position: fixed; inset: 0 0 auto 0; z-index: 30;
+  background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line); }
+nav { display: flex; gap: 14px; align-items: center; flex-wrap: nowrap; height: 54px;
+  padding-inline: clamp(14px, 4vw, 36px); }
+nav .sp { margin-left: auto; }
+#progress { position: absolute; inset: auto auto -1px 0; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--tape-b), var(--tape-a)); transition: width .12s linear;
+  box-shadow: 0 0 10px var(--ring); }
+
+h1 { font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(36px, 7vw, 86px);
+  line-height: .97; letter-spacing: -.03em; margin: 0 0 20px; text-wrap: balance; }
+h1 em { font-style: italic; color: var(--accent); }
+h2 { font-family: Fraunces, serif; font-weight: 600; font-size: clamp(25px, 4vw, 42px);
+  letter-spacing: -.02em; margin: 0 0 16px; text-wrap: balance; }
+h3 { font-family: Fraunces, serif; font-weight: 600; font-size: 18px; margin: 0 0 7px; }
+.lead { color: var(--dim); font-size: 16px; line-height: 1.7; max-width: 76ch; margin: 0 0 24px; }
+section { padding-block: clamp(34px, 4.4vw, 62px); border-top: 1px solid var(--line); }
+
+
+pre { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 16px 18px;
+  overflow-x: auto; font: 400 13px/1.8 "IBM Plex Mono", monospace; margin: 0 0 14px; }
+/* Syntax highlighting. Every hue is a token, so the code blocks
+   re-theme with everything else instead of staying one fixed scheme. */
+.cm  { color: var(--t-cm); font-style: italic; }
+.k   { color: var(--t-key); font-weight: 500; }
+.v   { color: var(--t-var); }
+.st  { color: var(--t-str); }
+.fn  { color: var(--t-fn); }
+.nu  { color: var(--t-num); }
+.op  { color: var(--t-op); }
+.cls { color: var(--t-key); font-weight: 600; }
+pre[data-lang="sh"] .sh-cmd { color: var(--t-fn); font-weight: 600; }
+pre[data-lang="sh"] .sh-opt { color: var(--t-num); }
+code { font-family: "IBM Plex Mono", monospace; font-size: .92em; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+th { text-align: left; font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--dim); padding: 0 14px 10px 0; }
+td { padding: 11px 14px 11px 0; border-top: 1px solid var(--line); vertical-align: top; }
+
+/* ── MENU BAR ───────────────────────────────────────────────── */
+.brand { display: inline-flex; align-items: baseline; gap: 7px; white-space: nowrap;
+  font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: 16.5px;
+  letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+.brand .ver { font: 500 9px/1 "IBM Plex Mono", monospace; letter-spacing: .1em; color: var(--dim);
+  border: 1px solid var(--line); border-radius: 99px; padding: 4px 7px; }
+.menu { display: flex; gap: 18px; align-items: center; min-width: 0; overflow-x: auto;
+  scrollbar-width: none; margin-left: 12px; }
+.menu::-webkit-scrollbar { display: none; }
+.menu a { position: relative; white-space: nowrap; color: var(--dim); text-decoration: none; font-size: 13.5px; font-weight: 500; }
+.menu a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -5px; height: 1.5px;
+  background: var(--accent); transition: right .22s cubic-bezier(.2,.8,.2,1); }
+.menu a:hover { color: var(--accent); }
+.menu a:hover::after { right: 0; }
+.menu a.heart { color: var(--second); font-weight: 600; }
+.menu a.heart::after { background: var(--second); }
+/* A page that does not exist yet says so rather than pretending. */
+
+.searchbtn { display: inline-flex; align-items: center; gap: 8px; padding: 7px 9px 7px 11px;
+  background: var(--paper); color: var(--dim); border: 1px solid var(--line); border-radius: 3px;
+  font: 500 12.5px/1 "IBM Plex Sans", system-ui, sans-serif; }
+.searchbtn svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.searchbtn:hover { border-color: var(--accent); color: var(--accent); }
+.searchbtn kbd { font: 500 10px/1 "IBM Plex Mono", monospace; color: var(--dim);
+  border: 1px solid var(--line); border-radius: 2px; padding: 4px 5px; }
+@media (max-width: 860px) { .searchbtn span, .searchbtn kbd { display: none } .menu { gap: 15px } }
+@media (max-width: 620px) { .brand .ver { display: none } }
+
+/* One control, labelled with where it takes you rather than where you are. */
+.themebtn { flex: none; background: var(--paper); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 3px; padding: 7px 14px; font-weight: 600; font-size: 12.5px; }
+.themebtn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── PALETTE ────────────────────────────────────────────────── */
+.scrim { position: fixed; inset: 0; z-index: 90; display: grid; align-items: start; justify-items: center;
+  padding: clamp(40px, 12vh, 130px) 18px; background: color-mix(in srgb, var(--ink) 34%, transparent);
+  backdrop-filter: blur(3px); }
+.scrim[hidden] { display: none; }
+.pal { width: min(560px, 100%); background: var(--paper); border: 1px solid var(--line);
+  border-radius: 4px; box-shadow: 0 26px 70px -20px color-mix(in srgb, var(--ink) 45%, transparent);
+  overflow: hidden; animation: palin .18s cubic-bezier(.2,.8,.2,1); }
+@keyframes palin { from { opacity: 0; transform: translateY(-9px) } }
+.pal input { width: 100%; box-sizing: border-box; background: transparent; color: var(--ink);
+  border: 0; border-bottom: 1px solid var(--line); padding: 16px 18px;
+  font: 400 16px/1 "IBM Plex Mono", monospace; }
+.pal input::placeholder { color: var(--dim); }
+.pal ul { list-style: none; margin: 0; padding: 6px; max-height: min(52vh, 380px); overflow-y: auto; }
+.pal li > a { display: flex; align-items: baseline; gap: 10px; padding: 9px 12px; border-radius: 2px;
+  color: var(--ink); text-decoration: none; font-size: 14px; }
+.pal li[aria-selected="true"] > a { background: var(--accent); color: var(--on-accent); }
+.pal li[aria-selected="true"] .ph { color: var(--on-accent); opacity: .8; }
+.pal .ph { margin-left: auto; font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--dim); white-space: nowrap; }
+.pal .none { padding: 22px 18px; color: var(--dim); font-size: 14px; }
+.pal footer { display: flex; gap: 14px; padding: 9px 14px; border-top: 1px solid var(--line);
+  background: var(--soft); font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--dim); }
+
+
+/* ── INTRO BLOCKS ───────────────────────────────────────────── */
+/* The claim, shown. Two cards and an arrow: the left one is the password you
+   would otherwise send, the right one is this package's answer — and the
+   left one is honestly labelled as the stronger of the two. */
+.ba { display: grid; grid-template-columns: 1fr auto 1.25fr; align-items: stretch;
+  gap: 0; margin: 0 0 26px; max-width: 900px; }
+.ba-card { background: var(--paper); border: 1px solid var(--line); border-radius: 5px; padding: 20px 22px; }
+.ba-card:first-child { opacity: .82; border-style: dashed; }
+.ba-card.is-after { border-color: var(--accent); box-shadow: 0 10px 30px -14px var(--ring); }
+.ba-tag { display: block; font: 600 9.5px/1 "IBM Plex Mono", monospace; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--dim); margin-bottom: 14px; }
+.ba-card.is-after .ba-tag { color: var(--accent); }
+.ba-pw { font-family: "IBM Plex Mono", monospace; font-size: clamp(15px, 1.5vw, 20px);
+  font-weight: 600; margin: 0 0 16px; overflow-wrap: anywhere; font-variant-ligatures: none; }
+.ba-pw.small { color: var(--dim); }
+.ba-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.ba-card li { font-size: 13.5px; line-height: 1.5; color: var(--dim); padding-left: 15px; position: relative; }
+.ba-card li::before { content: "·"; position: absolute; left: 3px; color: var(--accent); font-weight: 700; }
+.ba-card code { color: var(--accent); font-size: 12.5px; }
+.ba-arrow { display: grid; place-items: center; padding: 0 16px; color: var(--accent); font-size: 22px; }
+@media (max-width: 720px) {
+  .ba { grid-template-columns: 1fr; gap: 10px; }
+  .ba-arrow { padding: 0; transform: rotate(90deg); }
+}
+
+/* Four situations, as rows. A three-up grid leaves the fourth stranded on a
+   line of its own, which reads as a mistake rather than a list. */
+.uses { list-style: none; margin: 0 0 30px; padding: 0; }
+.uses li { display: grid; grid-template-columns: 42px 1fr; gap: 6px;
+  padding: 16px 0; border-top: 1px solid var(--line); }
+.uses li:last-child { border-bottom: 1px solid var(--line); }
+.uses span { font: 600 10px/1.7 "IBM Plex Mono", monospace; letter-spacing: .16em; color: var(--accent); }
+.uses b { display: block; font-family: Fraunces, serif; font-weight: 600; font-size: 16.5px; margin-bottom: 4px; }
+.uses p { margin: 0; color: var(--dim); font-size: 14.5px; line-height: 1.6; max-width: 62ch; }
+
+/* The two questions, numbered, because the order genuinely matters. */
+.asks { list-style: none; counter-reset: ask; margin: 0 0 26px; padding: 0; display: grid; gap: 16px; }
+.asks li { counter-increment: ask; position: relative; padding-left: 42px; }
+.asks li::before { content: counter(ask); position: absolute; left: 0; top: 1px;
+  width: 27px; height: 27px; border-radius: 50%; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);
+  font: 600 12px/1 "IBM Plex Mono", monospace; }
+.asks b { display: block; font-size: 15.5px; margin-bottom: 5px; }
+.asks p { margin: 0; color: var(--dim); font-size: 14.5px; line-height: 1.65; max-width: 62ch; }
+
+/* Two verdicts, each owning a colour, with a tick or a cross per line so the
+   answer reads before the sentence does. */
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+  gap: 14px; margin: 0 0 8px; }
+/* The callout is a separate thought from the panels above it, and sat close
+   enough to read as their footer. */
+.verdict + .note { margin-top: 26px; }
+.vcol { background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  padding: 18px 20px; border-top-width: 3px; }
+.vcol.yes { border-top-color: var(--accent); }
+.vcol.no { border-top-color: var(--second); }
+.vcol > b { display: block; font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing: .14em;
+  text-transform: uppercase; margin-bottom: 14px; }
+.vcol.yes > b { color: var(--accent); }
+.vcol.no > b { color: var(--second); }
+.vcol > b code { font-size: 11px; letter-spacing: 0; text-transform: none; }
+.vcol ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.vcol li { position: relative; padding-left: 24px; font-size: 14px; line-height: 1.5; color: var(--dim); }
+.vcol li::before { position: absolute; left: 0; top: -1px; font-size: 13px; font-weight: 700; }
+.vcol.yes li::before { content: "\2713"; color: var(--accent); }
+.vcol.no li::before { content: "\2715"; color: var(--second); }
+
+.reqs { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.reqs li { font-size: 15.5px; color: var(--dim); display: flex; flex-wrap: wrap;
+  align-items: center; gap: 9px; }
+.reqs li::before { content: ""; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); flex: none; }
+.reqs b { color: var(--ink); font-weight: 600; }
+.reqs code { color: var(--accent); }
+
+/* ── TERMINAL ───────────────────────────────────────────────── */
+/* Its own small palette: a terminal that re-themes with the page stops
+   reading as a terminal. Every colour is still a token. */
+.term { background: var(--paper); border: 1px solid var(--line); border-radius: 6px;
+  overflow: hidden; margin: 0 0 14px; }
+.term-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+  background: var(--soft); border-bottom: 1px solid var(--line);
+  font: 500 11.5px/1 "IBM Plex Mono", monospace; color: var(--dim); }
+.term-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
+.term-dot:first-child { background: var(--second); }
+.term-dot:nth-child(3) { background: var(--accent); }
+.term-bar > span:nth-child(4) { margin-left: 8px; }
+.term-meta { margin-left: auto; opacity: .8; }
+.term-clear { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 3px; padding: 4px 9px; font: 500 10.5px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .06em; transition: color .14s, border-color .14s; }
+.term-clear:hover { color: var(--second); border-color: var(--second); }
+
+.term-out { height: 545px; overflow-y: auto; padding: 14px 16px;
+  font: 400 12.5px/1.6 "IBM Plex Mono", monospace; scrollbar-width: thin; }
+.term-out pre { background: none; border: 0; border-radius: 0; margin: 0; padding: 0;
+  font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+.term-out::-webkit-scrollbar { width: 8px; }
+.term-out::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+
+.term-prompt { display: flex; align-items: center; gap: 10px; padding: 11px 16px;
+  border-top: 1px solid var(--line); background: var(--soft); }
+.term-prompt > span { color: var(--accent); font: 600 13px/1 "IBM Plex Mono", monospace; }
+.term-prompt input { flex: 1; min-width: 0; background: none; border: 0; outline: none;
+  color: var(--ink); font: 400 13px/1.4 "IBM Plex Mono", monospace; }
+.term-prompt input::placeholder { color: var(--dim); opacity: .6; }
+
+/* Output classes are prefixed because the terminal writes them from JS, where
+   a collision with the page's stylesheet is invisible until it is not. */
+.t-dim { color: var(--dim); }
+.t-cmd { color: var(--accent); font-weight: 600; }
+.t-warn { color: var(--second); }
+.t-good { color: var(--t-var); }
+.t-bad { color: var(--second); }
+.t-pw { color: var(--ink); font-weight: 600; }
+
+.term-chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 12px; }
+.term-chips button { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 99px; padding: 6px 12px; font: 500 11.5px/1 "IBM Plex Mono", monospace;
+  transition: color .14s, border-color .14s; }
+.term-chips button:hover { color: var(--accent); border-color: var(--accent); }
+.term-hint { color: var(--dim); font-size: 13px; margin: 0 0 8px; }
+.term-hint kbd { font: 500 10.5px/1 "IBM Plex Mono", monospace; border: 1px solid var(--line);
+  border-radius: 3px; padding: 3px 5px; color: var(--ink); }
+.term-hint b { color: var(--ink); font-family: "IBM Plex Mono", monospace; font-size: 12px; }
+
+/* ── CONFIG BUILDER ─────────────────────────────────────────── */
+/* Tabs rather than one long scrolling column: eight settings on screen beats
+   twenty-seven behind a scrollbar, and the groups are how the config file is
+   organised anyway. */
+.cfg-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.cfg-tabs button { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 99px; padding: 7px 14px; font: 600 11px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .06em; transition: color .14s, border-color .14s, background .14s; }
+.cfg-tabs button:hover { color: var(--ink); border-color: var(--dim); }
+.cfg-tabs button[aria-selected="true"] { background: var(--accent); color: var(--on-accent);
+  border-color: var(--accent); }
+.cfg-tabs button b { font-weight: 600; opacity: .7; margin-left: 6px; }
+
+.cfg-search { width: 100%; background: var(--paper); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 4px; padding: 10px 13px; margin: 0 0 16px;
+  font: 400 13px/1 "IBM Plex Mono", monospace; }
+.cfg-search::placeholder { color: var(--dim); }
+.cfg { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 18px; align-items: start; }
+@media (max-width: 1000px) { .cfg { grid-template-columns: 1fr } }
+
+/* No inner scroll. The tab decides what is on screen. */
+.cfg-rows { display: grid; gap: 10px; }
+.cfg-row { background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  padding: 14px 16px; display: grid; grid-template-columns: 1fr auto; gap: 4px 14px;
+  align-items: center; transition: border-color .14s; }
+.cfg-row:hover { border-color: var(--dim); }
+.cfg-row[hidden] { display: none; }
+.cfg-row code { font-size: 13px; color: var(--ink); font-weight: 500; }
+.cfg-row p { grid-column: 1 / -1; margin: 2px 0 0; color: var(--dim); font-size: 12.5px; line-height: 1.5; }
+/* A row you have moved is marked, and says what it would be if you had not. */
+.cfg-row.changed { border-color: var(--accent); }
+.cfg-row.changed code::before { content: "●"; color: var(--accent); margin-right: 7px;
+  font-size: 9px; vertical-align: 2px; }
+.cfg-row .cfg-was { grid-column: 1 / -1; margin: 0; font: 500 11px/1.4 "IBM Plex Mono", monospace;
+  color: var(--accent); }
+.cfg-row:not(.changed) .cfg-was { display: none; }
+.cfg-row select, .cfg-row input[type=text], .cfg-row input[type=number] {
+  background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 3px;
+  padding: 7px 10px; font: 400 12.5px/1.2 "IBM Plex Mono", monospace;
+  min-width: 132px; max-width: 220px; }
+.cfg-row input[type=checkbox] { accent-color: var(--accent); width: 18px; height: 18px; }
+
+.cfg-out { display: grid; gap: 14px; position: sticky; top: 75px; }
+.cfg-out .filecard { background: var(--paper); border: 1px solid var(--line);
+  border-radius: 5px; overflow: hidden; }
+.cfg-out .filebar { display: flex; align-items: center; gap: 9px; padding: 9px 14px;
+  border-bottom: 1px solid var(--line); background: var(--soft);
+  font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing: .06em; color: var(--dim); }
+.filedot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+.cfg-count { margin-left: auto; color: var(--accent); }
+.cfg-copy { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 3px; padding: 4px 9px; font: 600 9px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .12em; text-transform: uppercase; }
+.cfg-copy:hover { color: var(--accent); border-color: var(--accent); }
+.cfg-copy.done { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.cfg-out pre { border: 0; border-radius: 0; margin: 0; max-height: 340px; overflow: auto; }
+
+.cfg-sample { background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  padding: 16px 18px; }
+.cfg-tag { display: block; font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+.cfg-pw { font-family: "IBM Plex Mono", monospace; font-size: clamp(14px, 1.5vw, 19px);
+  font-weight: 600; margin: 0 0 8px; overflow-wrap: anywhere; font-variant-ligatures: none; }
+.cfg-meta { margin: 0; color: var(--dim); font: 500 12px/1.5 "IBM Plex Mono", monospace; }
+.cfg-again, .cfg-reset { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 3px; padding: 7px 12px; font: 600 10px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .1em; text-transform: uppercase; }
+.cfg-again:hover { color: var(--accent); border-color: var(--accent); }
+.cfg-acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.cfg-reset:hover { color: var(--second); border-color: var(--second); }
+/* Settings whose value is a set, not a string. Typing 200 dictionary keys by
+   hand was never a real option. */
+.cfg-multi { grid-column: 1 / -1; margin-top: 4px; }
+.cfg-multi summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 8px;
+  font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--dim); border: 1px solid var(--line); border-radius: 3px; padding: 6px 10px; }
+.cfg-multi summary::-webkit-details-marker { display: none; }
+.cfg-multi summary:hover { color: var(--accent); border-color: var(--accent); }
+.cfg-multi[open] summary { color: var(--accent); border-color: var(--accent); }
+.cfg-multi summary b { color: var(--accent); }
+.cfg-picker { margin-top: 10px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.cfg-picker input { width: 100%; background: var(--bg); color: var(--ink); border: 0;
+  border-bottom: 1px solid var(--line); padding: 9px 12px;
+  font: 400 12px/1 "IBM Plex Mono", monospace; }
+.cfg-opts { display: flex; flex-wrap: wrap; gap: 5px; padding: 10px; max-height: 190px; overflow-y: auto; }
+.cfg-opts button { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 99px; padding: 5px 10px; font: 500 11px/1 "IBM Plex Mono", monospace; }
+.cfg-opts button:hover { color: var(--ink); border-color: var(--dim); }
+.cfg-opts button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent);
+  border-color: var(--accent); }
+.cfg-opts .cfg-empty { color: var(--dim); font-size: 12px; padding: 6px 2px; }
+
+.cfg-none { padding: 22px 4px; color: var(--dim); font-size: 13.5px; }
+
+/* ── THE SHELF ──────────────────────────────────────────────── */
+.shelf-bar { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 14px; }
+.shelf-bar input { flex: 1; min-width: 240px; background: var(--paper); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 4px; padding: 10px 13px;
+  font: 400 13px/1 "IBM Plex Mono", monospace; }
+.shelf-tally { font: 600 11px/1 "IBM Plex Mono", monospace; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--dim); white-space: nowrap; }
+.shelf-tally b { color: var(--accent); }
+
+.shelf-filters { display: grid; gap: 12px; margin: 0 0 20px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  padding: 16px 18px; }
+/* Label in its own column: a wrapped second line of chips starts under the
+   first chip, not under the word GROUP. */
+.shelf-set { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 12px; align-items: start; }
+.shelf-set + .shelf-set { border-top: 1px solid var(--line); padding-top: 12px; }
+.shelf-set > b { font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--dim); padding-top: 7px; }
+.shelf-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.shelf-chips button { background: transparent; color: var(--dim); border: 1px solid var(--line);
+  border-radius: 99px; padding: 5px 10px; font: 500 11px/1 "IBM Plex Mono", monospace;
+  transition: color .14s, border-color .14s, background .14s; }
+.shelf-chips button:hover { color: var(--ink); border-color: var(--dim); }
+.shelf-chips button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent);
+  border-color: var(--accent); }
+.shelf-chips button i { font-style: normal; opacity: .6; margin-left: 5px; }
+/* 124 tags fit only if each one is small. They all show — a scrolling strip
+   hides exactly the rare tag somebody came looking for. */
+.is-tags .shelf-chips button { padding: 4px 8px; font-size: 10px; }
+.is-tags .shelf-chips button i { margin-left: 4px; font-size: 9px; }
+
+.shelf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(238px, 1fr)); gap: 10px; }
+.dict { background: var(--paper); border: 1px solid var(--line); border-radius: 5px;
+  padding: 14px 16px; display: grid; gap: 7px; align-content: start;
+  transition: border-color .14s, transform .14s; }
+.dict:hover { border-color: var(--accent); transform: translateY(-2px); }
+.dict[hidden] { display: none; }
+.dict-top { display: flex; align-items: baseline; gap: 8px; }
+.dict-top em { font-style: normal; font-size: 16px; line-height: 1; }
+.dict-top b { font-family: Fraunces, serif; font-weight: 600; font-size: 14.5px; line-height: 1.25; }
+.dict-top span { margin-left: auto; font: 600 10px/1 "IBM Plex Mono", monospace; color: var(--accent); }
+.dict-key { font: 500 11px/1.3 "IBM Plex Mono", monospace; color: var(--dim); overflow-wrap: anywhere; }
+.dict-sample { font-size: 12.5px; color: var(--dim); line-height: 1.5; }
+.dict-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+.dict-meta span { font: 500 9.5px/1 "IBM Plex Mono", monospace; letter-spacing: .06em;
+  border: 1px solid var(--line); border-radius: 99px; padding: 4px 7px; color: var(--dim); }
+.dict-meta span.is-group { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.shelf-empty { padding: 30px 4px; color: var(--dim); font-size: 14px; }
+
+/* ── PAGES ──────────────────────────────────────────────────── */
+/* One section is shown at a time. The guide reads as a set of short pages
+   rather than one scroll you have to hunt through. */
+.doc main > section { display: none; border-top: 0; padding-top: 0; }
+.doc main > section.on { display: block; animation: pagein .26s ease; }
+@keyframes pagein { from { opacity: 0; transform: translateY(6px) } }
+
+/* ── ON THIS PAGE ───────────────────────────────────────────── */
+.onthis { position: sticky; top: 75px; align-self: start; }
+.onthis > b { display: block; font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--dim); opacity: .75; margin-bottom: 11px; }
+#subs { display: grid; border-left: 1px solid var(--line); }
+#subs a { position: relative; color: var(--dim); text-decoration: none; font-size: 12.5px;
+  line-height: 1.4; padding: 6px 0 6px 13px; margin-left: -1px;
+  border-left: 2px solid transparent; transition: color .14s, border-color .14s; }
+#subs a:hover { color: var(--ink); }
+#subs a[aria-current="true"] { color: var(--accent); border-left-color: var(--accent); }
+.onthis.empty { display: none; }
+
+/* ── PAGER ──────────────────────────────────────────────────── */
+/* Forward and back, named — so you can read the guide straight through
+   without going back to the rail between every page. */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 46px; }
+.pg { display: grid; gap: 6px; padding: 16px 20px; border: 1px solid var(--line);
+  border-radius: 6px; background: var(--paper); text-decoration: none;
+  transition: border-color .15s, transform .15s; }
+.pg:hover { border-color: var(--accent); transform: translateY(-2px); }
+.pg span { font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--dim); }
+.pg b { font-size: 15px; color: var(--ink); }
+.pg.next { text-align: right; }
+.pg[hidden] { display: none; }
+/* A missing neighbour leaves its half of the row empty rather than letting
+   the other card stretch across and look like a different control. */
+.pager.only-next .pg.next { grid-column: 2; }
+
+/* ── DOC LAYOUT ─────────────────────────────────────────────── */
+/* Two columns that become one, with the contents list sticky beside the
+   prose rather than collapsed into a menu you have to go looking for. */
+.doc { padding-top: clamp(26px, 3.4vw, 44px); padding-bottom: 40px; display: grid;
+  grid-template-columns: 258px minmax(0, 1fr) 196px; gap: clamp(26px, 3.4vw, 52px); align-items: start; }
+@media (max-width: 1120px) { .doc { grid-template-columns: 238px minmax(0, 1fr) } .onthis { display: none } }
+@media (max-width: 900px) { .doc { grid-template-columns: 1fr } }
+
+/* Sticky keeps the aside in flow, so its grid column survives — which is
+   exactly what `fixed` destroyed. `align-self: start` matters: a stretched
+   grid item is as tall as the page and has nothing left to stick within. */
+.doc > aside { position: sticky; top: 75px; align-self: start; padding-bottom: 20px; }
+/* A pinned rail taller than the window overhangs the grid and prints over the
+   footer. Measured in JS, because this host does not give CSS a viewport
+   height it can trust. */
+.doc > aside.is-tall { position: static; }
+.toc { display: grid; gap: 1px; align-content: start; }
+/* Section labels, not links — they name a stage of reading, and clicking one
+   would just take you to the first item under it. */
+.toc b { font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--dim); opacity: .75; padding: 0 0 7px 12px; margin-top: 22px; }
+.toc b:first-child { margin-top: 0; }
+.toc a { position: relative; display: block; color: var(--dim); text-decoration: none;
+  font-size: 13.5px; line-height: 1.35; padding: 7px 12px; border-radius: 4px;
+  transition: color .14s, background .14s; }
+.toc a:hover { color: var(--ink); background: var(--soft); }
+/* The section you are in gets the pill and the marker; everything else stays
+   quiet so there is exactly one thing to find. */
+.toc a[aria-current="true"] { color: var(--accent); font-weight: 600;
+  background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.toc a[aria-current="true"]::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px;
+  width: 2px; border-radius: 2px; background: var(--accent); }
+.toc a.out::after { content: "\2197"; margin-left: 5px; opacity: .5; font-size: 11px; }
+
+@media (max-width: 900px) {
+  .doc aside { position: static; max-height: none; overflow: visible; padding-bottom: 0; }
+  .toc { grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto;
+    border-bottom: 1px solid var(--line); padding-bottom: 10px; gap: 4px; align-items: center; }
+  .toc b { display: none; }
+  .toc a { white-space: nowrap; padding: 6px 10px; }
+  .toc a[aria-current="true"]::before { display: none; }
+}
+
+.doc main { min-height: 540px; }
+.doc main section:first-child { border-top: 0; padding-top: 0; }
+.doc main h2 { font-size: clamp(22px, 3vw, 31px); }
+/* A section heading inside a page needs room above it, or the page reads as
+   one undivided column. The first one sits flush with the top. */
+.doc main h2:not(.page-title) { margin-top: 62px; }
+.doc main > section > h2:first-child { margin-top: 0; }
+.doc main h3 { font-size: 16.5px; margin: 30px 0 9px; }
+.doc main h3:first-of-type { margin-top: 22px; }
+.doc main table { margin-bottom: 18px; }
+.dimmed { color: var(--dim); }
+
+/* A permalink per heading. It stays out of the way until you are on the line,
+   and copying is the point — nobody wants to navigate, they want the URL. */
+.anchor { margin-left: 10px; font-family: "IBM Plex Mono", monospace; font-weight: 500;
+  font-size: .62em; color: var(--dim); text-decoration: none; opacity: 0;
+  transition: opacity .15s, color .15s; vertical-align: 1px; }
+h2:hover > .anchor, h3:hover > .anchor, .anchor:focus-visible { opacity: 1; }
+.anchor:hover { color: var(--accent); }
+.anchor.done { opacity: 1; color: var(--accent); }
+.anchor.done::after { content: " copied"; font-size: .85em; letter-spacing: .08em; }
+@media (hover: none) { .anchor { opacity: .45; } }
+
+/* A heading you can link to, without a permalink glyph shouting for attention
+   until you are actually near it. */
+.doc main h2, .doc main h3 { scroll-margin-top: 82px; position: relative; }
+.doc main section { scroll-margin-top: 74px; }
+
+.note { background: var(--soft); border-left: 3px solid var(--accent); border-radius: 0 3px 3px 0;
+  padding: 15px 18px; margin: 0 0 18px; font-size: 14.5px; line-height: 1.7; color: var(--dim); }
+.note b { color: var(--ink); }
+.note.warn { border-left-color: var(--second); }
+.note.warn code, .note code { color: var(--accent); }
+.note.warn b { color: var(--ink); }
+
+.steps { margin: 0 0 20px; padding-left: 20px; color: var(--dim); font-size: 14.5px; line-height: 1.9; }
+.steps code { color: var(--accent); }
+.steps span { color: var(--dim); opacity: .75; font-style: italic; }
+ul.plain { margin: 0 0 20px; padding-left: 20px; color: var(--dim); font-size: 15px; line-height: 1.8; }
+ul.plain code { color: var(--accent); }
+.doc main a { color: var(--accent); }
+/* A link rule beats .btn on specificity, which painted the solid button's
+   label the same colour as its own background. */
+.doc main a.pg { color: inherit; text-decoration: none; }
+
+/* Every code block gets a copy control, because a guide is a place people
+   take things from. */
+.codewrap { position: relative; }
+.codewrap > button { position: absolute; top: 8px; right: 8px; opacity: 0;
+  background: var(--bg); color: var(--dim); border: 1px solid var(--line); border-radius: 2px;
+  padding: 5px 8px; font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .12em;
+  text-transform: uppercase; transition: opacity .15s, color .15s; }
+.codewrap:hover > button, .codewrap > button:focus-visible { opacity: 1; }
+.codewrap > button:hover { color: var(--accent); border-color: var(--accent); }
+
+/* The postage block closes the page the way the front page does. */
+
+#progress { position: fixed; inset: 0 auto auto 0; height: 3px; width: 0; z-index: 40;
+  background: var(--accent); transition: width .1s linear; }
+footer { padding-block: 26px 40px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; }
+.menu a.here { color: var(--ink); font-weight: 600; }
+.menu a.here::after { right: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+#home .pw { font-variant-ligatures: none; overflow-wrap: anywhere; }
+#home .sub { font-size: clamp(16px, 2.1vw, 20px); line-height: 1.6; color: var(--dim); max-width: 56ch; margin: 0 0 30px; }
+#home .kicker { display: inline-block; font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing: .28em;
+  text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 2px;
+  padding: 7px 11px; margin-bottom: 22px; transform: rotate(-1.4deg); }
+.btn { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 2px;
+  padding: 13px 22px; font-weight: 600; font-size: 14.5px; text-decoration: none; display: inline-block;
+  transition: transform .12s, box-shadow .12s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px var(--ring); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.acts { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+/* ── HERO ENVELOPE ──────────────────────────────────────────── */
+#home .hero { padding-block: clamp(36px, 5.5vw, 72px) clamp(26px, 3.4vw, 44px); }
+#home .envelope { position: relative; background: var(--paper); border: 1px solid var(--line);
+  padding: clamp(22px, 3.4vw, 36px) clamp(22px, 3.4vw, 36px) clamp(22px, 3.4vw, 30px);
+  box-shadow: 0 20px 48px var(--grain), 0 2px 0 var(--soft);
+  /* Perforated stamp edge, punched with a repeating radial mask. */
+  --p: 9px;
+  mask: radial-gradient(circle var(--p) at 0 50%, transparent 98%, #000) 0 0 / 100% 100%,
+        linear-gradient(#000, #000) 0 0 / 100% 100%;
+  mask-composite: intersect;
+  transition: transform .25s cubic-bezier(.2,.8,.2,1);
+}
+#home .envelope:hover { transform: translateY(-3px); }
+#home .envelope .tape { position: absolute; inset: 0 0 auto 0; }
+#home .to { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--dim); margin: 14px 0 14px; }
+#home .big { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: clamp(19px, 4.2vw, 42px);
+  letter-spacing: -.02em; margin: 0 0 8px; line-height: 1.16; }
+#home .big span { display: inline-block; animation: drop .32s cubic-bezier(.2,1.2,.3,1) backwards; }
+@keyframes drop { from { opacity: 0; transform: translateY(-.32em) rotate(-4deg) } }
+#home .small { font-size: 13px; color: var(--dim); margin: 0; font-family: "IBM Plex Mono", monospace; letter-spacing: .04em; }
+/* The postmark thumps down when a new password is drawn. */
+#home .postmark { position: absolute; top: clamp(14px, 2.4vw, 26px); right: clamp(14px, 2.4vw, 26px);
+  width: clamp(86px, 13vw, 124px); aspect-ratio: 1; border-radius: 50%;
+  border: 2px solid var(--accent); color: var(--accent); display: grid; place-content: center;
+  text-align: center; font: 600 8.5px/1.5 "IBM Plex Mono", monospace; letter-spacing: .14em;
+  transform: rotate(-13deg); opacity: .82; pointer-events: none; }
+#home .postmark::before, #home .postmark::after { content: ""; position: absolute; left: 6%; right: 6%; height: 2px; background: var(--accent); }
+#home .postmark::before { top: 27%; }
+#home .postmark::after { bottom: 27%; }
+#home .postmark.hit { animation: thump .5s cubic-bezier(.2,1.4,.3,1); }
+@keyframes thump { 0% { transform: rotate(-30deg) scale(2.6); opacity: 0 } 60% { opacity: .95 } 100% { transform: rotate(-13deg) scale(1); opacity: .82 } }
+#home .copied { font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); border: 1px dashed var(--accent); padding: 6px 10px; transform: rotate(-3deg);
+  opacity: 0; transition: opacity .2s; }
+#home .copied.on { opacity: 1; }
+/* ── CALL TO ACTION ─────────────────────────────────────────── */
+#home .cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 30px 0 16px; }
+#home .big-btn { padding: 16px 28px; font-size: 15.5px; border-radius: 3px; }
+#home .big-btn span { display: inline-block; transition: transform .22s cubic-bezier(.2,.8,.2,1); }
+#home .big-btn:hover span { transform: translateX(4px); }
+/* The primary action carries the perforated edge from the envelope, so the
+   two read as parts of the same piece of stationery. */
+#home .cta .btn:not(.ghost) { position: relative; overflow: hidden; }
+#home .cta .btn:not(.ghost)::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 42%;
+  background: linear-gradient(105deg, transparent, color-mix(in srgb, var(--on-accent) 26%, transparent), transparent);
+  transform: translateX(-160%); }
+#home .cta .btn:not(.ghost):hover::after { transition: transform .62s ease; transform: translateX(340%); }
+#home .cta .btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+#home .cmd { display: inline-flex; align-items: center; gap: 10px; max-width: 100%;
+  background: transparent; border: 1px dashed var(--line); border-radius: 3px;
+  padding: 11px 14px; margin: 0; text-align: left; transition: border-color .15s; }
+#home .cmd:hover { border-color: var(--accent); }
+#home .cmd .dollar { color: var(--dim); font: 500 13px/1 "IBM Plex Mono", monospace; }
+#home .cmd code { font-size: 13.5px; color: var(--ink); overflow-wrap: anywhere; }
+/* No standing button: the row is the control, and it only says anything once
+   there is something true to say. */
+#home .cmd { position: relative; }
+#home .cmd.done { border-style: solid; border-color: var(--accent); }
+#home .cmd.done::after { content: "copied"; position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--on-accent); background: var(--accent); border-radius: 2px; padding: 5px 7px; }
+/* ── CARDS ──────────────────────────────────────────────────── */
+#home .cards { margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(226px, 1fr)); gap: 14px; }
+#home .card { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 20px;
+  transition: transform .18s, border-color .18s; }
+#home .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+#home .card p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--dim); }
+#home .card .n { font: 600 9px/1 "IBM Plex Mono", monospace; letter-spacing: .18em; color: var(--accent); display: block; margin-bottom: 10px; }
+/* ── AGREEMENT DEMO ─────────────────────────────────────────── */
+#home .agree { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+#home .agree .tape { opacity: .9 }
+#home .agree-in { padding: clamp(20px, 3.4vw, 32px); display: grid; gap: 18px; }
+#home .agree-row { display: grid; gap: 10px; }
+#home .agree-lbl { font: 600 9.5px/1 "IBM Plex Mono", monospace; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+#home .agree-line { font-family: "IBM Plex Mono", monospace; font-size: clamp(17px, 3.2vw, 32px); line-height: 1.25; display: flex; flex-wrap: wrap; gap: .4em; align-items: baseline; }
+#home .agree-line .ok { color: var(--accent); font-weight: 600; }
+#home .agree-line .no { color: var(--dim); text-decoration: line-through; text-decoration-thickness: 2px; opacity: .65; }
+#home .agree-line .g { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--dim); border: 1px solid var(--line); border-radius: 99px; padding: 4px 8px; align-self: center; }
+#home .flag { font-size: 30px; line-height: 1; }
+#home .swap { display: inline-flex; gap: 0; border: 1px solid var(--line); border-radius: 2px; overflow: hidden; }
+#home .swap button { background: transparent; border: 0; padding: 8px 14px; font: 600 11px/1 "IBM Plex Mono", monospace; letter-spacing: .12em; color: var(--dim); }
+#home .swap button + button { border-left: 1px solid var(--line); }
+#home .swap button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+#home .warn { background: var(--soft); border-left: 3px solid var(--accent); padding: 17px 20px;
+  border-radius: 0 3px 3px 0; font-size: 15px; line-height: 1.68; }
+/* ── IN TRANSIT ─────────────────────────────────────────────── */
+/* Scrolling the page is the parcel moving. The bar is its progress and the
+   chip is its status, which is the only honest reason to put either here. */
+#sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.topbar, section, footer, .hero, .doc { position: relative; z-index: 1; }
+/* ── STATS BAND ─────────────────────────────────────────────── */
+#home .band { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+#home .band div { background: var(--paper); padding: 22px 20px; display: grid; gap: 6px; }
+#home .band b { font-family: Fraunces, serif; font-weight: 900; font-size: clamp(28px, 4.4vw, 46px);
+  line-height: 1; letter-spacing: -.03em; font-variant-numeric: tabular-nums; color: var(--accent); }
+#home .band span { font: 600 9.5px/1 "IBM Plex Mono", monospace; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+/* Cards arrive in sequence, like a stack being dealt. */
+#home .cards > *, #home .tiers > * { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+#home .rv.in .cards > *, #home .rv.in .tiers > * { opacity: 1; transform: none; }
+#home .rv.in .cards > :nth-child(2), #home .rv.in .tiers > :nth-child(2) { transition-delay: .07s }
+#home .rv.in .cards > :nth-child(3), #home .rv.in .tiers > :nth-child(3) { transition-delay: .14s }
+#home .rv.in .cards > :nth-child(4), #home .rv.in .tiers > :nth-child(4) { transition-delay: .21s }
+/* The envelope leans toward the cursor; the mask stays put because only the
+   transform moves. */
+#home .tiltwrap { perspective: 900px; }
+#home .envelope { will-change: transform; }
+@media (prefers-reduced-motion: reduce) {
+#home .cards > *, #home .tiers > * { opacity: 1; transform: none; }
+}
+/* A door at the foot of a section, into the page that goes deeper. */
+#home .deeper { margin: 26px 0 0; }
+#home .deeper a { display: inline-flex; align-items: center; gap: 9px; color: var(--accent);
+  text-decoration: none; font-weight: 600; font-size: 14.5px;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); padding-bottom: 3px; }
+#home .deeper a span { display: inline-block; transition: transform .2s cubic-bezier(.2,.8,.2,1); }
+#home .deeper a:hover span { transform: translateX(5px); }
+/* ── CONFIG SUMMARY ─────────────────────────────────────────── */
+/* Six areas, each a door into the matching part of the documentation. Three
+   across so the last row is never an orphan pair beside empty cells. */
+#home .cfgmap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 22px; }
+@media (max-width: 1000px) {
+#home .cfgmap { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+}
+@media (max-width: 620px) {
+#home .cfgmap { grid-template-columns: 1fr }
+}
+#home .cfgcard { position: relative; display: grid; gap: 9px; align-content: start;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+  padding: 18px 20px 20px; text-decoration: none; overflow: hidden;
+  transition: border-color .16s, transform .16s; }
+#home .cfgcard:hover { border-color: var(--accent); transform: translateY(-3px); }
+#home .cfgcard b { font-family: Fraunces, serif; font-weight: 600; font-size: 16.5px; color: var(--ink); }
+#home .cfgcard code { font-size: 11.5px; line-height: 1.7; color: var(--accent); overflow-wrap: anywhere; }
+#home .cfgcard span { color: var(--dim); font-size: 13.5px; line-height: 1.55; }
+/* The arrow only appears on approach, so six of them do not shout at once. */
+#home .cfgcard::after { content: "→"; position: absolute; top: 16px; right: 18px; color: var(--accent);
+  opacity: 0; transform: translateX(-6px); transition: opacity .16s, transform .16s; }
+#home .cfgcard:hover::after { opacity: 1; transform: none; }
+#home .builderpitch { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(20px, 3vw, 40px); align-items: center;
+  background: var(--soft); border: 1px solid var(--line); border-radius: 3px;
+  padding: clamp(22px, 3.4vw, 34px); }
+@media (max-width: 900px) {
+#home .builderpitch { grid-template-columns: 1fr }
+}
+#home .builderpitch h3 { font-size: clamp(19px, 2.4vw, 26px); margin: 0 0 12px; }
+#home .builderpitch > div > p { color: var(--dim); font-size: 15px; line-height: 1.7; max-width: 60ch; margin: 0; }
+#home .builderpitch .btn span { display: inline-block; transition: transform .22s cubic-bezier(.2,.8,.2,1); }
+#home .builderpitch .btn:hover span { transform: translateX(4px); }
+/* A sample of the output, because "only what differs" is easier shown. */
+#home .cfgpreview { margin: 0; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 4px; overflow: hidden; }
+#home .cfgpreview figcaption { display: flex; align-items: center; gap: 9px; padding: 9px 14px;
+  border-bottom: 1px solid var(--line); background: var(--bg);
+  font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing: .06em; color: var(--dim); }
+#home .cfgpreview pre { border: 0; border-radius: 0; margin: 0; background: transparent; font-size: 12.5px; }
+#home .cfgpreview > p { margin: 0; padding: 11px 16px 14px; border-top: 1px solid var(--line);
+  color: var(--dim); font: 500 11.5px/1.5 "IBM Plex Mono", monospace; }
+/* ── SHELF, LIGHTLY ─────────────────────────────────────────── */
+/* The whole catalogue is a page of its own. Here it only has to convey that
+   there is a lot of it, which a moving belt does better than a grid. */
+#home .belt { position: relative; margin: 4px 0 18px; overflow: hidden;
+  mask: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+#home .belt-row { display: flex; gap: 8px; width: max-content; padding: 5px 0;
+  animation: belt var(--dur, 150s) linear infinite; }
+#home .belt-row.back { animation-direction: reverse; --dur: 185s; }
+#home .belt:hover .belt-row { animation-play-state: paused; }
+@keyframes belt { to { transform: translateX(-50%) } }
+#home .tile { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 99px;
+  padding: 8px 14px; font-size: 13px; color: var(--ink); }
+#home .tile em { font-style: normal; font-size: 14px; line-height: 1; }
+#home .tile span { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--dim); }
+#home .groups { display: flex; gap: 7px; flex-wrap: wrap; margin: 0 0 20px; }
+#home .gchip { display: inline-flex; align-items: baseline; gap: 7px; border: 1px solid var(--line);
+  border-radius: 99px; padding: 7px 13px; font: 500 12px/1 "IBM Plex Mono", monospace; color: var(--dim); }
+#home .gchip b { color: var(--ink); font-weight: 600; }
+#home .gchip i { font-style: normal; font-size: 13px; }
+#home .counts { display: flex; gap: clamp(16px, 4vw, 40px); flex-wrap: wrap; margin: 0 0 22px; }
+#home .counts div { display: grid; gap: 4px; }
+#home .counts b { font-family: Fraunces, serif; font-weight: 900; font-size: clamp(24px, 3.4vw, 36px);
+  line-height: 1; letter-spacing: -.03em; color: var(--accent); font-variant-numeric: tabular-nums; }
+#home .counts span { font: 600 9.5px/1 "IBM Plex Mono", monospace; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--dim); }
+@media (prefers-reduced-motion: reduce) {
+#home .belt { mask: none; overflow-x: auto; }
+#home .belt-row { animation: none; }
+#home .belt-row.back { display: none; }
+}
+/* ── SPONSOR ────────────────────────────────────────────────── */
+#home .eyebrow { display: flex; align-items: center; gap: 10px; font: 600 11px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .26em; text-transform: uppercase; color: var(--accent); margin: 0 0 16px; }
+#home .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--accent); }
+#home .sponsor-head { font-family: Fraunces, serif; font-weight: 900; font-size: clamp(30px, 5.6vw, 62px);
+  line-height: 1.02; letter-spacing: -.03em; margin: 0 0 20px; text-wrap: balance; }
+/* The two airmail hues meet on the one word the section turns on. */
+#home .sponsor-head em { font-style: normal;
+  background: linear-gradient(96deg, var(--second), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+#home .sponsor-top { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(22px, 4vw, 48px); align-items: start; }
+@media (max-width: 860px) {
+#home .sponsor-top { grid-template-columns: 1fr }
+}
+#home .sponsor-top p { color: var(--dim); font-size: 16px; line-height: 1.72; max-width: 52ch; margin: 0 0 16px; }
+/* A postage stamp, perforated on all four edges. */
+#home .stamp-card { --r: 7px; background: var(--paper); padding: clamp(24px, 3.4vw, 34px); text-align: center;
+  mask:
+    radial-gradient(var(--r) at 50% 0, #0000 98%, #000) 50% / calc(4 * var(--r)) 100%,
+    radial-gradient(var(--r) at 50% 100%, #0000 98%, #000) 50% / calc(4 * var(--r)) 100%,
+    radial-gradient(var(--r) at 0 50%, #0000 98%, #000) 0 / 100% calc(4 * var(--r)),
+    radial-gradient(var(--r) at 100% 50%, #0000 98%, #000) 0 / 100% calc(4 * var(--r));
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+  filter: drop-shadow(0 10px 26px var(--ring)); }
+#home .price { font-family: Fraunces, serif; font-weight: 900; font-size: clamp(48px, 8vw, 78px);
+  line-height: 1; letter-spacing: -.04em; margin: 0;
+  background: linear-gradient(96deg, var(--second), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+#home .price-sub { font: 500 10px/1 "IBM Plex Mono", monospace; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--dim); margin: 12px 0 20px; }
+#home .sponsor-cta { display: block; width: 100%; background: linear-gradient(96deg, var(--second), var(--accent));
+  color: #fff; border: 0; border-radius: 3px; padding: 15px 18px; font-weight: 700; font-size: 15px;
+  text-decoration: none; transition: transform .12s, filter .12s; }
+#home .sponsor-cta:hover { transform: translateY(-2px); filter: brightness(1.08); }
+#home .price-note { font-size: 12.5px; line-height: 1.6; color: var(--dim); margin: 14px 0 0; }
+#home .tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 14px; margin: 34px 0 0; }
+#home .tier { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 3px;
+  padding: 20px; transition: transform .18s, border-color .18s; }
+#home .tier:hover { transform: translateY(-3px); border-color: var(--accent); }
+#home .tier .ico { font-size: 22px; line-height: 1; display: block; margin-bottom: 14px; }
+#home .tier .free { position: absolute; top: 16px; right: 16px; font: 600 9px/1 "IBM Plex Mono", monospace;
+  letter-spacing: .16em; color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: 5px 8px; }
+#home .tier p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--dim); }
+#home .why { display: flex; gap: 14px; align-items: flex-start; margin: 22px 0 0;
+  background: var(--soft); border-left: 3px solid var(--second); border-radius: 0 3px 3px 0;
+  padding: 18px 20px; font-size: 14.5px; line-height: 1.7; color: var(--dim); }
+#home .why b { color: var(--ink); }
+#home .why .ico { font-size: 16px; line-height: 1.6; }
+/* ── REVEAL ─────────────────────────────────────────────────── */
+#home .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+#home .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+#home .rv { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MERGE BRIDGE
+   The landing page and the guide were written as two documents in
+   one identity. These are the few places where they disagreed, and
+   which of the two wins where.
+   ══════════════════════════════════════════════════════════════ */
+
+/* The router hides whichever of the two the hash is not pointing at. */
+.hidden { display: none !important; }
+
+/* Shared chrome, reconciled: the guide's rules are the base, and these are
+   the landing page's small departures from them, kept where they belong. */
+.menu { -ms-overflow-style: none; }
+.menu a { padding-block: 4px; }
+section { scroll-margin-top: 70px; }
+
+/* A reading column is wider than a selling one, so the landing page keeps
+   its own measure rather than inheriting the guide's. */
+#home .mx { max-width: 1060px; }
+#home .lead { max-width: 64ch; }

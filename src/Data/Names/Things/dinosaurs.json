@@ -1,5 +1,6 @@
 {
     "key": "dinosaurs",
+    "name": "Dinosaurs",
     "type": "things",
     "locale": "en",
     "group": "science",

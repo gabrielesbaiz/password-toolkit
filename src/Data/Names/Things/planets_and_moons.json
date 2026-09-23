@@ -1,5 +1,6 @@
 {
     "key": "planets_and_moons",
+    "name": "Planets and Moons",
     "type": "things",
     "locale": "en",
     "group": "nature",

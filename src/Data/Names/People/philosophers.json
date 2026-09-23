@@ -1,5 +1,6 @@
 {
     "key": "philosophers",
+    "name": "Philosophers",
     "type": "people",
     "locale": "en",
     "group": "science",

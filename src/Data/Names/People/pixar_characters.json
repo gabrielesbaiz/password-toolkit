@@ -1,5 +1,6 @@
 {
     "key": "pixar_characters",
+    "name": "Pixar Characters",
     "type": "people",
     "locale": "en",
     "group": "screen",

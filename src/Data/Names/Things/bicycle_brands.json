@@ -1,9 +1,10 @@
 {
     "key": "bicycle_brands",
+    "name": "Bicycle Brands",
     "type": "things",
     "locale": "en",
     "group": "vehicles",
-    "tags": ["cycling", "brands"],
+    "tags": ["brands", "cycling"],
     "icon": "🚲",
     "reach": "global",
     "values": [

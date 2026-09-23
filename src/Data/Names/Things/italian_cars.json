@@ -1,5 +1,6 @@
 {
     "key": "italian_cars",
+    "name": "Italian Cars",
     "type": "things",
     "locale": "it",
     "group": "vehicles",

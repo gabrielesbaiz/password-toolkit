@@ -1,5 +1,6 @@
 {
     "key": "italian_lakes",
+    "name": "Italian Lakes",
     "type": "things",
     "locale": "it",
     "group": "nature",
