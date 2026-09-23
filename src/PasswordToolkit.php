@@ -256,7 +256,7 @@ class PasswordToolkit implements PasswordGenerator
     /**
      * Get every dictionary currently visible, as plain arrays.
      *
-     * @return Collection<string, array{key: string, label: string, description: string|null, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}>
+     * @return Collection<string, array{key: string, label: string, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}>
      */
     public function dictionaries(?Options $options = null): Collection
     {

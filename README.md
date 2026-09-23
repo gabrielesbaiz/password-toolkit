@@ -620,7 +620,6 @@ PasswordToolkit::dictionaries()->get('italian_pasta_shapes');
 // [
 //   'key' => 'italian_pasta_shapes',
 //   'label' => 'Italian Pasta Shapes',      // 'Formati di Pasta' in Italian
-//   'description' => null,
 //   'icon' => '🍝',
 //   'type' => 'things',
 //   'group' => 'food',  'group_label' => 'Food',
@@ -643,9 +642,10 @@ PasswordToolkit::groups();
 // [['value' => 'food', 'label' => 'Food', 'icon' => '🍝', 'count' => 10], …]
 ```
 
-Labels and descriptions live in `resources/lang/{locale}/dictionaries.php`, so
-they translate like everything else. A dictionary without a label falls back to
-its key made readable, and `description` is `null` until one is written.
+A dictionary declares its own `name`, and `resources/lang/{locale}/dictionaries.php`
+overlays a translation where one exists. So a label resolves in that order —
+translation, declared name, key made readable — which is what lets a dictionary
+of your own carry a proper name without touching the package's translations.
 
 ### Your own dictionaries
 

@@ -31,12 +31,4 @@ return [
         'niche' => 'Niche',
     ],
 
-    /*
-     * Optional one-line descriptions, keyed by dictionary. Anything absent
-     * simply has no description; nothing breaks.
-     */
-    'descriptions' => [
-        //
-    ],
-
 ];
