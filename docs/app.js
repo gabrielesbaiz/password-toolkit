@@ -266,7 +266,7 @@ function sanitize(v, sep) {
 
 const DEFAULTS = { count: 1, locale: null, only: [], except: [], type: [], group: [], tag: [], reach: null,
   separator: '-', digits: 6, position: 'end', leet: 'none', numbers: true, report: false, json: false, list: false,
-  words: 2, case: 'title', adjectivePosition: null, leadingZero: false };
+  words: 2, case: 'title', adjectivePosition: null, leadingZero: false, nameSeparator: true };
 
 /* Title case leaves a name as the dictionary spelled it, so McFly survives;
    the other modes apply to every word. That is what the package does. */
@@ -320,7 +320,7 @@ function generate(o) {
   }
 
   const sep = o.separator;
-  const nm = sanitize(caseName(name.replace(/ /g, sep || ''), o.case), sep);
+  const nm = sanitize(caseName(name.replace(/ /g, o.nameSeparator ? (sep || '') : ''), o.case), sep);
   const adjectives = drawn.map(w => sanitize(caseAdj(w, o.case), sep));
 
   /* Word order belongs to the language — Italian says Goldrake Mitico,
@@ -952,6 +952,7 @@ function cfgRender() {
   o.case = cfgState.case;
   o.leadingZero = cfgState.numbers_allow_leading_zero;
   o.adjectivePosition = cfgState.adjective_position === 'null' ? null : cfgState.adjective_position;
+  o.nameSeparator = cfgState.name_separator;
 
   try {
     const g = generate(o);
