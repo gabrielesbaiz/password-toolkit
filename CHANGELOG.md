@@ -2,7 +2,7 @@
 
 All notable changes to `password-toolkit` are documented here.
 
-## 2.0.0 — unreleased
+## 2.0.0 — 2026-09-23
 
 A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
 

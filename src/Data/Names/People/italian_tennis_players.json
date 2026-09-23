@@ -4,7 +4,7 @@
     "type": "people",
     "locale": "it",
     "group": "sport",
-    "tags": ["italian", "tennis"],
+    "tags": ["italian", "sport", "tennis"],
     "icon": "🎾",
     "reach": "global",
     "values": [

@@ -4,7 +4,7 @@
     "type": "things",
     "locale": "en",
     "group": "sport",
-    "tags": ["clubs", "football"],
+    "tags": ["clubs", "football", "sport"],
     "icon": "⚽",
     "reach": "global",
     "values": [

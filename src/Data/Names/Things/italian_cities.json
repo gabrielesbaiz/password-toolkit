@@ -4,7 +4,7 @@
     "type": "things",
     "locale": "it",
     "group": "places",
-    "tags": ["geography", "italian"],
+    "tags": ["cities", "geography", "italian"],
     "icon": "🏙️",
     "reach": "global",
     "values": [

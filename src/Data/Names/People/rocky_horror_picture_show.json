@@ -1,0 +1,27 @@
+{
+    "key": "rocky_horror_picture_show",
+    "name": "The Rocky Horror Picture Show",
+    "type": "people",
+    "locale": "en",
+    "group": "screen",
+    "tags": ["cult", "film", "musical", "sciencefiction", "seventies"],
+    "icon": "💋",
+    "reach": "global",
+    "values": [
+        { "name": "Frank N Furter", "gender": "male" },
+        { "name": "Brad Majors", "gender": "male" },
+        { "name": "Janet Weiss", "gender": "female" },
+        { "name": "Riff Raff", "gender": "male" },
+        { "name": "Magenta", "gender": "female" },
+        { "name": "Columbia", "gender": "female" },
+        { "name": "Rocky Horror", "gender": "male" },
+        { "name": "Eddie", "gender": "male" },
+        { "name": "Everett Scott", "gender": "male" },
+        { "name": "Criminologist", "gender": "male" },
+        { "name": "Ralph Hapschatt", "gender": "male" },
+        { "name": "Betty Munroe", "gender": "female" },
+        { "name": "Transylvanians", "gender": "male" },
+        { "name": "Trixie", "gender": "female" },
+        { "name": "Phantom", "gender": "male" }
+    ]
+}
