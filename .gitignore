@@ -24,6 +24,9 @@ _ide_helper_models.php
 /.fleet
 /.vscode
 
+# macOS
+.DS_Store
+
 # The documentation site is served by GitHub Pages from /docs, so it is
 # committed rather than ignored.
 
