@@ -27,6 +27,11 @@ enum Reach: string
     /** Specialist even in Italy: dialect words, old currencies, circus terms. */
     case Niche = 'niche';
 
+    /**
+     * Parse the given value into a reach level.
+     *
+     * @throws InvalidOptionException
+     */
     public static function parse(string $value): self
     {
         return self::tryFrom(strtolower(trim($value)))
@@ -35,13 +40,16 @@ enum Reach: string
             );
     }
 
+    /**
+     * Get the translated, human-facing name.
+     */
     public function label(): string
     {
         return (string) trans('password-toolkit::dictionaries.reach.'.$this->value);
     }
 
     /**
-     * Whether this reach is included when asking for at least $minimum.
+     * Determine whether this reach is included when asking for at least the given minimum.
      *
      * Asking for `italian` accepts `global` too, because anything universally
      * recognisable is also recognisable to an Italian.
@@ -51,6 +59,9 @@ enum Reach: string
         return $this->breadth() >= $minimum->breadth();
     }
 
+    /**
+     * Get the numeric rank used to order the reach levels against one another.
+     */
     private function breadth(): int
     {
         return match ($this) {

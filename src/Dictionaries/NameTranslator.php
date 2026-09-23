@@ -37,8 +37,10 @@ use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 final class NameTranslator
 {
     /**
-     * Decoded maps, keyed by "{locale}/{key}". An empty array marks a miss, so
-     * a dictionary with no translations is stat-ed once per process.
+     * Decoded maps, keyed by "{locale}/{key}".
+     *
+     * An empty array marks a miss, so a dictionary with no translations is
+     * stat-ed once per process.
      *
      * @var array<string, array<string, string>>
      */
@@ -51,9 +53,14 @@ final class NameTranslator
      */
     private array $paths = [];
 
+    /**
+     * Create a new name translator instance.
+     */
     public function __construct(private readonly string $basePath = __DIR__.'/../Data/Names') {}
 
     /**
+     * Set the extra lookup roots, searched before the built-in one.
+     *
      * @param  array<int, string>  $paths
      */
     public function usingPaths(array $paths): self
@@ -66,13 +73,16 @@ final class NameTranslator
         return $this;
     }
 
+    /**
+     * Flush the cached translation maps.
+     */
     public function flush(): void
     {
         $this->cache = [];
     }
 
     /**
-     * The entry, with its name rendered in the active locale.
+     * Get the entry, with its name rendered in the active locale.
      *
      * Returns the same entry untouched when nothing translates it, so the
      * common case allocates nothing.
@@ -99,8 +109,9 @@ final class NameTranslator
     }
 
     /**
-     * Whether a dictionary has any translations for a locale. Used by the
-     * console listing so a maintainer can see coverage at a glance.
+     * Count the translations a dictionary has for the given locale.
+     *
+     * Used by the console listing so a maintainer can see coverage at a glance.
      */
     public function coverage(string $dictionary, string $locale): int
     {
@@ -108,6 +119,8 @@ final class NameTranslator
     }
 
     /**
+     * Load and cache the translation map for a locale and dictionary.
+     *
      * @return array<string, string>
      */
     private function map(string $locale, string $dictionary): array

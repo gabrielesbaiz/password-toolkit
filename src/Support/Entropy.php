@@ -39,7 +39,9 @@ final class Entropy
     public const PENALTY_LOW_VARIETY = 0.7;
 
     /**
-     * Backwards-compatible label map. Prefer the Strength enum.
+     * Backwards-compatible label map.
+     *
+     * Prefer the Strength enum.
      *
      * @var array<int, string>
      */
@@ -62,7 +64,7 @@ final class Entropy
     private const CENTURY = self::YEAR * 100;
 
     /**
-     * Entropy of an arbitrary password under the charset model.
+     * Get the entropy of an arbitrary password under the charset model.
      *
      * @return array{bits: float, flags: array{lower: bool, upper: bool, digits: bool, symbols: bool}, length: int}
      */
@@ -98,27 +100,40 @@ final class Entropy
     }
 
     /**
-     * Entropy under the structural model: the size of the space this package
-     * can actually produce, given the pools in play.
+     * Get the entropy under the structural model.
      *
-     * Leetspeak contributes nothing — see Leetspeak::entropyBonus(). The
-     * component is still reported, at zero, so callers reading the array do not
-     * have to branch on whether the key is there.
+     * The structural model is the size of the space this package can actually
+     * produce, given the pools in play.
      *
-     * @return array{name: float, adjective: float, number: float, leetspeak_bonus: float, total: float}
+     * Leetspeak and casing contribute nothing — both are deterministic
+     * transforms of an already-chosen password. The leetspeak component is
+     * still reported, at zero, so callers reading the array do not have to
+     * branch on whether the key is there, and `second_adjective` is reported
+     * the same way when only one adjective was drawn.
+     *
+     * @param  int  $adjectiveCount  how many adjectives were actually drawn
+     * @return array{name: float, adjective: float, second_adjective: float, number: float, leetspeak_bonus: float, total: float}
      */
     public static function structuralBits(
         int $namesPool,
         int $adjectivesPool,
         int $numbersDigits,
         Leetspeak|string $leetspeak = Leetspeak::None,
+        bool $numbersAllowLeadingZero = false,
+        int $adjectiveCount = 1,
     ): array {
         $mode = is_string($leetspeak) ? Leetspeak::parse($leetspeak) : $leetspeak;
 
         $components = [
             'name' => $namesPool > 0 ? log($namesPool, 2) : 0.0,
             'adjective' => $adjectivesPool > 0 ? log($adjectivesPool, 2) : 0.0,
-            'number' => $numbersDigits > 0 ? $numbersDigits * log(10, 2) : 0.0,
+            // Drawn without replacement, so the second adjective chooses from
+            // one fewer word: the pair is worth log2(A) + log2(A-1), not
+            // 2 * log2(A). A pool of one cannot supply a second at all.
+            'second_adjective' => $adjectiveCount > 1 && $adjectivesPool > 1
+                ? log($adjectivesPool - 1, 2)
+                : 0.0,
+            'number' => self::numberBits($numbersDigits, $numbersAllowLeadingZero),
             'leetspeak_bonus' => $mode->entropyBonus(),
         ];
 
@@ -127,23 +142,56 @@ final class Entropy
         return $components;
     }
 
-    public static function strength(float $bits): Strength
+    /**
+     * Get the entropy of the numeric segment.
+     *
+     * A fixed-width segment that may not start with zero is not worth
+     * d * log2(10): six digits drawn from 100000..999999 are 900,000 values,
+     * not 1,000,000, so the honest figure is log2(9 * 10^(d-1)) — about 0.15
+     * bits less. Until 2.0.0 the model credited the full range either way,
+     * which made every reported figure very slightly optimistic.
+     */
+    public static function numberBits(int $digits, bool $allowLeadingZero = false): float
     {
-        return Strength::fromBits($bits);
+        if ($digits < 1) {
+            return 0.0;
+        }
+
+        return $allowLeadingZero
+            ? $digits * log(10, 2)
+            : log(9, 2) + (($digits - 1) * log(10, 2));
     }
 
-    public static function score(float $bits): int
+    /**
+     * Get the strength band the given entropy falls into.
+     *
+     * @param  array<string, mixed>|null  $thresholds
+     */
+    public static function strength(float $bits, ?array $thresholds = null): Strength
     {
-        return Strength::fromBits($bits)->score();
+        return Strength::fromBits($bits, $thresholds);
     }
 
+    /**
+     * Get the numeric score, 0 through 4, for the given entropy.
+     *
+     * @param  array<string, mixed>|null  $thresholds
+     */
+    public static function score(float $bits, ?array $thresholds = null): int
+    {
+        return Strength::fromBits($bits, $thresholds)->score();
+    }
+
+    /**
+     * Get the machine-readable band name for the given score.
+     */
     public static function label(int $score): string
     {
         return Strength::fromScore($score)->value;
     }
 
     /**
-     * Expected time to exhaust the space at a given guess rate.
+     * Get the expected time to exhaust the space at a given guess rate.
      *
      * Computed in log space. 2 ** $bits overflows to INF well inside the range
      * a long password produces, and an INF on the report is not JSON
@@ -167,6 +215,14 @@ final class Entropy
         return ['seconds' => $seconds, 'human' => self::humanizeSeconds($seconds)];
     }
 
+    /**
+     * Format a duration in seconds as a human-readable string.
+     *
+     * The unit count stays a float until its range has been checked. A strong
+     * score divides out to more centuries than PHP_INT_MAX can hold, and
+     * casting to int first wrapped the value, slipped past the ceiling guard
+     * and printed "0 centuries" for what should read as an eternity.
+     */
     public static function humanizeSeconds(float $seconds): string
     {
         if ($seconds < 1) {
@@ -181,14 +237,19 @@ final class Entropy
             'minute' => self::MINUTE,
         ] as $unit => $span) {
             if ($seconds >= $span) {
-                $count = (int) ($seconds / $span);
+                // Kept as a float until the range is checked: a strong charset
+                // score divides out to more centuries than PHP_INT_MAX can
+                // hold, and casting first wrapped it to a meaningless integer
+                // — which then slipped past the guard below and printed
+                // "0 centuries" for an eternity.
+                $count = $seconds / $span;
 
                 // Past a million centuries the number stops meaning anything.
                 if ($unit === 'century' && $count >= 1_000_000) {
                     return (string) trans('password-toolkit::strength.eternity');
                 }
 
-                return trans_choice('password-toolkit::strength.'.$unit, $count, ['count' => $count]);
+                return trans_choice('password-toolkit::strength.'.$unit, (int) $count, ['count' => (int) $count]);
             }
         }
 
@@ -196,7 +257,7 @@ final class Entropy
     }
 
     /**
-     * A multiplier that discounts passwords with obvious internal structure.
+     * Get a multiplier that discounts passwords with obvious internal structure.
      */
     private static function repetitionPenalty(string $password): float
     {

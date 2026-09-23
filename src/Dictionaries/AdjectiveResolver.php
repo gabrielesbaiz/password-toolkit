@@ -30,8 +30,10 @@ final class AdjectiveResolver
     public const DEFAULT_KEY = '_default';
 
     /**
-     * Decoded pools, keyed by "{locale}/{key}". False marks a miss, so a
-     * missing file is stat-ed once per process rather than on every call.
+     * Decoded pools, keyed by "{locale}/{key}".
+     *
+     * False marks a miss, so a missing file is stat-ed once per process rather
+     * than on every call.
      *
      * @var array<string, array<int, Entry>|false>
      */
@@ -39,6 +41,7 @@ final class AdjectiveResolver
 
     /**
      * Word order declared by each locale's _default pack, keyed by locale.
+     *
      * False marks a locale whose pack does not declare one.
      *
      * @var array<string, AdjectivePosition|false>
@@ -52,9 +55,14 @@ final class AdjectiveResolver
      */
     private array $paths = [];
 
+    /**
+     * Create a new adjective resolver instance.
+     */
     public function __construct(private readonly string $basePath = __DIR__.'/../Data/Adjectives') {}
 
     /**
+     * Set the extra lookup roots, searched before the built-in one.
+     *
      * @param  array<int, string>  $paths
      */
     public function usingPaths(array $paths): self
@@ -64,6 +72,9 @@ final class AdjectiveResolver
         return $this;
     }
 
+    /**
+     * Flush the cached adjective pools and declared word orders.
+     */
     public function flush(): void
     {
         $this->cache = [];
@@ -71,7 +82,7 @@ final class AdjectiveResolver
     }
 
     /**
-     * Where this locale puts its adjective.
+     * Determine where this locale puts its adjective.
      *
      * Read from the locale's _default pack rather than from configuration,
      * because it is a fact about the language: Italian says "Goldrake Mitico",
@@ -92,12 +103,31 @@ final class AdjectiveResolver
     }
 
     /**
-     * An adjective agreeing with $entry.
+     * Get an adjective agreeing with the given entry.
      *
      * @throws DictionaryNotFoundException when no pool with an agreeing
      *                                     adjective resolves in either locale
      */
     public function for(Entry $entry, Options $options): Entry
+    {
+        return $this->many($entry, $options, 1)[0];
+    }
+
+    /**
+     * Get up to $count distinct adjectives, all agreeing with the given entry.
+     *
+     * Distinct by word, not by array position: two entries spelling the same
+     * adjective would produce "Mitico-Mitico", which reads as a mistake rather
+     * than as a phrase. A pool too small to supply them all returns what it
+     * has — fewer words is a smaller password, a thrown exception is no
+     * password at all — and the caller reports the entropy it actually got.
+     *
+     * @return array<int, Entry> at least one, never more than $count
+     *
+     * @throws DictionaryNotFoundException when no pool with an agreeing
+     *                                     adjective resolves in either locale
+     */
+    public function many(Entry $entry, Options $options, int $count): array
     {
         $locale = $options->resolvedLocale();
         $fallback = $options->fallbackLocale;
@@ -114,17 +144,21 @@ final class AdjectiveResolver
                 static fn (Entry $adjective): bool => $adjective->gender->agreesWith($entry->gender),
             ));
 
-            if ($agreeing !== []) {
-                return $agreeing[random_int(0, count($agreeing) - 1)];
+            if ($agreeing === []) {
+                continue;
             }
+
+            return $this->draw($agreeing, $count);
         }
 
         throw DictionaryNotFoundException::adjectives($entry->dictionary, $locale, $fallback);
     }
 
     /**
-     * How many adjectives are available for a dictionary, used by the entropy
-     * model. Ungendered, because the gender split is not knowable up front.
+     * Get how many adjectives are available for the given dictionary.
+     *
+     * Used by the entropy model, and ungendered because the gender split is not
+     * knowable up front.
      */
     public function poolSize(string $dictionary, Options $options): int
     {
@@ -139,6 +173,39 @@ final class AdjectiveResolver
         return 0;
     }
 
+    /**
+     * Sample without replacement.
+     *
+     * @param  array<int, Entry>  $pool  non-empty
+     * @return array<int, Entry>
+     */
+    private function draw(array $pool, int $count): array
+    {
+        $drawn = [];
+        $taken = [];
+
+        while (count($drawn) < $count && $pool !== []) {
+            $index = random_int(0, count($pool) - 1);
+            $candidate = $pool[$index];
+
+            $drawn[] = $candidate;
+            $taken[$candidate->name] = true;
+
+            // Everything spelled like what was just drawn goes out of the hat,
+            // which is also what makes the log2(A) + log2(A-1) figure the
+            // entropy model reports true of the draw.
+            $pool = array_values(array_filter(
+                $pool,
+                static fn (Entry $adjective): bool => ! isset($taken[$adjective->name]),
+            ));
+        }
+
+        return $drawn;
+    }
+
+    /**
+     * Get the word order declared by the locale's _default pack, or false when it declares none.
+     */
     private function declaredPosition(string $locale): AdjectivePosition|false
     {
         if (array_key_exists($locale, $this->positions)) {
@@ -166,6 +233,8 @@ final class AdjectiveResolver
     }
 
     /**
+     * Get the locale and pool key pairs to try, in lookup order.
+     *
      * @return array<int, array{0: string, 1: string}>
      */
     private function candidates(string $dictionary, string $locale, string $fallback): array
@@ -184,6 +253,8 @@ final class AdjectiveResolver
     }
 
     /**
+     * Load and cache the adjective pool for the given locale and key.
+     *
      * @return array<int, Entry>
      */
     private function load(string $locale, string $key): array

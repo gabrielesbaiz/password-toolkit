@@ -10,14 +10,18 @@ use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
 /**
- * A named collection of entries: one JSON file, one config block, or one
- * runtime registration.
+ * A named collection of entries.
+ *
+ * One of these comes from one JSON file, one config block, or one runtime
+ * registration.
  */
 final readonly class Dictionary
 {
     public const TYPES = ['people', 'things'];
 
     /**
+     * Create a new dictionary instance.
+     *
      * @param  array<int, Entry>  $entries
      * @param  array<int, string>  $tags
      */
@@ -34,7 +38,7 @@ final readonly class Dictionary
     ) {}
 
     /**
-     * Build from the on-disk / in-config shape.
+     * Create a new dictionary from the on-disk / in-config shape.
      *
      * @param  array<string, mixed>  $data
      */
@@ -97,18 +101,24 @@ final readonly class Dictionary
         );
     }
 
+    /**
+     * Count the entries in this dictionary.
+     */
     public function count(): int
     {
         return count($this->entries);
     }
 
+    /**
+     * Determine whether this dictionary carries the given tag, ignoring case.
+     */
     public function hasTag(string $tag): bool
     {
         return in_array(strtolower($tag), array_map('strtolower', $this->tags), true);
     }
 
     /**
-     * Translated display name, falling back to the key made readable.
+     * Get the translated display name, falling back to the key made readable.
      */
     public function label(): string
     {
@@ -121,7 +131,7 @@ final readonly class Dictionary
     }
 
     /**
-     * Translated one-line description, or null when none is written yet.
+     * Get the translated one-line description, or null when none is written yet.
      */
     public function description(): ?string
     {
@@ -132,7 +142,7 @@ final readonly class Dictionary
     }
 
     /**
-     * Everything a picker needs to render this dictionary as one row.
+     * Get everything a picker needs to render this dictionary as one row.
      *
      * @return array{key: string, label: string, description: string|null, icon: string|null, type: string, group: string|null, group_label: string|null, tags: array<int, string>, reach: string, reach_label: string, locale: string|null, count: int, built_in: bool}
      */

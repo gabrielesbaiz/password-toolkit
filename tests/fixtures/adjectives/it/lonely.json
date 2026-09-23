@@ -1,0 +1,8 @@
+{
+    "key": "lonely",
+    "locale": "it",
+    "adjective_position": "after",
+    "values": [
+        { "name": "Unico", "gender": "neutral" }
+    ]
+}

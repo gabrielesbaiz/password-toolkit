@@ -6,6 +6,7 @@ namespace Gabrielesbaiz\PasswordToolkit\Generator;
 
 use Gabrielesbaiz\PasswordToolkit\Contracts\PasswordGenerator;
 use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
+use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
 use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
@@ -13,24 +14,33 @@ use Gabrielesbaiz\PasswordToolkit\Enums\Reach;
 use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
 
 /**
- * Fluent per-call overrides, so a caller can deviate from the published
- * config without mutating it.
+ * Fluent per-call overrides for the generator.
  *
- * Every method returns a new builder wrapping a new Options, which makes a
+ * A caller can deviate from the published config without mutating it. Every
+ * method returns a new builder wrapping a new Options, which makes a
  * partially-configured builder safe to keep on a property and reuse.
  */
 final readonly class PasswordBuilder
 {
+    /**
+     * Create a new password builder instance.
+     */
     public function __construct(
         private PasswordGenerator $generator,
         private Options $options,
     ) {}
 
+    /**
+     * Get the string representation of the generated password.
+     */
     public function __toString(): string
     {
         return $this->generate();
     }
 
+    /**
+     * Get the options this builder generates with.
+     */
     public function options(): Options
     {
         return $this->options;
@@ -116,43 +126,93 @@ final readonly class PasswordBuilder
         return $this->derive(reach: is_string($reach) ? Reach::parse($reach) : $reach);
     }
 
+    /**
+     * Set the locale the words are drawn from.
+     *
+     * Like every setter here, this returns a new builder rather than mutating
+     * the one it was called on.
+     */
     public function locale(?string $locale): self
     {
         return $this->derive(locale: $locale);
     }
 
+    /**
+     * Set the locale to fall back to when the chosen one yields nothing.
+     */
     public function fallbackLocale(string $locale): self
     {
         return $this->derive(fallbackLocale: $locale);
     }
 
+    /**
+     * Set the string placed between the words.
+     */
     public function separator(?string $separator): self
     {
         return $this->derive(separator: $separator);
     }
 
     /**
-     * Whether spaces inside a multi-word name become the separator (true) or
-     * are stripped entirely (false).
+     * Set whether spaces inside a multi-word name become the separator.
+     *
+     * Passing false strips them entirely instead.
      */
     public function keepWordBreaks(bool $keep = true): self
     {
         return $this->derive(nameSeparator: $keep);
     }
 
+    /**
+     * Set how many digits the numeric segment carries, adding it if absent.
+     */
     public function digits(int $digits): self
     {
         return $this->derive(addNumbers: true, numbersDigits: $digits);
     }
 
+    /**
+     * Set whether the numeric segment may start with a zero.
+     *
+     * Allowing it widens the segment from 9 * 10^(d-1) values to 10^d — the
+     * 0.15 bits the generator used to claim without drawing them.
+     */
+    public function allowLeadingZero(bool $allow = true): self
+    {
+        return $this->derive(numbersAllowLeadingZero: $allow);
+    }
+
+    /**
+     * Set how many words the password is built from: 2 or 3.
+     *
+     * Three draws a second adjective from the same agreeing pool, so the phrase
+     * still reads as the language writes it.
+     */
+    public function words(int $count): self
+    {
+        return $this->derive(wordCount: $count);
+    }
+
+    /**
+     * Set how the words are cased: title, lower, upper or preserve.
+     */
+    public function casing(Casing|string $case): self
+    {
+        return $this->derive(casing: is_string($case) ? Casing::parse($case) : $case);
+    }
+
+    /**
+     * Drop the numeric segment from the password.
+     */
     public function withoutNumbers(): self
     {
         return $this->derive(addNumbers: false);
     }
 
     /**
-     * Force the adjective before or after the name, overriding what the locale
-     * declares. Pass null to go back to following the locale.
+     * Force the adjective before or after the name, overriding the locale.
+     *
+     * Pass null to go back to following what the locale declares.
      */
     public function adjectiveAt(AdjectivePosition|string|null $position): self
     {
@@ -161,27 +221,41 @@ final readonly class PasswordBuilder
             : $position);
     }
 
+    /**
+     * Set where the numeric segment sits relative to the words.
+     */
     public function numbersAt(NumbersPosition|string $position): self
     {
         return $this->derive(numbersPosition: is_string($position) ? NumbersPosition::parse($position) : $position);
     }
 
+    /**
+     * Apply a leetspeak substitution table to the assembled password.
+     */
     public function leet(Leetspeak|string $mode = Leetspeak::Basic): self
     {
         return $this->derive(leetspeak: is_string($mode) ? Leetspeak::parse($mode) : $mode);
     }
 
+    /**
+     * Set the attacker guess rate the strength report assumes.
+     */
     public function guessesPerSecond(float $rate): self
     {
         return $this->derive(guessesPerSecond: $rate);
     }
 
+    /**
+     * Generate a single password.
+     */
     public function generate(): string
     {
         return $this->generator->generate($this->options);
     }
 
     /**
+     * Generate a batch of passwords.
+     *
      * @return array<int, string>
      */
     public function many(int $count): array
@@ -190,7 +264,7 @@ final readonly class PasswordBuilder
     }
 
     /**
-     * A batch with no repeats.
+     * Generate a batch with no repeats.
      *
      * @return array<int, string>
      */
@@ -200,6 +274,8 @@ final readonly class PasswordBuilder
     }
 
     /**
+     * Generate one password alongside its strength report.
+     *
      * @return array{password: string, report: StrengthReport}
      */
     public function withReport(): array
@@ -208,6 +284,8 @@ final readonly class PasswordBuilder
     }
 
     /**
+     * Generate a batch of passwords, each with its strength report.
+     *
      * @return array<int, array{password: string, report: StrengthReport}>
      */
     public function manyWithReport(int $count): array
@@ -215,6 +293,9 @@ final readonly class PasswordBuilder
         return $this->generator->generateManyWithReport($count, $this->options);
     }
 
+    /**
+     * Create a new builder carrying the given option changes.
+     */
     private function derive(mixed ...$changes): self
     {
         return new self($this->generator, $this->options->with(...$changes));

@@ -6,10 +6,13 @@ namespace Gabrielesbaiz\PasswordToolkit\Generator;
 
 use Gabrielesbaiz\PasswordToolkit\Dictionaries\Dictionary;
 use Gabrielesbaiz\PasswordToolkit\Enums\AdjectivePosition;
+use Gabrielesbaiz\PasswordToolkit\Enums\Casing;
 use Gabrielesbaiz\PasswordToolkit\Enums\DictionaryGroup;
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\NumbersPosition;
 use Gabrielesbaiz\PasswordToolkit\Enums\Reach;
+use Gabrielesbaiz\PasswordToolkit\Enums\Strength;
+use Gabrielesbaiz\PasswordToolkit\Enums\StrengthModel;
 use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 
@@ -24,6 +27,8 @@ use Gabrielesbaiz\PasswordToolkit\Support\Identifier;
 final readonly class Options
 {
     /**
+     * Create a new options instance.
+     *
      * @param  array<int, string>|string  $enabled  '*' for every dictionary
      * @param  array<int, string>  $except
      * @param  array<int, string>  $types
@@ -31,6 +36,7 @@ final readonly class Options
      * @param  array<int, string>  $tags  a dictionary must carry all of them
      * @param  array<int, string>  $paths
      * @param  array<string, array<string, mixed>>  $custom
+     * @param  array<string, mixed>  $strengthThresholds  partial overrides of the band edges, in bits
      */
     public function __construct(
         public array|string $enabled = '*',
@@ -46,17 +52,42 @@ final readonly class Options
         public ?string $separator = '-',
         public bool $nameSeparator = true,
         public bool $addNumbers = true,
-        public int $numbersDigits = 4,
+        public int $numbersDigits = 6,
         public NumbersPosition $numbersPosition = NumbersPosition::End,
+        public bool $numbersAllowLeadingZero = false,
         public ?AdjectivePosition $adjectivePosition = null,
         public Leetspeak $leetspeak = Leetspeak::None,
+        public Casing $casing = Casing::Title,
+        public int $wordCount = 2,
+        public int $uniqueAttemptsMultiplier = 10,
         public float $guessesPerSecond = 1e10,
+        public array $strengthThresholds = [],
+        public StrengthModel $ruleModel = StrengthModel::Charset,
     ) {
         if ($this->numbersDigits < 1 || $this->numbersDigits > 18) {
             throw InvalidOptionException::because(
                 "numbers_digits must be between 1 and 18, got {$this->numbersDigits}.",
             );
         }
+
+        // Two or three, and nothing else. Four words of a 200-word pool add
+        // less than eight bits between them and stop being a phrase anyone can
+        // repeat down a phone line; digits are the cheaper lever by far.
+        if ($this->wordCount < 2 || $this->wordCount > 3) {
+            throw InvalidOptionException::because(
+                "word_count must be 2 or 3, got {$this->wordCount}.",
+            );
+        }
+
+        if ($this->uniqueAttemptsMultiplier < 1) {
+            throw InvalidOptionException::because(
+                "unique_attempts_multiplier must be 1 or more, got {$this->uniqueAttemptsMultiplier}.",
+            );
+        }
+
+        // Validated on the way in rather than at scoring time, so a config typo
+        // fails where it was written instead of inside a report.
+        Strength::thresholds($this->strengthThresholds);
 
         foreach ($this->types as $type) {
             if (! in_array($type, ['people', 'things'], true)) {
@@ -86,7 +117,9 @@ final readonly class Options
     }
 
     /**
-     * Build from the published config, translating the 1.x shape if present.
+     * Create a new options instance from the published config.
+     *
+     * Translates the 1.x config shape when it is the one still present.
      */
     public static function fromConfig(): self
     {
@@ -98,6 +131,8 @@ final readonly class Options
         $dictionaries = is_array($config['dictionaries'] ?? null) ? $config['dictionaries'] : [];
 
         $separator = array_key_exists('separator_symbol', $config) ? $config['separator_symbol'] : '-';
+
+        $strength = is_array($config['strength'] ?? null) ? $config['strength'] : [];
 
         return new self(
             enabled: $enabled,
@@ -118,18 +153,24 @@ final readonly class Options
             separator: is_string($separator) ? $separator : null,
             nameSeparator: (bool) ($config['name_separator'] ?? true),
             addNumbers: (bool) ($config['add_numbers'] ?? true),
-            numbersDigits: (int) ($config['numbers_digits'] ?? 4),
+            numbersDigits: (int) ($config['numbers_digits'] ?? 6),
             numbersPosition: NumbersPosition::parse((string) ($config['numbers_position'] ?? 'end')),
+            numbersAllowLeadingZero: (bool) ($config['numbers_allow_leading_zero'] ?? false),
             adjectivePosition: is_string($config['adjective_position'] ?? null)
                 ? AdjectivePosition::parse($config['adjective_position'])
                 : null,
             leetspeak: Leetspeak::parse((string) ($config['leetspeak_conversion'] ?? 'none')),
-            guessesPerSecond: (float) (config('password-toolkit.strength.guesses_per_second') ?? 1e10),
+            casing: Casing::parse((string) ($config['case'] ?? 'title')),
+            wordCount: (int) ($config['word_count'] ?? 2),
+            uniqueAttemptsMultiplier: (int) ($config['unique_attempts_multiplier'] ?? 10),
+            guessesPerSecond: (float) ($strength['guesses_per_second'] ?? 1e10),
+            strengthThresholds: self::keyedMap($strength['thresholds'] ?? null),
+            ruleModel: StrengthModel::parse((string) ($strength['rule_model'] ?? 'charset')),
         );
     }
 
     /**
-     * The locale adjectives are looked up in.
+     * Get the locale adjectives are looked up in.
      */
     public function resolvedLocale(): string
     {
@@ -145,7 +186,7 @@ final readonly class Options
     }
 
     /**
-     * Whether a dictionary is selected by this option set.
+     * Determine whether a dictionary is selected by this option set.
      *
      * Named keys win outright: asking for a dictionary by name means you want
      * it, whatever group or reach it happens to carry.
@@ -178,7 +219,7 @@ final readonly class Options
     }
 
     /**
-     * A stable key for caching the resolved dictionary set.
+     * Get a stable key for caching the resolved dictionary set.
      */
     public function selectionFingerprint(): string
     {
@@ -219,17 +260,25 @@ final readonly class Options
             addNumbers: $changes['addNumbers'] ?? $this->addNumbers,
             numbersDigits: $changes['numbersDigits'] ?? $this->numbersDigits,
             numbersPosition: $changes['numbersPosition'] ?? $this->numbersPosition,
+            numbersAllowLeadingZero: $changes['numbersAllowLeadingZero'] ?? $this->numbersAllowLeadingZero,
             adjectivePosition: array_key_exists('adjectivePosition', $changes)
                 ? $changes['adjectivePosition']
                 : $this->adjectivePosition,
             leetspeak: $changes['leetspeak'] ?? $this->leetspeak,
+            casing: $changes['casing'] ?? $this->casing,
+            wordCount: $changes['wordCount'] ?? $this->wordCount,
+            uniqueAttemptsMultiplier: $changes['uniqueAttemptsMultiplier'] ?? $this->uniqueAttemptsMultiplier,
             guessesPerSecond: $changes['guessesPerSecond'] ?? $this->guessesPerSecond,
+            strengthThresholds: $changes['strengthThresholds'] ?? $this->strengthThresholds,
+            ruleModel: $changes['ruleModel'] ?? $this->ruleModel,
         );
     }
 
     /**
-     * Resolve which dictionaries are selected, honouring the 1.x `name_types`
-     * block if the application has not re-published its config.
+     * Resolve which dictionaries the config selects.
+     *
+     * Honours the 1.x `name_types` block if the application has not
+     * re-published its config.
      *
      * @param  array<string, mixed>  $config
      * @return array{enabled: array<int, string>|string, except: array<int, string>}
@@ -274,6 +323,31 @@ final readonly class Options
     }
 
     /**
+     * Normalise a config sub-array's keys to strings.
+     *
+     * The values stay mixed on purpose: whoever consumes them validates them,
+     * which keeps one definition of what a valid value is.
+     *
+     * @return array<string, mixed>
+     */
+    private static function keyedMap(mixed $value): array
+    {
+        if (! is_array($value)) {
+            return [];
+        }
+
+        $map = [];
+
+        foreach ($value as $key => $item) {
+            $map[(string) $key] = $item;
+        }
+
+        return $map;
+    }
+
+    /**
+     * Normalise a config value to a list of non-empty strings.
+     *
      * @return array<int, string>
      */
     private static function stringList(mixed $value): array

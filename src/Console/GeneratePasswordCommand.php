@@ -26,11 +26,17 @@ class GeneratePasswordCommand extends Command
         {--separator= : Separator between segments}
         {--digits= : Length of the numeric segment}
         {--position= : Where the numbers go: start, middle or end}
+        {--leading-zero : Let the numeric segment start with a zero}
+        {--words= : How many words: 2 or 3}
+        {--case= : Word casing: title, lower, upper or preserve}
         {--leet= : Leetspeak mode: none, basic or advanced}
         {--no-numbers : Omit the numeric segment}';
 
     protected $description = 'Generate memorable passwords';
 
+    /**
+     * Execute the console command.
+     */
     public function handle(PasswordToolkit $toolkit): int
     {
         $builder = $this->applyOptions($toolkit->make());
@@ -85,6 +91,9 @@ class GeneratePasswordCommand extends Command
         return self::SUCCESS;
     }
 
+    /**
+     * Apply the console options to the password builder.
+     */
     protected function applyOptions(PasswordBuilder $builder): PasswordBuilder
     {
         if (is_string($locale = $this->option('locale')) && $locale !== '') {
@@ -129,6 +138,18 @@ class GeneratePasswordCommand extends Command
             $builder = $builder->numbersAt($position);
         }
 
+        if ($this->option('leading-zero')) {
+            $builder = $builder->allowLeadingZero();
+        }
+
+        if (is_string($words = $this->option('words')) && $words !== '') {
+            $builder = $builder->words((int) $words);
+        }
+
+        if (is_string($case = $this->option('case')) && $case !== '') {
+            $builder = $builder->casing($case);
+        }
+
         if (is_string($leet = $this->option('leet')) && $leet !== '') {
             $builder = $builder->leet($leet);
         }
@@ -136,6 +157,9 @@ class GeneratePasswordCommand extends Command
         return $builder;
     }
 
+    /**
+     * List the dictionaries that resolve under the given options.
+     */
     protected function listDictionaries(PasswordToolkit $toolkit, Options $options): int
     {
         $dictionaries = $toolkit->dictionaries($options);
@@ -182,6 +206,8 @@ class GeneratePasswordCommand extends Command
     }
 
     /**
+     * Get the values given for a repeatable console option.
+     *
      * @return array<int, string>
      */
     protected function arrayOption(string $name): array

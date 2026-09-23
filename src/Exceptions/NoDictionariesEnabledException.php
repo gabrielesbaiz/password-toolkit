@@ -12,6 +12,9 @@ namespace Gabrielesbaiz\PasswordToolkit\Exceptions;
  */
 final class NoDictionariesEnabledException extends PasswordToolkitException
 {
+    /**
+     * Create a new exception for an enabled set that resolves to nothing.
+     */
     public static function make(): self
     {
         return self::because(

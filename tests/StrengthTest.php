@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Gabrielesbaiz\PasswordToolkit\Enums\Leetspeak;
 use Gabrielesbaiz\PasswordToolkit\Enums\Strength;
+use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
 use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
 use Gabrielesbaiz\PasswordToolkit\Support\Entropy;
 use Gabrielesbaiz\PasswordToolkit\Support\StrengthReport;
@@ -174,4 +175,126 @@ describe('report serialisation', function () {
 
         expect(PasswordToolkit::strength('')->displayLabel())->toBe('Molto debole');
     });
+});
+
+describe('number entropy', function () {
+    it('credits only the range the generator can draw', function () {
+        // 100000..999999 is 900,000 values, not 1,000,000. Until 2.0.0 the
+        // model claimed the full decade and every figure was ~0.15 bits
+        // optimistic.
+        expect(Entropy::numberBits(6))->toBe(log(900_000, 2))
+            ->and(Entropy::numberBits(6))->toBeLessThan(Entropy::numberBits(6, true));
+    });
+
+    it('credits the full decade when leading zeros are allowed', function () {
+        expect(Entropy::numberBits(6, true))->toBe(6 * log(10, 2))
+            ->and(Entropy::numberBits(1, true))->toBe(log(10, 2));
+    });
+
+    it('credits nothing without digits', function () {
+        expect(Entropy::numberBits(0))->toBe(0.0)
+            ->and(Entropy::structuralBits(100, 30, 0)['number'])->toBe(0.0);
+    });
+
+    it('carries the correction into the structural report', function () {
+        $strict = Entropy::structuralBits(100, 30, 6, Leetspeak::None, false);
+        $zeros = Entropy::structuralBits(100, 30, 6, Leetspeak::None, true);
+
+        expect($strict['total'])->toBeLessThan($zeros['total'])
+            ->and($zeros['total'] - $strict['total'])->toBeGreaterThan(0.15)
+            ->and($zeros['total'] - $strict['total'])->toBeLessThan(0.16);
+    });
+});
+
+describe('the second adjective', function () {
+    it('is worth log2(A - 1), not log2(A)', function () {
+        // Drawn without replacement: the second adjective chooses from one
+        // fewer word than the first.
+        $pair = Entropy::structuralBits(100, 30, 0, Leetspeak::None, false, 2);
+
+        expect($pair['adjective'])->toBe(log(30, 2))
+            ->and($pair['second_adjective'])->toBe(log(29, 2))
+            ->and($pair['total'])->toBeLessThan(log(100, 2) + (2 * log(30, 2)));
+    });
+
+    it('is reported at zero when only one adjective was drawn', function () {
+        expect(Entropy::structuralBits(100, 30, 0)['second_adjective'])->toBe(0.0);
+    });
+
+    it('is worth nothing when the pool cannot supply a second', function () {
+        expect(Entropy::structuralBits(100, 1, 0, Leetspeak::None, false, 2)['second_adjective'])
+            ->toBe(0.0);
+    });
+
+    it('raises the reported entropy of a three-word password', function () {
+        config()->set('password-toolkit.dictionaries.enabled', ['star_wars']);
+        PasswordToolkit::flushCache();
+
+        config()->set('password-toolkit.word_count', 2);
+        $two = PasswordToolkit::generateWithReport()['report'];
+
+        config()->set('password-toolkit.word_count', 3);
+        $three = PasswordToolkit::generateWithReport()['report'];
+
+        expect($three->entropyBits)->toBeGreaterThan($two->entropyBits)
+            ->and($three->components['second_adjective'])->toBeGreaterThan(0.0);
+    });
+});
+
+describe('configurable thresholds', function () {
+    it('falls back to the shipped bands with no argument', function () {
+        expect(Strength::fromBits(27.9))->toBe(Strength::VeryWeak)
+            ->and(Strength::fromBits(28.0))->toBe(Strength::Weak)
+            ->and(Strength::fromBits(128.0))->toBe(Strength::VeryStrong)
+            ->and(Strength::thresholds())->toBe(Strength::DEFAULT_THRESHOLDS);
+    });
+
+    it('moves a band', function () {
+        $strict = ['weak' => 40, 'fair' => 60, 'strong' => 90, 'very_strong' => 160];
+
+        expect(Strength::fromBits(50.0, $strict))->toBe(Strength::Weak)
+            ->and(Strength::fromBits(50.0))->toBe(Strength::Fair)
+            ->and(Strength::fromBits(200.0, $strict))->toBe(Strength::VeryStrong);
+    });
+
+    it('accepts a partial override', function () {
+        expect(Strength::fromBits(70.0, ['strong' => 80]))->toBe(Strength::Fair)
+            ->and(Strength::fromBits(70.0))->toBe(Strength::Strong);
+    });
+
+    it('rejects bands that do not ascend', function () {
+        Strength::fromBits(50.0, ['strong' => 20]);
+    })->throws(InvalidOptionException::class, 'must ascend');
+
+    it('rejects an unknown band', function () {
+        Strength::fromBits(50.0, ['medium' => 40]);
+    })->throws(InvalidOptionException::class);
+
+    it('rejects a non-numeric band', function () {
+        Strength::fromBits(50.0, ['strong' => 'high']);
+    })->throws(InvalidOptionException::class);
+
+    it('scores a report with the configured bands', function () {
+        config()->set('password-toolkit.strength.thresholds', [
+            'weak' => 1, 'fair' => 2, 'strong' => 3, 'very_strong' => 4,
+        ]);
+
+        // Every band edge below what even a trivial password scores.
+        expect(PasswordToolkit::strength('abc')->label)->toBe('very_strong');
+    });
+
+    it('fails a config whose bands do not ascend', function () {
+        config()->set('password-toolkit.strength.thresholds', ['weak' => 200]);
+
+        PasswordToolkit::strength('abc');
+    })->throws(InvalidOptionException::class);
+});
+
+it('does not overflow when the crack time exceeds PHP_INT_MAX centuries', function () {
+    // A strong charset score divides out to roughly 1e40 centuries. Casting
+    // that to int before the range check wrapped it to a meaningless value,
+    // which then slipped past the guard and printed "0 centuries".
+    expect(Entropy::humanizeSeconds(1.5e49))->toBe(trans('password-toolkit::strength.eternity'))
+        ->and(Entropy::humanizeSeconds(1e20))->toBe(trans('password-toolkit::strength.eternity'))
+        ->and(Entropy::humanizeSeconds(3.1e11))->toContain('98');
 });

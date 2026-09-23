@@ -15,6 +15,9 @@ use Gabrielesbaiz\PasswordToolkit\Exceptions\InvalidOptionException;
  */
 final readonly class Entry
 {
+    /**
+     * Create a new entry instance.
+     */
     public function __construct(
         public string $name,
         public Gender $gender,
@@ -24,6 +27,8 @@ final readonly class Entry
     ) {}
 
     /**
+     * Create a new entry from its on-disk / in-config shape.
+     *
      * @param  array<string, mixed>  $data
      */
     public static function fromArray(array $data, string $dictionary, ?string $sourceLocale = null): self

@@ -34,11 +34,13 @@ it('documents only config keys that exist', function () {
         ->merge(['name', 'gender', 'password', 'report', 'email', 'must_change_password', 'pin', 'master'])
         ->merge(['very_weak', 'weak', 'fair', 'strong', 'very_strong'])
         ->merge(['lower', 'upper', 'digits', 'symbols'])
-        ->merge(['adjective', 'number', 'leetspeak_bonus', 'total'])
+        ->merge(['adjective', 'second_adjective', 'number', 'leetspeak_bonus', 'total'])
         ->merge(['values', 'type', 'key', 'products', 'company_products', 'team_nicknames', 'my_team'])
         // Keys of the arrays dictionaries()/groups() return, not config.
         ->merge(['label', 'description', 'icon', 'group', 'group_label', 'reach_label'])
-        ->merge(['count', 'built_in', 'value', 'sample', 'locale']);
+        ->merge(['count', 'built_in', 'value', 'sample', 'locale'])
+        // Keys of the array poolSizes() returns.
+        ->merge(['names', 'adjectives']);
 
     expect($documented->diff($known)->all())->toBe([]);
 });
@@ -87,8 +89,10 @@ it('keeps the contents list in step with the headings', function () {
     preg_match_all('/^## (.+)$/m', $readme, $headings);
     preg_match_all('/^- \[(.+?)\]\(#/m', $readme, $listed);
 
-    // Changelog is linked from the tail but deliberately not in the TOC.
-    $expected = collect($headings[1])->reject(fn (string $h): bool => in_array($h, ['Contents', 'Changelog'], true));
+    // Documentation sits above the contents list and Changelog below it;
+    // neither belongs inside the list they bracket.
+    $expected = collect($headings[1])
+        ->reject(fn (string $h): bool => in_array($h, ['Contents', 'Documentation', 'Changelog'], true));
 
     expect(collect($listed[1])->values()->all())->toBe($expected->values()->all());
 });

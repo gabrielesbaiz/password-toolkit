@@ -18,23 +18,26 @@ use Gabrielesbaiz\PasswordToolkit\Generator\Options;
 interface DictionaryRepository
 {
     /**
-     * Every dictionary this repository knows about, keyed by dictionary key.
+     * Get every dictionary this repository knows about, keyed by dictionary key.
      *
      * @return array<string, Dictionary>
      */
     public function all(): array;
 
     /**
-     * The dictionaries the given options select, keyed by dictionary key.
+     * Get the dictionaries the given options select, keyed by dictionary key.
      *
      * @return array<string, Dictionary>
      */
     public function enabled(Options $options): array;
 
+    /**
+     * Get the dictionary registered under the given key.
+     */
     public function find(string $key): Dictionary;
 
     /**
-     * Every entry across the selected dictionaries, flattened.
+     * Get every entry across the selected dictionaries, flattened.
      *
      * Flattening is what makes selection uniform per name rather than per
      * file, so a 20-entry dictionary no longer carries the same weight as a
@@ -51,5 +54,8 @@ interface DictionaryRepository
      */
     public function register(string $key, array $values, string $type = 'things', ?string $locale = null): void;
 
+    /**
+     * Flush any cached dictionaries and entry pools.
+     */
     public function flush(): void;
 }
