@@ -32,9 +32,6 @@ return [
     ],
 
     /*
-     * Display names, one per dictionary.
-     */
-    /*
      * Italian names for the dictionaries, listed only where they differ from
      * the name the dictionary declares for itself. Anything absent keeps that
      * name, so this file does not have to grow with the data directory.

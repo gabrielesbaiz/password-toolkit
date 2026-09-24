@@ -113,8 +113,8 @@ it('covers every gender used by a name file', function (string $path) {
 it('has no config key that does not resolve to a dictionary', function () {
     $enabled = config('password-toolkit.dictionaries.enabled');
 
-    // The shipped config enables everything, so there is no per-key list to
-    // keep in sync with the filesystem any more. That was the point.
+    // The shipped config enables everything, so there is no per-key list left
+    // to keep in step with the filesystem.
     expect($enabled)->toBe('*')
         ->and(config('password-toolkit.dictionaries.except'))->toBe([]);
 });

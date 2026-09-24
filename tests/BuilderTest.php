@@ -35,9 +35,9 @@ it('does not mutate the builder it was derived from', function () {
 });
 
 it('restricts to the given dictionaries', function () {
-    // Locale-explicit: star_wars is an English-base dictionary, and the Italian
-    // overlay renames a handful of ranks (Count Dooku -> Conte Dooku). English
-    // also leads with the adjective, so the name is the second segment.
+    // star_wars is an English-base dictionary and the Italian overlay renames a
+    // handful of ranks, so the locale is pinned. English leads with the
+    // adjective, which puts the name in the second segment.
     $names = collect(
         PasswordToolkit::make()
             ->only('star_wars')

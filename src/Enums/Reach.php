@@ -49,7 +49,7 @@ enum Reach: string
     }
 
     /**
-     * Determine whether this reach is included when asking for at least the given minimum.
+     * Determine whether this reach satisfies the given minimum.
      *
      * Asking for `italian` accepts `global` too, because anything universally
      * recognisable is also recognisable to an Italian.

@@ -115,12 +115,9 @@ it('links the files it references', function () {
     }
 });
 
-// Removed: 'keeps the contents list in step with the headings'.
+// 'keeps the contents list in step with the headings' was removed here.
 //
-// It guarded a hand-written table of contents against the README's own '##'
-// headings. The README is now a landing card of twelve sections with no
-// contents list, so the assertion had nothing left to compare; navigation for
-// the deep material lives in the documentation site's sidebar. The drift it
-// was really protecting against — documentation falling behind the code — is
-// still covered by the config-key and dictionary assertions above, now aimed
-// at docs/ where that material moved.
+// It compared a hand-written table of contents against the README's own '##'
+// headings, and the README is now a landing card with no contents list. The
+// drift it guarded against is still covered by the config-key and dictionary
+// assertions above, aimed at docs/ where that material moved.
