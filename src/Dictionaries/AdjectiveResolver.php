@@ -204,7 +204,9 @@ final class AdjectiveResolver
     }
 
     /**
-     * Get the word order declared by the locale's _default pack, or false when it declares none.
+     * Get the word order the locale's _default pack declares.
+     *
+     * Returns false when the pack declares none.
      */
     private function declaredPosition(string $locale): AdjectivePosition|false
     {
