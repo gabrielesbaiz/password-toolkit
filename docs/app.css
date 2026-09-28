@@ -607,6 +607,10 @@ footer { border-top: 1px solid var(--line); background: var(--paper);
 .acts { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 /* ── HERO ENVELOPE ──────────────────────────────────────────── */
 #home .hero { padding-block: clamp(36px, 5.5vw, 72px) clamp(26px, 3.4vw, 44px); }
+/* The wordmark is transparent and carries its own depth, so it sits on the
+   page unframed in both themes. */
+#home .hero .mark { display: block; width: min(34rem, 82%); height: auto;
+  margin: 0 0 clamp(18px, 2.4vw, 28px); }
 #home .envelope { position: relative; background: var(--paper); border: 1px solid var(--line);
   padding: clamp(22px, 3.4vw, 36px) clamp(22px, 3.4vw, 36px) clamp(22px, 3.4vw, 30px);
   box-shadow: 0 20px 48px var(--grain), 0 2px 0 var(--soft);

@@ -12,6 +12,8 @@
 <meta property="og:title" content="PasswordToolkit">
 <meta property="og:description" content="Somebody has to read that password out loud. PasswordToolkit makes the one you send legible — 201 dictionaries, two languages, and a report that never flatters the number.">
 <meta property="og:url" content="https://gabrielesbaiz.github.io/password-toolkit/">
+<meta property="og:image" content="https://gabrielesbaiz.github.io/password-toolkit/art/password-toolkit-logo.png">
+<meta name="twitter:image" content="https://gabrielesbaiz.github.io/password-toolkit/art/password-toolkit-logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +52,8 @@
 <div id="home" class="hidden">
 
 <div class="mx hero">
+  <img class="mark" src="art/password-toolkit-logo.png"
+       alt="PasswordToolkit" width="1600" height="533">
   <span class="kicker">Hand delivered · since 1997</span>
   <h1>Somebody has to <em>read that password</em> out loud.</h1>
   <p class="sub">You generate a temporary password, you put it in an email, and a human on the other end has to type it back. That is the job. <b>PasswordToolkit</b> makes the thing you send legible — 201 curated dictionaries, two languages, and an entropy figure it refuses to flatter.</p>
@@ -1364,6 +1368,17 @@ composer test      <span class="cm"># pest</span></pre>
 </section>
 
 <section id="changelog" data-title="Changelog">
+  <h2>2.0.1 &mdash; 2026-09-28</h2>
+  <p class="lead">Performance only. No API, behaviour or output changes &mdash; passwords generated with the same options come out exactly as they did in 2.0.0.</p>
+
+  <h3>Changed</h3>
+  <ul class="plain">
+    <li><b>Dictionaries decode one at a time instead of all at once.</b> Enabling a single dictionary no longer reads 201 files and builds 4,411 entries. Cold start for one dictionary drops from <b>19.0&nbsp;ms to 3.9&nbsp;ms</b>, and the memory it holds from <b>0.92&nbsp;MB to 0.14&nbsp;MB</b>. Enabling every dictionary costs what it always did.</li>
+    <li><b>Adjective pools are narrowed by gender once</b>, not once per password.</li>
+    <li><b>The last adjective drawn no longer rebuilds the pool it came from.</b> At the default <code>word_count</code> of 2 that removes the rebuild entirely.</li>
+  </ul>
+  <p class="lead">Generating 2,000 passwords: <b>27.3&nbsp;ms to 13.3&nbsp;ms</b> at two words, <b>32.1&nbsp;ms to 20.6&nbsp;ms</b> at three.</p>
+
   <h2>2.0.0 &mdash; 2026-09-23</h2>
   <p class="lead">A rewrite rather than a point release: the whole generator, the data layout and the public API changed. <a href="#/upgrade">Upgrading from 1.x</a> covers what you have to edit.</p>
 
