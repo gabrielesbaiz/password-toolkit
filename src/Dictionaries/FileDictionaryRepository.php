@@ -16,15 +16,29 @@ use Gabrielesbaiz\PasswordToolkit\Generator\Options;
  * generate(), so a batch of a thousand passwords did a thousand directory
  * walks. Everything here is decoded once and held for the life of the
  * process; flush() exists for tests and for configuration changes.
+ *
+ * Decoding is per dictionary rather than wholesale. An application that
+ * enables one dictionary pays for one file, not for all 200: the index is a
+ * glob, and the type a dictionary would filter on is the directory it sits
+ * in, so both questions are answered without opening anything.
  */
 final class FileDictionaryRepository implements DictionaryRepository
 {
     /**
-     * Built-in dictionaries, decoded lazily.
+     * Where each built-in dictionary lives, and the type its directory implies.
      *
-     * @var array<string, Dictionary>|null
+     * Built from a directory listing alone, so having it costs no decoding.
+     *
+     * @var array<string, array{path: string, type: string}>|null
      */
-    private ?array $builtIn = null;
+    private ?array $index = null;
+
+    /**
+     * Built-in dictionaries, decoded one at a time on first use.
+     *
+     * @var array<string, Dictionary>
+     */
+    private array $decoded = [];
 
     /**
      * Runtime registrations, which win over built-ins of the same key.
@@ -72,7 +86,7 @@ final class FileDictionaryRepository implements DictionaryRepository
     public function enabled(Options $options): array
     {
         $pool = array_merge(
-            $this->builtIn(),
+            $this->builtInCandidates($options),
             $this->fromPaths($options),
             $this->fromCustom($options),
             $this->registered,
@@ -86,7 +100,17 @@ final class FileDictionaryRepository implements DictionaryRepository
      */
     public function find(string $key): Dictionary
     {
-        return $this->all()[$key] ?? throw DictionaryNotFoundException::key($key);
+        // Registered dictionaries win over built-ins of the same key, which is
+        // why they are consulted first rather than merged into one array.
+        if (isset($this->registered[$key])) {
+            return $this->registered[$key];
+        }
+
+        if (isset($this->builtInIndex()[$key])) {
+            return $this->builtInDictionary($key);
+        }
+
+        throw DictionaryNotFoundException::key($key);
     }
 
     /**
@@ -135,31 +159,104 @@ final class FileDictionaryRepository implements DictionaryRepository
      */
     public function flush(): void
     {
-        $this->builtIn = null;
+        $this->index = null;
+        $this->decoded = [];
         $this->userPaths = [];
         $this->entryCache = [];
     }
 
     /**
-     * Get the built-in dictionaries, decoding them on first use.
+     * Get every built-in dictionary, decoding whatever is not decoded yet.
      *
      * @return array<string, Dictionary>
      */
     private function builtIn(): array
     {
-        if ($this->builtIn !== null) {
-            return $this->builtIn;
+        $dictionaries = [];
+
+        foreach (array_keys($this->builtInIndex()) as $key) {
+            $dictionaries[$key] = $this->builtInDictionary($key);
         }
 
+        return $dictionaries;
+    }
+
+    /**
+     * Get only the built-in dictionaries these options could possibly select.
+     *
+     * Narrowing here rather than in selects() is the whole point: selects()
+     * needs a Dictionary, and building one means decoding the file.
+     *
+     * @return array<string, Dictionary>
+     */
+    private function builtInCandidates(Options $options): array
+    {
+        $index = $this->builtInIndex();
         $dictionaries = [];
+
+        // Named keys select outright, whatever the file turns out to contain,
+        // so nothing else needs opening.
+        if (is_array($options->enabled)) {
+            foreach ($options->enabled as $key) {
+                if (isset($index[$key])) {
+                    $dictionaries[$key] = $this->builtInDictionary($key);
+                }
+            }
+
+            return $dictionaries;
+        }
+
+        foreach ($index as $key => $entry) {
+            // Type is the directory the file sits in and except is a list of
+            // keys: both are answerable from the index alone.
+            if (! in_array($entry['type'], $options->types, true)) {
+                continue;
+            }
+
+            if (in_array($key, $options->except, true)) {
+                continue;
+            }
+
+            $dictionaries[$key] = $this->builtInDictionary($key);
+        }
+
+        return $dictionaries;
+    }
+
+    /**
+     * Get where every built-in dictionary lives, keyed by dictionary key.
+     *
+     * @return array<string, array{path: string, type: string}>
+     */
+    private function builtInIndex(): array
+    {
+        if ($this->index !== null) {
+            return $this->index;
+        }
+
+        $index = [];
 
         foreach (['People' => 'people', 'Things' => 'things'] as $directory => $type) {
             foreach ($this->jsonFiles($this->basePath.'/'.$directory) as $key => $path) {
-                $dictionaries[$key] = $this->decode($key, $path, $type, builtIn: true);
+                $index[$key] = ['path' => $path, 'type' => $type];
             }
         }
 
-        return $this->builtIn = $dictionaries;
+        return $this->index = $index;
+    }
+
+    /**
+     * Get one built-in dictionary, decoding it on first use.
+     */
+    private function builtInDictionary(string $key): Dictionary
+    {
+        if (isset($this->decoded[$key])) {
+            return $this->decoded[$key];
+        }
+
+        $entry = $this->builtInIndex()[$key];
+
+        return $this->decoded[$key] = $this->decode($key, $entry['path'], $entry['type'], builtIn: true);
     }
 
     /**

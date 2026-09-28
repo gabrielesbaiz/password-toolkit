@@ -40,6 +40,16 @@ final class AdjectiveResolver
     private array $cache = [];
 
     /**
+     * Pools narrowed to one gender, keyed by "{locale}/{key}|{gender}".
+     *
+     * The narrowing is the same every time for a given pool and gender, and a
+     * batch asks for it once per password, so it is done once instead.
+     *
+     * @var array<string, array<int, Entry>>
+     */
+    private array $agreeing = [];
+
+    /**
      * Word order declared by each locale's _default pack, keyed by locale.
      *
      * False marks a locale whose pack does not declare one.
@@ -78,6 +88,7 @@ final class AdjectiveResolver
     public function flush(): void
     {
         $this->cache = [];
+        $this->agreeing = [];
         $this->positions = [];
     }
 
@@ -133,17 +144,10 @@ final class AdjectiveResolver
         $fallback = $options->fallbackLocale;
 
         foreach ($this->candidates($entry->dictionary, $locale, $fallback) as [$candidateLocale, $key]) {
-            $pool = $this->load($candidateLocale, $key);
+            $agreeing = $this->agreeing($candidateLocale, $key, $entry->gender);
 
-            if ($pool === []) {
-                continue;
-            }
-
-            $agreeing = array_values(array_filter(
-                $pool,
-                static fn (Entry $adjective): bool => $adjective->gender->agreesWith($entry->gender),
-            ));
-
+            // Covers both a pool that does not exist and one whose every word
+            // disagrees: neither can supply an adjective.
             if ($agreeing === []) {
                 continue;
             }
@@ -174,6 +178,25 @@ final class AdjectiveResolver
     }
 
     /**
+     * Get the pool for a locale and key, narrowed to what agrees with a gender.
+     *
+     * @return array<int, Entry>
+     */
+    private function agreeing(string $locale, string $key, Gender $gender): array
+    {
+        $cacheKey = $locale.'/'.$key.'|'.$gender->value;
+
+        if (isset($this->agreeing[$cacheKey])) {
+            return $this->agreeing[$cacheKey];
+        }
+
+        return $this->agreeing[$cacheKey] = array_values(array_filter(
+            $this->load($locale, $key),
+            static fn (Entry $adjective): bool => $adjective->gender->agreesWith($gender),
+        ));
+    }
+
+    /**
      * Sample without replacement.
      *
      * @param  array<int, Entry>  $pool  non-empty
@@ -189,6 +212,14 @@ final class AdjectiveResolver
             $candidate = $pool[$index];
 
             $drawn[] = $candidate;
+
+            // Nothing will be drawn from the hat again, so there is no point
+            // emptying it. The default word_count of 2 asks for one adjective
+            // and so never pays for this at all.
+            if (count($drawn) >= $count) {
+                break;
+            }
+
             $taken[$candidate->name] = true;
 
             // Everything spelled like what was just drawn goes out of the hat,

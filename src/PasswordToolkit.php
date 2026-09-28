@@ -85,8 +85,10 @@ class PasswordToolkit implements PasswordGenerator
 
         // Resolve the pool once, then assemble in a tight loop. 1.x re-scanned
         // the data directory for every single password.
+        $last = count($entries) - 1;
+
         for ($i = 0; $i < $count; $i++) {
-            $passwords[] = $this->assemble($entries[random_int(0, count($entries) - 1)], $options);
+            $passwords[] = $this->assemble($entries[random_int(0, $last)], $options);
         }
 
         return $passwords;
@@ -115,10 +117,11 @@ class PasswordToolkit implements PasswordGenerator
         // three passwords out of a space of thirty needs far more than thirty
         // attempts to land three distinct ones.
         $limit = ($count * $options->uniqueAttemptsMultiplier) + 100;
+        $last = count($entries) - 1;
 
         while (count($passwords) < $count && $attempts < $limit) {
             $attempts++;
-            $password = $this->assemble($entries[random_int(0, count($entries) - 1)], $options);
+            $password = $this->assemble($entries[random_int(0, $last)], $options);
             $passwords[$password] = true;
         }
 
