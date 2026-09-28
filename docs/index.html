@@ -414,7 +414,7 @@ return [
 
 <section id="quick" data-title="Quick start">
   <h2>Generate one</h2>
-  <p class="lead">Nothing to configure first. The facade resolves a singleton, and the first call reads the dictionaries once and caches them.</p>
+  <p class="lead">Nothing to configure first. The facade resolves a singleton, and the first call reads the dictionaries your settings select &mdash; only those &mdash; and caches them.</p>
   <pre>use Gabrielesbaiz\PasswordToolkit\Facades\PasswordToolkit;
 
 PasswordToolkit::generate();
@@ -496,6 +496,7 @@ public function __construct(private readonly PasswordGenerator $passwords) {}</p
 ],</pre>
   <p class="lead"><code>groups</code>, <code>tags</code> and <code>reach</code> narrow the pool thematically: reach is how far a name travels, so <code>global</code> keeps the ones a stranger would recognise and <code>niche</code> allows the rest. Filters combine, and a dictionary must satisfy all of them.</p>
   <p class="lead"><code>password-toolkit:generate --list</code> shows exactly what resolves, which is faster than reasoning about the three keys above.</p>
+  <div class="note"><b>Naming keys in <code>enabled</code> is the cheapest setting there is.</b> Since 2.0.1 a dictionary is decoded only once something selects it, so a list of keys opens those files and no others &mdash; one dictionary costs about 4&nbsp;ms and 0.14&nbsp;MB against roughly 18&nbsp;ms for the full shelf. <code>types</code> is answered by the directory a dictionary sits in, so it costs nothing either; <code>groups</code>, <code>tags</code> and <code>reach</code> live inside the files, so <code>'*'</code> combined with those still has to read each one to know what it holds.</div>
 
   <h2 id="locale">Locale</h2>
   <pre>'locale'          => null,   // null follows the application locale
