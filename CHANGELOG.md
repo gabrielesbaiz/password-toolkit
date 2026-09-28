@@ -2,6 +2,33 @@
 
 All notable changes to `password-toolkit` are documented here.
 
+## 2.0.1 — 2026-09-28
+
+Performance only. No API, behaviour or output changes — passwords generated with
+the same options come out exactly as they did in 2.0.0.
+
+### Changed
+
+- **Dictionaries decode one at a time instead of all at once.** The repository
+  built all 201 of them on first use, so an application that enables a single
+  dictionary still read 201 files and constructed 4,411 entry objects. The file
+  index is now a directory listing, and a dictionary is decoded only once
+  something selects it — a named key selects outright, and a dictionary's type
+  is the directory it sits in, so both questions are answered without opening a
+  file. Cold start for one dictionary drops from **19.0 ms to 3.9 ms**, and the
+  memory it holds from **0.92 MB to 0.14 MB**. Enabling every dictionary costs
+  what it always did.
+- **Adjective pools are narrowed by gender once, not per password.** Every
+  generated password re-filtered the whole pool for agreeing words. The narrowed
+  pool is now cached per locale, pack and gender.
+- **The last adjective drawn no longer rebuilds the pool it came from.** Drawing
+  removes same-spelled words so the next draw cannot repeat them; after the
+  final draw there is no next draw. At the default `word_count` of 2, which asks
+  for one adjective, this removes the rebuild entirely.
+
+Generating 2,000 passwords: **27.3 ms to 13.3 ms** at two words, **32.1 ms to
+20.6 ms** at three.
+
 ## 2.0.0 — 2026-09-23
 
 A rewrite. See [UPGRADE.md](UPGRADE.md) before you deploy.
